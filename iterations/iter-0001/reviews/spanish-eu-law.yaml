@@ -1,0 +1,224 @@
+reviewer: spanish-eu-law
+iteration: 1
+summary: >-
+  Modules M06, M07, M12, and M13 establish a credible initial constitutional and administrative spine
+  anchored in the 1978 Spanish Constitution, LOFCA, Ley 35/2006 (IRPF), Ley 19/2021 (IMV), and EU
+  Regulation 883/2004, but exhibit four critical legal-doctrinal and operational vulnerabilities:
+  (1) M06 conflates mutually exclusive EU legal categories (Regulation 883/2004 Annex X special
+  non-contributory cash benefits vs. direct-tax refundable credits under Art. 45 TFEU and Directive
+  2004/38/EC), cites inaccurate Tribunal Constitucional case numbers in prose without formal sources.yaml
+  locators instead of the actual IMV competence rulings (STC 158/2021 and STC 19/2024), omits the 50%
+  regional IRPF tranche mechanics under Ley 22/2009 and the Basque Concierto Económico (Ley 12/2002),
+  and omits AI-scenario differentiation (S1-S3); (2) M07 proposes absorbing SEPE unemployment subsidios
+  without preserving the Art. 280 TRLGSS retirement pension contribution credit for workers aged 52+,
+  overlooks the exclusive Autonomous Community competence over Rentas Mínimas Autonómicas (Art. 148.1.20 CE),
+  and relies on administrative waivers where statutory amendments are required; (3) M12 lacks privacy-preserving
+  payroll mechanics under Ley 58/2003 Art. 95 and LOPDGDD (Ley Orgánica 3/2018), omits an explicit
+  inembargabilidad and anti-offset shield (Art. 607 LEC, Art. 44 TRLGSS, Arts. 71-73 LGT), and omits
+  GDPR Art. 22 / Ley 39/2015 Art. 41 safeguards against automated benefit suspension; and (4) M13's
+  24-36 month residency waiting period (R2) and fractional accrual (R3) contradict M03's abolition of
+  the IRPF mínimo personal y familiar, unconstitutionally taxing first- and second-year legal resident
+  workers from their first euro without a subsistence floor in violation of Art. 31.1 CE and EU worker
+  non-discrimination law.
+scores:
+  spain_fit:
+    score: 3.2
+    rationale: >-
+      Accurately incorporates core constitutional articles (Arts. 14, 31, 41, 148.1.20, 149.1.1, 149.1.14,
+      149.1.17 CE), LOFCA, IRPF, and IMV, and distinguishes common vs. foral regimes, but cites unindexed
+      and inaccurate TC case numbers in M06 instead of STC 158/2021 and STC 19/2024, overlooks how IRPF
+      integration affects the 50% autonomous IRPF tariff ceded under Ley 22/2009 and the Basque Concierto
+      Económico (Ley 12/2002), and misapplies Annex X of EU Regulation 883/2004 to an unconditional transfer.
+  feasibility:
+    score: 3.0
+    rationale: >-
+      Identifies the core administrative registries (AEAT, INSS, Padrón Continuo), but underestimates legal
+      and technical constraints: M12's Net-Withholding Mode via employer payrolls (Modelo 111/190) risks
+      exposing protected employee vulnerability data without a zero-knowledge withholding protocol under
+      LGT Art. 95 and LOPDGDD; M07 assumes administrative agencies can waive benefit means-testing in pilots
+      without statutory reform; and M12/M13 Section 6 do not disaggregate Municipal, Regional (Común vs.
+      Foral), and National pilot mechanics.
+  ethics_equity:
+    score: 3.3
+    rationale: >-
+      Includes a No-Loser Guarantee (M07), individual payment autonomy (M14), and last-mile inclusion via
+      Correos basic accounts (M12), but creates two severe legal-equity traps: (1) M13's 24-36 month waiting
+      period combined with M03's repeal of the IRPF mínimo personal taxes recent legal resident workers at
+      38-52% from their first euro of subsistence income (violating Art. 31.1 CE), and (2) M07's absorption
+      of SEPE subsidios strips displaced workers aged 52+ of their state-paid retirement pension contributions
+      under Art. 280 TRLGSS.
+  counterarguments:
+    score: 3.1
+    rationale: >-
+      Addresses headline objections (Cupo disputes, ghost Padrón registrations, welfare-magnet claims),
+      but misses critical legal counterarguments: CJEU invalidation of Annex X SNCB status for universal
+      unconditional benefits, commercial bank and AEAT automatic debt set-offs (compensación de oficio)
+      seizing UBR transfers absent an Art. 607 LEC / Art. 44 TRLGSS shield, and fundamental-rights challenges
+      under GDPR Art. 22 and Ley 39/2015 Art. 41 against algorithmic suspension of benefits.
+  coverage:
+    score: 3.2
+    rationale: >-
+      Covers reference factors F07, F08, F13, and F14 at a foundational level, but M06, M07, and M12 fail
+      to operationalize how legal competences, contributory benefit offsets, and administrative clearing
+      evolve across AI scenarios S1, S2, and S3 (D-006), and M12 and M13 Section 6 omit explicit three-tier
+      pilot comparisons (D-005).
+issues:
+  - id: LW-01-01
+    severity: critical
+    module: M06
+    finding: >-
+      M06 has three doctrinal flaws and omits S1-S3 scenario differentiation (D-006). First, RQ-M06-02
+      proposes classifying UBR as an Annex X "special non-contributory cash benefit" (SNCB) under Regulation
+      (EC) No 883/2004. However, Art. 70(2) of Regulation 883/2004 and settled CJEU jurisprudence restrict
+      Annex X SNCBs to means-tested benefits linked to Art. 3(1) social security risks or disability
+      protection; an unconditional universal transfer cannot legally be sheltered in Annex X. Moreover,
+      under Art. 45 TFEU and Art. 24(1) of Directive 2004/38/EC, EU workers and self-employed persons in
+      Spain enjoy immediate equal treatment in tax credits and social advantages from Day 1, making a blanket
+      24-36 month waiting period unlawful if applied to economically active EU citizens. Second, M06 cites
+      inaccurate TC case numbers in prose ("STC 19/2022, STC 62/2022") without sources.yaml entries instead
+      of the actual Tribunal Constitucional rulings on IMV competence (STC 158/2021 on RDL 20/2020 and
+      STC 19/2024 on Ley 19/2021 foral management transfers), and fails to specify how abolishing the IRPF
+      mínimo personal affects the 50% regional IRPF tranche under Ley 22/2009 and the Basque Concierto
+      Económico (Ley 12/2002). Third, M06 does not distinguish legal anchors across S1, S2, and S3.
+    proposal: >-
+      Revise M06 to: (1) replace the Annex X SNCB claim with a bifurcated EU-law architecture distinguishing
+      economically active EU workers/self-employed (entitled to immediate pro-rata IRPF tax-transfer
+      integration under Art. 45 TFEU and Art. 24(1) Directive 2004/38/EC) from economically inactive EU
+      citizens and third-country nationals (governed by Art. 7(1)(b) and Art. 24(2) Directive 2004/38/EC
+      and Ley Orgánica 4/2000 prior to 5-year permanent residence); (2) add verified citations to STC 158/2021,
+      STC 19/2024, Ley 22/2009, and Ley 12/2002, specifying the LOFCA / Ley 22/2009 compensation mechanism
+      to preserve Autonomous Communities' 50% IRPF fiscal autonomy; and (3) map constitutional anchors
+      across S1 (Arts. 149.1.14 and 149.1.17 CE), S2 (LOFCA Art. 157.3 CE rebalancing as labor IRPF erodes),
+      and S3 (Art. 128.2 CE public initiative and sovereign wealth dividend charter).
+    sources:
+      - title: "Pleno. Sentencia 158/2021, de 16 de septiembre de 2021. Recurso de inconstitucionalidad 1140-2021 (Ingreso Mínimo Vital, BOE-A-2021-17107)"
+        authors: ["Tribunal Constitucional"]
+        year: 2021
+        url: "https://www.boe.es/buscar/doc.php?id=BOE-A-2021-17107"
+      - title: "Pleno. Sentencia 19/2024, de 31 de enero de 2024. Recurso de inconstitucionalidad 1937-2022 (Gestión foral del Ingreso Mínimo Vital, BOE-A-2024-3941)"
+        authors: ["Tribunal Constitucional"]
+        year: 2024
+        url: "https://www.boe.es/buscar/doc.php?id=BOE-A-2024-3941"
+      - title: "Ley 22/2009, de 18 de diciembre, por la que se regula el sistema de financiación de las Comunidades Autónomas de régimen común (BOE-A-2009-20375)"
+        authors: ["Jefatura del Estado"]
+        year: 2009
+        url: "https://www.boe.es/buscar/act.php?id=BOE-A-2009-20375"
+      - title: "Ley 12/2002, de 23 de mayo, por la que se aprueba el Concierto Económico con la Comunidad Autónoma del País Vasco (BOE-A-2002-9969)"
+        authors: ["Jefatura del Estado"]
+        year: 2002
+        url: "https://www.boe.es/buscar/act.php?id=BOE-A-2002-9969"
+      - title: "Directive 2004/38/EC of the European Parliament and of the Council of 29 April 2004 on the right of citizens of the Union and their family members to move and reside freely"
+        authors: ["European Parliament and Council"]
+        year: 2004
+        url: "https://eur-lex.europa.eu/eli/dir/2004/38/oj"
+  - id: LW-01-02
+    severity: critical
+    module: M07
+    finding: >-
+      M07 contains three legal and fiscal defects in welfare integration. First, RQ-M07-01 and Section 5.1
+      classify SEPE unemployment assistance (subsidios por desempleo) as "Fully Absorbed" into UBR,
+      overlooking that under Art. 280 of the Texto Refundido de la Ley General de la Seguridad Social
+      (TRLGSS, BOE-A-2015-11724, reformed by RDL 2/2024), the subsidio para mayores de 52 años carries a
+      vital non-cash entitlement: State-paid retirement pension contributions (cotización por jubilación at
+      125% of the minimum base). Absorbing this subsidy without preserving the contribution credit would
+      slash future contributory pensions for workers aged 52+ displaced under S1-S3, violating the No-Loser
+      Guarantee. Second, M07 treats the 17 regional minimum incomes (Rentas Mínimas Autonómicas) as if State
+      legislation can directly fold them into national UBR budgets; under Art. 148.1.20 CE, regional social
+      assistance is an exclusive Autonomous Community competence, so a State UBR extinguishes regional
+      payouts indirectly via regional subsidiary means-testing rules (carácter subsidiario), creating an
+      uncaptured €1.5-2.0B windfall for regional budgets unless offset via CPFF/Foral agreements. Third,
+      Section 6 assumes INSS/SEPE can issue administrative pilot waivers without statutory reform.
+    proposal: >-
+      Update M07 to: (1) preserve the Art. 280 TRLGSS state-paid retirement pension contribution credit
+      (cotización asimilada al alta por jubilación) for unemployed/displaced workers aged 52+ alongside the
+      UBR cash floor across S1-S3, and distinguish benefit absorption across S1 (Tier A), S2 (Tier B), and
+      S3 (Tier C); (2) distinguish direct State benefit absorption (IMV, CAPI, PNC, SEPE subsidios under
+      TRLGSS) from indirect subsidiary crowding-out of regional Rentas Mínimas Autonómicas, specifying a
+      CPFF / LOFCA and Comisión Mixta del Concierto Económico offset agreement; and (3) specify in Section 6
+      the statutory amendments (Art. 7 Ley 35/2006, Art. 20 Ley 19/2021, Art. 275 TRLGSS, and regional
+      minimum-income laws) required to protect Municipal, Regional (Común vs. Foral), and National pilot
+      participants under the administrative legality principle (Art. 103.1 CE).
+    sources:
+      - title: "Real Decreto Legislativo 8/2015, de 30 de octubre, por el que se aprueba el texto refundido de la Ley General de la Seguridad Social (BOE-A-2015-11724)"
+        authors: ["Ministerio de Empleo y Seguridad Social"]
+        year: 2015
+        url: "https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724"
+      - title: "Real Decreto-ley 2/2024, de 21 de mayo, por el que se adoptan medidas urgentes para la simplificación y mejora del nivel asistencial de la protección por desempleo (BOE-A-2024-10235)"
+        authors: ["Jefatura del Estado"]
+        year: 2024
+        url: "https://www.boe.es/buscar/act.php?id=BOE-A-2024-10235"
+  - id: LW-01-03
+    severity: major
+    module: M12
+    finding: >-
+      M12 has four legal and operational gaps: (1) it mentions Ley 58/2003 General Tributaria (LGT) Art. 95
+      and Ley Orgánica 3/2018 (LOPDGDD) in prose without sources.yaml entries, and does not explain how
+      "Net-Withholding Mode" (crediting UBR inside monthly employer payroll withholdings via Modelo 111/190)
+      prevents employers from inferring protected employee disability, vulnerability, or household composition
+      supplements (M07, M14) in violation of GDPR Art. 9 and LOPDGDD; (2) it omits statutory protection
+      against debt attachment (inembargabilidad under Art. 607 Ley de Enjuiciamiento Civil and Art. 44
+      TRLGSS) and automatic commercial bank overdraft or AEAT tax set-offs (compensación de oficio under
+      Arts. 71-73 LGT); (3) its Section 7 proposal to automatically suspend "inactive" Padrón records via
+      cross-registry profiling lacks algorithmic due-process guarantees under GDPR Art. 22 and Art. 41 of
+      Ley 39/2015 (actuación administrativa automatizada); and (4) Section 6 fails to disaggregate Municipal,
+      Regional (Común vs. Foral), and National pilot delivery (D-005) or S1-S3 scenario load (D-006).
+    proposal: >-
+      Revise M12 to: (1) cite Ley 58/2003, Ley Orgánica 3/2018, and Ley 39/2015 in sources.yaml, and restrict
+      employer payroll clearing to the uniform individual UBR credit via a privacy-preserving numerical tax
+      code while paying all M07/M14 vulnerability and disability supplements directly from INSS/AEAT; (2)
+      incorporate an explicit statutory inembargabilidad and anti-offset shield on the Cuenta Única
+      Tributaria-Social and cuentas de pago básicas up to the UBR/SMI floor, barring Arts. 71-73 LGT ex-officio
+      tax offsets and bank overdraft seizures; (3) embed Ley 39/2015 Art. 41 and GDPR Art. 22 due-process
+      rules requiring prior human review and a non-suspensive hearing (trámite de audiencia) before pausing
+      any UBR payment; and (4) explicitly contrast Municipal, Regional (Común vs. Foral Haciendas Forales),
+      and National delivery in Section 6 across S1-S3.
+    sources:
+      - title: "Ley 58/2003, de 17 de diciembre, General Tributaria (BOE-A-2003-23186)"
+        authors: ["Jefatura del Estado"]
+        year: 2003
+        url: "https://www.boe.es/buscar/act.php?id=BOE-A-2003-23186"
+      - title: "Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales (BOE-A-2018-16673)"
+        authors: ["Jefatura del Estado"]
+        year: 2018
+        url: "https://www.boe.es/buscar/act.php?id=BOE-A-2018-16673"
+      - title: "Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas (BOE-A-2015-10565)"
+        authors: ["Jefatura del Estado"]
+        year: 2015
+        url: "https://www.boe.es/buscar/act.php?id=BOE-A-2015-10565"
+  - id: LW-01-04
+    severity: critical
+    module: M13
+    finding: >-
+      M13 introduces an unconstitutional fiscal asymmetry when combined with M03 and M06. In M03 (Section 5.1),
+      the reform abolishes the IRPF personal and family tax-free allowance (mínimo personal y familiar,
+      Arts. 56-61 Ley 35/2006) and taxes earned income from the first euro at 38-52%, relying on UBR to
+      exempt subsistence income. Yet M13 (Section 5.2) proposes restricting UBR eligibility via a 24-36
+      month residency waiting period (Rule R2) or 3-year fractional accrual (Rule R3). Under Art. 9 of
+      Ley 35/2006, any individual residing >183 days in Spain in a calendar year is an ordinary IRPF taxpayer
+      (contribuyente por obligación personal). Denying full UBR to lawful residents in years 1-3 while
+      repealing their IRPF mínimo personal subjects their first euro of subsistence wages to a 38-52% tax
+      rate, violating Art. 31.1 of the Spanish Constitution (Tribunal Constitucional doctrine on capacidad
+      económica and the untaxable mínimo existencial) as well as Art. 45 TFEU for EU workers. Additionally,
+      M13 cites Ley Orgánica 4/2000 without a sources.yaml entry and fails to compare Municipal, Regional
+      (Común vs. Foral), and National pilot tiers in Section 6 (D-005).
+    proposal: >-
+      Amend M13 to: (1) establish a binding Tax-Benefit Symmetry Principle: every lawful resident who qualifies
+      as a Spanish IRPF taxpayer under Art. 9 Ley 35/2006 or contributes to Social Security must either
+      receive the UBR credit pro-rata temporis from their first month of tax/contribution liability or retain
+      an equivalent refundable IRPF mínimo personal y familiar so subsistence income is never taxed under
+      Art. 31.1 CE; (2) limit the 12-to-36 month qualifying residency comparison (R1/R2/R3) strictly to
+      economically inactive, non-contributing entrants consistent with Art. 24(2) Directive 2004/38/EC and
+      Ley Orgánica 4/2000 (BOE-A-2000-544), while retaining immediate statutory exemptions for minors,
+      asylum seekers, trafficking victims, and gender-violence survivors (Art. 10 Ley 19/2021); and (3)
+      cite Ley Orgánica 4/2000 and Ley 7/1985 (LBRL) in sources.yaml and disaggregate Section 6 across
+      Municipal (Padrón freeze under Art. 15-17 LBRL), Regional (Común vs. Foral fiscal domicile), and
+      National tiers.
+    sources:
+      - title: "Ley Orgánica 4/2000, de 11 de enero, sobre derechos y libertades de los extranjeros en España y su integración social (BOE-A-2000-544)"
+        authors: ["Jefatura del Estado"]
+        year: 2000
+        url: "https://www.boe.es/buscar/act.php?id=BOE-A-2000-544"
+      - title: "Ley 7/1985, de 2 de abril, Reguladora de las Bases del Régimen Local (BOE-A-1985-5392)"
+        authors: ["Jefatura del Estado"]
+        year: 1985
+        url: "https://www.boe.es/buscar/act.php?id=BOE-A-1985-5392"

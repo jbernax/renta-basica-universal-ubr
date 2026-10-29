@@ -1,0 +1,190 @@
+reviewer: labor-economist
+iteration: 1
+summary: >-
+  The initial research plan establishes a promising foundation linking AI task-displacement scenarios (S1-S3) to
+  EUROMOD microsimulation and multi-level pilot evaluation, but exhibits critical labor-economics gaps across M01,
+  M08, M14, M15, and METHODS. Specifically, it conflates US O*NET gross task exposure with equilibrium employment
+  and wage-bill loss in Spain without modeling collective bargaining wage floors, post-2021 fijos discontinuos
+  inactivity margins (RDL 32/2021), or SME adoption lags; omits the statutory IMV employment incentive phase-out
+  (RD 789/2022) and exact MCVL/EPA longitudinal estimands in M08; lacks a collective household labor-supply model
+  and S1-S3 gender-segmented shock analysis in M14; lacks a formal structural parameter transportability equation
+  in M15 to separate finite-horizon RCT income effects from permanent tax-financed substitution elasticities; and
+  fails to explicitly compare Municipal, Regional (Régimen Común vs. Régimen Foral), and National pilot options
+  in Section 6 of M01, M08, M14, and M15 as required by D-005.
+scores:
+  ai_scenarios:
+    score: 3.4
+    rationale: >-
+      S1-S3 are clearly parameterized at the plan level and linked to CNO-11 in M01, but M01 and METHODS treat US
+      O*NET task exposure as directly translatable to Spanish displacement without modeling how sector-level
+      collective bargaining (convenios colectivos), SMI floors, and post-2021 fijos discontinuos / ERTE adjustments
+      channel AI shocks into intermittent inactivity rather than uniform wage compression. Moreover, M14 and M15
+      fail to differentiate across S1, S2, and S3 (violating D-006).
+  methodological_rigor:
+    score: 3.3
+    rationale: >-
+      Appropriate methodological families (Acemoglu-Restrepo task allocation, discrete-choice labor supply, bunching,
+      Bayesian meta-analysis) are named, but exact structural equations, microdata variables (MCVL contract codes,
+      contribution bases, and EPA 6-quarter rotating panel flows), Chiappori-style collective intra-household
+      identification in M14, and formal RCT-to-structural parameter transportability formulas in M15 are missing.
+  spain_fit:
+    score: 3.2
+    rationale: >-
+      Omits critical post-2021 Spanish labor market institutions including Real Decreto-ley 32/2021 (fijos
+      discontinuos and RED/ERTE mechanisms), Real Decreto 789/2022 (the IMV employment-incentive disregard that
+      defines actual baseline METRs), statutory SMI and collective-bargaining wage rigidity, and the Ministry of
+      Inclusion's 34 IMV inclusion-itinerary RCTs. Additionally, Section 6 in M01, M08, M14, and M15 does not
+      explicitly compare Municipal, Regional (Régimen Común vs. Régimen Foral), and National pilot tiers (D-005).
+  rq_quality:
+    score: 3.6
+    rationale: >-
+      Research questions include falsifiable quantitative hypotheses, but RQ-M01-01 conflates gross task exposure
+      with equilibrium employment loss, RQ-M08-01 benchmarks UBR against a naive 100% IMV clawback rather than the
+      RD 789/2022 incentive schedule, and RQ-M14-01 omits how S1-S3 gendered occupational displacement interacts
+      with intra-household care and labor supply.
+  evidence_grounding:
+    score: 3.5
+    rationale: >-
+      Grounds arguments in canonical AI exposure and UBI trial literature, but lacks European AI-employment
+      empirical studies (Albanesi et al. 2023), Spanish labor duality scholarship (Bentolila, Dolado & Jimeno 2012),
+      and primary statutory citations for the 2021 labor reform (BOE-A-2021-21788), the IMV employment incentive
+      (BOE-A-2022-15764), and the Dependency Law (BOE-A-2006-21990).
+issues:
+  - id: LE-01-01
+    severity: critical
+    module: M01
+    finding: >-
+      M01 (and Pillar 1 of METHODS) directly crosswalks US O*NET task exposure indices (Eloundou, Felten, Webb) to
+      Spanish 3-digit CNO-11 occupations without distinguishing gross task exposure from equilibrium net employment
+      and wage-bill displacement in Spain's institutional setting. In Spain, binding sectoral collective bargaining
+      (convenios colectivos with ultraactividad restored under Real Decreto-ley 32/2021), sharp Salario Mínimo
+      Interprofesional (SMI) hikes, and a >95% micro/SME firm structure mean that AI shocks cannot clear purely
+      through downward nominal wage compression; instead, they adjust along intermittent open-ended contract
+      inactivity spells (fijos discontinuos), partial-unemployment ERTE/RED mechanisms, and non-renewal of part-time
+      hours. Additionally, M01 Section 6 fails to explicitly compare Régimen Común vs. Régimen Foral in the Regional
+      pilot tier as required by D-005.
+    proposal: >-
+      In M01 Sections 2, 4, 5, and 7 (and METHODS Section 1): (1) explicitly separate gross task exposure (\beta_o)
+      from net equilibrium employment and wage-bill displacement by incorporating PIAAC/ESCO Spanish task weights,
+      firm-size AI adoption thresholds from INE's Encuesta sobre el uso de TIC y comercio electrónico en las empresas
+      (ETICCE), and Acemoglu-Restrepo cost-saving vs. reinstatement parameters; (2) integrate Spanish institutional
+      adjustment channels under Real Decreto-ley 32/2021 (BOE-A-2021-21788) and Bentolila et al. (2012), modeling
+      how convenio wage floors and SMI compress wage adjustments onto fijos discontinuos inactivity duration
+      (pases a inactividad in MCVL) and ERTE/RED hours reductions across S1-S3; and (3) expand M01 Section 6 to
+      explicitly compare Municipal, Regional (Régimen Común vs. Régimen Foral), and National pilot implications.
+    sources:
+      - title: >-
+          Real Decreto-ley 32/2021, de 28 de diciembre, de medidas urgentes para la reforma laboral, la garantía
+          de la estabilidad en el empleo y la transformación del mercado de trabajo (BOE-A-2021-21788)
+        authors:
+          - Jefatura del Estado
+        year: 2021
+        url: https://www.boe.es/buscar/act.php?id=BOE-A-2021-21788
+      - title: New Technologies and Jobs in Europe
+        authors:
+          - Albanesi, S.
+          - Dias da Silva, A.
+          - Jimeno, J. F.
+          - Lamo, A.
+          - Wabitsch, A.
+        year: 2023
+        doi: 10.3386/w31357
+      - title: "Reforming an insider-outsider labor market: the Spanish experience"
+        authors:
+          - Bentolila, S.
+          - Dolado, J. J.
+          - Jimeno, J. F.
+        year: 2012
+        doi: 10.1186/2193-9012-1-4
+  - id: LE-01-02
+    severity: critical
+    module: M08
+    finding: >-
+      M08 models baseline welfare traps as a simple 100% IMV benefit clawback, overlooking the statutory IMV
+      employment incentive (incentivo al empleo enacted via Real Decreto 789/2022, BOE-A-2022-15764) and its
+      interaction with post-2021 fijos discontinuos intermittent work spells and SEPE subsidios. Furthermore, M08
+      Section 5 does not specify the exact microdata variables and longitudinal waves in EPA and MCVL needed to
+      identify intensive and extensive elasticities separately by gender, age, skill/AI-exposure tier, and
+      conditional (IMV) vs. unconditional (UBR) transfer regimes, and Section 6 lumps Municipal, Regional, and
+      National pilot tiers into a single bullet rather than comparing them (violating D-005).
+    proposal: >-
+      In M08 Sections 2, 4, 5, and 6 (and METHODS Section 2): (1) incorporate Real Decreto 789/2022 into the baseline
+      METR and Participation Tax Rate (PTR) schedule, contrasting its delayed ex-post annual clawback and kinked
+      disregard window against UBR's real-time monthly IRPF integration across S1-S3; (2) specify exact MCVL and EPA
+      variables and estimands—using MCVL monthly bases de cotización, contract type codes (100/200/300 for indefinidos,
+      tiempo parcial, and fijos discontinuos), and coeficiente de parcialidad alongside the 6-quarter EPA rotating
+      longitudinal panel (encuesta de flujos) to estimate separate intensive and extensive elasticities (\varepsilon^c,
+      \eta) by gender, age cohort (youth 18-29, prime 30-51, older 52+), and CNO-11 AI-exposure tier; and (3) rewrite
+      Section 6 to explicitly compare Municipal (partial-equilibrium windfall labor response), Regional (Régimen Común
+      contractual clawback vs. Régimen Foral binding IRPF withholding table adjustment), and National pilot designs.
+    sources:
+      - title: >-
+          Real Decreto 789/2022, de 27 de septiembre, por el que se regula la compatibilidad del Ingreso Mínimo Vital
+          con los ingresos procedentes de rentas del trabajo o de la actividad económica por cuenta propia (BOE-A-2022-15764)
+        authors:
+          - Ministerio de Inclusión, Seguridad Social y Migraciones
+        year: 2022
+        url: https://www.boe.es/buscar/act.php?id=BOE-A-2022-15764
+  - id: LE-01-03
+    severity: major
+    module: M14
+    finding: >-
+      M14 lacks a formal structural model of intra-household time allocation and labor supply to reconcile two
+      competing behavioral forces of an individual UBR (D-001): the positive bargaining distribution-factor shift
+      (rising female share of non-labor income y_f / (y_f + y_m)) versus the negative unearned income effect on
+      secondary-earner formal hours. Moreover, M14 completely omits AI displacement scenarios S1-S3 (violating
+      D-006), ignoring that Spanish women are heavily overrepresented in S1/S2 high-exposure clerical and customer-
+      support jobs (CNO-11 groups 4-5) as well as low-paid SAAD care work (Ley 39/2006), and Section 6 fails to
+      differentiate Municipal, Regional (Régimen Común vs. Régimen Foral), and National pilot implications (D-005).
+    proposal: >-
+      In M14 Sections 2, 4, 5, and 6: (1) specify a Chiappori-style collective household labor-supply and time-use
+      model estimated jointly on INE's Encuesta de Empleo del Tiempo (EET) and ECV, identifying the sharing rule
+      via the individual UBR distribution factor and estimating cross-elasticities between formal employment, unpaid
+      childcare, and dependent care under Ley 39/2006 (BOE-A-2006-21990); (2) integrate S1-S3 scenario projections
+      showing how female-skewed clerical/administrative AI displacement in S1-S2 interacts with UBR and care-sector
+      transitions; and (3) disaggregate Section 6 across Municipal (0-3 municipal nurseries and local time-use
+      surveys), Regional (Régimen Común vs. Régimen Foral coordination with autonomous SAAD dependency allowances
+      and prestaciones económicas para cuidados en el entorno familiar), and National (INSS/SNS linkage) tiers.
+    sources:
+      - title: >-
+          Ley 39/2006, de 14 de diciembre, de Promoción de la Autonomía Personal y Atención a las personas en
+          situación de dependencia (BOE-A-2006-21990)
+        authors:
+          - Jefatura del Estado
+        year: 2006
+        url: https://www.boe.es/buscar/act.php?id=BOE-A-2006-21990
+  - id: LE-01-04
+    severity: major
+    module: M15
+    finding: >-
+      M15 proposes a Bayesian hierarchical meta-analysis of international trials (B-MINCOME, Finland, OpenResearch,
+      Stockton, Alaska, Kenya) but lacks an explicit structural parameter transportability framework mapping
+      reduced-form treatment effects from temporary, unfinanced windfall RCTs into the permanent income (\eta) and
+      compensated wage (\varepsilon^c) elasticities required to simulate a permanent tax-financed UBR under AI
+      scenarios S1-S3. In addition, M15 omits any discussion of S1-S3 (violating D-006) and fails to compare
+      Municipal, Regional (Régimen Común vs. Régimen Foral), and National pilot tiers in Section 6 (violating D-005).
+    proposal: >-
+      In M15 Sections 2, 4, 5, and 6: (1) write an explicit structural decomposition equation mapping each trial k's
+      observed labor-supply effect \hat{\tau}_k into (\eta_{\text{perm}}, \varepsilon^c) as a function of trial horizon
+      T_k (discount/annuity factor adjustment), implicit marginal benefit withdrawal rate \text{MTR}_k (exploiting
+      B-MINCOME's 2x2 factorial variation and Finland's Kela baseline), and local unemployment slack; (2) incorporate
+      Spain's 34 IMV inclusion-itinerary RCTs (Ministerio de Inclusión Policy Lab) alongside B-MINCOME and adjust
+      priors across S1-S3 labor-demand regimes; and (3) expand Section 6 to explicitly compare how international
+      lessons inform Municipal (B-MINCOME saturation/spillover bounds), Regional (Catalan common-regime design vs.
+      Basque/Navarre foral tax-clawback arm), and National pilot tiers.
+  - id: LE-01-05
+    severity: major
+    module: METHODS
+    finding: >-
+      In plan/methods.md, Pillars 1, 2, and 4 do not specify the exact interface variables and econometric handoffs
+      connecting the M01 task-displacement model (EPA/MCVL), the M08 structural discrete-choice and collective
+      household labor-supply module (ECV/EPA/EET), the M15 Bayesian prior transportability equations, and the
+      EUROMOD-Spain microsimulation spine under S1-S3. Without an explicit variable-level pipeline, M01 displacement
+      shocks risk being double-counted alongside M08 voluntary labor-supply responses inside EUROMOD.
+    proposal: >-
+      Update plan/methods.md Pillars 1, 2, and 4 to specify a sequential decomposition protocol that avoids
+      double-counting: first apply M01 involuntary AI demand-side displacement and wage-bill compression hazards
+      (calibrated on MCVL contribution bases, fijos discontinuos inactivity transitions, and CNO-11 x NACE cells
+      across S1-S3) to generate pre-UBR counterfactual market incomes; second, apply M08/M14 voluntary intensive,
+      extensive, and intra-household labor-supply elasticities (\eta, \varepsilon^c, anchored by M15 structural
+      priors and RD 789/2022 baseline METRs) to compute post-UBR behavioral equilibrium incomes in EUROMOD-Spain.

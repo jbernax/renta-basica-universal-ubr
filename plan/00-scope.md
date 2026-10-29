@@ -24,10 +24,10 @@ Following `D-006`, the research plan avoids assuming an unquantified "end of wor
 | **Fiscal Baseline Impact** | Mild IRPF/cotizaciones drag; manageable within reformed IMV + IRPF | Major erosion of payroll & middle-bracket IRPF; requires capital/IVA shift | Structural collapse of payroll tax base; requires AI-rent & wealth/capital capture |
 
 ## 4. Reference Parameter Baselines for Cross-Module Coherence
-All modules calibrate against a harmonized menu of three UBR benefit tiers (expressed in 2026 euros per month, indexed to CPI/ECV thresholds):
-- **Tier A (Partial / Floor UBR):** €600/month per adult (€300/month per minor $<18$), approximating the individual *Ingreso Mínimo Vital* guaranteed threshold, paired with a **No-Loser Guarantee** supplement for households whose existing contributory/disability entitlements exceed UBR (`M02`, `M07`).
-- **Tier B (Poverty-Line UBR):** €900/month per adult (€360/month per minor), anchored to 60% of Spanish median equivalized disposable income (AROPE at-risk-of-poverty line from INE's *Encuesta de Condiciones de Vida*).
-- **Tier C (Full AI-Dividend UBR, S3 target):** €1,200/month per adult (€420/month per minor), calibrated to structural labor-income replacement under Scenario S3.
+All modules calibrate against a harmonized menu of three UBR benefit tiers (expressed in 2026 euros per month, indexed to CPI/ECV thresholds), with child (<18) benefits pegged to a consistent 40% equivalence weight ($\alpha_{\text{child}} = 0.40$) derived from the modified OECD scale:
+- **Tier A (Partial / Floor UBR, S1 target):** €600/month per adult (€240/month per minor $<18$), approximating the individual *Ingreso Mínimo Vital* guaranteed threshold, paired with a **No-Loser Guarantee** supplement for households whose existing contributory/disability entitlements exceed UBR (`M02`, `M07`).
+- **Tier B (Poverty-Line UBR, S2 target):** €900/month per adult (€360/month per minor), anchored to 60% of Spanish median equivalized disposable income (AROPE at-risk-of-poverty line from INE's *Encuesta de Condiciones de Vida*).
+- **Tier C (Full AI-Dividend UBR, S3 target):** €1,200/month per adult (€480/month per minor), calibrated to structural labor-income replacement under Scenario S3.
 
 ## 5. Multi-Level Governance Comparison (`D-005`)
 Every module evaluates implementation feasibility and pilot design across three Spanish territorial tiers:

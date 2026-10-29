@@ -1,0 +1,55 @@
+version: 0.1.0
+title: "Universal Basic Rent in an AI-Disrupted Labor Market: Institutional Design, Fiscal Architecture, and Multi-Level Pilot Evaluation for Spain"
+central_question: >-
+  How can Spain design, finance, legally anchor, and empirically pilot an unconditional Universal Basic Rent
+  (Renta Básica Universal) that protects household welfare and macroeconomic stability across moderate, severe,
+  and structural AI labor-displacement scenarios?
+pilot_setting: Spain
+pilot_levels_compared:
+  - municipal
+  - regional
+  - national
+scenarios:
+  S1:
+    name: Moderate AI displacement and task polarization
+    horizon: "3-5 years"
+    labor_share_delta_pp: -2.5
+    displaced_fte_share: 0.08
+    description: >-
+      Generative and agentic AI automate routine administrative, customer-support, and junior cognitive tasks;
+      unemployment rises moderately (+2-3 pp) while wage growth stagnates in middle-skill deciles.
+  S2:
+    name: Severe cognitive and service-sector displacement
+    horizon: "5-10 years"
+    labor_share_delta_pp: -7.0
+    displaced_fte_share: 0.20
+    description: >-
+      Autonomous AI systems substitute broadly across professional, back-office, logistics, and retail roles;
+      IRPF and Social Security payroll tax bases contract markedly and structural underemployment reaches 18-22%.
+  S3:
+    name: Structural compression of labor income
+    horizon: "8-15 years"
+    labor_share_delta_pp: -15.0
+    displaced_fte_share: 0.35
+    description: >-
+      Capital and compute capture the majority of marginal productivity gains; traditional wage employment ceases
+      to clear household subsistence for over a third of working-age adults, requiring a permanent shift from
+      payroll-based welfare to capital/AI-rent-financed Universal Basic Rent.
+modules:
+  - M01
+  - M02
+  - M03
+  - M04
+  - M05
+  - M06
+  - M07
+  - M08
+  - M09
+  - M10
+  - M11
+  - M12
+  - M13
+  - M14
+  - M15
+  - M16
+  - M17

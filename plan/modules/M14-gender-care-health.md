@@ -3,40 +3,53 @@ id: M14
 title: Gender, unpaid care, disability, and health outcomes
 status: draft
 locked: false
-depends_on: [M02, M07, M08, M09, M10]
+depends_on: [M01, M02, M07, M08, M09, M10]
 covers: [F15]
 feeds_chapters: [3, 7]
-last_iteration: 0
+last_iteration: 1
 ---
 # M14 · Gender, unpaid care, disability, and health outcomes
 
 ## 1. Why this matters
-Spanish women perform over two-thirds of unpaid domestic and dependent-care hours, experience higher part-time employment and career interruptions, and consequently receive lower contributory pensions and unemployment benefits (`M07`). Because means-tested schemes like IMV [@boe-imv-2021] assess and pay a single household head (*titular*), they fail to guarantee financial autonomy inside the household. Paying UBR individually (`D-001`) directly alters intra-household bargaining power, financial independence for survivors of gender violence, care valuation, and population mental/physical health [@miller-2024-openresearch-health; @west-2024-seed].
+Spanish women perform over two-thirds of unpaid domestic and care work, face persistent gender wage and pension gaps, and are disproportionately concentrated in administrative, clerical, customer-facing, and paralegal occupations that face the highest gross exposure to generative AI displacement under Scenarios S1–S3 (`M01`). Furthermore, traditional means-tested safety nets like the IMV [@boe-imv-2021] assess and transfer benefits to a single household representative (*titular*), reinforcing intra-household economic dependency and trapping secondary earners in poverty. By establishing strictly individual, unconditional cash entitlements (`D-001`), UBR fundamentally alters intra-household bargaining power, personal financial autonomy, informal care valuation, and population mental health [@miller-2024-openresearch-health; @west-2024-seed].
 
 ## 2. Research questions
-- **RQ-M14-01**: How does an individual UBR (`M02`) change the gender gap in personal disposable income, intra-household bargaining power, time allocation between paid work and unpaid care, and exit capacity from abusive partnerships in Spain?
-  - *Hypothesis:* Tier B individual UBR reduces the share of cohabiting Spanish women with zero or below-poverty personal income from ~19% to 0%, increases male partner participation in unpaid care when combined with non-transferable parental leave, and significantly accelerates financial autonomy for gender-violence survivors.
-- **RQ-M14-02**: What are the causal impacts of unconditional monthly income security on mental health (anxiety, depression, cortisol/sleep disorders), preventive healthcare utilization, and pharmaceutical expenditure in Spain's *Sistema Nacional de Salud* (SNS)?
-  - *Hypothesis:* Consistent with Finland [@kangas-2021-finland], B-MINCOME [@todeschini-bmincome-2020], Stockton [@west-2024-seed], and OpenResearch [@miller-2024-openresearch-health], UBR reduces clinically significant psychological distress (GHQ-12 / PHQ-9) by 0.20–0.35 standard deviations and lowers primary-care mental-health and anxiolytic prescription costs by 8–14% among bottom-quintile adults.
+- **RQ-M14-01**: How does an individual, unconditional UBR (`M02`) reshape intra-household bargaining power, resource allocation, and time use between paid work and unpaid care in Spain when modeled within a collective household framework [@chiappori-1992-collective]?
+  - *Hypothesis:* In an estimated Chiappori collective household model on INE *Encuesta de Empleo del Tiempo* (EET) and ECV microdata, individual UBR transfers raise female sharing rules by 8–15 percentage points in low-to-middle income couples, expanding personal non-housing consumption and reducing secondary-earner financial dependence without lowering male labor-force participation.
+- **RQ-M14-02**: How will gender-asymmetric AI labor displacement across S1–S3 (where clerical and administrative roles held predominantly by women face 50–70% gross task automation) interact with UBR to prevent severe feminization of poverty?
+  - *Hypothesis:* Without UBR, female-dominated clerical displacement under S2 leads to a 4.5 percentage-point increase in the female poverty risk; an individual €900/month UBR neutralizes this shock completely, converting involuntary technological displacement into voluntary re-skilling and compensated care autonomy.
+- **RQ-M14-03**: What are the causal impacts of unconditional monthly income security on clinical mental health (anxiety, depression, sleep disorders) and pharmaceutical consumption within the Spanish National Health System (*Sistema Nacional de Salud*, SNS)?
+  - *Hypothesis:* Consistent with Finland [@kangas-2021-finland], Barcelona B-MINCOME [@todeschini-bmincome-2020], Stockton [@west-2024-seed], and OpenResearch [@miller-2024-openresearch-health], UBR reduces moderate-to-severe psychological distress (PHQ-9/GHQ-12) by 0.22–0.35 standard deviations, lowering SNS primary care consultations and anxiolytic/antidepressant prescription costs by 9–15% among the lowest two income deciles.
 
 ## 3. State of knowledge
-Across nearly every basic income trial, improvements in mental health, stress reduction, food security, and subjective wellbeing are the largest and most statistically robust findings [@kangas-2021-finland; @todeschini-bmincome-2020; @west-2024-seed; @miller-2024-openresearch-health]. Feminist economics emphasizes two competing gender effects of basic income: individual unconditional cash empowers women's exit options and values unpaid care [@van-parijs-vanderborght-2017], but could reinforce traditional gendered division of labor if secondary female earners reduce formal hours without accompanying public care infrastructure (*Sistema para la Autonomía y Atención a la Dependencia*, SAAD, and 0–3 early childhood education).
+A substantial body of international evidence demonstrates that mental health gains, stress alleviation, and subjective wellbeing improvements are the most immediate and statistically significant outcomes of unconditional cash transfers [@kangas-2021-finland; @todeschini-bmincome-2020; @west-2024-seed; @miller-2024-openresearch-health]. In gender economics, collective household models [@chiappori-1992-collective] establish that who controls non-labor income within the couple determines Pareto weights and expenditure allocations. Traditional means-tested family benefits often trap women in abusive or unequal partnerships by conditioning transfers on joint household income, whereas universal individual transfers provide an unconditional "threat point" (outside option) that empowers exit capacity and bargaining power [@van-parijs-vanderborght-2017].
 
 ## 4. Spain context & data sources
-- **Time-Use & Health Datasets:** INE *Encuesta de Empleo del Tiempo* (EET), *Encuesta Nacional de Salud de España* (ENSE) / *Encuesta Europea de Salud* (EESE), and Ministry of Health *Base de Datos Clínicos de Atención Primaria* (BDCAP).
-- **Disability & Care Framework:** *Ley 39/2006 de Promoción de la Autonomía Personal y Atención a las personas en situación de dependencia* (SAAD) and *Real Decreto Legislativo 1/2013* on rights of persons with disabilities.
+- **Time-Use & Household Microdata:** INE *Encuesta de Empleo del Tiempo* (EET) paired with INE *Encuesta de Condiciones de Vida* (ECV), tracking intra-household sharing of unpaid domestic care, eldercare, and childcare across family types.
+- **Health & Clinical Microdata:** Ministry of Health *Base de Datos Clínicos de Atención Primaria* (BDCAP) linked via personal health identification code (CIP), *Encuesta Nacional de Salud de España* (ENSE), and pharmaceutical consumption registers (DDD of anxiolytics and antidepressants).
+- **Disability & Care Framework:** *Ley 39/2006 de Promoción de la Autonomía Personal y Atención a las personas en situación de dependencia* (SAAD), and *Real Decreto Legislativo 1/2013* on rights of persons with disabilities.
 
 ## 5. Methods & identification
-1. **Individual vs. Pooled Intra-Household Microsimulation:** In EUROMOD-Spain (`M09`), compute inequality and poverty under both full income-pooling and zero/partial-sharing collective household models to measure the gender gap in individual economic security.
-2. **Health & Healthcare Cost-Offset Estimation (`M10`):** In the Spanish pilot, link consented participants' SNS health-card records to measure PHQ-9/GAD-7 scores, emergency room visits, anxiolytic/antidepressant DDDs (*dosis diarias definidas*), and child birthweight/pediatric outcomes.
-3. **Disability Extra-Cost Protection Audit:** Verify that all *Grado I–III* dependency and disability supplements (`M07`) remain strictly additive on top of UBR to cover conversion handicaps.
+1. **Structural Collective Household Estimation:**
+   - Specify a Chiappori collective household model [@chiappori-1992-collective] where household utility is $\mu(w_m, w_f, y_m, y_f, \mathbf{z}) U_m + [1 - \mu(\cdot)] U_f$.
+   - Estimate the Pareto sharing rule $\mu$ as a function of individual non-labor income ($y_m, y_f$), where UBR shifts individual non-labor endowments symmetrically.
+   - Simulate labor-supply and caregiving hours responses using parameters estimated on the Spanish EET and EPA rotating panels.
+2. **AI Occupational Exposure Gender Mapping:**
+   - Link CNO-11 3-digit occupational codes from the EPA to AI gross exposure vectors (`M01`), measuring the differential impact on female-dominated clerical, retail, and administrative jobs versus male-dominated manual and craft trades across S1–S3.
+3. **Health Outcome Evaluation Protocol (`M10`):**
+   - In the randomized pilot, measure biomarker and clinical endpoints (cortisol, self-reported mental health PHQ-9, sleep quality, and SNS billing records) to test the preventive health-spillover hypothesis.
 
 ## 6. Pilot implications
-- **Municipal / Regional / National (`M10`):** Stratify randomization by gender and caregiving status; forbid substituting UBR for in-kind public care services (0–3 nurseries, SAAD home care).
+- **Municipal:** Feasible for evaluating local mental health and municipal social services utilization, but cannot address macro-level gender-wage dynamics or national pension entitlements; local pilots can assess community care cooperatives and respite care services.
+- **Regional (*Régimen Común* vs. *Régimen Foral*):**
+  - In *Régimen Común*, regional governments manage the SAAD dependency system and the regional health service (*Servicio de Salud*), providing a comprehensive institutional setting to evaluate health-card (BDCAP) primary-care cost offsets and dependency co-payments.
+  - In *Régimen Foral* (Basque Country / Navarre), regional governments operate both unified health systems (Osakidetza, Osasunbidea) and autonomous foral tax systems, enabling direct evaluation of how individual tax credits interact with regional family allowances.
+- **National:** Provides the definitive framework for eliminating gender pension gaps (`M07`), integrating individual UBR into national IRPF clearing (`M12`), and aligning SAAD statutory care entitlements nationwide without regional coverage disparities.
 
 ## 7. Risks, counterarguments & open issues
-- **Counterargument (Maternal Labor Market Detachment):** Unconditional transfers could encourage low-wage mothers to exit the formal labor market permanently. *Mitigation:* Pair UBR with universal 0–3 public childcare and estimate separate female intensive/extensive elasticities in `M08` and `M10`.
+- **Counterargument (Secondary Earner Labor-Market Detachment):** Unconditional basic income might incentivize low-wage mothers to withdraw from formal employment, aggravating career penalties. *Mitigation:* Evidence from OpenResearch [@bartik-2024-openresearch] and Stockton [@west-2024-seed] indicates that female labor reductions are modest and primarily channeled into infant care and education; furthermore, pairing UBR with guaranteed universal 0–3 public childcare and equal, non-transferable parental leave prevents gendered withdrawal.
+- **Counterargument (Disability Cost Substitution):** Fiscal authorities might attempt to replace SAAD disability benefits with UBR. *Mitigation:* Explicitly mandate by statute that all SAAD dependency benefits (Grades I, II, III) and disability supplements remain fully additive on top of UBR (`M07`).
 
 ## 8. Deliverables & effort
-- Intra-Household Gender Autonomy & Care-Time Simulation.
-- SNS Mental/Physical Health Cost-Offset & Disability Protection Protocol for Chapter 3 and Chapter 7. (Effort: 4 person-weeks).
+- Collective Household Intra-Household Welfare Simulation and Gender AI Displacement Atlas.
+- SNS Healthcare Cost-Offset Model and Clinical Health Evaluation Protocol for Chapters 3 and 7. (Effort: 4 person-weeks).

@@ -1,0 +1,231 @@
+iteration: 1
+scores:
+  coverage:
+    score: 4.6
+    rationale: Exhaustive coverage across all 17 reference factors (F01–F17) mapped to modules M01 through M17. Primary dependencies
+      and cross-module handoffs are mapped in detail, including the four-stage iterative micro-macro closure pipeline linking
+      displacement, tax-benefit microsimulation, HANK open-economy closure, and housing pass-through in methods.md. To achieve
+      a perfect 5.0, full input-output sectoral tables and spatial decay matrices across all modules should be numerically
+      populated.
+    evidence:
+    - M01 covers F01 (AI scenarios S1-S3)
+    - M02 covers F02 (benefit architecture)
+    - M03 covers F03 (IRPF/IVA financing)
+    - M04 covers F05 (macro/Eurozone)
+    - M05 covers F06 (housing pass-through)
+    - M06 covers F07 (constitutional/EU law)
+    - M07 covers F08 (welfare integration)
+    - M08 covers F09 (labor supply)
+    - M09 covers F10 (microsimulation)
+    - M10 covers F11 (pilot design)
+    - M11 covers F12 (political economy)
+    - M12 covers F13 (administration)
+    - M13 covers F14 (territory/residency)
+    - M14 covers F15 (gender/care/health)
+    - M15 covers F16 (international evidence)
+    - M16 covers F04 (AI rents/sovereign fund)
+    - M17 covers F17 (transition/stress tests)
+    - methods.md 4-stage iterative micro-macro closure pipeline
+  rq_quality:
+    score: 4.7
+    rationale: Every module features 2 to 3 sharply formulated, policy-relevant research questions with testable hypotheses
+      containing specific quantitative thresholds, legal mechanisms, and empirical parameters grounded in Spanish institutions.
+      Hypotheses explicitly distinguish competing mechanisms (e.g. involuntary displacement vs voluntary labor-supply adjustments,
+      individual vs household cohabitation penalties, and uniform nominal floors vs regional indexing).
+    evidence:
+    - RQ-M01-01 (net FTE displacement across S1-S3 concentrating in fijos discontinuos under RDL 32/2021)
+    - RQ-M02-01 (Tiers A/B/C with 40% child equivalence eliminating cohabitation penalties)
+    - RQ-M03-01 (progressive IRPF 38-52% and 82nd-86th percentile breakeven preserving €125B public services)
+    - RQ-M04-01 (demand multiplier +0.8 to +1.4% GDP with inflation within +-0.3 pp ECB target)
+    - RQ-M05-01 (rent pass-through bounds 22-35% in stressed zones vs <5% in rural/mid-sized)
+    - RQ-M06-01 (State competence under Arts. 149.1.1, 149.1.14, 149.1.17, and 41 CE without constitutional amendment)
+    - RQ-M07-01 (absorbed non-contributory transfers €14.5B vs retained contributory pensions €90B under Dual-Pillar)
+    - RQ-M08-01 (extensive participation increase +3-5 pp and intensive hours reduction 1.5-2.5% vs RD 789/2022)
+    - RQ-M10-01 (two-stage saturation J=70, N=20,000, 80% power at alpha=0.05)
+    - RQ-M16-01 (IRAP-style net operating surplus tax Case C-475/03 raising 2.8-3.6% GDP under Art. 401 VAT Directive)
+    - RQ-M17-01 (AIReF composite displacement trigger index maintaining primary balance within +-0.35% GDP)
+  methodological_rigor:
+    score: 4.6
+    rationale: The research plan specifies state-of-the-art empirical, structural, and legal methodologies matched directly
+      to each research question. It combines shift-share IV with Borusyak et al. balance tests, structural task-cost functions,
+      EUROMOD-Spain microsimulation with Pareto-reweighted top incomes, open-economy two-sector currency-union HANK modeling,
+      a two-stage spatial saturation RCT (J=70, wild cluster bootstrap), randomized clawback arms to cleanly identify substitution
+      and income elasticities within constitutional boundaries, Chiappori collective household models, and intertemporal parameter
+      transportability equations. Closed-form covariance kernels for spatial spillover decay in contiguous clusters are the
+      main remaining analytical item for execution.
+    evidence:
+    - 'M01: Shift-share IV with Borusyak et al. shock-level balance and task-cost replacement bounds'
+    - 'M02: EUROMOD 3x3x2 parametric dominance grid and synchronized IPC-IC indexation'
+    - 'M03: Consolidated fiscal bridge, Spanish ETI estimates (0.15-0.45), QUAIDS demand system on EPF'
+    - 'M04: Two-sector open-economy HANK currency-union model with ECB Taylor rule and Bonos-Bund spread feedback'
+    - 'M05: Triple quasi-experimental identification (Bono Alquiler Joven cutoff, Ley 12/2023 boundary discontinuities, foral
+      deductions)'
+    - 'M08: Structural discrete-choice hours model and MCVL bunching estimation'
+    - 'M09: Pareto top-tail reweighting, FGT, Atkinson, Shorrocks-Shapley, and real post-housing post-IVA metrics'
+    - 'M10: Two-stage spatial saturation (J=70, N=20,000), wild cluster bootstrap, randomized clawback arm (0%, 38%, 50%)'
+    - 'M14: Chiappori collective household structural estimation on EET/ECV microdata'
+    - 'M15: Life-cycle structural parameter transportability equation decomposing finite-horizon trial effects'
+    - 'M16: Origin-based Net Operating Surplus base (CJEU Case C-475/03) and 30-year actuarial fund dynamics'
+    - 'methods.md: 4-stage Gauss-Seidel fixed-point micro-macro GE convergence protocol'
+  evidence_grounding:
+    score: 4.7
+    rationale: Grounding in empirical literature, statutory sources, and institutional reports is outstanding. 62 machine-verified
+      sources in plan/sources.yaml cover landmark UBI trials (OpenResearch, Finland, B-MINCOME, Kenya, Alaska, Stockton),
+      frontier AI exposure literature (Acemoglu, Eloundou, Felten, Webb, Gmyrek, Cazzaniga, Albanesi), macroeconomic and optimal
+      tax frameworks (Kaplan-Moll-Violante, Auclert et al., Gali-Monacelli, Saez, Guerreiro et al., Korinek-Suh), and Spanish
+      labor/tax microeconometrics (Bentolila et al., Almunia-Lopez-Rodriguez). Module M15 provides a rigorous theoretical
+      reconciliation explaining why short-run trials observe labor supply reductions due to intertemporal leisure substitution
+      while permanent dividends do not.
+    evidence:
+    - 62 verified sources in plan/sources.yaml with real DOIs and URLs
+    - OpenResearch 2024 evaluations (Vivalt et al., Bartik et al., Miller et al.) integrated in M08, M10, M14, M15
+    - Finnish nationwide register-linked trial (Kangas et al. 2021) cited in M08, M12, M14, M15
+    - B-MINCOME Barcelona evaluation (Todeschini et al. 2020) and Catalan pilot blueprint in M02, M10, M15
+    - Spanish empirical labor duality and ETI literature (Bentolila et al. 2012, Almunia & Lopez-Rodriguez 2019)
+    - HANK and currency-union macroeconomic literature (Kaplan et al. 2018, Auclert et al. 2024, Gali & Monacelli 2005)
+    - Theoretical literature on AI automation and optimal taxation (Acemoglu & Restrepo 2019, Acemoglu 2024, Korinek & Suh
+      2024, Guerreiro et al. 2022)
+    - M15 structural parameter transportability equation resolving finite-horizon experimental bias
+  spain_fit:
+    score: 4.8
+    rationale: 'The institutional fit to Spain is exceptional. The plan integrates exact Spanish statutes, tax codes, and
+      administrative bodies: Ley 35/2006 (IRPF Arts. 9, 20, 56-61, 84), Ley 19/2021 (IMV), RD 789/2022 (employment incentive),
+      RDL 32/2021 (labor reform / fijos discontinuos), TRLGSS (Arts. 44, 280), Ley 12/2023 (Housing / zonas tensionadas),
+      LOFCA, Ley 22/2009 (regional financing), Concierto Económico Vasco (Ley 12/2002) and Convenio de Navarra (Ley 28/1990),
+      Ley 27/2014 (Corporate Tax), Ley 58/2003 (LGT), Ley 1/2000 (LEC Art. 607), Ley 39/2015 (LPAC Art. 41), LOEPSF, and Constitutional
+      jurisprudence (STC 158/2021, STC 19/2024). Every module''s Section 6 rigorously contrasts Municipal, Regional (Common
+      vs Foral regimes), and National tiers. Concrete administrative mechanisms (Numerical Tax Code, Cuenta Única Tributaria-Social,
+      and inembargabilidad) provide an actionable blueprint ready for AIReF, IEF, and ministerial review.'
+    evidence:
+    - 'Comprehensive statutory coverage: LIRPF, Ley IMV, RD 789/2022, RDL 32/2021, TRLGSS, Ley de Vivienda, LOFCA, Ley 22/2009,
+      Concierto Vasco, Convenio Navarro, LOEPSF, LGT, LEC, LPAC, LOPDGDD'
+    - 'Tribunal Constitucional doctrine: STC 158/2021 (State basic competence) and STC 19/2024 (Foral IMV management)'
+    - Explicit three-tier territorial comparison (Municipal, Regional Régimen Común vs Foral, National) in Section 6 of all
+      17 modules
+    - 'Detailed administrative implementation: Numerical Tax Code (Código de Retención Sintético), Cuenta Única Tributaria-Social,
+      and inembargabilidad under LEC Art. 607 and TRLGSS Art. 44'
+    - Microdata linkages across AEAT Form 111/190/100, MCVL, EPA, ECV, EPF, BDCAP, and regional lease registries
+  ai_scenarios:
+    score: 4.5
+    rationale: Scenarios S1 (moderate, delta s_L = -2.5 pp), S2 (severe, -7.0 pp), and S3 (structural compression, -15.0 pp)
+      are fully operationalized across modules. They are linked to benefit tiers (Tier A €600, Tier B €900, Tier C €1,200),
+      shifting tax bases (labor IRPF in S1, corporate operating surplus in S2, AI-rent sovereign dividend fund in S3), and
+      occupational exposure distributions (CNO-11). Scenario transitions are governed by an independent AIReF-certified composite
+      displacement index (I_AI) with explicit trigger bands. While S1 and S2 are thoroughly calibrated to microdata, S3 relies
+      on long-run steady-state projections given the absence of historical compute-monopoly precedents.
+    evidence:
+    - 'Quantitative scenarios defined in plan.yaml and 00-scope.md (S1: -2.5 pp / 8% FTE; S2: -7.0 pp / 20% FTE; S3: -15.0
+      pp / 35% FTE)'
+    - 'M01: CNO-11 task exposure crosswalk scaled by firm-size AI adoption (ETICCE) and collective bargaining floors'
+    - 'M02: Tiers A (€600), B (€900), and C (€1,200) matched to S1, S2, and S3'
+    - 'M03 & M16: Scenario-contingent shift from labor IRPF to corporate net operating surplus and sovereign fund dividends'
+    - 'M17: AIReF-certified composite displacement index (I_AI) with explicit trigger bands (I_AI < 1.0 -> Tier A; 1.0 <=
+      I_AI < 2.5 -> Tier B; I_AI >= 2.5 -> Tier C)'
+    - 'M17: Compound tail-risk stress tests including energy stagflation under S2'
+  feasibility:
+    score: 4.4
+    rationale: High operational and data feasibility. Accessible Spanish public and restricted administrative datasets (EPA,
+      ECV, MCVL, Muestra de Declarantes, EPF, BDCAP, ETICCE, INCASÒL/IVIMA) are specified with clear institutional homes.
+      Pilot costs are explicitly budgeted (€515M gross, €295M net after clawbacks over 36 months, ~€98M/year for N=20,000
+      across J=70 clusters) and mapped to realistic funding mechanisms (national/regional R&D allocations and active labor-market
+      funds, avoiding EU ESF+ misclassification). Each module specifies concrete deliverables and person-week effort estimates.
+      Data-access application protocols and institutional ethics board review pathways could be further detailed for audit
+      readiness.
+    evidence:
+    - 'Specific administrative and survey datasets identified: EPA, ECV, MCVL, Muestra de Declarantes, EPF, BDCAP, ETICCE,
+      EAES, INCASÒL/IVIMA, EFF'
+    - 'M10: Explicit 36-month pilot budget (€515M gross, €295M net, €98M/yr) for N=20,000 participants across J=70 clusters'
+    - 'Legally compliant pilot funding structure: dedicated R&D innovation budget lines avoiding ESF+ anti-poverty eligibility
+      conflicts'
+    - Section 8 deliverables and effort estimates (in person-weeks) in all 17 modules
+    - Clear dependency ordering in plan.yaml, methods.md, and paper-outline.md
+  internal_coherence:
+    score: 4.7
+    rationale: Internal coherence across the 17 modules and core plan documents is near-flawless. Benefit tiers (Tier A €600
+      adult / €240 minor, Tier B €900 / €360, Tier C €1,200 / €480) with a consistent 40% child equivalence weight are maintained
+      throughout. Baseline status-quo public service financing (~€125B/year IRPF), absorbed non-contributory transfers (~€14.5B),
+      retained contributory pensions (~€90B / 5.5-6.0% GDP) under the Dual-Pillar framework, and pilot dimensions (N=20,000,
+      J=70, 36 months, 0%/38%/50% clawbacks) are perfectly aligned. The four-stage micro-macro Gauss-Seidel closure pipeline
+      in methods.md creates a closed, mutually consistent analytical system.
+    evidence:
+    - Benefit tiers harmonized across M02, M03, M07, M09, M10, M13, M17, and 00-scope.md
+    - Child equivalence weight strictly 40% (alpha_child = 0.40) throughout all modules
+    - Status-Quo Budget Neutrality preserving €125B baseline IRPF collections in M03, M07, M09, and methods.md
+    - Dual-Pillar architecture preserving ~€90B in contributory pensions with Complemento de Neutralidad Fiscal in M03, M07,
+      M09
+    - 'Pilot parameters harmonized: N=20,000, J=70 clusters, 36 months, clawback rates (0%, 38%, 50%) in M08, M10, methods.md'
+    - Consolidated fiscal bridge in M03 linking INSS savings (M07), corporate surplus taxes (M16), and TGSS payroll losses
+      (M01)
+    - Gauss-Seidel iterative micro-macro fixed-point loop in methods.md Section 3
+  counterarguments:
+    score: 4.7
+    rationale: Steel-manned counterarguments are systematically confronted in Section 7 of every module and tested through
+      adversarial stress testing. Key addressed objections include Acemoglu's productivity modesty, single-adult shelter vulnerability
+      in expensive cities, middle-decile effective tax rate hikes, current-account / external import leakage in a currency
+      union, landlord rental capture, EU free-movement infringement, trade union contributory concerns, compounded labor substitution
+      effects, pilot finite-horizon bias, post-trial benefit cliffs, territorial fiscal backlash, ghost registration fraud,
+      female labor detachment, capital flight, and democratic deficit of algorithmic triggers. Module M17 pre-commits to disconfirmation
+      criteria and automatic circuit-breakers (e.g. 20% rental pass-through ceiling, 1.2 pp core inflation gap / 150 bps sovereign
+      spread triggers).
+    evidence:
+    - Dedicated Section 7 in all 17 modules engaging primary economic, legal, and political objections
+    - 'M01: Acemoglu productivity modesty addressed via state-contingent triggers bracketing S1 against S2/S3'
+    - 'M03: Middle-decile effective tax rate concerns addressed via net disposable income curves and capital/AI-rent shifting'
+    - 'M04: Balance of Payments import leakage addressed via sector-specific import propensities in HANK'
+    - 'M05: Urban landlord rent capture addressed via 20% pass-through circuit-breaker and portable UBR (M13)'
+    - 'M06: EU free movement infringement mitigated via bifurcated architecture under Dir 2004/38 Art 24(2)'
+    - 'M07: Bismarckian contributory alienation mitigated via Dual-Pillar positive slope and Art. 280 TRLGSS pension credits'
+    - 'M10: Finite-horizon bias mitigated via life-cycle parameter transportability (M15) and automatic IMV reinscription
+      guarantee'
+    - 'M16: Capital flight mitigated via origin-based net operating surplus on domestic activity (CJEU Case C-475/03)'
+    - 'M17: Four compound tail-risk stress tests (energy stagflation, ETI doubling, housing inelasticity, sovereign debt selloff)
+      and automatic fiscal surcharges'
+  ethics_equity:
+    score: 4.8
+    rationale: Exemplary ethical and distributional architecture. The plan enforces an inviolable No-Loser Guarantee via the
+      Complemento de Neutralidad Fiscal (M02, M07, M09), ensuring zero disposable-income loss for any pensioner or vulnerable
+      household. SAAD disability and dependency benefits (Ley 39/2006) remain 100% additive (M07, M14), and older unemployed
+      workers retain Art. 280 TRLGSS pension contribution credits. Individual unconditional entitlement empowers female intra-household
+      bargaining (M14) and eliminates IMV cohabitation penalties (M02). Pilot ethics avoid welfare cliffs through automatic
+      post-trial IMV reinscription (M10), randomize clawbacks strictly within the grant envelope to avoid unconstitutional
+      taxation (M10), protect employee privacy from HR snooping via the Numerical Tax Code (M12), and establish strict inembargabilidad
+      under LEC Art. 607 and TRLGSS Art. 44 alongside last-mile inclusion protocols for homeless and unbanked populations
+      (M12).
+    evidence:
+    - No-Loser Guarantee (Complemento de Neutralidad Fiscal / Derechos Adquiridos) in M02, M07, M09 ensuring zero net income
+      loss
+    - Statutory preservation of Art. 280 TRLGSS pension contribution credits for displaced workers aged 52+ in M07
+    - Full statutory additivity of Ley 39/2006 (SAAD) dependency allowances and disability supplements in M07 and M14
+    - Individual entitlement empowering female intra-household bargaining evaluated via Chiappori collective model in M14
+    - 'Pilot ethical safeguards in M10: guaranteed automatic IMV reinscription and non-discriminatory grant-envelope clawback
+      arms'
+    - 'Data protection and privacy: Numerical Tax Code (Código de Retención Sintético) under GDPR Art. 9/22 and LOPDGDD in
+      M12'
+    - 'Legal subsistence shield: inembargabilidad under LEC Art. 607 and TRLGSS Art. 44, prohibiting LGT Arts. 71-73 automated
+      set-offs in M12'
+    - Tax-Benefit Symmetry principle guaranteeing universal minimum existencial access in M13
+    - Last-mile inclusion protocol for unbanked and homeless populations via municipal de oficio registration and Correos
+      delivery in M12
+critical_issues: []
+top_improvements:
+- Operationalize the quantitative input-output sectoral disaggregation in HANK (M04) and EUROMOD (M09) to capture trade balance
+  and intermediate import leakage of AI compute infrastructure at a 64-sector NACE level.
+- Formulate explicit closed-form covariance kernels for spatial spillover decay across contiguous census tracts in the cluster
+  saturation design (M10).
+- Develop an open-source microsimulation calibration notebook validating Pareto alpha parameters for top-tail capital income
+  in the Muestra de Declarantes de IRPF (M03, M09).
+- Detail the administrative data-exchange SLA and microdata anonymization protocol between INSS, AEAT, and regional health
+  registries (BDCAP) for pilot execution (M10, M12).
+- Further elaborate the long-term governance and ethical investment mandate of the Fondo Soberano de Renta Básica y Dividendos
+  de IA (M16) under EU State Aid and ESG guidelines.
+- Calibrate municipal rental supply elasticity distributions across mid-sized Spanish cities (50,000–250,000 inhabitants)
+  to refine internal relocation projections under M13.
+sota_assessment: The Universal Basic Rent (Spain) research plan represents a comprehensive, methodologically sophisticated,
+  and institutionally precise framework that is exceptionally close to state-of-the-art academic publication and policy readiness.
+  It successfully synthesizes frontier empirical UBI literature (OpenResearch, Finland, B-MINCOME, Kenya, Alaska) with granular
+  Spanish public finance, labor economics, and constitutional jurisprudence. By establishing a rigorous Status-Quo Budget
+  Neutrality constraint, a Dual-Pillar contributory pension integration with an inviolable No-Loser Guarantee, a two-sector
+  currency-union HANK open-economy closure, a statistically powered two-stage spatial saturation RCT with legally compliant
+  clawback arms, and an AIReF-certified composite displacement trigger framework, the plan establishes an audit-ready blueprint
+  capable of withstanding scrutiny by top academic journals, AIReF, the Instituto de Estudios Fiscales, and international
+  bodies.
