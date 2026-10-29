@@ -1,0 +1,75 @@
+{
+  "total_clusters": 70,
+  "treated_clusters": 35,
+  "control_clusters": 35,
+  "total_sample_size": 20000,
+  "mean_cluster_size": 285,
+  "intra_cluster_correlation": 0.03,
+  "significance_alpha": 0.05,
+  "target_power": 0.8,
+  "average_saturation": 0.66,
+  "mde_results": {
+    "Labor Supply Hours (weekly)": {
+      "outcome_name": "Labor Supply Hours (weekly)",
+      "baseline_mean": 37.5,
+      "baseline_std": 7.8,
+      "mde_absolute": 0.461,
+      "mde_percent": 1.23,
+      "target_threshold": 1.2,
+      "is_target_met": true,
+      "direct_effect_std_error": 0.1624,
+      "spillover_std_error": 0.3572
+    },
+    "Rental Pass-Through (EUR/mo)": {
+      "outcome_name": "Rental Pass-Through (EUR/mo)",
+      "baseline_mean": 750.0,
+      "baseline_std": 180.0,
+      "mde_absolute": 11.254,
+      "mde_percent": 1.5,
+      "target_threshold": 21.0,
+      "is_target_met": true,
+      "direct_effect_std_error": 3.96,
+      "spillover_std_error": 4.0532
+    },
+    "Mental Health Index (GHQ-12 SD)": {
+      "outcome_name": "Mental Health Index (GHQ-12 SD)",
+      "baseline_mean": 0.0,
+      "baseline_std": 1.0,
+      "mde_absolute": 0.059,
+      "mde_percent": 0.0,
+      "target_threshold": 0.15,
+      "is_target_met": true,
+      "direct_effect_std_error": 0.0208,
+      "spillover_std_error": 0.0458
+    },
+    "Reservation Wage (EUR/mo)": {
+      "outcome_name": "Reservation Wage (EUR/mo)",
+      "baseline_mean": 1250.0,
+      "baseline_std": 310.0,
+      "mde_absolute": 18.34,
+      "mde_percent": 1.47,
+      "target_threshold": 45.0,
+      "is_target_met": true,
+      "direct_effect_std_error": 6.4533,
+      "spillover_std_error": 14.1977
+    },
+    "Training Enrollment Rate (pp)": {
+      "outcome_name": "Training Enrollment Rate (pp)",
+      "baseline_mean": 14.5,
+      "baseline_std": 35.2,
+      "mde_absolute": 2.082,
+      "mde_percent": 14.36,
+      "target_threshold": 2.5,
+      "is_target_met": true,
+      "direct_effect_std_error": 0.7328,
+      "spillover_std_error": 1.6121
+    }
+  },
+  "monte_carlo_power_achieved": {
+    "Labor Supply Hours (weekly)": 0.9999999716904526,
+    "Rental Pass-Through (EUR/mo)": 0.9995856557500734,
+    "Mental Health Index (GHQ-12 SD)": 0.9999999245829858,
+    "Reservation Wage (EUR/mo)": 0.9999997323062982,
+    "Training Enrollment Rate (pp)": 0.926689682825164
+  }
+}

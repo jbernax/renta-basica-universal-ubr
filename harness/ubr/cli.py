@@ -122,7 +122,30 @@ def _build_parser() -> argparse.ArgumentParser:
     mac_summary.add_argument("--tier", choices=["A", "B", "C"], default="B")
     mac_summary.add_argument("--scenario", choices=["S1", "S2", "S3"], default="S2")
 
+    pil = sub.add_parser("pilot", help="Track 4: Experimental Pilot Protocol, GIS & AEA PAP (M05, M08, M10, M15)")
+    pil_sub = pil.add_subparsers(dest="pil_cmd", required=True)
+
+    pil_clust = pil_sub.add_parser("clusters", help="Inspect J=70 spatial cluster registry and mobility GIS")
+    pil_clust.add_argument("--export", metavar="PATH", help="Export cluster registry to JSON")
+
+    pil_pwr = pil_sub.add_parser("power", help="Run two-stage saturation power and MDE calculations")
+    pil_pwr.add_argument("--export", metavar="PATH", help="Export power analysis to JSON")
+
+    pil_sdid = pil_sub.add_parser("sdid", help="Simulate SDID rental pass-through across deposit registries (M05)")
+    pil_sdid.add_argument("--export", metavar="PATH", help="Export SDID simulation to JSON")
+
+    pil_bunch = pil_sub.add_parser("bunching", help="Saez/Chetty convex disregard and Kleven missing-mass econometrics")
+    pil_bunch.add_argument("--export", metavar="PATH", help="Export bunching estimates to JSON")
+
+    pil_dec = pil_sub.add_parser("decompose", help="Structural life-cycle decomposition (Frisch vs wealth vs rationing)")
+
+    pil_pap = pil_sub.add_parser("pap", help="Generate and inspect AEA RCT Registry Pre-Analysis Plan")
+    pil_pap.add_argument("--export", metavar="PATH", help="Export AEA PAP to JSON")
+
+    pil_sum = pil_sub.add_parser("summary", help="Print comprehensive Track 4 pilot dashboard")
+
     return parser
+
 
 
 
@@ -430,5 +453,116 @@ def _dispatch(project, args) -> int:
             print(render_stress_battery_table(stress_res))
             return 0
 
+    if args.cmd == "pilot":
+        from ubr.pilot import (
+            ClusterRegistry,
+            TwoStagePowerCalculator,
+            SyntheticDiffInDiff,
+            BunchingEstimator,
+            LifeCycleDecomposition,
+            RegisterLinkageProtocol,
+            PreAnalysisPlanGenerator,
+            export_clusters_json,
+            export_power_json,
+            export_sdid_json,
+            export_bunching_json,
+            export_pap_json,
+            render_clusters_table,
+            render_power_table,
+            render_sdid_table,
+            render_bunching_table,
+            render_decomposition_table,
+            render_pilot_summary,
+        )
+
+        reg = ClusterRegistry()
+
+        if args.pil_cmd == "clusters":
+            print(render_clusters_table(reg))
+            if args.export:
+                export_clusters_json(reg, args.export)
+                print(f"Exported cluster registry to: {args.export}")
+            return 0
+
+        if args.pil_cmd == "power":
+            calc = TwoStagePowerCalculator()
+            p_res = calc.run_full_power_analysis()
+            print(render_power_table(p_res))
+            if args.export:
+                export_power_json(p_res, args.export)
+                print(f"Exported power analysis to: {args.export}")
+            return 0
+
+        if args.pil_cmd == "sdid":
+            sdid = SyntheticDiffInDiff()
+            s_res = sdid.estimate(reg.clusters)
+            print(render_sdid_table(s_res))
+            if args.export:
+                export_sdid_json(s_res, args.export)
+                print(f"Exported SDID simulation to: {args.export}")
+            return 0
+
+        if args.pil_cmd == "bunching":
+            buncher = BunchingEstimator()
+            b_arms = {
+                "Arm_A": buncher.estimate(arm="Arm_A_pure_ubr_0pct", clawback_rate=0.0),
+                "Arm_B": buncher.estimate(arm="Arm_B_mod_clawback_38pct", clawback_rate=0.38),
+                "Arm_C": buncher.estimate(arm="Arm_C_high_clawback_50pct", clawback_rate=0.50),
+            }
+            print(render_bunching_table(b_arms))
+            if args.export:
+                export_bunching_json(b_arms, args.export)
+                print(f"Exported bunching estimates to: {args.export}")
+            return 0
+
+        if args.pil_cmd == "decompose":
+            decomposer = LifeCycleDecomposition()
+            d_res = decomposer.decompose()
+            print(render_decomposition_table(d_res))
+            return 0
+
+        if args.pil_cmd == "pap":
+            gen = PreAnalysisPlanGenerator()
+            pap_doc = gen.generate_plan()
+            print("==================================================================================================")
+            print("         AEA RCT REGISTRY PRE-ANALYSIS PLAN (PAP) - SUMMARY METADATA                             ")
+            print("==================================================================================================")
+            print(f"Trial ID:               {pap_doc.trial_id}")
+            print(f"Title:                  {pap_doc.title}")
+            print(f"Lead Institution:       {pap_doc.lead_institution}")
+            print(f"Partners:               {', '.join(pap_doc.consortium_partners[:3])}...")
+            print(f"Registration Date:      {pap_doc.registration_date} | Duration: {pap_doc.trial_duration_months} Months")
+            print("Pre-Registered Hypotheses:")
+            for h in pap_doc.hypotheses:
+                print(f"  * [{h.hypothesis_id}] {h.category}: {h.statement[:80]}...")
+            print("Primary Outcome Families:")
+            for e in pap_doc.primary_endpoints:
+                print(f"  * [{e.outcome_id}] {e.name:<28} | MDE: {e.mde_threshold:<6} | Reg: {e.source_register}")
+            print("==================================================================================================")
+            if args.export:
+                export_pap_json(pap_doc, args.export)
+                print(f"Exported AEA Pre-Analysis Plan to: {args.export}")
+            return 0
+
+        if args.pil_cmd == "summary":
+            calc = TwoStagePowerCalculator()
+            p_res = calc.run_full_power_analysis()
+            sdid = SyntheticDiffInDiff()
+            s_res = sdid.estimate(reg.clusters)
+            buncher = BunchingEstimator()
+            b_arms = {
+                "Arm_A": buncher.estimate(arm="Arm_A_pure_ubr_0pct", clawback_rate=0.0),
+                "Arm_B": buncher.estimate(arm="Arm_B_mod_clawback_38pct", clawback_rate=0.38),
+                "Arm_C": buncher.estimate(arm="Arm_C_high_clawback_50pct", clawback_rate=0.50),
+            }
+            decomposer = LifeCycleDecomposition()
+            d_res = decomposer.decompose()
+            linkage = RegisterLinkageProtocol()
+            budget = linkage.compute_budget_breakdown()
+
+            print(render_pilot_summary(reg, p_res, s_res, b_arms, d_res, budget))
+            return 0
+
     return 1
+
 
