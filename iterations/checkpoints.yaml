@@ -1,0 +1,5 @@
+checkpoints:
+- iteration: 3
+  at: '2026-10-29T17:06:29+00:00'
+  note: 'Checkpoint 1 approved at 5.000/5.000 score: locked all 17 research modules M01-M17 and ratified
+    decisions D-007 through D-010'

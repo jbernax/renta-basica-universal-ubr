@@ -1,8 +1,8 @@
 ---
 id: M03
 title: Fiscal financing and tax-transfer integration
-status: draft
-locked: false
+status: locked
+locked: true
 depends_on: [M01, M02, M07, M09, M16]
 covers: [F03]
 feeds_chapters: [4]

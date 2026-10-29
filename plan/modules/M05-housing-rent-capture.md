@@ -1,8 +1,8 @@
 ---
 id: M05
 title: Housing market pass-through and landlord rent capture
-status: draft
-locked: false
+status: locked
+locked: true
 depends_on: [M02, M04, M10, M13]
 covers: [F06]
 feeds_chapters: [5]

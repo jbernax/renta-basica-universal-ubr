@@ -1,8 +1,8 @@
 ---
 id: M04
 title: Macroeconomic dynamics, inflation, and Eurozone constraints
-status: draft
-locked: false
+status: locked
+locked: true
 depends_on: [M01, M03, M05, M16]
 covers: [F05]
 feeds_chapters: [5]

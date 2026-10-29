@@ -1,8 +1,8 @@
 ---
 id: M12
 title: Administrative delivery, digital infrastructure, and take-up
-status: draft
-locked: false
+status: locked
+locked: true
 depends_on: [M03, M06, M07, M10]
 covers: [F13]
 feeds_chapters: [6]

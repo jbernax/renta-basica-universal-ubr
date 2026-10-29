@@ -1,8 +1,8 @@
 ---
 id: M15
 title: Comparative international and Spanish empirical evidence
-status: draft
-locked: false
+status: locked
+locked: true
 depends_on: [M08, M10, M14]
 covers: [F16]
 feeds_chapters: [1, 7]

@@ -1,8 +1,8 @@
 ---
 id: M16
 title: Capturing AI rents, capital taxation, and sovereign dividend funds
-status: draft
-locked: false
+status: locked
+locked: true
 depends_on: [M01, M03, M04, M06]
 covers: [F04]
 feeds_chapters: [4]

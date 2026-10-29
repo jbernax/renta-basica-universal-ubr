@@ -1,8 +1,8 @@
 ---
 id: M06
 title: Constitutional, competence, and EU legal architecture
-status: draft
-locked: false
+status: locked
+locked: true
 depends_on: [M03, M07, M12, M13]
 covers: [F07]
 feeds_chapters: [6]

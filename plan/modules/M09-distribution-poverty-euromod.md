@@ -1,8 +1,8 @@
 ---
 id: M09
 title: Distributional, poverty, and inequality microsimulation
-status: draft
-locked: false
+status: locked
+locked: true
 depends_on: [M01, M02, M03, M05, M07, M08]
 covers: [F10]
 feeds_chapters: [4]

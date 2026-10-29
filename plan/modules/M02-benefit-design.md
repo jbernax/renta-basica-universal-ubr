@@ -1,8 +1,8 @@
 ---
 id: M02
 title: Benefit design, eligibility, and parameter architecture
-status: draft
-locked: false
+status: locked
+locked: true
 depends_on: [M03, M07, M09]
 covers: [F02]
 feeds_chapters: [3]
