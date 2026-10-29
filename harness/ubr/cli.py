@@ -144,6 +144,26 @@ def _build_parser() -> argparse.ArgumentParser:
 
     pil_sum = pil_sub.add_parser("summary", help="Print comprehensive Track 4 pilot dashboard")
 
+    leg = sub.add_parser("legal", help="Track 5: Model Legislation & Governance Architecture (M06, M11, M12, M13, M16, M17)")
+    leg_sub = leg.add_subparsers(dest="leg_cmd", required=True)
+
+    leg_ant = leg_sub.add_parser("anteproyecto", help="Inspect Model Statute (Anteproyecto de Ley) and official articles")
+    leg_ant.add_argument("--title", metavar="TITULO", help="Filter by title number (e.g., 'Título I')")
+    leg_ant.add_argument("--export", metavar="PATH", help="Export statutory corpus to JSON")
+
+    leg_comp = leg_sub.add_parser("competence", help="Validate Constitutional & EU Law Competence Matrix")
+    leg_comp.add_argument("--detail", action="store_true", help="Show doctrinal defense and supported articles")
+    leg_comp.add_argument("--export", metavar="PATH", help="Export competence matrix to JSON")
+
+    leg_eq = leg_sub.add_parser("equalization", help="Simulate CPFF Intergovernmental Equalization & Foral Cupo balances")
+    leg_eq.add_argument("--scenario", choices=["S1", "S2", "S3"], default="S2", help="AI displacement scenario (default: S2)")
+    leg_eq.add_argument("--export", metavar="PATH", help="Export equalization balances to JSON")
+
+    leg_bic = leg_sub.add_parser("bicameral", help="Simulate bicameral voting, LOEPSF Art. 15.6 override, and CARIN framing")
+    leg_bic.add_argument("--export", metavar="PATH", help="Export bicameral report to JSON")
+
+    leg_sum = leg_sub.add_parser("summary", help="Print consolidated Track 5 executive dashboard")
+
     return parser
 
 
@@ -561,6 +581,59 @@ def _dispatch(project, args) -> int:
             budget = linkage.compute_budget_breakdown()
 
             print(render_pilot_summary(reg, p_res, s_res, b_arms, d_res, budget))
+            return 0
+
+    if args.cmd == "legal":
+        from ubr.legislation.anteproyecto import build_anteproyecto_corpus
+        from ubr.legislation.bicameral_engine import simulate_bicameral_pathway
+        from ubr.legislation.competence_matrix import evaluate_competence_architecture
+        from ubr.legislation.equalization import calculate_intergovernmental_equalization
+        from ubr.legislation.export import (
+            format_anteproyecto_summary,
+            format_bicameral_summary,
+            format_competence_matrix_summary,
+            format_equalization_summary,
+            format_legislation_executive_summary,
+        )
+
+        if args.leg_cmd == "anteproyecto":
+            corpus = build_anteproyecto_corpus()
+            print(format_anteproyecto_summary(corpus, title_num=args.title))
+            if args.export:
+                with open(args.export, "w", encoding="utf-8") as f:
+                    json.dump(corpus.to_dict(), f, indent=2, ensure_ascii=False)
+                print(f"Exported Anteproyecto corpus to: {args.export}")
+            return 0
+
+        if args.leg_cmd == "competence":
+            matrix = evaluate_competence_architecture()
+            print(format_competence_matrix_summary(matrix, detail=args.detail))
+            if args.export:
+                with open(args.export, "w", encoding="utf-8") as f:
+                    json.dump(matrix.to_dict(), f, indent=2, ensure_ascii=False)
+                print(f"Exported Competence Matrix to: {args.export}")
+            return 0
+
+        if args.leg_cmd == "equalization":
+            eq_rep = calculate_intergovernmental_equalization(scenario=args.scenario)
+            print(format_equalization_summary(eq_rep))
+            if args.export:
+                with open(args.export, "w", encoding="utf-8") as f:
+                    json.dump(eq_rep.to_dict(), f, indent=2, ensure_ascii=False)
+                print(f"Exported Equalization report to: {args.export}")
+            return 0
+
+        if args.leg_cmd == "bicameral":
+            bic_rep = simulate_bicameral_pathway()
+            print(format_bicameral_summary(bic_rep))
+            if args.export:
+                with open(args.export, "w", encoding="utf-8") as f:
+                    json.dump(bic_rep.to_dict(), f, indent=2, ensure_ascii=False)
+                print(f"Exported Bicameral report to: {args.export}")
+            return 0
+
+        if args.leg_cmd == "summary":
+            print(format_legislation_executive_summary())
             return 0
 
     return 1
