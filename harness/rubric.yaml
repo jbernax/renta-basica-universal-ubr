@@ -30,7 +30,7 @@ criteria:
       2: Plausible methods named, but endogeneity, equilibrium effects, or data limitations are ignored.
       3: Specific methods (EUROMOD, DiD, RCT, DSGE/HANK) matched to RQs with basic identification strategies.
       4: Explicit identification assumptions, estimands, robustness checks, and structural vs. reduced-form trade-offs for every RQ.
-      5: State-of-the-art empirical and structural design: specifies exact microdata variables, counterfactuals, power/MDE calculations, and general-equilibrium closure.
+      5: "State-of-the-art empirical and structural design: specifies exact microdata variables, counterfactuals, power/MDE calculations, and general-equilibrium closure."
 
   - id: evidence_grounding
     name: Evidence grounding
@@ -52,7 +52,7 @@ criteria:
       2: Names major institutions (IMV, IRPF, INE) but overlooks autonomous communities, foral regimes, or EU constraints.
       3: Accurately incorporates Spanish tax-benefit rules (IRPF, IVA, IMV, rentas mínimas autonómicas), Constitutional articles, and INE/AEAT data.
       4: Deep institutional precision across national, regional (régimen común vs. concierto vasco / convenio navarro), and municipal levels, plus EU law and Eurozone constraints.
-      5: Actionable blueprint ready for AIReF/IEF/Ministry evaluation: specifies statutory reforms, administrative data-linking protocols (AEAT-INSS-Padrón), and territorial financing (LOFCA) mechanics.
+      5: "Actionable blueprint ready for AIReF/IEF/Ministry evaluation: specifies statutory reforms, administrative data-linking protocols (AEAT-INSS-Padrón), and territorial financing (LOFCA) mechanics."
 
   - id: ai_scenarios
     name: Treatment of AI-displacement scenarios
@@ -85,7 +85,7 @@ criteria:
       2: Mostly consistent terminology, but upstream/downstream modules do not align parameters.
       3: Shared definitions, consistent scenario labels (S1-S3), and valid dependency links across modules.
       4: Quantitative parameters (benefit levels, phase-out/tax rates, fiscal targets, pilot scales) are explicitly harmonized across all interdependent modules.
-      5: Seamless systems architecture: outputs of each module (e.g. M01 displacement -> M03 tax base -> M04 macro -> M05 housing) form a closed, mutually consistent analytical pipeline.
+      5: "Seamless systems architecture: outputs of each module (e.g. M01 displacement -> M03 tax base -> M04 macro -> M05 housing) form a closed, mutually consistent analytical pipeline."
 
   - id: counterarguments
     name: Counterarguments and risks
@@ -96,7 +96,7 @@ criteria:
       2: Lists standard risks (inflation, work disincentives) without design mitigations.
       3: Fairly states major economic, legal, and political counterarguments in every module with proposed tests or mitigations.
       4: Engages steel-manned critiques (fiscal impossibility, landlord rent capture, Eurozone inflationary leakage, pull-factor claims, dual-labor-market traps) with falsifiable tests.
-      5: Pre-commits to disconfirmation criteria: specifies what empirical findings or simulation outcomes would invalidate a given UBR design and trigger specific fallback policies.
+      5: "Pre-commits to disconfirmation criteria: specifies what empirical findings or simulation outcomes would invalidate a given UBR design and trigger specific fallback policies."
 
   - id: ethics_equity
     name: Ethics and equity
@@ -107,4 +107,4 @@ criteria:
       2: Notes vulnerable groups or IRB approval without concrete safeguards.
       3: Addresses RCT ethics (informed consent, post-trial cliff), gender/care impacts, disability top-ups, and territorial equity.
       4: Integrates intersectional equity analysis (gender, age, disability, rural/urban, migrant residency rules) and rigorous pilot ethical protocols (GDPR, benefit protection guarantees).
-      5: Exemplary ethical and distributional design: prevents welfare loss for any vulnerable subgroup during transition (no-loser constraint vs. IMV/disability benefits) and sets gold-standard pilot ethics.
+      5: "Exemplary ethical and distributional design: prevents welfare loss for any vulnerable subgroup during transition (no-loser constraint vs. IMV/disability benefits) and sets gold-standard pilot ethics."
