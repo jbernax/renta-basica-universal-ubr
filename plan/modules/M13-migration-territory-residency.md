@@ -1,8 +1,8 @@
 ---
 id: M13
 title: Territorial purchasing power, internal mobility, and residency rules
-status: draft
-locked: false
+status: locked
+locked: true
 depends_on: [M02, M03, M05, M06, M12]
 covers: [F14]
 feeds_chapters: [5, 6]

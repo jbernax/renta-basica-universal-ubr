@@ -1,8 +1,8 @@
 ---
 id: M08
 title: Labor supply, reservation wages, and behavioral responses
-status: draft
-locked: false
+status: locked
+locked: true
 depends_on: [M01, M02, M03, M07, M10]
 covers: [F09]
 feeds_chapters: [2, 7]

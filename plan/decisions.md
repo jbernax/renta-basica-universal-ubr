@@ -25,3 +25,20 @@
 ## D-006 · Conditional AI Labor-Displacement Scenarios (S1–S3)
 - **Status:** Locked (Default adopted at plan approval, 2026-10-29)
 - **Decision:** Rather than treating complete labor-market collapse as an unexamined premise, all modules evaluate UBR across three explicit AI labor-displacement scenarios defined in `plan/plan.yaml`: **S1** (Moderate displacement & task polarization), **S2** (Severe cognitive & service displacement), and **S3** (Structural compression of labor income).
+
+## D-007 · IECA Domestic B2B AI Compute Reverse-Charge Withholding
+- **Status:** Locked (User confirmed at Checkpoint 1, 2026-10-29)
+- **Decision:** Enforce destination-based taxation of foreign AI compute, cloud GPU capacity, and API inference via the *Impuesto Especial sobre Capacidad y Computación de IA* (*IECA*) under TRIRNR and LGT, backed by conditioning corporate income tax deductibility under Art. 15 LIS on verified domestic withholding certificates.
+
+## D-008 · Objective Federal Fiscal Housing Benchmark
+- **Status:** Locked (User confirmed at Checkpoint 1, 2026-10-29)
+- **Decision:** Decouple federal tax conditionality and circuit-breakers on rental income from regional ZMRT declarations under *Ley 12/2023* (bypassing regional boycotts confirmed by STC 79/2024) by establishing an Objective Federal Fiscal Benchmark on LIRPF Art. 23.2 reductions under State tax competence (Art. 149.1.14 CE).
+
+## D-009 · Statutory Social Security Pension Accrual Continuity
+- **Status:** Locked (User confirmed at Checkpoint 1, 2026-10-29)
+- **Decision:** UBR benefit offsets against contributory unemployment benefits shall not terminate statutory retirement contributions; SEPE must maintain retirement contributions under Art. 273 TRLGSS, and displaced workers shall receive a universal *Crédito Cotizatorio Básico por Transición Tecnológica* guaranteeing continuous pension accrual at 100% of the SMI base.
+
+## D-010 · Bicameral Legislative Override Strategy for Expenditure Ceilings
+- **Status:** Locked (User confirmed at Checkpoint 1, 2026-10-29)
+- **Decision:** The bicameral strategy shall enact an Organic Law amending LOEPSF Art. 15.6 by absolute majority in Congress to restore the general constitutional override rule (Art. 90.2 CE, STC 179/1989), neutralizing the Senate's absolute veto over fiscal stability targets and spending ceilings.
+

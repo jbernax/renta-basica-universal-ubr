@@ -1,8 +1,8 @@
 ---
 id: M14
 title: Gender, unpaid care, disability, and health outcomes
-status: draft
-locked: false
+status: locked
+locked: true
 depends_on: [M01, M02, M07, M08, M09, M10]
 covers: [F15]
 feeds_chapters: [3, 7]

@@ -1,8 +1,8 @@
 ---
 id: M10
 title: Multi-level pilot and causal evaluation design
-status: draft
-locked: false
+status: locked
+locked: true
 depends_on: [M02, M05, M06, M08, M12, M15]
 covers: [F11]
 feeds_chapters: [7]

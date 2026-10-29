@@ -1,8 +1,8 @@
 ---
 id: M17
 title: Transition path, scenario triggers, and tail-risk stress tests
-status: draft
-locked: false
+status: locked
+locked: true
 depends_on: [M01, M03, M04, M05, M07, M10, M11, M16]
 covers: [F17]
 feeds_chapters: [8]

@@ -1,8 +1,8 @@
 ---
 id: M01
 title: AI labor displacement and macroeconomic scenarios
-status: draft
-locked: false
+status: locked
+locked: true
 depends_on: [M08, M16]
 covers: [F01]
 feeds_chapters: [1, 2]

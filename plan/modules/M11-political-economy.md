@@ -1,8 +1,8 @@
 ---
 id: M11
 title: Political economy, public opinion, and coalition feasibility
-status: draft
-locked: false
+status: locked
+locked: true
 depends_on: [M03, M06, M09, M16, M17]
 covers: [F12]
 feeds_chapters: [8]

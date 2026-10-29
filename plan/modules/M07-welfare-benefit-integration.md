@@ -1,8 +1,8 @@
 ---
 id: M07
 title: Interaction with existing Spanish welfare benefits
-status: draft
-locked: false
+status: locked
+locked: true
 depends_on: [M02, M03, M06, M09, M14]
 covers: [F08]
 feeds_chapters: [3]
