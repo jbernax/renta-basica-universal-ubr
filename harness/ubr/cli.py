@@ -93,6 +93,35 @@ def _build_parser() -> argparse.ArgumentParser:
     sim_pov.add_argument("--no-stabilizers", action="store_true")
 
     sim_sum = sim_sub.add_parser("summary", help="Print comparative matrix across Tiers A, B, C and Scenarios S1, S2, S3")
+
+    mac = sub.add_parser("macro", help="Track 3: Currency-Union HANK Model & Fiscal Rules (M04, M16, M17)")
+    mac_sub = mac.add_subparsers(dest="mac_cmd", required=True)
+
+    mac_irf = mac_sub.add_parser("irf", help="Simulate open-economy HANK impulse response functions (IRFs)")
+    mac_irf.add_argument("--tier", choices=["A", "B", "C"], default="B", help="UBR Benefit Tier (default: B)")
+    mac_irf.add_argument("--scenario", choices=["S1", "S2", "S3"], default="S2", help="AI displacement scenario (default: S2)")
+    mac_irf.add_argument("--no-stabilizers", action="store_true", help="Disable rent stabilizers (D-008)")
+    mac_irf.add_argument("--export", metavar="PATH", help="Export HANK simulation results to JSON")
+
+    mac_npe = mac_sub.add_parser("npe", help="Evaluate EU Regulation 2024/1263 Net Primary Expenditure & LOEPSF compliance")
+    mac_npe.add_argument("--tier", choices=["A", "B", "C"], default="B")
+    mac_npe.add_argument("--scenario", choices=["S1", "S2", "S3"], default="S2")
+    mac_npe.add_argument("--no-mdi", action="store_true", help="Evaluate unfinanced counterfactual without MDI pairing")
+    mac_npe.add_argument("--export", metavar="PATH", help="Export fiscal rules compliance to JSON")
+
+    mac_fund = mac_sub.add_parser("fund", help="Simulate 15-year Fondo Soberano de Renta Básica y Dividendos de IA (M16)")
+    mac_fund.add_argument("--scenario", choices=["S1", "S2", "S3"], default="S2")
+    mac_fund.add_argument("--export", metavar="PATH", help="Export sovereign fund simulation to JSON")
+
+    mac_stress = mac_sub.add_parser("stress", help="Run compound tail-risk stress tests & circuit-breakers (M17)")
+    mac_stress.add_argument("--tier", choices=["A", "B", "C"], default="B")
+    mac_stress.add_argument("--scenario", choices=["S1", "S2", "S3"], default="S2")
+    mac_stress.add_argument("--export", metavar="PATH", help="Export stress battery results to JSON")
+
+    mac_summary = mac_sub.add_parser("summary", help="Print comprehensive macroeconomic dashboard across M04, M16, and M17")
+    mac_summary.add_argument("--tier", choices=["A", "B", "C"], default="B")
+    mac_summary.add_argument("--scenario", choices=["S1", "S2", "S3"], default="S2")
+
     return parser
 
 
@@ -317,6 +346,88 @@ def _dispatch(project, args) -> int:
                         f"{fb.consolidated_net_balance_pct_gdp:>+18.2f}%"
                     )
             print("-" * 88)
+            return 0
+
+    if args.cmd == "macro":
+        from ubr.macro import (
+            CurrencyUnionHANKModel,
+            EUFiscalGovernanceValidator,
+            SovereignFundAccumulationModel,
+            MacroStressTestHarness,
+            export_fiscal_rules_json,
+            export_hank_json,
+            export_sovereign_fund_json,
+            export_stress_tests_json,
+            render_fiscal_rules_table,
+            render_irf_table,
+            render_sovereign_fund_table,
+            render_stress_battery_table,
+        )
+
+        tier = getattr(args, "tier", "B")
+        scenario = getattr(args, "scenario", "S2")
+
+        if args.mac_cmd == "irf":
+            model = CurrencyUnionHANKModel()
+            res = model.simulate(
+                tier=tier,
+                scenario=scenario,
+                enable_rent_stabilizers=not getattr(args, "no_stabilizers", False),
+            )
+            print(render_irf_table(res))
+            if args.export:
+                export_hank_json(res, args.export)
+                print(f"Exported HANK simulation IRFs to: {args.export}")
+            return 0
+
+        if args.mac_cmd == "npe":
+            validator = EUFiscalGovernanceValidator()
+            res = validator.evaluate_trajectory(
+                tier=tier,
+                scenario=scenario,
+                pair_with_discretionary_revenue=not getattr(args, "no_mdi", False),
+            )
+            print(render_fiscal_rules_table(res))
+            if args.export:
+                export_fiscal_rules_json(res, args.export)
+                print(f"Exported EU fiscal rules evaluation to: {args.export}")
+            return 0
+
+        if args.mac_cmd == "fund":
+            fund_model = SovereignFundAccumulationModel()
+            res = fund_model.simulate_15_year_path(scenario=scenario)
+            print(render_sovereign_fund_table(res))
+            if args.export:
+                export_sovereign_fund_json(res, args.export)
+                print(f"Exported sovereign fund 15-year simulation to: {args.export}")
+            return 0
+
+        if args.mac_cmd == "stress":
+            harness = MacroStressTestHarness()
+            res = harness.run_battery(tier=tier, scenario=scenario)
+            print(render_stress_battery_table(res))
+            if args.export:
+                export_stress_tests_json(res, args.export)
+                print(f"Exported compound stress-test battery to: {args.export}")
+            return 0
+
+        if args.mac_cmd == "summary":
+            model = CurrencyUnionHANKModel()
+            hank_res = model.simulate(tier=tier, scenario=scenario)
+            val = EUFiscalGovernanceValidator()
+            npe_res = val.evaluate_trajectory(tier=tier, scenario=scenario)
+            fund = SovereignFundAccumulationModel()
+            fund_res = fund.simulate_15_year_path(scenario=scenario)
+            harness = MacroStressTestHarness()
+            stress_res = harness.run_battery(tier=tier, scenario=scenario)
+
+            print(render_irf_table(hank_res))
+            print()
+            print(render_fiscal_rules_table(npe_res))
+            print()
+            print(render_sovereign_fund_table(fund_res))
+            print()
+            print(render_stress_battery_table(stress_res))
             return 0
 
     return 1

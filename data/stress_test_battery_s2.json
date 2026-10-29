@@ -1,0 +1,64 @@
+{
+  "metadata": {
+    "all_tests_contained_or_resilient": true,
+    "circuit_breakers_effective": true
+  },
+  "outcomes": [
+    {
+      "stress_id": "STRESS_1",
+      "stress_name": "Energy Stagflation (+50% Import Prices) + S2 Displacement",
+      "scenario": "S2",
+      "tier": "B",
+      "peak_inflation_pct": 3.129263566962896,
+      "peak_non_tradable_inflation_pct": 2.0516320055691435,
+      "peak_sovereign_spread_bps": 81.68345151753813,
+      "terminal_debt_to_gdp_pct": 101.95608638564275,
+      "circuit_breaker_activated": true,
+      "circuit_breaker_name": "Constant-Tax CPI Indexation & Demand Cooling",
+      "system_resilience_status": "CONTAINED",
+      "edp_procedure_triggered": false
+    },
+    {
+      "stress_id": "STRESS_2",
+      "stress_name": "High-Income Tax Evasion Surge (ETI Doubling to 0.50)",
+      "scenario": "S2",
+      "tier": "B",
+      "peak_inflation_pct": 1.9593685258375002,
+      "peak_non_tradable_inflation_pct": 2.0261277039510937,
+      "peak_sovereign_spread_bps": 83.55719422635356,
+      "terminal_debt_to_gdp_pct": 108.95087593234165,
+      "circuit_breaker_activated": true,
+      "circuit_breaker_name": "Anti-Deferral Minimum Tax & Domestic B2B Reverse-Charge (IECA)",
+      "system_resilience_status": "RESILIENT",
+      "edp_procedure_triggered": false
+    },
+    {
+      "stress_id": "STRESS_3",
+      "stress_name": "Metropolitan Housing Supply Bottleneck (Inelastic Rental Markets)",
+      "scenario": "S2",
+      "tier": "B",
+      "peak_inflation_pct": 1.9593685258375002,
+      "peak_non_tradable_inflation_pct": 2.0516320055691435,
+      "peak_sovereign_spread_bps": 83.49417330966038,
+      "terminal_debt_to_gdp_pct": 108.76571893651499,
+      "circuit_breaker_activated": true,
+      "circuit_breaker_name": "Objective Federal Fiscal Housing Benchmark (D-008 / LIRPF 23.2 Revocation)",
+      "system_resilience_status": "RESILIENT",
+      "edp_procedure_triggered": false
+    },
+    {
+      "stress_id": "STRESS_4",
+      "stress_name": "Sovereign Debt Selloff (+150 bps Spread Spike under Rising ECB Rates)",
+      "scenario": "S2",
+      "tier": "B",
+      "peak_inflation_pct": 1.9593685258375002,
+      "peak_non_tradable_inflation_pct": 2.0516320055691435,
+      "peak_sovereign_spread_bps": 225.28685132035673,
+      "terminal_debt_to_gdp_pct": 113.53506167040774,
+      "circuit_breaker_activated": true,
+      "circuit_breaker_name": "EU Reg 2024/1263 Net Expenditure Discipline & ECB TPI Eligibility",
+      "system_resilience_status": "CONTAINED",
+      "edp_procedure_triggered": false
+    }
+  ]
+}
