@@ -1,0 +1,261 @@
+{
+  "congress_seats_total": 350,
+  "senate_seats_total": 266,
+  "parties": [
+    {
+      "code": "PSOE",
+      "name": "Partido Socialista Obrero Español",
+      "congress_seats": 121,
+      "senate_seats": 88,
+      "ideology_axis": -0.35,
+      "territorial_axis": 0.5,
+      "support_loepsf_reform": true,
+      "support_ubr_package": true,
+      "carin_framing_elasticity": 14.0
+    },
+    {
+      "code": "PP",
+      "name": "Partido Popular",
+      "congress_seats": 137,
+      "senate_seats": 144,
+      "ideology_axis": 0.6,
+      "territorial_axis": 0.2,
+      "support_loepsf_reform": false,
+      "support_ubr_package": false,
+      "carin_framing_elasticity": 18.5
+    },
+    {
+      "code": "VOX",
+      "name": "Vox",
+      "congress_seats": 33,
+      "senate_seats": 3,
+      "ideology_axis": 0.9,
+      "territorial_axis": 0.0,
+      "support_loepsf_reform": false,
+      "support_ubr_package": false,
+      "carin_framing_elasticity": 4.0
+    },
+    {
+      "code": "SUMAR",
+      "name": "Sumar",
+      "congress_seats": 27,
+      "senate_seats": 4,
+      "ideology_axis": -0.75,
+      "territorial_axis": 0.7,
+      "support_loepsf_reform": true,
+      "support_ubr_package": true,
+      "carin_framing_elasticity": 12.0
+    },
+    {
+      "code": "PODEMOS",
+      "name": "Podemos (Grupo Mixto)",
+      "congress_seats": 4,
+      "senate_seats": 0,
+      "ideology_axis": -0.85,
+      "territorial_axis": 0.7,
+      "support_loepsf_reform": true,
+      "support_ubr_package": true,
+      "carin_framing_elasticity": 10.0
+    },
+    {
+      "code": "ERC",
+      "name": "Esquerra Republicana de Catalunya",
+      "congress_seats": 7,
+      "senate_seats": 4,
+      "ideology_axis": -0.65,
+      "territorial_axis": 0.95,
+      "support_loepsf_reform": true,
+      "support_ubr_package": true,
+      "carin_framing_elasticity": 15.0
+    },
+    {
+      "code": "JUNTS",
+      "name": "Junts per Catalunya",
+      "congress_seats": 7,
+      "senate_seats": 6,
+      "ideology_axis": 0.2,
+      "territorial_axis": 0.95,
+      "support_loepsf_reform": true,
+      "support_ubr_package": true,
+      "carin_framing_elasticity": 22.0
+    },
+    {
+      "code": "BILDU",
+      "name": "EH Bildu",
+      "congress_seats": 6,
+      "senate_seats": 5,
+      "ideology_axis": -0.7,
+      "territorial_axis": 0.95,
+      "support_loepsf_reform": true,
+      "support_ubr_package": true,
+      "carin_framing_elasticity": 14.0
+    },
+    {
+      "code": "PNV",
+      "name": "Euzko Alderdi Jeltzalea - Partido Nacionalista Vasco",
+      "congress_seats": 5,
+      "senate_seats": 5,
+      "ideology_axis": 0.15,
+      "territorial_axis": 0.9,
+      "support_loepsf_reform": true,
+      "support_ubr_package": true,
+      "carin_framing_elasticity": 21.0
+    },
+    {
+      "code": "BNG",
+      "name": "Bloque Nacionalista Galego",
+      "congress_seats": 1,
+      "senate_seats": 1,
+      "ideology_axis": -0.65,
+      "territorial_axis": 0.85,
+      "support_loepsf_reform": true,
+      "support_ubr_package": true,
+      "carin_framing_elasticity": 16.0
+    },
+    {
+      "code": "CC",
+      "name": "Coalición Canaria",
+      "congress_seats": 1,
+      "senate_seats": 1,
+      "ideology_axis": 0.1,
+      "territorial_axis": 0.75,
+      "support_loepsf_reform": true,
+      "support_ubr_package": true,
+      "carin_framing_elasticity": 19.0
+    },
+    {
+      "code": "UPN",
+      "name": "Unión del Pueblo Navarro",
+      "congress_seats": 1,
+      "senate_seats": 1,
+      "ideology_axis": 0.55,
+      "territorial_axis": 0.4,
+      "support_loepsf_reform": false,
+      "support_ubr_package": false,
+      "carin_framing_elasticity": 9.0
+    },
+    {
+      "code": "REG",
+      "name": "Senadores Autonómicos Mixtos / Otros (Geroa Bai, AHI, etc.)",
+      "congress_seats": 0,
+      "senate_seats": 4,
+      "ideology_axis": -0.2,
+      "territorial_axis": 0.8,
+      "support_loepsf_reform": true,
+      "support_ubr_package": true,
+      "carin_framing_elasticity": 15.0
+    }
+  ],
+  "loepsf_congress_vote": {
+    "chamber": "Congreso de los Diputados (Aprobación Orgánica Inicial)",
+    "total_seats": 350,
+    "majority_threshold": 176,
+    "yes_votes": 179,
+    "no_votes": 171,
+    "abstentions": 0,
+    "passed": true,
+    "margin": 3,
+    "voting_parties_yes": [
+      "PSOE",
+      "SUMAR",
+      "PODEMOS",
+      "ERC",
+      "JUNTS",
+      "BILDU",
+      "PNV",
+      "BNG",
+      "CC",
+      "REG"
+    ],
+    "voting_parties_no": [
+      "PP",
+      "VOX",
+      "UPN"
+    ]
+  },
+  "loepsf_senate_vote": {
+    "chamber": "Senado (Tramitación y Veto de la Mayoría Conservadora)",
+    "total_seats": 266,
+    "majority_threshold": 134,
+    "yes_votes": 118,
+    "no_votes": 148,
+    "abstentions": 0,
+    "passed": false,
+    "margin": -16,
+    "voting_parties_yes": [
+      "PSOE",
+      "SUMAR",
+      "PODEMOS",
+      "ERC",
+      "JUNTS",
+      "BILDU",
+      "PNV",
+      "BNG",
+      "CC",
+      "REG"
+    ],
+    "voting_parties_no": [
+      "PP",
+      "VOX",
+      "UPN"
+    ]
+  },
+  "loepsf_congress_override": {
+    "chamber": "Congreso de los Diputados (Levantamiento Definitivo del Veto del Senado)",
+    "total_seats": 350,
+    "majority_threshold": 176,
+    "yes_votes": 179,
+    "no_votes": 171,
+    "abstentions": 0,
+    "passed": true,
+    "margin": 3,
+    "voting_parties_yes": [
+      "PSOE",
+      "SUMAR",
+      "PODEMOS",
+      "ERC",
+      "JUNTS",
+      "BILDU",
+      "PNV",
+      "BNG",
+      "CC",
+      "REG"
+    ],
+    "voting_parties_no": [
+      "PP",
+      "VOX",
+      "UPN"
+    ]
+  },
+  "ubr_statute_congress_vote": {
+    "chamber": "Congreso de los Diputados (Aprobación Final de la Ley de RBU)",
+    "total_seats": 350,
+    "majority_threshold": 176,
+    "yes_votes": 179,
+    "no_votes": 171,
+    "abstentions": 0,
+    "passed": true,
+    "margin": 3,
+    "voting_parties_yes": [
+      "PSOE",
+      "SUMAR",
+      "PODEMOS",
+      "ERC",
+      "JUNTS",
+      "BILDU",
+      "PNV",
+      "BNG",
+      "CC",
+      "REG"
+    ],
+    "voting_parties_no": [
+      "PP",
+      "VOX",
+      "UPN"
+    ]
+  },
+  "traditional_welfare_approval_pct": 44.2,
+  "ai_productivity_approval_pct": 62.8,
+  "framing_delta_pp": 18.6,
+  "tsebelis_winset_volume": 0.462
+}

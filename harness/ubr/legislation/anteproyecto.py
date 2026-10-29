@@ -1,0 +1,910 @@
+"""Statutory Model Legislation (Anteproyecto de Ley) for Universal Basic Rent in Spain.
+
+Implements Track 5 (M06, M11, M12, M13, M16, M17, Decisions D-001 through D-010).
+Codified across 9 Titles, Additional, Transitory, and Final Dispositions, matching
+official Spanish administrative-legal drafting standards (Comisión General de Codificación).
+"""
+
+from __future__ import annotations
+
+from dataclasses import dataclass, field
+from typing import Any, Dict, List, Optional
+
+
+@dataclass
+class StatutoryArticle:
+    """Individual article within the Model Statute."""
+
+    id: str
+    title_number: str
+    chapter: str
+    article_number: str
+    heading: str
+    text: str
+    constitutional_bases: List[str] = field(default_factory=list)
+    reformed_statutes: List[str] = field(default_factory=list)
+    key_mechanisms: List[str] = field(default_factory=list)
+
+    def to_dict(self) -> Dict[str, Any]:
+        return {
+            "id": self.id,
+            "title_number": self.title_number,
+            "chapter": self.chapter,
+            "article_number": self.article_number,
+            "heading": self.heading,
+            "text": self.text,
+            "constitutional_bases": self.constitutional_bases,
+            "reformed_statutes": self.reformed_statutes,
+            "key_mechanisms": self.key_mechanisms,
+        }
+
+
+@dataclass
+class StatutoryTitle:
+    """Title section within the Model Statute."""
+
+    title_number: str
+    heading: str
+    description: str
+    articles: List[StatutoryArticle] = field(default_factory=list)
+
+    def to_dict(self) -> Dict[str, Any]:
+        return {
+            "title_number": self.title_number,
+            "heading": self.heading,
+            "description": self.description,
+            "articles": [a.to_dict() for a in self.articles],
+        }
+
+
+@dataclass
+class AnteproyectoCorpus:
+    """Full Anteproyecto de Ley statutory corpus."""
+
+    official_title: str
+    short_title: str
+    preamble: str
+    titles: List[StatutoryTitle] = field(default_factory=list)
+    additional_provisions: List[Dict[str, Any]] = field(default_factory=list)
+    transitory_provisions: List[Dict[str, Any]] = field(default_factory=list)
+    repealing_provisions: List[Dict[str, Any]] = field(default_factory=list)
+    final_provisions: List[Dict[str, Any]] = field(default_factory=list)
+
+    def to_dict(self) -> Dict[str, Any]:
+        return {
+            "official_title": self.official_title,
+            "short_title": self.short_title,
+            "preamble": self.preamble,
+            "titles": [t.to_dict() for t in self.titles],
+            "additional_provisions": self.additional_provisions,
+            "transitory_provisions": self.transitory_provisions,
+            "repealing_provisions": self.repealing_provisions,
+            "final_provisions": self.final_provisions,
+        }
+
+
+def build_anteproyecto_corpus() -> AnteproyectoCorpus:
+    """Constructs the comprehensive Model Statute corpus."""
+    official_title = (
+        "Anteproyecto de Ley Reguladora de la Renta Básica Universal, la Transición "
+        "Económica Algorítmica y la Sostenibilidad Social y Territorial"
+    )
+    short_title = "Ley de Renta Básica Universal y Transición Algorítmica"
+
+    preamble = (
+        "EXPOSICIÓN DE MOTIVOS\n\n"
+        "I. Marco de Transformación Tecnológica y Necesidad Normativa.\n"
+        "La economía española y el conjunto de la Unión Europea afrontan una transformación "
+        "estructural sin precedentes derivada de la rápida difusión de sistemas de inteligencia "
+        "artificial generativa, modelos fundacionales de aprendizaje profundo y automatización "
+        "avanzada. La evidencia empírica confirma que dicha disrupción incide de forma asimétrica "
+        "sobre el mercado laboral, comprimiendo la participación del factor trabajo en la renta "
+        "nacional y polarizando el empleo en ocupaciones tanto cognitivas como de servicios. "
+        "Frente a este escenario, los mecanismos tradicionales de garantía de ingresos condicionados, "
+        "caracterizados por la fragmentación administrativa, la comprobación retrospectiva de recursos "
+        "y elevadas tasas de no cobertura involuntaria, resultan insuficientes para sostener la cohesión social.\n\n"
+        "II. Fundamento Constitucional y Naturaleza Jurídica.\n"
+        "La presente Ley instaura la Renta Básica Universal (RBU) como un derecho subjetivo, individual, "
+        "universal e incondicional de toda persona residente en territorio español. Su arquitectura "
+        "descansa de modo primordial en las competencias exclusivas del Estado sobre regulación de las "
+        "condiciones básicas que garanticen la igualdad de todos los españoles en el ejercicio de los "
+        "derechos y en el cumplimiento de los deberes constitucionales (artículo 149.1.1.ª de la Constitución "
+        "Española), Hacienda general y Deuda del Estado (artículo 149.1.14.ª CE), y legislación básica y "
+        "régimen económico de la Seguridad Social (artículo 149.1.17.ª CE), en directa concordancia con el "
+        "mandato de suficiencia protectora consagrado en el artículo 41 CE y la doctrina del Tribunal "
+        "Constitucional expresada en las Sentencias 158/2021 y 19/2024.\n\n"
+        "III. Articulación Tributaria en el IRPF y Simetría Fiscal.\n"
+        "El instrumento central de instrumentación es la Deducción Reembolsable Universal por Renta Básica "
+        "integrada en la Ley 35/2006 del Impuesto sobre la Renta de las Personas Físicas. A través de este "
+        "mecanismo, liquidado mensualmente de forma anticipada y automática, se garantiza que cada persona "
+        "adulta perciba la cuantía legalmente fijada sin incurrir en trampas de pobreza ni desincentivos al "
+        "empleo. Se preserva rigurosamente el mínimo de subsistencia (STC 214/1994) para aquellos contribuyentes "
+        "en período transitorio de carencia, y se establece un Parámetro Fiscal Federal Objetivo en los "
+        "arrendamientos de vivienda para neutralizar la captura de rentas sin interferir en competencias autonómicas.\n\n"
+        "IV. Captura de Rentas Algorítmicas y Sostenibilidad Financiera.\n"
+        "Para responder al desplazamiento del factor trabajo, se articula el Impuesto Especial sobre Capacidad "
+        "y Computación de Inteligencia Artificial (IECA) en el Texto Refundido de la Ley del Impuesto sobre la "
+        "Renta de no Residentes, cerrando la vía de elusión mediante la condicionalidad de deducibilidad en el "
+        "Impuesto sobre Sociedades (artículo 15 LIS). Asimismo, se crea el Fondo Soberano de Transición Algorítmica "
+        "(FSTA) bajo el artículo 128.2 CE, dotado de un blindaje parlamentario reforzado y reglas de acumulación "
+        "anticíclicas conformes con el Reglamento (UE) 2024/1263.\n\n"
+        "V. Eficiencia Administrativa, Privacidad y Cohesión Territorial.\n"
+        "La gestión se confía a la Cuenta Única Tributaria-Social operada coordinadamente por la AEAT y el INSS, "
+        "salvaguardando la privacidad laboral mediante un Código de Retención Sintético y estableciendo blindajes "
+        "absolutos frente a embargos indebidos. En el ámbito territorial, se aprueba el Fondo de Compensación UBR "
+        "en el marco del Consejo de Política Fiscal y Financiera para el régimen común y se salvaguarda la "
+        "naturaleza foral del Concierto y Convenio mediante la calificación como carga no asumida.\n\n"
+        "VI. Gobernanza Dinámica y Diálogo Social.\n"
+        "Finalmente, la Ley prevé circuitos de alarma gobernados por la certificación técnica independiente de "
+        "la AIReF, salvaguardando el principio de legalidad tributaria (STC 73/2017) y blindando la negociación "
+        "colectiva mediante cláusulas de no suplantación salarial acordadas con los interlocutores sociales."
+    )
+
+    titles: List[StatutoryTitle] = []
+
+    # TÍTULO I
+    t1_articles = [
+        StatutoryArticle(
+            id="ART_01",
+            title_number="Título I",
+            chapter="Capítulo I",
+            article_number="Artículo 1",
+            heading="Objeto y finalidad de la Ley",
+            text=(
+                "1. La presente Ley tiene por objeto regular el derecho a la Renta Básica Universal "
+                "(RBU) como prestación económica periódica e incondicional orientada a garantizar las "
+                "condiciones materiales básicas de subsistencia y libertad de todas las personas residentes "
+                "en España ante las transformaciones socioeconómicas generadas por la automatización y "
+                "la inteligencia artificial.\n"
+                "2. Constituye asimismo objeto de esta Ley el establecimiento del marco tributario, "
+                "financiero, administrativo y de cooperación interterritorial necesario para asegurar su "
+                "sostenibilidad estructural a largo plazo y la justa redistribución de las rentas algorítmicas."
+            ),
+            constitutional_bases=["Art. 1.1 CE", "Art. 9.2 CE", "Art. 149.1.1 CE"],
+            reformed_statutes=[],
+            key_mechanisms=["Derecho subjetivo universal", "Incondicionalidad", "Suficiencia material"],
+        ),
+        StatutoryArticle(
+            id="ART_02",
+            title_number="Título I",
+            chapter="Capítulo I",
+            article_number="Artículo 2",
+            heading="Naturaleza jurídica y caracteres del derecho",
+            text=(
+                "1. La Renta Básica Universal se configura como un derecho subjetivo de titularidad individual, "
+                "universal, incondicional, periódico e intransferible.\n"
+                "2. Su devengo y percepción no estarán supeditados a la acreditación de niveles máximos de renta "
+                "o patrimonio familiar, a la situación de ocupación laboral, a la búsqueda activa de empleo, ni "
+                "a la contraprestación de actividad alguna.\n"
+                "3. El derecho se reconoce a la persona a título estrictamente individual, sin perjuicio de las "
+                "garantías y complementos específicos legalmente previstos para menores y personas en situación de dependencia."
+            ),
+            constitutional_bases=["Art. 14 CE", "Art. 41 CE", "Art. 149.1.1 CE"],
+            reformed_statutes=[],
+            key_mechanisms=["Individualidad estricta", "Incondicionalidad plena", "Ausencia de comprobación de recursos"],
+        ),
+        StatutoryArticle(
+            id="ART_03",
+            title_number="Título I",
+            chapter="Capítulo II",
+            article_number="Artículo 3",
+            heading="Titulares y requisitos de residencia",
+            text=(
+                "1. Serán titulares del derecho a la Renta Básica Universal todas las personas físicas que "
+                "ostenten la nacionalidad española o la residencia legal y continuada en territorio español, "
+                "conforme a las siguientes reglas:\n"
+                "   a) Las personas de nacionalidad española y los ciudadanos de Estados miembros de la Unión Europea "
+                "o del Espacio Económico Europeo que ejerzan una actividad económica efectiva y genuina (con al menos "
+                "10 horas semanales o cotización superior al 25% del SMI) tendrán derecho desde el primer día de "
+                "sujeción al IRPF.\n"
+                "   b) Los ciudadanos de la Unión Europea económicamente inactivos y los nacionales de terceros países "
+                "deberán acreditar un período de residencia legal y continuada en España no inferior a veinticuatro meses, "
+                "en plena consonancia con la Directiva 2004/38/CE y la doctrina del TJUE.\n"
+                "2. Quedan expresamente exceptuados del cómputo del plazo de carencia del apartado anterior los menores "
+                "de edad, las víctimas de violencia de género y trata acreditadas, y las personas solicitantes de "
+                "protección internacional desde la admisión a trámite de su solicitud."
+            ),
+            constitutional_bases=["Art. 13 CE", "Art. 39 CE", "Art. 149.1.2 CE"],
+            reformed_statutes=["LO 4/2000 (Extranjería)", "Ley 19/2021 (IMV)"],
+            key_mechanisms=["Simetría fiscal", "Umbral UE 10h/semana", "Salvaguarda de menores Art. 39 CE"],
+        ),
+        StatutoryArticle(
+            id="ART_04",
+            title_number="Título I",
+            chapter="Capítulo II",
+            article_number="Artículo 4",
+            heading="Cuantía básica y articulación modular",
+            text=(
+                "1. La cuantía económica de la Renta Básica Universal para personas mayores de dieciocho años se "
+                "fija de conformidad con los siguientes escalones modulares de implantación:\n"
+                "   a) Nivel Base (Tier A): 600 euros mensuales (7.200 euros anuales).\n"
+                "   b) Nivel Umbral de Pobreza (Tier B): 900 euros mensuales (10.800 euros anuales), equivalente al "
+                "umbral de riesgo de pobreza relativa nacional para un hogar unipersonal.\n"
+                "   c) Nivel Dividendo Algorítmico Pleno (Tier C): 1.200 euros mensuales (14.400 euros anuales), activable "
+                "en escenarios de compresión estructural del empleo tecnológico.\n"
+                "2. Por cada menor de dieciocho años a cargo, se liquidará un complemento universal mensual equivalente "
+                "al 35% de la cuantía individual del titular, transferido de oficio a la persona que ostente la guarda "
+                "o custodia efectiva.\n"
+                "3. Las cuantías se actualizarán anualmente con efectos de 1 de enero en el mismo porcentaje que experimente "
+                "el índice de precios al consumo armonizado."
+            ),
+            constitutional_bases=["Art. 41 CE", "Art. 149.1.14 CE"],
+            reformed_statutes=[],
+            key_mechanisms=["Escalones modulares A/B/C", "Complemento de infancia 35%", "Indexación IPCA"],
+        ),
+    ]
+    titles.append(
+        StatutoryTitle(
+            title_number="Título I",
+            heading="Disposiciones Generales, Titulares y Cuantía del Derecho",
+            description="Delimita el objeto, naturaleza jurídica, requisitos de residencia y niveles económicos de la RBU.",
+            articles=t1_articles,
+        )
+    )
+
+    # TÍTULO II
+    t2_articles = [
+        StatutoryArticle(
+            id="ART_05",
+            title_number="Título II",
+            chapter="Capítulo I",
+            article_number="Artículo 5",
+            heading="Creación de la Deducción Reembolsable Universal por Renta Básica",
+            text=(
+                "Se introduce un nuevo artículo 61 bis en la Ley 35/2006, de 28 de noviembre, del Impuesto sobre la Renta "
+                "de las Personas Físicas, con la siguiente redacción:\n"
+                "«Artículo 61 bis. Deducción Reembolsable Universal por Renta Básica.\n"
+                "1. Los contribuyentes que cumplan los requisitos de residencia del artículo 3 de la Ley de Renta Básica "
+                "Universal tendrán derecho a una deducción reembolsable en la cuota diferencial del impuesto equivalente "
+                "al importe anual fijado para la RBU en cada ejercicio fiscal.\n"
+                "2. Si el importe de la deducción excediera de la cuota líquida total del impuesto, o cuando esta resultara nula, "
+                "la Agencia Estatal de Administración Tributaria abonará de oficio el exceso de forma mensual y anticipada.\n"
+                "3. Esta deducción se liquidará individualmente a cada cónyuge o miembro de la unidad familiar, con "
+                "independencia de la opción elegida por tributación conjunta o separada.»"
+            ),
+            constitutional_bases=["Art. 31.1 CE", "Art. 149.1.14 CE"],
+            reformed_statutes=["Ley 35/2006 (LIRPF)"],
+            key_mechanisms=["Deducción reembolsable", "Liquidación mensual anticipada", "Individualidad tributaria"],
+        ),
+        StatutoryArticle(
+            id="ART_06",
+            title_number="Título II",
+            chapter="Capítulo I",
+            article_number="Artículo 6",
+            heading="Régimen transitorio de salvaguarda del Mínimo Personal y Familiar no reembolsable",
+            text=(
+                "Se introduce un nuevo artículo 61 ter en la Ley 35/2006 (LIRPF):\n"
+                "«Artículo 61 ter. Régimen transitorio de salvaguarda del mínimo de subsistencia.\n"
+                "1. Aquellos residentes fiscales que se encuentren cumpliendo los períodos de carencia legal previstos "
+                "en la normativa de extranjería para el devengo de la cuantía reembolsable mantendrán el derecho a la "
+                "aplicación de los importes del mínimo personal y familiar regulados en los artículos 56 a 61 de esta Ley, "
+                "con carácter no reembolsable.\n"
+                "2. En ningún caso se liquidará carga tributaria alguna sobre los rendimientos del trabajo personal o de "
+                "actividades económicas por debajo del importe legalmente calificado como mínimo existencial, de conformidad "
+                "con la doctrina vinculante de la Sentencia del Tribunal Constitucional 214/1994.»"
+            ),
+            constitutional_bases=["Art. 31.1 CE", "Art. 149.1.14 CE", "Doctrina STC 214/1994"],
+            reformed_statutes=["Ley 35/2006 (LIRPF)"],
+            key_mechanisms=["Mínimo personal no reembolsable de seguridad", "Protección contra tributación desde el euro 1"],
+        ),
+        StatutoryArticle(
+            id="ART_07",
+            title_number="Título II",
+            chapter="Capítulo II",
+            article_number="Artículo 7",
+            heading="Parámetro Fiscal Federal Objetivo en Arrendamientos de Vivienda",
+            text=(
+                "Se modifica el apartado 2 del artículo 23 de la Ley 35/2006 (LIRPF), que queda redactado como sigue:\n"
+                "«2. En los supuestos de arrendamiento de bienes inmuebles destinados a vivienda, el rendimiento neto "
+                "positivo calculado con arreglo a los apartados anteriores se reducirá en un 50 por ciento.\n"
+                "No obstante, dicha reducción quedará reducida al 0 por ciento cuando el inmueble se encuentre ubicado "
+                "en un término municipal donde los incrementos interanuales del alquiler superen en más de 3 puntos "
+                "porcentuales el IPC subyacente y la renta mensual pactada exceda del valor superior del Índice Estatal "
+                "de Referencia de Precios del Alquiler fijado por el Ministerio de Vivienda y Agenda Urbana, de conformidad "
+                "con el ejercicio exclusivo de la competencia tributaria estatal del artículo 149.1.14.ª de la Constitución.»"
+            ),
+            constitutional_bases=["Art. 149.1.14 CE", "Doctrina STC 79/2024"],
+            reformed_statutes=["Ley 35/2006 (LIRPF)", "Ley 12/2023 (Vivienda)"],
+            key_mechanisms=["Condicionalidad fiscal objetiva", "Retirada de bonificación LIRPF 23.2", "Desconexión de ZMRT autonómica"],
+        ),
+    ]
+    titles.append(
+        StatutoryTitle(
+            title_number="Título II",
+            heading="Integración Tributaria en el Impuesto sobre la Renta y Medidas Fiscales de Vivienda",
+            description="Codifica la Deducción Reembolsable Universal, el suelo de salvaguarda y el parámetro federal de arrendamiento.",
+            articles=t2_articles,
+        )
+    )
+
+    # TÍTULO III
+    t3_articles = [
+        StatutoryArticle(
+            id="ART_08",
+            title_number="Título III",
+            chapter="Capítulo I",
+            article_number="Artículo 8",
+            heading="Impuesto Especial sobre Capacidad y Computación de Inteligencia Artificial (IECA)",
+            text=(
+                "Se introduce un nuevo Título en el Texto Refundido de la Ley del Impuesto sobre la Renta de no "
+                "Residentes, aprobado por Real Decreto Legislativo 5/2004, de 5 de marzo:\n"
+                "«Título IV bis. Impuesto Especial sobre Capacidad y Computación de Inteligencia Artificial.\n"
+                "1. Constituye el hecho imponible del impuesto la adquisición de capacidad de computación en la nube, "
+                "alojamiento de unidades de procesamiento gráfico (GPU/TPU) y consumo de inferencia mediante interfaces "
+                "de programación de aplicaciones (API) de modelos de inteligencia artificial, cuando el destinatario del "
+                "servicio sea una empresa o profesional residente fiscal en territorio español.\n"
+                "2. La base imponible estará constituida por el importe total satisfecho o convenido por dichos servicios, "
+                "excluido el Impuesto sobre el Valor Añadido.\n"
+                "3. El tipo de gravamen se fija en el 5 por ciento sobre el valor neto de los servicios devengados cuando "
+                "el prestador no residente carezca de establecimiento permanente en España.»"
+            ),
+            constitutional_bases=["Art. 31.1 CE", "Art. 149.1.14 CE"],
+            reformed_statutes=["RDLeg 5/2004 (TRIRNR)", "Ley 58/2003 (LGT)"],
+            key_mechanisms=["Hecho imponible destino-computación", "Inversión del sujeto pasivo", "Tipo del 5%"],
+        ),
+        StatutoryArticle(
+            id="ART_09",
+            title_number="Título III",
+            chapter="Capítulo I",
+            article_number="Artículo 9",
+            heading="Condicionalidad de deducibilidad en el Impuesto sobre Sociedades",
+            text=(
+                "Se modifica el artículo 15 de la Ley 27/2014, de 27 de noviembre, del Impuesto sobre Sociedades, "
+                "añadiendo una nueva letra l):\n"
+                "«l) Los gastos derivados de la contratación o uso de servicios de computación algorítmica, almacenamiento "
+                "de datos e inferencia de modelos de inteligencia artificial prestados por entidades no residentes, salvo "
+                "que se acredite fehacientemente la práctica e ingreso de la correspondiente retención a cuenta o el pago "
+                "del Impuesto Especial sobre Capacidad y Computación de Inteligencia Artificial (IECA) mediante la presentación "
+                "del modelo tributario oficial habilitado al efecto.»"
+            ),
+            constitutional_bases=["Art. 149.1.14 CE"],
+            reformed_statutes=["Ley 27/2014 (LIS)"],
+            key_mechanisms=["No deducibilidad del gasto no retenido", "Certificado obligatorio Modelos 216/296", "Decisión D-007"],
+        ),
+        StatutoryArticle(
+            id="ART_10",
+            title_number="Título III",
+            chapter="Capítulo II",
+            article_number="Artículo 10",
+            heading="Simetría fiscal para trabajadores transfronterizos (Doctrina Schumacker)",
+            text=(
+                "Se modifica el artículo 46 del Texto Refundido de la Ley del Impuesto sobre la Renta de no Residentes (TRIRNR):\n"
+                "«Artículo 46 bis. Opción por régimen de simetría en Renta Básica Universal para trabajadores transfronterizos.\n"
+                "1. Los contribuyentes del IRNR que sean personas físicas residentes en un Estado miembro de la Unión Europea "
+                "o del Espacio Económico Europeo podrán solicitar la liquidación proporcional de la Deducción Reembolsable "
+                "Universal por Renta Básica cuando acrediten que al menos el 75 por ciento de la totalidad de sus rendimientos "
+                "del trabajo obtenidos en el ejercicio fiscal han sido devengados y gravados en territorio español.\n"
+                "2. La cuantía a liquidar será estrictamente proporcional a la fracción del año en que se haya mantenido la "
+                "actividad laboral y la tributación efectiva en España, en estricto cumplimiento del principio de libre "
+                "circulación y no discriminación del artículo 45 del TFUE y la doctrina Schumacker (TJUE Caso C-279/93).»"
+            ),
+            constitutional_bases=["Art. 45 TFUE", "Art. 149.1.14 CE", "Doctrina TJUE C-279/93"],
+            reformed_statutes=["RDLeg 5/2004 (TRIRNR)"],
+            key_mechanisms=["Umbral 75% ingresos", "Pro-rata temporis", "Conformidad TFUE"],
+        ),
+    ]
+    titles.append(
+        StatutoryTitle(
+            title_number="Título III",
+            heading="Fiscalidad de la Economía Algorítmica y de los No Residentes",
+            description="Regula el gravamen IECA sobre computación foránea, el blindaje en Sociedades y la paridad Schumacker.",
+            articles=t3_articles,
+        )
+    )
+
+    # TÍTULO IV
+    t4_articles = [
+        StatutoryArticle(
+            id="ART_11",
+            title_number="Título IV",
+            chapter="Capítulo I",
+            article_number="Artículo 11",
+            heading="Articulación con el Sistema de la Seguridad Social y Protección de Cotizaciones",
+            text=(
+                "1. La Renta Básica Universal constituirá el suelo básico no contributivo de subsistencia de la "
+                "Seguridad Social al amparo del artículo 41 de la Constitución.\n"
+                "2. En aquellos supuestos en que la persona perceptora cause derecho a prestaciones contributivas de "
+                "desempleo o incapacidad temporal, la percepción de la RBU operará como anticipo computable en la cuantía "
+                "neta, garantizándose que la cuantía total percibida no sea inferior a la prestación contributiva devengada.\n"
+                "3. De conformidad con la Decisión vinculante D-009, el Servicio Público de Empleo Estatal (SEPE) "
+                "mantendrá inalterada la obligación de ingresar la cuota empresarial correspondiente a las contingencias "
+                "de jubilación al amparo del artículo 273 del Texto Refundido de la Ley General de la Seguridad Social "
+                "(TRLGSS), sin que la absorción monetaria parcial afecte a los períodos cotizados computables."
+            ),
+            constitutional_bases=["Art. 41 CE", "Art. 149.1.17 CE"],
+            reformed_statutes=["RDLeg 8/2015 (TRLGSS)"],
+            key_mechanisms=["Suelo no contributivo", "Mantenimiento cotización jubilación Art. 273 TRLGSS", "Decisión D-009"],
+        ),
+        StatutoryArticle(
+            id="ART_12",
+            title_number="Título IV",
+            chapter="Capítulo I",
+            article_number="Artículo 12",
+            heading="Crédito Cotizatorio Básico por Transición Tecnológica",
+            text=(
+                "Se introduce un nuevo artículo 273 bis en el Texto Refundido de la Ley General de la Seguridad Social (TRLGSS):\n"
+                "«Artículo 273 bis. Crédito Cotizatorio Básico por Transición Tecnológica.\n"
+                "1. Toda persona trabajadora afectada por procesos de reconversión, despido colectivo o desplazamiento "
+                "ocupacional provocado por la implantación de tecnologías de automatización o inteligencia artificial, "
+                "tendrá derecho al reconocimiento de un Crédito Cotizatorio Básico garantizado con cargo a los fondos "
+                "de la presente Ley.\n"
+                "2. La Tesorería General de la Seguridad Social computará como período cotizado asimilado al alta, a efectos "
+                "de jubilación e incapacidad permanente, el tiempo de transición hasta un máximo de sesenta meses, calculado "
+                "sobre una base reguladora equivalente al 100 por ciento de la base mínima del Salario Mínimo Interprofesional.»"
+            ),
+            constitutional_bases=["Art. 41 CE", "Art. 149.1.17 CE"],
+            reformed_statutes=["RDLeg 8/2015 (TRLGSS)"],
+            key_mechanisms=["Base cotización 100% SMI", "Asimilada al alta hasta 60 meses", "Blindaje de pensiones"],
+        ),
+        StatutoryArticle(
+            id="ART_13",
+            title_number="Título IV",
+            chapter="Capítulo II",
+            article_number="Artículo 13",
+            heading="Régimen reforzado de inembargabilidad",
+            text=(
+                "1. Los importes percibidos en concepto de Renta Básica Universal tendrán la consideración de inembargables "
+                "en los términos absolutos prescritos por el artículo 607 de la Ley 1/2000, de 7 de enero, de Enjuiciamiento "
+                "Civil, y el artículo 44 del TRLGSS, al constituir el patrimonio existencial intangible de la persona.\n"
+                "2. Queda prohibida expresamente a las entidades financieras la ejecución de compensaciones o retenciones "
+                "automáticas sobre descubiertos bancarios respecto a los saldos procedentes de la RBU.\n"
+                "3. Como única excepción admisible, la RBU podrá ser embargada para dar efectividad a la obligación judicial "
+                "de prestar alimentos a favor de los hijos menores o cónyuge, en los términos estrictos del artículo 608 "
+                "de la Ley de Enjuiciamiento Civil."
+            ),
+            constitutional_bases=["Art. 24 CE", "Art. 39 CE", "Art. 149.1.6 CE"],
+            reformed_statutes=["Ley 1/2000 (LEC)", "RDLeg 8/2015 (TRLGSS)"],
+            key_mechanisms=["Inembargabilidad absoluta Art. 607 LEC", "Prohibición de compensación bancaria", "Excepción exclusiva alimentos Art. 608 LEC"],
+        ),
+    ]
+    titles.append(
+        StatutoryTitle(
+            title_number="Título IV",
+            heading="Integración en la Seguridad Social, Créditos de Cotización y Régimen de Inembargabilidad",
+            description="Preserva las cotizaciones previsionales bajo el TRLGSS y blinda los ingresos frente a deudas y entidades financieras.",
+            articles=t4_articles,
+        )
+    )
+
+    # TÍTULO V
+    t5_articles = [
+        StatutoryArticle(
+            id="ART_14",
+            title_number="Título V",
+            chapter="Capítulo I",
+            article_number="Artículo 14",
+            heading="Cuenta Única Tributaria-Social y ventanilla única automatizada",
+            text=(
+                "1. Se crea la Cuenta Única Tributaria-Social como instrumento público interoperable gestionado de "
+                "forma coordinada por la Agencia Estatal de Administración Tributaria (AEAT) y el Instituto Nacional "
+                "de la Seguridad Social (INSS).\n"
+                "2. La liquidación mensual de la Renta Básica Universal se realizará mediante transferencia directa a la "
+                "cuenta bancaria designada por la persona titular el día 1 de cada mes natural, o mediante compensación "
+                "anticipada en nómina, de acuerdo con el protocolo técnico de gestión que reglamentariamente se determine.\n"
+                "3. No se exigirá la presentación periódica de solicitudes, renovación documental ni trámites de comparecencia "
+                "a los titulares legalmente acreditados en los registros del Padrón Continuo y la Tarjeta Social Digital."
+            ),
+            constitutional_bases=["Art. 103.1 CE", "Art. 149.1.14 CE", "Art. 149.1.18 CE"],
+            reformed_statutes=["Ley 40/2015 (LRJSP)"],
+            key_mechanisms=["Cuenta Única AEAT-INSS", "Transferencia el día 1 de cada mes", "Automatización de oficio"],
+        ),
+        StatutoryArticle(
+            id="ART_15",
+            title_number="Título V",
+            chapter="Capítulo I",
+            article_number="Artículo 15",
+            heading="Código de Retención Sintético y privacidad en la relación laboral",
+            text=(
+                "1. En el ámbito de las relaciones de trabajo por cuenta ajena, la liquidación en nómina de la deducción "
+                "reembolsable se efectuará mediante un Código de Retención Sintético de carácter estrictamente numérico "
+                "facilitado por la AEAT a la empresa empleadora a través del sistema de retenciones del Modelo 111.\n"
+                "2. Queda terminantemente prohibido a las empresas solicitar, y a la Administración tributaria facilitar, "
+                "información relativa a la composición convivencial, discapacidad, percepción de complementos de infancia "
+                "o situaciones de vulnerabilidad social de la persona trabajadora, de estricta conformidad con el artículo 9 "
+                "del Reglamento (UE) 2016/679 (GDPR) y la Ley Orgánica 3/2018 (LOPDGDD).\n"
+                "3. Los complementos por menores o situaciones especiales se canalizarán en todo caso de forma directa y "
+                "separada por la AEAT/INSS a la cuenta personal de la persona titular."
+            ),
+            constitutional_bases=["Art. 18.4 CE", "Art. 149.1.1 CE", "Reglamento (UE) 2016/679"],
+            reformed_statutes=["LO 3/2018 (LOPDGDD)", "Ley 35/2006 (LIRPF)"],
+            key_mechanisms=["Código Sintético de nómina", "Blindaje GDPR Art. 9", "Separación de complementos familiares"],
+        ),
+        StatutoryArticle(
+            id="ART_16",
+            title_number="Título V",
+            chapter="Capítulo II",
+            article_number="Artículo 16",
+            heading="Garantías de debido proceso algorítmico y blindaje anti-compensación",
+            text=(
+                "1. Cualquier actuación administrativa automatizada que implique modificación, suspensión o cese en la "
+                "percepción de la RBU deberá cumplir las garantías del artículo 41 de la Ley 40/2015 (LRJSP) y contar con "
+                "supervisión técnica humana vinculante.\n"
+                "2. Se establece un trámite de audiencia previa con un plazo mínimo de 30 días hábiles conforme al artículo 82 "
+                "de la Ley 39/2015 (LPAC) antes de ejecutar cualquier revocación de derechos.\n"
+                "3. Queda prohibida la aplicación de oficio de mecanismos de compensación tributaria o de Seguridad Social "
+                "(artículos 71 a 73 de la LGT y artículo 53.2 del TRLGSS) sobre las transferencias de RBU para la recuperación "
+                "de supuestos cobros indebidos de Ingreso Mínimo Vital o prestaciones asistenciales anteriores, salvo "
+                "sentencia penal firme por delito continuado contra la Hacienda Pública o la Seguridad Social."
+            ),
+            constitutional_bases=["Art. 24 CE", "Art. 103 CE", "Art. 149.1.18 CE"],
+            reformed_statutes=["Ley 39/2015 (LPAC)", "Ley 40/2015 (LRJSP)", "Ley 58/2003 (LGT)"],
+            key_mechanisms=["Auditoría humana Art. 41 LRJSP", "Audiencia previa 30 días", "Prohibición de compensación por deudas IMV"],
+        ),
+        StatutoryArticle(
+            id="ART_17",
+            title_number="Título V",
+            chapter="Capítulo II",
+            article_number="Artículo 17",
+            heading="Empadronamiento social de oficio y rail público de pago",
+            text=(
+                "1. Los Ayuntamientos tramitarán de oficio el empadronamiento social de aquellas personas que residan de "
+                "forma efectiva en el municipio pero carezcan de domicilio fijo o se encuentren en situación de exclusión "
+                "residencial, conforme a las Instrucciones Técnicas de 17 de febrero de 2020 de la Presidencia del INE.\n"
+                "2. La Sociedad Estatal Correos y Telégrafos y el Banco de España habilitarán un canal público de pago "
+                "gratuito mediante la provisión de Cuentas de Pago Básicas al amparo del Real Decreto-ley 19/2018.\n"
+                "3. Dichas cuentas públicas gozarán de presunción de suficiencia en la diligencia debida antiblanqueo bajo la "
+                "Ley 10/2010, prohibiéndose a las entidades de crédito su bloqueo o suspensión por mera inactividad o "
+                "carencia de nómina mercantil ordinaria."
+            ),
+            constitutional_bases=["Art. 149.1.1 CE", "Art. 149.1.11 CE", "Art. 149.1.18 CE"],
+            reformed_statutes=["Ley 7/1985 (LBRL)", "RDLey 19/2018 (Cuentas de pago)"],
+            key_mechanisms=["Padrón social de oficio", "Rail público Correos/Banco de España", "Blindaje anti-bloqueo bancario"],
+        ),
+    ]
+    titles.append(
+        StatutoryTitle(
+            title_number="Título V",
+            heading="Gestión Administrativa, Ventanilla Única, Garantías Digitales y Acceso Universal",
+            description="Establece la Cuenta Única, el código sintético de nómina, las salvaguardas algorítmicas y el rail público.",
+            articles=t5_articles,
+        )
+    )
+
+    # TÍTULO VI
+    t6_articles = [
+        StatutoryArticle(
+            id="ART_18",
+            title_number="Título VI",
+            chapter="Capítulo I",
+            article_number="Artículo 18",
+            heading="Creación del Fondo de Compensación UBR en el Sistema de Financiación Autonómica",
+            text=(
+                "Se introduce un nuevo artículo en la Ley 22/2009, de 18 de diciembre, por la que se regula el sistema "
+                "de financiación de las Comunidades Autónomas de régimen común y Ciudades con Estatuto de Autonomía:\n"
+                "«Artículo 13 bis. Fondo de Compensación de la Renta Básica Universal.\n"
+                "1. Se constituye en el seno del Consejo de Política Fiscal y Financiera (CPFF) el Fondo de Compensación "
+                "de la Renta Básica Universal con el objeto de garantizar la neutralidad financiera vertical y horizontal "
+                "entre la Administración General del Estado y las Comunidades Autónomas de régimen común tras la implantación "
+                "de la Deducción Reembolsable Universal.\n"
+                "2. El Estado aportará anualmente al Fondo los recursos necesarios para compensar íntegramente la menor "
+                "recaudación neta que pudiera experimentar el tramo autonómico cedido del IRPF, asegurando que la financiación "
+                "de los servicios públicos fundamentales de sanidad, educación y servicios sociales no sufra menoscabo alguno.\n"
+                "3. La distribución de los recursos del Fondo se calculará conforme a las reglas objetivas de población "
+                "ajustada y capacidad tributaria relativa aprobadas por acuerdo unánime o mayoritario del CPFF.»"
+            ),
+            constitutional_bases=["Art. 156 CE", "Art. 157.3 CE", "Art. 158.1 CE"],
+            reformed_statutes=["Ley 22/2009 (Financiación Autonómica)", "LOFCA"],
+            key_mechanisms=["Fondo CPFF de Compensación", "Neutralidad tramo autonómico IRPF", "Garantía servicios fundamentales"],
+        ),
+        StatutoryArticle(
+            id="ART_19",
+            title_number="Título VI",
+            chapter="Capítulo II",
+            article_number="Artículo 19",
+            heading="Régimen Foral del País Vasco y Comunidad Foral de Navarra",
+            text=(
+                "1. En virtud de la Disposición Adicional Primera de la Constitución Española y los regímenes forales "
+                "vigentes, la implantación de la Renta Básica Universal se articulará en el País Vasco y en Navarra a "
+                "través del Concierto Económico (Ley 12/2002) y el Convenio Económico (Ley 28/1990), respectivamente.\n"
+                "2. A efectos de la liquidación del Cupo vasco y de la Aportación navarra, la RBU se clasificará formalmente "
+                "como «carga no asumida» por los territorios forales en tanto se trate de una prestación básica estatal "
+                "satisfecha directamente por el Estado o financiada con cargo a la recaudación de tributos no concertados.\n"
+                "3. En caso de que las Diputaciones Forales o la Hacienda Foral de Navarra asuman la gestión directa de "
+                "la liquidación del tramo complementario o la armonización del tramo personal del IRPF, las Comisiones "
+                "Mixtas del Concierto y del Convenio acordarán las compensaciones financieras y los ajustes de imputación "
+                "oportunos (6,24% para el País Vasco y 1,60% para Navarra) en un plazo no superior a seis meses desde "
+                "la entrada en vigor de la presente Ley."
+            ),
+            constitutional_bases=["Disp. Adic. 1ª CE", "Ley 12/2002 (Concierto Vasco)", "Ley 28/1990 (Convenio Navarra)"],
+            reformed_statutes=["Ley 12/2002", "Ley 28/1990"],
+            key_mechanisms=["Carga no asumida en Cupo", "Imputación 6.24% y 1.60%", "Comisiones Mixtas bilaterales"],
+        ),
+    ]
+    titles.append(
+        StatutoryTitle(
+            title_number="Título VI",
+            heading="Régimen Territorial, Financiación Autonómica y Regímenes Forales",
+            description="Regula la neutralidad financiera en las 15 CCAA de régimen común y la integración del Cupo y Convenio foral.",
+            articles=t6_articles,
+        )
+    )
+
+    # TÍTULO VII
+    t7_articles = [
+        StatutoryArticle(
+            id="ART_20",
+            title_number="Título VII",
+            chapter="Capítulo I",
+            article_number="Artículo 20",
+            heading="Creación y naturaleza del Fondo Soberano de Transición Algorítmica (FSTA)",
+            text=(
+                "1. Al amparo del artículo 128.2 de la Constitución, se crea el Fondo Soberano de Transición Algorítmica "
+                "(FSTA) como patrimonio público de afectación específica y carácter intergeneracional, dotado de personalidad "
+                "jurídica pública y adscrito orgánicamente al Ministerio de Hacienda, bajo la supervisión de una Comisión "
+                "de Gobernanza presidida por el Banco de España.\n"
+                "2. La finalidad primordial del FSTA es acumular participaciones en infraestructuras de computación, activos "
+                "digitales de alto rendimiento y rentas extraordinarias del capital empresarial para cofinanciar de forma "
+                "sostenible el dividendo social universal y mitigar shocks macroeconómicos de automatización.\n"
+                "3. La cartera del Fondo se gestionará de conformidad con principios de prudencia, diversificación internacional "
+                "y criterios medioambientales, sociales y de gobernanza (ASG)."
+            ),
+            constitutional_bases=["Art. 128.2 CE", "Art. 149.1.11 CE", "Art. 149.1.14 CE"],
+            reformed_statutes=["Ley 28/2003 (Fondo de Reserva)"],
+            key_mechanisms=["Patrimonio público de afectación Art. 128.2 CE", "Supervisión Banco de España", "Criterios ASG"],
+        ),
+        StatutoryArticle(
+            id="ART_21",
+            title_number="Título VII",
+            chapter="Capítulo I",
+            article_number="Artículo 21",
+            heading="Regla de acumulación anticíclica de excedentes y blindaje parlamentario",
+            text=(
+                "1. Las aportaciones ordinarias al FSTA se nutrirán prioritariamente de la recaudación del IECA y de los "
+                "recargos especiales sobre el Excedente Bruto de Explotación (EBE) empresarial que supere el 120 por ciento "
+                "de la media móvil de los tres ejercicios inmediatamente anteriores en los sectores hiperautomatizados.\n"
+                "2. Esta regla de acumulación anticíclica garantizará en todo momento el respeto a los techos de Gasto "
+                "Primario Neto fijados para España en virtud del Reglamento (UE) 2024/1263 del Parlamento Europeo y del Consejo.\n"
+                "3. Los activos acumulados en el Fondo no podrán ser dispuestos para financiar gastos generales de la "
+                "Administración. Toda disposición extraordinaria del principal acumulado requerirá la aprobación expresa "
+                "del Congreso de los Diputados por mayoría cualificada de tres quintos de sus miembros, conforme al modelo "
+                "de protección establecido en la Ley 28/2003 reguladora del Fondo de Reserva de la Seguridad Social."
+            ),
+            constitutional_bases=["Art. 135 CE", "Art. 149.1.14 CE", "Reglamento (UE) 2024/1263"],
+            reformed_statutes=["Ley 28/2003"],
+            key_mechanisms=["Regla windfall EBE > 120%", "Conformidad con Gasto Primario Neto UE", "Blindaje parlamentario 3/5 Congreso"],
+        ),
+    ]
+    titles.append(
+        StatutoryTitle(
+            title_number="Título VII",
+            heading="Fondo Soberano de Transición Algorítmica y Acumulación Anticíclica",
+            description="Constituye el fondo soberano bajo el Art. 128.2 CE, con regla windfall y salvaguarda de 3/5 del Congreso.",
+            articles=t7_articles,
+        )
+    )
+
+    # TÍTULO VIII
+    t8_articles = [
+        StatutoryArticle(
+            id="ART_22",
+            title_number="Título VIII",
+            chapter="Capítulo I",
+            article_number="Artículo 22",
+            heading="Gobernanza de la transición, certificación AIReF y principio de legalidad",
+            text=(
+                "1. La Autoridad Independiente de Responsabilidad Fiscal (AIReF) calculará y certificará anualmente, "
+                "en el marco de sus competencias evaluadoras reguladas por la Ley Orgánica 6/2013, el Índice Compuesto "
+                "de Desplazamiento Tecnológico (I_AI), ponderando la compresión de la participación laboral en el PIB, "
+                "el desempleo en ramas cognitivas y el crecimiento de los márgenes empresariales en computación.\n"
+                "2. Cuando el I_AI supere los umbrales legalmente previstos para el salto entre los Tiers A, B y C del artículo 4, "
+                "el Gobierno remitirá a las Cortes Generales en un plazo improrrogable de 30 días un Proyecto de Ley para "
+                "la adecuación de las cuantías y fuentes tributarias, tramitado por el procedimiento de urgencia parlamentaria "
+                "regulado en el artículo 93 del Reglamento del Congreso de los Diputados.\n"
+                "3. En estricto acatamiento de los artículos 31.3 y 134.7 de la Constitución y de las Sentencias del Tribunal "
+                "Constitucional 73/2017 y 78/2020, en ningún caso podrán fijarse ni modificarse tipos impositivos o recargos "
+                "tributarios mediante Real Decreto-ley o actos administrativos delegados."
+            ),
+            constitutional_bases=["Art. 31.3 CE", "Art. 134.7 CE", "LO 6/2013 (AIReF)", "STC 73/2017", "STC 78/2020"],
+            reformed_statutes=["LO 6/2013"],
+            key_mechanisms=["Índice I_AI AIReF", "Urgencia parlamentaria Art. 93", "Principio estricto de legalidad tributaria"],
+        ),
+        StatutoryArticle(
+            id="ART_23",
+            title_number="Título VIII",
+            chapter="Capítulo I",
+            article_number="Artículo 23",
+            heading="Circuito de alarma contra la captura de rentas en el mercado del alquiler",
+            text=(
+                "1. Cuando el sistema estatal de monitorización de precios de arrendamiento detecte incrementos interanuales "
+                "superiores en más de 3 puntos porcentuales al IPC subyacente en zonas urbanas congestionadas donde el esfuerzo "
+                "familiar de alquiler supere el 30 por ciento de los ingresos medianos, se activará de forma automática el "
+                "Circuito de Alarma Residencial.\n"
+                "2. La activación conllevará:\n"
+                "   a) La suspensión inmediata de la reducción del artículo 23.2 de la LIRPF para los arrendadores que "
+                "hayan incrementado la renta por encima del IPC general.\n"
+                "   b) La apertura de líneas de crédito sin interés del Instituto de Crédito Oficial (ICO) a favor de las "
+                "administraciones locales para nutrir el Fondo de Estabilización Residencial (FER), facultándolas para ejercer "
+                "el derecho de tanteo y retracto en transmisiones de inmuebles residenciales, quedando dichas operaciones "
+                "expresamente exentas de los límites de regla de gasto de la LOEPSF."
+            ),
+            constitutional_bases=["Art. 47 CE", "Art. 149.1.14 CE", "Art. 149.1.18 CE"],
+            reformed_statutes=["Ley 35/2006", "LO 2/2012 (LOEPSF)"],
+            key_mechanisms=["Suspensión beneficio fiscal alquiler", "Líneas ICO FER para tanteo y retracto", "Exención regla de gasto"],
+        ),
+    ]
+    titles.append(
+        StatutoryTitle(
+            title_number="Título VIII",
+            heading="Gobernanza de la Transición, Certificación de Shocks y Circuitos de Emergencia",
+            description="Establece los gatillos AIReF con urgencia parlamentaria y el freno de emergencia habitacional.",
+            articles=t8_articles,
+        )
+    )
+
+    # TÍTULO IX
+    t9_articles = [
+        StatutoryArticle(
+            id="ART_24",
+            title_number="Título IX",
+            chapter="Capítulo I",
+            article_number="Artículo 24",
+            heading="Cláusula de no suplantación salarial y negociación colectiva",
+            text=(
+                "1. Los importes percibidos en concepto de Renta Básica Universal tendrán carácter autónomo y complementario, "
+                "quedando estrictamente prohibida su absorción o compensación con cargo a las retribuciones dinerarias o en "
+                "especie pactadas en convenio colectivo de trabajo, contrato individual o laudo arbitral.\n"
+                "2. Ninguna empresa u organización empleadora podrá invocar la existencia de la RBU como justificación para "
+                "reducir salarios, acordar inaplicaciones salariales (*descuelgues*) bajo el artículo 82.3 del Estatuto de "
+                "los Trabajadores, o aminorar las cuantías fijadas para el Salario Mínimo Interprofesional.\n"
+                "3. Las cláusulas contractuales o de convenio colectivo que contravengan lo dispuesto en este artículo serán "
+                "nulas de pleno derecho, considerándose infracción muy grave en materia laboral sujeta a sanción conforme "
+                "al Texto Refundido de la Ley sobre Infracciones y Sanciones en el Orden Social (LISOS)."
+            ),
+            constitutional_bases=["Art. 7 CE", "Art. 35 CE", "Art. 37.1 CE", "Art. 149.1.7 CE"],
+            reformed_statutes=["RDLeg 2/2015 (Estatuto Trabajadores)", "RDLeg 5/2000 (LISOS)"],
+            key_mechanisms=["Prohibición de absorción salarial", "Nulidad de cláusulas de descuelgue RBU", "Infracción muy grave LISOS"],
+        ),
+        StatutoryArticle(
+            id="ART_25",
+            title_number="Título IX",
+            chapter="Capítulo I",
+            article_number="Artículo 25",
+            heading="Participación de los interlocutores sociales en la co-gobernanza del FSTA",
+            text=(
+                "1. Las organizaciones sindicales y empresariales más representativas a nivel estatal (CCOO, UGT, CEOE "
+                "y CEPYME) contarán con representación paritaria permanente en el Consejo Asesor del Fondo Soberano de "
+                "Transición Algorítmica.\n"
+                "2. La Comisión Tripartita de Empleo y Transición Tecnológica evaluará semestralmente los impactos sectoriales "
+                "de la IA en la productividad, proponiendo programas de recualificación y adaptación financiados con cargo "
+                "a los rendimientos del Fondo."
+            ),
+            constitutional_bases=["Art. 7 CE", "Ley 21/1991 (CES)"],
+            reformed_statutes=[],
+            key_mechanisms=["Participación paritaria CCOO/UGT/CEOE/CEPYME", "Comisión Tripartita de Empleo"],
+        ),
+    ]
+    titles.append(
+        StatutoryTitle(
+            title_number="Título IX",
+            heading="Diálogo Social, Garantías Laborales y No Suplantación Salarial",
+            description="Blinda la negociación colectiva impidiendo recortes salariales basados en la RBU y co-gobierna el FSTA.",
+            articles=t9_articles,
+        )
+    )
+
+    additional_provisions = [
+        {
+            "id": "DA_01",
+            "number": "Disposición Adicional Primera",
+            "heading": "Proyecto de Ley Orgánica de modificación del artículo 15.6 de la Ley Orgánica 2/2012 (LOEPSF)",
+            "text": (
+                "En el plazo de sesenta días desde la aprobación de la presente Ley, el Gobierno remitirá a las Cortes "
+                "Generales un Proyecto de Ley Orgánica de reforma del artículo 15.6 de la Ley Orgánica 2/2012, de 27 de "
+                "abril, de Estabilidad Presupuestaria y Sostenibilidad Financiera, para restaurar la regla constitucional "
+                "general de preeminencia del Congreso de los Diputados establecida en el artículo 90.2 de la Constitución. "
+                "Con arreglo a dicha reforma, en caso de veto o pronunciamiento desfavorable del Senado sobre los objetivos "
+                "de estabilidad presupuestaria y el límite de gasto no financiero, el Congreso de los Diputados podrá "
+                "levantar dicho veto por mayoría absoluta de sus miembros en votación definitiva, de conformidad con la "
+                "doctrina consolidada en la STC 179/1989 y la Decisión vinculante D-010."
+            ),
+            "constitutional_bases": ["Art. 81 CE", "Art. 90.2 CE", "Art. 135 CE", "STC 179/1989"],
+            "reformed_statutes": ["LO 2/2012 (LOEPSF)"],
+            "key_mechanisms": ["Supresión del veto irrevocable del Senado", "Mayoría absoluta del Congreso", "Decisión D-010"],
+        },
+        {
+            "id": "DA_02",
+            "number": "Disposición Adicional Segunda",
+            "heading": "Cláusula de Salvaguarda y Protección Integral de la Infancia",
+            "text": (
+                "Al amparo del mandato de protección social de la familia y de la infancia consagrado en el artículo 39 "
+                "de la Constitución Española y en la Convención sobre los Derechos del Niño, el complemento universal de "
+                "infancia del artículo 4.2 se liquidará a todo menor que se encuentre efectivamente residiendo en España e "
+                "inscrito en el Padrón Municipal, con independencia de la situación administrativa o del tiempo de residencia "
+                "legal de sus progenitores."
+            ),
+            "constitutional_bases": ["Art. 39 CE", "Convención Derechos del Niño"],
+            "reformed_statutes":[],
+            "key_mechanisms": ["Incondicionalidad para menores", "Desconexión de la situación de los progenitores"],
+        },
+    ]
+
+    transitory_provisions = [
+        {
+            "id": "DT_01",
+            "number": "Disposición Transitoria Primera",
+            "heading": "Calendario de implantación progresiva por fases",
+            "text": (
+                "La presente Ley se implantará según el siguiente calendario escalonado:\n"
+                "a) Fase 0 (Meses 1 a 6): Puesta en marcha de la Cuenta Única Tributaria-Social e individualización automática "
+                "de perceptores del Ingreso Mínimo Vital y complementos CAPI.\n"
+                "b) Fase 1 (Año 1): Despliegue del Nivel Base (Tier A - 600 €) y liquidación del Crédito Cotizatorio Tecnológico.\n"
+                "c) Fase 2 (Año 2 en adelante): Activación del Nivel Umbral de Pobreza (Tier B - 900 €) supeditada a la "
+                "certificación AIReF del Índice I_AI y la aprobación parlamentaria correspondiente."
+            ),
+        },
+        {
+            "id": "DT_02",
+            "number": "Disposición Transitoria Segunda",
+            "heading": "Acreditación de períodos de carencia y cómputo de estancias previas",
+            "text": (
+                "A efectos de acreditar el requisito de residencia continuada de veinticuatro meses exigido a ciudadanos "
+                "inactivos de terceros países en el artículo 3.1.b), se computarán íntegramente los períodos previos de "
+                "residencia legal ininterrumpida y empadronamiento fehaciente devengados con anterioridad a la entrada en "
+                "vigor de esta Ley."
+            ),
+        },
+    ]
+
+    repealing_provisions = [
+        {
+            "id": "DD_01",
+            "number": "Disposición Derogatoria Única",
+            "heading": "Derogación normativa",
+            "text": (
+                "Quedan derogadas cuantas disposiciones de igual o inferior rango se opongan a lo establecido en la "
+                "presente Ley, y de forma específica:\n"
+                "a) El artículo 20 de la Ley 35/2006 del IRPF (reducción por obtención de rendimientos del trabajo).\n"
+                "b) Los artículos 56, 57, 58, 59, 60 y 61 de la Ley 35/2006 en lo que se opongan al nuevo artículo 61 bis, "
+                "salvo lo dispuesto en el régimen de salvaguarda del artículo 61 ter.\n"
+                "c) El artículo 84.2.4º de la Ley 35/2006 relativo a la reducción por tributación conjunta."
+            ),
+        }
+    ]
+
+    final_provisions = [
+        {
+            "id": "DF_01",
+            "number": "Disposición Final Primera",
+            "heading": "Títulos competenciales",
+            "text": (
+                "Esta Ley se dicta al amparo de las competencias exclusivas del Estado reconocidas en el artículo 149.1 "
+                "de la Constitución Española en las materias siguientes:\n"
+                "- 1.ª: Regulación de las condiciones básicas que garanticen la igualdad de todos los españoles en el "
+                "ejercicio de los derechos y en el cumplimiento de los deberes constitucionales.\n"
+                "- 14.ª: Hacienda general y Deuda del Estado.\n"
+                "- 17.ª: Legislación básica y régimen económico de la Seguridad Social.\n"
+                "- 18.ª: Bases del régimen jurídico de las Administraciones Públicas y procedimiento administrativo común."
+            ),
+        },
+        {
+            "id": "DF_02",
+            "number": "Disposición Final Segunda",
+            "heading": "Habilitación para el desarrollo reglamentario",
+            "text": (
+                "Se faculta al Gobierno para dictar, en el ámbito de sus competencias y previo informe de la Comisión "
+                "Mixta de Coordinación Tributaria y del Consejo Económico y Social, cuantas disposiciones reglamentarias "
+                "sean necesarias para el desarrollo y aplicación de la presente Ley."
+            ),
+        },
+        {
+            "id": "DF_03",
+            "number": "Disposición Final Tercera",
+            "heading": "Entrada en vigor",
+            "text": (
+                "La presente Ley entrará en vigor el día primero del mes siguiente al de su publicación en el Boletín "
+                "Oficial del Estado, sin perjuicio de las normas especiales de aplicación temporal previstas en las "
+                "Disposiciones Transitorias."
+            ),
+        },
+    ]
+
+    return AnteproyectoCorpus(
+        official_title=official_title,
+        short_title=short_title,
+        preamble=preamble,
+        titles=titles,
+        additional_provisions=additional_provisions,
+        transitory_provisions=transitory_provisions,
+        repealing_provisions=repealing_provisions,
+        final_provisions=final_provisions,
+    )

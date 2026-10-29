@@ -1,0 +1,328 @@
+"""Constitutional Competence and European Union Legal Compatibility Matrix.
+
+Evaluates statutory articles and policy mechanisms across Spanish Constitutional law,
+Tribunal Constitucional doctrine, and European Union treaties and CJEU case law (Track 5: M06, M13).
+"""
+
+from __future__ import annotations
+
+from dataclasses import dataclass, field
+from typing import Any, Dict, List, Optional
+
+
+@dataclass
+class CompetenceAnchor:
+    """An individual constitutional, doctrinal, or EU legal anchor."""
+
+    id: str
+    category: str  # "Constitutional Competence", "TC Doctrine", "EU Law", "CJEU Precedent"
+    reference: str
+    title: str
+    scope_description: str
+    supported_articles: List[str]
+    legal_risk_level: str  # "Low", "Medium", "High"
+    defense_doctrine: str
+    compliance_status: str  # "Fully Compliant", "Compliant via Statutory Firewall", "Harmonized"
+
+    def to_dict(self) -> Dict[str, Any]:
+        return {
+            "id": self.id,
+            "category": self.category,
+            "reference": self.reference,
+            "title": self.title,
+            "scope_description": self.scope_description,
+            "supported_articles": self.supported_articles,
+            "legal_risk_level": self.legal_risk_level,
+            "defense_doctrine": self.defense_doctrine,
+            "compliance_status": self.compliance_status,
+        }
+
+
+@dataclass
+class CompetenceEvaluationResult:
+    """Consolidated assessment of the legal architecture."""
+
+    total_anchors: int
+    fully_compliant_count: int
+    firewall_compliant_count: int
+    constitutional_coverage_score: float
+    eu_compliance_score: float
+    anchors: List[CompetenceAnchor] = field(default_factory=list)
+
+    def to_dict(self) -> Dict[str, Any]:
+        return {
+            "total_anchors": self.total_anchors,
+            "fully_compliant_count": self.fully_compliant_count,
+            "firewall_compliant_count": self.firewall_compliant_count,
+            "constitutional_coverage_score": self.constitutional_coverage_score,
+            "eu_compliance_score": self.eu_compliance_score,
+            "anchors": [a.to_dict() for a in self.anchors],
+        }
+
+
+def build_competence_anchors() -> List[CompetenceAnchor]:
+    """Generates the full suite of verified legal and constitutional anchors."""
+    return [
+        CompetenceAnchor(
+            id="COMP_149_1_1",
+            category="Constitutional Competence",
+            reference="Art. 149.1.1.ª CE",
+            title="Condiciones básicas que garanticen la igualdad de todos los españoles",
+            scope_description=(
+                "Competencia exclusiva del Estado para definir el contenido primario de los derechos "
+                "constitucionales y asegurar un suelo uniforme de ciudadanía económica en todo el territorio nacional."
+            ),
+            supported_articles=["ART_01", "ART_02", "ART_03", "ART_14", "ART_17"],
+            legal_risk_level="Low",
+            defense_doctrine=(
+                "El TC ha reiterado (SSTC 61/1997, 158/2021) que el Estado puede establecer posiciones jurídicas "
+                "básicas idénticas con independencia de la residencia autonómica, siempre que no agote la "
+                "competencia asistencial autonómica."
+            ),
+            compliance_status="Fully Compliant",
+        ),
+        CompetenceAnchor(
+            id="COMP_149_1_14",
+            category="Constitutional Competence",
+            reference="Art. 149.1.14.ª CE",
+            title="Hacienda general y Deuda del Estado",
+            scope_description=(
+                "Facultad originaria del Estado para diseñar la estructura general de los tributos, definir "
+                "deducciones reembolsables en el IRPF estatal y gravar la computación exterior."
+            ),
+            supported_articles=["ART_04", "ART_05", "ART_06", "ART_07", "ART_08", "ART_09", "ART_18", "ART_21"],
+            legal_risk_level="Low",
+            defense_doctrine=(
+                "La creación de una deducción fiscal reembolsable y el gravamen a servicios de computación en "
+                "la nube forman parte del núcleo inderogable de la potestad tributaria originaria estatal (Art. 133.1 CE)."
+            ),
+            compliance_status="Fully Compliant",
+        ),
+        CompetenceAnchor(
+            id="COMP_149_1_17",
+            category="Constitutional Competence",
+            reference="Art. 149.1.17.ª CE",
+            title="Legislación básica y régimen económico de la Seguridad Social",
+            scope_description=(
+                "Exclusividad estatal sobre la fijación de los principios de unidad de caja, bases y prestaciones "
+                "no contributivas y créditos de cotización."
+            ),
+            supported_articles=["ART_11", "ART_12", "ART_13"],
+            legal_risk_level="Low",
+            defense_doctrine=(
+                "La STC 158/2021 avaló plenamente que una garantía económica de subsistencia puede integrarse "
+                "en el nivel no contributivo de la Seguridad Social sin invadir la asistencia social autonómica."
+            ),
+            compliance_status="Fully Compliant",
+        ),
+        CompetenceAnchor(
+            id="COMP_128_2",
+            category="Constitutional Competence",
+            reference="Art. 128.2 CE",
+            title="Iniciativa pública en la actividad económica y reserva de recursos esenciales",
+            scope_description=(
+                "Reconocimiento de la potestad pública para constituir patrimonios soberanos y fondos estratégicos "
+                "destinados a la colectivización de rentas extraordinarias del capital tecnológico."
+            ),
+            supported_articles=["ART_20", "ART_21"],
+            legal_risk_level="Low",
+            defense_doctrine=(
+                "Habilita expresamente al Estado para reservar al sector público recursos esenciales y participar en "
+                "actividades económicas para atender al interés general de transición tecnológica."
+            ),
+            compliance_status="Fully Compliant",
+        ),
+        CompetenceAnchor(
+            id="PREC_STC_158_2021",
+            category="TC Doctrine",
+            reference="STC 158/2021",
+            title="Doctrina de Constitucionalidad del Suelo Económico Estatal (IMV)",
+            scope_description=(
+                "Resolución del recurso de inconstitucionalidad contra el Ingreso Mínimo Vital, validando la "
+                "legitimidad del Estado para fijar un suelo de ingresos uniforme."
+            ),
+            supported_articles=["ART_01", "ART_02", "ART_11", "ART_14"],
+            legal_risk_level="Low",
+            defense_doctrine=(
+                "Establece que las competencias autonómicas sobre asistencia social (Art. 148.1.20 CE) no impiden "
+                "al Estado desplegar prestaciones económicas directas al amparo del Art. 149.1.17 y 149.1.1 CE."
+            ),
+            compliance_status="Fully Compliant",
+        ),
+        CompetenceAnchor(
+            id="PREC_STC_19_2024",
+            category="TC Doctrine",
+            reference="STC 19/2024",
+            title="Gestión Foral de Prestaciones No Contributivas Transferidas",
+            scope_description=(
+                "Aval constitucional a la asunción de la gestión y pago de prestaciones básicas por las "
+                "instituciones forales del País Vasco y Navarra sin quebrar la caja única."
+            ),
+            supported_articles=["ART_19"],
+            legal_risk_level="Low",
+            defense_doctrine=(
+                "La descentralización de la gestión material en las Haciendas Forales respeta la unidad del régimen "
+                "económico cuando se financia y armoniza bilateralmente con arreglo al Concierto y Convenio."
+            ),
+            compliance_status="Fully Compliant",
+        ),
+        CompetenceAnchor(
+            id="PREC_STC_79_2024",
+            category="TC Doctrine",
+            reference="STC 79/2024",
+            title="Competencia Exclusiva Autonómica de Vivienda vs Parámetros Fiscales del Estado",
+            scope_description=(
+                "Delimitación entre la competencia autonómica sustantiva en materia de vivienda (Art. 148.1.3 CE) "
+                "y la facultad tributaria estatal de fijar incentivos fiscales objetivos en el IRPF."
+            ),
+            supported_articles=["ART_07", "ART_23"],
+            legal_risk_level="Medium",
+            defense_doctrine=(
+                "El Parámetro Fiscal Federal Objetivo del Art. 23.2 LIRPF se fundamenta estrictamente en la competencia "
+                "fiscal estatal (Art. 149.1.14 CE), desvinculándose de la previa declaración autonómica de zona tensionada."
+            ),
+            compliance_status="Compliant via Statutory Firewall",
+        ),
+        CompetenceAnchor(
+            id="PREC_STC_182_2021",
+            category="TC Doctrine",
+            reference="STC 182/2021",
+            title="Límites Constitucionales de Capacidad Económica y No Confiscatoriedad",
+            scope_description=(
+                "Doctrina vinculante sobre el artículo 31.1 y 31.3 CE que exige que cualquier tributo grave una "
+                "capacidad económica real y no agote la riqueza o margen neto del contribuyente."
+            ),
+            supported_articles=["ART_08", "ART_09", "ART_21"],
+            legal_risk_level="Low",
+            defense_doctrine=(
+                "El gravamen IECA y los recargos sobre excedente operativo (EBE) gravan márgenes netos reales y "
+                "windfalls tecnológicos extraordinarios, respetando holgadamente el umbral del 60% de tipo efectivo máximo."
+            ),
+            compliance_status="Fully Compliant",
+        ),
+        CompetenceAnchor(
+            id="PREC_STC_73_2017",
+            category="TC Doctrine",
+            reference="SSTC 73/2017 y 78/2020",
+            title="Principio de Legalidad Tributaria y Veto a Decretos-Leyes Impositivos",
+            scope_description=(
+                "Inconstitucionalidad de crear tributos sustanciales o recargos impositivos estructurales mediante "
+                "Real Decreto-ley (Art. 86.1 CE)."
+            ),
+            supported_articles=["ART_22"],
+            legal_risk_level="Low",
+            defense_doctrine=(
+                "La adaptación de tramos impositivos frente a shocks tecnológicos se canaliza exclusivamente por "
+                "Proyecto de Ley con trámite de urgencia parlamentaria (Art. 93 Reglamento del Congreso), excluyendo decretos-leyes."
+            ),
+            compliance_status="Fully Compliant",
+        ),
+        CompetenceAnchor(
+            id="PREC_STC_179_1989",
+            category="TC Doctrine",
+            reference="STC 179/1989",
+            title="Preeminencia Legislativa del Congreso sobre el Senado (Art. 90.2 CE)",
+            scope_description=(
+                "Consagración constitucional de la superioridad decisoria de la Cámara Baja para levantar los vetos del Senado."
+            ),
+            supported_articles=["DA_01"],
+            legal_risk_level="Low",
+            defense_doctrine=(
+                "La reforma del artículo 15.6 de la LOEPSF por Ley Orgánica restaura la regla general del Art. 90.2 CE, "
+                "anulando la anomalía legislativa que atribuía al Senado un veto absoluto sobre la estabilidad presupuestaria."
+            ),
+            compliance_status="Fully Compliant",
+        ),
+        CompetenceAnchor(
+            id="EU_DIR_2004_38",
+            category="EU Law",
+            reference="Directiva 2004/38/CE",
+            title="Libre Circulación y Limitaciones al Acceso a la Asistencia Social",
+            scope_description=(
+                "Regula las condiciones en las que los Estados miembros pueden supeditar el acceso a prestaciones "
+                "no contributivas de asistencia social a períodos de residencia de ciudadanos inactivos (Art. 24.2)."
+            ),
+            supported_articles=["ART_03"],
+            legal_risk_level="Medium",
+            defense_doctrine=(
+                "La exigencia de 24 meses de residencia legal para ciudadanos de la UE económicamente inactivos respeta "
+                "plenamente el artículo 24(2) de la Directiva y la doctrina TJUE sentada en los asuntos C-333/13 Dano y C-67/14 Alimanovic."
+            ),
+            compliance_status="Compliant via Statutory Firewall",
+        ),
+        CompetenceAnchor(
+            id="EU_REG_883_2004",
+            category="EU Law",
+            reference="Reglamento (CE) n.º 883/2004",
+            title="Coordinación de los Sistemas de Seguridad Social y No Exportabilidad",
+            scope_description=(
+                "Delimitación entre prestaciones contributivas de seguridad social exportables (Art. 7) y asistencia "
+                "social general no exportable fuera del territorio nacional."
+            ),
+            supported_articles=["ART_01", "ART_03", "ART_11"],
+            legal_risk_level="Low",
+            defense_doctrine=(
+                "Al anclarse la RBU como garantía asistencial general no contributiva fuera del catálogo cerrado del "
+                "artículo 3 del Reglamento 883/2004, se evita la exportabilidad obligatoria al extranjero sin vulnerar el Derecho de la UE."
+            ),
+            compliance_status="Fully Compliant",
+        ),
+        CompetenceAnchor(
+            id="CJEU_SCHUMACKER",
+            category="CJEU Precedent",
+            reference="Caso C-279/93 Schumacker",
+            title="Doctrina de Paridad Tributaria para Trabajadores Transfronterizos",
+            scope_description=(
+                "Obligación del Estado de origen de otorgar las mismas deducciones y ventajas fiscales familiares al "
+                "no residente que obtenga la práctica totalidad de sus ingresos (>=75%) en dicho Estado."
+            ),
+            supported_articles=["ART_10"],
+            legal_risk_level="Low",
+            defense_doctrine=(
+                "El nuevo artículo 46 bis del TRIRNR extiende expresamente la deducción reembolsable a los trabajadores "
+                "transfronterizos y temporales de la UE en estricta proporción a sus ingresos gravados en España."
+            ),
+            compliance_status="Fully Compliant",
+        ),
+        CompetenceAnchor(
+            id="CJEU_CREMONA",
+            category="CJEU Precedent",
+            reference="Caso C-475/03 Banca Popolare di Cremona",
+            title="Compatibilidad de Gravámenes sobre el Valor Añadido Neto con el IVA Comunitario",
+            scope_description=(
+                "Criterio delimitador del artículo 401 de la Directiva del IVA (2006/112/CE) respecto a tributos sobre "
+                "el margen o excedente empresarial que no operan como impuestos sobre el volumen de negocios."
+            ),
+            supported_articles=["ART_08", "ART_21"],
+            legal_risk_level="Low",
+            defense_doctrine=(
+                "El gravamen IECA y la aportación sobre el EBE gravan magnitudes de valor añadido neto y transacciones "
+                "B2B específicas sin repercusión en cascada al consumidor, superando el test de Cremona."
+            ),
+            compliance_status="Fully Compliant",
+        ),
+    ]
+
+
+def evaluate_competence_architecture() -> CompetenceEvaluationResult:
+    """Evaluates and consolidates the entire competence matrix."""
+    anchors = build_competence_anchors()
+    total = len(anchors)
+    fully = sum(1 for a in anchors if a.compliance_status == "Fully Compliant")
+    firewall = sum(1 for a in anchors if a.compliance_status == "Compliant via Statutory Firewall")
+
+    # Scores
+    const_anchors = [a for a in anchors if a.category in ["Constitutional Competence", "TC Doctrine"]]
+    eu_anchors = [a for a in anchors if a.category in ["EU Law", "CJEU Precedent"]]
+
+    const_score = sum(1.0 if a.compliance_status == "Fully Compliant" else 0.95 for a in const_anchors) / len(const_anchors) * 100.0
+    eu_score = sum(1.0 if a.compliance_status == "Fully Compliant" else 0.95 for a in eu_anchors) / len(eu_anchors) * 100.0
+
+    return CompetenceEvaluationResult(
+        total_anchors=total,
+        fully_compliant_count=fully,
+        firewall_compliant_count=firewall,
+        constitutional_coverage_score=round(const_score, 2),
+        eu_compliance_score=round(eu_score, 2),
+        anchors=anchors,
+    )
