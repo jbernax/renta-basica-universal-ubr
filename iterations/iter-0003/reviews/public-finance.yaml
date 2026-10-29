@@ -1,0 +1,220 @@
+reviewer: public-finance
+iteration: 3
+summary: 'The iter-0003 research plan demonstrates substantial progress in micro-macro integration, incorporating Almunia-Lopez-Rodriguez
+  ETI parameters, QUAIDS demand modeling, S2 baseline revenue erosion (11.55% of GDP), and a four-stage closure pipeline.
+  However, critical public finance vulnerabilities remain: (1) M03 overlooks the statutory Vertical Fiscal Imbalance under
+  Ley 22/2009, where regional 50% IRPF/IVA cession creates a massive unearned CCAA windfall while leaving the Central State
+  with a multi-hundred-billion deficit, and lacks the mathematical Cupo/Aportación clearing algorithm for Basque/Navarre Foral
+  regimes; (2) M16''s origin-based IRAP surplus tax misses foreign AI developers while the Spanish Digital Services Tax raises
+  only 0.02% of GDP, and its Sovereign Fund mandates a 1.0-1.2% GDP annual diversion that worsens the primary deficit during
+  peak S2 displacement; (3) M09 commits a welfare-theoretic error by directly subtracting nominal indirect taxes from disposable
+  income instead of computing QUAIDS equivalent variation or household-specific true cost-of-living indices, while M03''s
+  38% IRPF withholding from euro 1 generates an acute 44.5% marginal tax deduction on low-wage payslips; (4) METHODS omits
+  dynamic sovereign debt service changes in the micro-macro closure loop, threatening Maastricht compliance under EU Regulation
+  2024/1263; and (5) M02 tests adulthood transition at age 23 without resolving intra-household benefit disbursal or interaction
+  with LIRPF Art. 58 descendant deductions.'
+scores:
+  spain_fit:
+    score: 4.0
+    rationale: Strong incorporation of core Spanish statutory codes (LIRPF Arts. 20, 56-61, 84; Ley 22/2009; Concierto Vasco
+      Ley 12/2002; Convenio Navarro Ley 28/1990; Ley 27/2014; Ley 37/1992; STC 158/2021; STC 19/2024). However, it does not
+      yet reach Anchor 5 because it fails to model the statutory Vertical Fiscal Imbalance (VFI) between the Central State
+      (which incurs 100% of UBR outlays) and the CCAA (which automatically receive 50% of ceded IRPF/IVA under Ley 22/2009),
+      lacks explicit clearing equations for the Basque Cupo and Navarrese Aportación, and relies on Spain's existing Ley 4/2020
+      DST (which yields only €300M/year) to capture foreign AI foundation models.
+  methodological_rigor:
+    score: 4.1
+    rationale: High technical rigor in micro-macro architecture, combining EUROMOD-Spain, QUAIDS demand systems, discrete-choice
+      labor supply, and open-economy HANK closure with empirical ETI parameters (0.15-0.45). However, M09 Section 5.3 exhibits
+      a welfare-theoretic flaw by defining real disposable income via an ad-hoc direct subtraction of nominal indirect taxes
+      in the numerator rather than deflating by a household-specific true cost-of-living index or calculating QUAIDS Compensating/Equivalent
+      Variation, and METHODS omits endogenous sovereign debt service feedback (r * D) in the general-government closure equation.
+  feasibility:
+    score: 3.9
+    rationale: Solid data foundations across IEF/AEAT Panel de Hogares, Muestra de Declarantes, MCVL, and BdE Central de Balances.
+      However, feasibility is constrained by M16 projecting 2.5-4.5% of GDP in AI rents from an origin-based surplus tax that
+      cannot reach foreign AI providers, and M16's mandate to divert 1.0-1.2% of GDP annually into a Sovereign Wealth Fund
+      during Years 1-15, which deepens fiscal deficits and risks violating LOEPSF and EU Net Primary Expenditure limits at
+      the exact moment when labor tax receipts contract under S2.
+  internal_coherence:
+    score: 4.0
+    rationale: 'Exemplary consistency across benefit tiers (A: €600, B: €900, C: €1,200) and macroeconomic scenarios (S1-S3),
+      explicitly accounting for the 11.55% of GDP S2 baseline revenue contraction across M01, M03, and METHODS. However, there
+      is an internal contradiction between M03''s 38% marginal IRPF withholding from euro 1 (which creates a 44.5% payslip
+      deduction when combined with employee social security contributions) and M08''s labor market activation goals, as well
+      as an unmodeled disconnect between M02''s age-23 youth transition and M03''s elimination of LIRPF Art. 58 child tax
+      allowances.'
+  evidence_grounding:
+    score: 4.3
+    rationale: Exceptional grounding in 86 machine-verified statutory and academic sources (Saez, Sutherland & Figari, Almunia
+      & Lopez-Rodriguez, Acemoglu, Korinek & Suh, Cazzaniga et al., CJEU C-475/03, CJEU C-279/93). To attain Anchor 5, the
+      plan needs to integrate canonical Spanish fiscal federalism literature on Ley 22/2009 equalizing mechanisms (Zabalza
+      & Lopez-Laborda 2011), destination-based corporate and digital taxation under OECD Pillar Two (Devereux et al. 2021;
+      Directive (EU) 2022/2523), QUAIDS consumer welfare foundations (Banks, Blundell & Lewbel 1997), and currency-union sovereign
+      debt dynamics (Blanchard 2019).
+issues:
+- id: PF-03-01
+  severity: critical
+  module: M03
+  finding: 'M03 establishes an ambitious IRPF tariff restructure (t in [38%, 52%]) to finance gross UBR (~€466B under Tier
+    B) but completely overlooks the statutory Vertical Fiscal Imbalance (VFI) embedded in Spain''s territorial financing framework
+    (Ley 22/2009). Under Ley 22/2009, 50% of IRPF and 50% of IVA collections are legally ceded to the Comunidades Autónomas
+    de Régimen Común. If the Central State finances 100% of the UBR cash transfers while raising IRPF/IVA rates, the CCAA
+    would automatically capture 50% of the gross tax windfall without bearing any UBR expenditure obligation, creating an
+    astronomical multi-hundred-billion-euro deficit for the Central State and an unearned surplus for the regions. Furthermore,
+    the redistribution mechanism (Fondo de Garantía de Servicios Públicos Fundamentales and Fondo de Suficiencia Global) would
+    be distorted. For the Foral territories (Basque Country and Navarre), M03 does not specify the mathematical Cupo / Aportación
+    clearing formula: because the State cannot modify Normas Forales del IRPF directly, treating UBR as a non-assumed power
+    (carga no asumida) requires an explicit bilateral withholding clearinghouse (Cámara de Compensación Foral) and an adjustment
+    to the imputation indexes (6.24% Basque, 1.6% Navarre) under Ley 12/2002 and Ley 28/1990.'
+  proposal: 'In M03 (Sections 2, 5, and 6), formalize the Multi-Level Territorial Fiscal Architecture: (1) recalibrate Ley
+    22/2009 by introducing an explicit statutory Fondo de Compensación UBR or negative Fondo de Suficiencia Global that neutralizes
+    the regional 50% IRPF/IVA windfall, ensuring that incremental tax revenues generated to finance UBR flow exclusively to
+    the national social protection fund paying the benefit; (2) formulate the exact Basque and Navarrese clearing algorithm:
+    specify that if the Foral Treasuries collect reformed IRPF under harmonized Normas Forales, the net cost of national UBR
+    distributed in the Basque Country and Navarre is credited against the Cupo líquido / Aportación líquida, backed by a bilateral
+    inter-governmental clearing protocol (Comisión Mixta del Concierto Económico); and (3) ground regional equalization modeling
+    in canonical empirical literature (Zabalza & López-Laborda 2011).'
+  sources:
+  - title: The new Spanish system of intergovernmental transfers
+    authors:
+    - Zabalza, A.
+    - López-Laborda, J.
+    year: 2011
+    doi: 10.1007/s10797-011-9192-x
+  - title: Ley 22/2009, de 18 de diciembre, por la que se regula el sistema de financiación de las Comunidades Autónomas de
+      régimen común y Ciudades con Estatuto de Autonomía (BOE-A-2009-20375)
+    authors:
+    - Jefatura del Estado
+    year: 2009
+    url: https://www.boe.es/buscar/act.php?id=BOE-A-2009-20375
+- id: PF-03-02
+  severity: critical
+  module: M16
+  finding: 'M16 relies on two flawed public finance mechanisms: (1) RQ-M16-01 assumes that an origin-based tax on domestic
+    Net Operating Surplus (Excedente Neto de Explotación, modeled on Italian IRAP) paired with Spain''s current Digital Services
+    Tax (Ley 4/2020) can raise 2.5–4.5% of GDP from AI rents. However, leading generative AI foundation-model developers (OpenAI,
+    Microsoft, Google, Anthropic) are foreign multinationals that license compute and services from abroad or book IP in low-tax
+    jurisdictions. Spain''s current Digital Services Tax raises under €300M/year (~0.02% of GDP). The domestic IRAP levy falls
+    strictly on domestic Spanish operating surpluses, penalizing domestic capital-intensive firms while leaving foreign digital
+    monopoly rents untaxed unless structured as a destination-based corporate presence or cloud compute excise; and (2) RQ-M16-03
+    mandates diverting 1.0–1.2% of GDP annually into the Fondo Soberano de Dividendos de IA. In the first 10–15 years, this
+    sovereign fund has zero or negligible dividend yield, meaning this statutory diversion acts as an additional €15B–€18B/year
+    drain on the general-government primary balance during the very period of peak labor-displacement tax erosion under S2/S3.'
+  proposal: 'In M16 (Sections 2, 4, 5, and 7): (1) replace reliance on the narrow Ley 4/2020 DST with a legally robust Destination-Based
+    AI Compute and Inference Excise (Impuesto Especial sobre el Procesamiento y Capacidad de Computación Algorítmica, IECA)
+    levied on all B2B/B2C cloud inference consumption delivered to Spanish IP addresses, integrated alongside the OECD Pillar
+    One/Two global minimum tax framework (Directiva (UE) 2022/2523); (2) restructure the Fondo Soberano capitalization schedule
+    from a rigid 1.0–1.2% annual GDP diversion to a counter-cyclical Contingent Windfall Rule: the fund is capitalized exclusively
+    from genuine corporate automation windfall surcharges (operating profits exceeding 120% of sectoral historical norms)
+    and public spectrum/data licensing revenues, ensuring that baseline UBR disbursements and public services are never crowded
+    out during the critical S2 transition window; and (3) cite frontier destination-based profit taxation principles (Devereux
+    et al. 2021; Council Directive (EU) 2022/2523).'
+  sources:
+  - title: Taxing Profit in a Global Economy
+    authors:
+    - Devereux, M. P.
+    - Auerbach, A. J.
+    - Keen, M.
+    - Oosterhuis, P.
+    - Schön, W.
+    - Vella, J.
+    year: 2021
+    doi: 10.1093/oso/9780198808060.001.0001
+  - title: Council Directive (EU) 2022/2523 of 14 December 2022 on ensuring a global minimum level of taxation for multinational
+      enterprise groups and large-scale domestic groups in the Union
+    authors:
+    - Council of the European Union
+    year: 2022
+    url: https://eur-lex.europa.eu/eli/dir/2022/2523/oj
+- id: PF-03-03
+  severity: major
+  module: M09
+  finding: 'M09 contains a methodological error in evaluating real disposable income: Section 5.3 defines real income by directly
+    subtracting nominal indirect taxes T_i^ind from disposable income in the numerator: y_i^real = (y_i^disp - Delta R_i -
+    T_i^ind) / phi(k_i). In public finance and welfare theory, indirect consumption taxes (IVA and excise duties) cannot be
+    subtracted as lump-sum deductions from disposable income while simultaneously ignoring consumption-smoothing, savings,
+    and commodity substitution; this treats unspent savings as taxed and fails to measure true welfare deadweight loss. Furthermore,
+    M09 evaluates distributional gains on an annual basis without addressing the withholding liquidity penalty on formal low-wage
+    workers created by M03: abolishing LIRPF Art. 20 and applying a 38% marginal IRPF withholding from euro 1, combined with
+    6.47% employee Social Security contributions, subjects minimum-wage payslips to a 44.5% marginal deduction, depressing
+    formal job-entry salience.'
+  proposal: 'In M09 (Sections 2 and 5) and M03: (1) correct the real income welfare metric: replace the ad-hoc subtraction
+    of T_i^ind with rigorous welfare measures derived from the QUAIDS demand system: specifically, report Compensating Variation
+    (CV) and Equivalent Variation (EV), and compute real equivalized disposable income using a household-specific true cost-of-living
+    index (TCLI) based on Stone/Laspeyres expenditure deflators across the 12 COICOP categories: y_i^real = (y_i^disp - Delta
+    R_i) / (P_i^COICOP * phi(k_i)); (2) introduce a statutory Crédito Fiscal Reembolsable al Trabajo Formal (or zero-withholding
+    threshold up to SMI in monthly payroll clearing) in M03/M09 to ensure that low-income workers do not face excessive payslip
+    withholding on formal wages, preserving formal employment incentives while maintaining universal monthly UBR liquidity;
+    and (3) ground consumer demand modeling in Banks, Blundell & Lewbel (1997).'
+  sources:
+  - title: Quadratic Engel Curves and Consumer Demand
+    authors:
+    - Banks, J.
+    - Blundell, R.
+    - Lewbel, A.
+    year: 1997
+    doi: 10.1162/003465397557015
+- id: PF-03-04
+  severity: major
+  module: METHODS
+  finding: 'METHODS Section 3 (Handoff 2 and Handoff 4) and Section 2 specify a micro-macro closure pipeline between EUROMOD
+    and the open-economy HANK model, requiring the primary balance to converge within +-0.05% of GDP. However, the general-government
+    fiscal bridge equation specified in M03 and METHODS Section 2 is: Delta Balance = Delta IRPF + Delta IVA + Savings_INSS
+    + AI/Capital - Gross UBR - Baseline Tax Erosion = 0. This equation accounts only for the primary balance and completely
+    omits endogenous changes in public debt servicing costs (Delta (r_t - g_t) D_t). With Spain''s public debt exceeding 105%
+    of GDP (~€1.6 trillion), HANK equilibrium adjustments (Handoff 3) that alter sovereign risk premia (Bonos-Bund spreads)
+    or ECB interest rates directly impact debt service outlays. A mere 50 bps widening in sovereign spreads increases debt
+    interest payments by ~€8B/year (~0.5% of GDP). Omitting sovereign debt service from the feedback closure loop means that
+    a ''converged'' primary balance in EUROMOD may leave the consolidated general government with an unfinanced, rule-breaking
+    Maastricht deficit under Regulation (EU) 2024/1263 and LOEPSF.'
+  proposal: 'In METHODS Section 2 and Section 3: (1) expand the consolidated general-government closure equation to explicitly
+    include dynamic debt service feedback: Delta Overall Balance_t = Delta Primary Balance_t - Delta (r_t * D_{t-1}) - Delta
+    S_t^Fund = 0, where r_t = r_t^ECB + Spread_t(HANK) and S_t^Fund is the annual sovereign fund accumulation transfer from
+    M16; (2) in Handoff 4, mandate that HANK passes the updated endogenous sovereign debt interest bill back into EUROMOD,
+    requiring the iterative solver to adjust the top-tier IRPF surcharge or corporate automation surplus tax until the Net
+    Primary Expenditure path complies strictly with Spain''s Medium-Term Fiscal-Structural Plan under Regulation (EU) 2024/1263;
+    and (3) cite macroeconomic debt sustainability literature (Blanchard 2019; Regulation (EU) 2024/1263).'
+  sources:
+  - title: Public Debt and Low Interest Rates
+    authors:
+    - Blanchard, O.
+    year: 2019
+    doi: 10.1257/aer.109.4.1197
+  - title: Regulation (EU) 2024/1263 of the European Parliament and of the Council of 29 April 2024 on the effective coordination
+      of economic policies and on multilateral budgetary surveillance
+    authors:
+    - European Parliament
+    - Council of the European Union
+    year: 2024
+    url: https://eur-lex.europa.eu/eli/reg/2024/1263/oj
+- id: PF-03-05
+  severity: major
+  module: M02
+  finding: M02 Section 5.1 includes youth adult transition age {18, 23} in its parametric EUROMOD grid, but fails to resolve
+    the legal and administrative architecture governing child benefit disbursal and parental tax interactions. In Spanish
+    tax law, LIRPF Art. 58 grants a substantial mínimo por descendientes (€2,400 to €4,500/year) to parents of cohabiting
+    youths up to age 25 earning under €8,000/year. Under Tier B, if adulthood begins at 18, an 18-year-old receives €10,800/year
+    directly, eliminating parental dependency and disqualifying parents from Art. 58 deductions. Conversely, if youth adulthood
+    is set at 23 (mirroring the controversial IMV threshold under Ley 19/2021), 18–22 year olds receive the minor amount (€360/month
+    = €4,320/year). M02 fails to specify whether this €360/month is paid to the parent or directly to the youth, creating
+    either parental liquidity capture and youth emancipation lock-in or an adequacy deficit for youths living away from home
+    for university or vocational training without entitlement to independent adult UBR.
+  proposal: 'Revise M02 Sections 2, 5, and 6 to: (1) establish Age 18 as the inviolable statutory individual entitlement boundary
+    for adult UBR, eliminating IMV''s restrictive age-23 threshold to promote early youth emancipation and intra-household
+    equity; (2) specify the disbursal protocol: child UBR (<18) is disbursed by default to the primary caregiver designated
+    under civil custody rules (or split 50/50 in shared custody), while at age 18 payment transfers automatically and unconditionally
+    to the young adult''s own bank account; (3) coordinate with M03 and M07 to model the net fiscal impact on parental households
+    resulting from the simultaneous loss of LIRPF Art. 58 child allowances and gain of youth adult UBR; and (4) cross-reference
+    AIReF''s empirical findings on IMV youth access barriers (Segunda Opinión sobre el IMV 2023).'
+  sources:
+  - title: Segunda Opinión sobre el Ingreso Mínimo Vital
+    authors:
+    - Autoridad Independiente de Responsabilidad Fiscal (AIReF)
+    year: 2023
+    url: https://www.airef.es/es/centro-documental/opiniones/segunda-opinion-sobre-el-ingreso-minimo-vital/
+  - title: Ley 35/2006, de 28 de noviembre, del Impuesto sobre la Renta de las Personas Físicas (BOE-A-2006-20764)
+    authors:
+    - Jefatura del Estado
+    year: 2006
+    url: https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764

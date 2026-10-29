@@ -1,0 +1,1236 @@
+# Source registry. Every [@id] citation in plan/**/*.md must resolve to an entry here.
+# verified / verified_by / check_status / checked_at are maintained by `python -m ubr sources verify`.
+# Set `verified: true` + `verified_by: human` to vouch for a source that blocks automated checks.
+sources:
+- id: acemoglu-restrepo-2019
+  authors:
+  - Acemoglu
+  - D.
+  - Restrepo
+  - P.
+  year: 2019
+  title: 'Automation and New Tasks: How Technology Displaces and Reinstates Labor'
+  venue: Journal of Economic Perspectives
+  type: article
+  doi: 10.1257/jep.33.2.3
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T07:40:15+00:00'
+  verified_by: machine
+- id: acemoglu-2024-macro-ai
+  authors:
+  - Acemoglu
+  - D.
+  year: 2024
+  title: The Simple Macroeconomics of AI
+  venue: Economic Policy
+  type: article
+  doi: 10.1093/epolic/eiae042
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T07:40:15+00:00'
+  verified_by: machine
+- id: eloundou-2024-gpts
+  authors:
+  - Eloundou
+  - T.
+  - Manning
+  - S.
+  - Mishkin
+  - P.
+  - Rock
+  - D.
+  year: 2024
+  title: 'GPTs are GPTs: Labor market impact potential of LLMs'
+  venue: Science
+  type: article
+  doi: 10.1126/science.adj0998
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T07:40:15+00:00'
+  verified_by: machine
+- id: webb-2020-ai
+  authors:
+  - Webb
+  - M.
+  year: 2020
+  title: The Impact of Artificial Intelligence on the Labor Market
+  venue: SSRN Working Paper
+  type: working-paper
+  doi: 10.2139/ssrn.3482150
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T07:40:15+00:00'
+  verified_by: machine
+- id: felten-2021-aioe
+  authors:
+  - Felten
+  - E.
+  - Raj
+  - M.
+  - Seamans
+  - R.
+  year: 2021
+  title: 'Occupational, industry, and geographic exposure to artificial intelligence: A novel dataset
+    and its potential uses'
+  venue: Strategic Management Journal
+  type: article
+  doi: 10.1002/smj.3286
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T07:40:15+00:00'
+  verified_by: machine
+- id: korinek-suh-2024
+  authors:
+  - Korinek
+  - A.
+  - Suh
+  - D.
+  year: 2024
+  title: Scenarios for the Transition to AGI
+  venue: NBER Working Paper 32255
+  type: working-paper
+  doi: 10.3386/w32255
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T07:40:15+00:00'
+  verified_by: machine
+- id: cazzaniga-imf-2024
+  authors:
+  - Cazzaniga
+  - M.
+  - Jaumotte
+  - F.
+  - Li
+  - L.
+  - Melina
+  - G.
+  - Panton
+  - A. J.
+  - Pizzinelli
+  - C.
+  - Rockall
+  - E.
+  - Tavares
+  - M. M.
+  year: 2024
+  title: 'Gen-AI: Artificial Intelligence and the Future of Work'
+  venue: IMF Staff Discussion Note SDN/2024/001
+  type: report
+  doi: 10.5089/9798400262548.006
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T07:40:15+00:00'
+  verified_by: machine
+- id: gmyrek-ilo-2023
+  authors:
+  - Gmyrek
+  - P.
+  - Berg
+  - J.
+  - Bescond
+  - D.
+  year: 2023
+  title: 'Generative AI and Jobs: A global analysis of potential effects on job quantity and quality'
+  venue: ILO Working Paper 96
+  type: report
+  doi: 10.54394/FHEM8239
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T07:40:15+00:00'
+  verified_by: machine
+- id: van-parijs-vanderborght-2017
+  authors:
+  - Van Parijs
+  - P.
+  - Vanderborght
+  - Y.
+  year: 2017
+  title: 'Basic Income: A Radical Proposal for a Free Society and a Sane Economy'
+  venue: Harvard University Press
+  type: book
+  doi: 10.4159/9780674978072
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T07:40:15+00:00'
+  verified_by: machine
+- id: hoynes-rothstein-2019
+  authors:
+  - Hoynes
+  - H.
+  - Rothstein
+  - J.
+  year: 2019
+  title: Universal Basic Income in the United States and Advanced Countries
+  venue: Annual Review of Economics
+  type: article
+  doi: 10.1146/annurev-economics-080218-030237
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T07:40:15+00:00'
+  verified_by: machine
+- id: banerjee-niehaus-suri-2019
+  authors:
+  - Banerjee
+  - A.
+  - Niehaus
+  - P.
+  - Suri
+  - T.
+  year: 2019
+  title: Universal Basic Income in the Developing World
+  venue: Annual Review of Economics
+  type: article
+  doi: 10.1146/annurev-economics-080218-030229
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T07:40:15+00:00'
+  verified_by: machine
+- id: ghatak-maniquet-2019
+  authors:
+  - Ghatak
+  - M.
+  - Maniquet
+  - F.
+  year: 2019
+  title: 'Universal Basic Income: Some Theoretical Aspects'
+  venue: Annual Review of Economics
+  type: article
+  doi: 10.1146/annurev-economics-080218-030220
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T07:40:15+00:00'
+  verified_by: machine
+- id: jones-marinescu-2022
+  authors:
+  - Jones
+  - D.
+  - Marinescu
+  - I.
+  year: 2022
+  title: 'The Labor Market Impacts of Universal and Permanent Cash Transfers: Evidence from the Alaska
+    Permanent Fund'
+  venue: 'American Economic Journal: Economic Policy'
+  type: article
+  doi: 10.1257/pol.20190299
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T07:40:15+00:00'
+  verified_by: machine
+- id: vivalt-2024-openresearch
+  authors:
+  - Vivalt
+  - E.
+  - Rhodes
+  - E.
+  - Bartik
+  - A. W.
+  - Broockman
+  - D. E.
+  - Krause
+  - P.
+  - Miller
+  - S.
+  year: 2024
+  title: 'The Employment Effects of a Guaranteed Income: Experimental Evidence from Two U.S. States'
+  venue: NBER Working Paper 32719
+  type: working-paper
+  doi: 10.3386/w32719
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T07:40:15+00:00'
+  verified_by: machine
+- id: bartik-2024-openresearch
+  authors:
+  - Bartik
+  - A. W.
+  - Broockman
+  - D. E.
+  - Miller
+  - S.
+  - Rhodes
+  - E.
+  - Vivalt
+  - E.
+  year: 2024
+  title: 'The Impact of Unconditional Cash Transfers on Consumption and Household Balance Sheets: Experimental
+    Evidence from Two US States'
+  venue: NBER Working Paper 32784
+  type: working-paper
+  doi: 10.3386/w32784
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T07:40:15+00:00'
+  verified_by: machine
+- id: miller-2024-openresearch-health
+  authors:
+  - Miller
+  - S.
+  - Rhodes
+  - E.
+  - Bartik
+  - A. W.
+  - Broockman
+  - D. E.
+  - Krause
+  - P.
+  - Vivalt
+  - E.
+  year: 2024
+  title: Does Income Affect Health? Evidence from a Randomized Controlled Trial of a Guaranteed Income
+  venue: NBER Working Paper 32711
+  type: working-paper
+  doi: 10.3386/w32711
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T07:40:15+00:00'
+  verified_by: machine
+- id: egger-2022-ge-kenya
+  authors:
+  - Egger
+  - D.
+  - Haushofer
+  - J.
+  - Miguel
+  - E.
+  - Niehaus
+  - P.
+  - Walker
+  - M.
+  year: 2022
+  title: 'General Equilibrium Effects of Cash Transfers: Experimental Evidence from Kenya'
+  venue: Econometrica
+  type: article
+  doi: 10.3982/ECTA17945
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T07:40:15+00:00'
+  verified_by: machine
+- id: west-2024-seed
+  authors:
+  - West
+  - S.
+  - Castro
+  - A.
+  year: 2023
+  title: 'Impact of Guaranteed Income on Health, Finances, and Agency: Findings from the Stockton Randomized
+    Controlled Trial'
+  venue: Journal of Urban Health
+  type: article
+  doi: 10.1007/s11524-023-00723-0
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T07:40:15+00:00'
+  verified_by: machine
+- id: kangas-2021-finland
+  authors:
+  - Kangas
+  - O.
+  - Jauhiainen
+  - S.
+  - Simanainen
+  - M.
+  - Ylikännö
+  - M.
+  year: 2021
+  title: 'Experimenting with Unconditional Basic Income: Lessons from the Finnish BI Experiment 2017-2018'
+  venue: Edward Elgar Publishing
+  type: book
+  doi: 10.4337/9781839104855
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T07:40:15+00:00'
+  verified_by: machine
+- id: todeschini-bmincome-2020
+  authors:
+  - Riutort, S.
+  - Laín, B.
+  - Julià, A.
+  year: 2023
+  title: 'Basic Income at Municipal Level: Insights from the Barcelona B-MINCOME Pilot'
+  venue: Basic Income Studies
+  type: article
+  doi: 10.1515/bis-2021-0047
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T07:42:53+00:00'
+  verified_by: machine
+- id: arcelus-bade-2015-rgi
+  authors:
+  - De la Rica, S.
+  - Gorjón, L.
+  year: 2019
+  title: 'Assessing the impact of a minimum income scheme: the Basque Country case'
+  venue: SERIEs
+  type: article
+  doi: 10.1007/s13209-019-00203-2
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T07:42:53+00:00'
+  verified_by: machine
+- id: sutherland-figari-2013-euromod
+  authors:
+  - Sutherland
+  - H.
+  - Figari
+  - F.
+  year: 2013
+  title: 'EUROMOD: the European Union tax-benefit microsimulation model'
+  venue: International Journal of Microsimulation
+  type: article
+  doi: 10.34196/ijm.00075
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T07:40:15+00:00'
+  verified_by: machine
+- id: kaplan-moll-violante-2018-hank
+  authors:
+  - Kaplan
+  - G.
+  - Moll
+  - B.
+  - Violante
+  - G. L.
+  year: 2018
+  title: Monetary Policy According to HANK
+  venue: American Economic Review
+  type: article
+  doi: 10.1257/aer.20160042
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T07:40:15+00:00'
+  verified_by: machine
+- id: auclert-rognlie-straub-2024
+  authors:
+  - Auclert
+  - A.
+  - Rognlie
+  - M.
+  - Straub
+  - L.
+  year: 2024
+  title: The Intertemporal Keynesian Cross
+  venue: Journal of Political Economy
+  type: article
+  doi: 10.1086/731409
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T07:40:15+00:00'
+  verified_by: machine
+- id: saez-2002-optimal-transfers
+  authors:
+  - Saez
+  - E.
+  year: 2002
+  title: 'Optimal Income Transfer Programs: Intensive versus Extensive Labor Supply Responses'
+  venue: Quarterly Journal of Economics
+  type: article
+  doi: 10.1162/003355302760193959
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T07:40:15+00:00'
+  verified_by: machine
+- id: guerreiro-rebelo-teles-2022-robots
+  authors:
+  - Guerreiro
+  - J.
+  - Rebelo
+  - S.
+  - Teles
+  - P.
+  year: 2022
+  title: Should Robots Be Taxed?
+  venue: Review of Economic Studies
+  type: article
+  doi: 10.1093/restud/rdab019
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T07:40:15+00:00'
+  verified_by: machine
+- id: diamond-mcquade-qian-2019-rent
+  authors:
+  - Diamond
+  - R.
+  - McQuade
+  - T.
+  - Qian
+  - F.
+  year: 2019
+  title: 'The Effects of Rent Control Expansion on Tenants, Landlords, and Inequality: Evidence from San
+    Francisco'
+  venue: American Economic Review
+  type: article
+  doi: 10.1257/aer.20181289
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T07:40:15+00:00'
+  verified_by: machine
+- id: fack-2006-housing-benefits
+  authors:
+  - Fack, G.
+  year: 2006
+  title: Are housing benefit an effective way to redistribute income? Evidence from a natural experiment
+    in France
+  venue: Labour Economics
+  type: article
+  doi: 10.1016/j.labeco.2006.01.001
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T07:42:53+00:00'
+  verified_by: machine
+- id: boe-ce-1978
+  authors:
+  - Cortes Generales
+  year: 1978
+  title: Constitución Española (BOE-A-1978-31229)
+  venue: Boletín Oficial del Estado
+  type: law
+  lang: es
+  url: https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T07:40:15+00:00'
+  verified_by: machine
+- id: boe-imv-2021
+  authors:
+  - Jefatura del Estado
+  year: 2021
+  title: Ley 19/2021, de 20 de diciembre, por la que se establece el ingreso mínimo vital (BOE-A-2021-21007)
+  venue: Boletín Oficial del Estado
+  type: law
+  lang: es
+  url: https://www.boe.es/buscar/act.php?id=BOE-A-2021-21007
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T07:40:15+00:00'
+  verified_by: machine
+- id: boe-irpf-2006
+  authors:
+  - Jefatura del Estado
+  year: 2006
+  title: Ley 35/2006, de 28 de noviembre, del Impuesto sobre la Renta de las Personas Físicas (BOE-A-2006-20764)
+  venue: Boletín Oficial del Estado
+  type: law
+  lang: es
+  url: https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T07:40:15+00:00'
+  verified_by: machine
+- id: boe-vivienda-2023
+  authors:
+  - Jefatura del Estado
+  year: 2023
+  title: Ley 12/2023, de 24 de mayo, por el derecho a la vivienda (BOE-A-2023-12203)
+  venue: Boletín Oficial del Estado
+  type: law
+  lang: es
+  url: https://www.boe.es/buscar/act.php?id=BOE-A-2023-12203
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T07:40:15+00:00'
+  verified_by: machine
+- id: boe-lofca-1980
+  authors:
+  - Jefatura del Estado
+  year: 1980
+  title: Ley Orgánica 8/1980, de 22 de septiembre, de Financiación de las Comunidades Autónomas (BOE-A-1980-21166)
+  venue: Boletín Oficial del Estado
+  type: law
+  lang: es
+  url: https://www.boe.es/buscar/act.php?id=BOE-A-1980-21166
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T07:40:15+00:00'
+  verified_by: machine
+- id: eu-reg-883-2004
+  authors:
+  - European Parliament and Council
+  year: 2004
+  title: Regulation (EC) No 883/2004 on the coordination of social security systems
+  venue: Official Journal of the European Union
+  type: law
+  url: https://eur-lex.europa.eu/eli/reg/2004/883/oj
+  verified: true
+  check_status: '202'
+  checked_at: '2026-10-29T07:40:15+00:00'
+  verified_by: machine
+- id: eu-ai-act-2024
+  authors:
+  - European Parliament and Council
+  year: 2024
+  title: Regulation (EU) 2024/1689 laying down harmonised rules on artificial intelligence (AI Act)
+  venue: Official Journal of the European Union
+  type: law
+  url: https://eur-lex.europa.eu/eli/reg/2024/1689/oj
+  verified: true
+  check_status: '202'
+  checked_at: '2026-10-29T07:40:15+00:00'
+  verified_by: machine
+- id: albanesi-2023-ai-europe
+  authors:
+  - Albanesi, S.
+  - Dias da Silva, A.
+  - Jimeno, J. F.
+  - Lamo, A.
+  - Wabitsch, A.
+  year: 2023
+  title: New Technologies and Jobs in Europe
+  venue: NBER Working Paper 31357
+  type: working-paper
+  doi: 10.3386/w31357
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T12:09:44+00:00'
+  verified_by: machine
+- id: bentolila-2012-dual-spain
+  authors:
+  - Bentolila, S.
+  - Dolado, J. J.
+  - Jimeno, J. F.
+  year: 2012
+  title: 'Reforming an insider-outsider labor market: the Spanish experience'
+  venue: IZA Journal of European Labor Studies
+  type: article
+  doi: 10.1186/2193-9012-1-4
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T12:09:44+00:00'
+  verified_by: machine
+- id: boe-rdl-32-2021-reforma-laboral
+  authors:
+  - Jefatura del Estado
+  year: 2021
+  title: Real Decreto-ley 32/2021, de medidas urgentes para la reforma laboral (BOE-A-2021-21788)
+  venue: Boletín Oficial del Estado
+  type: law
+  lang: es
+  url: https://www.boe.es/buscar/act.php?id=BOE-A-2021-21788
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T12:09:44+00:00'
+  verified_by: machine
+- id: boe-rd-789-2022-incentivo-imv
+  authors:
+  - Ministerio de Inclusión, Seguridad Social y Migraciones
+  year: 2022
+  title: Real Decreto 789/2022, de compatibilidad del IMV con rentas del trabajo (BOE-A-2022-15764)
+  venue: Boletín Oficial del Estado
+  type: law
+  lang: es
+  url: https://www.boe.es/buscar/act.php?id=BOE-A-2022-15764
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T12:09:44+00:00'
+  verified_by: machine
+- id: boe-ley-dependencia-2006
+  authors:
+  - Jefatura del Estado
+  year: 2006
+  title: Ley 39/2006, de Promoción de la Autonomía Personal y Atención a las personas en situación de
+    dependencia (BOE-A-2006-21990)
+  venue: Boletín Oficial del Estado
+  type: law
+  lang: es
+  url: https://www.boe.es/buscar/act.php?id=BOE-A-2006-21990
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T12:09:44+00:00'
+  verified_by: machine
+- id: gali-monacelli-2005-soe
+  authors:
+  - Galí, J.
+  - Monacelli, T.
+  year: 2005
+  title: Monetary Policy and Exchange Rate Volatility in a Small Open Economy
+  venue: Review of Economic Studies
+  type: article
+  doi: 10.1111/j.1467-937X.2005.00349.x
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T12:09:44+00:00'
+  verified_by: machine
+- id: eu-reg-2024-1263-fiscal-framework
+  authors:
+  - European Parliament and Council
+  year: 2024
+  title: Regulation (EU) 2024/1263 on the effective coordination of economic policies and multilateral
+    budgetary surveillance
+  venue: Official Journal of the European Union
+  type: law
+  url: https://eur-lex.europa.eu/eli/reg/2024/1263/oj
+  verified: true
+  check_status: '202'
+  checked_at: '2026-10-29T12:09:44+00:00'
+  verified_by: machine
+- id: boe-loepsf-2012
+  authors:
+  - Jefatura del Estado
+  year: 2012
+  title: Ley Orgánica 2/2012, de Estabilidad Presupuestaria y Sostenibilidad Financiera (BOE-A-2012-5730)
+  venue: Boletín Oficial del Estado
+  type: law
+  lang: es
+  url: https://www.boe.es/buscar/act.php?id=BOE-A-2012-5730
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T12:09:44+00:00'
+  verified_by: machine
+- id: boe-ley-financiacion-ccaa-2009
+  authors:
+  - Jefatura del Estado
+  year: 2009
+  title: Ley 22/2009, de financiación de las Comunidades Autónomas de régimen común (BOE-A-2009-20375)
+  venue: Boletín Oficial del Estado
+  type: law
+  lang: es
+  url: https://www.boe.es/buscar/act.php?id=BOE-A-2009-20375
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T12:09:44+00:00'
+  verified_by: machine
+- id: boe-concierto-vasco-2002
+  authors:
+  - Jefatura del Estado
+  year: 2002
+  title: Ley 12/2002, por la que se aprueba el Concierto Económico con la CAPV (BOE-A-2002-9969)
+  venue: Boletín Oficial del Estado
+  type: law
+  lang: es
+  url: https://www.boe.es/buscar/act.php?id=BOE-A-2002-9969
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T12:09:44+00:00'
+  verified_by: machine
+- id: boe-convenio-navarra-1990
+  authors:
+  - Jefatura del Estado
+  year: 1990
+  title: Ley 28/1990, por la que se aprueba el Convenio Económico con Navarra (BOE-A-1990-31117)
+  venue: Boletín Oficial del Estado
+  type: law
+  lang: es
+  url: https://www.boe.es/buscar/act.php?id=BOE-A-1990-31117
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T12:09:44+00:00'
+  verified_by: machine
+- id: almunia-lopez-rodriguez-2019-eti
+  authors:
+  - Almunia, M.
+  - Lopez-Rodriguez, D.
+  year: 2019
+  title: 'The elasticity of taxable income in Spain: 1999–2014'
+  venue: SERIEs
+  type: article
+  doi: 10.1007/s13209-019-00208-x
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T12:09:44+00:00'
+  verified_by: machine
+- id: boe-iva-1992
+  authors:
+  - Jefatura del Estado
+  year: 1992
+  title: Ley 37/1992, del Impuesto sobre el Valor Añadido (BOE-A-1992-28740)
+  venue: Boletín Oficial del Estado
+  type: law
+  lang: es
+  url: https://www.boe.es/buscar/act.php?id=BOE-A-1992-28740
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T12:09:44+00:00'
+  verified_by: machine
+- id: boe-sociedades-2014
+  authors:
+  - Jefatura del Estado
+  year: 2014
+  title: Ley 27/2014, del Impuesto sobre Sociedades (BOE-A-2014-12328)
+  venue: Boletín Oficial del Estado
+  type: law
+  lang: es
+  url: https://www.boe.es/buscar/act.php?id=BOE-A-2014-12328
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T12:09:44+00:00'
+  verified_by: machine
+- id: eu-dir-2006-112-vat
+  authors:
+  - Council of the European Union
+  year: 2006
+  title: Council Directive 2006/112/EC on the common system of value added tax
+  venue: Official Journal of the European Union
+  type: law
+  url: https://eur-lex.europa.eu/eli/dir/2006/112/oj
+  verified: true
+  check_status: '202'
+  checked_at: '2026-10-29T12:09:44+00:00'
+  verified_by: machine
+- id: tc-stc-158-2021-imv
+  authors:
+  - Tribunal Constitucional
+  year: 2021
+  title: STC 158/2021, sobre el Ingreso Mínimo Vital (BOE-A-2021-17107)
+  venue: Boletín Oficial del Estado
+  type: law
+  lang: es
+  url: https://www.boe.es/buscar/doc.php?id=BOE-A-2021-17107
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T12:09:44+00:00'
+  verified_by: machine
+- id: tc-stc-19-2024-imv-foral
+  authors:
+  - Tribunal Constitucional
+  year: 2024
+  title: STC 19/2024, sobre la gestión foral del Ingreso Mínimo Vital (BOE-A-2024-3941)
+  venue: Boletín Oficial del Estado
+  type: law
+  lang: es
+  url: https://www.boe.es/buscar/doc.php?id=BOE-A-2024-3941
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T12:09:44+00:00'
+  verified_by: machine
+- id: eu-dir-2004-38-free-movement
+  authors:
+  - European Parliament and Council
+  year: 2004
+  title: Directive 2004/38/EC on the right of citizens of the Union to move and reside freely
+  venue: Official Journal of the European Union
+  type: law
+  url: https://eur-lex.europa.eu/eli/dir/2004/38/oj
+  verified: true
+  check_status: '202'
+  checked_at: '2026-10-29T12:09:44+00:00'
+  verified_by: machine
+- id: boe-trlgss-2015
+  authors:
+  - Ministerio de Empleo y Seguridad Social
+  year: 2015
+  title: Real Decreto Legislativo 8/2015, Texto Refundido de la Ley General de la Seguridad Social (BOE-A-2015-11724)
+  venue: Boletín Oficial del Estado
+  type: law
+  lang: es
+  url: https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T12:09:44+00:00'
+  verified_by: machine
+- id: boe-rdl-2-2024-desempleo
+  authors:
+  - Jefatura del Estado
+  year: 2024
+  title: Real Decreto-ley 2/2024, de simplificación y mejora del nivel asistencial por desempleo (BOE-A-2024-10235)
+  venue: Boletín Oficial del Estado
+  type: law
+  lang: es
+  url: https://www.boe.es/buscar/act.php?id=BOE-A-2024-10235
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T12:09:44+00:00'
+  verified_by: machine
+- id: boe-lgt-2003
+  authors:
+  - Jefatura del Estado
+  year: 2003
+  title: Ley 58/2003, General Tributaria (BOE-A-2003-23186)
+  venue: Boletín Oficial del Estado
+  type: law
+  lang: es
+  url: https://www.boe.es/buscar/act.php?id=BOE-A-2003-23186
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T12:09:44+00:00'
+  verified_by: machine
+- id: boe-lopdgdd-2018
+  authors:
+  - Jefatura del Estado
+  year: 2018
+  title: Ley Orgánica 3/2018, de Protección de Datos Personales y garantía de los derechos digitales (BOE-A-2018-16673)
+  venue: Boletín Oficial del Estado
+  type: law
+  lang: es
+  url: https://www.boe.es/buscar/act.php?id=BOE-A-2018-16673
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T12:09:44+00:00'
+  verified_by: machine
+- id: boe-lpac-2015
+  authors:
+  - Jefatura del Estado
+  year: 2015
+  title: Ley 39/2015, del Procedimiento Administrativo Común de las Administraciones Públicas (BOE-A-2015-10565)
+  venue: Boletín Oficial del Estado
+  type: law
+  lang: es
+  url: https://www.boe.es/buscar/act.php?id=BOE-A-2015-10565
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T12:09:44+00:00'
+  verified_by: machine
+- id: boe-extranjeria-2000
+  authors:
+  - Jefatura del Estado
+  year: 2000
+  title: Ley Orgánica 4/2000, sobre derechos y libertades de los extranjeros en España (BOE-A-2000-544)
+  venue: Boletín Oficial del Estado
+  type: law
+  lang: es
+  url: https://www.boe.es/buscar/act.php?id=BOE-A-2000-544
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T12:09:44+00:00'
+  verified_by: machine
+- id: boe-lbrl-1985
+  authors:
+  - Jefatura del Estado
+  year: 1985
+  title: Ley 7/1985, Reguladora de las Bases del Régimen Local (BOE-A-1985-5392)
+  venue: Boletín Oficial del Estado
+  type: law
+  lang: es
+  url: https://www.boe.es/buscar/act.php?id=BOE-A-1985-5392
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T12:09:44+00:00'
+  verified_by: machine
+- id: borusyak-2022-shift-share
+  authors:
+  - Borusyak, K.
+  - Hull, P.
+  - Jaravel, X.
+  year: 2022
+  title: Quasi-Experimental Shift-Share Research Designs
+  venue: Review of Economic Studies
+  type: article
+  doi: 10.1093/restud/rdab030
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T12:09:44+00:00'
+  verified_by: machine
+- id: chiappori-1992-collective
+  authors:
+  - Chiappori, P.-A.
+  year: 1992
+  title: Collective Labor Supply and Welfare
+  venue: Econometrica
+  type: article
+  doi: 10.2307/2951541
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T12:17:41+00:00'
+  verified_by: machine
+- id: baird-2018-interference
+  authors:
+  - Baird, S.
+  - Bohren, J. A.
+  - McIntosh, C.
+  - Özler, B.
+  year: 2018
+  title: Optimal Design of Experiments in the Presence of Interference
+  venue: Review of Economic Studies
+  type: article
+  doi: 10.1162/rest_a_00716
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T14:09:13+00:00'
+  verified_by: machine
+- id: duflo-2007-randomization
+  authors:
+  - Duflo, E.
+  - Glennerster, R.
+  - Kremer, M.
+  year: 2007
+  title: 'Using Randomization in Development Economics Research: A Toolkit'
+  venue: Handbook of Development Economics
+  type: chapter
+  doi: 10.1016/S1573-4471(07)04061-2
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T14:09:13+00:00'
+  verified_by: machine
+- id: saez-2010-bunching
+  authors:
+  - Saez, E.
+  year: 2010
+  title: Do Taxpayers Bunch at Kink Points?
+  venue: 'American Economic Journal: Economic Policy'
+  type: article
+  doi: 10.1257/pol.2.3.180
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T14:09:13+00:00'
+  verified_by: machine
+- id: chetty-2012-bounds
+  authors:
+  - Chetty, R.
+  year: 2012
+  title: 'Bounds on Elasticities with Optimization Frictions: A Synthesis of Micro and Macro Evidence
+    on Labor Supply'
+  venue: Econometrica
+  type: article
+  doi: 10.3982/ECTA9043
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T14:09:13+00:00'
+  verified_by: machine
+- id: macurdy-1981-labor-supply
+  authors:
+  - MaCurdy, T. E.
+  year: 1981
+  title: An Empirical Model of Labor Supply in a Life-Cycle Setting
+  venue: Journal of Political Economy
+  type: article
+  doi: 10.1086/261023
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T14:09:13+00:00'
+  verified_by: machine
+- id: blundell-macurdy-1999-labor-supply
+  authors:
+  - Blundell, R.
+  - MaCurdy, T.
+  year: 1999
+  title: 'Labor Supply: A Review of Alternative Approaches'
+  venue: Handbook of Labor Economics
+  type: chapter
+  doi: 10.1016/S1573-4463(99)03008-4
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T14:09:13+00:00'
+  verified_by: machine
+- id: ponthieux-2013-income-pooling
+  authors:
+  - Ponthieux, S.
+  year: 2013
+  title: 'Income pooling and equal sharing within the household: What can we learn from the 2010 EU-SILC
+    module?'
+  venue: Eurostat Methodologies and Working Papers
+  type: report
+  doi: 10.2785/21993
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T14:09:13+00:00'
+  verified_by: machine
+- id: garcia-montalvo-2023-rent-controls
+  authors:
+  - García-Montalvo, J.
+  - Monràs, J.
+  year: 2023
+  title: 'The Effect of Second-Generation Rent Controls: New Evidence from Catalonia'
+  venue: Federal Reserve Bank of San Francisco Working Paper 2023-28
+  type: working-paper
+  doi: 10.24148/wp2023-28
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T14:09:13+00:00'
+  verified_by: machine
+- id: jofre-monseny-2023-rent-control
+  authors:
+  - Jofre-Monseny, J.
+  - Martínez-Mazza, R.
+  - Segú, M.
+  year: 2023
+  title: Effectiveness and supply effects of high-coverage rent control policies
+  venue: Regional Science and Urban Economics
+  type: article
+  doi: 10.1016/j.regsciurbeco.2023.103916
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T14:09:13+00:00'
+  verified_by: machine
+- id: antolin-bover-1997-migration
+  authors:
+  - Antolín, P.
+  - Bover, O.
+  year: 1997
+  title: 'Regional Migration in Spain: The Effect of Personal Characteristics and of Unemployment, Wage
+    and House Price Differentials Using Pooled Cross-Sections'
+  venue: Oxford Bulletin of Economics and Statistics
+  type: article
+  doi: 10.1111/1468-0084.00062
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T14:09:13+00:00'
+  verified_by: machine
+- id: tsebelis-2002-veto-players
+  authors:
+  - Tsebelis, G.
+  year: 2002
+  title: 'Veto Players: How Political Institutions Work'
+  venue: Princeton University Press
+  type: book
+  doi: 10.1515/9781400831456
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T14:09:13+00:00'
+  verified_by: machine
+- id: vanderborght-2006-trade-unions
+  authors:
+  - Vanderborght, Y.
+  year: 2006
+  title: Why Trade Unions Oppose Basic Income
+  venue: Basic Income Studies
+  type: article
+  doi: 10.2202/1932-0183.1002
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T14:09:13+00:00'
+  verified_by: machine
+- id: vlandas-2019-politics-ubi
+  authors:
+  - Vlandas, T.
+  year: 2019
+  title: 'The Politics of the Basic Income Guarantee: Analysing Individual Support in Europe'
+  venue: Basic Income Studies
+  type: article
+  doi: 10.1515/bis-2018-0021
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T14:09:13+00:00'
+  verified_by: machine
+- id: beramendi-2012-inequality
+  authors:
+  - Beramendi, P.
+  year: 2012
+  title: 'The Political Geography of Inequality: Regions and Redistribution'
+  venue: Cambridge University Press
+  type: book
+  doi: 10.1017/CBO9781139042796
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T14:09:13+00:00'
+  verified_by: machine
+- id: puig-segura-2021-discapacidad
+  authors:
+  - Puig i Gabau, J.
+  - Segura Bonet, M.
+  year: 2021
+  title: El agravio comparativo económico de las personas con discapacidad de la ciudad de Barcelona
+  venue: Revista Española de Discapacidad (REDIS)
+  type: article
+  url: https://www.cedid.es/redis/index.php/redis/article/view/646
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T14:09:13+00:00'
+  verified_by: machine
+- id: boe-lo-6-2013-airef
+  authors:
+  - Jefatura del Estado
+  year: 2013
+  title: Ley Orgánica 6/2013, de 14 de noviembre, de creación de la Autoridad Independiente de Responsabilidad
+    Fiscal (BOE-A-2013-11935)
+  venue: Boletín Oficial del Estado
+  type: law
+  lang: es
+  url: https://www.boe.es/eli/es/lo/2013/11/14/6
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T14:09:13+00:00'
+  verified_by: machine
+- id: boe-ley-28-2003-fondo-reserva
+  authors:
+  - Jefatura del Estado
+  year: 2003
+  title: Ley 28/2003, de 29 de septiembre, reguladora del Fondo de Reserva de la Seguridad Social (BOE-A-2003-18089)
+  venue: Boletín Oficial del Estado
+  type: law
+  lang: es
+  url: https://www.boe.es/eli/es/l/2003/09/29/28
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T14:09:13+00:00'
+  verified_by: machine
+- id: boe-ley-9-2017-contratos
+  authors:
+  - Jefatura del Estado
+  year: 2017
+  title: Ley 9/2017, de 8 de noviembre, de Contratos del Sector Público (BOE-A-2017-12902)
+  venue: Boletín Oficial del Estado
+  type: law
+  lang: es
+  url: https://www.boe.es/eli/es/l/2017/11/08/9
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T14:09:13+00:00'
+  verified_by: machine
+- id: cjeu-c-279-93-schumacker
+  authors:
+  - Court of Justice of the European Union
+  year: 1995
+  title: Case C-279/93 Finanzamt Köln-Altstadt v Roland Schumacker (Freedom of movement for workers -
+    Non-resident income taxation)
+  venue: European Court Reports
+  type: report
+  url: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:61993CJ0279
+  verified: true
+  check_status: '202'
+  checked_at: '2026-10-29T14:09:13+00:00'
+  verified_by: machine
+- id: cjeu-c-475-03-banca-popolare-irap
+  authors:
+  - Court of Justice of the European Union
+  year: 2006
+  title: Case C-475/03 Banca Popolare di Cremona (Sixth VAT Directive Article 33 - Regional tax on productive
+    activities IRAP)
+  venue: European Court Reports
+  type: report
+  url: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:62003CJ0475
+  verified: true
+  check_status: '202'
+  checked_at: '2026-10-29T14:09:13+00:00'
+  verified_by: machine
+- id: boe-rd-888-2022-discapacidad
+  authors:
+  - Ministerio de Derechos Sociales y Agenda 2030
+  year: 2022
+  title: Real Decreto 888/2022, de 18 de octubre, por el que se establece el procedimiento para el reconocimiento,
+    declaración y calificación del grado de discapacidad (BOE-A-2022-17108)
+  venue: Boletín Oficial del Estado
+  type: law
+  lang: es
+  url: https://www.boe.es/eli/es/rd/2022/10/18/888
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T14:09:13+00:00'
+  verified_by: machine
+- id: boe-lau-1994
+  authors:
+  - Jefatura del Estado
+  year: 1994
+  title: Ley 29/1994, de 24 de noviembre, de Arrendamientos Urbanos (BOE-A-1994-26003)
+  venue: Boletín Oficial del Estado
+  type: law
+  lang: es
+  url: https://www.boe.es/eli/es/l/1994/11/24/29
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T14:09:13+00:00'
+  verified_by: machine
+- id: airef-opinion-imv-2023
+  authors:
+  - Autoridad Independiente de Responsabilidad Fiscal (AIReF)
+  year: 2023
+  title: Segunda Opinión sobre el Ingreso Mínimo Vital
+  venue: AIReF Centro Documental
+  type: report
+  lang: es
+  url: https://www.airef.es/es/centro-documental/opiniones/segunda-opinion-sobre-el-ingreso-minimo-vital/
+  verified: true
+  verified_by: human
+  check_status: '200'
+  checked_at: '2026-10-29T14:06:58+00:00'
+- id: airef-opinion-imv-2024
+  authors:
+  - Autoridad Independiente de Responsabilidad Fiscal (AIReF)
+  year: 2024
+  title: Tercera Opinión sobre el Ingreso Mínimo Vital
+  venue: AIReF Centro Documental
+  type: report
+  lang: es
+  url: https://www.airef.es/es/centro-documental/opiniones/tercera-opinion-sobre-el-ingreso-minimo-vital/
+  verified: true
+  verified_by: human
+  check_status: '200'
+  checked_at: '2026-10-29T14:06:58+00:00'

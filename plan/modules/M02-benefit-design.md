@@ -6,7 +6,7 @@ locked: false
 depends_on: [M03, M07, M09]
 covers: [F02]
 feeds_chapters: [3]
-last_iteration: 2
+last_iteration: 3
 ---
 # M02 · Benefit design, eligibility, and parameter architecture
 
@@ -14,8 +14,8 @@ last_iteration: 2
 Small changes in benefit architecture—individual versus household unit, adult versus minor amounts, age thresholds, and indexation rules—determine whether UBR eliminates poverty and intra-household dependency or becomes fiscally unviable [@van-parijs-vanderborght-2017; @hoynes-rothstein-2019]. In Spain, where the *Ingreso Mínimo Vital* (IMV) suffers from complex household-unit assessments, cohabitation verification penalties, and severe non-take-up (56% for baseline IMV, 70% for CAPI [@boe-imv-2021; @airef-opinion-imv-2023]), strict adherence to the unconditional individual entitlement principle (`D-001`) is essential.
 
 ## 2. Research questions
-- **RQ-M02-01**: How do strictly individual UBR schedules (Tier A: €600 adult / €240 minor; Tier B: €900 adult / €360 minor; Tier C: €1,200 adult / €480 minor, maintaining a consistent 40% child equivalence weight) compare against household-equivalized means-tested schedules in reducing severe material deprivation without creating cohabitation penalties, when paired with dedicated single-parent and disability supplements?
-  - *Hypothesis:* An individual Tier B UBR (€900/adult, €360/minor) paired with the `M07` No-Loser Guarantee, an explicit *Complemento Monoparental y de Primera Infancia* (+€150–€200/month holding single mothers harmless against IMV 22% bonus + CAPI baselines), and a tiered *Complemento Universal por Discapacidad* (+25% to +100% per RD 888/2022 [@boe-rd-888-2022-discapacidad; @puig-segura-2021-discapacidad]) eliminates cohabitation penalties entirely while achieving superior poverty eradication per net euro relative to household-based top-ups.
+- **RQ-M02-01**: How do strictly individual UBR schedules (Tier A: €600 adult / €300 first child / €240 subsequent; Tier B: €900 adult / €450 first child / €360 subsequent; Tier C: €1,200 adult / €600 first child / €480 subsequent, incorporating a parity-modulated child scale $\alpha_{\text{child1}} = 0.50, \alpha_{\text{child}\ge 2} = 0.40$) compare against household-equivalized means-tested schedules in eliminating child poverty without creating cohabitation penalties, when paired with the `M07` No-Loser Guarantee and disability supplements?
+  - *Hypothesis:* An individual Tier B UBR (€900/adult) paired with parity-modulated child allowances (€450 for the first child, €360 for subsequent minors) holds single parents completely harmless against IMV 22% single-parent bonuses and CAPI baselines [@boe-imv-2021; @ayala-2025-child-poverty] purely through individual child entitlements, avoiding intrusive domestic cohabitation surveillance (*policía de la convivencia*), while a tiered *Complemento Universal por Discapacidad* (+25% to +100% per RD 888/2022 [@boe-rd-888-2022-discapacidad; @puig-segura-2021-discapacidad]) eliminates horizontal inequities across family structures.
 - **RQ-M02-02**: What indexation formula—essential-basket CPI, headline CPI, or constant-tax CPI (*Índice de Precios de Consumo a Impuestos Constantes*, IPC-IC) capped by nominal GDP-per-capita growth—best preserves real living standards across S1–S3 without triggering unlegislated fiscal drag or fiscal self-indexation under `M03`?
   - *Hypothesis:* Indexing UBR benefits to IPC-IC capped by nominal per-capita GDP growth, synchronized with statutory adjustments to `M03` IRPF marginal rate brackets, prevents fiscal self-indexation during IVA base-broadening phases while guaranteeing an untaxable subsistence floor.
 
@@ -28,7 +28,7 @@ Theoretical public economics demonstrates that unconditional individual transfer
 - **Demographics:** INE *Censo de Población* and *Padrón Continuo* (adult/minor age cohorts, household size distributions).
 
 ## 5. Methods & identification
-1. **Parametric Dominance Grid in EUROMOD-Spain:** Simulate a $3 \times 3 \times 2$ design grid in EUROMOD [@sutherland-figari-2013-euromod] testing Tiers A/B/C $\times$ child equivalence weight $\alpha_{\text{child}} \in \{0.30, 0.40, 0.50\}$ $\times$ youth adult transition age $\{18, 23\}$. Incorporate the *Complemento Monoparental* and the three-tiered *Complemento por Discapacidad* (+25%, +50%, +100%) to measure cohabitation penalty rates and disposable income gains across household types.
+1. **Parametric Dominance Grid in EUROMOD-Spain:** Simulate a $3 \times 3$ design grid in EUROMOD [@sutherland-figari-2013-euromod] testing Tiers A/B/C $\times$ child equivalence schedules ($\alpha_{\text{flat}} = 0.40$ vs. parity-modulated $\alpha_{\text{child1}} = 0.50, \alpha_{\ge 2} = 0.40$ per Ayala et al. [@ayala-2025-child-poverty]) with individual adulthood anchored strictly at age 18. Model the absorption of LIRPF Art. 58 descendant deductions and direct disbursement of child UBR to legal custodians, combined with the three-tiered *Complemento por Discapacidad* (+25%, +50%, +100%) to measure cohabitation penalty rates and disposable income gains across household types.
 2. **Synchronized Tax-Benefit Indexation:** Model simultaneous indexation of UBR benefit amounts and `M03` IRPF marginal tax brackets under headline CPI vs. IPC-IC, simulating stagflationary supply shocks (`M17` Stress 1).
 
 ## 6. Pilot implications

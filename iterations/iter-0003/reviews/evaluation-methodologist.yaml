@@ -1,0 +1,223 @@
+reviewer: evaluation-methodologist
+iteration: 3
+summary: 'The Iteration 3 research plan incorporates major methodological upgrades—notably SUTVA buffer zones, a randomized
+  clawback arm, explicit MDE calculations, and structural life-cycle decomposition equations. However, critical evaluation-methodological
+  flaws remain that undermine causal identification: (1) in M10, M08, and METHODS, proposing to estimate compensated substitution
+  elasticities from excess-mass bunching at the clawback ceiling Y* is mathematically impossible because Y* is a concave (non-convex)
+  kink where marginal tax rates fall, creating missing mass rather than excess mass; (2) M10’s MDE calculation relies on a
+  standard one-stage cluster formula rather than two-stage saturation variance equations (Baird et al. 2018), while testing
+  rental pass-through in small rural municipalities suffers from severe transaction scarcity under Spain’s 5-year LAU lease
+  protections; (3) M10’s administrative health linkage presumes a unified national SNS clinical database that does not exist
+  under Spain’s decentralized Title VIII constitutional framework; and (4) M15’s life-cycle transportability equation misattributes
+  the Frisch substitution elasticity to wealth changes and ignores involuntary labor demand rationing under severe AI displacement
+  scenarios S1–S3.'
+scores:
+  methodological_rigor:
+    score: 4.1
+    rationale: 'The plan demonstrates substantial methodological refinement, including wild cluster bootstrap inference, SUTVA
+      geographic buffer zones, and a closed Gauss-Seidel micro-macro pipeline. However, critical econometric errors persist:
+      claiming excess mass bunching at a concave phase-out kink (M10, M08), relying on a one-stage cluster MDE formula rather
+      than two-stage saturation variance math (M10), and coupling Frisch substitution with marginal utility of wealth in the
+      transportability equation (M15).'
+  rq_quality:
+    score: 4.3
+    rationale: Research questions in M10, M15, M08, and METHODS are sharply formulated with falsifiable hypotheses and quantitative
+      bounds. Nevertheless, RQ-M10-02 contains an econometric contradiction by predicting excess mass bunching at a phase-out
+      ceiling where economic theory dictates missing mass, and RQ-M10-01 assumes statistical power to detect rental pass-through
+      in small municipalities without accounting for rental illiquidity.
+  feasibility:
+    score: 3.9
+    rationale: 'The €515M gross / €295M net pilot budget and Art. 95.1.k LGT statutory sandbox provide a realistic fiscal
+      and tax-law framework. However, feasibility is threatened by two issues: assuming centralized access to SNS electronic
+      clinical records across 17 devolved Autonomous Communities without scheduling regional CEIm approvals, and assuming
+      liquid rental price discovery in small rural municipalities where turnover is negligible.'
+  evidence_grounding:
+    score: 4.4
+    rationale: The modules exhibit excellent grounding in international guaranteed income trials (OpenResearch, Finland, B-MINCOME,
+      Kenya GiveDirectly) and Spanish administrative registers (MCVL, AEAT Form 190, INCASÒL). To achieve state-of-the-art
+      econometric grounding, the plan must incorporate formal literature on non-convex kink econometrics (Kleven 2016), two-stage
+      saturation experimental design (Baird et al. 2018), and European labor supply estimation under involuntary job rationing
+      (Bargain et al. 2014).
+  ethics_equity:
+    score: 4.3
+    rationale: Ethical protections against post-trial cliffs (automatic IMV reinscription, 6-month ramp) and differential
+      control attrition (annual €250–€300 participation stipends) are well-designed. However, randomizing differential clawbacks
+      (0%, 38%, 50%) across vulnerable neighbors within the same cluster creates localized horizontal inequities, and extracting
+      psychiatric clinical microdata without explicit clinical consent under an Art. 95 LGT sandbox raises sensitive proportionality
+      concerns under GDPR Art. 9(2)(j) and LOPDGDD.
+issues:
+- id: EM-03-01
+  severity: critical
+  module: M10
+  finding: 'In M10 (Section 2 RQ-M10-02 and Section 5.2), M08 (Section 5.2), and METHODS (Section 4), the plan proposes estimating
+    compensated labor supply elasticities by implementing Saez (2010) and Chetty et al. (2012) bunching estimators around
+    the randomized clawback ceiling Y* = UBR / tau_clawback (€21,600/year for 50%; €28,421/year for 38%) "to extract compensated
+    substitution elasticities directly from excess mass". This is an elementary econometric contradiction: bounding the clawback
+    at zero net grant causes the marginal clawback rate to drop discontinuously from 38%–50% to 0% at Y*. In public finance
+    theory, a discontinuous drop in the marginal tax rate constitutes a concave (non-convex) kink in the budget set. Standard
+    bunching theory (Saez 2010; Kleven 2016) proves that taxpayers never bunch (exhibit excess mass) at concave kinks; instead,
+    concave kinks induce a hole or missing mass (deficit) as individuals jump past the non-convex notch. Standard polynomial
+    excess-mass bunching estimators cannot identify substitution elasticities at concave phase-out ceilings, rendering the
+    proposed econometric identification mathematically invalid.'
+  proposal: 'In M10 (Sections 2, 5.2), M08 (Section 5.2), and METHODS (Section 4): (1) Explicitly acknowledge that Y* is a
+    concave (non-convex) kink that generates missing mass (holes) rather than excess bunching mass, eliminating the invalid
+    claim of excess mass bunching at Y*; (2) To create a true convex kink with positive excess mass for standard Saez/Chetty
+    bunching estimation, introduce an initial labor income exemption threshold / earnings disregard (Y_disregard, e.g. €3,000–€5,000/year,
+    directly benchmarking the statutory IMV employment incentive under Real Decreto 789/2022) where the marginal clawback
+    rate jumps discontinuously from 0% to tau_clawback (Delta tau > 0); and (3) At the upper phase-out ceiling Y*, pre-specify
+    a formal missing-mass / hole estimator (Kleven 2016; Blomquist et al. 2021) or evaluate a continuous negative income tax
+    (NIT) schedule with an integrated annual tax reconciliation to avoid piecewise kinks altogether.'
+  sources:
+  - title: Bunching
+    authors:
+    - Kleven, H. J.
+    year: 2016
+    doi: 10.1146/annurev-economics-080315-015234
+  - title: Do Taxpayers Bunch at Kink Points?
+    authors:
+    - Saez, E.
+    year: 2010
+    doi: 10.1257/pol.2.3.180
+  - title: 'Adjustment Costs, Firm Responses, and Micro vs. Macro Labor Supply Elasticities: Evidence from Danish Tax Records'
+    authors:
+    - Chetty, R.
+    - Friedman, J. N.
+    - Olsen, T.
+    - Pistaferri, L.
+    year: 2011
+    doi: 10.1093/qje/qjr013
+- id: EM-03-02
+  severity: critical
+  module: M10
+  finding: 'M10 Section 5.1 and METHODS Section 4 establish a cluster design of J = 70 clusters (35 treated, 35 control) in
+    small municipalities (1,500–5,000 residents) with m approx 285 adults per cluster, claiming 80% statistical power (alpha
+    = 0.05) to detect a 2.8% local rental pass-through differential (M05) and 1.2 h/week labor adjustment. This specification
+    contains two fatal econometric disconnects: (1) The stated MDE formula is for a standard one-stage cluster RCT with binary
+    treatment (P = 0.5). However, identifying general-equilibrium rental pass-through and wage spillovers requires a two-stage
+    spatial saturation design (Baird et al. 2018; Egger et al. 2022) with multi-level cluster saturation proportions S_j in
+    [0, 1]. In two-stage designs, the variance of the indirect spillover estimator is inflated by 1/Var(S_j) and depends on
+    the number of untreated units in treated clusters. With only 35 treated clusters split across saturation tiers, cluster-level
+    degrees of freedom under wild cluster bootstrap are severely insufficient; (2) In small Spanish municipalities (1,500–5,000
+    residents), homeownership exceeds 75–80%, meaning market renters comprise only 15–20% of the population (~45–55 renters
+    among m = 285 sampled adults). Under Spain’s Ley de Arrendamientos Urbanos (LAU Art. 9) and Ley 12/2023 por el Derecho
+    a la Vivienda, mandatory lease terms are 5 years (7 for corporate landlords). Over a 36-month pilot, fewer than 25% of
+    existing leases turnover. Consequently, each cluster will observe only ~10–15 new market rental contracts over 3 years
+    in official bond-deposit registers (INCASÒL, AVRA, IVIMA). An effective sample size of 10–15 rental transactions per cluster
+    with an intraclass correlation rho_rent = 0.08 is statistically powerless to detect a 2.8% rental pass-through differential.'
+  proposal: 'In M10 (Sections 2, 5.1, 8), M05 (Section 5), and METHODS (Section 4): (1) Replace the naive cluster MDE formula
+    with the formal Baird et al. (2018) two-stage randomized saturation variance equation, explicitly specifying direct (beta_direct)
+    and indirect spillover (beta_indirect) MDEs across saturation bins S_j in {0, 0.33, 0.66, 1.0}; (2) Overhaul the housing
+    evaluation sampling strategy: rather than relying on a small general-population sample (m = 285) in rural municipalities
+    with low rental shares, purposively select urban/peri-urban clusters with rental shares >35% (or stratify clusters by
+    rental density); (3) Mandate an administrative census linkage of 100% of municipal rental deposit records (fianzas de
+    alquiler) registered in regional databases (INCASÒL, IVIMA, AVRA) across all treated and control clusters, rather than
+    observing only sample participants; and (4) Pre-specify a Synthetic Difference-in-Differences (SDID, Arkhangelsky et al.
+    2021) estimator comparing treated municipal rental price trajectories against non-treated matched synthetic controls.'
+  sources:
+  - title: Optimal Design of Experiments in the Presence of Interference
+    authors:
+    - Baird, S.
+    - Bohren, J. A.
+    - McIntosh, C.
+    - Özler, B.
+    year: 2018
+    doi: 10.1162/rest_a_00716
+  - title: Synthetic Difference-in-Differences
+    authors:
+    - Arkhangelsky, D.
+    - Athey, S.
+    - Hirshberg, D. A.
+    - Imbens, G. W.
+    - Wager, S.
+    year: 2021
+    doi: 10.1257/aer.20190159
+  - title: 'General Equilibrium Effects of Cash Transfers: Experimental Evidence from Kenya'
+    authors:
+    - Egger, D.
+    - Haushofer, J.
+    - Miguel, E.
+    - Niehaus, P.
+    - Walker, M. W.
+    year: 2022
+    doi: 10.3982/ECTA17945
+- id: EM-03-03
+  severity: major
+  module: M10
+  finding: 'M10 (Section 4 and Section 5.3) and METHODS Section 4 propose continuous administrative microdata linkage to "Sistema
+    Nacional de Salud (SNS) electronic clinical records (primary care consultations, psychotropic prescriptions, sick leave
+    bajas IT)" via DNI/NIE and HMAC-SHA256 salted pseudonymization to eliminate health attrition and evaluate clinical outcomes
+    (M14). This protocol overlooks the decentralized legal and administrative architecture of the Spanish healthcare system:
+    (1) Under Title VIII of the Spanish Constitution and Ley 14/1986 General de Sanidad, healthcare delivery and electronic
+    clinical records are completely devolved to the 17 Autonomous Communities. There is NO centralized national database containing
+    patient-level clinical consultations or psychotropic prescription microdata for scientific linkage. The central Ministry
+    of Health manages only the Base de Datos Clínicos de Atención Primaria (BDCAP), which is a pseudo-anonymized 1%–10% sample,
+    capturing fewer than 10% of pilot participants; (2) Linking primary care visits and prescription microdata across participants
+    in multiple autonomous communities requires executing separate bilateral agreements and securing ethical clearances from
+    17 distinct regional Comités de Ética de la Investigación con medicamentos (CEIm); (3) Conversely, temporary disability
+    records (bajas por Incapacidad Temporal, IT) are already centralized under the Instituto Nacional de la Seguridad Social
+    (INSS). Conflating decentralized regional health services with a non-existent unified national SNS clinical register undermines
+    the administrative feasibility and schedule of the pilot evaluation.'
+  proposal: 'In M10 (Sections 4, 5, 8), M12 (Section 4), and METHODS Section 4: (1) Bifurcate the health evaluation architecture
+    into a two-tier linkage protocol: Tier 1 (Centrally Feasible Administrative Health Spine) links INSS temporary disability
+    (Incapacidad Temporal, IT) microdata directly via the centralized TGSS/INSS administrative data pipeline, providing complete,
+    objective, daily-resolution tracking of psychiatric sick leaves (ICD-10 Chapter F codes), somatic diagnoses, and episode
+    durations for 100% of participants; Tier 2 (Decentralized Regional Clinical Microdata) establishes formal bilateral data-access
+    agreements specifically with the Regional Health Services of the pilot autonomous communities (e.g., CatSalut in Catalonia,
+    SERMAS in Madrid, Osakidetza in the Basque Country) under Art. 53 of Ley 16/2003 de cohesión y calidad del SNS, budgeting
+    6 months for regional CEIm clearances; and (2) Pre-specify the INSS IT registry as the primary preregistered objective
+    health outcome, relegating regional EHR and psychotropic pharmacy claims to secondary exploratory analyses.'
+  sources:
+  - title: Ley 14/1986, de 25 de abril, General de Sanidad
+    authors:
+    - Jefatura del Estado
+    year: 1986
+    url: https://www.boe.es/buscar/act.php?id=BOE-A-1986-10499
+  - title: Ley 16/2003, de 28 de mayo, de cohesión y calidad del Sistema Nacional de Salud
+    authors:
+    - Jefatura del Estado
+    year: 2003
+    url: https://www.boe.es/buscar/act.php?id=BOE-A-2003-10715
+- id: EM-03-04
+  severity: major
+  module: M15
+  finding: 'M15 Section 5.1 and METHODS Section 4 specify a life-cycle parameter transportability equation: Delta ln h_it
+    = epsilon^Frisch Delta ln lambda_it + epsilon^c Delta ln w_it(1 - tau) + eta [G_pilot / (A_it + H_it) * (1 - (1+r)^(-T))
+    / (1 - (1+r)^(-(T_ret - t)))]. This equation contains a fundamental structural specification error and an unaddressed
+    labor-demand constraint: (1) In life-cycle labor supply theory (MaCurdy 1981; Blundell & MaCurdy 1999), the Frisch elasticity
+    epsilon^Frisch is the elasticity of hours with respect to transitory wage changes holding the marginal utility of wealth
+    lambda constant: epsilon^Frisch = [partial ln h_it / partial ln w_it]_lambda. Wealth changes (such as G_pilot) operate
+    entirely through shifts in lambda_it (the income effect eta). Multiplying epsilon^Frisch by Delta ln lambda_it while attaching
+    epsilon^c to the trial wage variation is mathematically backwards: in a 3-year trial, any clawback rate variation is transitory,
+    meaning the observed substitution response identifies epsilon^Frisch, not epsilon^c; (2) The transportability framework
+    presumes that workers operate along an unconstrained labor supply curve. In Spain’s segmented labor market disrupted by
+    AI displacement scenarios S1–S3, millions of workers face involuntary job rationing, contract inactivity (pases a inactividad
+    de fijos discontinuos), or underemployment. Transporting unconstrained trial elasticities to workers who are on the labor-demand
+    boundary fundamentally biases microsimulation and macro projections.'
+  proposal: 'In M15 (Sections 2, 5.1), M08 (Section 5.1), and METHODS Section 4: (1) Correct the structural life-cycle decomposition
+    equation to canonical form: Delta ln h_it = epsilon^Frisch Delta ln w_it^transitory + epsilon^c Delta ln w_i^permanent
+    + eta [G_pilot / (A_it + H_it) * (1 - (1+r)^(-T)) / (1 - (1+r)^(-(T_ret - t)))], explicitly noting that 3-year trial clawback
+    variations identify epsilon^Frisch, from which the permanent compensated elasticity epsilon^c is recovered via the structural
+    relation epsilon^c = epsilon^Frisch + eta * (w_i h_i) / (A_i + H_i) or empirical Chetty (2012) micro-macro bounds (epsilon^c
+    / epsilon^Frisch in [0.4, 0.7]); and (2) Integrate a labor-demand rationing correction (Bargain, Orsini, & Peichl 2014)
+    conditioning labor supply adjustments on involuntary displacement probabilities (P_disp,CNO-11 from M01) and involuntary
+    part-time shares from EPA microdata, preventing unconstrained supply elasticities from overstating voluntary labor withdrawal
+    under high-unemployment AI scenarios.'
+  sources:
+  - title: An Empirical Model of Labor Supply in a Life-Cycle Setting
+    authors:
+    - MaCurdy, T. E.
+    year: 1981
+    doi: 10.1086/261023
+  - title: 'Labor Supply: A Review of Alternative Approaches'
+    authors:
+    - Blundell, R.
+    - MaCurdy, T.
+    year: 1999
+    doi: 10.1016/S1573-4463(99)03008-4
+  - title: 'Comparing Labor Supply Elasticities in Europe and the United States: New Results'
+    authors:
+    - Bargain, O.
+    - Orsini, K.
+    - Peichl, A.
+    year: 2014
+    doi: 10.3368/jhr.49.3.723

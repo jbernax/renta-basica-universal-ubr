@@ -1,0 +1,234 @@
+reviewer: spanish-eu-law
+iteration: 3
+summary: 'Modules M06, M07, M12, and M13 have integrated important institutional foundations since Iteration 1 (incorporating
+  STC 158/2021, STC 19/2024, Art. 280 TRLGSS pension credits for older workers, and three-tier pilot comparisons), but retain
+  four critical constitutional, EU-law, and administrative-law vulnerabilities: (1) M06 commits a fundamental category error
+  by applying the Foral concept of "carga no asumida" to the Common Regime financing system (Ley 22/2009 / LOFCA) and assumes
+  centralized State AEAT payroll/tax administration nationwide, overlooking that the Basque and Navarrese Haciendas Forales
+  hold exclusive IRPF jurisdiction under the Concierto Económico (Ley 12/2002); (2) M07 Tier 2 offsets contributory unemployment
+  benefits (SEPE) down to UBR without maintaining the vital Social Security retirement contribution bases under Art. 273 TRLGSS,
+  creating damaging contribution gaps (lagunas de cotización, Art. 209 TRLGSS) that permanently depress future retirement
+  pensions, while Tier 3 omits contributory permanent disability pensions (Incapacidad Permanente Absoluta / Gran Invalidez),
+  stripping them of their protected tax exemption under Art. 7.f LIRPF; (3) M12 misattributes automated administrative acts
+  to Ley 39/2015 Art. 41 (which governs notifications) instead of Ley 40/2015 Art. 41 (LRJSP), and institutes an absolute
+  inembargabilidad shield that unlawfully overrides the constitutionally mandated child-support alimony exception under Art.
+  608 LEC and Art. 39 CE; and (4) M13 creates a severe EU free-movement dilemma under Art. 45 TFEU / Regulation 492/2011 regarding
+  marginal part-time workers, while abolishing the IRPF mínimo personal without a default personal allowance for residents
+  subject to waiting periods, unconstitutionally taxing subsistence income from the first euro in violation of Art. 31.1 CE
+  and STC 214/1994.'
+scores:
+  spain_fit:
+    score: 3.7
+    rationale: 'Integrates landmark Tribunal Constitucional rulings (STC 158/2021 and STC 19/2024), Foral Economic Agreements
+      (Ley 12/2002, Ley 28/1990), and three-tier pilot governance (D-005). However, it exhibits two major institutional flaws:
+      it incorrectly applies the Foral Cupo concept of "carga no asumida" to the multilateral Common Regime under Ley 22/2009,
+      and it assumes centralized AEAT execution for IRPF credits nationwide, ignoring that AEAT lacks jurisdiction in the
+      Basque Country and Navarre where Haciendas Forales possess exclusive direct-taxation powers.'
+  feasibility:
+    score: 3.5
+    rationale: 'Designs advanced administrative tools like the privacy-preserving Numerical Tax Code and public payment rails
+      via Correos/Banco de España, but fails operational and statutory feasibility on three fronts: offsetting SEPE unemployment
+      benefits without an Art. 273 TRLGSS retirement contribution bridge destroys pension continuity for displaced workers;
+      absolute inembargabilidad violates Art. 608 LEC child support enforcement; and automated clearing lacks the programming,
+      supervisory organ, and code auditing framework required by Art. 41 Ley 40/2015.'
+  ethics_equity:
+    score: 3.6
+    rationale: 'Provides commendable equity protections through the Universal Disability Supplement (RD 888/2022) and the
+      Single-Parent bonus (+€150–€200/month). However, two severe equity hazards remain: abolishing the IRPF mínimo personal
+      leaves resident taxpayers in M13''s 24-month waiting period exposed to 38–52% taxation from their first euro of subsistence
+      wages (violating Art. 31.1 CE and STC 214/1994), and contributory permanent disability pensions (Incapacidad Permanente
+      Absoluta) lose their protected tax exemption under Art. 7.f LIRPF.'
+  counterarguments:
+    score: 3.5
+    rationale: 'Engages political and macroeconomic counterarguments well, but leaves major legal vulnerabilities unaddressed:
+      the EU CJEU "marginal worker" gateway under Art. 45 TFEU and Regulation 492/2011 (allowing part-time workers to claim
+      full benefits immediately), the constitutional boundary of non-confiscatoriness under Art. 31.3 CE and STC 182/2021
+      regarding Scenario S3''s AI surplus capture, and the lack of differentiation between public administration means-testing
+      errors and fraudulent misrepresentation under LPAC / Ley 47/2003.'
+  coverage:
+    score: 3.8
+    rationale: Achieves broad and detailed coverage across reference factors F07, F08, F13, and F14, with explicit disaggregation
+      across Municipal, Regional (Común vs. Foral), and National pilot tiers. However, deeper cross-module harmonization is
+      required between M06 (foral tax autonomy), M07 (contributory retirement pension continuity), M12 (LRJSP automated acts
+      and LEC debt attachment), and M13 (EU worker status and mínimo existencial).
+issues:
+- id: LW-03-01
+  severity: critical
+  module: M06
+  finding: M06 Section 5.1 and RQ-M06-01 exhibit a fundamental doctrinal and competence defect by conflating Foral and Common
+    Regime fiscal federalism. First, M06 proposes amending "Ley 22/2009 and Foral Treaties classifying UBR as a carga no asumida".
+    Under the Spanish Constitution and fiscal federalism statutes, the concept of "carga no asumida" (non-assumed State power)
+    is strictly and exclusively a Foral mechanism under the Basque Concierto Económico (Ley 12/2002) and Navarre Convenio
+    Económico (Ley 28/1990) used to determine the territorial Cupo (6.24%) and Aportación (1.6%). In the 15 Common Regime
+    Autonomous Communities, "cargas no asumidas" do not exist; common-regime financing is strictly governed by LOFCA (Ley
+    Orgánica 8/1980) and Ley 22/2009 through the Fondo de Garantía de Servicios Públicos Fundamentales (FGSPF) and Fondo de
+    Suficiencia Global (FSG). Applying "carga no asumida" to Ley 22/2009 is a legal category error that leaves unaddressed
+    how common-regime CCAA are compensated for the compression of their 50% ceded IRPF base and how the ~€1.5B–€2.0B windfall
+    from extinguished regional minimum incomes is settled in the Consejo de Política Fiscal y Financiera (CPFF). Second, M06
+    assumes centralized AEAT execution of the refundable IRPF credit and withholding codes nationwide, ignoring that the State
+    AEAT has ZERO tax jurisdiction over personal income tax in Euskadi and Navarre. Under Ley 12/2002 and Ley 28/1990, the
+    Diputaciones Forales (Álava, Bizkaia, Gipuzkoa) and Hacienda Foral de Navarra hold exclusive normative and management
+    competence over IRPF. The State Cortes Generales cannot unilaterally modify foral IRPF withholdings or credits without
+    bilateral statutory harmonization. Third, in Scenario S3, M06 invokes Art. 128.2 CE for sovereign AI funds without addressing
+    the constitutional limits of non-confiscatoriness (Art. 31.3 CE, STC 182/2021) and protection of private enterprise (Art.
+    38 CE).
+  proposal: 'Restructure M06 to: (1) strictly bifurcate territorial financing mechanisms between the Foral regime (classifying
+    UBR as a carga no asumida within the Comisión Mixta del Concierto and Comisión Coordinadora del Convenio) and the Common
+    Regime (revising the Fondo de Suficiencia Global and negotiating an adjustment to ceded tax tranches under LOFCA Art.
+    13 and Ley 22/2009 DA 2ª within the CPFF); (2) codify the bilateral tax harmonization mechanism under Article 6 of Ley
+    12/2002 and Article 7 of Ley 28/1990, establishing model Normas Forales and Leyes Forales to be enacted by the Foral Parliaments
+    (Juntas Generales and Parlamento de Navarra) to implement the refundable credit and withholding codes, coordinating with
+    STC 19/2024 foral management of non-contributory transfers; (3) establish a constitutional doctrine for Scenario S3 AI
+    rent capture distinguishing non-confiscatory excess-profit corporate automation levies from unconstitutional expropriation
+    under Art. 31.3, 33, 38, and 128.2 CE, citing STC 182/2021; and (4) add verified citations for RDLeg 5/2004 (TRIRNR) and
+    STC 182/2021.'
+  sources:
+  - title: Real Decreto Legislativo 5/2004, de 5 de marzo, por el que se aprueba el texto refundido de la Ley del Impuesto
+      sobre la Renta de no Residentes (BOE-A-2004-4527)
+    authors:
+    - Jefatura del Estado
+    year: 2004
+    url: https://www.boe.es/buscar/act.php?id=BOE-A-2004-4527
+  - title: Pleno. Sentencia 182/2021, de 26 de octubre de 2021. Recurso de inconstitucionalidad 4433-2020 (Plusvalía municipal,
+      principio de capacidad económica y no confiscatoriedad, BOE-A-2021-19777)
+    authors:
+    - Tribunal Constitucional
+    year: 2021
+    url: https://www.boe.es/buscar/doc.php?id=BOE-A-2021-19777
+- id: LW-03-02
+  severity: critical
+  module: M07
+  finding: 'M07 Section 5.1 (Tier 2) introduces a severe Social Security contributory hazard and equity gap: (1) It defines
+    the Dual-Pillar integration for contributory unemployment insurance (SEPE) as paying max(0, B_contrib - UBR). Under Article
+    273.2 of the Texto Refundido de la Ley General de la Seguridad Social (TRLGSS, BOE-A-2015-11724), during contributory
+    unemployment entitlement, the public employment service (SEPE) pays the employer''s Social Security retirement contribution
+    (cotización por jubilación) based on the worker''s average prior contribution base. If the SEPE cash benefit is offset
+    down to zero by UBR—which occurs for the vast majority of displaced workers whose previous regulatory base was below ~€1,400–€1,600/month—SEPE''s
+    statutory contribution obligation is extinguished. Because UBR is a universal non-contributory cash transfer that does
+    not generate Social Security pension contributions, unemployed workers would incur extensive contribution gaps (lagunas
+    de cotización, Art. 209 TRLGSS). Under Spanish pension rules, contribution gaps severely depress the regulatory base for
+    future retirement pensions (integrated at only the minimum base for 48 months and 50% thereafter), breaching the No-Loser
+    Guarantee for displaced workers. (2) Tier 3 replaces non-contributory invalidity PNC with the Universal Disability Supplement,
+    but completely ignores contributory permanent disability pensions (Incapacidad Permanente Total, Absoluta, and Gran Invalidez,
+    Arts. 193–200 TRLGSS). Under Art. 7.f of Ley 35/2006 (LIRPF), contributory pensions for Incapacidad Permanente Absoluta
+    and Gran Invalidez are 100% tax-exempt. Subjecting these severely incapacitated workers to M03''s reformed 38–52% IRPF
+    schedule without an explicit statutory tax exemption or offsetting tax-shield credit would inflict devastating disposable
+    income losses, violating Art. 49 CE and Art. 31.1 CE. (3) Tier 4 assumes regional minimum incomes are simply supplemented,
+    failing to address that in 15 common-regime CCAA where regional benefits are subsidiary and lower than €900, regional
+    governments will reap an uncoordinated windfall of €1.5B–€2.0B/year at State expense.'
+  proposal: 'Amend M07 to: (1) codify an explicit statutory Contribution Continuity Guarantee (Garantía de Mantenimiento de
+    Bases de Cotización por Desempleo) under Art. 273 TRLGSS, obligating SEPE to maintain and pay full Social Security retirement
+    contribution bases throughout the contributory unemployment period, independent of whether the cash benefit is partially
+    or wholly offset by UBR; (2) explicitly guarantee in Tier 2 and Tier 3 that contributory pensions for Incapacidad Permanente
+    Absoluta and Gran Invalidez retain their complete statutory tax exemption under Art. 7.f of Ley 35/2006 (LIRPF), or receive
+    an equivalent automatic refundable Complemento por Discapacidad Contributiva neutralizing all post-reform IRPF liability;
+    and (3) establish a Common Regime Rebalancing Protocol in the CPFF to earmark the ~€1.5B–€2.0B regional savings from extinguished
+    subsidiary minimum incomes into mandatory co-financing for municipal social housing (M05) and SAAD dependency care services
+    under Ley 39/2006.'
+  sources:
+  - title: Real Decreto Legislativo 8/2015, de 30 de octubre, por el que se aprueba el texto refundido de la Ley General de
+      la Seguridad Social (BOE-A-2015-11724)
+    authors:
+    - Jefatura del Estado
+    year: 2015
+    url: https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724
+  - title: Ley 35/2006, de 28 de noviembre, del Impuesto sobre la Renta de las Personas Físicas y de modificación parcial
+      de las leyes de los Impuestos sobre Sociedades, sobre la Renta de no Residentes y sobre el Patrimonio (BOE-A-2006-20764)
+    authors:
+    - Jefatura del Estado
+    year: 2006
+    url: https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764
+- id: LW-03-03
+  severity: major
+  module: M12
+  finding: 'M12 exhibits two serious administrative and procedural law defects: (1) In Section 4 (line 33) and Section 5.2
+    (line 43), M12 repeatedly cites "Ley 39/2015 del Procedimiento Administrativo Común (LPAC Art. 41)" as the statutory governance
+    framework for automated administrative acts (actuaciones administrativas automatizadas) and algorithmic due process. This
+    is a severe statutory misattribution: Article 41 of Ley 39/2015 governs administrative notifications (notificaciones en
+    papel y electrónicas). The actual statute governing automated administrative acts in Spanish public law is Article 41
+    of Ley 40/2015, de 1 de octubre, de Régimen Jurídico del Sector Público (LRJSP, BOE-A-2015-10566). Under Art. 41.2 LRJSP,
+    automated administrative processing legally requires: (a) formal pre-determination of the competent administrative organs
+    responsible for system specifications, programming, maintenance, supervision, and algorithmic source-code auditing; and
+    (b) clear designation of the organ responsible for administrative appeals. Furthermore, the procedural right to a 30-day
+    non-suspensive hearing belongs under Article 82 of Ley 39/2015 (LPAC), not Art. 41. (2) In Section 2 (line 21) and Section
+    5.2 (line 42), M12 establishes an absolute statutory shield against debt attachment (inembargabilidad) under Art. 607
+    LEC and Art. 44 TRLGSS. However, M12 completely omits Article 608 of the Ley de Enjuiciamiento Civil (LEC, Ley 1/2000,
+    BOE-A-2000-323), which establishes a mandatory, constitutionally protected exception: debt attachment limitations do NOT
+    apply when executing court judgments for child support and alimony (pensiones por alimentos a favor de los hijos). Granting
+    UBR absolute inembargabilidad without an Art. 608 LEC child support carve-out would unlawfully shield child maintenance
+    defaulters, directly violating the constitutional principle of child protection (Art. 39 CE) and the UN Convention on
+    the Rights of the Child.'
+  proposal: 'Revise M12 to: (1) correct all administrative statutory citations by anchoring automated UBR disbursements and
+    withholding adjustments in Article 41 of Ley 40/2015 (LRJSP), detailing the formal institutional responsibilities for
+    software specification, algorithmic source-code auditing, and legal accountability, while anchoring prior hearing guarantees
+    before payment suspension in Article 82 of Ley 39/2015 (LPAC); (2) amend the inembargabilidad protocol to explicitly incorporate
+    the Article 608 LEC child support exception, permitting judicial embargoes strictly for court-mandated child maintenance
+    while retaining absolute protection against commercial bank overdraft set-offs, consumer credit seizures, and administrative
+    tax compensations under Arts. 71–73 LGT; and (3) add verified entries for Ley 40/2015 (LRJSP) and Ley 1/2000 (LEC) to
+    sources.yaml.'
+  sources:
+  - title: Ley 40/2015, de 1 de octubre, de Régimen Jurídico del Sector Público (BOE-A-2015-10566)
+    authors:
+    - Jefatura del Estado
+    year: 2015
+    url: https://www.boe.es/buscar/act.php?id=BOE-A-2015-10566
+  - title: Ley 1/2000, de 7 de enero, de Enjuiciamiento Civil (BOE-A-2000-323)
+    authors:
+    - Jefatura del Estado
+    year: 2000
+    url: https://www.boe.es/buscar/act.php?id=BOE-A-2000-323
+- id: LW-03-04
+  severity: critical
+  module: M13
+  finding: 'M13 contains two severe constitutional and EU-law vulnerabilities: (1) Under RQ-M13-02 and Section 5.1, M13 adopts
+    a Tax-Benefit Symmetry architecture that grants immediate pro-rata UBR tax credits to "economically active residents subject
+    to IRPF" from month one, while imposing a 24-month waiting period on "economically inactive" arrivals under Directive
+    2004/38/EC Art. 24(2). However, under established CJEU jurisprudence (Case 53/81 Levin, Case 66/85 Lawrie-Blum, and Case
+    C-14/09 Genc), the concept of "worker" under Article 45 TFEU is an autonomous European Union law definition that cannot
+    be defined or restricted by national tax legislation. The CJEU consistently holds that any EU citizen performing effective
+    and genuine work—even on a minimal part-time basis (e.g. 5–10 hours per week) or earning wages below the national subsistence
+    floor—is legally an EU worker, entitled to complete equal treatment in all social and tax advantages under Article 7(2)
+    of Regulation (EU) No 492/2011. M13 provides no criteria, hours thresholds, or pro-rata benefit formulas for marginal
+    part-time workers: granting immediate full €900/month UBR to marginal workers creates an enormous cross-border welfare
+    incentive ("mini-job gateway"), whereas denying worker status to part-time EU citizens would trigger immediate CJEU infringement
+    proceedings under Art. 45 TFEU. (2) In M03, the research plan abolishes the IRPF personal allowance (mínimo personal y
+    familiar, Arts. 56–61 Ley 35/2006). For any resident taxpayer subject to M13''s 24-month waiting period (such as inactive
+    EU arrivals or third-country nationals with temporary residency), any modest income earned during those 24 months will
+    be taxed from the very first euro at 38–52% without either a personal allowance or a UBR credit. Under landmark Tribunal
+    Constitucional jurisprudence (STC 214/1994, STC 19/2012, and STC 182/2021), the principle of economic capacity (capacidad
+    económica, Art. 31.1 CE) strictly prohibits taxing the untaxable subsistence minimum (mínimo existencial). Depriving waiting-period
+    residents of both UBR and the tax-free subsistence allowance is blatantly unconstitutional.'
+  proposal: 'Amend M13 to: (1) resolve the CJEU Art. 45 TFEU / Regulation 492/2011 dilemma by establishing a statutory definition
+    of "effective and genuine employment" based on objective Social Security contribution thresholds (e.g. affiliation under
+    Régimen General or RETA with minimum monthly earnings corresponding to at least 50% of the SMI or 20 hours/week), paired
+    with a pro-rata tapering schedule for sub-threshold part-time EU workers that scales the UBR credit to working time to
+    comply with EU non-discrimination while closing artificial welfare gateways; (2) codify a Default Non-Refundable Mínimo
+    Personal y Familiar in Ley 35/2006 that remains active strictly for resident taxpayers temporarily excluded from UBR under
+    statutory waiting periods, ensuring no individual''s subsistence income is ever taxed below the Art. 31.1 CE constitutional
+    minimum existencial (STC 214/1994); (3) establish an unconditional child subsistence safe-harbor under Art. 39 CE, STC
+    236/2007, and the UN Convention on the Rights of the Child ensuring minor dependents residing in Spain receive the child
+    allowance regardless of parental residency duration; and (4) cite Regulation (EU) No 492/2011, Case 66/85 Lawrie-Blum,
+    Case C-14/09 Genc, and STC 214/1994 in sources.yaml with verified URLs.'
+  sources:
+  - title: Judgment of the Court of 3 June 1986, Deborah Lawrie-Blum v Land Baden-Württemberg, Case 66/85, ECLI:EU:C:1986:284
+    authors:
+    - Court of Justice of the European Communities
+    year: 1986
+    url: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:61985CJ0066
+  - title: Judgment of the Court of 4 February 2010, Hasan Genc v Land Berlin, Case C-14/09, ECLI:EU:C:2010:57
+    authors:
+    - Court of Justice of the European Union
+    year: 2010
+    url: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:62009CJ0014
+  - title: Regulation (EU) No 492/2011 of the European Parliament and of the Council of 5 April 2011 on freedom of movement
+      for workers within the Union
+    authors:
+    - European Parliament and Council
+    year: 2011
+    url: https://eur-lex.europa.eu/eli/reg/2011/492/oj
+  - title: Pleno. Sentencia 214/1994, de 14 de julio de 1994. Recurso de inconstitucionalidad 1184-1989 (Principio de capacidad
+      económica y mínimo existencial, BOE-A-1994-18698)
+    authors:
+    - Tribunal Constitucional
+    year: 1994
+    url: https://www.boe.es/buscar/doc.php?id=BOE-A-1994-18698

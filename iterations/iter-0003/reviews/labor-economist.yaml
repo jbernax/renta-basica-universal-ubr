@@ -1,0 +1,206 @@
+reviewer: labor-economist
+iteration: 3
+summary: 'The Universal Basic Rent research plan exhibits commendable depth and sophistication in iteration 3, tightly coupling
+  Acemoglu-Restrepo task-displacement scenarios (S1-S3) to EUROMOD microsimulation and HANK macroeconomic closure while incorporating
+  post-2021 Spanish labor reforms (RDL 32/2021 fijos discontinuos, RD 789/2022 IMV employment incentives). However, critical
+  labor-economics gaps remain across M01, M08, M14, M15, and METHODS that prevent it from reaching full state-of-the-art status:
+  (1) M08 models baseline reservation wages and Participation Tax Rates against an obsolete pre-2024 framework, completely
+  omitting the major assistential unemployment reform under Real Decreto-ley 2/2024 and its Complemento de Apoyo al Empleo
+  (CAE); (2) M01 treats AI task substitution as an unconstrained cost comparison, ignoring how Spain statutory SMI floor (€1,134/14
+  mo) and employer Social Security contributions create a binding €1,740/month gross labor cost floor that triggers non-linear
+  quantity displacement cliffs and youth port-of-entry hiring freezes; (3) M08 relies on unconstrained discrete-choice hours
+  modeling that ignores Spain severe involuntary part-time rationing (>50%) and provides no empirical strategy for the informal-to-formal
+  margin; (4) M14 assumes continuous interior sharing rules that ignore female non-participation, overlooks the SAAD informal
+  care cash allowance (PECEF) care trap under Ley 39/2006, and omits quantitative hypotheses for S1 and S3; (5) M15 fails
+  to adjust Bayesian RCT priors for labor-demand rationing regimes across S1-S3 and overlooks Spain 34 NextGenEU/PRTR inclusion-itinerary
+  RCTs; and (6) METHODS Pillar 1 lacks a microdata hazard assignment mechanism in the Sequential Displacement Protocol, failing
+  to account for tenure-dependent firing costs (Art. 56 ET) and LIFO displacement selection.'
+scores:
+  ai_scenarios:
+    score: 4.4
+    rationale: Scenario parameters S1-S3 are explicitly defined with labor share shifts, TFP growth bands, and fiscal revenue
+      drags in M01 and METHODS. However, M14 only details S2 clerical displacement while leaving S1 and S3 care-sector and
+      manual adjustments unquantified, and M15 fails to adapt Bayesian RCT priors to the severe labor-demand rationing regimes
+      that characterize S2 and S3.
+  methodological_rigor:
+    score: 4.3
+    rationale: Strong econometric foundations with Acemoglu-Restrepo task models, discrete-choice labor supply, Saez-Chetty
+      bunching estimators, and MaCurdy life-cycle Frisch transportability. However, METHODS Pillar 1 lacks a microdata selection/assignment
+      mechanism to allocate macro displacement across MCVL tenure and contract profiles, M08 specifies an unconstrained hours
+      model ignoring Spain severe involuntary part-time rationing (>50%) and lacks an empirical model for informal-to-formal
+      transitions, and M14 relies on continuous interior sharing rules that ignore female non-participation.
+  spain_fit:
+    score: 4.4
+    rationale: Impressive grounding in post-2021 labor market institutions (RDL 32/2021 fijos discontinuos and ERTE/RED, RD
+      789/2022 IMV incentive, MCVL contract codes 100/200/300). However, M08 completely misses the major assistential unemployment
+      overhaul enacted by Real Decreto-ley 2/2024 (introducing the Complemento de Apoyo al Empleo and 75% SMI family income
+      rules), M01 fails to formalize statutory SMI and employer contribution floors (€1,740 gross labor cost) that create
+      non-linear AI displacement cliffs, and M14 overlooks the SAAD informal care cash benefit (PECEF) care trap.
+  rq_quality:
+    score: 4.5
+    rationale: Research questions are clear, policy-relevant, and accompanied by quantitative hypotheses benchmarked against
+      Spanish microdata. However, RQ-M08-01 evaluates formalization without specifying an informal-to-formal econometric margin
+      or the RDL 2/2024 assistential baseline, RQ-M14-02 omits hypotheses for S1 and S3, and RQ-M15-01/02 omit scenario-contingent
+      elasticity bounds.
+  evidence_grounding:
+    score: 4.5
+    rationale: High citation density grounding arguments in top empirical labor economics (Acemoglu & Restrepo, Eloundou,
+      Felten, Webb, Albanesi, Bentolila, Vivalt et al., Kangas, Jones & Marinescu). However, key Spanish statutory texts (Real
+      Decreto-ley 2/2024 on unemployment subsidies, Real Decreto 145/2024 on SMI) and institutional empirical literature (Banco
+      de España SMI evidence, Costa-Font et al. 2022 on SAAD informal care, and the Ministry of Inclusion / CEMFI / J-PAL
+      34 PRTR RCTs) are absent from the baseline.
+issues:
+- id: LE-03-01
+  severity: critical
+  module: M08
+  finding: 'M08 models baseline welfare traps, reservation wages, and work incentives against only two programs: the age-52
+    SEPE subsidio and the IMV employment incentive under Real Decreto 789/2022. However, the entire assistential unemployment
+    protection system in Spain (nivel asistencial de protección por desempleo) was structurally overhauled by Real Decreto-ley
+    2/2024, de 21 de mayo (BOE-A-2024-10235). RDL 2/2024: (1) expanded eligibility to workers under 45 without dependents;
+    (2) modified the family income computation threshold to 75% of the SMI per capita; (3) established a degressive benefit
+    rate structure (95% of IPREM for the first 6 months, 90% for months 7–12, and 80% thereafter); (4) abolished the traditional
+    one-month waiting period (mes de espera); and critically (5) introduced the Complemento de Apoyo al Empleo (CAE) (Art.
+    282 TRLGSS), which permits combining assistential unemployment subsidies with wage employment under a degressive compatibility
+    schedule. By omitting RDL 2/2024 and the CAE, M08 calculates baseline Participation Tax Rates (PTRs) and reservation wages
+    on an obsolete pre-2024 regulatory framework, distorting estimated extensive-margin labor supply responses of displaced
+    workers under age 52.'
+  proposal: 'In M08 Sections 1, 2, 4, and 5 (and METHODS Section 2): (1) incorporate Real Decreto-ley 2/2024 (BOE-A-2024-10235)
+    and the Complemento de Apoyo al Empleo (CAE) into the baseline tax-benefit and METR/PTR schedule in EUROMOD-Spain, explicitly
+    contrasting the CAE degressive subsidy phase-out against UBR permanent, unconditional real-time monthly clearing; (2)
+    revise RQ-M08-01 to benchmark UBR extensive and intensive labor supply elasticities against both RD 789/2022 (IMV) and
+    RDL 2/2024 (SEPE asistencial + CAE); (3) update Section 4 to include SEPE microdata on assistential subsidy spells and
+    CAE uptake linked to MCVL and EPA longitudinal panels.'
+  sources:
+  - title: Real Decreto-ley 2/2024, de 21 de mayo, por el que se adoptan medidas urgentes para la simplificación y mejora
+      del nivel asistencial de la protección por desempleo (BOE-A-2024-10235)
+    authors:
+    - Jefatura del Estado
+    year: 2024
+    url: https://www.boe.es/buscar/act.php?id=BOE-A-2024-10235
+- id: LE-03-02
+  severity: critical
+  module: M01
+  finding: M01 and METHODS Pillar 1 model AI labor displacement via an Acemoglu-Restrepo task-allocation framework scaled
+    by ETICCE adoption rates and collective bargaining coverage. However, they treat displacement as an unconstrained task-cost
+    comparison, overlooking Spain legally binding Salario Mínimo Interprofesional (SMI) floor and mandatory employer Social
+    Security contributions (bases mínimas de cotización). Following a >54% statutory increase between 2018 and 2024 (Real
+    Decreto 145/2024 set SMI at €1,134/month in 14 payments, or €1,323/month in 12 payments), combined with employer payroll
+    taxes of ~31.5% (contingencias comunes 23.6%, desempleo 5.5%, FOGASA 0.2%, formación 0.6%, MEI 0.7%), the legal minimum
+    gross labor cost for an employer is approximately €1,740/month (€20,880/year). Because employers cannot legally adjust
+    wages below this threshold, any cognitive or clerical task whose AI execution cost falls below €1,740/month triggers an
+    immediate, non-linear quantity displacement cliff rather than smooth wage renegotiation. This cliff bites hardest in low-productivity
+    Autonomous Communities (Extremadura, Andalucía, Canarias) where SMI exceeds 65–70% of median provincial earnings, and
+    disproportionately blocks entry-level hiring (tasas de entrada) for youth on contratos formativos (Art. 11 ET).
+  proposal: 'In M01 Sections 2, 3, 5, and 7 (and METHODS Section 1): (1) formalize the statutory wage floor constraint W_floor
+    = SMI * (1 + tau_SS^emp) in the task-replacement condition, proving that for tasks where c_AI(i) < W_floor / gamma_L(i),
+    displacement is 100% quantity-driven with zero wage flexibility; (2) link the Encuesta Anual de Estructura Salarial (EAES)
+    to CNO-11 occupations to estimate the fraction of workers clustered within 110% of the SMI floor across regions and demographic
+    cohorts (particularly youth under 25 and contratos formativos under Art. 11 ET); (3) model how S1, S2, and S3 displacement
+    shocks concentrate at the entry port of the labor market, blocking hiring transitions (pases de desempleo a empleo) rather
+    than only destroying existing jobs.'
+  sources:
+  - title: Real Decreto 145/2024, de 6 de febrero, por el que se fija el salario mínimo interprofesional para 2024 (BOE-A-2024-2251)
+    authors:
+    - Ministerio de Trabajo y Economía Social
+    year: 2024
+    url: https://www.boe.es/buscar/act.php?id=BOE-A-2024-2251
+  - title: 'Los efectos del salario mínimo interprofesional en el empleo: nueva evidencia para España'
+    authors:
+    - Barceló, C.
+    - Izquierdo, M.
+    - Lacuesta, A.
+    - Puente, S.
+    - Regil, A.
+    - Villanueva, E.
+    year: 2021
+    url: https://www.bde.es/f/webbde/SES/Secciones/Publicaciones/PublicacionesSeriadas/DocumentosOcasionales/21/Fich/do2113.pdf
+- id: LE-03-03
+  severity: major
+  module: M14
+  finding: 'M14 Sections 2 and 5 propose estimating a Chiappori collective household model on EET and ECV, but exhibit three
+    major limitations: (1) it assumes a continuous interior sharing rule, failing to address the extensive margin (female
+    non-participation, which exceeds 40% among low-educated Spanish women) where shadow wages are unobserved, requiring a
+    discrete-choice collective model (Cherchye et al. 2012; Blundell et al. 2007); (2) it ignores the critical interaction
+    between UBR and the SAAD cash benefit for informal family care (prestación económica para cuidados en el entorno familiar,
+    PECEF under Ley 39/2006). Spanish empirical evidence (Costa-Font, Jiménez-Martín & Vilaplana-Prieto 2022) shows PECEF
+    cash allowances entrench a gendered care trap (trampa de los cuidados), locking women into unpaid or informal domestic
+    care; without modeling cross-elasticities between UBR, PECEF cash, and formal SAAD in-kind services, UBR risks reinforcing
+    female detachment from formal employment into home eldercare; (3) in violation of D-006, RQ-M14-02 hypothesizes clerical
+    displacement under S2, but provides zero quantitative hypotheses for S1 (moderate polarization) or S3 (where AI automates
+    cognitive work and shifts labor demand heavily toward relational, manual care occupations, altering care-sector relative
+    wages and working conditions).'
+  proposal: 'In M14 Sections 2, 4, 5, and 6: (1) specify a discrete-choice collective household model (following Cherchye,
+    De Rock, & Vermeulen 2012) that accommodates joint non-participation, joint IRPF filing (LIRPF Art. 84), and non-convex
+    budget sets; (2) model the substitution elasticity between informal home care and formal market/SAAD care services under
+    Ley 39/2006, testing whether UBR acts as a care trap or an enabler of formal market service purchases when conditioned
+    on SAAD in-kind support; (3) expand RQ-M14-02 with explicit hypotheses across all three scenarios: quantify S1 clerical
+    displacement (+1.5 pp female poverty risk), S2 severe displacement (+4.5 pp female poverty risk), and S3 structural reallocation,
+    where UBR acts as an essential wage subsidy for relational and eldercare workers in low-productivity service sectors.'
+  sources:
+  - title: 'Married with Children: A Collective Labor Supply Model with Detailed Time Use and Intrahousehold Expenditure Information'
+    authors:
+    - Cherchye, L.
+    - De Rock, B.
+    - Vermeulen, F.
+    year: 2012
+    doi: 10.1257/aer.102.7.3377
+  - title: Do Public Caregiving Subsidies and Supports affect the Provision of Care and Transfers?
+    authors:
+    - Costa-Font, J.
+    - Jiménez-Martín, S.
+    - Vilaplana-Prieto, C.
+    year: 2022
+    doi: 10.1016/j.jhealeco.2022.102639
+- id: LE-03-04
+  severity: major
+  module: M15
+  finding: 'M15 formulates a life-cycle Frisch and windfall decomposition equation and a Bayesian hierarchical meta-analysis,
+    but exhibits two major external-validity gaps: (1) it does not adjust Bayesian priors for macro labor-demand rationing
+    across AI scenarios S1, S2, and S3 (D-006). In tight labor markets (like the US during OpenResearch), labor supply elasticities
+    govern employment adjustments; under S2 and S3, severe displacement creates involuntary unemployment rationing where observed
+    employment transitions are bounded by labor demand constraints rather than unconstrained supply preferences. (2) M15 overlooks
+    Spain landmark domestic experimental evidence: the 34 randomized controlled trials (RCTs) deployed under the Ministry
+    of Inclusion Policy Lab (supported by €212M in NextGenerationEU PRTR funds with technical coordination from CEMFI and
+    J-PAL Europe). These 34 RCTs evaluated behavioral interventions, wage supplements, and conditionality directly on over
+    76,000 Spanish IMV and vulnerable recipients, offering directly transportable domestic empirical priors.'
+  proposal: 'In M15 Sections 2, 4, 5, and 7: (1) formalize a macro-rationing weighting function in the Bayesian meta-regression
+    adjusting prior elasticities by local unemployment slack and labor-demand tightness (U/V ratio) across S1 (near-equilibrium),
+    S2 (moderate rationing), and S3 (structural labor-demand rationing); (2) systematically incorporate findings, microdata
+    registers, and treatment effect bounds from the 34 Ministry of Inclusion / CEMFI / J-PAL Policy Lab RCTs alongside B-MINCOME
+    and Catalonia blueprints; (3) revise RQ-M15-01 and RQ-M15-02 to explicitly specify scenario-contingent elasticity bounds
+    across S1–S3.'
+  sources:
+  - title: 'Laboratorio de Políticas de Inclusión: Ensayos Controlados Aleatorizados vinculados al Ingreso Mínimo Vital (Componente
+      23 PRTR)'
+    authors:
+    - Secretaría General de Inclusión
+    - CEMFI
+    - J-PAL Europe
+    year: 2024
+    url: https://inclusion.cemfi.es/
+- id: LE-03-05
+  severity: major
+  module: METHODS
+  finding: In plan/methods.md Pillar 1 (and M01 Section 5), the Sequential Decomposition Protocol states that Step 1 applies
+    macro Acemoglu-Restrepo displacement hazards to Contabilidad Nacional and MCVL across S1–S3, and Step 2 applies behavioral
+    labor supply elasticities in EUROMOD. However, the protocol lacks an explicit microdata selection and assignment mechanism.
+    In Spain highly segmented labor market, when an occupation FTE employment contracts (e.g. -20% in S2), job loss does not
+    occur randomly across workers. Because Spanish employment protection legislation (Art. 56 Estatuto de los Trabajadores)
+    mandates 33 days/year severance pay for unfair dismissal, firing costs rise steeply with worker tenure (antigüedad). Consequently,
+    employers adjust via last-in-first-out (LIFO) dynamics, non-renewal of temporary contracts, pases a inactividad of fijos
+    discontinuos, and hiring freezes. Allocating macro displacement randomly across micro-records in EUROMOD severely biases
+    estimated tax revenue losses and poverty impacts, because younger, low-tenure workers with lower baseline wages and lower
+    IRPF liabilities are displaced first.
+  proposal: 'In plan/methods.md Pillar 1 (and M01 Section 5): (1) formalize a micro-econometric hazard assignment protocol
+    calibrated on historical MCVL longitudinal panels (2008–2023) estimating worker-level job-separation and inactivity hazards
+    conditional on tenure (antigüedad), contract type (codes 100/200/300), age, and firm size; (2) apply these estimated propensity
+    ranks to assign involuntary displacement across CNO-11 cells in Step 1 before feeding post-displacement micro-records
+    into EUROMOD-Spain, preventing LIFO tenure-bias distortions in baseline IRPF and Social Security tax projections.'
+  sources:
+  - title: Dual Labour Markets Revisited
+    authors:
+    - Bentolila, S.
+    - Dolado, J. J.
+    - Jimeno, J. F.
+    year: 2020
+    doi: 10.1093/acrefore/9780190625979.013.502

@@ -1,0 +1,306 @@
+reviewer: red-team
+iteration: 3
+summary: 'Adversarial referee audit of Iteration 3 (iter-0003) identifies two critical and four major/minor structural vulnerabilities:
+  (1) a severe cross-border tax enforcement hole in M16 where foreign AI foundation-model providers escape destination levies
+  and corporate taxation under OECD Double Taxation Treaties (CDIs Arts. 5, 7, and 12); (2) residual general-equilibrium spatial
+  commuting and retail market contamination across M10''s 2–5 km SUTVA buffer boundaries in metropolitan pilot clusters; (3)
+  an unclosed macro-micro fiscal accounting chasm where M03 claims Tier B requires only 4.8–6.2% of GDP in net financing and
+  decile 84 breakeven despite M01''s 11.55% of GDP baseline revenue collapse and M16''s modest 0.9–1.2% net surplus yield;
+  (4) an empirical distortion in M14 claiming OpenResearch (Miller et al. 2024) demonstrates 9–15% clinical health savings
+  and a total absence of fallback microdata protocols for inter-administrative BDCAP health data linkage; (5) complete omission
+  in M06 of Common-Regime regional financing mechanics under LOFCA and Ley 22/2009 (Fondo de Garantía de Servicios Públicos
+  Fundamentales, FGSPF); and (6) labor shock mis-specification in M01 ignoring statutory collective bargaining opt-outs (descuelgues
+  salariales under Art. 82.3 ET) and EREs under severe cognitive displacement.'
+scores:
+  counterarguments:
+    score: 4.0
+    rationale: 'Counterarguments across modules are substantially steel-manned, but modules continue to evade core legal and
+      economic challenges: M16 ignores OECD bilateral tax treaty barriers (Articles 7 and 12) shielding foreign compute providers;
+      M03 evades how middle earners will react if the labor tax base collapses by 11.55% of GDP; and M12 overlooks the severe
+      working-capital burden placed on Spanish micro-enterprises if required to advance monthly UBR credits.'
+  internal_coherence:
+    score: 3.8
+    rationale: While parameter baselines (Tiers A/B/C, 40% child equivalence, disability supplements) are synchronized, a
+      fundamental accounting contradiction persists between M01's 11.55% of GDP baseline revenue loss under S2 and M03's claim
+      of a 4.8–6.2% of GDP net financing need with decile 84 breakeven, when M16 corporate automation taxes net only 0.9–1.2%
+      of GDP.
+  methodological_rigor:
+    score: 3.9
+    rationale: Econometric identification in M10 and M15 is sophisticated, but enforcing static 2–5 km buffer zones in integrated
+      metropolitan areas fails to satisfy SUTVA due to unweighted daily commuting and shopping flows. Furthermore, M14 predicates
+      health evaluation on multi-jurisdictional BDCAP register linkage without formalizing institutional fallback protocols.
+  feasibility:
+    score: 3.9
+    rationale: Delivery mechanisms through AEAT and INSS are detailed, but M16 lacks a legally enforceable B2B reverse-charge
+      mechanism under existing Spanish tax treaties, M06 omits Common-Regime LOFCA/FGSPF equalizing transfers, and M14 faces
+      18–36 month administrative access bottlenecks across 17 regional health authorities without fallback datasets.
+  evidence_grounding:
+    score: 4.0
+    rationale: All cited keys resolve to verified sources in sources.yaml, but M14 misrepresents Miller et al. (2024) by asserting
+      that OpenResearch proved 9–15% clinical healthcare cost reductions, when the trial found zero statistically significant
+      effects on clinical utilization or physical health biomarkers.
+issues:
+- id: RT-03-01
+  severity: critical
+  module: M16
+  finding: 'M16 (Section 1, RQ-M16-01, Section 5.1, Section 7) contains a fatal international tax enforcement vulnerability
+    regarding cross-border AI compute and cloud services (JD-02-01). M16 relies on two pillars: an origin-based Net Operating
+    Surplus tax on domestic firms (IRAP model, Case C-475/03 Banca Popolare di Cremona) and destination-based digital services
+    taxes. However, frontier generative AI foundation-model developers (OpenAI, Anthropic, Microsoft, Google, AWS) are foreign
+    multinationals headquartered outside Spain (primarily US) with no physical permanent establishment (PE) in Spain. Under
+    existing bilateral Double Taxation Treaties (Convenios de Doble Imposición, CDIs modeled on Articles 5 and 7 of the OECD
+    Model Tax Convention), business profits earned by foreign enterprises without a Spanish PE are strictly exempt from Spanish
+    direct taxation. Crucially, under Article 12 of the OECD Model Convention and official OECD commentary, cross-border payments
+    for cloud computing infrastructure, foundation-model API subscriptions, and enterprise SaaS are legally categorized as
+    commercial business profits (Art. 7) rather than royalties (Art. 12), precluding Spain from levying gross withholding
+    tax at source under domestic non-resident income tax (IRNR). Furthermore, Spain''s Digital Services Tax (Ley 4/2020) explicitly
+    excludes B2B enterprise software, cloud infrastructure, and AI API transactions, yielding <€300M/year. When Spanish enterprises
+    purchase foreign cloud compute to replace human labor, those payments are deductible intermediate expenses that erode
+    domestic Net Operating Surplus. Consequently, foreign AI monopolies can extract billions of euros in automated productivity
+    rents from Spain completely tax-free under current CDIs, leaving the S2/S3 fiscal financing bridge structurally unviable.'
+  proposal: 'In M16 and M06, formalize a robust domestic B2B tax enforcement architecture under Spanish and international
+    tax law: (1) Establish an explicit domestic B2B reverse-charge withholding mechanism under Ley 58/2003 General Tributaria
+    (LGT) and the Texto Refundido de la Ley del IRNR (RDLeg 5/2004), or condition the corporate tax deductibility of cross-border
+    compute and AI software expenses under Ley 27/2014 (Impuesto sobre Sociedades, Art. 15) on proof of a domestic equalization
+    withholding; (2) Formulate a statutory definition of "Virtual Permanent Establishment" / "Significant Digital Presence"
+    for high-volume enterprise compute and foundation-model providers, aligning with the EU Digital Business Tax framework
+    (COM(2018) 147 final); (3) Specify the legal mechanism to withstand tax treaty disputes under the OECD Multilateral Convention
+    (MLI) and dispute resolution mechanisms under Bilateral CDIs.'
+  sources:
+  - title: Model Tax Convention on Income and on Capital 2017 (Full Version)
+    authors:
+    - OECD
+    year: 2019
+    doi: 10.1787/g2g972ee-en
+  - title: Ley 27/2014, de 27 de noviembre, del Impuesto sobre Sociedades (BOE-A-2014-12328)
+    authors:
+    - Jefatura del Estado
+    year: 2014
+    url: https://www.boe.es/buscar/act.php?id=BOE-A-2014-12328
+  - title: Ley 58/2003, de 17 de diciembre, General Tributaria (BOE-A-2003-23186)
+    authors:
+    - Jefatura del Estado
+    year: 2003
+    url: https://www.boe.es/buscar/act.php?id=BOE-A-2003-23186
+  - title: Scenarios for the Transition to AGI
+    authors:
+    - Korinek, A.
+    - Suh, D.
+    year: 2024
+    doi: 10.3386/w32255
+- id: RT-03-02
+  severity: critical
+  module: M10
+  finding: M10 (RQ-M10-01, Section 5.1) and methods.md (Section 4) suffer from an econometric identification failure due to
+    residual spatial commuting contamination across cluster buffer boundaries (JD-02-02). The experimental design establishes
+    J = 70 spatial clusters (35 treated, 35 control, m ≈ 285 adults, N ≈ 20,000) defined as small municipalities (1,500–5,000
+    residents) or transit-bounded urban districts, surrounded by 2–5 km geographic buffer zones and donut matching to satisfy
+    the Stable Unit Treatment Value Assumption (SUTVA). However, in Spain's integrated metropolitan and peri-urban labor and
+    retail markets (e.g. the suburban rings of Madrid, Barcelona, Valencia, Seville, or Basque industrial valleys), daily
+    labor commuting, commercial shopping, and service consumption routinely span 15–30 km. In a 2–5 km radius, workers residing
+    in control clusters commute daily to jobs in treated clusters (or vice versa), and treated recipients spend their UBR
+    liquidity in commercial establishments, supermarkets, and healthcare facilities located in adjacent control clusters.
+    This cross-border economic activity introduces unmeasured general-equilibrium price spillovers, wage-bargaining interference,
+    and retail demand shocks into control units, violating SUTVA. Relying solely on static euclidean distance buffers without
+    controlling for inter-cluster mobility biases both rental pass-through estimates (M05) and labor-supply reservation wage
+    effects (M08).
+  proposal: 'In M10 and methods.md, upgrade the spatial econometric identification strategy: (1) Integrate a daily commuting-flow
+    spatial weight matrix (W_mobility) into the cluster econometric specification, estimated using the Ministry of Transport
+    (MITMA) and INE''s mobile-phone tracking microdata (Estudio de la Movilidad con Telefonía Móvil); (2) Implement a continuous
+    spatial spillover exposure estimator following Egger et al. (2022) and Baird et al. (2018), parameterizing treatment intensity
+    as a function of commuting-weighted cash inflows (Z_c = sum_j W_{cj} * Cash_j) to net out spatial interference; (3) Redefine
+    cluster boundaries in metropolitan provinces strictly along self-contained Functional Urban Areas (FUAs / Áreas Urbanas
+    Funcionales INE) with internal commuting self-containment ratios exceeding 80%, rather than porous 2–5 km geographic radii.'
+  sources:
+  - title: 'General Equilibrium Effects of Cash Transfers: Experimental Evidence from Kenya'
+    authors:
+    - Egger, D.
+    - Haushofer, J.
+    - Miguel, E.
+    - Niehaus, P.
+    - Walker, M.
+    year: 2022
+    doi: 10.3982/ECTA17945
+  - title: Optimal Design of Experiments in the Presence of Interference
+    authors:
+    - Baird, S.
+    - Bohren, J. A.
+    - McIntosh, C.
+    - Özler, B.
+    year: 2018
+    doi: 10.1162/rest_a_00716
+  - title: Estadística experimental. Estudios de movilidad a partir de la telefonía móvil
+    authors:
+    - Instituto Nacional de Estadística (INE)
+    year: 2021
+    url: https://www.ine.es/experimental/movilidad/experimental_movilidad.htm
+- id: RT-03-03
+  severity: major
+  module: GLOBAL
+  finding: 'A fundamental arithmetic and fiscal accounting disconnect persists between M01''s macroeconomic scenario projections
+    and M03''s fiscal bridge. In M01 (RQ-M01-02), a -7.0 pp labor share contraction under Scenario S2 erodes baseline combined
+    IRPF and Social Security payroll receipts by 11.55% of GDP (~€173B/year in 2026 euros). Gross UBR outlays for Tier B (€900/adult,
+    €360/minor) total ~€466.5B (~30% of GDP). Non-contributory welfare savings in M07 yield ~€14.5B (~0.95% of GDP), while
+    contributory pensions (>€900/mo) retain ~5.5–6.0% of GDP (~€90B) and require a €7.5B tax-neutrality supplement. In M16
+    (RQ-M16-02), the research plan explicitly admits that after deducting lost employer payroll contributions, net corporate
+    surplus taxes yield only 0.9–1.2% of GDP (~€13.5–€18B). Yet M03 (RQ-M03-01) inexplicably claims that under S2, the "consolidated
+    net financing requirement" is only 4.8–6.2% of GDP, and that net disposable breakeven remains at the 82nd–86th gross income
+    percentile (€38,000–€44,000/year) under a 38–52% marginal rate schedule. This arithmetic is impossible: if baseline tax
+    revenues drop by 11.55% of GDP, merely maintaining pre-reform public services (€125B/yr) already requires 11.55% of GDP
+    in replacement revenue. Adding the net redistribution cost of Tier B (~5% of GDP) minus M07 savings (~1% of GDP) creates
+    a true net fiscal gap of ~15.5% of GDP (~€230B/year). Under S2, the aggregate wage bill shrinks to ~40% of GDP (~€600B);
+    total gross earnings in deciles 9 and 10 (above the 84th percentile) amount to less than €180B. Even taxing 100% of all
+    earnings above the 84th percentile could not raise €230B. M03 is concealing a structural deficit of ~10% of GDP (~€150B/year)
+    behind wishful static accounting that assumes pre-AI tax yields.'
+  proposal: 'Close the macro-micro fiscal accounting loop across 00-scope, M01, M03, and M16: (1) Provide an explicit, fully
+    balanced consolidated Administraciones Públicas accounting bridge table for Scenario S2 that itemizes: (i) Baseline Tax
+    Erosion (-11.55% of GDP), (ii) Gross UBR Outlays (-30.0% of GDP), (iii) Non-Contributory Welfare Savings (+0.95% of GDP),
+    (iv) Net Corporate Surplus Taxes (+1.1% of GDP), (v) Net IRPF Collections, and (vi) Additional Consumption, Wealth, and
+    Environmental Tax Yields; (2) Formally acknowledge that under S2, either the IRPF breakeven threshold must shift down
+    to median earnings (decile 5, ~€24,000/year) with higher marginal rates across deciles 5–8, or the plan must specify explicit,
+    massive new non-labor revenue bases (e.g. broad-base VAT rate increases and high-net-worth wealth levies), or Tier B benefits
+    must be dynamically scaled down via macro-indexation until capital taxes mature.'
+  sources:
+  - title: The Simple Macroeconomics of AI
+    authors:
+    - Acemoglu, D.
+    year: 2024
+    doi: 10.1093/epolic/eiae042
+  - title: Universal Basic Income in the United States and Advanced Countries
+    authors:
+    - Hoynes, H.
+    - Rothstein, J.
+    year: 2019
+    doi: 10.1146/annurev-economics-080218-030237
+  - title: Scenarios for the Transition to AGI
+    authors:
+    - Korinek, A.
+    - Suh, D.
+    year: 2024
+    doi: 10.3386/w32255
+- id: RT-03-04
+  severity: major
+  module: M14
+  finding: M14 (RQ-M14-03, Section 3, Section 5.3) exhibits an evidence-grounding distortion and a feasibility bottleneck.
+    First, it cites OpenResearch (Miller et al. 2024) alongside Finland and B-MINCOME to claim that UBR reduces moderate-to-severe
+    psychological distress by 0.22–0.35 SD and lowers Spanish National Health System (SNS) primary care consultations and
+    anxiolytic/antidepressant prescription costs by 9–15% among the lowest two income deciles. This fundamentally misrepresents
+    the causal findings of Miller et al. (2024). In the OpenResearch trial, the authors found zero statistically significant
+    effects on physical health biomarkers (inflammation, HbA1c, blood pressure), zero reductions in clinical healthcare utilization
+    (hospitalizations, emergency visits, outpatient visits), and zero effect on prescription medication adherence or expenditures.
+    While subjective stress showed a modest transient decline in year 1, it faded by years 2 and 3. Transforming null clinical
+    healthcare findings into an empirical assertion of a 9–15% reduction in SNS public health expenditures is unsubstantiated
+    wishful thinking. Second, M14 and M10 predicate their clinical health evaluation on linking personal health identification
+    codes (CIP) to the Ministry of Health's Base de Datos Clínicos de Atención Primaria (BDCAP). In Spain's decentralized
+    SNS, accessing BDCAP microdata requires bilateral approvals across 17 autonomous regional health services (SERMAS, CatSalut,
+    SAS, Osakidetza, etc.) and regional ethics committees, routinely incurring administrative delays of 18–36 months. M14
+    specifies zero institutional fallback protocols if regional health authorities withhold or delay CIP register access.
+  proposal: 'In M14 and M10: (1) Correct the empirical discussion of Miller et al. (2024) and OpenResearch to reflect actual
+    findings: acknowledge that unconditional cash transfers do not reduce clinical healthcare utilization or physical morbidity
+    in the medium term, and reframe SNS healthcare cost reductions as an exploratory research hypothesis rather than an assumed
+    9–15% budgetary offset; (2) Establish a concrete institutional data fallback protocol: if regional BDCAP approvals exceed
+    6 months, designate the longitudinal health module of the INE Encuesta de Condiciones de Vida (ECV, tracking self-perceived
+    health, chronic conditions, and unmet medical needs) and the Encuesta Nacional de Salud (ENSE) as the primary empirical
+    baseline, supplemented by aggregated regional pharmaceutical invoicing data (Receta Electrónica) rather than individual
+    clinical histories.'
+  sources:
+  - title: Does Income Affect Health? Evidence from a Randomized Controlled Trial of a Guaranteed Income
+    authors:
+    - Miller, S.
+    - Rhodes, E.
+    - Vivalt, E.
+    year: 2024
+    doi: 10.3386/w32711
+  - title: 'The Impact of Unconditional Cash Transfers on Consumption and Household Balance Sheets: Experimental Evidence
+      from Two US States'
+    authors:
+    - Bartik, A. W.
+    - Broockman, D. E.
+    year: 2024
+    doi: 10.3386/w32784
+  - title: 'The Employment Effects of a Guaranteed Income: Experimental Evidence from Two U.S. States'
+    authors:
+    - Vivalt, E.
+    - Rhodes, E.
+    year: 2024
+    doi: 10.3386/w32719
+- id: RT-03-05
+  severity: major
+  module: M06
+  finding: M06 (RQ-M06-01, Section 5.1) and M13 (Section 5) develop an in-depth legal analysis of the Basque and Navarrese
+    foral regimes (classifying UBR as a carga no asumida under the Concierto and Convenio), but completely ignore the statutory
+    mechanics of Spain's Common Regime territorial financing system (Ley 22/2009 and LOFCA Art. 13). In the 15 Common Regime
+    Autonomous Communities, 50% of IRPF collections belong by statute to regional treasuries (tarifa autonómica), and 75%
+    of regional tax capacity is compulsory pooled into the Fondo de Garantía de Servicios Públicos Fundamentales (FGSPF) to
+    equalize per-capita funding for regional health, education, and social services across Spain. Under M03, the State restructures
+    IRPF by repealing the mínimo personal y familiar (Arts. 56–61 LIRPF), folding the earned income allowance (Art. 20 LIRPF),
+    and raising top marginal rates up to 52%. If the State unilaterally absorbs these IRPF revenues to fund a centralized
+    national UBR, it mechanically disrupts the 50% regional ceded tax share, alters regional fiscal capacities (capacidad
+    tributaria normativa), and induces massive, uncompensated fiscal imbalances in the FGSPF and the Fondo de Suficiencia
+    Global. M06 fails to provide any statutory amendment mechanism to Ley 22/2009 to ensure territorial fiscal neutrality
+    between net contributing regions (Madrid, Catalonia, Balearics) and recipient regions (Extremadura, Andalusia).
+  proposal: 'In M06 and M13: (1) Specify the statutory amendment clauses for Ley 22/2009 de Financiación de las CCAA and LOFCA
+    Art. 13, defining how the 50% ceded IRPF tariff interacts with the national UBR refundable tax credit; (2) Formulate a
+    statutory clearing mechanism inside the Fondo de Garantía de Servicios Públicos Fundamentales (FGSPF) and Fondo de Suficiencia
+    Global ensuring that Common Regime regional budgets are held strictly harmless (zero net reduction in regional funding
+    for health and education); (3) Model the multilateral negotiation roadmap through the Consejo de Política Fiscal y Financiera
+    (CPFF) required to ratify this inter-territorial fiscal restructuring.'
+  sources:
+  - title: Ley 22/2009, de 18 de diciembre, por la que se regula el sistema de financiación de las Comunidades Autónomas de
+      régimen común (BOE-A-2009-20375)
+    authors:
+    - Jefatura del Estado
+    year: 2009
+    url: https://www.boe.es/buscar/act.php?id=BOE-A-2009-20375
+  - title: Ley Orgánica 8/1980, de 22 de septiembre, de Financiación de las Comunidades Autónomas (BOE-A-1980-21166)
+    authors:
+    - Jefatura del Estado
+    year: 1980
+    url: https://www.boe.es/buscar/act.php?id=BOE-A-1980-21166
+  - title: The Political Geography of Inequality
+    authors:
+    - Beramendi, P.
+    year: 2012
+    doi: 10.1017/CBO9781139044233
+- id: RT-03-06
+  severity: minor
+  module: M01
+  finding: In M01 (RQ-M01-01, Section 1, Section 3), the research plan assumes that Spanish labor institutions (collective
+    bargaining wage floors and dismissal protections under Real Decreto-ley 32/2021) prevent downward nominal wage flexibility,
+    forcing all AI cognitive displacement to adjust exclusively through intermittent open-ended contract inactivity (pases
+    a inactividad de fijos discontinuos) and non-renewal of temporary hours. This assumption is institutionally flawed and
+    economically myopic. Under Article 82.3 of the Estatuto de los Trabajadores (reformed by RDL 32/2021), employers facing
+    economic, technical, organizational, or production (ETOP) causes can execute statutory collective bargaining opt-outs
+    (descuelgues salariales) to modify wage tables, working hours, and remuneration systems below sector-level collective
+    agreements. In severe cognitive displacement scenarios (S2 and S3, where 20% to 35% of tasks are automated), competitive
+    pressure will force Spanish service-sector and professional enterprises to execute widespread Art. 82.3 ET descuelgues
+    or collective dismissal proceedings (EREs under Art. 51 ET), triggering substantial nominal wage suppression rather than
+    mere seasonal inactivity. By ignoring descuelgues salariales and EREs, M01 mis-specifies the counterfactual pre-UBR earnings
+    distribution fed into EUROMOD-Spain (M03, M09), underestimating wage cuts among retained workers while overestimating
+    the share of workers on intermittent social security subsidies.
+  proposal: 'In M01 and methods.md: (1) Extend the Spanish institutional adjustment channels to include statutory descuelgues
+    salariales under Art. 82.3 ET and collective restructuring under Art. 51 ET, tracking historical ETOP opt-out filings
+    and wage modifications in Ministry of Labor Estadística de Convenios Colectivos de Trabajo; (2) Model a dual adjustment
+    margin in the Acemoglu-Restrepo calibration: intensive-margin nominal wage degradation via descuelgues for retained workers
+    alongside extensive-margin FTE displacement via fijos discontinuos and EREs; (3) Provide sector-specific elasticity bounds
+    for cognitive services where enterprise-level opt-outs bypass provincial collective agreements, generating an accurate
+    counterfactual wage distribution for EUROMOD-Spain.'
+  sources:
+  - title: Real Decreto Legislativo 2/2015, de 23 de octubre, por el que se aprueba el texto refundido de la Ley del Estatuto
+      de los Trabajadores (BOE-A-2015-11430)
+    authors:
+    - Jefatura del Estado
+    year: 2015
+    url: https://www.boe.es/buscar/act.php?id=BOE-A-2015-11430
+  - title: Real Decreto-ley 32/2021, de 28 de diciembre, de medidas urgentes para la reforma laboral (BOE-A-2021-21788)
+    authors:
+    - Jefatura del Estado
+    year: 2021
+    url: https://www.boe.es/buscar/act.php?id=BOE-A-2021-21788
+  - title: 'Reforming an insider-outsider labor market: the Spanish experience'
+    authors:
+    - Bentolila, S.
+    - Dolado, J. J.
+    - Jimeno, J. F.
+    year: 2012
+    doi: 10.1186/2193-9012-1-4
