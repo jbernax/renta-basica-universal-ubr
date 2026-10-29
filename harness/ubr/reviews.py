@@ -55,8 +55,10 @@ def _schema_errors(project: Project, name: str, data, where: str, report: Report
     return bool(errors)
 
 
+import re
+
 def _check_module_ref(module: str, module_ids: set[str], where: str, ref: str, report: Report) -> None:
-    if module.startswith("M") and module not in module_ids:
+    if re.match(r"^M\d{2}$", module) and module not in module_ids:
         report.error(where, f"{ref} references unknown module {module}")
 
 
