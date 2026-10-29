@@ -1,0 +1,215 @@
+reviewer: macroeconomist
+iteration: 1
+summary: >-
+  The research plan establishes a strong conceptual foundation linking task-based AI displacement (M01),
+  EUROMOD tax-transfer microsimulation (M03, M09), and a two-sector open-economy HANK model (M04) with
+  state-contingent transition triggers (M17). However, reaching state-of-the-art macroeconomic rigor
+  for Spain inside the Eurozone requires five targeted upgrades: (1) formalizing currency-union monetary
+  constraints (ECB area-wide Taylor rule weight, Walters real-rate channel, sovereign spread feedback),
+  reformed EU fiscal rules under Regulation (EU) 2024/1263 and Spain's Ley Orgánica 2/2012 (LOEPSF), and
+  dual external leakage (consumption imports plus imported B2B AI/cloud compute services) in M04;
+  (2) specifying an explicit iterative micro-macro general-equilibrium closure protocol between EUROMOD
+  (M03/M09) and HANK (M04/M05) in METHODS; (3) pairing labor-share shifts in M01 with explicit TFP
+  growth, marginal-cost, and domestic-vs-foreign AI rent splits across S1-S3; (4) addressing IVA
+  pass-through self-indexation via constant-tax CPI (IPC-IC) and endogenous QUAIDS demand shifts in M03;
+  and (5) filtering non-AI terms-of-trade noise out of M17's labor-share triggers while adding a fast-acting
+  tax-surcharge stabilizer and full D-005 three-tier pilot comparisons across M01, M04, and M17.
+scores:
+  methodological_rigor:
+    score: 3.5
+    rationale: >-
+      Correctly selects an open-economy HANK framework (M04), EUROMOD-Spain microsimulation (M03), and
+      shift-share/task-based empirical strategies (M01), but lacks the mathematical specification of
+      currency-union monetary feedback, the iterative micro-macro fixed-point loop between EUROMOD and
+      HANK, and QUAIDS demand adjustments for indirect tax reforms.
+  internal_coherence:
+    score: 3.4
+    rationale: >-
+      Benefit tiers (Tiers A/B/C) and AI scenarios (S1-S3) are consistently referenced across modules,
+      yet partial-equilibrium fiscal neutrality in M03 is not iteratively reconciled with endogenous
+      non-tradable/housing price inflation, import leakage, and CPI-indexed outlays in M04 and M05.
+  ai_scenarios:
+    score: 3.6
+    rationale: >-
+      Scenarios S1 (-2.5 pp), S2 (-7.0 pp), and S3 (-15.0 pp) provide clear labor-share anchors, but M01
+      omits the accompanying TFP growth trajectories, service marginal-cost deflation paths, and foreign
+      vs. domestic AI-rent ownership splits needed to parameterize M03 tax bases and M04 Phillips curves.
+  counterarguments:
+    score: 3.5
+    rationale: >-
+      Identifies major macroeconomic risks (Eurozone deficit limits, urban rent capture, import leakage,
+      stagflation), but M17's proposed circuit-breaker (redirecting cash step-ups into multi-year social
+      housing construction) operates too slowly to stabilize short-run aggregate demand or sovereign
+      spreads, and M03 overlooks IVA-induced CPI self-indexation.
+  spain_fit:
+    score: 3.5
+    rationale: >-
+      Accurately cites Banco de España EFF, INE Contabilidad Nacional, EPF, MCVL, and AIReF, but omits
+      Regulation (EU) 2024/1263 net primary expenditure accounting, Spain's Ley Orgánica 2/2012 (LOEPSF),
+      and the required D-005 distinction between Régimen Común and Régimen Foral in Section 6 of M01,
+      M04, and M17.
+issues:
+  - id: MA-01-01
+    severity: critical
+    module: M04
+    finding: >-
+      M04 proposes a Two-Sector Open-Economy HANK model and EU Debt Sustainability Analysis (DSA) check,
+      but omits three binding Eurozone and Spanish macroeconomic mechanics: (i) the currency-union
+      monetary policy rule where the ECB responds to Eurozone-wide aggregates (Spain weight ~10%) rather
+      than Spanish inflation, creating a real-interest-rate (Walters) channel and endogenous sovereign
+      spread transmission into domestic borrowing costs; (ii) the operational accounting of the reformed
+      EU fiscal governance framework under Regulation (EU) 2024/1263 and Spain's Ley Orgánica 2/2012
+      (LOEPSF), specifically how gross UBR outlays must be legally netted against simultaneous
+      Discretionary Revenue Measures (Medidas Discrecionales de Ingresos, MDI) to avoid breaching the
+      multi-annual Net Primary Expenditure Ceiling and the 0.5% GDP control account threshold; and
+      (iii) dual external leakage in the Balance of Payments (household consumption import leakage by
+      decile plus production-side B2B imports of foreign AI/cloud compute services). Additionally, M04
+      Section 6 lumps Municipal and Regional pilots together without comparing Régimen Común vs. Régimen
+      Foral (D-005).
+    proposal: >-
+      Expand M04 Sections 3, 4, 5, 6, and 7 to: (1) formalize the small-open-economy currency-union HANK
+      block (following Galí & Monacelli 2005 and Auclert, Rognlie & Straub 2024) with fixed nominal
+      exchange rate, area-wide ECB Taylor-rule weight, terms-of-trade competitiveness channel, and
+      endogenous Bonos-Bund spread feedback; (2) anchor fiscal compliance in Regulation (EU) 2024/1263
+      and Ley Orgánica 2/2012 (BOE-A-2012-5730), specifying the Net Primary Expenditure condition and
+      the dual current-account leakage identity (COICOP consumption imports plus intermediate AI service
+      imports from INE Figaro/Input-Output tables); and (3) separate Municipal, Regional (Régimen Común
+      under LOFCA/FLA vs. Régimen Foral under Cupo/Convenio and autonomous debt targets), and National
+      pilot implications in Section 6.
+    sources:
+      - title: "Monetary Policy and Exchange Rate Volatility in a Small Open Economy"
+        authors: ["Galí, J.", "Monacelli, T."]
+        year: 2005
+        doi: "10.1111/j.1467-937X.2005.00349.x"
+      - title: "Regulation (EU) 2024/1263 on the effective coordination of economic policies and on multilateral budgetary surveillance"
+        authors: ["European Parliament and Council"]
+        year: 2024
+        url: "https://eur-lex.europa.eu/eli/reg/2024/1263/oj"
+      - title: "Ley Orgánica 2/2012, de 27 de abril, de Estabilidad Presupuestaria y Sostenibilidad Financiera (BOE-A-2012-5730)"
+        authors: ["Jefatura del Estado"]
+        year: 2012
+        url: "https://www.boe.es/buscar/act.php?id=BOE-A-2012-5730"
+  - id: MA-01-02
+    severity: major
+    module: METHODS
+    finding: >-
+      METHODS (plan/methods.md) specifies Pillar 2 (EUROMOD-Spain static and discrete-choice behavioral
+      microsimulation in M03/M08/M09) and Pillar 3 (Open-Economy HANK in M04) as standalone sequential
+      blocks without a formal iterative general-equilibrium closure protocol. Because EUROMOD holds
+      wages, goods/rental prices, and aggregate output fixed when solving for revenue-neutral IRPF rates,
+      endogenous HANK responses in non-tradable inflation, urban rents (M05), import leakage, and GDP
+      multipliers alter both real tax bases and CPI-indexed UBR outlays, invalidating static fiscal
+      neutrality across S1-S3.
+    proposal: >-
+      Add an explicit Iterative Micro-Macro Closure Protocol in plan/methods.md (linking Pillars 2 and 3)
+      and cross-reference it in M03 and M04: (1) EUROMOD passes decile net transfers, effective marginal
+      tax rates (METRs), and labor-supply shifts to HANK; (2) HANK and the M05 spatial housing model
+      solve for equilibrium wages, non-tradable and housing price indices, import leakage, and real GDP;
+      and (3) equilibrium price and income vectors feed back into EUROMOD to re-index UBR benefits and
+      recompute IRPF/IVA/corporate yields via a Gauss-Seidel fixed-point loop until the structural
+      primary balance converges within +/- 0.05% of GDP across S1, S2, and S3.
+    sources:
+      - title: "The Intertemporal Keynesian Cross"
+        authors: ["Auclert, A.", "Rognlie, M.", "Straub, L."]
+        year: 2024
+        doi: "10.1086/731409"
+      - title: "Monetary Policy According to HANK"
+        authors: ["Kaplan, G.", "Moll, B.", "Violante, G. L."]
+        year: 2018
+        doi: "10.1257/aer.20160042"
+  - id: MA-01-03
+    severity: major
+    module: M01
+    finding: >-
+      M01 defines S1 (-2.5 pp), S2 (-7.0 pp), and S3 (-15.0 pp) solely through labor-share drops and
+      displaced FTE shares, omitting the accompanying Total Factor Productivity (TFP) growth paths,
+      service-sector marginal cost reductions, and domestic vs. foreign AI-rent capture shares. A -7 pp
+      or -15 pp fall in the labor share has opposite fiscal and inflationary effects depending on whether
+      aggregate real GDP stagnates ("so-so automation" where the absolute wage bill collapses) versus
+      expands strongly (high-TFP supply expansion where marginal costs fall and domestic capital income
+      surges). Furthermore, M01 Section 6 omits the D-005 comparison between Régimen Común and Régimen
+      Foral regional pilots.
+    proposal: >-
+      Update M01 Sections 2, 5, 6, and 8 to: (1) define a complete macroeconomic scenario vector for
+      S1-S3 pairing labor-share shifts with explicit TFP growth bands, marginal-cost deflation rates, and
+      real GDP trajectories (contrasting an Acemoglu low-TFP regime against a Korinek-Suh high-TFP
+      regime); (2) decompose the rising capital share into domestic corporate operating surplus
+      (Excedente Bruto de Explotación, EBE) versus outbound cross-border AI licensing/compute payments
+      to parameterize M03, M04, and M16; and (3) explicitly compare Régimen Común vs. Régimen Foral in
+      Section 6.
+    sources:
+      - title: "The Simple Macroeconomics of AI"
+        authors: ["Acemoglu, D."]
+        year: 2024
+        doi: "10.1093/epolic/eiae042"
+      - title: "Scenarios for the Transition to AGI"
+        authors: ["Korinek, A.", "Suh, D."]
+        year: 2024
+        doi: "10.3386/w32255"
+  - id: MA-01-04
+    severity: major
+    module: M03
+    finding: >-
+      M03 relies on static EPF expenditure shares to simulate IVA base broadening (reclassifying reduced
+      4%/10% brackets) and overlooks two macroeconomic feedbacks: (i) mechanical tax-push CPI inflation
+      from IVA rate reclassification, which automatically inflates gross UBR outlays if UBR is indexed to
+      headline or essential-basket CPI (M02) rather than constant-tax CPI; and (ii) endogenous shifts in
+      household expenditure shares and import content when bottom-decile incomes rise and relative
+      non-tradable/housing prices adjust in M04/M05.
+    proposal: >-
+      Refine M03 Sections 2, 5, and 7 to: (1) estimate a Quadratic Almost Ideal Demand System (QUAIDS)
+      on INE EPF microdata linked to EUROMOD so IVA revenue yields and COICOP import leakages incorporate
+      income and own/cross-price elasticities across S1-S3; (2) stipulate that UBR benefit indexation
+      (cross-referenced with M02) uses INE's constant-tax CPI (Índice de Precios de Consumo a Impuestos
+      Constantes, IPC-IC) during IVA base-broadening phases to prevent mechanical fiscal self-indexation;
+      and (3) link M03 revenue-neutrality equations directly to the iterative HANK macro-feedback loop.
+    sources:
+      - title: "EUROMOD: the European Union tax-benefit microsimulation model"
+        authors: ["Sutherland, H.", "Figari, F."]
+        year: 2013
+        doi: "10.34196/ijm.00075"
+  - id: MA-01-05
+    severity: major
+    module: M17
+    finding: >-
+      M17's state-contingent transition triggers and circuit-breakers exhibit three macroeconomic
+      vulnerabilities: (i) quarterly headline labor share in INE Contabilidad Nacional Trimestral is
+      heavily confounded by non-AI terms-of-trade, imported energy, and tourism markup shocks, risking
+      false-positive irreversible UBR step-ups during stagflationary supply shocks; (ii) redirecting UBR
+      step-ups into social housing construction (M05) when non-tradable inflation or sovereign spreads
+      breach thresholds operates with a 3-5 year construction lag, failing to cool short-run aggregate
+      demand or protect EU DSA targets within a 4-quarter window; and (iii) M17 Section 6 omits the
+      mandatory D-005 comparison across Municipal, Regional (Régimen Común vs. Régimen Foral), and
+      National pilot tiers.
+    proposal: >-
+      Strengthen M17 Sections 2, 5, 6, and 7 to: (1) replace raw headline labor-share triggers with an
+      AIReF-certified Cyclically and Terms-of-Trade-Adjusted AI Displacement Composite Index (requiring
+      joint confirmation from 4-quarter moving-average CNO-11 high-exposure FTE contraction in EPA/MCVL
+      and domestic EBE expansion net of imported energy costs); (2) add a fast-acting Automatic Fiscal
+      Stabilization Surcharge (a temporary, symmetric +1.0 to +2.5 pp clawback surcharge on upper IRPF
+      withholding brackets in M03) that cools aggregate demand immediately when non-tradable inflation
+      exceeds the Eurozone by >1.5 pp or Bonos-Bund spreads exceed 100 bps while protecting bottom-decile
+      nominal UBR floors; and (3) expand Section 6 to compare Municipal, Regional (Común vs. Foral), and
+      National pilot scale-up and disconfirmation rules.
+    sources:
+      - title: "Regulation (EU) 2024/1263 on the effective coordination of economic policies and on multilateral budgetary surveillance"
+        authors: ["European Parliament and Council"]
+        year: 2024
+        url: "https://eur-lex.europa.eu/eli/reg/2024/1263/oj"
+      - title: "Ley Orgánica 2/2012, de 27 de abril, de Estabilidad Presupuestaria y Sostenibilidad Financiera (BOE-A-2012-5730)"
+        authors: ["Jefatura del Estado"]
+        year: 2012
+        url: "https://www.boe.es/buscar/act.php?id=BOE-A-2012-5730"
+suggested_sources:
+  - title: "Monetary Policy and Exchange Rate Volatility in a Small Open Economy"
+    authors: ["Galí, J.", "Monacelli, T."]
+    year: 2005
+    doi: "10.1111/j.1467-937X.2005.00349.x"
+  - title: "Regulation (EU) 2024/1263 on the effective coordination of economic policies and on multilateral budgetary surveillance"
+    authors: ["European Parliament and Council"]
+    year: 2024
+    url: "https://eur-lex.europa.eu/eli/reg/2024/1263/oj"
+  - title: "Ley Orgánica 2/2012, de 27 de abril, de Estabilidad Presupuestaria y Sostenibilidad Financiera (BOE-A-2012-5730)"
+    authors: ["Jefatura del Estado"]
+    year: 2012
+    url: "https://www.boe.es/buscar/act.php?id=BOE-A-2012-5730"

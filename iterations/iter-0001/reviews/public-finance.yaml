@@ -1,0 +1,177 @@
+reviewer: public-finance
+iteration: 1
+summary: >-
+  The iter-0001 research plan establishes a strong, policy-relevant public finance backbone linking
+  UBR benefit tiers (A/B/C), IRPF/IVA integration, EUROMOD microsimulation, and AI rent capture across
+  scenarios S1-S3. However, reaching state-of-the-art fiscal and institutional rigor for Spain requires
+  resolving five key gaps: (1) accounting for LIRPF Art. 20 work-income and Art. 84 joint-filing reductions,
+  corporate retention tax-sheltering, consolidated INSS pension-floor offsets, and LOFCA/Foral (Cupo/Aportación)
+  clearing formulas in M03; (2) deflating EUROMOD disposable income by household-specific IVA price incidence
+  and distinguishing the filer-only Muestra IRPF from the full-population Panel de Hogares and Foral subsamples
+  in M09; (3) ensuring the proposed M16 net value-added contribution complies with Article 401 of EU VAT Directive
+  2006/112/EC; (4) resolving the contradiction between D-001 individualization and the single-adult supplement in M02;
+  and (5) formalizing the iterative micro-macro closure protocol in METHODS.
+scores:
+  spain_fit:
+    score: 3.5
+    rationale: >-
+      Accurately incorporates core Spanish tax-benefit instruments (IRPF Ley 35/2006, IMV Ley 19/2021, LOFCA)
+      and IEF/AEAT/INE datasets, but omits critical LIRPF tax expenditures (Art. 20 earned-income reduction and
+      Art. 84 joint-filing allowance), lacks explicit statutory clearing formulas for the 50% ceded regional IRPF/IVA
+      (Ley 22/2009) and Basque/Navarre Foral regimes (Ley 12/2002 Cupo and Ley 28/1990 Aportación), and does not
+      address the exclusion of non-filers and Foral territories from the AEAT Muestra de Declarantes de IRPF.
+  methodological_rigor:
+    score: 3.6
+    rationale: >-
+      Combines EUROMOD-Spain microsimulation, discrete-choice labor supply, and an open-economy HANK model,
+      but fails to deflate post-reform EUROMOD disposable income by household-specific COICOP price indices after
+      IVA base broadening, omits corporate tax-shelter shifting and empirical Spanish ETI parameters in the dual-IRPF
+      unification, and lacks a formal fixed-point iteration protocol linking M01 wage-bill shocks, EUROMOD revenue
+      neutrality, and HANK general-equilibrium prices.
+  feasibility:
+    score: 3.7
+    rationale: >-
+      Identifies accessible survey and administrative datasets (ECV, EPF, IEF Muestra IRPF, Panel de Hogares,
+      BdE Central de Balances) and realistic effort allocations, but needs concrete imputation rules for IRPF
+      non-filers (~22% of adults) and Basque/Navarre households missing from AEAT files, as well as an EU-law-compliant
+      statutory base for the M16 value-added levy under Directive 2006/112/EC Art. 401.
+  internal_coherence:
+    score: 3.6
+    rationale: >-
+      Maintains consistent benefit tiers (EUR 600/900/1,200) and AI scenarios (S1-S3) across modules, but exhibits
+      three cross-module accounting gaps: M02 proposes a single-adult cash supplement that reintroduces household
+      cohabitation conditioning contrary to D-001 and M12; M03 does not explicitly integrate the M07 INSS contributory
+      pension floor savings against M01 payroll tax losses in a consolidated general-government budget; and M09
+      evaluates nominal disposable income without subtracting the real purchasing-power cost of M03 IVA rate hikes.
+  evidence_grounding:
+    score: 3.8
+    rationale: >-
+      Well grounded in canonical optimal taxation (Saez 2002; Ghatak & Maniquet 2019), EUROMOD (Sutherland & Figari 2013),
+      and automation taxation (Guerreiro et al. 2022) with verified DOIs and BOE links, but misses empirical estimates of
+      the elasticity of taxable income in Spain (Almunia & Lopez-Rodriguez 2019) and core statutory sources for regional
+      financing (Ley 22/2009, Ley 12/2002, Ley 28/1990), IVA (Ley 37/1992), Corporate Tax (Ley 27/2014), and the EU VAT Directive.
+issues:
+  - id: PF-01-01
+    severity: critical
+    module: M03
+    finding: >-
+      M03 models IRPF integration solely by abolishing the mínimo personal y familiar (Arts. 56-61 Ley 35/2006),
+      overlooking Art. 20 (reducción por obtención de rendimientos del trabajo, >EUR 12B tax expenditure) and Art. 84
+      (reducción por tributación conjunta of EUR 3,400/EUR 2,150, which contradicts individualization under D-001).
+      Furthermore, M03 proposes taxing savings income (renta del ahorro) at 38-52% without modeling income shifting
+      into corporate holding structures (Ley 27/2014 at 25%) or calibrating Spanish taxable income elasticities (ETI),
+      fails to integrate the M07 INSS contributory pension floor savings into a consolidated general-government
+      (AEAT + TGSS/INSS + CCAA) fiscal bridge, and omits the statutory revenue-sharing mechanics for the 50% ceded
+      regional IRPF/IVA (Ley 22/2009) and Basque/Navarre Foral adjustments (Ley 12/2002 Cupo and Ley 28/1990 Aportación).
+    proposal: >-
+      Expand M03 Sections 4, 5, and 7 to: (1) explicitly fold LIRPF Art. 20 (earned-income reduction) and Art. 84
+      (joint-filing reduction) into the UBR-IRPF integration schedule; (2) write out the consolidated Administraciones
+      Públicas Gross-to-Net Fiscal Bridge equation combining AEAT tax revenues, INSS contributory pension floor savings
+      (from M07), TGSS payroll tax erosion (from M01), Régimen Común CCAA 50% IRPF/IVA shares (Ley 22/2009), and Foral
+      Cupo/Aportación imputation adjustments (Ley 12/2002 and Ley 28/1990); and (3) model corporate retention shelter
+      elasticities with an anti-deferral accrual rule under Ley 27/2014 and Spanish ETI parameters (Almunia & Lopez-Rodriguez 2019).
+    sources:
+      - title: "Ley 22/2009, de 18 de diciembre, por la que se regula el sistema de financiación de las Comunidades Autónomas de régimen común y Ciudades con Estatuto de Autonomía (BOE-A-2009-20375)"
+        authors: ["Jefatura del Estado"]
+        year: 2009
+        url: "https://www.boe.es/buscar/act.php?id=BOE-A-2009-20375"
+      - title: "Ley 12/2002, de 23 de mayo, por la que se aprueba el Concierto Económico con la Comunidad Autónoma del País Vasco (BOE-A-2002-9969)"
+        authors: ["Jefatura del Estado"]
+        year: 2002
+        url: "https://www.boe.es/buscar/act.php?id=BOE-A-2002-9969"
+      - title: "Ley 28/1990, de 26 de diciembre, por la que se aprueba el Convenio Económico entre el Estado y la Comunidad Foral de Navarra (BOE-A-1990-31117)"
+        authors: ["Jefatura del Estado"]
+        year: 1990
+        url: "https://www.boe.es/buscar/act.php?id=BOE-A-1990-31117"
+      - title: "The elasticity of taxable income in Spain: 1999–2014"
+        authors: ["Almunia, M.", "Lopez-Rodriguez, D."]
+        year: 2019
+        doi: "10.1007/s13209-019-00208-x"
+  - id: PF-01-02
+    severity: major
+    module: M09
+    finding: >-
+      M09 evaluates FGT poverty (P0, P1, P2), AROPE, and Gini on standard EUROMOD nominal disposable cash income,
+      which omits the real purchasing-power reduction caused by M03 IVA base broadening (reclassifying 4% super-reduced
+      and 10% reduced IVA goods under Ley 37/1992 to 21%), thereby mechanically overstating poverty reduction among
+      low-income households. In addition, M09 does not distinguish baseline-anchored poverty thresholds from endogenous
+      post-reform floating thresholds, and conflates the AEAT Muestra de Declarantes de IRPF (which excludes ~22% of
+      adult non-filers below Art. 96 LIRPF thresholds and omits the Basque Country and Navarre) with the full-population
+      IEF/AEAT/INE Panel de Hogares.
+    proposal: >-
+      Update M09 Sections 4 and 5 to: (1) compute poverty and inequality on post-IVA real disposable income
+      deflated by household-specific COICOP Stone/Laspeyres price indices derived from the EPF-ECV match under
+      Ley 37/1992 IVA reforms; (2) report both baseline-anchored (fixed real threshold z0) and floating (60% of
+      post-reform median z1) poverty metrics; and (3) specify distinct microdata protocols using the IEF Panel de
+      Hogares (including Form 190 withholdings for non-filers) for household distribution, the Muestra de Declarantes
+      IRPF for top-tail Pareto calibration, and Basque/Navarre ECV sub-indices for Foral territories.
+    sources:
+      - title: "Ley 37/1992, de 28 de diciembre, del Impuesto sobre el Valor Añadido (BOE-A-1992-28740)"
+        authors: ["Jefatura del Estado"]
+        year: 1992
+        url: "https://www.boe.es/buscar/act.php?id=BOE-A-1992-28740"
+  - id: PF-01-03
+    severity: major
+    module: M16
+    finding: >-
+      M16 proposes replacing employer Social Security payroll contributions with a Contribución General sobre el Valor
+      Añadido Neto / Excedente Operativo, but does not structure its statutory base to survive Article 401 of Council
+      Directive 2006/112/EC (which prohibits Member States from introducing turnover or invoice-credit value-added taxes
+      that parallel VAT). Moreover, M16 lacks a concrete firm-level microsimulation protocol on Banco de España Central
+      de Balances (CBI) and AEAT Cuentas Anuales del Impuesto sobre Sociedades (Ley 27/2014) to quantify how shifting
+      employer cotizaciones onto Net Operating Surplus (EBE) redistributes tax burdens across labor-intensive SMEs versus
+      capital/AI-intensive firms under S1-S3.
+    proposal: >-
+      Revise M16 Sections 4, 5, and 7 to: (1) legally specify the factor-neutral contribution as a direct, origin-based
+      levy on accounting Net Operating Surplus (Excedente Bruto de Explotación net of depreciation) without invoice-credit
+      deduction—modeled on the CJEU-upheld Italian IRAP framework (Case C-475/03)—to guarantee compliance with Art. 401
+      of Directive 2006/112/EC; and (2) add an explicit firm-level microsimulation on AEAT Impuesto sobre Sociedades
+      (Ley 27/2014) and BdE CBI panels quantifying net tax-wedge changes by NACE sector and firm size across S1-S3.
+    sources:
+      - title: "Council Directive 2006/112/EC of 28 November 2006 on the common system of value added tax"
+        authors: ["Council of the European Union"]
+        year: 2006
+        url: "https://eur-lex.europa.eu/eli/dir/2006/112/oj"
+      - title: "Ley 27/2014, de 27 de noviembre, del Impuesto sobre Sociedades (BOE-A-2014-12328)"
+        authors: ["Jefatura del Estado"]
+        year: 2014
+        url: "https://www.boe.es/buscar/act.php?id=BOE-A-2014-12328"
+  - id: PF-01-04
+    severity: major
+    module: M02
+    finding: >-
+      RQ-M02-01 proposes pairing an individual Tier B UBR (EUR 900/adult) with a "single-adult housing/vulnerability
+      supplement" while claiming to eliminate cohabitation penalties. In public finance terms, any cash supplement
+      conditioned on living alone is isomorphic to a household equivalence scale and directly reintroduces a cohabitation
+      tax penalty and administrative Padrón cohabitation audits (contradicting D-001 and M12). Additionally, RQ-M02-02's
+      dual indexation rule (essential-basket CPI capped by nominal GDP growth) is not synchronized with M03 IRPF tax
+      parameters, risking unlegislated fiscal drag (progresividad en frío) or real adequacy erosion during stagflationary shocks.
+    proposal: >-
+      Amend M02 Sections 2, 5, and 7 to: (1) strictly separate the unconditional individual UBR schedule (D-001) from
+      household-conditioned supplements in the EUROMOD grid, testing pure individual UBR + M07 transitional grandfathering
+      (Complemento de Garantía de Derechos Adquiridos) + M05 in-kind social rental priority against household-conditioned
+      variants, and explicitly measuring the implied cohabitation penalty rate; and (2) synchronize the indexation formula
+      across both UBR benefit levels and M03 IRPF marginal brackets/breakeven thresholds, adding a real subsistence floor
+      guardrail under stagflationary scenarios (link to M17 Stress 1).
+  - id: PF-01-05
+    severity: major
+    module: METHODS
+    finding: >-
+      METHODS Sections 2 and 3 describe EUROMOD microsimulation (M02, M03, M09) and the Spanish HANK model (M04, M16)
+      as separate analytical pillars without specifying the accounting and parameter-passing protocol that ensures
+      internal consistency: specifically, how M01 CNO-11 aggregate wage-bill shocks (-2.5, -7.0, -15.0 pp of GDP) map
+      onto individual ECV/Panel de Hogares micro-records, how behavioral labor supply (M08) and ETI (M03) iterate to
+      solve for the budget-balancing tax rate in EUROMOD, and how HANK equilibrium price changes (non-tradable CPI
+      and rental pass-through) feed back into EUROMOD real disposable income.
+    proposal: >-
+      Update METHODS Sections 2 and 3 to formalize a four-stage iterative micro-macro closure pipeline: (1) project
+      M01 CNO-11 displacement and wage compression onto ECV/Panel de Hogares records via MCVL-estimated transition
+      probabilities; (2) iterate EUROMOD with the M08 discrete-choice labor supply module and M03 ETI parameters to
+      solve for the revenue-neutral tax schedule under consolidated general-government accounting; (3) pass decile-level
+      net fiscal transfers and marginal tax wedges into the Spanish HANK model (M04); and (4) feed HANK equilibrium
+      non-tradable and housing price vectors back into EUROMOD (M09) to compute real post-tax, post-price welfare outcomes.
+    sources:
+      - title: "EUROMOD: the European Union tax-benefit microsimulation model"
+        authors: ["Sutherland, H.", "Figari, F."]
+        year: 2013
+        doi: "10.34196/ijm.00075"

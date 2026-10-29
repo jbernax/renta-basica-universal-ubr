@@ -1,0 +1,262 @@
+reviewer: red-team
+iteration: 1
+summary: >-
+  Adversarial referee audit of Iteration 1 (iter-0001) identifies three critical arithmetic/methodological flaws
+  and three major cross-module coherence and identification vulnerabilities: (1) an order-of-magnitude fiscal error
+  in M07 regarding contributory pension top-ups (<0.6% vs. ~6% of GDP) paired with a 100% pension offset that
+  contradicts the promised positive contributory slope and creates net-loser pensioners when taxed under M03;
+  (2) a classic UBI accounting fallacy in M03 that confuses gross post-reform tax equal to UBR with status-quo
+  revenue-neutral breakeven, double-counting ~125B EUR of existing IRPF revenue; (3) a statistically underpowered
+  18-cluster saturation pilot in M10 and an unconstitutional/self-selected randomized IRPF tax-hike arm; (4) double-counting
+  of eroded Social Security payroll taxes, EU VAT Directive (Art. 401) conflicts, and sovereign fund stock-vs-yield
+  confusion in M16; (5) unidentified shift-share IV and spatial pass-through designs in M01/M05/M13; and (6) inconsistent
+  child equivalence weights across Tiers A/B/C alongside unmodeled urban rent squeezes on middle-decile renters.
+scores:
+  counterarguments:
+    score: 3.2
+    rationale: >-
+      Every module includes a Section 7 counterargument and M17 introduces tail-risk stress tests, but most modules
+      present only a single brief objection and omit steel-manned critiques from public finance and EU law—such as
+      existing IRPF revenue replacement arithmetic (M03), EU VAT Directive Art. 401 barriers to domestic value-added
+      levies (M16/M06), constitutional equality barriers to randomized tax hikes (M10), and real post-rent income
+      losses for middle-decile urban tenants (M05/M09).
+  internal_coherence:
+    score: 2.8
+    rationale: >-
+      While S1-S3 scenarios and Tiers A/B/C are consistently labeled across modules, quantitative and fiscal links
+      contradict each other across boundaries: M07 claims preserving contributory pensions above 900 EUR/month costs
+      <0.6% of GDP (~9B EUR) when actual contributory pension payments above the floor exceed 5.5-6.0% of GDP (~90B EUR);
+      M03 taxes non-UBR pension top-ups at 38-52% from the first euro, violating M07's No-Loser Guarantee; M16 recycles
+      eroded employer Social Security contributions to fund UBR even though M01 shows those contributions are lost to
+      the existing pension system; and 00-scope/M02 shift implicit child weights (0.50, 0.40, 0.35) against M02's
+      stated {0.3, 0.4, 0.5} simulation grid.
+  methodological_rigor:
+    score: 3.0
+    rationale: >-
+      The plan pairs appropriate flagship frameworks (EUROMOD, open-economy HANK, randomized saturation, conjoint)
+      with research questions, but key causal designs do not hold up to scrutiny: M10's 6-treated vs. 12-control
+      municipality saturation design (J=18 clusters) lacks degrees of freedom and statistical power to detect a 3.5%
+      cluster-level rent differential; M10's randomized 45% IRPF withholding arm suffers from voluntary selection bias
+      and measures temporary withholding rather than annual marginal tax rates; M01 cannot identify S2/S3 agentic AI
+      substitution from historical Spanish ICT investment data; and M05 relies on endogenous, low-take-up IMV spatial
+      rollout variation to extrapolate universal rent pass-through.
+  feasibility:
+    score: 3.1
+    rationale: >-
+      Relevant Spanish administrative and survey datasets (ECV, EPA, MCVL, Muestra IRPF, EFF, BDCAP) are identified
+      with plausible person-week effort estimates, but the plan assumes frictionless DNI-level linkage across AEAT
+      (protected by Ley General Tributaria Art. 95), INSS, SNS health records, and regional rental deposit registries
+      without fallback strategies, and M10 underestimates the gross/net cost of a 36-month, 20,000-person pilot while
+      unrealistically assuming EU ESF+ social innovation grants can finance unconditional transfers to middle/high-income
+      residents in saturation municipalities.
+  rq_quality:
+    score: 3.5
+    rationale: >-
+      All 17 modules formulate clear, policy-relevant research questions with falsifiable quantitative hypotheses
+      grounded in Spanish institutions, but several hypotheses hard-code flawed fiscal arithmetic (RQ-M03-01, RQ-M07-01,
+      RQ-M16-02) or infeasible experimental power claims (RQ-M10-01, RQ-M10-02) that must be corrected for the
+      hypotheses to serve as valid empirical benchmarks.
+issues:
+  - id: RT-01-01
+    severity: critical
+    module: M07
+    finding: >-
+      M07 contains three severe fiscal and design contradictions in its integration with M03. First, RQ-M07-01
+      hypothesizes that the statutory Complemento de Garantía de Derechos Adquiridos needed to preserve contributory
+      pensions and contributory unemployment insurance above 900 EUR/month costs "<0.6% of GDP" (~9B EUR). In reality,
+      Spain spends ~12.5% of GDP (~195B EUR/year) on contributory pensions across ~9.2 million pensioners; even if the
+      bottom 900 EUR/month per pensioner (~100B EUR, ~6.4% of GDP) is reclassified as UBR, the remaining contributory
+      top-up sum max(0, B_contrib - 900) exceeds 5.5-6.0% of GDP (~90B EUR), an order-of-magnitude error. Second,
+      Section 5.1 defines the top-up as max(0, B_contrib - UBR), which imposes a 100% confiscation rate on the first
+      900 EUR/month of accrued contributory pensions—directly contradicting Section 7 and RQ-M11-02, which promise
+      trade unions a "positive contributory slope above the UBR floor so every contributed euro still raises total
+      retirement income." Third, because M03 Section 5.1 exempts UBR but taxes all other income from the first euro at
+      marginal rates of 38-52%, taxing the remaining contributory top-up reduces net post-tax income for millions of
+      retirees receiving 1,100-2,000 EUR/month, violating the No-Loser Guarantee.
+    proposal: >-
+      In M07 (and cross-referenced in M03), explicitly separate contributory Social Security pensions from absorbed
+      non-contributory transfers in the fiscal bridge: (1) correct RQ-M07-01 to distinguish total retained contributory
+      pension outlays (~5.5-6.0% of GDP above the UBR floor) from the incremental tax-neutrality compensation supplement
+      (<0.6% of GDP); (2) replace the 100% offset formula in Section 5.1 with either a partial contributory taper or
+      an explicit Dual-Pillar accounting rule that preserves marginal contributory returns; and (3) include a statutory
+      tax-credit shield (Complemento de Neutralidad Fiscal) in EUROMOD so no pensioner, UI recipient, or disabled
+      person suffers a post-IRPF disposable income loss.
+    sources:
+      - title: "Ley 19/2021, de 20 de diciembre, por la que se establece el ingreso mínimo vital (BOE-A-2021-21007)"
+        authors: ["Jefatura del Estado"]
+        year: 2021
+        url: "https://www.boe.es/buscar/act.php?id=BOE-A-2021-21007"
+      - title: "Universal Basic Income in the United States and Advanced Countries"
+        authors: ["Hoynes, H.", "Rothstein, J."]
+        year: 2019
+        doi: "10.1146/annurev-economics-080218-030237"
+
+  - id: RT-01-02
+    severity: critical
+    module: M03
+    finding: >-
+      M03 (RQ-M03-01 and Section 5.1) commits a fundamental public-finance accounting fallacy by conflating post-reform
+      gross tax exceeding UBR (T_new(y) >= UBR) with status-quo fiscal breakeven (Delta_T(y) = T_new(y) - T_old(y) >= UBR).
+      At a 45% flat/progressive marginal IRPF rate from the first euro and Tier B UBR of 10,800 EUR/year (900 EUR/month),
+      an individual earning 24,000 EUR/year (~65th-72nd percentile of all Spanish adults) pays 10,800 EUR in total
+      post-reform IRPF, matching their 10,800 EUR UBR. However, that worker already pays ~3,500 EUR in baseline IRPF to
+      fund existing public services (health, education, general administration, totaling ~125B EUR/year across Spain). If
+      their entire 10,800 EUR post-reform tax is offset against their UBR, the State loses their 3,500 EUR baseline
+      revenue contribution. True status-quo breakeven (where a taxpayer's tax increase Delta_T covers their 10,800 EUR
+      UBR without defunding existing public budgets) does not occur until gross income reaches ~38,000-45,000 EUR/year
+      (>82nd-86th percentile of adults), meaning RQ-M03-01 understates the net fiscal gap of Tier B by ~3.5-4.5% of GDP.
+    proposal: >-
+      Revise M03 (RQ-M03-01, Section 5.1, and cross-references in M09) to enforce an explicit status-quo budget
+      neutrality constraint: total post-reform IRPF revenue must equal 100% of baseline IRPF collections (~125B EUR)
+      PLUS gross UBR outlays minus genuinely abolished non-contributory cash benefits (M07). Explicitly report both
+      the gross tax-transfer zero point (T_new = UBR) and the status-quo net disposable income breakeven point
+      (T_new - T_old = UBR), updating the breakeven income percentile and net financing requirement (% of GDP) accordingly.
+    sources:
+      - title: "Universal Basic Income in the United States and Advanced Countries"
+        authors: ["Hoynes, H.", "Rothstein, J."]
+        year: 2019
+        doi: "10.1146/annurev-economics-080218-030237"
+      - title: "Optimal Income Transfer Programs: Intensive versus Extensive Labor Supply Responses"
+        authors: ["Saez, E."]
+        year: 2002
+        doi: "10.1162/003355302760193959"
+      - title: "Ley 35/2006, de 28 de noviembre, del Impuesto sobre la Renta de las Personas Físicas (BOE-A-2006-20764)"
+        authors: ["Jefatura del Estado"]
+        year: 2006
+        url: "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764"
+
+  - id: RT-01-03
+    severity: critical
+    module: M10
+    finding: >-
+      M10 contains two fatal experimental identification flaws in RQ-M10-01 and RQ-M10-02. First, RQ-M10-01 claims that
+      randomizing 80-100% saturation across 6 treated municipal/comarcal units versus 12 controls (J = 18 clusters total)
+      achieves 80% statistical power (alpha = 0.05) to detect a >= 3.5% local rental pass-through differential. Because
+      equilibrium rent pass-through is a cluster-level market outcome with high intra-cluster correlation, the effective
+      sample size is J = 18 clusters (at most 16 degrees of freedom), which cannot statistically detect a 3.5% effect
+      against Spanish municipal rent volatility (sigma = 6-10%/year) and invalidates standard asymptotic cluster-robust
+      inference. Second, RQ-M10-02 proposes randomly assigning middle-income earners in a foral or State-delegated
+      pilot to a 45% IRPF tax-clawback arm. Under Articles 14 and 31.1 of the Spanish Constitution (tax legality and
+      horizontal equality), the State/Diputación Foral cannot impose a higher final tax liability on a randomly selected
+      subset of taxpayers; if participation is voluntary under informed GDPR consent (Section 6), net contributors will
+      refuse to enroll, whereas if losses are reimbursed at annual IRPF settlement, the arm only tests temporary monthly
+      withholding liquidity rather than the structural marginal tax rate substitution elasticity (M08).
+    proposal: >-
+      In M10, (1) expand the saturation cluster design from 18 municipalities to at least J = 60-80 spatial clusters
+      (e.g., 30-40 treated vs. 30-40 matched control census-tract groups or small municipalities) using covariate-constrained
+      randomization and randomization inference / wild cluster bootstrap for GE rent and wage outcomes; (2) replace the
+      unconstitutional randomized tax-increase arm in RQ-M10-02 with randomized benefit phase-out / clawback rates
+      (e.g., 0% vs. 38% vs. 50% marginal withdrawal rates capped at the gross grant amount so no participant pays
+      more tax than baseline IRPF), which legally identifies compensated substitution elasticities across the earned-income
+      distribution; and (3) reconcile the 36-month 20,000-participant budget arithmetic (432M-648M EUR gross before
+      phase-out clawbacks) without relying on EU ESF+ funds for middle/high-income saturation transfers.
+    sources:
+      - title: "General Equilibrium Effects of Cash Transfers: Experimental Evidence from Kenya"
+        authors: ["Egger, D.", "Haushofer, J.", "Miguel, E.", "Niehaus, P.", "Walker, M."]
+        year: 2022
+        doi: "10.3982/ECTA17945"
+      - title: "Constitución Española (BOE-A-1978-31229)"
+        authors: ["Cortes Generales"]
+        year: 1978
+        url: "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+
+  - id: RT-01-04
+    severity: major
+    module: M16
+    finding: >-
+      M16 exhibits three forms of fiscal wishful thinking across RQ-M16-01, RQ-M16-02, and Section 5.1. First, M16 claims
+      that recycling corporate labor-cost savings from reduced employer Social Security contributions (cotizaciones
+      empresariales) under S2/S3 into a Contribución General sobre el Valor Añadido Neto / Excedente Operativo plus
+      digital/wealth levies provides 3.2-4.0% of GDP to finance UBR (M03). However, M01 (RQ-M01-02) shows that S2/S3
+      simultaneously creates a 2.5-5.0% of GDP hole in existing Social Security payroll revenues: replacing lost
+      employer cotizaciones merely covers the induced deficit in existing contributory obligations (M07) and cannot be
+      double-counted as net new UBR financing. Second, introducing a unilateral Spanish general tax on net value added or
+      B2B/B2C digital turnover conflicts with Article 401 of the EU VAT Directive (2006/112/EC), which bars Member States
+      from levying domestic taxes that have the essential characteristics of a general value-added or turnover tax. Third,
+      RQ-M16-02 confuses accumulated capital stock with sustainable annual yield: investing 1.0-1.5% of GDP annually over
+      12-15 years builds a fund stock of ~15-20% of GDP, which at a 3.5% real payout rule yields only 0.5-0.7% of GDP
+      per year (~5-8% of S3 net UBR cost, not "15-20% of net UBR cost").
+    proposal: >-
+      In M16, (1) explicitly deduct the S2/S3 baseline Social Security payroll revenue loss (from M01) before counting
+      any net surplus from the factor-neutral corporate contribution toward UBR in M03; (2) redesign the domestic AI
+      rent instrument as a Corporate Income Tax (Impuesto sobre Sociedades) surcharge on super-normal return on capital
+      / economic rents (an Allowance for Corporate Equity / ACE excess-profit tax) and energy/compute capacity excises
+      that comply with Article 401 of Directive 2006/112/EC (cross-checked in M06); and (3) revise RQ-M16-02 to
+      distinguish the 15-20% of GDP accumulated endowment stock at year 15 from its sustainable annual real dividend
+      payout (~0.5-0.8% of GDP/year).
+    sources:
+      - title: "Should Robots Be Taxed?"
+        authors: ["Guerreiro, J.", "Rebelo, S.", "Teles, P."]
+        year: 2022
+        doi: "10.1093/restud/rdab019"
+      - title: "Gen-AI: Artificial Intelligence and the Future of Work"
+        authors: ["Cazzaniga, M.", "Jaumotte, F.", "Li, L.", "Melina, G.", "Panton, A. J.", "Pizzinelli, C.", "Rockall, E.", "Tavares, M. M."]
+        year: 2024
+        doi: "10.5089/9798400262548.006"
+
+  - id: RT-01-05
+    severity: major
+    module: M01
+    finding: >-
+      The reduced-form causal identification strategies in M01 (Section 5.2), M05 (Section 5.1), and M13 (Section 5.1)
+      rely on endogenous variation or historical data that cannot identify the claimed structural parameters. In M01
+      Section 5.2, interacting pre-shock CNO-11 occupational exposure shares with historical firm/sectoral ICT software
+      investment in MCVL/EPA cannot identify S2/S3 autonomous agentic displacement elasticities because agentic AI is
+      not yet observed in pre-2026 administrative records, and occupational AI exposure shares violate shift-share
+      orthogonality (Borusyak, Hull, & Jaravel 2022) due to secular skill-biased trends in cognitive urban occupations.
+      Similarly, M05 Section 5.1 proposes estimating UBR rental pass-through from spatial rollouts of the Ingreso
+      Mínimo Vital (IMV), overlooking that IMV penetration (<45% take-up, <3% of local rental demand) is endogenous to
+      municipal economic distress and suffers from severe attenuation bias compared to a universal transfer shock.
+    proposal: >-
+      In M01 Section 5.2, explicitly restrict the shift-share IV to identifying S1 early-GenAI elasticities—adding
+      shock-level balance and pre-trend falsification tests per Borusyak, Hull, & Jaravel (2022)—while stating clearly
+      that S2 and S3 rely on structural task-replacement calibration bounded by engineering/cost thresholds rather than
+      historical IV extrapolation. In M05 Section 5.1 (and M13 Section 5.1), replace endogenous IMV penetration rates
+      with credible quasi-experimental shocks to local housing demand and supply (e.g., Bono Alquiler Joven eligibility
+      cutoffs, regional minimum income discontinuities, and Ley 12/2023 stressed-zone boundary designs) embedded in a
+      structural spatial equilibrium model.
+    sources:
+      - title: "Quasi-Experimental Shift-Share Research Designs"
+        authors: ["Borusyak, K.", "Hull, P.", "Jaravel, X."]
+        year: 2022
+        doi: "10.1093/restud/rdab030"
+      - title: "The Simple Macroeconomics of AI"
+        authors: ["Acemoglu, D."]
+        year: 2024
+        doi: "10.1093/epolic/eiae042"
+      - title: "Are housing benefit an effective way to redistribute income? Evidence from a natural experiment in France"
+        authors: ["Fack, G."]
+        year: 2006
+        doi: "10.1016/j.labeco.2006.01.001"
+
+  - id: RT-01-06
+    severity: major
+    module: GLOBAL
+    finding: >-
+      Two cross-module parameter and welfare-accounting inconsistencies weaken coherence across SCOPE, M02, M05, M09,
+      and M13. First, 00-scope.md (Section 4) and M02 (RQ-M02-01) set minor (<18) benefits at 300 EUR (Tier A), 360 EUR
+      (Tier B), and 420 EUR (Tier C) against adult benefits of 600, 900, and 1,200 EUR—implicitly varying the child
+      equivalence weight from 0.50 (Tier A) to 0.40 (Tier B) to 0.35 (Tier C), which contradicts M02 Section 5.1's
+      child-weight grid of {0.3, 0.4, 0.5} (where 0.35 is absent) and penalizes families with children relative to
+      adults in S3. Second, M09 (RQ-M09-02) evaluates decile winners/losers and the No-Loser Guarantee purely in
+      nominal pre-rent disposable income, ignoring M05's projection (RQ-M05-01) that 22-35% of Tier B income gains in
+      stressed urban zones are captured by market rent increases (+200-315 EUR/month), which inflicts substantial real
+      post-rent income losses on private-market tenants in Deciles 5-7 whose net UBR transfer is near zero, while M13's
+      assumed rural migration escape valve (4-7% of municipalities <10,000 inhabitants, or ~55,000-95,000 people/year)
+      is too small to relieve metropolitan rental demand.
+    proposal: >-
+      First, harmonize the minor benefit schedule across 00-scope.md and M02 by either fixing a consistent OECD-anchored
+      child weight across Tiers A/B/C or explicitly adding the affine child schedule to M02 Section 5.1's EUROMOD grid
+      with theoretical justification. Second, link M05's municipal rent pass-through vector directly into M09's EUROMOD
+      distributional output to compute real post-rent equivalized disposable income across housing tenure cells (owners,
+      mortgagors, social tenants, private market tenants) and evaluate targeted rental tax credits or social-housing
+      circuit-breakers (M17) to protect middle-decile urban renters.
+    sources:
+      - title: "Are housing benefit an effective way to redistribute income? Evidence from a natural experiment in France"
+        authors: ["Fack, G."]
+        year: 2006
+        doi: "10.1016/j.labeco.2006.01.001"
+      - title: "The Effects of Rent Control Expansion on Tenants, Landlords, and Inequality: Evidence from San Francisco"
+        authors: ["Diamond, R.", "McQuade, T.", "Qian, F."]
+        year: 2019
+        doi: "10.1257/aer.20181289"
