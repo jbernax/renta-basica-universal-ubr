@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ubr/sources.schema.json",
+  "title": "Source registry",
+  "type": "object",
+  "required": ["sources"],
+  "additionalProperties": false,
+  "properties": {
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "title", "year", "type", "verified"],
+        "anyOf": [{"required": ["url"]}, {"required": ["doi"]}, {"required": ["isbn"]}],
+        "additionalProperties": false,
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9_.:-]*$"},
+          "authors": {"type": "array", "items": {"type": "string"}},
+          "year": {"type": "integer", "minimum": 1700, "maximum": 2100},
+          "title": {"type": "string", "minLength": 3},
+          "venue": {"type": "string"},
+          "type": {"enum": ["article", "working-paper", "report", "book", "chapter", "law", "dataset", "web"]},
+          "url": {"type": "string", "pattern": "^https?://"},
+          "doi": {"type": "string", "pattern": "^10\\."},
+          "isbn": {"type": "string"},
+          "lang": {"type": "string"},
+          "verified": {"type": "boolean"},
+          "verified_by": {"enum": ["machine", "human"]},
+          "check_status": {"type": ["string", "null"]},
+          "checked_at": {"type": ["string", "null"]},
+          "notes": {"type": "string"}
+        }
+      }
+    }
+  }
+}
