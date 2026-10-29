@@ -1,0 +1,52 @@
+factors:
+  - id: F01
+    name: AI task exposure and labor displacement scenarios (S1-S3)
+    description: Occupational exposure in Spain (CNO-11/ISCO), wage-bill compression, and routine vs. cognitive displacement under moderate, severe, and structural AI shock scenarios.
+  - id: F02
+    name: Benefit parameters and eligibility architecture
+    description: Monthly transfer level anchored to Spanish poverty thresholds (ECV/AROPE), individual vs. household unit, age modulation, and residency criteria.
+  - id: F03
+    name: Personal income tax (IRPF) and consumption tax (IVA) integration
+    description: Joint tax-transfer schedule, marginal/effective tax rates, exemption removal, and net vs. gross fiscal cost in Spain.
+  - id: F04
+    name: AI rent capture, capital taxation, and sovereign wealth mechanisms
+    description: Corporate tax, automation/compute/data levies, wealth/inheritance taxes, and sovereign dividend funds as labor tax bases erode.
+  - id: F05
+    name: Macroeconomic dynamics and Eurozone fiscal-monetary constraints
+    description: Aggregate demand, tradable vs. non-tradable inflation, trade balance, and EU fiscal rules (Debt Sustainability Analysis) without monetary sovereignty.
+  - id: F06
+    name: Housing market pass-through and landlord rent capture
+    description: Elasticity of Spanish rental supply, rent pass-through of unconditional cash transfers, interaction with Ley de Vivienda 2023 and social housing stock.
+  - id: F07
+    name: Constitutional, autonomous-community, and EU legal compatibility
+    description: Spanish Constitution (Arts. 14, 31, 41, 149.1.1, 149.1.17), LOFCA vs. Basque/Navarre foral regimes, and EU Regulation 883/2004 / free-movement law.
+  - id: F08
+    name: Welfare system integration and no-loser transition guarantees
+    description: Replacement, folding, or preservation of Ingreso Mínimo Vital (IMV), rentas mínimas autonómicas, unemployment benefits (SEPE), and contributory/non-contributory pensions.
+  - id: F09
+    name: Labor supply, reservation wages, and informal-to-formal transitions
+    description: Intensive and extensive margin elasticities, eliminating IMV welfare traps, bargaining power, entrepreneurship, and upskilling under AI disruption.
+  - id: F10
+    name: Poverty, inequality, and distributional microsimulation
+    description: Impacts on AROPE, Gini, S80/S20, child poverty, and decile winners/losers using EUROMOD-Spain and ECV/IRPF microdata.
+  - id: F11
+    name: Multi-level pilot experimental design and causal identification
+    description: Municipal, regional, and national pilot options; RCT vs. saturation site vs. synthetic control; statistical power, MDEs, and general-equilibrium spillovers.
+  - id: F12
+    name: Political economy, coalition building, and public acceptability
+    description: Voter preferences (CIS), framing (UBI vs. AI dividend), union/employer (CCOO, UGT, CEOE) stances, and multi-level partisan veto players.
+  - id: F13
+    name: Administrative delivery, digital infrastructure, and take-up
+    description: AEAT/INSS/Padrón interoperability, automatic monthly disbursement vs. withholding, fraud prevention, and reaching unbanked or marginalized residents.
+  - id: F14
+    name: Territorial purchasing power, internal mobility, and migration rules
+    description: Regional cost-of-living disparities (Madrid/Barcelona vs. España vaciada), rural revitalization, and lawful residency duration rules.
+  - id: F15
+    name: Gender, unpaid care work, disability, and health outcomes
+    description: Intra-household bargaining via individual payments, unpaid care valuation, mental/physical health impacts, and disability supplement protection.
+  - id: F16
+    name: Comparative international and Spanish empirical evidence
+    description: External validity and parameter transfer from B-MINCOME (Barcelona), Catalonia pilot design, Finland, Kenya/GiveDirectly, Stockton SEED, Alaska PFD, and OpenResearch.
+  - id: F17
+    name: Phased implementation, fiscal circuit-breakers, and tail-risk governance
+    description: Sequencing from IMV reform to full UBR, scenario-triggered rollouts, inflation/fiscal circuit-breakers, and institutional stress testing.

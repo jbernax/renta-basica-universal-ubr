@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ubr/module.schema.json",
+  "title": "Research plan module frontmatter",
+  "type": "object",
+  "required": ["id", "title", "status", "locked", "depends_on", "covers", "feeds_chapters", "last_iteration"],
+  "additionalProperties": false,
+  "properties": {
+    "id": {"type": "string", "pattern": "^M[0-9]{2}$"},
+    "title": {"type": "string", "minLength": 3},
+    "status": {"enum": ["draft", "reviewed", "locked"]},
+    "locked": {"type": "boolean"},
+    "depends_on": {"type": "array", "items": {"type": "string", "pattern": "^M[0-9]{2}$"}, "uniqueItems": true},
+    "covers": {"type": "array", "items": {"type": "string", "pattern": "^F[0-9]{2}$"}, "uniqueItems": true},
+    "feeds_chapters": {"type": "array", "items": {"type": "integer", "minimum": 1}, "uniqueItems": true},
+    "last_iteration": {"type": "integer", "minimum": 0}
+  }
+}

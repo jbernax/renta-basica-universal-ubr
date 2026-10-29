@@ -1,0 +1,110 @@
+criteria:
+  - id: coverage
+    name: Coverage of factors
+    weight: 0.12
+    anchors:
+      0: Missing core dimensions of UBI design or AI labor displacement.
+      1: Covers only a few isolated topics; ignores interactions.
+      2: Covers most headline topics but omits key fiscal, legal, or sectoral channels.
+      3: Covers all reference factors at a basic level, with limited cross-module linkage.
+      4: Thoroughly covers all reference factors and maps primary inter-module dependencies.
+      5: Exhaustive coverage of all reference factors with explicit feedback loops (e.g. tax-inflation-housing-labor) quantified across modules.
+
+  - id: rq_quality
+    name: Research question quality
+    weight: 0.12
+    anchors:
+      0: Vague or purely normative statements instead of research questions.
+      1: Broad, descriptive questions without testable hypotheses.
+      2: Mix of descriptive and analytical questions; hypotheses are generic.
+      3: Clear, answerable questions with falsifiable hypotheses in every module.
+      4: Sharp, policy-relevant questions with quantitative or institutional falsifiability conditions tied to Spain.
+      5: Field-defining research questions that distinguish competing theoretical mechanisms and specify exact decision thresholds for policy design.
+
+  - id: methodological_rigor
+    name: Methodological rigor
+    weight: 0.14
+    anchors:
+      0: No empirical or formal methods specified.
+      1: Names methods generically (e.g. "regression", "simulation") without identification strategy.
+      2: Plausible methods named, but endogeneity, equilibrium effects, or data limitations are ignored.
+      3: Specific methods (EUROMOD, DiD, RCT, DSGE/HANK) matched to RQs with basic identification strategies.
+      4: Explicit identification assumptions, estimands, robustness checks, and structural vs. reduced-form trade-offs for every RQ.
+      5: State-of-the-art empirical and structural design: specifies exact microdata variables, counterfactuals, power/MDE calculations, and general-equilibrium closure.
+
+  - id: evidence_grounding
+    name: Evidence grounding
+    weight: 0.12
+    anchors:
+      0: Unsubstantiated claims or fabricated citations.
+      1: Relies on outdated or secondary commentary; sparse citations.
+      2: Cites general UBI literature but misses recent causal pilots and AI-exposure research.
+      3: Solid grounding in canonical UBI studies, Spanish institutional reports, and AI labor literature, all in sources.yaml.
+      4: Integrates frontier empirical work (OpenResearch, B-MINCOME, Finland, AIReF, BdE, IMF/OECD AI studies) with high citation density and verified locators.
+      5: Comprehensive, critical synthesis of frontier literature that reconciles conflicting empirical estimates and calibrates parameters to Spanish data.
+
+  - id: spain_fit
+    name: Spain institutional fit
+    weight: 0.12
+    anchors:
+      0: Generic country-agnostic plan; Spain mentioned only in passing.
+      1: Mentions Spain superficially without specific laws, taxes, or datasets.
+      2: Names major institutions (IMV, IRPF, INE) but overlooks autonomous communities, foral regimes, or EU constraints.
+      3: Accurately incorporates Spanish tax-benefit rules (IRPF, IVA, IMV, rentas mínimas autonómicas), Constitutional articles, and INE/AEAT data.
+      4: Deep institutional precision across national, regional (régimen común vs. concierto vasco / convenio navarro), and municipal levels, plus EU law and Eurozone constraints.
+      5: Actionable blueprint ready for AIReF/IEF/Ministry evaluation: specifies statutory reforms, administrative data-linking protocols (AEAT-INSS-Padrón), and territorial financing (LOFCA) mechanics.
+
+  - id: ai_scenarios
+    name: Treatment of AI-displacement scenarios
+    weight: 0.08
+    anchors:
+      0: Treats AI labor collapse as an unexamined slogan.
+      1: Single deterministic assumption about AI unemployment.
+      2: Mentions scenarios S1-S3 in scope but modules ignore them.
+      3: Defines conditional scenarios (S1 moderate, S2 severe, S3 structural compression) and links them to key modules.
+      4: Operationalizes S1-S3 with task-exposure indices (CNO-11 / ISCO), wage-bill share paths, and scenario-contingent fiscal/benefit triggers.
+      5: Fully integrated scenario stress-testing across all modules, showing how optimal UBR levels, tax bases (labor vs. capital/AI rents), and macro stability shift across S1-S3.
+
+  - id: feasibility
+    name: Feasibility (data, time, budget)
+    weight: 0.08
+    anchors:
+      0: Impossible data requirements or uncosted proposals.
+      1: Assumes frictionless access to restricted microdata and unlimited pilot budgets.
+      2: Identifies datasets and deliverables but lacks realistic access pathways or effort estimates.
+      3: Specifies accessible public/restricted Spanish datasets (ECV, EPA, Muestra IRPF, MCVL) and realistic deliverables per module.
+      4: Includes concrete data-access fallbacks, pilot budget envelopes, sample-size/cost trade-offs, and staged research dependencies.
+      5: Audit-ready execution plan with primary and fallback data strategies, exact institutional access procedures (IEF, INE, Seguridad Social), and realistic resource scheduling.
+
+  - id: internal_coherence
+    name: Internal coherence
+    weight: 0.08
+    anchors:
+      0: Contradictory definitions, benefit amounts, or assumptions across modules.
+      1: Siloed modules using incompatible baselines or terminology.
+      2: Mostly consistent terminology, but upstream/downstream modules do not align parameters.
+      3: Shared definitions, consistent scenario labels (S1-S3), and valid dependency links across modules.
+      4: Quantitative parameters (benefit levels, phase-out/tax rates, fiscal targets, pilot scales) are explicitly harmonized across all interdependent modules.
+      5: Seamless systems architecture: outputs of each module (e.g. M01 displacement -> M03 tax base -> M04 macro -> M05 housing) form a closed, mutually consistent analytical pipeline.
+
+  - id: counterarguments
+    name: Counterarguments and risks
+    weight: 0.08
+    anchors:
+      0: Advocacy document that ignores objections.
+      1: Mentions straw-man objections without empirical engagement.
+      2: Lists standard risks (inflation, work disincentives) without design mitigations.
+      3: Fairly states major economic, legal, and political counterarguments in every module with proposed tests or mitigations.
+      4: Engages steel-manned critiques (fiscal impossibility, landlord rent capture, Eurozone inflationary leakage, pull-factor claims, dual-labor-market traps) with falsifiable tests.
+      5: Pre-commits to disconfirmation criteria: specifies what empirical findings or simulation outcomes would invalidate a given UBR design and trigger specific fallback policies.
+
+  - id: ethics_equity
+    name: Ethics and equity
+    weight: 0.06
+    anchors:
+      0: No consideration of research ethics or distributional equity.
+      1: Brief boilerplate mention of ethics.
+      2: Notes vulnerable groups or IRB approval without concrete safeguards.
+      3: Addresses RCT ethics (informed consent, post-trial cliff), gender/care impacts, disability top-ups, and territorial equity.
+      4: Integrates intersectional equity analysis (gender, age, disability, rural/urban, migrant residency rules) and rigorous pilot ethical protocols (GDPR, benefit protection guarantees).
+      5: Exemplary ethical and distributional design: prevents welfare loss for any vulnerable subgroup during transition (no-loser constraint vs. IMV/disability benefits) and sets gold-standard pilot ethics.

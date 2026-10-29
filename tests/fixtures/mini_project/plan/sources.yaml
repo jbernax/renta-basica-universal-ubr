@@ -1,0 +1,24 @@
+sources:
+  - id: src-a
+    authors: [Doe, J.]
+    year: 2020
+    title: Alpha source
+    type: article
+    url: https://example.org/a
+    verified: true
+    verified_by: machine
+    check_status: "200"
+    checked_at: "2026-01-01T00:00:00+00:00"
+  - id: src-b
+    authors: [Roe, R.]
+    year: 2021
+    title: Beta source
+    type: article
+    doi: 10.1000/beta
+    verified: false
+  - id: src-unused
+    year: 2022
+    title: Unused source
+    type: web
+    url: https://example.org/unused
+    verified: false

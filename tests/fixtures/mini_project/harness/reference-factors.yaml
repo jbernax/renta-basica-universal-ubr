@@ -1,0 +1,10 @@
+factors:
+  - id: F01
+    name: Alpha factor
+    description: First factor.
+  - id: F02
+    name: Beta factor
+    description: Second factor.
+  - id: F03
+    name: Gamma factor
+    description: Third factor, deliberately uncovered.

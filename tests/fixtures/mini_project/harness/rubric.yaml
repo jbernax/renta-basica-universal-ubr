@@ -1,0 +1,21 @@
+criteria:
+  - id: coverage
+    name: Coverage of factors
+    weight: 0.6
+    anchors:
+      0: Absent
+      1: Very poor
+      2: Poor
+      3: Adequate
+      4: Strong
+      5: Exemplary
+  - id: methodological_rigor
+    name: Methodological rigor
+    weight: 0.4
+    anchors:
+      0: Absent
+      1: Very poor
+      2: Poor
+      3: Adequate
+      4: Strong
+      5: Exemplary

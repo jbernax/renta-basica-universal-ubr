@@ -1,0 +1,4 @@
+version: 0.0.1
+title: Mini plan
+central_question: Does the harness work?
+modules: [M01, M02]
