@@ -1,6 +1,6 @@
 PY := .venv/bin/python
 
-.PHONY: setup test validate metrics sources status report check
+.PHONY: setup test validate metrics sources status report check html
 
 setup:
 	python3 -m venv .venv
@@ -24,4 +24,8 @@ status:
 report:
 	$(PY) -m ubr report
 
-check: test validate metrics
+html:
+	$(PY) -m ubr paper html
+
+check: test validate metrics html
+

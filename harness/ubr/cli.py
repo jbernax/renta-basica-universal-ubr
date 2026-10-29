@@ -164,6 +164,10 @@ def _build_parser() -> argparse.ArgumentParser:
 
     leg_sum = leg_sub.add_parser("summary", help="Print consolidated Track 5 executive dashboard")
 
+    pap = sub.add_parser("paper", help="Compile and export academic monograph deliverables")
+    pap_sub = pap.add_subparsers(dest="paper_cmd", required=True)
+    pap_sub.add_parser("html", help="Build standalone HTML monograph and interactive dashboard")
+
     return parser
 
 
@@ -634,6 +638,17 @@ def _dispatch(project, args) -> int:
 
         if args.leg_cmd == "summary":
             print(format_legislation_executive_summary())
+            return 0
+
+    if args.cmd == "paper":
+        if args.paper_cmd == "html":
+            import sys
+            from pathlib import Path
+            repo_root = Path(__file__).resolve().parent.parent.parent
+            if str(repo_root) not in sys.path:
+                sys.path.insert(0, str(repo_root))
+            from scripts.build_html import main as build_html_main
+            build_html_main()
             return 0
 
     return 1
