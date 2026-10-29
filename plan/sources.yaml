@@ -921,3 +921,316 @@ sources:
   check_status: '200'
   checked_at: '2026-10-29T12:17:41+00:00'
   verified_by: machine
+- id: baird-2018-interference
+  authors:
+  - Baird, S.
+  - Bohren, J. A.
+  - McIntosh, C.
+  - Özler, B.
+  year: 2018
+  title: Optimal Design of Experiments in the Presence of Interference
+  venue: Review of Economic Studies
+  type: article
+  doi: 10.1162/rest_a_00716
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T14:09:13+00:00'
+  verified_by: machine
+- id: duflo-2007-randomization
+  authors:
+  - Duflo, E.
+  - Glennerster, R.
+  - Kremer, M.
+  year: 2007
+  title: 'Using Randomization in Development Economics Research: A Toolkit'
+  venue: Handbook of Development Economics
+  type: chapter
+  doi: 10.1016/S1573-4471(07)04061-2
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T14:09:13+00:00'
+  verified_by: machine
+- id: saez-2010-bunching
+  authors:
+  - Saez, E.
+  year: 2010
+  title: Do Taxpayers Bunch at Kink Points?
+  venue: 'American Economic Journal: Economic Policy'
+  type: article
+  doi: 10.1257/pol.2.3.180
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T14:09:13+00:00'
+  verified_by: machine
+- id: chetty-2012-bounds
+  authors:
+  - Chetty, R.
+  year: 2012
+  title: 'Bounds on Elasticities with Optimization Frictions: A Synthesis of Micro and Macro Evidence
+    on Labor Supply'
+  venue: Econometrica
+  type: article
+  doi: 10.3982/ECTA9043
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T14:09:13+00:00'
+  verified_by: machine
+- id: macurdy-1981-labor-supply
+  authors:
+  - MaCurdy, T. E.
+  year: 1981
+  title: An Empirical Model of Labor Supply in a Life-Cycle Setting
+  venue: Journal of Political Economy
+  type: article
+  doi: 10.1086/261023
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T14:09:13+00:00'
+  verified_by: machine
+- id: blundell-macurdy-1999-labor-supply
+  authors:
+  - Blundell, R.
+  - MaCurdy, T.
+  year: 1999
+  title: 'Labor Supply: A Review of Alternative Approaches'
+  venue: Handbook of Labor Economics
+  type: chapter
+  doi: 10.1016/S1573-4463(99)03008-4
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T14:09:13+00:00'
+  verified_by: machine
+- id: ponthieux-2013-income-pooling
+  authors:
+  - Ponthieux, S.
+  year: 2013
+  title: 'Income pooling and equal sharing within the household: What can we learn from the 2010 EU-SILC
+    module?'
+  venue: Eurostat Methodologies and Working Papers
+  type: report
+  doi: 10.2785/21993
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T14:09:13+00:00'
+  verified_by: machine
+- id: garcia-montalvo-2023-rent-controls
+  authors:
+  - García-Montalvo, J.
+  - Monràs, J.
+  year: 2023
+  title: 'The Effect of Second-Generation Rent Controls: New Evidence from Catalonia'
+  venue: Federal Reserve Bank of San Francisco Working Paper 2023-28
+  type: working-paper
+  doi: 10.24148/wp2023-28
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T14:09:13+00:00'
+  verified_by: machine
+- id: jofre-monseny-2023-rent-control
+  authors:
+  - Jofre-Monseny, J.
+  - Martínez-Mazza, R.
+  - Segú, M.
+  year: 2023
+  title: Effectiveness and supply effects of high-coverage rent control policies
+  venue: Regional Science and Urban Economics
+  type: article
+  doi: 10.1016/j.regsciurbeco.2023.103916
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T14:09:13+00:00'
+  verified_by: machine
+- id: antolin-bover-1997-migration
+  authors:
+  - Antolín, P.
+  - Bover, O.
+  year: 1997
+  title: 'Regional Migration in Spain: The Effect of Personal Characteristics and of Unemployment, Wage
+    and House Price Differentials Using Pooled Cross-Sections'
+  venue: Oxford Bulletin of Economics and Statistics
+  type: article
+  doi: 10.1111/1468-0084.00062
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T14:09:13+00:00'
+  verified_by: machine
+- id: tsebelis-2002-veto-players
+  authors:
+  - Tsebelis, G.
+  year: 2002
+  title: 'Veto Players: How Political Institutions Work'
+  venue: Princeton University Press
+  type: book
+  doi: 10.1515/9781400831456
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T14:09:13+00:00'
+  verified_by: machine
+- id: vanderborght-2006-trade-unions
+  authors:
+  - Vanderborght, Y.
+  year: 2006
+  title: Why Trade Unions Oppose Basic Income
+  venue: Basic Income Studies
+  type: article
+  doi: 10.2202/1932-0183.1002
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T14:09:13+00:00'
+  verified_by: machine
+- id: vlandas-2019-politics-ubi
+  authors:
+  - Vlandas, T.
+  year: 2019
+  title: 'The Politics of the Basic Income Guarantee: Analysing Individual Support in Europe'
+  venue: Basic Income Studies
+  type: article
+  doi: 10.1515/bis-2018-0021
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T14:09:13+00:00'
+  verified_by: machine
+- id: beramendi-2012-inequality
+  authors:
+  - Beramendi, P.
+  year: 2012
+  title: 'The Political Geography of Inequality: Regions and Redistribution'
+  venue: Cambridge University Press
+  type: book
+  doi: 10.1017/CBO9781139042796
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T14:09:13+00:00'
+  verified_by: machine
+- id: puig-segura-2021-discapacidad
+  authors:
+  - Puig i Gabau, J.
+  - Segura Bonet, M.
+  year: 2021
+  title: El agravio comparativo económico de las personas con discapacidad de la ciudad de Barcelona
+  venue: Revista Española de Discapacidad (REDIS)
+  type: article
+  url: https://www.cedid.es/redis/index.php/redis/article/view/646
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T14:09:13+00:00'
+  verified_by: machine
+- id: boe-lo-6-2013-airef
+  authors:
+  - Jefatura del Estado
+  year: 2013
+  title: Ley Orgánica 6/2013, de 14 de noviembre, de creación de la Autoridad Independiente de Responsabilidad
+    Fiscal (BOE-A-2013-11935)
+  venue: Boletín Oficial del Estado
+  type: law
+  lang: es
+  url: https://www.boe.es/eli/es/lo/2013/11/14/6
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T14:09:13+00:00'
+  verified_by: machine
+- id: boe-ley-28-2003-fondo-reserva
+  authors:
+  - Jefatura del Estado
+  year: 2003
+  title: Ley 28/2003, de 29 de septiembre, reguladora del Fondo de Reserva de la Seguridad Social (BOE-A-2003-18089)
+  venue: Boletín Oficial del Estado
+  type: law
+  lang: es
+  url: https://www.boe.es/eli/es/l/2003/09/29/28
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T14:09:13+00:00'
+  verified_by: machine
+- id: boe-ley-9-2017-contratos
+  authors:
+  - Jefatura del Estado
+  year: 2017
+  title: Ley 9/2017, de 8 de noviembre, de Contratos del Sector Público (BOE-A-2017-12902)
+  venue: Boletín Oficial del Estado
+  type: law
+  lang: es
+  url: https://www.boe.es/eli/es/l/2017/11/08/9
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T14:09:13+00:00'
+  verified_by: machine
+- id: cjeu-c-279-93-schumacker
+  authors:
+  - Court of Justice of the European Union
+  year: 1995
+  title: Case C-279/93 Finanzamt Köln-Altstadt v Roland Schumacker (Freedom of movement for workers -
+    Non-resident income taxation)
+  venue: European Court Reports
+  type: report
+  url: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:61993CJ0279
+  verified: true
+  check_status: '202'
+  checked_at: '2026-10-29T14:09:13+00:00'
+  verified_by: machine
+- id: cjeu-c-475-03-banca-popolare-irap
+  authors:
+  - Court of Justice of the European Union
+  year: 2006
+  title: Case C-475/03 Banca Popolare di Cremona (Sixth VAT Directive Article 33 - Regional tax on productive
+    activities IRAP)
+  venue: European Court Reports
+  type: report
+  url: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:62003CJ0475
+  verified: true
+  check_status: '202'
+  checked_at: '2026-10-29T14:09:13+00:00'
+  verified_by: machine
+- id: boe-rd-888-2022-discapacidad
+  authors:
+  - Ministerio de Derechos Sociales y Agenda 2030
+  year: 2022
+  title: Real Decreto 888/2022, de 18 de octubre, por el que se establece el procedimiento para el reconocimiento,
+    declaración y calificación del grado de discapacidad (BOE-A-2022-17108)
+  venue: Boletín Oficial del Estado
+  type: law
+  lang: es
+  url: https://www.boe.es/eli/es/rd/2022/10/18/888
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T14:09:13+00:00'
+  verified_by: machine
+- id: boe-lau-1994
+  authors:
+  - Jefatura del Estado
+  year: 1994
+  title: Ley 29/1994, de 24 de noviembre, de Arrendamientos Urbanos (BOE-A-1994-26003)
+  venue: Boletín Oficial del Estado
+  type: law
+  lang: es
+  url: https://www.boe.es/eli/es/l/1994/11/24/29
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-29T14:09:13+00:00'
+  verified_by: machine
+- id: airef-opinion-imv-2023
+  authors:
+  - Autoridad Independiente de Responsabilidad Fiscal (AIReF)
+  year: 2023
+  title: Segunda Opinión sobre el Ingreso Mínimo Vital
+  venue: AIReF Centro Documental
+  type: report
+  lang: es
+  url: https://www.airef.es/es/centro-documental/opiniones/segunda-opinion-sobre-el-ingreso-minimo-vital/
+  verified: true
+  verified_by: human
+  check_status: '200'
+  checked_at: '2026-10-29T14:06:58+00:00'
+- id: airef-opinion-imv-2024
+  authors:
+  - Autoridad Independiente de Responsabilidad Fiscal (AIReF)
+  year: 2024
+  title: Tercera Opinión sobre el Ingreso Mínimo Vital
+  venue: AIReF Centro Documental
+  type: report
+  lang: es
+  url: https://www.airef.es/es/centro-documental/opiniones/tercera-opinion-sobre-el-ingreso-minimo-vital/
+  verified: true
+  verified_by: human
+  check_status: '200'
+  checked_at: '2026-10-29T14:06:58+00:00'

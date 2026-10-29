@@ -1,0 +1,190 @@
+reviewer: political-economist
+iteration: 2
+summary: >
+  Iteration 2 advances the research plan across M11, M17, M16, and M06 by articulating formal
+  conjoint survey designs, state-contingent transition triggers, and factor-neutral corporate surplus
+  levies. However, the plan remains heavily vulnerable to institutional and political economy blindspots.
+  Specifically, it relies on heroic assumptions regarding legislative coalition stability in a fragmented
+  Cortes Generales, overlooks the absolute veto of the Senate over fiscal targets, underestimates structural
+  trade union and employer resistance to basic income, overreaches on AIReF's constitutional and statutory
+  mandate by delegating automatic tax powers, and proposes an unhedged sovereign wealth fund vulnerable to
+  political raiding and EU fiscal rule penalties in a high-debt sovereign environment.
+scores:
+  spain_fit:
+    score: 3.3
+    rationale: >
+      Cites core Spanish statutes (LOFCA, Ley 22/2009, Concierto Vasco, Convenio Navarro, IMV, IRPF),
+      but handles real political institutions—bicameral vetoes, the Consejo de Política Fiscal y
+      Financiera (CPFF), social dialogue under Art. 7 CE, and AIReF's non-executive statutory remit—with
+      excessive abstraction or constitutional inaccuracy.
+  feasibility:
+    score: 3.0
+    rationale: >
+      While administrative data access and pilot survey designs are methodologically sound, political and
+      institutional feasibility is severely constrained. The assumption that a progressive-regionalist
+      bloc will effortlessly pass UBR ignores conservative Senate vetoes under LOEPSF Art. 15, the pro-business
+      orientation of regional caucuses (Junts, PNV), and union defense of Bismarckian contributory protections.
+  counterarguments:
+    score: 3.2
+    rationale: >
+      Notes territorial grievances and capital flight, but counterargument mitigations rely on simplistic
+      assertions (e.g. placating unions with three statutory bullets, or assuming Alaska Permanent Fund
+      mechanisms seamlessly transfer to Spain without addressing debt-parity trade-offs under EU fiscal rules).
+  rq_quality:
+    score: 3.7
+    rationale: >
+      Research questions are structured, analytical, and formulate falsifiable hypotheses across all examined
+      modules. However, several hypotheses (e.g. RQ-M11-02 on union buy-in and RQ-M17-01 on AIReF automated
+      triggers) embed unrealistic legal and political premises that weaken their empirical viability.
+  ai_scenarios:
+    score: 3.8
+    rationale: >
+      Differentiates S1, S2, and S3 systematically across corporate surplus taxation (M16) and state-contingent
+      composite triggers (M17). What remains absent is modeling how political coalitions evolve endogenously
+      as AI displacement strikes middle-decile cognitive workers (deciles 5-7) and transforms class voting.
+issues:
+  - id: PE-02-01
+    severity: critical
+    module: M11
+    finding: >
+      M11 treats legislative enactment as an unproblematic parliamentary equilibrium among left and regionalist
+      parties, completely ignoring Spain's bicameral veto architecture and heterogeneous regional caucuses.
+      Under Spain's system, the Senado holds an absolute veto over fiscal stability targets and expenditure ceilings
+      (Ley Orgánica 2/2012, LOEPSF Art. 15), which cannot be overridden by an ordinary majority of the Congreso.
+      Furthermore, governing majorities in the Congreso depend on pro-business regionalist parties (Junts per Catalunya,
+      EAJ-PNV) that represent bourgeois and SME employer constituencies; these parties will fiercely resist corporate
+      operating surplus taxes (M16) and centralized social-assistance transfers. M11 lacks any game-theoretic
+      veto-player modeling (Tsebelis 2002) mapping legislative spatial preferences and concessions.
+    proposal: >
+      Incorporate a formal bicameral veto-player framework (grounded in Tsebelis 2002) in M11 Section 5. Model spatial
+      voting equilibria across both the Congreso de los Diputados and the Senado, specifically addressing the Senate's
+      LOEPSF Art. 15 absolute veto over deficit paths. Introduce a dedicated sub-investigation of regionalist swing
+      caucuses (EAJ-PNV, Junts, CC), detailing specific policy concessions required to build a minimum winning coalition:
+      e.g., regional tax administration devolution (decentralized AEAT tranches), SME exemptions from surplus levies,
+      and territorial co-management of AI displacement transition funds.
+    sources:
+      - title: "Veto Players: How Political Institutions Work"
+        authors: ["Tsebelis", "G."]
+        year: 2002
+        doi: "10.1515/9781400831456"
+      - title: "Public opinion on basic income: Mapping European support for a radical alternative for welfare provision"
+        authors: ["Roosma", "F.", "van Oorschot", "W."]
+        year: 2020
+        doi: "10.1177/0958928719882827"
+
+  - id: PE-02-02
+    severity: critical
+    module: M17
+    finding: >
+      M17 proposes that AIReF act as a binding executive authority to certify the Composite Displacement Trigger
+      (I_AI,t) that automatically shifts statutory benefit tiers (Phase 1 to Phase 3) and executes the 'Automatic Fiscal
+      Stabilization Surcharge' (Delta tau in [1%, 3%]) on top IRPF brackets and corporate surplus. This directly violates
+      the constitutional Principle of Tax Legality (Principio de Legalidad Tributaria, Art. 31.3 and 134.7 CE) and exceeds
+      AIReF's organic statutory mandate under Ley Orgánica 6/2013. AIReF is an independent fiscal oversight council whose
+      mandate is strictly evaluative and advisory under the 'comply or explain' principle (cumplir o explicar), with no
+      executive regulatory power to modify taxes or entitlement programs. Delegating fiscal and tax adjustments to an
+      algorithmic index certified by AIReF violates the non-delegation doctrine and undermines parliamentary sovereignty.
+    proposal: >
+      Realign M17 Section 2 and Section 5 with Spanish constitutional jurisprudence and Ley Orgánica 6/2013. Reposition
+      AIReF strictly as an independent technical auditor producing statutory, non-binding 'Technological Transition and
+      Labor Displacement Reports' (Informes preceptivos no vinculantes). Replace algorithmic automatic tax surcharges
+      and tier triggers with a statutory 'Fast-Track Parliamentary Ratification Protocol' (Procedimiento de Tramitación
+      Urgente in the Reglamento del Congreso): upon AIReF's certification of displacement thresholds, the Government is
+      statutorily mandated within 30 days to introduce an executive decree-law (Real Decreto-ley under Art. 86 CE) or
+      fast-track bill for parliamentary debate and vote, preserving constitutional legality while preventing legislative drift.
+    sources:
+      - title: "Ley Orgánica 6/2013, de 14 de noviembre, de creación de la Autoridad Independiente de Responsabilidad Fiscal"
+        year: 2013
+        url: "https://www.boe.es/eli/es/lo/2013/11/14/6"
+      - title: "Constitución Española de 1978 (Artículos 31.3, 86 y 134.7)"
+        year: 1978
+        url: "https://www.boe.es/eli/es/c/1978/12/27/(1)"
+
+  - id: PE-02-03
+    severity: major
+    module: M11
+    finding: >
+      M11 drastically underestimates trade union (CCOO, UGT) and employer (CEOE, CEPYME) opposition to unconditional
+      cash transfers and omits the institutional architecture of Spanish Social Dialogue (Mesa de Diálogo Social and the
+      Consejo Económico y Social - CES under Ley 21/1991). Spanish unions operate in a Bismarckian social insurance tradition
+      where institutional power and resources derive from workplace collective bargaining (convenios colectivos). As comparative
+      evidence demonstrates (Vanderborght 2006; Vlandas 2019), unions historically oppose basic income because they fear
+      it de-links income from labor, acts as an employer wage subsidy, weakens worker solidarity, and facilitates labor
+      deregulation. Furthermore, imposing an IRAP-style corporate surplus tax (M16) without structured employer dialogue
+      guarantees fierce CEOE resistance and business disinvestment campaigns.
+    proposal: >
+      Expand M11 Section 2 and Section 5 to formally incorporate the institutional mechanics of Spanish Social Dialogue
+      under Art. 7 CE and the CES. Formulate a comprehensive Tripartite Social Pact architecture: (i) establish statutory
+      non-supplantation clauses guaranteeing that UBR cannot be cited by employers in collective wage negotiations or
+      used to slow statutory SMI increases; (ii) design a co-governance structure where social partners oversee sectoral
+      automation transition funds and retraining vouchers; and (iii) execute elite semi-structured interviews and a discrete
+      choice experiment with senior CCOO, UGT, and CEOE negotiators to quantify policy red lines and trade-off elasticities.
+    sources:
+      - title: "Why Trade Unions Oppose Basic Income"
+        authors: ["Vanderborght", "Y."]
+        year: 2006
+        doi: "10.2202/1932-0183.1002"
+      - title: "The Politics of the Basic Income Guarantee: Analysing Individual Support in Europe"
+        authors: ["Vlandas", "T."]
+        year: 2019
+        doi: "10.1515/bis-2018-0021"
+
+  - id: PE-02-04
+    severity: major
+    module: M06
+    finding: >
+      M06 and M11 fail to address the institutional veto points embedded in Spain's asymmetric fiscal federalism: specifically,
+      the multilateral deadlock of the Consejo de Política Fiscal y Financiera (CPFF) and the financial mechanics of the Basque
+      Concierto Económico and Navarrese Convenio. Modifying the 50% ceded regional IRPF tranche under Ley 22/2009 and eliminating
+      regional tax allowances cannot be done unilaterally by the State; it requires reforming LOFCA within the CPFF, where wealthy
+      net-contributing regions (e.g. Madrid) have strong incentives to mobilize regional public opinion against central
+      redistribution (Beramendi 2012) and file appeals before the Tribunal Constitucional under Art. 156 CE. Simultaneously,
+      because Basque and Navarrese foral treasuries collect 100% of IRPF and corporate taxes, funding a national UBR requires
+      renegotiating the Basque Cupo and Navarrese Aportación. Without a clear imputation methodology, the plan invites severe
+      grievances from régimen común regions accusing foral territories of free-riding on State-funded basic income.
+    proposal: >
+      In M06 and M11, formalize a dedicated Territorial Financing Resolution Architecture. Detail the statutory negotiation
+      pathway within the CPFF to reform Ley 22/2009, creating a 'Territorial Equalization Guarantee' (Fondo de Garantía de
+      Servicios Fundamentales) that holds net-contributing autonomous communities harmless in their per-capita public service
+      funding. For the Régimen Foral, specify the exact bilateral methodology for the Comisión Mixta del Concierto Económico:
+      statutorily classify national UBR as a non-assumed State power (carga no asumida), establishing an automatic upward
+      adjustment to the Basque Cupo base (6.24%) and Navarrese Aportación (1.6%) proportional to gross cash disbursements,
+      neutralizing cross-territorial fiscal arbitrage.
+    sources:
+      - title: "The Political Geography of Inequality: Regions and Redistribution"
+        authors: ["Beramendi", "P."]
+        year: 2012
+        doi: "10.1017/CBO9781139042796"
+      - title: "Ley Orgánica 8/1980, de 22 de septiembre, de Financiación de las Comunidades Autónomas (LOFCA)"
+        year: 1980
+        url: "https://www.boe.es/eli/es/lo/1980/09/22/8"
+
+  - id: PE-02-05
+    severity: major
+    module: M16
+    finding: >
+      M16 proposes accumulating a ring-fenced Fondo Soberano de Renta Básica y Dividendos de IA (15-20% of GDP by Year 15)
+      via a 1.0-1.2% annual GDP diversion from corporate surplus levies, but completely neglects the political economy of
+      fund raiding, sovereign asset-liability mismatch, and public governance. Spain's history with the Social Security
+      Reserve Fund (Fondo de Reserva de la Seguridad Social), which was politically drained from €66B to near-zero between
+      2012 and 2018 during budgetary stress, demonstrates that statutory ring-fencing without reinforced constitutional
+      protections collapses under fiscal consolidation pressure. Furthermore, in a sovereign state carrying >100% debt-to-GDP
+      and constrained by EU Net Expenditure Paths (Regulation EU 2024/1263), diverting tax revenues into global equity markets
+      while issuing costly sovereign debt creates an adverse interest carry and invites fierce opposition from parties
+      demanding debt amortization or urgent funding for healthcare and eldercare.
+    proposal: >
+      In M16 Section 5 and Section 7, establish an institutional governance and anti-raiding blueprint for the sovereign fund:
+      (i) place asset management under an independent board within the Banco de España governed by the Law of Autonomy (Ley 13/1994),
+      with an explicit statutory prohibition on domestic corporate equity investments to eliminate political cronyism and state
+      capitalist capture; (ii) design a reinforced institutional firebreak requiring a qualified parliamentary supermajority (3/5ths
+      of the Congreso) to modify the 4% real dividend spending rule or withdraw fund capital; and (iii) implement a macro-fiscal
+      debt-parity rule stipulating that whenever Spain's debt-to-GDP exceeds 90%, annual statutory inflows S_t are split
+      equally between fund accumulation and sovereign debt buybacks, ensuring compliance with EU fiscal framework rules.
+    sources:
+      - title: "Ley 28/2003, de 29 de septiembre, reguladora del Fondo de Reserva de la Seguridad Social"
+        year: 2003
+        url: "https://www.boe.es/eli/es/l/2003/09/29/28"
+      - title: "Automation and the Welfare State: Technological Change as a Determinant of Redistribution Preferences"
+        authors: ["Thewissen", "S.", "Rueda", "D."]
+        year: 2019
+        doi: "10.1177/0958928719882827"

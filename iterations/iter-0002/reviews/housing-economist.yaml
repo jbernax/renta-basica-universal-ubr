@@ -1,0 +1,172 @@
+reviewer: housing-economist
+iteration: 2
+summary: >-
+  Rigorous evaluation of the Universal Basic Rent research plan from the perspective of housing economics,
+  urban supply elasticity, and spatial equilibrium. While the plan correctly identifies landlord rent capture
+  as a primary risk to real welfare, it suffers from four high-leverage weaknesses: (1) omitting the contract-substitution
+  loophole (seasonal and room leases) and statutory 5-year tenure lock-in under Ley de Arrendamientos Urbanos (LAU);
+  (2) naive spatial equilibrium assumptions that ignore Spain's severe housing tenure lock-in, transfer taxes (ITP),
+  and regional public service disparities; (3) an undifferentiated tenure treatment in EUROMOD that fails to recycle
+  captured rents back into top-decile landlord property income; and (4) a severe cross-module contradiction between
+  M05 and M17 regarding housing pass-through circuit-breakers, combined with reliance on unviable multi-year construction lags.
+scores:
+  spain_fit:
+    score: 3.2
+    rationale: >-
+      Incorporates key statutory benchmarks (Ley 12/2023, SERPAVI, Bono Alquiler Joven, Padrón Continuo, and regional
+      deposit registries). However, it lacks institutional depth regarding the Ley de Arrendamientos Urbanos (LAU Art. 9
+      mandatory 5-year contracts for individuals / 7-year for corporations), the critical legal exemption of seasonal
+      leases (LAU Art. 3.2) and room rentals (Civil Code Art. 1554) which landlords systematically use to bypass rent caps,
+      and the prohibitive 6-10% regional Impuesto sobre Transmisiones Patrimoniales (ITP) that impedes inter-regional residential mobility.
+  methodological_rigor:
+    score: 3.1
+    rationale: >-
+      Outlines plausible quasi-experimental strategies (boundary discontinuities in Catalonia, Bono Alquiler Joven cutoffs)
+      and discrete-choice location modeling. However, the spatial discrete-choice model naively reduces migration frictions to
+      physical distance, omitting housing tenure status and regional amenity capital. Moreover, the saturation design in M10
+      risks severe SUTVA contamination across census tracts due to localized rental search spillovers, and M09 applies an
+      ad-hoc flat pass-through deduction without modeling tenure heterogeneity.
+  internal_coherence:
+    score: 2.9
+    rationale: >-
+      There is an explicit contradiction between M05 and M17: M05 Section 6 promises an automatic statutory circuit-breaker
+      in M17 redirecting UBR step-ups if urban rent pass-through exceeds 20%, yet M17 contains zero housing circuit-breakers,
+      relying exclusively on macro inflation and sovereign spread surcharges. Furthermore, M09 models rent pass-through as
+      an economic leakage that vanishes, failing to recycle capitalized rental yields into the taxable property income of
+      top-decile landlords in M03.
+  counterarguments:
+    score: 3.2
+    rationale: >-
+      Fairly acknowledges that UBR risks fueling metropolitan rent inflation and eroding tenant living standards. However,
+      it fails to engage the steel-manned counterargument: in tight rental markets dominated by small landlords, cash transfers
+      are captured through contract reclassification (seasonal/room leases) while low-income renters cannot relocate to rural
+      Spain due to homeownership illiquidity and the lack of rural healthcare, schooling, and care infrastructure.
+  evidence_grounding:
+    score: 3.1
+    rationale: >-
+      Cites foundational international papers (Fack 2006, Diamond et al. 2019, Bartik et al. 2024), but misses the decisive
+      contemporary Spanish empirical literature on rental supply elasticity, rent control evaluations in Catalonia, and housing
+      cost overburden: notably García-Montalvo & Monràs (2023), Jofre-Monseny, Martínez-Mazza & Segú (2023), Banco de España's
+      definitive rental study (Khametshin, López-Rodríguez & Pérez García, 2024), and empirical Spanish internal migration
+      models (Antolín & Bover, 1997).
+issues:
+  - id: HE-02-01
+    severity: critical
+    module: M05
+    finding: >-
+      M05 models landlord rent capture and Ley 12/2023 rent caps as a uniform, frictionless market, ignoring the major regulatory
+      bypass channel: landlords circumventing price caps by shifting primary residential leases (arrendamiento de vivienda habitual,
+      LAU Art. 2) to seasonal rentals (arrendamiento de temporada, LAU Art. 3.2) or room rentals (alquiler de habitaciones, CC Art. 1554),
+      which are exempt from rent controls. Furthermore, for incumbent tenants, LAU Art. 9 mandates 5-year contracts (7 years for corporate
+      landlords) with statutory caps on annual rent updates (historically CPI, 3% in 2024 per RDL 6/2022), meaning pass-through cannot
+      legally hit active contracts during the 36-month pilot, creating severe estimation bias if new contracts, renewals, and seasonal
+      conversions are not distinguished.
+    proposal: >-
+      (1) Formulate an explicit dual-tenure equilibrium framework in M05 distinguishing regular residential leases, seasonal rentals,
+      and room rentals. (2) Specify that empirical pass-through identification and pilot evaluation must track contract churn and tenure
+      reclassification using mandatory rental deposit microdata (fianzas de alquiler obligatorias from INCASÒL, IVIMA, AVRA under
+      LAU Art. 36) matched to cadastral references and AEAT tax records. (3) Propose complementary regulatory harmonization: extending
+      price reference indices to seasonal and room rentals in stressed zones (ZMRT), and conditioning the LIRPF Art. 23.2 landlord tax
+      deduction (50–90%) strictly on long-term habitual residence contracts adhering to reference price limits.
+    sources:
+      - title: "The Effect of Second-Generation Rent Controls: New Evidence from Catalonia"
+        authors:
+          - García-Montalvo, J.
+          - Monràs, J.
+        year: 2023
+        doi: 10.24148/wp2023-28
+      - title: "El mercado del alquiler de vivienda residencial en España: evolución reciente, determinantes e indicadores de esfuerzo"
+        authors:
+          - Khametshin, D.
+          - López-Rodríguez, D.
+          - Pérez García, L.
+        year: 2024
+        url: https://www.bde.es/f/webbde/SES/Secciones/Publicaciones/PublicacionesSeriadas/DocumentosOcasionales/24/Fich/do2432.pdf
+  - id: HE-02-02
+    severity: major
+    module: M13
+    finding: >-
+      RQ-M13-03 hypothesizes that a portable €900/month UBR will induce 5.5–8.2% 5-year net migration from congested metropolitan cores
+      to depopulated municipalities (España vaciada), specifying a discrete-choice location model where mobility costs are reduced to
+      physical distance. This assumes frictionless spatial sorting and ignores Spain's profound structural immobility frictions: high
+      homeownership rates among older cohorts, illiquid secondary property markets, prohibitive regional transfer taxes (6–10% Impuesto
+      sobre Transmisiones Patrimoniales, ITP), aged/uninhabitable rural housing stock, and regional disparities in public services
+      (healthcare, schooling, and dependency care transfer waiting lists across autonomous communities).
+    proposal: >-
+      (1) Re-specify the discrete-choice utility function in M13 to incorporate housing tenure status (market renter, social renter,
+      mortgaged owner, outright owner), transaction costs (regional ITP rates), and local public capital stocks (primary healthcare access,
+      high-speed fiber broadband, dependency care capacity). (2) Calibrate migration elasticities using the INE Estadística de Variaciones
+      Residenciales (EVR) microdata interacted with housing tenure from the Census and ECV, drawing on the empirical framework of
+      Antolín & Bover (1997). (3) Add a concrete policy complementarity: portable UBR must be paired with regional ITP exemptions for
+      primary home purchases in depopulated municipalities and rural housing rehabilitation funding (Ley 8/2013).
+    sources:
+      - title: "Regional Migration in Spain: The Effect of Personal Characteristics and of Unemployment, Wage and House Price Differentials Using Pooled Cross-Sections"
+        authors:
+          - Antolín, P.
+          - Bover, O.
+        year: 1997
+        doi: 10.1111/1468-0084.00062
+      - title: "Effectiveness and supply effects of high-coverage rent control policies"
+        authors:
+          - Jofre-Monseny, J.
+          - Martínez-Mazza, R.
+          - Segú, M.
+        year: 2023
+        doi: 10.1016/j.regsciurbeco.2023.103916
+  - id: HE-02-03
+    severity: major
+    module: M09
+    finding: >-
+      M09 Section 5 adjusts post-housing real disposable income by subtracting an ad-hoc flat pass-through factor for all 'private-market
+      tenants'. This neglects two fundamental structural features of Spanish housing: (1) extreme tenure heterogeneity across income deciles—over
+      40% of bottom-quintile households are private market tenants suffering from severe housing cost overburden (>40% of income), while
+      deciles 4–7 are predominantly mortgaged homeowners who face zero landlord rent extraction; and (2) it treats extracted rents as an
+      open-economy leakage that vanishes from the system, omitting the general-equilibrium recycling of capitalized rents into the taxable
+      property income (rendimientos del capital inmobiliario, LIRPF Art. 22) of top-decile landlords (Deciles 9–10).
+    proposal: >-
+      (1) Disaggregate household records in EUROMOD-Spain across 4 distinct housing tenure regimes: outright owner (propietario sin hipoteca),
+      mortgaged owner (propietario con hipoteca), subsidized/social renter (alquiler protegido/cedido), and market renter (alquiler a precio
+      de mercado). (2) Implement closed-loop rent recycling: aggregate landlord rent extraction across market renters within each municipality
+      must be credited to the capital income accounts of landlord households in the AEAT Muestra de Declarantes, subjected to reformed
+      LIRPF taxation (M03), and fed back into post-tax inequality metrics. (3) Systematically report housing-cost overburden rates
+      (tasa de sobreesfuerzo del alquiler, housing costs >40% of disposable income) alongside headline AROPE and Gini.
+    sources:
+      - title: "El mercado del alquiler de vivienda residencial en España: evolución reciente, determinantes e indicadores de esfuerzo"
+        authors:
+          - Khametshin, D.
+          - López-Rodríguez, D.
+          - Pérez García, L.
+        year: 2024
+        url: https://www.bde.es/f/webbde/SES/Secciones/Publicaciones/PublicacionesSeriadas/DocumentosOcasionales/24/Fich/do2432.pdf
+  - id: HE-02-04
+    severity: critical
+    module: M17
+    finding: >-
+      M05 Section 6 explicitly commits to: 'Establish an automatic statutory circuit-breaker (M17) that redirects nominal UBR step-ups into
+      public social housing supply if urban rent pass-through exceeds 20%.' However, M17 contains ZERO mention of any housing pass-through
+      circuit-breaker, restricting triggers exclusively to macroeconomic composite displacement, top IRPF surcharges, and sovereign bond spreads.
+      Furthermore, relying on redirecting funds to 'public social housing supply' is structurally incapable of addressing a short-run rent crisis:
+      in Spain, public housing promotion (VPO) has an average gestation period of 4 to 7 years from land rezoning and public procurement to completion,
+      making it completely ineffective against 12-to-24-month transition shocks.
+    proposal: >-
+      (1) Formally integrate an explicit Housing Pass-Through Circuit-Breaker into M17 Sections 2 and 5, activating whenever quarterly
+      MIVAU/INCASÒL rental index growth exceeds core CPI by >3.0 pp in declared stressed zones (ZMRT). (2) Replace the long-lag construction
+      response with high-powered short-to-medium-term policy levers: (a) immediate dynamic revocation of the LIRPF Art. 23.2 landlord net-rental
+      deduction (reducing it from 50% to 0%, or applying an emergency surcharge) for landlords exceeding reference index caps; (b) emergency
+      statutory extension of Ley 12/2023 price index caps to seasonal and room rentals; and (c) reallocating contingency funds to municipal
+      fast-track acquisition of existing private housing via preemption and withdrawal rights (derechos de tanteo y retracto), bringing units
+      into public management within 60 days.
+    sources:
+      - title: "Effectiveness and supply effects of high-coverage rent control policies"
+        authors:
+          - Jofre-Monseny, J.
+          - Martínez-Mazza, R.
+          - Segú, M.
+        year: 2023
+        doi: 10.1016/j.regsciurbeco.2023.103916
+      - title: "The Effect of Second-Generation Rent Controls: New Evidence from Catalonia"
+        authors:
+          - García-Montalvo, J.
+          - Monràs, J.
+        year: 2023
+        doi: 10.24148/wp2023-28

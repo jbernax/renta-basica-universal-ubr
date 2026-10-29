@@ -6,7 +6,7 @@ locked: false
 depends_on: [M01, M02, M03, M07, M10]
 covers: [F09]
 feeds_chapters: [2, 7]
-last_iteration: 1
+last_iteration: 2
 ---
 # M08 · Labor supply, reservation wages, and behavioral responses
 
@@ -24,11 +24,11 @@ Recent high-powered RCTs and natural experiments demonstrate modest extensive-ma
 
 ## 4. Spain context & data sources
 - **Labor Microdata:** INE *Encuesta de Población Activa* (EPA 6-quarter rotating longitudinal panel for gross worker flows), *Muestra Continua de Vidas Laborales* (MCVL linked to AEAT Form 190 withholdings, tracking contract codes 100/200/300, monthly *bases de cotización*, and *coeficiente de parcialidad*), and INE *Encuesta de Empleo del Tiempo* (EET).
-- **Incentive Baseline:** *Real Decreto 789/2022* [@boe-rd-789-2022-incentivo-imv] (statutory IMV labor income exemption formulas) and AIReF IMV evaluations.
+- **Incentive Baseline:** *Real Decreto 789/2022* [@boe-rd-789-2022-incentivo-imv] (statutory IMV labor income exemption formulas) and AIReF IMV evaluations [@airef-opinion-imv-2023].
 
 ## 5. Methods & identification
 1. **Structural Discrete-Choice Hours Model:** Estimate a discrete-choice model ($h \in \{0, 20, 30, 40\}$) on Spanish ECV + EPA flow data, identifying separate intensive ($\varepsilon^c$) and income ($\eta$) elasticities across demographic cells (youth 18–29, prime 30–51, older workers 52+), calibrated against RD 789/2022 baseline METRs [@saez-2002-optimal-transfers].
-2. **Bunching & Longitudinal Discontinuity Estimation in MCVL:** Exploit sharp kinks in the IRPF withholding tariff [@boe-irpf-2006], the RD 789/2022 wage exemption limits [@boe-rd-789-2022-incentivo-imv], and the age-52 SEPE *subsidio* threshold [@boe-trlgss-2015] to estimate Spanish participation and hours elasticities.
+2. **Bunching & Longitudinal Discontinuity Estimation in MCVL & AEAT:** Exploit sharp kinks in the IRPF withholding tariff [@boe-irpf-2006], the RD 789/2022 wage exemption limits [@boe-rd-789-2022-incentivo-imv], and the age-52 SEPE *subsidio* threshold [@boe-trlgss-2015]. Apply the bunching estimators of Saez [@saez-2010-bunching] and Chetty et al. [@chetty-2012-bounds] around the pilot clawback kink $Y^* = \text{UBR}/\tau_{\text{clawback}}$, explicitly combining experimental clawback variation with quasi-experimental administrative IRPF panel reforms to estimate middle- and upper-decile taxable income responses.
 3. **Sequential Shock Protocol (`methods.md`):** Ensure that `M01` involuntary AI displacement hazards (modeled on MCVL *pases a inactividad*) are applied first to generate counterfactual market earnings before estimating second-step voluntary labor-supply adjustments in EUROMOD.
 
 ## 6. Pilot implications
