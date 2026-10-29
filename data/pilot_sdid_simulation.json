@@ -1,0 +1,240 @@
+{
+  "tau_sdid_treatment_effect": 20.21,
+  "tau_sdid_pct": 2.57,
+  "standard_error": 4.85,
+  "ci_95_lower": 10.71,
+  "ci_95_upper": 29.72,
+  "p_value": 3e-05,
+  "unit_weights_omega": {
+    "MAD_01": 0.02285,
+    "MAD_03": 0.02206,
+    "MAD_04": 0.02377,
+    "MAD_10": 0.05125,
+    "BCN_02": 0.02331,
+    "BCN_04": 0.00255,
+    "BCN_05": 0.03798,
+    "BCN_06": 0.01959,
+    "BCN_07": 0.02089,
+    "BCN_09": 0.03067,
+    "BCN_10": 0.03453,
+    "VAL_02": 0.06635,
+    "VAL_03": 0.04962,
+    "VAL_04": 0.0305,
+    "VAL_06": 0.01,
+    "SEV_03": 0.00633,
+    "SEV_04": 0.03501,
+    "BIO_02": 0.07012,
+    "BIO_04": 0.02832,
+    "ZAZ_02": 0.02391,
+    "RUR_02": 0.04511,
+    "RUR_03": 0.00279,
+    "RUR_04": 0.01848,
+    "RUR_06": 0.04361,
+    "RUR_09": 0.05726,
+    "RUR_10": 0.02027,
+    "RUR_14": 0.03954,
+    "RUR_15": 0.03507,
+    "RUR_19": 0.05411,
+    "RUR_22": 0.00532,
+    "RUR_23": 0.04643,
+    "RUR_25": 0.00246,
+    "RUR_26": 0.00018,
+    "RUR_27": 0.01223,
+    "RUR_30": 0.0075
+  },
+  "time_weights_lambda": [
+    0.0209,
+    0.03118,
+    0.04651,
+    0.06939,
+    0.10352,
+    0.15443,
+    0.23038,
+    0.34369
+  ],
+  "quarterly_series": [
+    {
+      "quarter_index": 1,
+      "quarter_label": "Q1",
+      "is_post_treatment": false,
+      "treated_mean_rent": 748.8,
+      "synthetic_control_rent": 751.0,
+      "unweighted_control_rent": 726.75,
+      "time_weight_lambda": 0.0209
+    },
+    {
+      "quarter_index": 2,
+      "quarter_label": "Q2",
+      "is_post_treatment": false,
+      "treated_mean_rent": 752.09,
+      "synthetic_control_rent": 752.25,
+      "unweighted_control_rent": 730.44,
+      "time_weight_lambda": 0.0312
+    },
+    {
+      "quarter_index": 3,
+      "quarter_label": "Q3",
+      "is_post_treatment": false,
+      "treated_mean_rent": 759.15,
+      "synthetic_control_rent": 757.67,
+      "unweighted_control_rent": 731.91,
+      "time_weight_lambda": 0.0465
+    },
+    {
+      "quarter_index": 4,
+      "quarter_label": "Q4",
+      "is_post_treatment": false,
+      "treated_mean_rent": 762.94,
+      "synthetic_control_rent": 761.77,
+      "unweighted_control_rent": 737.53,
+      "time_weight_lambda": 0.0694
+    },
+    {
+      "quarter_index": 5,
+      "quarter_label": "Q5",
+      "is_post_treatment": false,
+      "treated_mean_rent": 762.77,
+      "synthetic_control_rent": 764.06,
+      "unweighted_control_rent": 740.96,
+      "time_weight_lambda": 0.1035
+    },
+    {
+      "quarter_index": 6,
+      "quarter_label": "Q6",
+      "is_post_treatment": false,
+      "treated_mean_rent": 769.05,
+      "synthetic_control_rent": 769.5,
+      "unweighted_control_rent": 742.81,
+      "time_weight_lambda": 0.1544
+    },
+    {
+      "quarter_index": 7,
+      "quarter_label": "Q7",
+      "is_post_treatment": false,
+      "treated_mean_rent": 769.29,
+      "synthetic_control_rent": 771.27,
+      "unweighted_control_rent": 752.17,
+      "time_weight_lambda": 0.2304
+    },
+    {
+      "quarter_index": 8,
+      "quarter_label": "Q8",
+      "is_post_treatment": false,
+      "treated_mean_rent": 779.29,
+      "synthetic_control_rent": 778.38,
+      "unweighted_control_rent": 752.79,
+      "time_weight_lambda": 0.3437
+    },
+    {
+      "quarter_index": 9,
+      "quarter_label": "Q9",
+      "is_post_treatment": true,
+      "treated_mean_rent": 786.03,
+      "synthetic_control_rent": 782.14,
+      "unweighted_control_rent": 756.67,
+      "time_weight_lambda": 0.0
+    },
+    {
+      "quarter_index": 10,
+      "quarter_label": "Q10",
+      "is_post_treatment": true,
+      "treated_mean_rent": 793.02,
+      "synthetic_control_rent": 782.95,
+      "unweighted_control_rent": 755.9,
+      "time_weight_lambda": 0.0
+    },
+    {
+      "quarter_index": 11,
+      "quarter_label": "Q11",
+      "is_post_treatment": true,
+      "treated_mean_rent": 800.31,
+      "synthetic_control_rent": 787.55,
+      "unweighted_control_rent": 759.61,
+      "time_weight_lambda": 0.0
+    },
+    {
+      "quarter_index": 12,
+      "quarter_label": "Q12",
+      "is_post_treatment": true,
+      "treated_mean_rent": 809.83,
+      "synthetic_control_rent": 792.34,
+      "unweighted_control_rent": 765.62,
+      "time_weight_lambda": 0.0
+    },
+    {
+      "quarter_index": 13,
+      "quarter_label": "Q13",
+      "is_post_treatment": true,
+      "treated_mean_rent": 815.13,
+      "synthetic_control_rent": 795.93,
+      "unweighted_control_rent": 774.64,
+      "time_weight_lambda": 0.0
+    },
+    {
+      "quarter_index": 14,
+      "quarter_label": "Q14",
+      "is_post_treatment": true,
+      "treated_mean_rent": 823.91,
+      "synthetic_control_rent": 797.5,
+      "unweighted_control_rent": 772.63,
+      "time_weight_lambda": 0.0
+    },
+    {
+      "quarter_index": 15,
+      "quarter_label": "Q15",
+      "is_post_treatment": true,
+      "treated_mean_rent": 828.39,
+      "synthetic_control_rent": 802.39,
+      "unweighted_control_rent": 776.37,
+      "time_weight_lambda": 0.0
+    },
+    {
+      "quarter_index": 16,
+      "quarter_label": "Q16",
+      "is_post_treatment": true,
+      "treated_mean_rent": 826.63,
+      "synthetic_control_rent": 805.81,
+      "unweighted_control_rent": 779.8,
+      "time_weight_lambda": 0.0
+    },
+    {
+      "quarter_index": 17,
+      "quarter_label": "Q17",
+      "is_post_treatment": true,
+      "treated_mean_rent": 834.48,
+      "synthetic_control_rent": 809.15,
+      "unweighted_control_rent": 782.84,
+      "time_weight_lambda": 0.0
+    },
+    {
+      "quarter_index": 18,
+      "quarter_label": "Q18",
+      "is_post_treatment": true,
+      "treated_mean_rent": 838.75,
+      "synthetic_control_rent": 813.72,
+      "unweighted_control_rent": 791.14,
+      "time_weight_lambda": 0.0
+    },
+    {
+      "quarter_index": 19,
+      "quarter_label": "Q19",
+      "is_post_treatment": true,
+      "treated_mean_rent": 845.41,
+      "synthetic_control_rent": 819.13,
+      "unweighted_control_rent": 792.84,
+      "time_weight_lambda": 0.0
+    },
+    {
+      "quarter_index": 20,
+      "quarter_label": "Q20",
+      "is_post_treatment": true,
+      "treated_mean_rent": 846.04,
+      "synthetic_control_rent": 819.73,
+      "unweighted_control_rent": 796.8,
+      "time_weight_lambda": 0.0
+    }
+  ],
+  "active_contracts_pass_through_pct": 2.4,
+  "turnover_contracts_pass_through_pct": 28.5,
+  "blended_pass_through_pct": 8.14
+}
