@@ -1,0 +1,134 @@
+{
+  "scenario": "S3",
+  "metrics": {
+    "total_baseline_fte": 21510000,
+    "total_displaced_fte": 7528500.1,
+    "net_displaced_fte_share": 0.35,
+    "labor_share_delta_pp": -15.0,
+    "baseline_tax_loss_pct_gdp": 5.85,
+    "baseline_tax_loss_billion_eur": 87.75,
+    "pre_aggregate_wage_bill_eur": 518892000000.0,
+    "post_aggregate_wage_bill_eur": 289707953740.42
+  },
+  "tax_drag_by_component": {
+    "social_security_loss_billion_eur": 52.65,
+    "irpf_and_employee_ss_loss_billion_eur": 35.1,
+    "total_baseline_tax_loss_billion_eur": 87.75
+  },
+  "wage_deciles_pre": [
+    1050.0,
+    1250.0,
+    1450.0,
+    1650.0,
+    1880.0,
+    2150.0,
+    2500.0,
+    3000.0,
+    3800.0,
+    5400.0
+  ],
+  "wage_deciles_post": [
+    1050.0,
+    1250.0,
+    1421.0,
+    1567.5,
+    1786.0,
+    2042.5,
+    2375.0,
+    2940.0,
+    3724.0,
+    5292.0
+  ],
+  "occupational_breakdown": {
+    "11": {
+      "displaced_fte": 238361.1,
+      "displacement_share": 0.1888
+    },
+    "12": {
+      "displaced_fte": 205843.3,
+      "displacement_share": 0.1673
+    },
+    "21": {
+      "displaced_fte": 760096.5,
+      "displacement_share": 0.426
+    },
+    "22": {
+      "displaced_fte": 255828.3,
+      "displacement_share": 0.1998
+    },
+    "23": {
+      "displaced_fte": 504962.9,
+      "displacement_share": 0.3302
+    },
+    "24": {
+      "displaced_fte": 1145135.1,
+      "displacement_share": 0.5279
+    },
+    "31": {
+      "displaced_fte": 526616.1,
+      "displacement_share": 0.3396
+    },
+    "33": {
+      "displaced_fte": 894134.9,
+      "displacement_share": 0.4661
+    },
+    "41": {
+      "displaced_fte": 987838.3,
+      "displacement_share": 0.4909
+    },
+    "43": {
+      "displaced_fte": 701150.1,
+      "displacement_share": 0.4064
+    },
+    "51": {
+      "displaced_fte": 422577.0,
+      "displacement_share": 0.2921
+    },
+    "56": {
+      "displaced_fte": 55018.1,
+      "displacement_share": 0.051
+    },
+    "57": {
+      "displaced_fte": 104868.4,
+      "displacement_share": 0.0929
+    },
+    "61": {
+      "displaced_fte": 20988.0,
+      "displacement_share": 0.0201
+    },
+    "71": {
+      "displaced_fte": 47482.6,
+      "displacement_share": 0.0443
+    },
+    "75": {
+      "displaced_fte": 134435.3,
+      "displacement_share": 0.116
+    },
+    "81": {
+      "displaced_fte": 132972.7,
+      "displacement_share": 0.1149
+    },
+    "84": {
+      "displaced_fte": 254459.4,
+      "displacement_share": 0.199
+    },
+    "91": {
+      "displaced_fte": 39367.5,
+      "displacement_share": 0.037
+    },
+    "94": {
+      "displaced_fte": 73959.5,
+      "displacement_share": 0.0673
+    },
+    "01": {
+      "displaced_fte": 22405.0,
+      "displacement_share": 0.0214
+    }
+  },
+  "handoff_metadata": {
+    "destination_module": "M03 / M09 / EUROMOD-Spain",
+    "statutory_smi_cost_floor_eur": 1739.75,
+    "average_tax_wedge": 0.39,
+    "spain_gdp_baseline_eur": 1500000000000.0
+  }
+}

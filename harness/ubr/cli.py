@@ -59,7 +59,18 @@ def _build_parser() -> argparse.ArgumentParser:
 
     cp = sub.add_parser("checkpoint", help="Record human review sign-off for the latest iteration")
     cp.add_argument("--note", default="", help="Optional checkpoint note")
+
+    lab = sub.add_parser("labor", help="Track 1: Empirical CNO-11 AI exposure and labor displacement")
+    lab_sub = lab.add_subparsers(dest="lab_cmd", required=True)
+    
+    lab_sim = lab_sub.add_parser("simulate", help="Run labor displacement simulation for a scenario")
+    lab_sim.add_argument("--scenario", choices=["S1", "S2", "S3"], default="S2", help="AI displacement scenario")
+    lab_sim.add_argument("--export", metavar="PATH", help="Export counterfactual distributions to JSON file")
+
+    lab_sub.add_parser("summary", help="Print comparative summary of S1, S2, and S3 scenarios")
+    lab_sub.add_parser("occupations", help="List CNO-11 occupations and AI exposure scores")
     return parser
+
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -157,4 +168,58 @@ def _dispatch(project, args) -> int:
         print(f"Recorded human checkpoint at {format_id(num)}")
         return 0
 
+    if args.cmd == "labor":
+        from ubr.labor.cno_taxonomy import CNOTaxonomy
+        from ubr.labor.task_exposure import TaskExposureEngine
+        from ubr.labor.scenarios import LaborDisplacementSimulator
+        from ubr.labor.export import export_counterfactual_json
+
+        taxonomy = CNOTaxonomy.load_default()
+        simulator = LaborDisplacementSimulator()
+
+        if args.lab_cmd == "occupations":
+            engine = TaskExposureEngine()
+            scores = {s.cno_code: s for s in engine.compute_exposure(taxonomy)}
+            print(f"{'CNO':<5} {'Title':<48} {'FTE':>10} {'Avg Wage':>10} {'Alpha':>6} {'Beta':>6} {'Net Exp':>8}")
+            print("-" * 98)
+            for g in taxonomy.all_groups():
+                s = scores[g.cno_code]
+                short_title = (g.title[:45] + "...") if len(g.title) > 48 else g.title
+                print(
+                    f"{g.cno_code:<5} {short_title:<48} {int(g.fte_employment):>10,d} "
+                    f"€{g.avg_monthly_gross_wage:>8,.0f} {s.alpha_direct:>6.2f} {s.beta_augmented:>6.2f} {s.net_exposure:>8.2f}"
+                )
+            print("-" * 98)
+            print(f"Total Employment (FTE): {int(taxonomy.total_employment_fte()):,d} | Gross Wage Bill: €{taxonomy.total_aggregate_wage_bill():,.0f}/yr")
+            return 0
+
+        if args.lab_cmd == "simulate":
+            res = simulator.run_scenario(args.scenario, taxonomy)
+            print(f"=== Scenario {res.scenario} AI Labor Displacement Simulation ===")
+            print(f"Baseline Employment: {int(res.total_baseline_fte):,d} FTE")
+            print(f"Displaced Employment: {int(res.total_displaced_fte):,d} FTE ({res.net_displaced_fte_share:.1%})")
+            print(f"Labor Income Share Shock: {res.labor_share_delta_pp:+.1f} pp")
+            print(f"Baseline Tax Base Erosion: -{res.baseline_tax_loss_pct_gdp:.2f}% of GDP (€{res.baseline_tax_loss_billion_eur:.2f} Billion/year)")
+            print(f"  - Social Security Contribution Loss: €{res.tax_drag_by_component['social_security_loss_billion_eur']:.2f}B")
+            print(f"  - IRPF & Employee Withholding Loss:   €{res.tax_drag_by_component['irpf_and_employee_ss_loss_billion_eur']:.2f}B")
+            print(f"Pre-Shock Aggregate Wage Bill:  €{res.pre_aggregate_wage_bill_eur:,.0f}/year")
+            print(f"Post-Shock Aggregate Wage Bill: €{res.post_aggregate_wage_bill_eur:,.0f}/year")
+            if args.export:
+                export_counterfactual_json(res, args.export)
+                print(f"Exported counterfactual distribution to: {args.export}")
+            return 0
+
+        if args.lab_cmd == "summary":
+            print(f"{'Scenario':<10} {'Displaced FTE':>14} {'FTE Share':>10} {'Labor Share':>12} {'Tax Loss (%GDP)':>16} {'Tax Loss (€B)':>14}")
+            print("-" * 80)
+            for sc_id in ["S1", "S2", "S3"]:
+                res = simulator.run_scenario(sc_id, taxonomy)
+                print(
+                    f"{sc_id:<10} {int(res.total_displaced_fte):>14,d} {res.net_displaced_fte_share:>9.1%} "
+                    f"{res.labor_share_delta_pp:>11.1f}pp {res.baseline_tax_loss_pct_gdp:>15.2f}% €{res.baseline_tax_loss_billion_eur:>12.2f}B"
+                )
+            print("-" * 80)
+            return 0
+
     return 1
+
