@@ -1,0 +1,194 @@
+reviewer: evaluation-methodologist
+iteration: 2
+summary: >-
+  The research plan establishes an ambitious multi-level evaluation architecture in M10, M15, M08, and METHODS,
+  combining a two-stage spatial saturation cluster design with a randomized benefit clawback arm and administrative
+  register linkage. However, critical evaluation-methodological flaws remain: (1) defining spatial clusters at the
+  census-tract level in M10 creates severe spatial interference (SUTVA violations) without buffer zones, while the
+  claimed 80% power for general-equilibrium rent pass-through lacks intra-cluster correlation (ICC) and cluster-size
+  specifications; (2) the randomized clawback arm creates a piecewise linear budget constraint with an abrupt kink
+  at the phase-out ceiling, inducing endogenous bunching and confounding substitution and income effects; (3) the
+  administrative register linkage protocol fails to address tax secrecy restrictions under Art. 95 Ley General
+  Tributaria, threatening fatal differential consent attrition among control group members; and (4) the structural
+  parameter transportability framework in M15 conflates windfall income effects with compensated wage elasticities
+  and ignores Frisch intertemporal substitution in finite-horizon trials.
+scores:
+  methodological_rigor:
+    score: 3.5
+    rationale: >-
+      The plan introduces significant methodological advances by framing a two-stage spatial saturation cluster design
+      in M10 and a structural parameter transportability formula in M15. However, critical econometric gaps remain: (1)
+      defining clusters at the census-tract level in M10 violates SUTVA and creates spatial interference without buffer
+      zones, while the claimed 80% power for GE rent pass-through lacks intra-cluster correlation (ICC) and cluster-size
+      specifications; (2) the randomized benefit phase-out arm in M10 creates a piecewise non-linear budget set with a
+      sharp kink at the grant phase-out ceiling, inducing bunching and confounding substitution and income effects; (3)
+      M15 conflates uncompensated windfall income effects from OpenResearch with compensated wage elasticities and ignores
+      Frisch intertemporal substitution in finite-horizon trials.
+  rq_quality:
+    score: 3.7
+    rationale: >-
+      Research questions in M10, M15, M08, and METHODS are sharply formulated with falsifiable quantitative hypotheses
+      and specific directional bounds. Nonetheless, RQ-M10-01 asserts power to detect general-equilibrium rental
+      pass-through without specifying the economic unit of market closure, RQ-M10-02 presumes clean identification of
+      linear elasticities from a bounded clawback arm without addressing phase-out threshold kinks, and RQ-M15-02 claims
+      to identify compensated substitution elasticities from trials that lacked marginal tax rate variation.
+  feasibility:
+    score: 3.4
+    rationale: >-
+      The 36-month, 20,000-participant pilot costed at €515M gross / €295M net provides a credible macro-fiscal envelope.
+      However, the administrative data-linking protocol ('anonymized linkage via DNI/NIE') faces severe legal obstacles
+      under Art. 95 of Spain's Ley 58/2003 General Tributaria (LGT) regarding tax confidentiality. Without a formal statutory
+      sandbox provision (with legal status) or substantial participation stipends for control group members, voluntary
+      consent requirements will induce severe differential consent attrition among control participants, compromising the
+      integrity of linked register evaluations across AEAT, TGSS, and SNS records.
+  evidence_grounding:
+    score: 3.6
+    rationale: >-
+      The plan demonstrates sophisticated command of empirical basic income trials (OpenResearch, Finland Kela RCT,
+      B-MINCOME, GiveDirectly Kenya, Stockton SEED, Alaska PFD). However, it lacks grounding in the formal econometric
+      literature on spatial interference and optimal cluster experimental design (Baird et al. 2018; Vazquez-Bare 2022),
+      power calculations in cluster-randomized trials (Duflo, Glennerster, & Kremer 2007), bunching estimation at benefit
+      phase-out kinks (Saez 2010; Chetty 2012), and the Spanish legal framework governing administrative register linkage
+      (Art. 95 LGT; LOPDGDD 3/2018).
+  ethics_equity:
+    score: 3.5
+    rationale: >-
+      M10 constructively resolves the post-trial cliff risk by mandating automatic reinscription into IMV and regional
+      minimum income schemes alongside a 6-month step-down ramp. However, randomizing differential benefit clawbacks (0%,
+      38%, 50%) across vulnerable individuals within the same saturation clusters creates localized horizontal inequities
+      and perceived unfairness. Furthermore, subjecting non-beneficiary control group participants to invasive multi-registry
+      surveillance (including psychiatric prescriptions in SNS records) without guaranteed non-stigmatizing compensation or
+      protective data sandboxes raises significant research-ethics concerns under European and Spanish data protection standards.
+issues:
+  - id: EM-02-01
+    severity: critical
+    module: M10
+    finding: >-
+      M10 Section 5.1 and METHODS Section 4 propose a two-stage spatial saturation design with J = 70 clusters (35 treated,
+      35 control) across census tracts or small municipalities to identify general-equilibrium rental pass-through (M05)
+      and wage bargaining (M08). This design suffers from two fundamental econometric deficiencies. First, a Spanish census
+      tract (sección censal, ~1,500 residents) is not an economically integrated or closed housing/labor market; in urban
+      and suburban settings, treating 80% of adults in a single tract induces severe cross-tract residential shopping and
+      labor commuting (SUTVA violations) that contaminate contiguous control tracts and attenuate GE price and rent
+      pass-through estimates. Second, the claim of 80% power to detect a 3.0% rent differential and 1.2 h/week labor supply
+      adjustment is unsubstantiated: it fails to specify the assumed intra-cluster correlation (ICC, rho), cluster size (m),
+      or covariate explanatory power (R^2), while splitting the 35 treated clusters into two saturation sub-arms (80% vs. 40%)
+      leaves only ~17-18 clusters per cell, severely undermining degrees of freedom under wild cluster bootstrap inference.
+    proposal: >-
+      In M10 (Sections 2, 5, 8) and METHODS Section 4: (1) Define the cluster randomization unit as economically self-contained
+      spatial entities—either distinct small municipalities (1,500–5,000 residents) in non-metropolitan areas or well-defined
+      urban districts bounded by physical transit barriers—and enforce a mandatory geographic buffer zone (>= 2–5 km in
+      rural/peri-urban settings, donut matching in urban settings) between treated and control clusters to prevent spatial
+      interference per Baird et al. (2018); (2) Explicitly state the cluster MDE formula: MDE = (t_{alpha/2} + t_{1-beta}) *
+      sqrt([1 + (m-1)*rho]*(1 - R^2) / [P*(1-P)*J]), parameterized with empirical Spanish baselines (rho_{rent} = 0.08,
+      rho_{labor} = 0.03, m approx 285, R^2 approx 0.35 from pre-trial INCASÒL/MCVL microdata); and (3) Pre-specify
+      spatial autoregressive models to explicitly estimate and purge spatial spillover decay functions.
+    sources:
+      - title: "Optimal Design of Experiments in the Presence of Interference"
+        authors: ["Baird, S.", "Bohren, J. A.", "McIntosh, C.", "Özler, B."]
+        year: 2018
+        doi: "10.1162/rest_a_00716"
+      - title: "Using Randomization in Development Economics Research: A Toolkit"
+        authors: ["Duflo, E.", "Glennerster, R.", "Kremer, M."]
+        year: 2007
+        doi: "10.1016/S1573-4471(07)04061-2"
+  - id: EM-02-02
+    severity: critical
+    module: M10
+    finding: >-
+      M10 Section 5.2 and METHODS Section 4 propose identifying the compensated substitution elasticity (epsilon^c) and
+      income elasticity (eta) by randomizing three benefit phase-out arms: Arm A (0% clawback / pure UBR), Arm B (38%
+      clawback), and Arm C (50% clawback), bounded at zero net grant. Bounding the clawback at zero net grant creates a
+      piecewise linear budget constraint with an abrupt convex kink at the phase-out threshold Y^* = UBR / tau_{clawback}
+      (€21,600/year for 50%; €28,421/year for 38%). This induces two major causal identification failures: (1) Standard
+      linear regression of labor hours on net wages will be severely biased because taxpayers bunch endogenously at the
+      kink point Y^* where the marginal rate drops discontinuously from t_{IRPF} + tau_{clawback} to t_{IRPF} (Saez 2010;
+      Chetty 2012); and (2) Participants with baseline earnings above Y^* face zero marginal tax rate change and receive
+      zero cash grant in Arms B and C, whereas in Arm A they receive the full €10,800/year grant. This confounds treatment
+      intensity across earnings deciles and violates standard linear 2SLS identification assumptions.
+    proposal: >-
+      In M10 (Sections 2, 5) and METHODS Section 4: (1) Formalize the econometrics of the clawback arm by explicitly treating
+      it as a piecewise linear budget set, stratifying the experimental sample into pre-treatment baseline earnings domains
+      (from historical MCVL/AEAT data) so that phase-out treatment effects are estimated specifically over earnings ranges
+      where the clawback is active; (2) Integrate a pre-registered bunching estimator (Saez 2010; Chetty 2012) around the
+      phase-out threshold Y^* to identify compensated substitution elasticities directly from excess mass distributions; and
+      (3) In a dedicated sub-arm, evaluate a continuous negative-income-tax schedule with an end-of-year tax reconciliation
+      over an extended income range, ensuring unbroken marginal wage variation across the earnings distribution.
+    sources:
+      - title: "Do Taxpayers Bunch at Kink Points?"
+        authors: ["Saez, E."]
+        year: 2010
+        doi: "10.1257/pol.2.3.180"
+      - title: "Bounds on Elasticities with Optimization Frictions: A Synthesis of Micro and Macro Evidence on Labor Supply"
+        authors: ["Chetty, R."]
+        year: 2012
+        doi: "10.3982/ECTA9043"
+  - id: EM-02-03
+    severity: major
+    module: M10
+    finding: >-
+      M10 Section 4 and Section 8 propose 'continuous, anonymized microdata linkage via DNI/NIE' across AEAT tax data,
+      TGSS social security records, SEPE unemployment registers, and SNS health records. This protocol is legally and
+      methodologically flawed: (1) Under Art. 95 of Ley 58/2003 General Tributaria (LGT), AEAT tax information is strictly
+      protected by tax secrecy (carácter reservado) and cannot be transferred for scientific research without an express
+      statutory legal authorization (habilitación con rango de ley) or individualized informed consent; (2) Relying on
+      voluntary consent creates acute control group consent attrition: control group members receiving zero cash transfers
+      have strong incentives to withhold consent or drop out of invasive multi-year administrative and clinical tracking,
+      while treatment participants consent in order to receive transfers. This differential consent creates substantial
+      selection bias that invalidates causal inference on earnings, employment, and health; and (3) Linkage cannot be
+      simultaneously 'anonymized' and conducted 'via DNI/NIE', as true cross-registry linkage requires pseudonymization by
+      a trusted third party.
+    proposal: >-
+      In M10 (Sections 4, 7, 8) and METHODS Section 4: (1) Specify a formal statutory sandbox pathway: draft a Model
+      Legislative Provision (Disposición Adicional for the Ley de Presupuestos Generales del Estado or a dedicated Real
+      Decreto-ley) declaring the pilot of high public interest under Art. 95.1.k LGT and Art. 16 of Ley Orgánica 3/2018
+      (LOPDGDD), legally enabling multi-registry linkage for experimental research; (2) To guard against control group
+      attrition if statutory automated linkage is delayed, institute an unconditional 'Evaluation Participation Stipend'
+      (€250–€300/year) for control participants, contractually linked to maintaining register consent and completing
+      annual health surveys; and (3) Establish a cryptographic pseudonymization protocol: mandate that INE or a certified
+      academic Trusted Third Party (TTP) execute keyed HMAC-SHA256 salted hashing on DNI/NIEs to generate a uniform
+      Research Identification Key (RIK) before researcher access.
+    sources:
+      - title: "Ley 58/2003, de 17 de diciembre, General Tributaria (BOE-A-2003-23186)"
+        authors: ["Jefatura del Estado"]
+        year: 2003
+        url: "https://www.boe.es/buscar/act.php?id=BOE-A-2003-23186"
+      - title: "Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales (BOE-A-2018-16673)"
+        authors: ["Jefatura del Estado"]
+        year: 2018
+        url: "https://www.boe.es/buscar/act.php?id=BOE-A-2018-16673"
+  - id: EM-02-04
+    severity: major
+    module: M15
+    finding: >-
+      M15 Section 5.1 and METHODS Section 4 rely on a structural parameter transportability equation that maps
+      finite-horizon trial results to permanent parameters: Delta ln h_{it} = epsilon^c Delta ln w_{it}(1 - tau) +
+      eta [G_{pilot} / (A_{it} + H_{it}) * (1 - (1+r)^{-T}) / (1 - (1+r)^{-(T_{ret} - t)})]. This formulation
+      conflates distinct intertemporal labor supply elasticities: (1) Landmark UBI trials like OpenResearch provided
+      unconditional cash windfalls without altering marginal tax rates (Delta ln w(1 - tau) = 0), meaning they identify
+      exclusively the wealth/income elasticity (eta) and provide zero econometric variation to identify the compensated
+      substitution elasticity (epsilon^c); (2) In finite-horizon trials where clawbacks or taxes are altered (e.g. M10
+      or B-MINCOME), participants face a temporarily depressed net wage over trial horizon T. Under life-cycle labor
+      supply theory (MaCurdy 1981; Blundell & MaCurdy 1999), transitory wage changes identify the Frisch (intertemporal)
+      elasticity (epsilon^{Frisch}), which is substantially larger than the permanent compensated (Hicksian) elasticity
+      (epsilon^c). Treating finite-horizon trial responses as permanent uncompensated or compensated elasticities without
+      netting out Frisch intertemporal substitution will substantially overstate the projected labor supply contraction
+      under a permanent Spanish UBR.
+    proposal: >-
+      In M15 (Sections 2, 5) and METHODS Section 4: (1) Explicitly distinguish windfall experiments (which identify only
+      income effects eta) from clawback/tax experiments (which identify intertemporal substitution); (2) Expand the
+      life-cycle decomposition equation to formally incorporate the Frisch intertemporal substitution margin: Delta ln
+      h_{it} = epsilon^{Frisch} Delta ln w_{it}^{transitory} + epsilon^c Delta ln w_{i}^{permanent} + eta Delta ln
+      lambda_i(G_{pilot}, T), where lambda_i is the marginal utility of lifetime wealth; and (3) Pre-specify empirical
+      bounds on the ratio epsilon^c / epsilon^{Frisch} in [0.4, 0.7] calibrated to Chetty (2012) micro-macro synthesis,
+      ensuring that short-run hours adjustments from 3-year pilots are properly deflated before being fed into EUROMOD
+      (M08, M09) and HANK (M04).
+    sources:
+      - title: "An Empirical Model of Labor Supply in a Life-Cycle Setting"
+        authors: ["MaCurdy, T. E."]
+        year: 1981
+        doi: "10.1086/261023"
+      - title: "Labor Supply: A Review of Alternative Approaches"
+        authors: ["Blundell, R.", "MaCurdy, T."]
+        year: 1999
+        doi: "10.1016/S1573-4463(99)03008-4"

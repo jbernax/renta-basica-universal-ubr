@@ -1,0 +1,186 @@
+reviewer: social-policy
+iteration: 2
+summary: >-
+  The iter-0002 research plan establishes an ambitious foundation for universal cash transfers in Spain,
+  but exhibits four critical social policy and welfare architecture vulnerabilities that threaten the No-Loser
+  Guarantee and distributional integrity: (1) M07/M02 erroneously assumes regional minimum incomes (RGI/RGC)
+  can be extinguished as a State expenditure dividend without recognizing that baseline benefits and housing
+  supplements (PEV/PCV) in the Basque Country and Navarre exceed UBR Tiers A and B, while absorbing IMV/CAPI
+  creates a severe benefit cliff for single-parent families; (2) M09 relies on unitary household equivalization
+  that obscures intra-household hidden female and youth poverty, while assuming 100% baseline take-up contrary
+  to AIReF's empirical 56% IMV non-take-up finding; (3) M14 and M07 absorb non-contributory disability pensions
+  without modeling the substantial non-discretionary extra costs of disability (sobrecoste de la discapacidad)
+  or establishing a tiered universal disability supplement; and (4) M12's automated delivery relies uncritically
+  on municipal Padrón registration and commercial banks, ignoring documented municipal gatekeeping (trabas de
+  empadronamiento) and AML banking exclusion of homeless and irregular residents.
+scores:
+  spain_fit:
+    score: 3.7
+    rationale: >-
+      Accurately references the statutory structure of the Ingreso Mínimo Vital (Ley 19/2021), the SAAD dependency
+      system (Ley 39/2006), and the dual-pillar contributory framework. However, it displays a major institutional blindspot
+      regarding regional minimum income schemes: assuming that regional rentas mínimas are simply extinguished via
+      subsidiary rules overlooks the fact that RGI in Euskadi and RGC in Catalonia often provide higher benefits plus
+      housing supplements (PCV/PEV) than Tier A (€600) or Tier B (€900), which would leave vulnerable regional recipients
+      worse off unless statutory regional top-up rules are codified. Furthermore, it ignores municipal Padrón gatekeeping
+      barriers regulated under the BOE Technical Instructions of 17 February 2020.
+  ethics_equity:
+    score: 3.5
+    rationale: >-
+      Firmly commits to the unconditional individual entitlement principle (D-001) and the No-Loser Guarantee, but
+      suffers from serious distributional gaps: single-parent households (familias monoparentales, 81% female-headed)
+      face net disposable income losses under Tier A when the 22% IMV single-parent supplement and CAPI are absorbed;
+      individuals with certified disabilities risk substantial living standard drops if PNC de invalidez is absorbed
+      without a dedicated supplement offsetting non-discretionary disability expenses; and M09 fails to quantify the
+      alleviation of intra-household hidden poverty among secondary earners and cohabiting youth.
+  coverage:
+    score: 3.8
+    rationale: >-
+      Covers core reference factors F02, F08, F10, F13, F14, and F15, but leaves key welfare dimensions unaddressed:
+      it omits the interaction between regional housing cash benefits (PEV/PCV) and national UBR in M07, lacks empirical
+      calibration of baseline IMV non-take-up in M09 microsimulations, neglects non-monetary material and social deprivation
+      (SMSD) indicators of AROPE, and overlooks the institutional de-familialization of public care services in M14.
+  internal_coherence:
+    score: 3.8
+    rationale: >-
+      Quantitatively harmonized across benefit tiers (A: €600/€240, B: €900/€360, C: €1,200/€480) and AI scenarios S1–S3.
+      However, internal friction persists between modules: M02 claims individual cash transfers eliminate cohabitation
+      penalties, yet M07 absorbs IMV and CAPI without a single-parent adjustment, inadvertently creating an anti-monoparental
+      cliff; M07 treats regional minimum income budgets as an unencumbered State expenditure dividend, conflicting with
+      exclusive regional social assistance competences under Art. 148.1.20 CE; and M12's automated Padrón-to-bank rail
+      contradicts M02's universality pledge by failing to provide an unblockable public payment utility for the unbanked.
+  evidence_grounding:
+    score: 3.6
+    rationale: >-
+      Well-grounded in general basic income literature (Van Parijs & Vanderborght 2017; Hoynes & Rothstein 2019) and
+      international trials (Finland, B-MINCOME, OpenResearch). However, it critically omits Spain's empirical welfare
+      evaluations: it fails to cite AIReF's flagship multi-year IMV evaluation reports documenting the 56% non-take-up
+      stalemate and >70% CAPI non-take-up, misses empirical academic evaluations of Spanish minimum income coverage
+      (Ayala, Jurado & Pérez Mayo 2022), overlooks empirical measurements of the extra costs of disability in Spain
+      (Jiménez Lara & Huete García 2011; Puig & Segura 2021), and neglects intra-household resource allocation evidence
+      from EU-SILC (Ponthieux 2013).
+issues:
+  - id: SP-02-01
+    severity: critical
+    module: M07
+    finding: >-
+      M07's benefit integration architecture asserts that all regional Rentas Mínimas (Basque RGI, Catalan RGC, etc.)
+      will be extinguished via regional subsidiary rules (carácter subsidiario), generating a €1.5–2.0B regional expenditure
+      dividend for the central state/CPFF, while Tier 1 absorbs IMV and CAPI. This produces two severe violations of the
+      No-Loser Guarantee: First, in high-generosity regions like the Basque Country (Ley 14/2022) and Navarre, base benefits
+      combined with housing allowances (Prestación Complementaria de Vivienda / Prestación Económica de Vivienda, ~€300/month)
+      frequently exceed €1,000–€1,200/month for multi-member or single-parent households; extinguishing regional schemes or
+      sweeping their budgets into a State dividend inflicts immediate income losses on regional recipients under Tiers A (€600)
+      and B (€900). Second, in single-parent households (familias monoparentales, >80% women-headed), IMV provides a statutory
+      22% single-parent bonus (Art. 13.2 Ley 19/2021) plus CAPI (up to €115/month/child). Under Tier A (€600 adult / €240 minor),
+      a single mother with one infant receives €840/month, falling strictly below her baseline entitlement under IMV + CAPI
+      (€850.55 + €115 = €965.55/month), creating an unmitigated poverty cliff for the most vulnerable family demographic in Spain.
+    proposal: >-
+      Restructure M07 and M02 with a legally robust two-tier safety net guarantee: (1) Amend M07 Section 5 to establish that
+      regional Rentas Mínimas are not abolished or captured as a central dividend; instead, regional statutes must be harmonized
+      to transform regional schemes into a statutory Complemento Autonómico No Contributivo that sits on top of UBR, preserving
+      all prior regional rights and housing allowances (PEV/PCV) that exceed the UBR baseline; (2) Introduce an explicit
+      Complemento Monoparental y de Primera Infancia in M02 and M07, guaranteeing that single-parent families receive an
+      individual-consistent supplement (e.g., matching the 22% IMV statutory weight or establishing a Tier A infant floor) so
+      that 100% of single-parent households achieve strictly non-negative disposable income deltas across all tiers.
+    sources:
+      - title: "Tercera Opinión sobre el Ingreso Mínimo Vital"
+        authors:
+          - "AIReF"
+        year: 2024
+        url: "https://www.airef.es/es/centro-documental/opiniones/tercera-opinion-sobre-el-ingreso-minimo-vital/"
+      - title: "El ingreso mínimo vital: adecuación y cobertura"
+        authors:
+          - "Luis Ayala Cañón"
+          - "Antonio Jurado Málaga"
+          - "Jesús Pérez Mayo"
+        year: 2022
+        url: "https://www.funcas.es/articulos/el-ingreso-minimo-vital-adecuacion-y-cobertura/"
+  - id: SP-02-02
+    severity: major
+    module: M09
+    finding: >-
+      M09 conducts distributional and poverty microsimulations exclusively through household-level equivalized disposable
+      income (using the modified OECD scale), combined with a standard EUROMOD-Spain baseline that implicitly assumes 100%
+      take-up of existing benefits. This creates two acute distortions from a social policy perspective: (1) By assuming equal
+      income pooling within the household, M09 ignores intra-household inequality and is blind to 'individual hidden poverty'
+      (pobreza oculta individual), where women and young adults living in non-poor households have zero personal income and
+      suffer total financial dependency (Ponthieux 2013; Chiappori 1992); consequently, M09 fails to quantify the primary
+      social benefit of an individual unconditional cash transfer. (2) Assuming 100% baseline take-up of IMV and regional
+      schemes severely underestimates the anti-poverty leap of universal delivery, because in reality AIReF (2024) and Ayala
+      et al. (2022) prove that 56% of eligible households (>450,000 families) and >70% of potential CAPI recipients suffer
+      non-take-up and receive €0 under the status quo.
+    proposal: >-
+      Expand M09 Section 5 to incorporate dual-tier micro-distributional innovations: (1) Formulate an Individualized Poverty
+      and Intra-Household Distribution Metric that computes individual poverty rates and financial autonomy indices (using
+      Ponthieux 2013 modified equivalized income and EET time-use sharing parameters from M14), demonstrating how individual
+      UBR eradicates hidden female and youth poverty; (2) Implement an empirical Non-Take-Up Calibration Protocol in EUROMOD-Spain
+      calibrated to AIReF's 2024 microdata parameters (56% IMV non-take-up, 70% CAPI non-take-up), reporting poverty deltas
+      against both the statutory 100% take-up baseline and the empirical status-quo baseline to explicitly quantify the anti-poverty
+      dividend of automatic non-take-up elimination.
+    sources:
+      - title: "Income pooling and equal sharing within the household: What can we learn from the 2010 EU-SILC module?"
+        authors:
+          - "Sophie Ponthieux"
+        year: 2013
+        doi: "10.2785/21993"
+      - title: "Tercera Opinión sobre el Ingreso Mínimo Vital"
+        authors:
+          - "AIReF"
+        year: 2024
+        url: "https://www.airef.es/es/centro-documental/opiniones/tercera-opinion-sobre-el-ingreso-minimo-vital/"
+  - id: SP-02-03
+    severity: major
+    module: M14
+    finding: >-
+      M14 and M07 treat disability support solely through the lens of functional dependency under Ley 39/2006 (SAAD),
+      stipulating that SAAD benefits remain additive while non-contributory invalidity pensions (PNC de invalidez) and
+      child disability allowances are absorbed into Tier 1. This reflects a fundamental failure of social welfare architecture:
+      living with a certified disability entails non-discretionary, recurring economic extra costs (sobrecoste de la
+      discapacidad / agravio comparativo económico) for medical supplies, personal mobility, specialized transport, therapies,
+      and accessible housing, empirically estimated between €3,500 and €10,000+ per year in Spain (Jiménez Lara & Huete 2011;
+      Puig & Segura 2021). If a disabled individual receiving a PNC de invalidez and regional disability supplements is simply
+      swapped into a flat €900 UBR, their effective standard of living is dramatically lower than that of a non-disabled recipient,
+      and their poverty risk remains artificially high because standard poverty thresholds do not deduct unavoidable disability costs.
+    proposal: >-
+      Establish an explicit Universal Disability Supplement Architecture (Complemento Universal por Discapacidad) in M14 and M07:
+      (1) Define a non-means-tested, individual cash supplement graded by certified disability degree under Real Decreto 888/2022
+      (+25% UBR for disability 33–64%, +50% for 65–74%, and +75%–100% for ≥75% or recognized third-person dependency), fully
+      additive to baseline UBR and distinct from SAAD personal care services; (2) In M09, incorporate an extra-costs-of-disability
+      adjustment to household poverty thresholds following the standard-of-living approach (Puig & Segura 2021), proving that
+      UBR plus the disability supplement eliminates severe material deprivation among persons with disabilities.
+    sources:
+      - title: "El agravio comparativo económico de las personas con discapacidad de la ciudad de Barcelona"
+        authors:
+          - "Jordi Puig i Gabau"
+          - "Marta Segura Bonet"
+        year: 2021
+        url: "https://www.cedid.es/redis/index.php/redis/article/view/646"
+  - id: SP-02-04
+    severity: major
+    module: M12
+    finding: >-
+      M12 posits that automatic delivery via a Unified Monthly Tax-Transfer Clearing Account (Cuenta Única Tributaria-Social)
+      will seamlessly reach >98% take-up by synchronizing AEAT, INSS, and the INE Padrón Continuo through automated SEPA bank
+      transfers. This design uncritically assumes frictionless municipal registration and commercial banking access, ignoring two
+      pervasive structural barriers in Spain: (1) Municipal Padrón Gatekeeping: Despite the legal mandate of Ley 7/1985 (LBRL) and
+      the Technical Instructions of 17 February 2020 (BOE 2 May 2020) requiring registration of unhoused residents and sublet tenants
+      (sin domicilio fijo / infravivienda), dozens of Spanish municipal councils deliberately impose illegal documentation barriers
+      (trabas de empadronamiento), excluding an estimated 300,000–500,000 homeless, undocumented, and precariously housed residents;
+      (2) Commercial Banking Exclusion: Although Real Decreto-ley 19/2018 established basic payment accounts (cuentas de pago básicas),
+      commercial banks systematically deny or freeze accounts for marginalized and unbanked populations under automated anti-money
+      laundering (AML/SEPBLAC) risk scoring and KYC barriers.
+    proposal: >-
+      Upgrade M12 Section 5 with a legally enforceable Last-Mile Social Inclusion & Public Rail Protocol: (1) Codify a statutory
+      Protocolo de Empadronamiento Social y Actuación de Oficio that mandates municipal social services (Servicios Sociales Comunitarios)
+      and accredited social NGOs to directly execute administrative Padrón registrations and assign provisional social identification
+      codes for UBR entitlement; (2) Establish a public delivery rail through the state postal network (Correos) and Banco de España,
+      guaranteeing no-fee basic payment cards and cash collection points with statutory immunity from commercial AML account freezes
+      for subsistence disbursements; (3) Explicitly define the institutional redeployment of municipal social workers (trabajadores
+      sociales), releasing them from means-testing gatekeeping to focus on personalized social accompaniment and community care navigation.
+    sources:
+      - title: "Tercera Opinión sobre el Ingreso Mínimo Vital"
+        authors:
+          - "AIReF"
+        year: 2024
+        url: "https://www.airef.es/es/centro-documental/opiniones/tercera-opinion-sobre-el-ingreso-minimo-vital/"

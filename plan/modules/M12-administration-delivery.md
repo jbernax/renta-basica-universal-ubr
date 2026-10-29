@@ -6,23 +6,23 @@ locked: false
 depends_on: [M03, M06, M07, M10]
 covers: [F13]
 feeds_chapters: [6]
-last_iteration: 1
+last_iteration: 2
 ---
 # M12 · Administrative delivery, digital infrastructure, and take-up
 
 ## 1. Why this matters
-The flagship empirical lesson from Spain's *Ingreso Mínimo Vital* (IMV [@boe-imv-2021]) is that statutory benefit generosity fails in practice when administrative delivery relies on ex-ante means testing, onerous household cohabitation verification, and prior-year tax returns: according to official evaluations [@boe-imv-2021; @arcelus-bade-2015-rgi], over 50% of eligible households in severe poverty never receive IMV, while thousands of impoverished families suffer devastating retrospective debt recovery notices (*cobros indebidos*). UBR's paramount operational advantage is near-universal (>98%) automatic delivery executed through coordinated AEAT, Social Security, and municipal infrastructure.
+The flagship empirical lesson from Spain's *Ingreso Mínimo Vital* (IMV [@boe-imv-2021]) is that statutory benefit generosity fails in practice when administrative delivery relies on ex-ante means testing, onerous household cohabitation verification, and prior-year tax returns: according to official AIReF evaluations [@airef-opinion-imv-2023; @airef-opinion-imv-2024], 56% of eligible households in severe poverty never receive IMV (70% non-take-up for CAPI), while thousands of impoverished families suffer devastating retrospective debt recovery notices (*cobros indebidos*). UBR's paramount operational advantage is near-universal (>98%) automatic delivery executed through coordinated AEAT, Social Security, and municipal infrastructure.
 
 ## 2. Research questions
 - **RQ-M12-01**: How can Spain's *Agencia Estatal de Administración Tributaria* (AEAT), *Instituto Nacional de la Seguridad Social* (INSS), and INE *Padrón Continuo* execute monthly individual UBR disbursement and real-time IRPF withholding clearing with >98% take-up and zero retrospective debt traps?
   - *Hypothesis:* Operating a **Unified Monthly Tax-Transfer Clearing Account** (*Cuenta Única Tributaria-Social*) linked to DNI/NIE—where every adult resident receives the baseline UBR cash transfer via automated SEPA credit on the 1st of each month (or credits it against monthly IRPF payroll withholdings *retenciones a cuenta*) without application forms—raises take-up above 98% and reduces operational overhead per recipient by >70% relative to IMV.
 - **RQ-M12-02**: How can monthly payroll clearing protect employee privacy against employer snooping into household composition, disability, or vulnerability status under GDPR Art. 9 and *Ley Orgánica 3/2018* (LOPDGDD [@boe-lopdgdd-2018])?
   - *Hypothesis:* Restricting employer payroll clearing exclusively to the uniform individual adult UBR credit via an algorithmic, privacy-preserving **Numerical Tax Code** (*Código de Retención Sintético*)—while routing all child supplements (`M02`) and disability top-ups (`M07`) directly through AEAT/INSS bank disbursements—completely shields sensitive personal and family data from employer human resources departments.
-- **RQ-M12-03**: What statutory shields against debt attachment (*inembargabilidad*) and automated algorithmic due-process protections under *Ley 39/2015* [@boe-lpac-2015] and GDPR Art. 22 are legally required to prevent deprivation of the subsistence minimum?
-  - *Hypothesis:* Classifying UBR as strictly *inembargable* under Art. 607 of the *Ley de Enjuiciamiento Civil* (LEC) and Art. 44 of the *Texto Refundido de la Ley General de la Seguridad Social* (TRLGSS [@boe-trlgss-2015]), coupled with an explicit prohibition of automated administrative debt set-offs (Arts. 71–73 *Ley General Tributaria* [@boe-lgt-2003]), prevents arbitrary bank freezes and guarantees continuous access to the *mínimo existencial*.
+- **RQ-M12-03**: What statutory shields against debt attachment (*inembargabilidad*) and last-mile payment rails (bypassing municipal *Padrón* barriers and commercial bank AML account freezes) guarantee continuous access to the *mínimo existencial*?
+  - *Hypothesis:* Classifying UBR as strictly *inembargable* under Art. 607 LEC and Art. 44 TRLGSS [@boe-trlgss-2015], coupled with mandatory *Empadronamiento Social de Oficio* under the BOE Technical Instructions of 17 February 2020 and a public payment delivery rail via *Correos* and Banco de España immune to commercial AML account freezes (*Ley 10/2010*), guarantees unhindered access for unhoused and marginalized populations.
 
 ## 3. State of knowledge
-Empirical public administration literature shows that bureaucratic application hurdles, stigma, frequent recertification audits, and fear of sudden retrospective debt clawbacks are the primary drivers of welfare non-take-up [@hoynes-rothstein-2019; @arcelus-bade-2015-rgi]. Conversely, universal child benefits and automated refundable tax credits routinely achieve 96–99% coverage [@van-parijs-vanderborght-2017]. Evidence from Barcelona's B-MINCOME [@todeschini-bmincome-2020] and Finland's trial [@kangas-2021-finland] proves that unconditional, predictable monthly payment schedules on a fixed calendar day drastically reduce cognitive load, liquidity distress, and recourse to predatory consumer loans.
+Empirical public administration literature shows that bureaucratic application hurdles, stigma, frequent recertification audits, and fear of sudden retrospective debt clawbacks are the primary drivers of welfare non-take-up [@hoynes-rothstein-2019; @airef-opinion-imv-2023]. Conversely, universal child benefits and automated refundable tax credits routinely achieve 96–99% coverage [@van-parijs-vanderborght-2017]. Evidence from Barcelona's B-MINCOME [@todeschini-bmincome-2020] and Finland's trial [@kangas-2021-finland] proves that unconditional, predictable monthly payment schedules on a fixed calendar day drastically reduce cognitive load, liquidity distress, and recourse to predatory consumer loans.
 
 ## 4. Spain context & data sources
 - **Existing Digital Spine:** AEAT digital clearing (*Renta Web*, real-time VAT reporting *SII*, and monthly Form 111/190 payroll withholdings), TGSS/INSS (*Tarjeta Social Digital* integrated registry of all public cash transfers), and INE *Padrón Municipal Continuo*.
@@ -32,6 +32,7 @@ Empirical public administration literature shows that bureaucratic application h
   - *Real Decreto Legislativo 8/2015* (TRLGSS [@boe-trlgss-2015] Art. 44 on non-seizability of basic social security benefits).
   - *Ley 39/2015 del Procedimiento Administrativo Común* (LPAC [@boe-lpac-2015] Art. 41 on automated administrative acts).
   - *Reglamento (UE) 2016/679* (GDPR Art. 9 on special category data; Art. 22 on automated individual decision-making) and Spanish *Ley Orgánica 3/2018* (LOPDGDD [@boe-lopdgdd-2018]).
+  - *Resolución de 17 de febrero de 2020* (BOE 2 de mayo de 2020) on municipal padrón registration for unhoused residents (*padrón social*).
 
 ## 5. Methods & identification
 1. **Gross vs. Net Operational Architecture:**
@@ -40,8 +41,9 @@ Empirical public administration literature shows that bureaucratic application h
 2. **Algorithmic Due Process & Anti-Offset Shield Protocol:**
    - Formalize statutory language forbidding commercial banks and public administrations (AEAT, TGSS, municipal tax agencies) from executing automated offsets (*compensación de oficio*) against the UBR account balance.
    - Establish mandatory human-in-the-loop review under Art. 41 LPAC before any suspension or modification of payment, guaranteeing a 30-day non-suspensive hearing window.
-3. **Last-Mile Inclusion Protocol:**
-   - Map operational protocols for unbanked, homeless, and digitally excluded populations: automatic *de oficio* registration via municipal social work centers (*Servicios Sociales Comunitarios*), subsidized basic payment accounts (*cuentas de pago básicas* under *Real Decreto-ley 19/2018*), and offline cash delivery through *Correos* postal offices.
+3. **Last-Mile Social Inclusion & Public Rail Protocol:**
+   - Codify *Empadronamiento Social de Oficio* to bypass municipal Padrón gatekeeping for unhoused and precariously housed residents under the Technical Instructions of 17 February 2020 (BOE 2 May 2020).
+   - Establish a public payment delivery rail via *Sociedad Estatal Correos y Telégrafos* (*Correos*) and Banco de España providing basic accounts (*cuentas de pago básicas* under *Real Decreto-ley 19/2018*) with statutory immunity from commercial AML/KYC account freezes (*Ley 10/2010*).
 
 ## 6. Pilot implications
 - **Municipal:** Pilots at the municipal level (e.g. Barcelona *B-MINCOME* [@todeschini-bmincome-2020]) cannot alter AEAT payroll tax withholding codes (Form 111) or TGSS social security databases; municipal pilots are confined to gross municipal SEPA transfers, useful for testing prepaid debit cards and municipal social work interface, but unable to evaluate automated tax clearing.
