@@ -69,6 +69,30 @@ def _build_parser() -> argparse.ArgumentParser:
 
     lab_sub.add_parser("summary", help="Print comparative summary of S1, S2, and S3 scenarios")
     lab_sub.add_parser("occupations", help="List CNO-11 occupations and AI exposure scores")
+
+    sim = sub.add_parser("sim", help="Track 2: EUROMOD-Spain microsimulation engine (M02, M03, M07, M09)")
+    sim_sub = sim.add_subparsers(dest="sim_cmd", required=True)
+
+    sim_run = sim_sub.add_parser("run", help="Run full microsimulation and print key results")
+    sim_run.add_argument("--tier", choices=["A", "B", "C"], default="B", help="UBR Benefit Tier (default: B)")
+    sim_run.add_argument("--scenario", choices=["S1", "S2", "S3"], default="S2", help="AI displacement scenario (default: S2)")
+    sim_run.add_argument("--no-stabilizers", action="store_true", help="Disable rent stabilizers (D-008)")
+    sim_run.add_argument("--export", metavar="PATH", help="Export full simulation results to JSON")
+
+    sim_bridge = sim_sub.add_parser("bridge", help="Print Consolidated AP Gross-to-Net Fiscal Bridge")
+    sim_bridge.add_argument("--tier", choices=["A", "B", "C"], default="B")
+    sim_bridge.add_argument("--scenario", choices=["S1", "S2", "S3"], default="S2")
+
+    sim_dec = sim_sub.add_parser("deciles", help="Print household disposable income and winner/loser decile table")
+    sim_dec.add_argument("--tier", choices=["A", "B", "C"], default="B")
+    sim_dec.add_argument("--scenario", choices=["S1", "S2", "S3"], default="S2")
+
+    sim_pov = sim_sub.add_parser("poverty", help="Print poverty (BHC/AHC), inequality, and housing metrics")
+    sim_pov.add_argument("--tier", choices=["A", "B", "C"], default="B")
+    sim_pov.add_argument("--scenario", choices=["S1", "S2", "S3"], default="S2")
+    sim_pov.add_argument("--no-stabilizers", action="store_true")
+
+    sim_sum = sim_sub.add_parser("summary", help="Print comparative matrix across Tiers A, B, C and Scenarios S1, S2, S3")
     return parser
 
 
@@ -219,6 +243,80 @@ def _dispatch(project, args) -> int:
                     f"{res.labor_share_delta_pp:>11.1f}pp {res.baseline_tax_loss_pct_gdp:>15.2f}% €{res.baseline_tax_loss_billion_eur:>12.2f}B"
                 )
             print("-" * 80)
+            return 0
+
+    if args.cmd == "sim":
+        from ubr.microsim.engine import MicrosimulationEngine
+        from ubr.microsim.benefits import UBRTier
+        from ubr.microsim.export import (
+            export_microsim_json,
+            render_decile_table,
+            render_fiscal_bridge_table,
+            render_poverty_table,
+        )
+
+        tier_enum = UBRTier(args.tier) if hasattr(args, "tier") else UBRTier.TIER_B
+        engine = MicrosimulationEngine()
+
+        if args.sim_cmd == "run":
+            res = engine.run_simulation(
+                tier=tier_enum,
+                scenario=args.scenario,
+                enable_rent_stabilizers=not args.no_stabilizers,
+            )
+            print(render_fiscal_bridge_table(res))
+            print()
+            print(render_poverty_table(res))
+            print()
+            print(f"Breakeven Income: €{res.fiscal_bridge.breakeven_gross_income_eur:,.0f} (p{res.fiscal_bridge.breakeven_percentile:.1f})")
+            if args.export:
+                export_microsim_json(res, args.export)
+                print(f"Exported simulation results to: {args.export}")
+            return 0
+
+        if args.sim_cmd == "bridge":
+            res = engine.run_simulation(
+                tier=tier_enum,
+                scenario=args.scenario,
+            )
+            print(render_fiscal_bridge_table(res))
+            return 0
+
+        if args.sim_cmd == "deciles":
+            res = engine.run_simulation(
+                tier=tier_enum,
+                scenario=args.scenario,
+            )
+            print(render_decile_table(res))
+            return 0
+
+        if args.sim_cmd == "poverty":
+            res = engine.run_simulation(
+                tier=tier_enum,
+                scenario=args.scenario,
+                enable_rent_stabilizers=not args.no_stabilizers,
+            )
+            print(render_poverty_table(res))
+            return 0
+
+        if args.sim_cmd == "summary":
+            print(f"{'Tier':<6} {'Scenario':<10} {'Breakeven':>14} {'Gini Pre/Post':>16} {'Child Pov (AHC)':>18} {'Net Balance (%GDP)':>20}")
+            print("-" * 88)
+            for t_code in ["A", "B", "C"]:
+                for sc_code in ["S1", "S2", "S3"]:
+                    t_enum = UBRTier(t_code)
+                    res = engine.run_simulation(tier=t_enum, scenario=sc_code)
+                    fb = res.fiscal_bridge
+                    b_dist = res.baseline_distribution
+                    p_dist = res.post_distribution
+                    print(
+                        f"{t_code:<6} {sc_code:<10} "
+                        f"p{fb.breakeven_percentile:>4.1f} (€{fb.breakeven_gross_income_eur/1e3:>2.0f}k) "
+                        f"{b_dist.gini_coefficient:.3f} -> {p_dist.gini_coefficient:.3f} "
+                        f"{b_dist.ahc_child_poverty_rate:>6.1%} -> {p_dist.ahc_child_poverty_rate:>5.1%} "
+                        f"{fb.consolidated_net_balance_pct_gdp:>+18.2f}%"
+                    )
+            print("-" * 88)
             return 0
 
     return 1

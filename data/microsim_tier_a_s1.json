@@ -1,0 +1,192 @@
+{
+  "metadata": {
+    "tier": "A",
+    "scenario": "S1",
+    "rent_stabilizers_active": true,
+    "no_loser_guarantee_active": true,
+    "behavioral_eti_active": true,
+    "total_population": 46912000.0,
+    "total_households": 19200000.0,
+    "total_adults": 38528000.0,
+    "total_minors": 8384000.0
+  },
+  "fiscal_bridge": {
+    "spain_gdp_eur": 1500000000000.0,
+    "gross_ubr_outlays_eur": 300000000000.0,
+    "gross_ubr_outlays_pct_gdp": 20.0,
+    "baseline_ai_tax_erosion_eur": 14700000000.0,
+    "baseline_ai_tax_erosion_pct_gdp": 0.98,
+    "no_loser_guarantee_cost_eur": 7500000000.0,
+    "no_loser_guarantee_cost_pct_gdp": 0.5,
+    "total_commitments_eur": 322200000000.0,
+    "total_commitments_pct_gdp": 21.48,
+    "delta_irpf_collections_eur": 225000000000.0,
+    "delta_irpf_collections_pct_gdp": 15.0,
+    "dual_pillar_pension_savings_eur": 87000000000.0,
+    "dual_pillar_pension_savings_pct_gdp": 5.8,
+    "abolished_non_contributory_welfare_eur": 14250000000.0,
+    "abolished_non_contributory_welfare_pct_gdp": 0.95,
+    "ieca_compute_withholding_eur": 24000000000.0,
+    "ieca_compute_withholding_pct_gdp": 1.6,
+    "corporate_automation_levy_eur": 18000000000.0,
+    "corporate_automation_levy_pct_gdp": 1.2,
+    "consumption_wealth_tax_adjustments_eur": 16499999999.999998,
+    "consumption_wealth_tax_adjustments_pct_gdp": 1.1,
+    "total_structural_financing_eur": 384750000000.0,
+    "total_structural_financing_pct_gdp": 25.650000000000002,
+    "consolidated_net_balance_eur": 62550000000.0,
+    "consolidated_net_balance_pct_gdp": 4.17,
+    "is_budget_neutral": true,
+    "breakeven_gross_income_eur": 31200.0,
+    "breakeven_percentile": 78.5
+  },
+  "poverty_and_inequality": {
+    "baseline": {
+      "median_eq_bhc": 24271.839457142858,
+      "median_eq_ahc": 22355.255100000002,
+      "gini": 0.3105646806465079,
+      "s80_s20": 5.049206741902438,
+      "theil": 0.1882873579817573,
+      "atkinson_e1": 0.1540791180134976,
+      "bhc_floating_60_p0": 0.2305593451568895,
+      "bhc_severe_40_p0": 0.07366984993178717,
+      "bhc_child_poverty": 0.5038167938931297,
+      "ahc_floating_60_p0": 0.22100954979536153,
+      "ahc_severe_40_p0": 0.15416098226466576,
+      "ahc_child_poverty": 0.4580152671755725,
+      "individualized_poverty": 0.36971350613915416,
+      "impairment_adjusted_poverty": 0.24420190995907232
+    },
+    "post_reform": {
+      "median_eq_bhc": 25600.166666666668,
+      "median_eq_ahc": 24230.132233333334,
+      "gini": 0.23819687007225332,
+      "s80_s20": 3.2517819910313333,
+      "theil": 0.10748004721731812,
+      "atkinson_e1": 0.08951125631865686,
+      "bhc_floating_60_p0": 0.08185538881309687,
+      "bhc_anchored_60_p0": 0.07776261937244201,
+      "bhc_severe_40_p0": 0.01227830832196453,
+      "bhc_child_poverty": 0.1450381679389313,
+      "ahc_floating_60_p0": 0.15143246930422918,
+      "ahc_anchored_60_p0": 0.14188267394270124,
+      "ahc_severe_40_p0": 0.040927694406548434,
+      "ahc_child_poverty": 0.29770992366412213,
+      "individualized_poverty": 0.36971350613915416,
+      "impairment_adjusted_poverty": 0.10231923601637108
+    }
+  },
+  "housing": {
+    "overburden_rate_baseline_pct": 10.0,
+    "overburden_rate_post_pct": 4.0,
+    "overburden_bottom_quintile_baseline_pct": 45.0,
+    "overburden_bottom_quintile_post_pct": 20.0,
+    "private_renter_overburden_baseline_pct": 37.5,
+    "private_renter_overburden_post_pct": 12.5,
+    "total_rent_captured_by_landlords_eur": 1112832000.0,
+    "landlord_tax_recapture_eur": 442350719.99999994,
+    "net_rent_leakage_eur": 670481280.0
+  },
+  "deciles": [
+    {
+      "decile": 1,
+      "mean_baseline_gross_income_eur": 17916.300296108333,
+      "mean_baseline_disposable_income_eur": 15579.391561833334,
+      "mean_post_disposable_income_eur": 25449.88469722186,
+      "delta_disposable_income_eur": 9870.493135388526,
+      "delta_disposable_income_pct": 63.35608869071262,
+      "net_winner_share_pct": 86.66666666666667,
+      "net_loser_share_pct": 0.0
+    },
+    {
+      "decile": 2,
+      "mean_baseline_gross_income_eur": 20939.604768183333,
+      "mean_baseline_disposable_income_eur": 18208.351972333334,
+      "mean_post_disposable_income_eur": 22664.28216,
+      "delta_disposable_income_eur": 4455.930187666665,
+      "delta_disposable_income_pct": 24.47190275340253,
+      "net_winner_share_pct": 66.66666666666666,
+      "net_loser_share_pct": 0.0
+    },
+    {
+      "decile": 3,
+      "mean_baseline_gross_income_eur": 22312.243973916662,
+      "mean_baseline_disposable_income_eur": 19401.951281666665,
+      "mean_post_disposable_income_eur": 24971.106425255824,
+      "delta_disposable_income_eur": 5569.15514358916,
+      "delta_disposable_income_pct": 28.704098174143844,
+      "net_winner_share_pct": 96.66666666666667,
+      "net_loser_share_pct": 0.0
+    },
+    {
+      "decile": 4,
+      "mean_baseline_gross_income_eur": 36282.4373687,
+      "mean_baseline_disposable_income_eur": 31549.945538,
+      "mean_post_disposable_income_eur": 36967.534970341825,
+      "delta_disposable_income_eur": 5417.589432341825,
+      "delta_disposable_income_pct": 17.171469997679285,
+      "net_winner_share_pct": 100.0,
+      "net_loser_share_pct": 0.0
+    },
+    {
+      "decile": 5,
+      "mean_baseline_gross_income_eur": 34615.854978041665,
+      "mean_baseline_disposable_income_eur": 30100.743459166668,
+      "mean_post_disposable_income_eur": 31425.34518085456,
+      "delta_disposable_income_eur": 1324.6017216878936,
+      "delta_disposable_income_pct": 4.400561479435846,
+      "net_winner_share_pct": 50.0,
+      "net_loser_share_pct": 0.0
+    },
+    {
+      "decile": 6,
+      "mean_baseline_gross_income_eur": 46325.976094331796,
+      "mean_baseline_disposable_income_eur": 40283.457473332,
+      "mean_post_disposable_income_eur": 42791.55805733307,
+      "delta_disposable_income_eur": 2508.1005840010766,
+      "delta_disposable_income_pct": 6.2261303803464765,
+      "net_winner_share_pct": 60.0,
+      "net_loser_share_pct": 0.0
+    },
+    {
+      "decile": 7,
+      "mean_baseline_gross_income_eur": 49214.59275289999,
+      "mean_baseline_disposable_income_eur": 42795.298045999996,
+      "mean_post_disposable_income_eur": 44706.870692857396,
+      "delta_disposable_income_eur": 1911.5726468573994,
+      "delta_disposable_income_pct": 4.466781946004161,
+      "net_winner_share_pct": 46.666666666666664,
+      "net_loser_share_pct": 0.0
+    },
+    {
+      "decile": 8,
+      "mean_baseline_gross_income_eur": 70886.01185458103,
+      "mean_baseline_disposable_income_eur": 61640.01030833134,
+      "mean_post_disposable_income_eur": 63567.763547454764,
+      "delta_disposable_income_eur": 1927.7532391234272,
+      "delta_disposable_income_pct": 3.1274382166397365,
+      "net_winner_share_pct": 43.333333333333336,
+      "net_loser_share_pct": 0.0
+    },
+    {
+      "decile": 9,
+      "mean_baseline_gross_income_eur": 98153.48648101029,
+      "mean_baseline_disposable_income_eur": 85350.85780957417,
+      "mean_post_disposable_income_eur": 84884.39413088997,
+      "delta_disposable_income_eur": -466.463678684202,
+      "delta_disposable_income_pct": -0.5465248863988298,
+      "net_winner_share_pct": 30.0,
+      "net_loser_share_pct": 20.0
+    },
+    {
+      "decile": 10,
+      "mean_baseline_gross_income_eur": 125398.7264258456,
+      "mean_baseline_disposable_income_eur": 109042.37080508313,
+      "mean_post_disposable_income_eur": 93966.56702500704,
+      "delta_disposable_income_eur": -15075.803780076094,
+      "delta_disposable_income_pct": -13.82563829891831,
+      "net_winner_share_pct": 0.0,
+      "net_loser_share_pct": 70.0
+    }
+  ]
+}
