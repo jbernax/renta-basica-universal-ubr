@@ -1,0 +1,243 @@
+reviewer: social-policy
+iteration: 3
+summary: 'The iter-0003 research plan demonstrates substantial progress in welfare architecture through the introduction of
+  the statutory Complemento Autonómico No Contributivo, the tiered Complemento Universal por Discapacidad, and the Empadronamiento
+  Social de Oficio rail. However, five critical social-policy structural vulnerabilities undermine its lifecycle equity, administrative
+  viability, and anti-poverty integrity: (1) M07 absorbs contributory unemployment benefits into flat UBR while protecting
+  retirement pension contribution credits exclusively for workers aged 52+ under Art. 280 TRLGSS, terminating SEPE contribution
+  credits for displaced workers under 52 and triggering severe pension hysteresis gaps (lagunas de cotización, Art. 209 TRLGSS)
+  that depress retirement pensions by 20–40% over the life cycle; (2) M12''s inembargabilidad shield fails to neutralize the
+  Social Security Administration''s internal statutory power under Art. 53.2 TRLGSS and Art. 73 LGT to execute administrative
+  offsets (compensación de oficio) directly from ongoing benefits at source, exposing over 150,000 vulnerable families burdened
+  with retrospective IMV overpayment debts (cobros indebidos) to automated 30% benefit deductions; (3) M02''s status-contingent
+  Complemento Monoparental re-introduces intrusive domestic cohabitation inspections (policía de la convivencia) and administrative
+  exclusion for single mothers sharing housing in tight rental markets, which must instead be resolved via a parity-modulated
+  individual child allowance schedule; (4) M09''s microsimulations assess poverty strictly using standard equivalized disposable
+  income without deducting non-discretionary disability expenses, artificially classifying severely disabled recipients as
+  non-poor while omitting the 13 Eurostat Severe Material and Social Deprivation (SMSD) indicators of AROPE; and (5) M14 lacks
+  formal modeling of the substitution elasticity between unconditional cash and professional care services under Ley 39/2006
+  (SAAD), risking widespread care re-familialization and re-feminization if autonomous communities substitute scarce professional
+  care infrastructure with cash.'
+scores:
+  spain_fit:
+    score: 4.1
+    rationale: 'Displays sophisticated institutional awareness of the foral economic agreements (Concierto/Convenio), the
+      SAAD dependency framework (Ley 39/2006), and the padrón social technical instructions (BOE 2 May 2020). However, it
+      retains two critical institutional blindspots: (1) it terminates SEPE-to-TGSS Social Security retirement contribution
+      continuity for AI-displaced workers under age 52, overlooking the statutory calculation mechanics of Art. 209 TRLGSS
+      and the recent unemployment assistance reform under RDL 2/2024; and (2) it overlooks internal administrative debt compensation
+      under Art. 53 TRLGSS, leaving UBR accounts vulnerable to automatic INSS offsets for legacy IMV debts.'
+  ethics_equity:
+    score: 3.9
+    rationale: 'Strongly grounded in individual entitlement (D-001) and the No-Loser Guarantee, with vital protections for
+      disability living costs and regional rights. Nevertheless, major ethical and lifecycle equity concerns persist: (1)
+      relying on an administrative single-parent status bonus recreates invasive domestic cohabitation surveillance of low-income
+      mothers sharing flats; (2) ceasing pension contribution credits for mid-career displaced workers creates a severe inter-generational
+      and gendered pension hysteresis trap; and (3) standard poverty metrics fail to deduct non-discretionary disability extra
+      costs, masking persistent material deprivation.'
+  coverage:
+    score: 4.2
+    rationale: Covers primary social policy reference factors F02, F08, F10, F13, F14, and F15 with high granularity. However,
+      it still omits the institutional transformation and de-bureaucratization of municipal social services under regional
+      Leyes de Servicios Sociales, overlooks the 13 Eurostat Severe Material and Social Deprivation (SMSD) items within AROPE,
+      and neglects the risk of care re-familialization and service substitution under the SAAD dependency framework.
+  internal_coherence:
+    score: 4.0
+    rationale: 'Benefit parameters (Tiers A/B/C) and AI shock paths (S1–S3) are quantitatively harmonized. Yet internal structural
+      friction remains: M02 commits to unconditional individual transfers to eliminate cohabitation surveillance, yet introduces
+      a household-contingent Complemento Monoparental that re-invites cohabitation policing; M12 guarantees inembargabilidad
+      against commercial bank seizures, but fails to prevent TGSS administrative compensation under Art. 53 TRLGSS; and M07
+      preserves pension credits for workers aged 52+ while stranding younger displaced cohorts.'
+  evidence_grounding:
+    score: 4.0
+    rationale: Substantially strengthened by integrating official AIReF IMV evaluations, Puig & Segura (2021) disability cost
+      estimates, and Ponthieux (2013) intra-household pooling metrics. However, it lacks empirical grounding in Spanish pension
+      literature regarding the Beveridgean transition and contribution gap penalties (Conde-Ruiz & González 2016), omits the
+      standard-of-living approach to disability poverty measurement (Zaidi & Burchardt 2005), and does not cite recent microsimulation
+      evidence on Spanish family benefit architectures (Ayala et al. 2025).
+issues:
+- id: SP-03-01
+  severity: critical
+  module: M07
+  finding: M07's Dual-Pillar integration absorbs contributory unemployment benefits (max(0, B_contrib - UBR)) and general
+    SEPE subsidios, stipulating that workers aged 52+ preserve retirement pension contribution credits (cotización asimilada
+    al alta por jubilación) under Art. 280 TRLGSS. However, it completely fails to protect the pension accrual of displaced
+    workers under age 52. Under current Spanish Social Security law (Arts. 209, 273, and 280 TRLGSS, reformed by Real Decreto-ley
+    2/2024), when a worker receives contributory unemployment benefits, SEPE directly pays Social Security contributions for
+    common contingencies (retirement, disability, survival) to the TGSS on the worker's behalf. If UBR absorbs contributory
+    unemployment benefits into a flat non-contributory cash transfer, SEPE ceases paying these Social Security retirement
+    contributions. In Spain, retirement pensions are calculated by averaging the last 25 years (300 months) of contribution
+    bases (Art. 209 TRLGSS). While general-regime employees receive partial gap-filling (integración de lagunas at 100% of
+    the minimum base for 48 months and 50% thereafter), autonomous workers (RETA) and domestic workers receive zero gap-filling,
+    and prolonged AI displacement under S2 (20% FTE displaced) or S3 (35% displaced) will permanently depress the regulatory
+    base of younger and mid-career workers by 20–40% upon retirement. By terminating SEPE pension contributions for workers
+    under 52 without a universal replacement credit, the plan creates a devastating life-cycle pension hysteresis trap, directly
+    violating the No-Loser Guarantee over the recipient's life cycle.
+  proposal: 'Restructure M07 Section 5 and M02 to establish a universal Crédito Cotizatorio Básico por Transición Tecnológica
+    (or Cotización Ficticia de Inserción): (1) Mandate that every adult recipient receiving baseline UBR who is not formally
+    employed or contributing through employment maintains an automatic asimilación al alta in the Social Security system with
+    a continuous retirement contribution base equal to 100% of the minimum wage base (base mínima de cotización del Régimen
+    General / SMI), funded directly from the automation tax buffer (M03/M16); (2) For displaced workers previously receiving
+    contributory unemployment benefits, preserve their pre-displacement regulatory contribution base for up to 24 months,
+    preventing any erosion of accumulated pension entitlements; (3) In M07 deliverables, include a life-cycle pension simulation
+    assessing replacement rates across age cohorts (25–35, 36–51, 52–65) under S1–S3.'
+  sources:
+  - title: 'From Bismarck to Beveridge: the other pension reform in Spain'
+    authors:
+    - J. Ignacio Conde-Ruiz
+    - Clara I. González
+    year: 2016
+    doi: 10.1007/s13209-016-0148-3
+  - title: Texto Refundido de la Ley General de la Seguridad Social
+    authors:
+    - Jefatura del Estado
+    year: 2015
+    url: https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724
+- id: SP-03-02
+  severity: critical
+  module: M12
+  finding: M12 Section 5 formulates an inembargabilidad shield anchored in Art. 607 LEC and Art. 44 TRLGSS, plus LPAC Art.
+    41 automated due-process safeguards, to guarantee unhindered access to the mínimo existencial. However, this legal architecture
+    overlooks the Social Security Administration's internal statutory power under Art. 53.2 TRLGSS and Ley 58/2003 (LGT Art.
+    73) to execute administrative offsets (compensación interna de oficio) of up to 30% directly from ongoing Social Security
+    disbursements at source, completely bypassing civil judicial attachment under the LEC. Over 150,000 vulnerable Spanish
+    households are currently burdened with thousands of euros in retroactive debt recovery claims (cobros indebidos) issued
+    by the INSS due to 12-to-24-month administrative lags in reconciling annual IRPF data (AIReF 2023, 2024). If UBR absorbs
+    IMV and is disbursed via INSS or AEAT rails, automated TGSS offset algorithms will mechanically deduct 30% from the monthly
+    subsistence transfers of the poorest families to amortize prior IMV overpayment debts, plunging them back into destitution
+    (€420 under Tier A or €630 under Tier B) and subverting the universality and unconditional living floor of UBR (D-001).
+  proposal: 'Upgrade M12 Section 5 and M07 with an ironclad Statutory Debt Cancellation and Administrative Immunity Protocol:
+    (1) Draft a model Disposición Transitoria enacting a comprehensive Amnistía Social y Cancelación de Oficio de Cobros Indebidos
+    del IMV that legally extinguishes all non-fraudulent retroactive IMV debt claims generated by administrative tax-reconciliation
+    delays prior to UBR implementation; (2) Explicitly amend the inembargabilidad statutory charter in M12 to declare that
+    baseline UBR clearing accounts are strictly immune from administrative compensation, set-off, or deduction (incompensabilidad
+    absoluta) under Art. 53 TRLGSS and Arts. 71–73 LGT, barring any public entity (TGSS, AEAT, regional treasuries) from executing
+    automatic source deductions against the subsistence cash transfer; (3) Mandate that any contested administrative recovery
+    action must follow a separate judicial pathway without impairing ongoing monthly liquidity.'
+  sources:
+  - title: Tercera Opinión sobre el Ingreso Mínimo Vital
+    authors:
+    - Autoridad Independiente de Responsabilidad Fiscal (AIReF)
+    year: 2024
+    url: https://www.airef.es/es/centro-documental/opiniones/tercera-opinion-sobre-el-ingreso-minimo-vital/
+  - title: Texto Refundido de la Ley General de la Seguridad Social
+    authors:
+    - Jefatura del Estado
+    year: 2015
+    url: https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724
+- id: SP-03-03
+  severity: major
+  module: M02
+  finding: 'To eliminate the benefit cliff for single-parent families (81% female-headed) under Tier A (€600 adult + €240
+    child vs. €965.55 IMV baseline), M02 and M07 introduce an ad-hoc Complemento Monoparental y de Primera Infancia (+€150–€200/month).
+    While fiscally protective on paper, this design creates a profound welfare architecture flaw: in Spanish administrative
+    practice, conditioning cash on single-parent status (unidad de convivencia monoparental) requires intrusive verification
+    that the claimant has no romantic cohabitant or undeclared adult partner (policía de la convivencia). Under IMV (Art.
+    13.2 Ley 19/2021), verifying single parenthood is one of the leading causes of administrative rejections, multi-month
+    processing delays, and loss of benefits when single mothers share an apartment with non-relatives or flatmates to cope
+    with urban rent inflation (M05). Furthermore, Spain lacks a unified national statute on single parenthood, leaving definitions
+    to conflicting regional decrees. Introducing a status-contingent single-parent bonus contradicts UBR''s core principle
+    of unconditional individual entitlement (D-001), re-introducing means-testing, domestic surveillance, and cohabitation
+    penalties through the back door.'
+  proposal: 'Replace the status-contingent adult single-parent bonus in M02 with a structural Parity-Modulated Individual
+    Child Benefit Schedule (Escala de Equivalencia por Paridad de Infancia): (1) Re-calibrate child benefit weights so that
+    the first dependent minor in any family receives an individual UBR of 50% of the adult benefit (€300 under Tier A, €450
+    under Tier B), while second and subsequent minors receive 35–40% (€210–€240 under Tier A). Because the highest fixed economies-of-scale
+    costs of housing and childrearing are concentrated on the first dependent child, this parity modulation automatically
+    ensures that single-parent families exceed previous IMV + CAPI baselines (€600 + €300 = €900 for 1 child under Tier A,
+    or €1,110 for 2 children) purely through individual child entitlements, completely eliminating the need for any administrative
+    investigation of adult cohabitation or marital status; (2) In M07, for any residual legacy cases during phased transition,
+    establish an irrebuttable statutory presumption of single parenthood based solely on the Civil Registry (Libro de Familia)
+    or judicial custody rulings, explicitly prohibiting administrative disqualification based on municipal Padrón cohabitation
+    with non-lineal roommates.'
+  sources:
+  - title: 'Broadening Well-being Indicators for Developed Countries: A New Proposal Based on Key Social Needs'
+    authors:
+    - Luis Ayala
+    - Olga Cantó
+    - Rosa Martínez
+    - Carolina Navarro
+    - Marina Romaguera-de-la-Cruz
+    year: 2025
+    doi: 10.1007/s11205-025-03633-7
+  - title: Ley 19/2021, de 20 de diciembre, por la que se establece el ingreso mínimo vital
+    authors:
+    - Jefatura del Estado
+    year: 2021
+    url: https://www.boe.es/buscar/act.php?id=BOE-A-2021-21007
+- id: SP-03-04
+  severity: major
+  module: M09
+  finding: 'While M14 and M07 established the Complemento Universal por Discapacidad (+25% to +100%) to offset non-discretionary
+    impairment expenses (€3,500–€10,000/yr per Puig-Segura 2021), M09''s distributional microsimulation methodology continues
+    to measure poverty and inequality strictly through standard unadjusted equivalized disposable income against headline
+    AROPE thresholds. This generates a major methodological blindspot: because standard AROPE thresholds treat disability
+    supplements as unencumbered discretionary income without deducting non-discretionary disability-specific expenditures
+    (specialized transportation, medical prosthetics, personal care aids, thermal comfort), households with disabled members
+    are mechanically classified as non-poor and categorized in middle-income deciles, even when their effective disposable
+    standard of living falls far below subsistence (Zaidi & Burchardt 2005). Furthermore, M09 focuses almost exclusively on
+    monetary poverty (P0, P1, P2, Gini), ignoring the non-monetary Severe Material and Social Deprivation (SMSD / carencia
+    material y social severa) pillar of the AROPE indicator (13 Eurostat items including utility arrears, inability to face
+    unexpected expenses, and inadequate heating), which is critical for evaluating whether cash transfers actually eradicate
+    living deprivation.'
+  proposal: 'Expand M09 Section 5 and deliverables with an integrated Multi-Dimensional Poverty and Disability-Equivalized
+    Microsimulation Protocol: (1) Formulate an Impairment-Adjusted Equivalized Disposable Income Metric (y_i^adj = (y_i^disp
+    - C_i^disab)/phi(k_i)) in EUROMOD-Spain, applying the standard-of-living estimation approach (Zaidi & Burchardt 2005)
+    calibrated with ECV health/disability modules and Puig-Segura et al. (2021) parameters to accurately reflect effective
+    poverty rates among disabled populations; (2) Model the 13 Eurostat SMSD deprivation items using a micro-econometric probit/logit
+    module linked to household net cash liquidity and utility/housing cost burdens, demonstrating how universal cash plus
+    disability supplements reduces material deprivation across Autonomous Communities.'
+  sources:
+  - title: 'Comparing Incomes When Needs Differ: Equivalization for the Extra Costs of Disability in the UK'
+    authors:
+    - Asghar Zaidi
+    - Tania Burchardt
+    year: 2005
+    doi: 10.1111/j.1475-4991.2005.00146.x
+  - title: El agravio comparativo económico de las personas con discapacidad de la ciudad de Barcelona
+    authors:
+    - Jordi Puig i Gabau
+    - Marta Segura Bonet
+    year: 2021
+    url: https://www.cedid.es/redis/index.php/redis/article/view/646
+- id: SP-03-05
+  severity: major
+  module: M14
+  finding: In Spain, care work is heavily feminized, with women providing over 80% of informal eldercare and childcare. Under
+    the Ley de Promoción de la Autonomía Personal y Atención a las personas en situación de dependencia (Ley 39/2006, SAAD),
+    the cash allowance for non-professional home care (Prestación Económica para Cuidados en el Entorno Familiar, PECEF under
+    Art. 18) historically became the default benefit, causing widespread re-familialization and re-feminization of care that
+    trapped female caregivers in unpaid domestic labor and prompted withdrawal from the formal labor market. While M14 Section
+    7 acknowledges that UBR might risk female labor-market detachment and suggests pairing it with 0–3 childcare and SAAD
+    preservation, M14 completely lacks formal research questions, empirical estimands, or structural models capturing the
+    substitution elasticity between unconditional individual cash transfers and SAAD professional care services (such as Servicio
+    de Ayuda a Domicilio [SAD], day centers, and residential places). If an unconditional cash transfer of €900/month is disbursed
+    without a legally binding expansion of professional care services, cash will economically substitute for scarce public
+    care infrastructure. Regional governments (Comunidades Autónomas), which co-finance 50%+ of SAAD expenditures under Art.
+    32 Ley 39/2006, will face strong budgetary incentives to cut or freeze expensive professional care contracts, transferring
+    the physical and emotional burden of intensive dependency care back into private households, rolling back decades of feminist
+    de-familialization.
+  proposal: 'Expand M14 with a dedicated Care Economy Structural Modeling & Service Non-Substitution Architecture: (1) Add
+    a new research question (or empirical submodule in Section 5) specifying a multi-sectoral time-use and care-choice model
+    (estimating cross-price and income elasticities of demand between informal home care, formal private care, and SAAD subsidized
+    professional care across income deciles using INE EET and SAAD administrative records); (2) Codify a statutory Cláusula
+    de Garantía de No-Sustitución de Servicios Profesionales de Cuidados in M14 and M07, prohibiting Autonomous Communities
+    from substituting SAAD direct in-kind services (SAD, telecare, day care) with cash or reducing public care contracts following
+    UBR rollout; (3) Incorporate an explicit pilot metric in M10 tracking caregiver burden, respite hours, and formal care
+    utilization to empirically test for re-familialization dynamics.'
+  sources:
+  - title: Ley 39/2006, de 14 de diciembre, de Promoción de la Autonomía Personal y Atención a las personas en situación de
+      dependencia
+    authors:
+    - Jefatura del Estado
+    year: 2006
+    url: https://www.boe.es/buscar/act.php?id=BOE-A-2006-21990
+  - title: 'Broadening Well-being Indicators for Developed Countries: A New Proposal Based on Key Social Needs'
+    authors:
+    - Luis Ayala
+    - Olga Cantó
+    - Rosa Martínez
+    - Carolina Navarro
+    - Marina Romaguera-de-la-Cruz
+    year: 2025
+    doi: 10.1007/s11205-025-03633-7

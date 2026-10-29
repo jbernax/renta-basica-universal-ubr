@@ -1,10 +1,9 @@
 # Research Plan Improvement Report
 
-**Status:** `continue`
+**Status:** `checkpoint`
 
 **Reasons / SOTA gates:**
-- 2/3 iterations in this cycle
-- 2 open critical issue(s)
+- 3 iteration(s) since last checkpoint (limit 3)
 
 ## Score History
 
@@ -12,160 +11,152 @@
 |---|---:|---:|---:|---:|---:|---:|
 | `iter-0001` | **4.65** | — | 4.40 | 0 | 100% | 100% |
 | `iter-0002` | **4.81** | +0.16 | 4.70 | 2 | 100% | 100% |
+| `iter-0003` | **5.00** | +0.19 | 5.00 | 0 | 100% | 100% |
 
-## Rubric Breakdown (`iter-0002`)
+## Rubric Breakdown (`iter-0003`)
 
 | Criterion | Weight | Score | Delta |
 |---|---:|---:|---:|
-| Coverage of factors (`coverage`) | 0.12 | 4.80 | +0.20 |
-| Research question quality (`rq_quality`) | 0.12 | 4.80 | +0.10 |
-| Methodological rigor (`methodological_rigor`) | 0.14 | 4.80 | +0.20 |
-| Evidence grounding (`evidence_grounding`) | 0.12 | 4.80 | +0.10 |
-| Spain institutional fit (`spain_fit`) | 0.12 | 4.90 | +0.10 |
-| Treatment of AI-displacement scenarios (`ai_scenarios`) | 0.08 | 4.80 | +0.30 |
-| Feasibility (data, time, budget) (`feasibility`) | 0.08 | 4.70 | +0.30 |
-| Internal coherence (`internal_coherence`) | 0.08 | 4.80 | +0.10 |
-| Counterarguments and risks (`counterarguments`) | 0.08 | 4.80 | +0.10 |
-| Ethics and equity (`ethics_equity`) | 0.06 | 4.90 | +0.10 |
+| Coverage of factors (`coverage`) | 0.12 | 5.00 | +0.20 |
+| Research question quality (`rq_quality`) | 0.12 | 5.00 | +0.20 |
+| Methodological rigor (`methodological_rigor`) | 0.14 | 5.00 | +0.20 |
+| Evidence grounding (`evidence_grounding`) | 0.12 | 5.00 | +0.20 |
+| Spain institutional fit (`spain_fit`) | 0.12 | 5.00 | +0.10 |
+| Treatment of AI-displacement scenarios (`ai_scenarios`) | 0.08 | 5.00 | +0.20 |
+| Feasibility (data, time, budget) (`feasibility`) | 0.08 | 5.00 | +0.30 |
+| Internal coherence (`internal_coherence`) | 0.08 | 5.00 | +0.20 |
+| Counterarguments and risks (`counterarguments`) | 0.08 | 5.00 | +0.20 |
+| Ethics and equity (`ethics_equity`) | 0.06 | 5.00 | +0.10 |
 
-## Latest Iteration Details (`iter-0002`)
+## Latest Iteration Details (`iter-0003`)
 
 ### Judge Assessment
 
-The Universal Basic Rent (Spain) research plan in Iteration 2 represents an exceptionally mature, scientifically rigorous, and institutionally grounded blueprint. Across all 10 rubric dimensions, the plan achieves a weighted score of 4.81 out of 5.0, reflecting field-defining research question design, frontier empirical and macroeconomic methodologies, and exhaustive institutional alignment with Spanish constitutional, statutory, and territorial frameworks. Key methodological and architectural strengths include the closed 4-stage micro-macro general-equilibrium pipeline linking EUROMOD-Spain and open-economy HANK; the two-stage spatial saturation pilot design with explicit MDE power calculations and bunching econometrics; the resolution of complex constitutional, foral, and EU-law hurdles (conforming to STC 158/2021, STC 19/2024, the Concierto Vasco, Directive 2004/38/EC, and the CJEU Schumacker doctrine); and an exemplary ethical architecture incorporating an inviolable No-Loser Guarantee, additive disability supplements, and last-mile administrative delivery protections. The identified critical issues represent actionable refinements for cross-border B2B compute tax enforcement and commuting-flow spillover controls rather than structural impediments. The plan stands at the threshold of academic publication readiness in leading economics and policy venues and provides an audit-ready evaluation template for Spanish fiscal and social institutions (AIReF, IEF, and the Ministries of Inclusion and Finance).
-
-### Open Critical Issues
-
-- **JD-02-01** (M16): Cross-border B2B compute tax enforcement vulnerability under OECD double-taxation treaties: While M16 specifies origin-based surplus taxation on domestic firms and destination digital services taxes, foreign AI foundation-model providers lacking a physical permanent establishment in Spain can contest direct corporate tax withholding on cloud compute subscriptions under existing bilateral tax treaties (CDIs modeled on OECD Arts. 7 and 12). The module should formalize a domestic B2B reverse-charge withholding mechanism under the Spanish General Tax Law to ensure collection resilience.
-- **JD-02-02** (M10): Residual spatial commuting contamination across SUTVA buffer boundaries in metropolitan pilot clusters: Although M10 enforces 2–5 km geographic buffer zones and donut matching, daily inter-cluster labor commuting and consumer shopping between treated and control units in high-density metropolitan areas could still introduce indirect general-equilibrium wage or retail price spillovers. The econometric specification should explicitly incorporate a commuting-flow spatial weight matrix using mobile-phone mobility microdata (INE Estudio de Movilidad) to filter residual interference.
+The Universal Basic Rent (Spain) research plan represents a state-of-the-art, publication-grade academic and policy blueprint that meets or exceeds the highest standards of top-tier economics journals (e.g., Quarterly Journal of Economics, American Economic Review, Journal of Public Economics) and official independent fiscal authorities (AIReF, IEF, European Commission). Across all 17 research modules and cross-cutting methodological documents, the plan seamlessly integrates frontier task-based AI displacement modeling (CNO-11/ISCO crosswalks, sequential shock protocols), micro-macro general equilibrium closure (a closed Gauss-Seidel loop between EUROMOD-Spain and an open-economy currency-union HANK model), deep Spanish constitutional and territorial institutional precision (strictly bifurcating Common Regime LOFCA/Ley 22/2009 mechanisms from Basque and Navarrese Foral Treaties as cargas no asumidas, and establishing an Objective Federal Fiscal Benchmark under Art. 149.1.14 CE to bypass regional housing boycotts under STC 79/2024), rigorous causal evaluation design (a two-stage randomized saturation cluster trial across J=70 clusters with mobile-phone commuting spillover closure, Saez/Chetty bunching at convex disregard kinks, and Kleven missing-mass phase-outs), and gold-standard ethical protections (an inviolable No-Loser Guarantee, universal disability supplements, SAAD care non-substitution, and statutory inembargabilidad shields with child-support carveouts under Art. 608 LEC). With all 10 rubric criteria achieving top-anchor ratings (5.0/5.0), zero open critical issues, and 127 machine-verified citations, the research plan is fully mature and ready for empirical execution and monograph drafting.
 
 ### Latest Changelog
 
-# Changelog — Iteration 0002 (`iter-0002`)
+# Changelog — Iteration 0003 (`iter-0003`)
 
 ## Overview
-Iteration 0002 resolved critical institutional, econometric, constitutional, housing, and social-policy vulnerabilities identified across 5 specialist reviews (`social-policy`, `evaluation-methodologist`, `housing-economist`, `political-economist`, and `red-team`). A total of 9 high-leverage synthesis proposals (`SYN-02-01` through `SYN-02-09`) were executed across `plan/00-scope.md`, `plan/methods.md`, 12 factor modules (`plan/modules/M01`, `M02`, `M03`, `M05`, `M06`, `M07`, `M08`, `M09`, `M10`, `M11`, `M12`, `M13`, `M14`, `M15`, `M16`, `M17`), and `plan/sources.yaml`.
+Iteration 0003 completed the full specialist review cycle across all 9 research dimensions (`labor-economist`, `public-finance`, `macroeconomist`, `spanish-eu-law`, `social-policy`, `evaluation-methodologist`, `housing-economist`, `political-economist`, and `red-team`). A total of 40 concrete issues were synthesized into 9 unified, actionable proposals (`SYN-03-01` through `SYN-03-09`). 
 
-All 86 cited academic papers, statutory texts, and legal rulings are 100% machine-verified over HTTP or official gazette repositories. 100% of reference factors (F01–F17) remain covered with 0 errors and 0 warnings.
+These proposals were systematically executed across `plan/methods.md`, 16 factor modules (`M01`, `M02`, `M03`, `M05`, `M06`, `M07`, `M08`, `M09`, `M10`, `M11`, `M12`, `M13`, `M14`, `M15`, `M16`, and `M17`), and `plan/sources.yaml` (expanding the verified bibliography from 86 to 126 machine-verified sources).
 
 ---
 
 ## Applied Changes by Proposal
 
-### `SYN-02-01` · Macro-Micro Fiscal Loop & S2/S3 Baseline Tax Erosion
-- **Contributing Issues:** `RT-02-01` (critical), `RT-02-04` (major)
+### `SYN-03-01` · Macro-Micro Accounting & Fiscal Realism: Disentangling Baseline Revenue Losses from GDP Ratios
+- **Contributing Issues:** `RT-03-03` (critical), `MA-03-01` (critical), `PF-03-04` (major)
 - **Target Files:**
-  - `plan/00-scope.md`
   - `plan/methods.md`
   - `plan/modules/M01-ai-labor-displacement.md`
   - `plan/modules/M03-fiscal-financing.md`
-  - `plan/modules/M16-ai-rent-capture-sovereign-fund.md`
 - **Summary of Changes:**
-  - In `methods.md` and `M03`, closed the feedback loop between macroeconomic displacement and micro tax simulation: mandated that EUROMOD-Spain runs directly on counterfactual post-displacement wage and employment distributions generated by M01/HANK across S1, S2, and S3, rather than unadjusted static survey weights.
-  - In `M01` and `M03`, explicitly incorporated the 11.55% of GDP baseline tax revenue collapse under S2 into the consolidated Administraciones Públicas fiscal bridge, specifying that baseline public services (~€125B/year) must be co-financed by expanding corporate automation surplus taxes (`M16`), consumption taxes, and wealth levies as the labor tax base contracts.
-  - In `M16`, clarified that the Sovereign AI Dividend Fund is an intergenerational capital buffer yielding 0.5–0.8% of GDP/year, which buffers transition costs but cannot fund the entirety of Tier C, requiring broad-base corporate automation surplus taxes.
-- **Sources Cited:** `acemoglu-2024-macro-ai`, `korinek-suh-2024`, `hoynes-rothstein-2019`.
+  - Disentangled the relative labor tax base contraction from absolute percentage points of GDP: under S1 ($\Delta s_L = -2.5$ pp), baseline revenue erosion is ~0.98% of GDP; under S2 ($\Delta s_L = -7.0$ pp), baseline erosion is ~2.73% of GDP (~€41B/year on Spain's €1,500B GDP at a 39% tax wedge); under S3 ($\Delta s_L = -15.0$ pp), baseline erosion is ~5.85% of GDP.
+  - Reconciled the consolidated *Administraciones Públicas* fiscal bridge in `M03`: gross outlays (-30.0% GDP) balanced against non-contributory welfare offsets (+0.95% GDP), contributory pension integration (+5.8% GDP net of tax shields), restructured IRPF rates on remaining labor and capital (+22.5% GDP, decile 84 breakeven), corporate surplus and AI compute withholding (+2.8% GDP), and consumption/wealth taxes (+0.7% GDP).
+  - Extended the dynamic macro-micro closure in `methods.md` to incorporate endogenous sovereign debt service feedback ($\Delta (r_t - g_t) D_{t-1}$) under EU Regulation 2024/1263 Net Primary Expenditure rules.
+- **Sources Cited:** `kaplan-moll-violante-2018-hank`, `auclert-rognlie-straub-2024`, `regulation-eu-2024-1263-net-expenditure`.
 
-### `SYN-02-02` · Spatial Saturation Buffers, SUTVA, and Clawback Kink Econometrics
-- **Contributing Issues:** `EM-02-01` (critical), `EM-02-02` (critical), `RT-02-02` (critical)
+### `SYN-03-02` · Foreign AI Compute Tax Enforcement & Domestic B2B Reverse-Charge Architecture
+- **Contributing Issues:** `RT-03-01` (critical / `JD-02-01`), `PF-03-02` (critical)
+- **Target Files:**
+  - `plan/modules/M16-ai-rent-capture-sovereign-fund.md`
+  - `plan/modules/M03-fiscal-financing.md`
+- **Summary of Changes:**
+  - Formulated the *Impuesto Especial sobre Capacidad y Computación de IA* (*IECA*) under *RDLeg 5/2004* (TRIRNR) and *Ley 58/2003* (LGT), establishing a domestic B2B destination-based withholding / reverse-charge mechanism on cloud compute, GPU hosting, and foundation model API inference purchased from non-resident providers lacking physical permanent establishments.
+  - Enforced domestic compliance by amending *Ley 27/2014* (LIS Art. 15) to condition corporate tax deductibility of cloud compute expenses on verified withholding certificates, overcoming OECD Double Taxation Treaty permanent establishment loopholes.
+  - Replaced rigid annual Sovereign Fund accumulation targets with a Counter-Cyclical Windfall Accumulation Rule (funding triggered only when sectoral operating surplus exceeds 120% of historical baselines), preventing frontloaded primary deficit drag under Regulation (EU) 2024/1263.
+  - Established constitutional non-confiscatoriness limits for capital rent capture under Art. 31.3 CE and STC 182/2021.
+- **Sources Cited:** `rdleg-5-2004-trirnr`, `boe-lgt-2003`, `ley-27-2014-impuesto-sociedades`, `oecd-model-tax-convention-2017`, `council-directive-2022-2523-pillar2`, `devereux-2021-taxing-profit`, `regulation-eu-2024-1263-net-expenditure`, `stc-182-2021-plusvalia`.
+
+### `SYN-03-03` · Spatial Commuting Mobility Spillover Closure & Two-Stage Saturation Econometrics
+- **Contributing Issues:** `RT-03-02` (critical / `JD-02-02`), `EM-03-02` (critical)
+- **Target Files:**
+  - `plan/methods.md`
+  - `plan/modules/M10-pilot-evaluation-design.md`
+- **Summary of Changes:**
+  - Integrated MITMA/INE mobile telephony commuting matrices into an empirical spatial weight matrix ($W_{\text{mobility}}$), specifying continuous spatial spillover exposure estimators to eliminate residual SUTVA violations across municipal commuting borders.
+  - Replaced single-stage cluster MDE formulas with Baird et al. (2018) two-stage saturation variance math, accounting for intra-cluster correlation and cross-cluster spillovers.
+  - Stratified rental evaluation clusters by private rental density (>35%), mandated 100% census linkage with regional tenancy deposit registries (INCASÒL, IVIMA, AVRA), and pre-specified Synthetic Difference-in-Differences (SDID, Arkhangelsky et al. 2021).
+- **Sources Cited:** `ine-movilidad-bigdata-2024`, `baird-2018-interference`, `arkhangelsky-2021-sdid`.
+
+### `SYN-03-04` · Non-Convex Kink Resolution & Missing-Mass Econometric Correction
+- **Contributing Issues:** `EM-03-01` (critical), `EM-03-04` (major)
 - **Target Files:**
   - `plan/methods.md`
   - `plan/modules/M08-labor-supply-behavior.md`
   - `plan/modules/M10-pilot-evaluation-design.md`
+  - `plan/modules/M15-international-evidence.md`
 - **Summary of Changes:**
-  - Redefined cluster randomization units in `M10` and `methods.md` from narrow, porous urban census tracts to economically self-contained spatial units: distinct small municipalities (1,500–5,000 residents) in non-metropolitan areas and transit-bounded districts in urban zones, enforcing mandatory geographic buffer zones ($\ge 2\text{--}5$ km in rural/peri-urban settings; donut matching in urban areas) per Baird et al. (2018) and Duflo et al. (2007) to prevent SUTVA spatial contamination.
-  - Formulated the explicit cluster MDE formula parameterized with Spanish empirical priors ($\rho_{\text{rent}} = 0.08$, $\rho_{\text{labor}} = 0.03$, cluster size $m \approx 285$ adults, $R^2 \approx 0.35$ from pre-trial INCASÒL/MCVL microdata).
-  - Addressed the clawback threshold kink ($Y^* = \text{UBR} / \tau_{\text{clawback}}$): stratified experimental samples into baseline earnings domains and integrated a pre-registered bunching estimator (Saez 2010; Chetty et al. 2012) around $Y^*$ to estimate compensated substitution elasticities directly from excess mass, explicitly acknowledging that upper-decile tax responses are estimated quasi-experimentally via administrative IRPF panel reforms (`M08`).
-- **Sources Cited:** `baird-2018-interference`, `duflo-2007-randomization`, `saez-2010-bunching`, `chetty-2012-bounds`.
+  - Resolved the non-convex (concave) kink at the clawback phase-out boundary by introducing an initial labor earnings disregard ($Y_{\text{disregard}} = \text{€}3,000\text{--}\text{€}5,000/\text{year}$, aligned with RDL 2/2024 CAE). This creates a true convex kink with excess bunching mass for Saez (2010) and Chetty et al. (2011) estimators, while formalizing a missing-mass estimator at the upper clawback ceiling $Y^*$.
+  - Corrected the structural life-cycle hours equation in `M15` and `methods.md`: paired Frisch elasticity with transitory wage variation rather than wealth, and conditioned Bayesian priors on Bargain, Orsini, & Peichl (2014) labor-demand rationing vectors derived from `M01`.
+- **Sources Cited:** `saez-2010-bunching`, `chetty-2011-bounds`, `macurdy-1981-labor-supply`, `blundell-macurdy-1999-labor-supply`, `bargain-2014-labor-rationing`, `rdl-2-2024-desempleo`.
 
-### `SYN-02-03` · Administrative Register Linkage, Tax Secrecy & Last-Mile Inclusion
-- **Contributing Issues:** `EM-02-03` (major), `SP-02-04` (major), `RT-02-03` (major)
+### `SYN-03-05` · Fiscal Federalism Reconciliation: Common Regime VFI, Cession Adjustments, and Foral Clearing
+- **Contributing Issues:** `LW-03-01` (critical), `PF-03-01` (critical), `PE-03-03` (major), `RT-03-05` (major)
 - **Target Files:**
-  - `plan/modules/M10-pilot-evaluation-design.md`
+  - `plan/methods.md`
+  - `plan/modules/M03-fiscal-financing.md`
+  - `plan/modules/M06-constitutional-eu-law.md`
+  - `plan/modules/M11-political-economy.md`
+- **Summary of Changes:**
+  - Strictly bifurcated territorial financing mechanisms:
+    - **Foral Regimes:** Classified UBR as a non-assumed power (*carga no asumida*) strictly within the bilateral *Comisión Mixta del Concierto* and *Comisión Coordinadora del Convenio*, specifying adjustments to the *Cupo* ($I_{\text{Cupo}} = 6.24\%$) and *Aportación* ($I_{\text{Aportación}} = 1.6\%$) bases. Confirmed that Basque and Navarrese *Haciendas Forales* administer tax credits directly under foral tax sovereignty (*Ley 12/2002*, *Ley 28/1990*).
+    - **Common Regime (15 CCAA):** Enacted statutory amendments to *LOFCA* (Art. 13) and *Ley 22/2009* establishing a *Fondo de Compensación UBR* within the CPFF to neutralize regional windfalls from ceded IRPF shares and recapture regional minimum income savings for social housing and SAAD care.
+  - Detailed the bilateral tax harmonization mechanism under Art. 6 *Ley 12/2002* and Art. 7 *Ley 28/1990* via model *Normas Forales* and *Leyes Forales*.
+- **Sources Cited:** `ley-12-2002-concierto-economico`, `ley-28-1990-convenio-navarra`, `ley-22-2009-financiacion-autonomica`, `boe-lofca-1980`.
+
+### `SYN-03-06` · Social Security Pension Accrual Continuity, Disability Tax-Shield, and Debt Immunity
+- **Contributing Issues:** `LW-03-02` (critical), `SP-03-01` (critical), `SP-03-02` (critical), `LW-03-03` (major)
+- **Target Files:**
+  - `plan/modules/M07-welfare-benefit-integration.md`
   - `plan/modules/M12-administration-delivery.md`
 - **Summary of Changes:**
-  - In `M10`, solved the tax secrecy hurdle under Art. 95 Ley General Tributaria (LGT) and LOPDGDD by designing a model statutory habilitation provision (Disposición Adicional) declaring the pilot of high public interest under Art. 95.1.k LGT. To prevent differential control group consent attrition, instituted an unconditional Evaluation Participation Stipend (€250–€300/year) for control participants, and implemented cryptographic HMAC-SHA256 salted hashing for register pseudonymization.
-  - In `M12`, established the Last-Mile Social Inclusion & Public Rail Protocol: codified *Empadronamiento Social de Oficio* to bypass municipal Padrón gatekeeping for unhoused and precariously housed residents under the Technical Instructions of 17 February 2020 (BOE 2 May 2020), and created a public payment delivery rail via *Correos* and Banco de España with statutory immunity from commercial AML/KYC freezes under Ley 10/2010.
-- **Sources Cited:** `boe-lgt-2003`, `boe-lopdgdd-2018`.
+  - Codified a statutory Contribution Continuity Guarantee (*Garantía de Mantenimiento de Bases de Cotización por Desempleo*) under Art. 273 TRLGSS, mandating SEPE to maintain retirement contributions throughout unemployment regardless of UBR cash offsets, avoiding pension penalty gaps (*lagunas de cotización*, Art. 209 TRLGSS). Established the universal *Crédito Cotizatorio Básico por Transición Tecnológica* guaranteeing continuous pension accrual at 100% of SMI base for displaced workers.
+  - Guaranteed 100% statutory tax exemption for contributory permanent disability pensions (*Incapacidad Permanente Absoluta* and *Gran Invalidez*, Art. 7.f LIRPF).
+  - Amended the *inembargabilidad* shield in `M12` to carve out judicial child support and alimony orders under Art. 608 LEC, while establishing absolute immunity from commercial bank overdraft offsets and internal administrative set-offs (Art. 53.2 TRLGSS, Arts. 71–73 LGT) for retroactive IMV debts.
+  - Corrected statutory attribution of automated administrative acts to Art. 41 of *Ley 40/2015* (LRJSP) and prior hearing guarantees to Art. 82 of *Ley 39/2015* (LPAC).
+- **Sources Cited:** `boe-trlgss-2015`, `ley-1-2000-lec`, `ley-40-2015-lrjsp`, `boe-lpac-2015`, `boe-lgt-2003`.
 
-### `SYN-02-04` · Housing Law, LAU Tenure Lock-In, Seasonal Leases & Closed-Loop Rent Recycling
-- **Contributing Issues:** `HE-02-01` (critical), `HE-02-03` (major), `HE-02-04` (critical), `RT-02-06` (minor)
+### `SYN-03-07` · Housing Competence Asymmetries, Rental Nowcasting, and Spatial Immobility Frictions
+- **Contributing Issues:** `HE-03-01` (critical), `HE-03-02` (major), `HE-03-03` (major), `HE-03-04` (major)
 - **Target Files:**
   - `plan/modules/M05-housing-rent-capture.md`
   - `plan/modules/M09-distribution-poverty-euromod.md`
+  - `plan/modules/M13-migration-territory-residency.md`
   - `plan/modules/M17-transition-risks-stress-tests.md`
 - **Summary of Changes:**
-  - In `M05`, formulated a dual-tenure equilibrium framework modeling LAU Art. 9 mandatory 5-year lease stability for incumbent tenants vs. new contracts, and addressed contract-substitution loopholes (landlords shifting to seasonal leases under LAU Art. 3.2 or room rentals under CC Art. 1554 to bypass Ley 12/2023 caps). Conditioned LIRPF Art. 23.2 deductions on long-term habitual residence contracts adhering to reference price limits.
-  - In `M09`, disaggregated households across 4 distinct housing tenure regimes (outright owners, mortgaged owners, subsidized renters, market renters) and implemented closed-loop rent recycling: aggregate landlord rent extraction is credited to landlord capital income in AEAT microdata and taxed under reformed IRPF (`M03`). Reported housing-cost overburden rates (>40% of disposable income) alongside headline poverty.
-  - In `M17`, formally integrated the Housing Pass-Through Circuit-Breaker promised by `M05` (activating if quarterly rental index growth exceeds core CPI by >3.0 pp in stressed zones ZMRT). Replaced slow 4–7 year public housing construction triggers with immediate fiscal/regulatory levers: dynamic revocation of LIRPF Art. 23.2 landlord deductions (50% to 0%), emergency extension of price caps to seasonal/room rentals, and municipal fast-track *tanteo y retracto* housing acquisitions.
-- **Sources Cited:** `garcia-montalvo-2023-rent-controls`, `jofre-monseny-2023-rent-control`, `boe-lau-1994`.
+  - Decoupled federal housing circuit-breakers and tax conditionality from regional ZMRT declarations under *Ley 12/2023* (boycotted by Madrid, Andalusia, Balearics, Valencia under STC 79/2024), establishing an Objective Federal Fiscal Benchmark on LIRPF Art. 23.2 reductions under State tax competence (Art. 149.1.14 CE).
+  - Specified a High-Frequency Rental Nowcasting Spine (monthly tenancy deposits, scraped portal APIs with $\le 30$-day latency) and established the *Fondo de Estabilización Residencial* (FER) under ICO credit lines with LOEPSF expenditure ceiling exemptions for municipal preemption (*tanteo y retracto*).
+  - Mandated dual reporting of Before-Housing-Cost (BHC) and After-Housing-Cost (AHC) poverty ($P_0, P_1, P_2$) and AHC Gini in EUROMOD-Spain, disaggregating landlord ownership across physical persons, SOCIMIs, and non-resident owners.
+  - Modeled joint household utility with dual-earner career disruption penalties (Costa & Kahn 2000) and paired UBR with a rural housing mobilization program (*Programa de Movilización de Vivienda Rural Vacía* via ICO loans).
+- **Sources Cited:** `stc-79-2024-vivienda`, `khametshin-2024-rental`, `costa-kahn-2000-power-couples`, `boe-vivienda-2023`.
 
-### `SYN-02-05` · Constitutional Tax Legality of Triggers & Bicameral Veto-Player Architecture
-- **Contributing Issues:** `PE-02-01` (critical), `PE-02-02` (critical), `PE-02-03` (major)
+### `SYN-03-08` · Constitutional Tax Legality, Bicameral Override, and Tripartite Employer Dialogue
+- **Contributing Issues:** `PE-03-01` (critical), `PE-03-02` (critical), `PE-03-04` (major), `LW-03-04` (critical)
 - **Target Files:**
-  - `plan/methods.md`
   - `plan/modules/M11-political-economy.md`
-  - `plan/modules/M16-ai-rent-capture-sovereign-fund.md`
+  - `plan/modules/M13-migration-territory-residency.md`
   - `plan/modules/M17-transition-risks-stress-tests.md`
 - **Summary of Changes:**
-  - In `M17`, realigned transition triggers with the constitutional Principle of Tax Legality (Arts. 31.3 and 134.7 CE) and AIReF's statutory organic mandate under Ley Orgánica 6/2013. Repositioned AIReF strictly as an independent technical auditor issuing non-binding Technological Transition Reports ('comply or explain'). Replaced automatic administrative tax surcharges with a statutory Fast-Track Parliamentary Ratification Protocol under Art. 86 CE / Reglamento del Congreso mandating government decree-laws within 30 days of trigger certification.
-  - In `M11`, embedded a formal bicameral veto-player framework (Tsebelis 2002) modeling spatial equilibria across both the Congreso and the Senado (specifically addressing the Senate's absolute veto over expenditure ceilings under LOEPSF Art. 15). Detailed concessions required for pro-business regionalist swing caucuses (PNV, Junts: decentralized tax tranches, SME surplus exemptions, transition fund co-management).
-  - In `M11`, formalized tripartite social dialogue under Art. 7 CE and the CES (Ley 21/1991), establishing statutory non-supplantation clauses (UBR cannot be cited by employers to depress bargained wages or SMI hikes) and social partner co-governance of automation funds.
-  - In `M16`, formalized statutory anti-raiding governance for the Sovereign AI Dividend Fund: independent management under Banco de España oversight, a 3/5ths congressional supermajority requirement for capital principal drawdown, and macro-fiscal debt parity rules modeled on Ley 28/2003.
-- **Sources Cited:** `tsebelis-2002-veto-players`, `boe-lo-6-2013-airef`, `vanderborght-2006-trade-unions`, `vlandas-2019-politics-ubi`, `boe-ley-28-2003-fondo-reserva`.
+  - Excised unconstitutional decree-law tax surcharge delegations under Art. 86 CE (STC 73/2017, STC 78/2020) in `M17`, replacing them with pre-enacted statutory automatic rate stabilizers and expedited parliamentary urgency (*urgencia parlamentaria*, Art. 93 Reglamento del Congreso).
+  - In `M11`, detailed the organic legislative strategy in Congress to amend LOEPSF Art. 15.6 by absolute majority to restore constitutional lower-house preeminence (Art. 90.2 CE, STC 179/1989), neutralizing the Senate's absolute veto over spending ceilings. Formulated the tripartite dialogue table under Art. 7 CE embedding CEOE and CEPYME alongside CCOO and UGT, and incorporated the CARIN deservingness heuristic (van Oorschot 2000).
+  - In `M13`, established an objective Social Security threshold for EU workers under Art. 45 TFEU / Regulation 492/2011 (Case 66/85 *Lawrie-Blum*, Case C-14/09 *Genc*) with pro-rata tapering, codified a Default Non-Refundable Mínimo Personal y Familiar in *Ley 35/2006* to safeguard the constitutional *mínimo existencial* (STC 214/1994), and enacted an unconditional child subsistence safe-harbor under Art. 39 CE.
+- **Sources Cited:** `stc-73-2017`, `stc-78-2020`, `stc-179-1989`, `van-oorschot-2000-deservingness`, `eu-regulation-492-2011`, `cjeu-c-66-85-lawrie-blum`, `cjeu-c-14-09-genc`, `stc-214-1994-minimo-existencial`, `boe-ce-1978`.
 
-### `SYN-02-06` · Asymmetric Fiscal Federalism, Regional Minimum Incomes & Single-Parent Protection
-- **Contributing Issues:** `SP-02-01` (critical), `PE-02-04` (major)
+### `SYN-03-09` · Labor Market Institutions, Assistential Reforms (RDL 2/2024), and Healthcare Register Bifurcation
+- **Contributing Issues:** `LE-03-01` (critical), `LE-03-02` (critical), `LE-03-03` (major), `LE-03-04` (major), `RT-03-04` (major), `RT-03-06` (minor), `EM-03-03` (major), `SP-03-03` (major), `SP-03-05` (major)
 - **Target Files:**
-  - `plan/00-scope.md`
+  - `plan/modules/M01-ai-labor-displacement.md`
   - `plan/modules/M02-benefit-design.md`
-  - `plan/modules/M06-constitutional-eu-law.md`
-  - `plan/modules/M07-welfare-benefit-integration.md`
-- **Summary of Changes:**
-  - In `M07`, eliminated the erroneous assumption that regional minimum incomes (RGI/RGC) are abolished as a central dividend. Instead, codified a statutory *Complemento Autonómico No Contributivo* preserving regional entitlement rights and housing supplements (PEV/PCV in Euskadi/Navarre) that exceed the national UBR floor, holding all regional recipients strictly harmless.
-  - In `M02` and `M07`, introduced an explicit *Complemento Monoparental y de Primera Infancia* (+€150–€200/month) so that single-parent families (81% female-headed) receiving the 22% IMV bonus and CAPI never suffer a disposable income loss under Tier A (€600 adult + €240 child vs. €965.55 IMV+CAPI baseline).
-  - In `M06`, specified the bilateral methodology for the Basque *Cupo* (6.24%) and Navarrese *Aportación* (1.6%) by classifying national UBR as a non-assumed State power (*carga no asumida*), neutralizing territorial fiscal arbitrage, and established CPFF mechanisms to hold net-contributing common-regime regions harmless in public services.
-- **Sources Cited:** `beramendi-2012-inequality`, `arcelus-bade-2015-rgi`.
-
-### `SYN-02-07` · Universal Disability Supplement & Intra-Household Hidden Poverty Metrics
-- **Contributing Issues:** `SP-02-02` (major), `SP-02-03` (major)
-- **Target Files:**
-  - `plan/00-scope.md`
-  - `plan/modules/M02-benefit-design.md`
-  - `plan/modules/M07-welfare-benefit-integration.md`
-  - `plan/modules/M09-distribution-poverty-euromod.md`
+  - `plan/modules/M08-labor-supply-behavior.md`
+  - `plan/modules/M10-pilot-evaluation-design.md`
   - `plan/modules/M14-gender-care-health.md`
 - **Summary of Changes:**
-  - In `M02`, `M07`, and `M14`, established the Universal Disability Supplement (*Complemento Universal por Discapacidad*) to offset non-discretionary economic extra costs of disability (€3,500–€10,000/yr). Graded by certified disability degree under Real Decreto 888/2022 (+25% UBR for 33–64%, +50% for 65–74%, +75–100% for $\ge 75\%$), fully additive to baseline UBR and distinct from SAAD in-kind care services under Ley 39/2006.
-  - In `M09`, formulated an Individualized Poverty and Intra-Household Autonomy Metric (Ponthieux 2013) in EUROMOD to capture and quantify the eradication of hidden female and youth poverty within multi-earner households, alongside an empirical non-take-up calibration protocol (56% IMV non-take-up, 70% CAPI non-take-up per official AIReF opinions).
-- **Sources Cited:** `ponthieux-2013-income-pooling`, `puig-segura-2021-discapacidad`, `boe-rd-888-2022-discapacidad`, `airef-opinion-imv-2023`, `airef-opinion-imv-2024`.
-
-### `SYN-02-08` · EU Law Coordination: Regulation 883/2004 Exportability & Schumacker Doctrine
-- **Contributing Issues:** `RT-02-05` (major), `PE-02-04` (major)
-- **Target Files:**
-  - `plan/methods.md`
-  - `plan/modules/M06-constitutional-eu-law.md`
-  - `plan/modules/M13-migration-territory-residency.md`
-- **Summary of Changes:**
-  - In `M06`, addressed the Regulation (EC) No 883/2004 Article 7 exportability challenge: legally anchored the non-contributory cash component as general social assistance governed strictly by Directive 2004/38/EC (falling outside Regulation 883/2004 Art. 3 material scope), or pursuing a formal Annex X coordination exemption.
-  - In `M06` and `M13`, extended the Tax-Benefit Symmetry architecture to seasonal and frontier EU workers subject to Spain's Non-Resident Income Tax (*Impuesto sobre la Renta de No Residentes*, IRNR) to ensure full compliance with Article 45 TFEU and the landmark CJEU *Schumacker* doctrine (Case C-279/93).
-- **Sources Cited:** `cjeu-c-279-93-schumacker`, `cjeu-c-475-03-banca-popolare-irap`, `boe-extranjeria-2000`.
-
-### `SYN-02-09` · Frisch Elasticity Decomposition & Spatial Immobility Frictions
-- **Contributing Issues:** `EM-02-04` (major), `HE-02-02` (major)
-- **Target Files:**
-  - `plan/methods.md`
-  - `plan/modules/M13-migration-territory-residency.md`
-  - `plan/modules/M15-international-evidence.md`
-- **Summary of Changes:**
-  - In `M15`, expanded the life-cycle structural transportability framework to formally separate windfall income effects ($\eta$) from Frisch intertemporal substitution ($\varepsilon^{\text{Frisch}}$) in finite-horizon trials (MaCurdy 1981; Blundell & MaCurdy 1999), calibrating the ratio $\varepsilon^c / \varepsilon^{\text{Frisch}} \in [0.4, 0.7]$ to prevent short-run trial sabbaticals from distorting permanent labor supply projections in EUROMOD and HANK.
-  - In `M13`, re-specified the spatial discrete-choice location model to incorporate Spanish immobility frictions (tenure status, 6–10% regional ITP transfer taxes, and rural healthcare/amenity capital stocks per Antolín & Bover 1997), and paired portable UBR with rural housing rehabilitation subsidies and ITP exemptions.
-- **Sources Cited:** `macurdy-1981-labor-supply`, `blundell-macurdy-1999-labor-supply`, `antolin-bover-1997-migration`.
-
----
-
-## Validation & Quality Verification
-- **Validator Status:** `.venv/bin/python -m ubr validate` passes with `0 error(s), 0 warning(s)`.
-- **Metrics Status:** `.venv/bin/python -m ubr metrics` reports:
-  `modules=17 (locked=0) rqs=41 coverage=100% (17/17) cited_sources=86/86 verified=100% words=18933 citations/1k=18.59`
-- **Unit Tests:** `.venv/bin/python -m pytest` passes 68/68 tests in 0.49s.
+  - Integrated RDL 2/2024 assistential reform and CAE phase-out into EUROMOD and `M08`. In `M01`, formalized the statutory SMI gross labor cost floor ($W_{\text{floor}} \approx \text{€}1,740/\text{mo}$ per RD 145/2024) and collective bargaining opt-outs (*descuelgues salariales*, Art. 82.3 ET).
+  - In `M02`, replaced the single-parent bonus with parity-modulated child allowances ($\alpha_{\text{child1}} = 0.50$, $\alpha_{\text{child}\ge 2} = 0.35\text{--}0.40$), eliminating invasive cohabitation policing while concentrating fiscal support on single mothers and multi-child families, and anchored adulthood strictly at age 18.
+  - In `M14`, specified discrete-choice collective household models (Cherchye et al. 2012) handling female non-participation, established a statutory *Garantía de No-Sustitución de Servicios Profesionales* under *Ley 39/2006* (SAAD, Costa-Font et al. 2022) to prevent care re-familialization, and ingested microdata from Spain's 34 Policy Lab RCTs (Inclusion/CEMFI/J-PAL 2024). Corrected OpenResearch (Miller et al. 2024) reporting by reframing clinical health expenditure reductions as exploratory secondary hypotheses.
+  - In `M10` and `M14`, bifurcated healthcare data architecture: Tier 1 centralized INSS temporary disability (*bajas IT*) registers; Tier 2 bilateral research agreements with pilot regional health services under *Ley 16/2003* (CatSalut, SERMAS, Osakidetza) for primary care consultations and psychotropic prescription invoicing.
+- **Sources Cited:** `boe-rd-145-2024-smi`, `boe-et-2015`, `rdl-2-2024-desempleo`, `cherchye-2012-collective`, `costa-font-2022-saad`, `inclusion-cemfi-jpal-2024`, `miller-2024-openresearch-health`, `ley-16-2003-sns`.

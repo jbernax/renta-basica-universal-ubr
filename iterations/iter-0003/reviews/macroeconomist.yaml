@@ -1,0 +1,257 @@
+reviewer: macroeconomist
+iteration: 3
+summary: 'Iteration 3 reflects substantial progress: METHODS now integrates a four-stage micro-macro closure
+  pipeline linking EUROMOD and HANK with Gauss-Seidel iteration, M04 incorporates the two-sector small-open-economy
+  monetary-union framework and dual external leakage, and M17 establishes a multi-stress test suite and
+  an AIReF-certified composite trigger. However, macro-fiscal rigor and internal consistency remain constrained
+  by five high-leverage issues: (1) a severe quantitative and national accounts unit error in M01, M03,
+  and METHODS asserting an 11.55% of GDP (€173B/year) baseline revenue collapse under Scenario S2 that
+  breaks fiscal bridge arithmetic and contradicts M16; (2) absence of structural two-sector New Keynesian
+  Phillips Curves in M04 modeling Baumol cost-disease non-tradable inflation versus tradable AI deflation,
+  alongside unmodeled Walters real-rate destabilization; (3) unmodeled Eurozone sovereign spread feedback,
+  missing the binding 0.3% annual / 0.6% cumulative GDP Control Account triggers under Regulation (EU)
+  2024/1263, and ignoring ECB Transmission Protection Instrument (TPI) eligibility conditionality; (4)
+  lack of Balance of Payments stock-flow equilibrium modeling in M04, ignoring Current Account reversal
+  and Net International Investment Position (NIIP) surveillance under the EU Macroeconomic Imbalance Procedure
+  (MIP); and (5) the absence of business-cycle output-gap filtering on M17 AI composite triggers, paired
+  with the lack of an explicit statutory nominal de-indexation reversal protocol under Ley 2/2015 to safeguard
+  debt sustainability during tail-risk crises.'
+scores:
+  methodological_rigor:
+    score: 3.8
+    rationale: METHODS and M04 establish a solid micro-macro foundation by introducing the four-stage
+      EUROMOD-HANK iteration and dual external leakage accounting. However, methodological rigor falls
+      short of frontier standards because M04 omits the explicit mathematical specification of two-sector
+      New Keynesian Phillips Curves (tradable vs. non-tradable), lacks structural equations for endogenous
+      sovereign spread determination, does not establish the convergence and damping parameters for the
+      Gauss-Seidel micro-macro loop, and omits the statistical matching protocol between the Banco de
+      España EFF wealth distribution and EUROMOD microdata.
+  internal_coherence:
+    score: 3.5
+    rationale: 'While benefit levels (Tiers A-C) and scenario tags (S1-S3) are uniformly applied, a major
+      quantitative inconsistency undermines the plan: M01, M03, and METHODS assert an 11.55% of GDP (€173B/year)
+      baseline tax revenue collapse under S2 by multiplying a 7.0 pp labor-share drop by an elasticity
+      of 1.65, confusing revenue percentage loss with percentage points of GDP. This breaks the fiscal
+      bridge arithmetic in M03 (which claims a 4.8-6.2% GDP net financing requirement despite the alleged
+      11.55% gap) and directly contradicts M16 RQ-M16-02, which correctly estimates employer Social Security
+      payroll losses at ~1.9% of GDP. Furthermore, M04 assumption that digital deflation offsets high-MPC
+      non-tradable demand pressures contradicts the consumption weights in M03 and reservation-wage increases
+      in M08.'
+  ai_scenarios:
+    score: 3.8
+    rationale: Scenarios S1 (-2.5 pp), S2 (-7.0 pp), and S3 (-15.0 pp) are now paired with annual TFP
+      growth bands (0.5-1.8%) and service marginal-cost deflation. However, the scenario vectors fail
+      to distinguish asymmetric sectoral productivity trajectories between automatable tradable/digital
+      tasks (Sector T) and non-automatable physical/personal services (Sector N, subject to Baumol cost
+      disease). In addition, M01 and M04 do not close the national accounts loop connecting TFP-driven
+      real GDP growth to the absolute wage bill, leading to exaggerated projections of baseline tax erosion
+      in levels.
+  counterarguments:
+    score: 3.7
+    rationale: 'M04 and M17 engage seriously with core macro risks, including external leakage, Eurozone
+      expenditure ceilings, and a four-part tail-risk stress battery. Nevertheless, critical macro counterarguments
+      remain inadequately addressed: M04 fails to analyze the catastrophic loss of ECB Transmission Protection
+      Instrument (TPI) eligibility if EU fiscal rules are breached, omits EU Macroeconomic Imbalance Procedure
+      (MIP) scoreboard thresholds for current account and NIIP deficits, and M17 lacks an explicit statutory
+      nominal de-indexation reversal protocol if tail-risk shocks render Tier B or C transfers fiscally
+      unsustainable.'
+  spain_fit:
+    score: 3.8
+    rationale: 'Institutional alignment with Spain macro-fiscal architecture is strong, featuring detailed
+      citations of LOEPSF, Regulation (EU) 2024/1263, AIReF (LO 6/2013), BdE EFF, and three-tier pilot
+      jurisdictional distinctions (Régimen Común vs. Régimen Foral). However, institutional precision
+      is incomplete: M04 omits the operational Control Account mechanics under Art. 21(2) of Regulation
+      2024/1263 (0.3% annual and 0.6% cumulative GDP debit triggers), M17 does not anchor macro de-indexation
+      in Spain statutory framework (Ley 2/2015 de desindexación), and the AI composite trigger lacks AIReF
+      output-gap conditioning.'
+issues:
+- id: MA-03-01
+  severity: critical
+  module: M01
+  finding: M01 RQ-M01-02, M03 Section 1, and METHODS Section 2 assert that in Scenario S2 (Delta s_L =
+    -7.0 pp), baseline IRPF and Social Security tax revenues suffer an "endogenous 11.55% of GDP revenue
+    collapse (~€173B/year)". This is a severe quantitative and national accounts unit-of-analysis error
+    resulting from multiplying a 7.0 pp labor-share contraction by an assumed tax elasticity of 1.65 and
+    treating the resulting 11.55% relative contraction in tax revenue as 11.55 percentage points of GDP.
+    Total Spanish GDP is ~€1,500B; annual IRPF collections are ~€125B (8.3% of GDP) and total Social Security
+    contributions are ~€195B (13.0% of GDP). An 11.55% of GDP loss (€173B) would wipe out more than 54%
+    of all labor-related taxes and exceeds Spain total annual IRPF revenue. In reality, a 7.0 pp drop
+    in labor share of GDP (from ~50% to 43% of GDP) represents a €105B drop in the aggregate wage bill;
+    with an average labor tax wedge of ~38-40%, the baseline revenue loss is at most 2.6-2.8% of GDP (~€39-€42B/year).
+    Moreover, this figure directly contradicts M16 RQ-M16-02, which correctly estimates S2 employer Social
+    Security contribution loss at ~1.9% of GDP. Propagating this €173B error into M03 breaks the fiscal
+    bridge arithmetic and distorts the required compensatory tax rates.
+  proposal: 'Correct and harmonize the baseline tax revenue erosion calculations across M01, M03, M16,
+    and METHODS: (1) explicitly differentiate between relative percentage contraction in labor tax revenues
+    (an 11.55% reduction in labor taxes, yielding ~2.4-2.8% of GDP or €36-€42B/year) versus percentage
+    points of GDP; (2) calibrate the true baseline tax drag across scenarios: S1 (-0.9 to -1.1% of GDP),
+    S2 (-2.4 to -2.8% of GDP), and S3 (-5.2 to -6.0% of GDP); (3) align M03 public accounts bridge equation
+    so that total incremental financing covers net UBR outlays (~3.5% of GDP for Tier B) plus true baseline
+    labor tax erosion (~2.6% of GDP under S2), yielding a coherent net financing target of ~6.1% of GDP;
+    and (4) ensure full consistency with M16 corporate surplus tax and payroll loss estimates.'
+  sources:
+  - title: Principales magnitudes de la Contabilidad Nacional de España e Informes Anuales de Recaudación
+      Tributaria
+    authors:
+    - Agencia Estatal de Administración Tributaria
+    year: 2023
+    url: https://sede.agenciatributaria.gob.es/Sede/estadisticas/recaudacion-tributaria/informes-anuales-recaudacion-tributaria.html
+- id: MA-03-02
+  severity: critical
+  module: M04
+  finding: 'M04 specifies a two-sector open-economy HANK model but relies on an unsubstantiated hypothesis
+    (RQ-M04-01) that digital AI marginal-cost reductions in tradables will counterbalance high-MPC non-tradable
+    demand inflation. In a small open economy within a monetary union with a fixed nominal exchange rate,
+    non-homothetic household demand directs UBR liquidity predominantly toward domestic non-tradables
+    (housing, hospitality, care, personal services). Simultaneously, UBR raises worker reservation wages
+    in low-wage service sectors (M08). Because physical domestic services cannot be automated by foundation
+    models (Baumol cost disease), Sector N experiences an acute demand-and-cost inflation shock. Digital
+    goods deflation in Sector T cannot neutralize this non-tradable price pressure because tradables and
+    non-tradables are imperfect substitutes (sigma_{T,N} < 1). Furthermore, M04 fails to model the destabilizing
+    Walters real-interest-rate channel: higher Spanish domestic inflation lowers real borrowing rates
+    (r_t^{ES} = i_t^{ECB} - pi_t^{ES} < r_t^*), inducing pro-cyclical credit expansion and real exchange
+    rate appreciation (RER_t = P_t / P_t^* > 1) that erodes tradable competitiveness before terms-of-trade
+    adjustment can stabilize the macroeconomy.'
+  proposal: 'Formalize the two-sector structural pricing and transmission equations in M04 Sections 2,
+    3, and 5: (1) specify distinct New Keynesian Phillips Curves for Sector T (open to international competition
+    and AI productivity gains) and Sector N (labor-intensive, non-tradable, with wage feedback from M08
+    and Baumol cost dynamics); (2) calibrate the elasticity of substitution between tradable and non-tradable
+    consumption (sigma_{T,N} in [0.5, 0.8]) using EPF microdata, proving whether relative price shifts
+    ignite headline CPI inflation above the ECB target; and (3) model the dynamic interaction between
+    the pro-cyclical Walters real-rate channel and the counter-cyclical terms-of-trade competitiveness
+    channel, identifying macroprudential and fiscal reserve requirements necessary to guarantee dynamic
+    macroeconomic stability.'
+  sources:
+  - title: 'Exchange Rates and Monetary Policy with Heterogeneous Agents: Sizing up the Real Income Channel'
+    authors:
+    - Auclert, A.
+    - Rognlie, M.
+    - Souchier, M.
+    - Straub, L.
+    year: 2021
+    doi: 10.3386/w28872
+  - title: Optimal monetary policy in a currency area
+    authors:
+    - Benigno, P.
+    year: 2004
+    doi: 10.1016/s0022-1996(03)00055-2
+- id: MA-03-03
+  severity: major
+  module: M04
+  finding: 'M04 RQ-M04-02 assumes that Spanish 10-year sovereign bond spreads will remain bounded (<=
+    85 bps) by formally netting gross UBR outlays against Discretionary Revenue Measures (MDI) in the
+    annual Stability Programme. This overlooks three critical Eurozone fiscal-monetary governance constraints:
+    (i) the Control Account (cuenta de control) established under Article 21(2) of Regulation (EU) 2024/1263,
+    which mandates the opening of an Excessive Deficit Procedure (EDP) if net expenditure deviations exceed
+    0.3% of GDP annually or 0.6% of GDP cumulatively—thresholds easily breached by initial UBR take-up
+    dynamics or tax revenue implementation lags; (ii) the non-linear sovereign risk premium function,
+    which penalizes public expenditure surges (gross public spending rising from 47% to ~65-70% of GDP)
+    during periods of global financial tightening; and (iii) the strict eligibility criteria of the ECB
+    Transmission Protection Instrument (TPI), which requires full compliance with EU fiscal rules, absence
+    of an EDP, and sustainable public debt paths. A breach of the net expenditure ceiling would forfeit
+    ECB TPI eligibility, exposing Spanish sovereign debt to self-fulfilling market selloffs.'
+  proposal: 'Expand M04 Sections 2, 5, and 7 to: (1) formalize an endogenous sovereign spread pricing
+    equation linking 10-year Bonos-Bund yield differentials to Debt Sustainability Analysis (DSA) debt-trajectory
+    fan charts, primary balances, and an indicator for EDP activation; (2) model the Regulation (EU) 2024/1263
+    Control Account debit trajectory, specifying an operational pre-funded fiscal escrow buffer (>= 0.2%
+    of GDP) to prevent cumulative debits from reaching the 0.6% of GDP EDP trigger; and (3) embed ECB
+    TPI compliance criteria into M04 institutional macro risk matrix, establishing that the UBR fiscal
+    trajectory maintains unconditional TPI eligibility under adverse market spread shocks.'
+  sources:
+  - title: The Transmission Protection Instrument
+    authors:
+    - European Central Bank
+    year: 2022
+    url: https://www.ecb.europa.eu/press/pr/date/2022/html/ecb.pr220721~973e6e7273.en.html
+  - title: Regulation (EU) 2024/1263 on the effective coordination of economic policies and on multilateral
+      budgetary surveillance
+    authors:
+    - European Parliament and Council
+    year: 2024
+    url: https://eur-lex.europa.eu/eli/reg/2024/1263/oj
+- id: MA-03-04
+  severity: major
+  module: M04
+  finding: M04 acknowledges "dual external leakage" in Section 5 but treats it purely as a demand multiplier
+    discount, ignoring the dynamic stock-flow consequences on Spain Balance of Payments, Net International
+    Investment Position (NIIP), and the EU Macroeconomic Imbalance Procedure (MIP). Spanish low-income
+    households exhibit a high marginal import propensity (28-35% in energy, imported food, clothing, and
+    consumer durables per INE Input-Output and EPF tables). Simultaneously, widespread enterprise adoption
+    of generative and agentic AI requires large outbound royalty, software license, and cloud compute
+    payments to foreign-domiciled hyperscalers (M16). In aggregate, this dual leakage expands imports
+    by 2.5-4.0% of GDP across S2 and S3, which threatens to reverse Spain external current account balance
+    (currently +2.5% of GDP) into structural deficit and derail the post-2012 deleveraging of Spain NIIP
+    (currently ~-50% of GDP). Under Regulation (EU) No 1176/2011, persistent current account deficits
+    exceeding -4% of GDP or failure to converge toward the -35% NIIP threshold trigger formal MIP surveillance
+    and financial penalties.
+  proposal: 'Incorporate Balance of Payments stock-flow dynamics and external balance constraints into
+    M04 and M16: (1) introduce an explicit external asset accumulation law of motion tracking Spain NIIP:
+    d(NIIP)/dt = CA_t + Valuation_t, calibrating the trajectory under S1-S3; (2) quantify marginal import
+    propensities by COICOP category and Figaro NACE input-output sectors for UBR recipients versus top-bracket
+    taxpayers; and (3) benchmark the external accounts trajectory against the EU Macroeconomic Imbalance
+    Procedure (MIP) scoreboard (Regulation No 1176/2011), proving that destination-based digital levies
+    (M16) and domestic renewable energy substitution safeguard the current account surplus.'
+  sources:
+  - title: Regulation (EU) No 1176/2011 on the prevention and correction of macroeconomic imbalances
+    authors:
+    - European Parliament and Council
+    year: 2011
+    url: https://eur-lex.europa.eu/eli/reg/2011/1176/oj
+- id: MA-03-05
+  severity: major
+  module: M17
+  finding: "M17 state-contingent roadmap relies on the composite displacement index I_{AI,t} = \\omega_1\
+    \ \\Delta \tilde{s}_{L,t} + \\omega_2 u_{cognitive,t} + \\omega_3 (\\Delta EBE_{tech,t}/GDP_t) to\
+    \ trigger statutory Phase step-ups (from Tier A to Tier B and Tier C). However, M17 lacks an explicit\
+    \ business-cycle filtering mechanism: cyclical recessions, terms-of-trade shocks, or temporary profit\
+    \ squeezes could distort labor shares and corporate margins, risking false-positive irreversible step-ups\
+    \ into permanent Tier B or Tier C commitments during cyclical downturns when public revenues are cyclically\
+    \ depressed. Furthermore, while M17 defines short-run tax and housing circuit-breakers, it fails to\
+    \ specify an orderly legal and macroeconomic reversal protocol if compound tail-risk crises (Stress\
+    \ 1-4) threaten debt sustainability. Because nominal benefit cuts face formidable constitutional and\
+    \ political barriers under Art. 41 CE, and emergency high-bracket IRPF surcharges fail if top ETI\
+    \ doubles (Stress 2: e = 0.50), the plan lacks an explicit statutory Indexation Suspension Protocol\
+    \ that decouples UBR from CPI inflation to restore fiscal balance without violating social rights."
+  proposal: 'Strengthen M17 Sections 2, 5, and 7 to: (1) mandate an AIReF cyclical filtering protocol
+    requiring that I_{AI,t} be evaluated over an 8-quarter rolling window and conditioned on an AIReF-certified
+    output gap within \pm 1.5% of potential GDP (barring phase step-ups during cyclical downturns); and
+    (2) establish a statutory Indexation Suspension Protocol under Ley 2/2015 de desindexación de la economía
+    española as the ultimate macro-fiscal backstop, whereby if the Regulation 2024/1263 Control Account
+    debit reaches 0.5% of GDP or 10-year Bonos-Bund spreads exceed 150 bps, nominal UBR benefit adjustments
+    are legally frozen (yielding a 2-4% real fiscal adjustment per year through inflation) until structural
+    primary balance is restored.'
+  sources:
+  - title: Ley 2/2015, de 30 de marzo, de desindexación de la economía española (BOE-A-2015-3444)
+    authors:
+    - Jefatura del Estado
+    year: 2015
+    url: https://www.boe.es/buscar/act.php?id=BOE-A-2015-3444
+suggested_sources:
+- title: 'Exchange Rates and Monetary Policy with Heterogeneous Agents: Sizing up the Real Income Channel'
+  authors:
+  - Auclert, A.
+  - Rognlie, M.
+  - Souchier, M.
+  - Straub, L.
+  year: 2021
+  doi: 10.3386/w28872
+- title: Optimal monetary policy in a currency area
+  authors:
+  - Benigno, P.
+  year: 2004
+  doi: 10.1016/s0022-1996(03)00055-2
+- title: The Transmission Protection Instrument
+  authors:
+  - European Central Bank
+  year: 2022
+  url: https://www.ecb.europa.eu/press/pr/date/2022/html/ecb.pr220721~973e6e7273.en.html
+- title: Regulation (EU) No 1176/2011 on the prevention and correction of macroeconomic imbalances
+  authors:
+  - European Parliament and Council
+  year: 2011
+  url: https://eur-lex.europa.eu/eli/reg/2011/1176/oj
+- title: Ley 2/2015, de 30 de marzo, de desindexación de la economía española (BOE-A-2015-3444)
+  authors:
+  - Jefatura del Estado
+  year: 2015
+  url: https://www.boe.es/buscar/act.php?id=BOE-A-2015-3444
