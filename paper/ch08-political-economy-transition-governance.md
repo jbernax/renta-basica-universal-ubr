@@ -28,7 +28,7 @@ flowchart TD
     end
 ```
 
-### The Autonomous Organic Legislative Strategy
+### The Autonomous Organic Legislative Strategy & Parliamentary Blockade Contingency
 To preclude constitutional appeals based on legislative rider irregularity (*vicio de heterogeneidad o falta de homogeneidad legislativa*, STC 119/2011 and STC 136/2011), the legislative pathway is decoupled into two sequential parliamentary bills:
 1. **The Autonomous Organic Reform Bill (*Proposición de Ley Orgánica de Modificación de la LOEPSF*):** A standalone, single-purpose Organic Bill is introduced to reform LOEPSF Art. 15.6, processed under full Article 81 CE parliamentary procedures:
    - *Congress Initial Enactment:* An absolute majority in Congress (179 votes: PSOE 121, Sumar 27, Podemos 4, ERC 7, Junts 7, Bildu 6, PNV 5, BNG 1, CC 1) passes the bill.
@@ -36,6 +36,9 @@ To preclude constitutional appeals based on legislative rider irregularity (*vic
    - *Congress Definitive Override:* Under Article 90.2 CE and foundational Constitutional Court doctrine established in **STC 179/1989** [@stc-179-1989], Congress definitively lifts the Senate's veto by absolute majority (**179 votes**), restoring the general constitutional override rule.
 2. **The Ordinary UBR Statutory Bill:** Once the LOEPSF amendment is gazetted, the substantive Universal Basic Rent statute is introduced and debated as an ordinary law with maximum procedural and constitutional purity.
 3. **Tsebelis Win-Set Expansion:** Neutralizing the Senate's absolute veto expands the spatial policy win-set volume from **0.08 to 0.462** [@tsebelis-2002-veto-players], permanently unblocking the legislative path for the Universal Basic Rent statute.
+4. **Contingency Fallback Protocol for Parliamentary Blockade:** If shifting regional alliances or tactical defections temporarily block the 176-vote absolute majority required for an Organic Bill under Art. 81 CE:
+   - *Constitutional Limits of Real Decreto-ley (Art. 86 CE):* Entrenched Constitutional Court doctrine (**SSTC 182/1997, 73/2017, and 78/2020** [@stc-73-2017; @stc-78-2020]) strictly bars decree-laws from affecting essential citizen duties under Title I CE, specifically the duty to contribute to public expenditures (Art. 31.1 CE). Consequently, structural tax surcharges (IRPF schedules, EBE surplus contributions, IECA) and organic budget rule modifications cannot be enacted via executive decree.
+   - *The LPGE Statutory Alternative (Art. 134.4 CE):* The Government can legitimately invoke Article 134.4 CE to package multi-annual spending ceiling adjustments directly into the *Ley de Presupuestos Generales del Estado* under certified macroeconomic necessity, while issuing an urgent, technical decree-law restricted purely to administrative preparation, digital infrastructure rollout (MTI/PID), and pilot sandbox deployment—matters that do not touch Article 31.1 CE core tax duties.
 
 ---
 

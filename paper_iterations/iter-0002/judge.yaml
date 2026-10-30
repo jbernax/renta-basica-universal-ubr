@@ -1,0 +1,70 @@
+iteration: 2
+scores:
+  fiscal_realism_sustainability:
+    score: 4.7
+    rationale: "The fiscal architecture provides a fully articulated consolidated Administraciones Públicas gross-to-net bridge under Scenario S2 (33.23% GDP commitments vs 33.15% financing, yielding a deficit of -0.08% GDP within EU boundaries). Dynamic scoring integrates empirical Spain-specific ETI (0.38-0.55), a 15B dynamic reserve, and corporate look-through rules. AI rent capture integrates the IECA reverse-charge (0.15% GDP) with Model 238/DAC7 telemetry and joint interconnect liability, factor-neutral EBE contributions (2.43% GDP) qualified as Covered Taxes under OECD Pillar Two/Directive 2022/2523, and a 60% constitutional cap under STC 182/2021. The FSTA sovereign fund incorporates a 5-year constant-endowment smoothing rule and a segregated 24-month Tier-1 liquidity reserve in short-term paper to survive equity bear markets."
+    evidence:
+      - "ch04: Section 1 Gross-to-Net Fiscal Bridge (€498.45B commitments vs €497.25B financing)"
+      - "ch04: Section 1 ETI dynamic scoring (e = 0.38-0.55) and corporate look-through rules"
+      - "ch04: Section 3 IECA destination-based reverse charge with Model 238/DAC7 telemetry"
+      - "ch04: Section 4 Factor-neutral EBE contribution and OECD Pillar Two Covered Tax qualification"
+      - "ch04: Section 5 FSTA constant-endowment smoothing rule and 24-month Tier-1 liquidity reserve"
+  administrative_feasibility:
+    score: 4.8
+    rationale: "Administrative delivery is specified down to operational and technical protocols. The architecture establishes the Master Taxpayer Index (MTI/MPI) and Cuenta Única Tributaria-Social via the Plataforma de Intermediación de Datos (PID Open-APIs, Ley 40/2015 Art. 155), an asynchronous 90-day provisional payment buffer, full multilingual parity, Correos Rural postal liquidity network with offline EMV-compliant Tarjeta Social Prepago UBR under Simplified Due Diligence (AMLD5 / RD 304/2014 Art. 9), and a streamlined Comisión Arbitral y Administrativa with a 15-day automated conciliation window and safeguarded provisional advances (anticipo cautelar condicionado under surety, maintaining formal negative administrative silence under Art. 24.1 Ley 39/2015)."
+    evidence:
+      - "ch06: Section 4.A Master Taxpayer Index, PID Open-APIs, and 90-day provisional payment buffer"
+      - "ch06: Section 4.B GDPR-compliant residency verification without mass telemetry"
+      - "ch06: Section 4.C Financial inclusion via Correos Rural and Tarjeta Social Prepago UBR under AMLD5"
+      - "ch06: Section 4.D Comisión Arbitral, 15-day automated conciliation, and anticipo cautelar condicionado"
+  legal_robustness_anti_abuse:
+    score: 4.7
+    rationale: "The legal blueprint provides robust defenses across constitutional, territorial, and European legal domains. Grounded in exclusive central competences (Arts. 149.1.1, 149.1.14, 149.1.17 CE) and landmark rulings (SSTC 158/2021, 19/2024, 79/2024, 182/2021), it includes a non-usurpation safeguard preserving regional top-ups. In territorial finance, the CPFF Fondo de Compensación (€56.84B) equalizes Common Regime CCAA, while for Foral territories, Cupo deductions are conditioned on a bilateral pact with a 5-year anti-relocation look-back extending to holding companies and an expedited 60-day joint arbitration mechanism under Art. 64 Ley 12/2002. EU free movement adheres to CJEU jurisprudence (Dano, Brey, Genc) and Regulation 883/2004 Annex X SNCB inscription. Residency fraud is triangulated via public registers without unconstitutional mass utility surveillance (STC 76/2019)."
+    evidence:
+      - "ch06: Section 1 Constitutional competence architecture and SSTC 158/2021, 19/2024 doctrine"
+      - "ch06: Section 2 Asymmetric fiscal federalism, CPFF Fund, and 5-year Foral anti-relocation look-back"
+      - "ch06: Section 2.B Article 64 Ley 12/2002 binding impasse arbitration protocol"
+      - "ch06: Section 3 Tripartite EU legal categories and Annex X SNCB non-exportability inscription"
+      - "ch06: Section 4.B GDPR/LOPD-GDD residency triangulation and proportionality boundaries"
+  macro_productivity_incentives:
+    score: 4.6
+    rationale: "The macroeconomic closure uses an open-economy currency-union HANK model with INE/WIOD multi-sector Input-Output pass-through. It shows contained inflation (+0.04 pp deviation) and stable sovereign spreads (83.5 bps). Unit labor costs in key export champions (C29 automotive assembly, C28 industrial machinery, C10-C11 agrifood) increase by only +0.58% to +0.74%, offset by a 4 pp reduction in employer social security contributions. Labor supply concerns are addressed through a smooth EITC-style taper bounding METRs below 51.8%, accredited high-dosage STEM training fellowships (€1,200/yr), a 35% statutory wage premium for formal care and dependency workers, and dual-pillar pension continuity under Art. 273 TRLGSS. Compliance with EU Reg 2024/1263 Net Primary Expenditure is verified, including the Art. 25 escape clause under Scenario S3."
+    evidence:
+      - "ch05: Section 1 Open-economy HANK model and WIOD Input-Output export champion analysis"
+      - "ch05: Section 2 EU Regulation 2024/1263 compliance and Art. 25 Severe Downturn Escape Clause"
+      - "ch02: Section 4 Continuous EITC-style taper bounding METRs below 51.8% and STEM training fellowships"
+      - "ch03: Section 3 Dual-pillar pension integration and Art. 273 TRLGSS continuous accrual"
+      - "ch03: Section 4 Complemento Sectorial de Cuidados with 35% formal wage premium"
+  housing_rent_resilience:
+    score: 4.7
+    rationale: "Housing market analysis addresses rental pass-through across dual tenures (2.4% on locked 5-year leases vs 28.5% on open-market turnover). It explicitly tackles relocation spillovers onto intermediate secondary cities (pop 25k-100k). The Objective Federal Fiscal Benchmark conditions LIRPF Art. 23.2 exemptions, levies a 10 pp corporate landlord surtax, and imposes an AEAT-administered 90% windfall rent surcharge with an 8% capital improvement depreciation deduction to prevent housing stock decay. Anti-circumvention provisions apply the all-inclusive consideration rule and an irrebuttable 60-day residential necessity presumption under LAU Title II. Tiered macroprudential mortgage underwriting (70% recognition for first-time buyers with ICO guarantees vs 0% recognition and 40% equity down-payment for investors) shields bank CET1 capital ratios above 12.8% while preventing asset inflation."
+    evidence:
+      - "ch05: Section 3 Dual-tenure pass-through empirical divergence and intermediate cities vulnerability"
+      - "ch05: Section 3 All-inclusive consideration rule and 60-day residential necessity presumption"
+      - "ch05: Section 4 Objective Federal Fiscal Benchmark and AEAT 90% windfall rent surcharge with 8% depreciation"
+      - "ch05: Section 4.C 300,000-unit affordable housing masterplan via FER and ICO/EIB financing"
+      - "ch05: Section 4.D Tiered macroprudential DSTI ceilings (70% primary / 0% investor) and CET1 resilience"
+  argumentative_rigor_honesty:
+    score: 4.7
+    rationale: "The monograph maintains high intellectual rigor and candor regarding policy trade-offs, fiscal limits, and institutional friction. It explicitly critiques naive basic income claims, rejects the gross-cost fallacy while demonstrating real net financing requirements, addresses the general-equilibrium financing wedge of micro-trials, and models legislative hurdles under LOEPSF Art. 15.6 alongside backup strategies under Art. 134.4 CE. The paper integrates comprehensive adversarial tail-risk stress tests (energy stagflation, ETI doubling, housing bottlenecks, sovereign spread spikes) with concrete automatic circuit-breakers."
+    evidence:
+      - "ch01: Section 3 Methodological critique of RCTs and general-equilibrium financing wedge"
+      - "ch04: Section 1 Gross-to-net fiscal bridge and dual BHC/AHC poverty reporting"
+      - "ch08: Section 1 Autonomous LOEPSF Organic Bill and Art. 134.4 CE fallback protocol"
+      - "ch08: Section 2 CARIN deservingness heuristic framing shift"
+      - "ch08: Section 5 Four compound tail-risk stress tests with automatic circuit-breakers"
+critical_vulnerabilities:
+  - id: "ADV-JD-02-01"
+    chapter: "ch04"
+    vulnerability: "While the EBE factor-neutral contribution (€36.50B) is codified as an IRAP-style regional/national production tax complying with CJEU Case C-475/03, the interaction between Pillar Two Qualified Domestic Minimum Top-up Taxes (QDMTT) and the domestic deduction of EBE contributions could induce marginal profit shifting incentives for multinational corporate groups with cross-border algorithmic IP in Ireland or the Netherlands if not backed by explicit multilateral advance pricing agreements (APAs)."
+  - id: "ADV-JD-02-02"
+    chapter: "ch05"
+    vulnerability: "The 90% AEAT-administered windfall rent surcharge paired with an 8% capital improvement depreciation deduction provides strong anti-decay incentives; however, administrative verification of actual contractor invoices for energy efficiency and structural repairs risks creating an auditing bottleneck within AEAT regional delegations without automated municipal building permit (licencia de obras) API interoperability."
+  - id: "ADV-JD-02-03"
+    chapter: "ch06"
+    vulnerability: "Although the 60-day binding impasse arbitration under Art. 64 Ley 12/2002 prevents prolonged Foral deadlock, interim precautionary cash disbursement orders issued by the joint arbitration chamber could face jurisdictional friction before the Sala de lo Contencioso-Administrativo of the Tribunal Supremo if challenged by regional parliamentary groups on fiscal autonomy grounds."
+top_required_revisions:
+  - "Establish automated interoperability between municipal urban planning licensing databases (licencias de obras) and AEAT invoice registries (TicketBAI/VeriFactu) to streamline the 8% capital improvement deduction auditing under the windfall rent surcharge."
+  - "Formalize bilateral advance pricing agreement (APA) protocols within the Model 238 / DAC7 reporting framework to eliminate cross-border transfer pricing friction for multinational hyperscalers subject to both Pillar Two QDMTT and the domestic EBE levy."
+  - "Refine the procedural statutory rules for precautionary disbursement orders in the Foral joint arbitration chamber to explicitly specify judicial deference standards under the Ley de la Jurisdicción Contencioso-Administrativa."
+overall_robustness_verdict: "The monograph demonstrates state-of-the-art scholarly and operational defensibility. Across fiscal, administrative, legal, macroeconomic, spatial housing, and political economy dimensions, the adversarial counter-arguments are steelmanned and effectively addressed with concrete statutory mechanisms, quantitative micro-macro closures, and empirical validations."

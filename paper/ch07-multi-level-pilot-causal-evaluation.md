@@ -28,10 +28,12 @@ To overcome the SUTVA violations and unobserved general-equilibrium spillovers t
 ```mermaid
 flowchart TD
     subgraph SpatialArch["J = 70 Calibrated Spatial Clusters (35 Treated, 35 Control)"]
-        Metro["40 Metropolitan Clusters<br/>Stratified across 7 Functional Urban Areas (FUAs):<br/>Madrid (8), Barcelona (8), Valencia (6), Seville (5),<br/>Bilbao (5), Málaga (4), Zaragoza (4).<br/>Enforces >= 80% Internal Commuting Containment"]
-        Rural["30 Non-Metropolitan Clusters<br/>Selected from small municipalities (1,500 - 5,000 pop)<br/>Surrounded by 2 - 5 km uninhabited buffer zones"]
+        Metro["30 Metropolitan Clusters<br/>Stratified across 7 FUAs: Madrid (6), Barcelona (6),<br/>Valencia (5), Seville (4), Bilbao (4), Málaga (3), Zaragoza (2)"]
+        Intermed["16 Intermediate Secondary Clusters<br/>Provincial hubs (25k-100k pop, e.g., Toledo, Guadalajara,<br/>Manresa, Jerez) tracking relocation & commuting corridors"]
+        Rural["24 Non-Metropolitan Clusters<br/>Small municipalities (1,500 - 5,000 pop)<br/>Surrounded by 2 - 5 km uninhabited buffer zones"]
         MITMA["MITMA / INE Cellular Mobility Matrix (W_mobility)<br/>Models daily inter-cluster commuting flows & spillover exposure"]
         Metro --> MITMA
+        Intermed --> MITMA
         Rural --> MITMA
     end
 
@@ -45,8 +47,9 @@ flowchart TD
 ```
 
 ### A. Geographic Stratification & Covariate Balance
-Using MITMA/INE cellular telephony mobility matrices tracking over 14 million daily trips, clusters are selected to guarantee spatial containment:
+Using MITMA/INE cellular telephony mobility matrices tracking over 14 million daily trips, clusters are stratified across three distinct spatial archetypes to guarantee spatial containment and capture inter-municipal relocation:
 - **Metropolitan Self-Containment:** Every metropolitan cluster satisfies an internal commuting self-containment index $\ge 80\%$, ensuring that cash transfers disbursed within the cluster circulate locally rather than leaking into adjacent control districts.
+- **Intermediate Secondary Cities:** 16 clusters are explicitly allocated to provincial hubs (populations 25,000–100,000) situated along 45–90 minute transit corridors, capturing teleworker inbound migration and localized housing supply inelasticity.
 - **Rural Buffer Zones:** Non-metropolitan clusters are separated by geographic buffers of 2 to 5 kilometers to eliminate physical spillover contamination.
 - **Rerandomization Balance:** Applying Morgan & Rubin's [@duflo-2007-randomization] rerandomization algorithm over 10,000 permutations achieves exceptional covariate balance across treated and control clusters ($|NormDiff| \le 0.145$ across population, median income, rental density, baseline unemployment, and CNO-11 AI exposure).
 

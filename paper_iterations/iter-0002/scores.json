@@ -1,0 +1,24 @@
+{
+  "iteration": 2,
+  "scored_at": "2026-10-30T11:09:55+00:00",
+  "weighted": 4.7,
+  "criteria": {
+    "fiscal_realism_sustainability": 4.7,
+    "administrative_feasibility": 4.8,
+    "legal_robustness_anti_abuse": 4.7,
+    "macro_productivity_incentives": 4.6,
+    "housing_rent_resilience": 4.7,
+    "argumentative_rigor_honesty": 4.7
+  },
+  "min_criterion": 4.6,
+  "delta": 0.368,
+  "criteria_delta": {
+    "fiscal_realism_sustainability": 0.3,
+    "administrative_feasibility": 0.5,
+    "legal_robustness_anti_abuse": 0.3,
+    "macro_productivity_incentives": 0.4,
+    "housing_rent_resilience": 0.4,
+    "argumentative_rigor_honesty": 0.3
+  },
+  "critical_vulnerabilities": 3
+}
