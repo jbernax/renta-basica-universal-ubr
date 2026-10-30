@@ -37,3 +37,35 @@ def test_build_script_emits_files():
     assert docs_html.stat().st_size > 100000
     assert paper_html.exists()
     assert paper_html.stat().st_size > 100000
+
+
+def test_anteproyecto_articles_rendered():
+    """Regression test ensuring all 25 articles, provisions, and preamble are fully rendered."""
+    import re
+    html = build_full_html()
+
+    # Verify all 25 articles are present with non-empty headings and bodies
+    for i in range(1, 26):
+        pattern = rf"<h4>Artículo {i}: ([^<]+)</h4>"
+        match = re.search(pattern, html)
+        assert match is not None, f"Article {i} header missing or empty"
+        assert len(match.group(1).strip()) > 3, f"Article {i} title too short: {match.group(1)}"
+        assert f'id="art_{i:02d}"' in html, f"Article card id art_{i:02d} missing"
+
+    # Regression check: verify no empty article body tags exist
+    assert not re.search(r'<div class="article-body">\s*<p>\s*</p>\s*</div>', html)
+    assert not re.search(r'<h4>Artículo \d+: \s*</h4>', html)
+
+    # Verify dispositions and preamble
+    assert "Disposición Adicional Primera: Proyecto de Ley Orgánica" in html
+    assert "Disposición Transitoria Primera: Calendario de implantación" in html
+    assert "Disposición Derogatoria Única: Derogación normativa" in html
+    assert "Disposición Final Primera: Títulos competenciales" in html
+    assert "preamble-box" in html
+    assert "Marco de Transformación Tecnológica" in html
+
+    # Verify constitutional and statutory badges
+    assert 'class="legal-badge"' in html
+    assert 'class="statute-badge"' in html
+    assert "Art. 149.1.1 CE" in html
+
