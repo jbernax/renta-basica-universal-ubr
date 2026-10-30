@@ -10,11 +10,11 @@
 
 Este repositorio alberga la investigación académica, la modelización econométrica, el corpus legal y el simulador de políticas para el diseño e implantación de una **Renta Básica Universal (*Universal Basic Rent*, UBR)** en España ante la disrupción del mercado laboral provocada por la inteligencia artificial.
 
-🌐 **Lectura en línea y Simulador Interactivo:** [https://jbernax.github.io/renta-basica-universal-ubr/](https://jbernax.github.io/renta-basica-universal-ubr/)
+ **Lectura en línea y Simulador Interactivo:** [https://jbernax.github.io/renta-basica-universal-ubr/](https://jbernax.github.io/renta-basica-universal-ubr/)
 
 ---
 
-## 🎯 Hallazgos Cuantitativos e Institucionales Clave
+##  Hallazgos Cuantitativos e Institucionales Clave
 
 A partir de 5 motores computacionales que integran microdatos administrativos españoles (EPA, MCVL, IRPF, depósitos de fianzas de alquiler) y simulaciones de equilibrio general:
 
@@ -73,7 +73,7 @@ A partir de 5 motores computacionales que integran microdatos administrativos es
 
 ---
 
-## ⚡ Inicio Rápido
+##  Inicio Rápido
 
 ### Requisitos
 - Python 3.10 o superior
@@ -101,7 +101,7 @@ make html
 
 ---
 
-## 💻 Interfaz de Línea de Comandos (`ubr`)
+##  Interfaz de Línea de Comandos (`ubr`)
 
 El paquete incluye la CLI `ubr` con comandos para ejecutar cada uno de los motores:
 
@@ -130,7 +130,7 @@ python -m ubr paper html
 
 ---
 
-## 📖 Cita Académica
+##  Cita Académica
 
 ```bibtex
 @book{ubr_spain_2026,
