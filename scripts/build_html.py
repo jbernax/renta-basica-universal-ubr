@@ -119,21 +119,21 @@ def process_citations(text: str, sources_by_id: Dict[str, Dict[str, Any]]) -> st
 
 
 def process_alerts(html_content: str) -> str:
-    """Convert blockquote alerts [!NOTE], [!IMPORTANT], etc. to styled cards."""
+    """Convert blockquote alerts [!NOTE], [!IMPORTANT], etc. to styled cards without emojis."""
     alert_types = {
-        "NOTE": ("alert-note", "ℹ️"),
-        "TIP": ("alert-tip", "💡"),
-        "IMPORTANT": ("alert-important", "📌"),
-        "WARNING": ("alert-warning", "⚠️"),
-        "CAUTION": ("alert-caution", "🛑"),
+        "NOTE": "alert-note",
+        "TIP": "alert-tip",
+        "IMPORTANT": "alert-important",
+        "WARNING": "alert-warning",
+        "CAUTION": "alert-caution",
     }
-    for atype, (css_class, icon) in alert_types.items():
+    for atype, css_class in alert_types.items():
         pattern = re.compile(
             rf"<blockquote>\s*<p>\[!{atype}\]\s*(.*?)</p>\s*</blockquote>",
             re.DOTALL | re.IGNORECASE,
         )
         html_content = pattern.sub(
-            rf'<div class="callout {css_class}"><div class="callout-header"><span class="callout-icon">{icon}</span><strong>{atype}</strong></div><div class="callout-body"><p>\1</p></div></div>',
+            rf'<div class="callout {css_class}"><div class="callout-header"><strong>{atype}</strong></div><div class="callout-body"><p>\1</p></div></div>',
             html_content,
         )
     return html_content
@@ -242,8 +242,16 @@ def build_full_html() -> str:
     s1_data = load_json_data("counterfactual_s1.json")
     s2_data = load_json_data("counterfactual_s2.json")
     s3_data = load_json_data("counterfactual_s3.json")
+    microsim_s1 = load_json_data("microsim_tier_a_s1.json")
     microsim_s2 = load_json_data("microsim_tier_b_s2.json")
-    cpff_data = load_json_data("legal_cpff_equalization.json")
+    microsim_s3 = load_json_data("microsim_tier_c_s3.json")
+
+    # Multi-scenario intergovernmental CPFF equalization
+    from ubr.legislation.equalization import calculate_intergovernmental_equalization
+    cpff_s1 = calculate_intergovernmental_equalization(scenario="S1").to_dict()
+    cpff_s2 = calculate_intergovernmental_equalization(scenario="S2").to_dict()
+    cpff_s3 = calculate_intergovernmental_equalization(scenario="S3").to_dict()
+
     bicameral_data = load_json_data("legal_bicameral_coalitions.json")
     anteproyecto_data = load_json_data("legal_anteproyecto_corpus.json")
     pilot_clusters = load_json_data("pilot_clusters_j70.json")
@@ -303,14 +311,43 @@ def build_full_html() -> str:
     
     # Prepare JSON payloads for client-side interactivity
     dashboard_payload = {
+        "current_scenario": "S2",
         "scenarios": {
             "S1": s1_data.get("metrics", {}),
             "S2": s2_data.get("metrics", {}),
             "S3": s3_data.get("metrics", {}),
         },
-        "microsim_deciles": microsim_s2.get("deciles", []),
-        "poverty": microsim_s2.get("poverty_and_inequality", {}),
-        "cpff": cpff_data,
+        "microsim_by_scenario": {
+            "S1": {
+                "tier": "Tier A",
+                "monthly_rate_eur": 600,
+                "child_rate_eur": 210,
+                "deciles": microsim_s1.get("deciles", []),
+                "poverty": microsim_s1.get("poverty_and_inequality", {}),
+                "breakeven_percentile": 88,
+            },
+            "S2": {
+                "tier": "Tier B",
+                "monthly_rate_eur": 900,
+                "child_rate_eur": 360,
+                "deciles": microsim_s2.get("deciles", []),
+                "poverty": microsim_s2.get("poverty_and_inequality", {}),
+                "breakeven_percentile": 84,
+            },
+            "S3": {
+                "tier": "Tier C",
+                "monthly_rate_eur": 1200,
+                "child_rate_eur": 420,
+                "deciles": microsim_s3.get("deciles", []),
+                "poverty": microsim_s3.get("poverty_and_inequality", {}),
+                "breakeven_percentile": 79,
+            },
+        },
+        "cpff_by_scenario": {
+            "S1": cpff_s1,
+            "S2": cpff_s2,
+            "S3": cpff_s3,
+        },
         "bicameral": bicameral_data,
         "pilot_summary": {
             "total_clusters": pilot_clusters.get("total_clusters", 70),
@@ -326,7 +363,7 @@ def build_full_html() -> str:
     preamble_formatted = format_preamble(preamble_raw)
     preamble_details_html = f"""
         <details class="preamble-box">
-            <summary>⚖️ Exposición de Motivos (Haga clic para desplegar los antecedentes y fundamentos doctrinales)</summary>
+            <summary>Exposición de Motivos (Haga clic para desplegar los antecedentes y fundamentos doctrinales)</summary>
             <div class="preamble-content">
                 {preamble_formatted}
             </div>
@@ -505,20 +542,11 @@ def build_full_html() -> str:
         .brand-container {{
             display: flex;
             align-items: center;
-            gap: 0.75rem;
-        }}
-        .brand-badge {{
-            background: linear-gradient(135deg, #2563eb, #059669);
-            color: white;
-            font-weight: 700;
-            padding: 0.25rem 0.6rem;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            letter-spacing: 0.05em;
         }}
         .brand-title {{
             font-weight: 700;
-            font-size: 1.05rem;
+            font-size: 1.15rem;
+            letter-spacing: -0.01em;
             color: var(--text-main);
         }}
         .nav-tabs {{
@@ -818,6 +846,65 @@ def build_full_html() -> str:
             gap: 1.25rem;
             margin-bottom: 2rem;
         }}
+        .scenario-selector-grid {{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.25rem;
+            margin-top: 1rem;
+        }}
+        .scenario-btn {{
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 1.25rem;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.15s ease-in-out;
+            font-family: inherit;
+            color: inherit;
+            display: block;
+            width: 100%;
+        }}
+        .scenario-btn:hover {{
+            border-color: var(--primary);
+            box-shadow: var(--shadow-sm);
+        }}
+        .scenario-btn.active {{
+            border-color: var(--primary);
+            border-left: 4px solid var(--primary);
+            background: var(--primary-light);
+        }}
+        .scenario-btn-header {{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.65rem;
+        }}
+        .scenario-tag {{
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }}
+        .scenario-tier-pill {{
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+            background: var(--bg-body);
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }}
+        .scenario-btn.active .scenario-tier-pill {{
+            background: var(--bg-card);
+            color: var(--primary);
+            border-color: var(--primary);
+        }}
+        .scenario-subtext {{
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            margin-top: 0.6rem;
+            line-height: 1.45;
+        }}
         .dash-card {{
             background: var(--bg-card);
             border: 1px solid var(--border-color);
@@ -1077,24 +1164,20 @@ def build_full_html() -> str:
     <!-- Header Navigation Bar -->
     <header class="top-navbar">
         <div class="brand-container">
-            <span class="brand-badge">UBR ESPAÑA</span>
             <span class="brand-title">Renta Básica Universal</span>
         </div>
         
         <nav class="nav-tabs">
-            <button class="nav-tab-btn active" onclick="switchTab('monograph', this)">📄 Monografía Académica</button>
-            <button class="nav-tab-btn" onclick="switchTab('dashboard', this)">📊 Simulador de Políticas</button>
-            <button class="nav-tab-btn" onclick="switchTab('anteproyecto', this)">⚖️ Anteproyecto de Ley</button>
+            <button class="nav-tab-btn active" onclick="switchTab('monograph', this)">Monografía Académica</button>
+            <button class="nav-tab-btn" onclick="switchTab('dashboard', this)">Simulador de Políticas</button>
+            <button class="nav-tab-btn" onclick="switchTab('anteproyecto', this)">Anteproyecto de Ley</button>
         </nav>
 
         <div class="header-actions">
-            <button class="btn-action" onclick="toggleLanguageQuick()">🇪🇸 / 🇬🇧 Resumen</button>
-            <button class="btn-action" onclick="window.print()">🖨️ Imprimir / PDF</button>
-            <a href="https://github.com/jbernax/renta-basica-universal-ubr" target="_blank" rel="noopener" class="btn-action">
-                <svg height="16" width="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-                GitHub
-            </a>
-            <button class="btn-action" onclick="toggleTheme()" id="themeBtn">🌙</button>
+            <button class="btn-action" onclick="toggleLanguageQuick()">Resumen (ES / EN)</button>
+            <button class="btn-action" onclick="window.print()">Imprimir / PDF</button>
+            <a href="https://github.com/jbernax/renta-basica-universal-ubr" target="_blank" rel="noopener" class="btn-action">Código / GitHub</a>
+            <button class="btn-action" onclick="toggleTheme()" id="themeBtn">Modo oscuro</button>
         </div>
     </header>
 
@@ -1127,31 +1210,40 @@ def build_full_html() -> str:
                     <span>Escenarios de Disrupción Laboral por Inteligencia Artificial</span>
                     <span class="metric-badge">Track 1: CNO-11 & Macro Drag</span>
                 </h3>
-                <div class="grid-3" style="margin-top: 1rem;">
-                    <div class="dash-card" style="border-left: 4px solid #3b82f6;">
-                        <span class="metric-badge">Escenario S1 · Moderado</span>
+                <div class="scenario-selector-grid">
+                    <button type="button" class="scenario-btn" id="scenarioBtn-S1" onclick="selectScenario('S1')">
+                        <div class="scenario-btn-header">
+                            <span class="scenario-tag">Escenario S1 · Moderado</span>
+                            <span class="scenario-tier-pill">Tier A (€600/mes)</span>
+                        </div>
                         <div class="kpi-val">-2.5 pp</div>
-                        <div class="kpi-label">Contracción de la cuota del trabajo (Δs_L)</div>
-                        <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">
-                            Erosión de cotizaciones: <strong>-€7.2B/año</strong>. Horas humanas desplazadas: <strong>-7.5%</strong>. Nivel RBU recomendado: <strong>Tier A (€600/mes)</strong>.
-                        </p>
-                    </div>
-                    <div class="dash-card" style="border-left: 4px solid #059669; background: var(--accent-light);">
-                        <span class="metric-badge">Escenario S2 · Severo (Central)</span>
+                        <div class="kpi-label">Contracción cuota trabajo (Δs_L)</div>
+                        <div class="scenario-subtext">
+                            Erosión cotizaciones: <strong>-€7.2B/año</strong>. Horas desplazadas: <strong>-7.5%</strong>.
+                        </div>
+                    </button>
+                    <button type="button" class="scenario-btn active" id="scenarioBtn-S2" onclick="selectScenario('S2')">
+                        <div class="scenario-btn-header">
+                            <span class="scenario-tag">Escenario S2 · Severo (Central)</span>
+                            <span class="scenario-tier-pill">Tier B (€900/mes)</span>
+                        </div>
                         <div class="kpi-val">-7.0 pp</div>
-                        <div class="kpi-label">Contracción de la cuota del trabajo (Δs_L)</div>
-                        <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">
-                            Erosión de cotizaciones: <strong>-€18.4B/año</strong>. Horas humanas desplazadas: <strong>-20.0%</strong>. Nivel RBU recomendado: <strong>Tier B (€900/mes)</strong>.
-                        </p>
-                    </div>
-                    <div class="dash-card" style="border-left: 4px solid #ef4444;">
-                        <span class="metric-badge">Escenario S3 · Estructural</span>
+                        <div class="kpi-label">Contracción cuota trabajo (Δs_L)</div>
+                        <div class="scenario-subtext">
+                            Erosión cotizaciones: <strong>-€18.4B/año</strong>. Horas desplazadas: <strong>-20.0%</strong>.
+                        </div>
+                    </button>
+                    <button type="button" class="scenario-btn" id="scenarioBtn-S3" onclick="selectScenario('S3')">
+                        <div class="scenario-btn-header">
+                            <span class="scenario-tag">Escenario S3 · Estructural</span>
+                            <span class="scenario-tier-pill">Tier C (€1.200/mes)</span>
+                        </div>
                         <div class="kpi-val">-15.0 pp</div>
-                        <div class="kpi-label">Contracción de la cuota del trabajo (Δs_L)</div>
-                        <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">
-                            Erosión de cotizaciones: <strong>-€38.9B/año</strong>. Horas humanas desplazadas: <strong>-42.0%</strong>. Nivel RBU recomendado: <strong>Tier C (€1.200/mes)</strong>.
-                        </p>
-                    </div>
+                        <div class="kpi-label">Contracción cuota trabajo (Δs_L)</div>
+                        <div class="scenario-subtext">
+                            Erosión cotizaciones: <strong>-€38.9B/año</strong>. Horas desplazadas: <strong>-42.0%</strong>.
+                        </div>
+                    </button>
                 </div>
             </div>
 
@@ -1190,9 +1282,9 @@ def build_full_html() -> str:
 
                     <div class="calc-result-box">
                         <div>
-                            <div class="kpi-label">RBU Bruta Familiar (Nivel B)</div>
+                            <div class="kpi-label" id="calcTierLabel">RBU Bruta Familiar (<span id="calcTierBadge">Tier B</span>)</div>
                             <div class="kpi-val" id="grossUbrVal">€2.160</div>
-                            <span style="font-size: 0.75rem; color: var(--text-muted);">€900/ad + €360/men</span>
+                            <span style="font-size: 0.75rem; color: var(--text-muted);" id="grossUbrBreakdown">€900/ad + €360/men</span>
                         </div>
                         <div>
                             <div class="kpi-label">Ganancia Neta Disponible</div>
@@ -1206,12 +1298,12 @@ def build_full_html() -> str:
                 <div class="dash-card">
                     <h3>
                         <span>Variación de Renta Disponible por Decil</span>
-                        <span class="metric-badge">EUROMOD · Nivel B</span>
+                        <span class="metric-badge" id="decilesBadge">EUROMOD · Tier B</span>
                     </h3>
                     <div style="height: 260px; position: relative;">
                         <canvas id="decilesChart"></canvas>
                     </div>
-                    <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem; text-align: center;">
+                    <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem; text-align: center;" id="decilesBreakevenNote">
                         El punto de equilibrio se sitúa en el <strong>percentil 84</strong>: el 84% de los ciudadanos resulta beneficiario neto.
                     </p>
                 </div>
@@ -1223,9 +1315,9 @@ def build_full_html() -> str:
                 <div class="dash-card">
                     <h3>
                         <span>Fondo de Compensación CPFF (CCAA)</span>
-                        <span class="metric-badge">€56.84B · Régimen Común</span>
+                        <span class="metric-badge" id="cpffFundBadge">€56.84B · Régimen Común</span>
                     </h3>
-                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.8rem;">
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.8rem;" id="cpffPerCapitaNote">
                         Distribución per cápita garantizada de <strong>€1.134,80 por habitante</strong> en las 15 Comunidades Autónomas de Régimen Común:
                     </p>
                     <div style="max-height: 240px; overflow-y: auto; border: 1px solid var(--border-color); border-radius: var(--radius-md);">
@@ -1283,7 +1375,7 @@ def build_full_html() -> str:
                 <p>Texto legal completo estructurado en 9 Títulos (25 artículos), Disposiciones Adicionales, Transitorias, Derogatoria y Finales. Incorpora la Exposición de Motivos, el Fondo de Compensación CPFF, el anclaje constitucional (Arts. 149.1.1, 149.1.14 y 149.1.17 CE), el Impuesto IECA y el Parámetro Fiscal Federal de Vivienda.</p>
             </div>
 
-            <input type="text" id="legalSearch" class="search-bar" placeholder="🔍 Buscar por artículo, concepto o anclaje constitucional (ej: 'vivienda', '149.1.14', 'computación', 'IRPF')..." oninput="filterArticles()">
+            <input type="text" id="legalSearch" class="search-bar" placeholder="Buscar por artículo, concepto o anclaje constitucional (ej: 'vivienda', '149.1.14', 'computación', 'IRPF')..." oninput="filterArticles()">
 
             <div id="anteproyectoList">
                 {preamble_details_html}
@@ -1296,6 +1388,8 @@ def build_full_html() -> str:
     <!-- Client-side Logic -->
     <script>
         const DASHBOARD_DATA = {dashboard_json};
+        let activeScenario = 'S2';
+        let decilesChartInstance = null;
 
         function switchTab(tabId, btn) {{
             document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
@@ -1314,6 +1408,13 @@ def build_full_html() -> str:
             if (window.history && window.history.replaceState) {{
                 window.history.replaceState(null, null, '#' + tabId);
             }}
+            if (tabId === 'dashboard') {{
+                if (decilesChartInstance) {{
+                    setTimeout(() => decilesChartInstance.resize(), 60);
+                }} else {{
+                    selectScenario(activeScenario);
+                }}
+            }}
             window.scrollTo({{ top: 0, behavior: 'smooth' }});
         }}
 
@@ -1321,7 +1422,10 @@ def build_full_html() -> str:
             const current = document.documentElement.getAttribute('data-theme');
             const target = current === 'dark' ? 'light' : 'dark';
             document.documentElement.setAttribute('data-theme', target);
-            document.getElementById('themeBtn').innerText = target === 'dark' ? '☀️' : '🌙';
+            const themeBtn = document.getElementById('themeBtn');
+            if (themeBtn) {{
+                themeBtn.innerText = target === 'dark' ? 'Modo claro' : 'Modo oscuro';
+            }}
         }}
 
         function toggleLanguageQuick() {{
@@ -1335,6 +1439,59 @@ def build_full_html() -> str:
             }}
         }}
 
+        function selectScenario(scId) {{
+            if (!DASHBOARD_DATA.microsim_by_scenario || !DASHBOARD_DATA.microsim_by_scenario[scId]) return;
+            activeScenario = scId;
+
+            // 1. Update button states
+            ['S1', 'S2', 'S3'].forEach(id => {{
+                const btn = document.getElementById('scenarioBtn-' + id);
+                if (btn) {{
+                    if (id === scId) {{
+                        btn.classList.add('active');
+                    }} else {{
+                        btn.classList.remove('active');
+                    }}
+                }}
+            }});
+
+            const scInfo = DASHBOARD_DATA.microsim_by_scenario[scId];
+            const cpffInfo = DASHBOARD_DATA.cpff_by_scenario ? DASHBOARD_DATA.cpff_by_scenario[scId] : null;
+
+            // 2. Update Family Calculator labels & rates
+            const tierBadge = document.getElementById('calcTierBadge');
+            if (tierBadge) tierBadge.innerText = scInfo.tier;
+            const breakdown = document.getElementById('grossUbrBreakdown');
+            if (breakdown) {{
+                breakdown.innerText = `€${{scInfo.monthly_rate_eur}}/ad + €${{scInfo.child_rate_eur}}/men`;
+            }}
+            updateCalculator();
+
+            // 3. Update Deciles Chart
+            const decilesBadge = document.getElementById('decilesBadge');
+            if (decilesBadge) decilesBadge.innerText = `EUROMOD · ${{scInfo.tier}}`;
+            const breakevenNote = document.getElementById('decilesBreakevenNote');
+            if (breakevenNote) {{
+                breakevenNote.innerHTML = `El punto de equilibrio se sitúa en el <strong>percentil ${{scInfo.breakeven_percentile}}</strong>: el ${{scInfo.breakeven_percentile}}% de los ciudadanos resulta beneficiario neto.`;
+            }}
+            updateDecilesChart(scInfo.deciles || []);
+
+            // 4. Update CPFF Equalization
+            if (cpffInfo) {{
+                const cpffBadge = document.getElementById('cpffFundBadge');
+                if (cpffBadge) {{
+                    cpffBadge.innerText = `€${{cpffInfo.total_cpff_fund_size_eur_b.toFixed(2)}}B · Régimen Común`;
+                }}
+                const perCapitaNote = document.getElementById('cpffPerCapitaNote');
+                const firstReg = (cpffInfo.common_regime_regions && cpffInfo.common_regime_regions[0]) || {{}};
+                const perCapitaVal = firstReg.equalized_balance_per_capita_eur || 1134.8;
+                if (perCapitaNote) {{
+                    perCapitaNote.innerHTML = `Distribución per cápita garantizada de <strong>€${{perCapitaVal.toLocaleString('es-ES', {{minimumFractionDigits: 2, maximumFractionDigits: 2}})}} por habitante</strong> en las 15 Comunidades Autónomas de Régimen Común:`;
+                }}
+                populateCpffTable(cpffInfo.common_regime_regions || []);
+            }}
+        }}
+
         function updateCalculator() {{
             const adults = parseInt(document.getElementById('sliderAdults').value);
             const children = parseInt(document.getElementById('sliderChildren').value);
@@ -1344,15 +1501,90 @@ def build_full_html() -> str:
             document.getElementById('childCountDisplay').innerText = children + (children === 1 ? ' menor' : ' menores');
             document.getElementById('incomeDisplay').innerText = '€' + income.toLocaleString('es-ES') + ' / mes';
 
-            // Tier B rates: €900 adult, €360 minor (0.40)
-            const grossUbr = (adults * 900) + (children * 360);
+            const scInfo = (DASHBOARD_DATA.microsim_by_scenario && DASHBOARD_DATA.microsim_by_scenario[activeScenario])
+                ? DASHBOARD_DATA.microsim_by_scenario[activeScenario]
+                : {{ monthly_rate_eur: 900, child_rate_eur: 360 }};
+            const grossUbr = (adults * scInfo.monthly_rate_eur) + (children * scInfo.child_rate_eur);
             
-            // Simplified effective tax clawback on income (Tier B integration with 44% flat reform rate - current basic allowances)
+            // Simplified effective tax clawback on income (reform rate integration with 44% flat rate)
             const clawback = Math.max(0, income * 0.40);
-            const netGain = Math.round(grossUbr - clawback + (income * 0.15)); // net disposable difference
+            const netGain = Math.round(grossUbr - clawback + (income * 0.15));
 
             document.getElementById('grossUbrVal').innerText = '€' + grossUbr.toLocaleString('es-ES');
             document.getElementById('netGainVal').innerText = (netGain >= 0 ? '+€' : '-€') + Math.abs(netGain).toLocaleString('es-ES');
+        }}
+
+        function updateDecilesChart(deciles) {{
+            const ctx = document.getElementById('decilesChart');
+            if (!ctx || !deciles || deciles.length === 0) return;
+
+            const decileLabels = deciles.map(d => 'Decil ' + d.decile);
+            const pctGains = deciles.map(d => {{
+                const val = (d.delta_disposable_income_pct != null) ? d.delta_disposable_income_pct : (d.pct_change_disp_income || 0);
+                return Math.round(val * 10) / 10;
+            }});
+
+            if (decilesChartInstance) {{
+                decilesChartInstance.data.labels = decileLabels;
+                decilesChartInstance.data.datasets[0].data = pctGains;
+                decilesChartInstance.data.datasets[0].backgroundColor = pctGains.map(val => val >= 0 ? '#10b981' : '#ef4444');
+                decilesChartInstance.update();
+                return;
+            }}
+
+            decilesChartInstance = new Chart(ctx, {{
+                type: 'bar',
+                data: {{
+                    labels: decileLabels,
+                    datasets: [{{
+                        label: 'Ganancia en Renta Disponible (%)',
+                        data: pctGains,
+                        backgroundColor: pctGains.map(val => val >= 0 ? '#10b981' : '#ef4444'),
+                        borderRadius: 4,
+                    }}]
+                }},
+                options: {{
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {{
+                        legend: {{ display: false }},
+                        tooltip: {{
+                            callbacks: {{
+                                label: function(context) {{
+                                    return (context.raw >= 0 ? '+' : '') + context.raw + '% renta disponible';
+                                }}
+                            }}
+                        }}
+                    }},
+                    scales: {{
+                        y: {{
+                            title: {{ display: true, text: '% Variación' }},
+                            grid: {{ color: 'rgba(0,0,0,0.06)' }}
+                        }},
+                        x: {{
+                            grid: {{ display: false }}
+                        }}
+                    }}
+                }}
+            }});
+        }}
+
+        function populateCpffTable(regions) {{
+            const cpffTbody = document.getElementById('cpffTableBody');
+            if (!cpffTbody || !regions) return;
+
+            let rows = '';
+            regions.forEach(item => {{
+                const transferEurM = (item.cpff_equalization_transfer_eur_b != null)
+                    ? (item.cpff_equalization_transfer_eur_b * 1000)
+                    : (item.allocation_eur_m || 0);
+                rows += `<tr>
+                    <td style="padding: 0.35rem 0.6rem; border-bottom: 1px solid var(--border-color);">${{item.name || item.ccaa_name}}</td>
+                    <td style="padding: 0.35rem 0.6rem; border-bottom: 1px solid var(--border-color); text-align: right;">${{item.population.toLocaleString('es-ES')}}</td>
+                    <td style="padding: 0.35rem 0.6rem; border-bottom: 1px solid var(--border-color); text-align: right; font-weight: 600; color: var(--primary);">€${{Math.round(transferEurM).toLocaleString('es-ES')}} M</td>
+                </tr>`;
+            }});
+            cpffTbody.innerHTML = rows;
         }}
 
         function filterArticles() {{
@@ -1420,62 +1652,8 @@ def build_full_html() -> str:
                 }}, 150);
             }}
 
-            // CPFF table population
-            const cpffTbody = document.getElementById('cpffTableBody');
-            if (cpffTbody && DASHBOARD_DATA.cpff && DASHBOARD_DATA.cpff.ccaa_allocations) {{
-                let rows = '';
-                DASHBOARD_DATA.cpff.ccaa_allocations.forEach(item => {{
-                    rows += `<tr>
-                        <td style="padding: 0.35rem 0.6rem; border-bottom: 1px solid var(--border-color);">${{item.ccaa_name}}</td>
-                        <td style="padding: 0.35rem 0.6rem; border-bottom: 1px solid var(--border-color); text-align: right;">${{item.population.toLocaleString('es-ES')}}</td>
-                        <td style="padding: 0.35rem 0.6rem; border-bottom: 1px solid var(--border-color); text-align: right; font-weight: 600; color: var(--primary);">€${{item.allocation_eur_m.toLocaleString('es-ES', {{maximumFractionDigits: 1}})}}</td>
-                    </tr>`;
-                }});
-                cpffTbody.innerHTML = rows;
-            }}
-
-            // Chart.js Deciles
-            const ctx = document.getElementById('decilesChart');
-            if (ctx && DASHBOARD_DATA.microsim_deciles) {{
-                const decileLabels = DASHBOARD_DATA.microsim_deciles.map(d => 'Decil ' + d.decile);
-                const pctGains = DASHBOARD_DATA.microsim_deciles.map(d => d.pct_change_disp_income);
-
-                new Chart(ctx, {{
-                    type: 'bar',
-                    data: {{
-                        labels: decileLabels,
-                        datasets: [{{
-                            label: 'Ganancia en Renta Disponible (%)',
-                            data: pctGains,
-                            backgroundColor: pctGains.map(val => val >= 0 ? '#10b981' : '#ef4444'),
-                            borderRadius: 4,
-                        }}]
-                    }},
-                    options: {{
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        plugins: {{
-                            legend: {{ display: false }},
-                            tooltip: {{
-                                callbacks: {{
-                                    label: function(context) {{
-                                        return (context.raw >= 0 ? '+' : '') + context.raw + '% renta disponible';
-                                    }}
-                                }}
-                            }}
-                        }},
-                        scales: {{
-                            y: {{
-                                title: {{ display: true, text: '% Variación' }},
-                                grid: {{ color: 'rgba(0,0,0,0.06)' }}
-                            }},
-                            x: {{
-                                grid: {{ display: false }}
-                            }}
-                        }}
-                    }}
-                }});
-            }}
+            // Initialize multi-scenario dashboard with S2
+            selectScenario('S2');
         }});
     </script>
 </body>
@@ -1493,13 +1671,13 @@ def main() -> None:
     docs_index = docs_dir / "index.html"
     with open(docs_index, "w", encoding="utf-8") as f:
         f.write(html_content)
-    print(f"  ✓ Written {len(html_content):,} bytes to {docs_index}")
+    print(f"  [OK] Written {len(html_content):,} bytes to {docs_index}")
     
     paper_dir = REPO_ROOT / "paper"
     paper_index = paper_dir / "index.html"
     with open(paper_index, "w", encoding="utf-8") as f:
         f.write(html_content)
-    print(f"  ✓ Written {len(html_content):,} bytes to {paper_index}")
+    print(f"  [OK] Written {len(html_content):,} bytes to {paper_index}")
     print("[2/3] Validating HTML outputs...")
     assert docs_index.exists() and docs_index.stat().st_size > 50000
     assert paper_index.exists() and paper_index.stat().st_size > 50000
