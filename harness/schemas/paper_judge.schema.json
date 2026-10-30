@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ubr/paper_judge.schema.json",
+  "title": "Independent blind judge verdict on paper monograph adversarial robustness",
+  "type": "object",
+  "required": ["iteration", "scores", "critical_vulnerabilities", "top_required_revisions", "overall_robustness_verdict"],
+  "additionalProperties": false,
+  "properties": {
+    "iteration": {"type": "integer", "minimum": 1},
+    "scores": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "object",
+        "required": ["score", "rationale"],
+        "additionalProperties": false,
+        "properties": {
+          "score": {"type": "number", "minimum": 0, "maximum": 5},
+          "rationale": {"type": "string", "minLength": 10},
+          "evidence": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    },
+    "critical_vulnerabilities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "chapter", "vulnerability"],
+        "additionalProperties": false,
+        "properties": {
+          "id": {"type": "string", "pattern": "^ADV-JD-[0-9]{2,4}-[0-9]{2,3}$"},
+          "chapter": {"type": "string", "pattern": "^(ch0[0-8]|GLOBAL|MONOGRAPH)$"},
+          "vulnerability": {"type": "string", "minLength": 10}
+        }
+      }
+    },
+    "top_required_revisions": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 10},
+      "maxItems": 10
+    },
+    "overall_robustness_verdict": {
+      "type": "string",
+      "minLength": 20
+    }
+  }
+}

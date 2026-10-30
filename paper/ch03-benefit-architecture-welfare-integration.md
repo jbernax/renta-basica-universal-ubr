@@ -38,10 +38,12 @@ A fatal flaw in naive basic income models is the mechanical abolition of existin
 
 $$\text{Transfer}_i = \max\left(\text{UBR}_i, \, \text{LegacyEntitlement}_i\right)$$
 
-### A. Folding the Ingreso Mínimo Vital (IMV) and Regional Schemes
-- All non-contributory cash transfers under *Ley 19/2021* (IMV [@boe-imv-2021]) and autonomous community minimum insertion incomes (*Rentas Mínimas de Inserción*) are absorbed into the baseline UBR structure.
-- For households where legacy IMV plus regional supplements exceeded the baseline adult UBR (e.g., single-parent households with three children receiving over €1,300/month under IMV scales), the Social Security administration automatically liquidates a monthly differential supplement (*Complemento Personal Transitorio de Mantenimiento de Ingresos*).
-- Microsimulation in EUROMOD confirms that funding this differential top-up costs **€7.50 billion per year** (0.50% of GDP in Tier B), eliminating all downside risk across 100% of Spanish households.
+### A. Folding the Ingreso Mínimo Vital (IMV) and Resolving the "IMV Paradox"
+- All non-contributory cash transfers under *Ley 19/2021* (IMV [@boe-imv-2021]) and autonomous community minimum insertion incomes (*Rentas Mínimas de Inserción*) are integrated into the baseline UBR structure.
+- **Overcoming the "IMV Paradox" in Transition Top-Ups:** Under legacy IMV, 56% of eligible households in severe poverty never receive benefits due to intrusive cohabitation audits, and recipients suffer from retrospective overpayment debt notices (*cobros indebidos*). To prevent the transition top-up from reproducing this exact pathology, the *Complemento Personal Transitorio de Mantenimiento de Ingresos* (€7.50 billion per year in Tier B) is legally individualized:
+  1. *De Jure Individualization:* The differential supplement is permanently allocated to the primary caregiver registered on the baseline certification date, without requiring ongoing cohabitation unit audits or annual household asset recertification.
+  2. *Statutory Immunity from Retrospective Clawbacks:* Any minor administrative overpayment arising from automated data latency is statutorily treated as a non-recoverable social transition credit, strictly prohibiting administrative asset seizure or sudden payment suspension unless deliberate criminal fraud (*Art. 307 ter Código Penal*) is established by a final court order.
+- **Household Integrity & Anti-Splitting Safeguards:** To prevent tactical domestic restructuring (fictitious single-parent declarations or artificial cohabitation dissolutions designed to multiply transition supplements), the statute establishes automated cadastral cohabitation checks cross-referencing AEAT IRPF joint tax returns over the preceding three fiscal years. Allocation of child supplements in contested custody situations requires a ratified judicial agreement (*convenio regulador judicialmente aprobado*), and single-parent status changes are subject to a 24-month audit look-back.
 
 ### B. Tiered Universal Disability Protection
 Disability entitlements are decoupled from income testing and integrated via an impairment-scaled universal supplement (*Complemento Universal por Discapacidad*) indexed to official dependency assessments under *Real Decreto 888/2022* [@boe-rd-888-2022-discapacidad]:

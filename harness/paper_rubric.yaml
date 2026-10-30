@@ -1,0 +1,66 @@
+criteria:
+  - id: fiscal_realism_sustainability
+    name: Fiscal realism and macro-fiscal sustainability
+    weight: 0.20
+    anchors:
+      0: "Naive static costing ignoring behavioral erosion, tax base flight, and debt spiraling."
+      1: "Basic accounting balance with optimistic revenue assumptions; ignores Laffer bounds and capital mobility."
+      2: "Explicit tax instruments, but compute tax incidence, dynamic elasticity of taxable income (ETI), or EU fiscal rules (Net Primary Expenditure) are glossed over."
+      3: "Credible tax-benefit microsimulation with realistic ETI and deficit neutrality under baseline, but fragile under severe AI macroeconomic stress."
+      4: "Rigorous dynamic stress-testing including corporate/compute mobility, Laffer bounds, EU fiscal rule compliance, and Sovereign Fund volatility buffers."
+      5: "Bulletproof macro-fiscal architecture: specifies counter-cyclical stabilizers, conservative dynamic scoring, explicit statutory clawback triggers, and general equilibrium revenue closure."
+
+  - id: administrative_feasibility
+    name: Administrative and implementation feasibility
+    weight: 0.18
+    anchors:
+      0: "Assumes frictionless magic disbursement with zero administrative friction or operational cost."
+      1: "Acknowledges AEAT and INSS existence but ignores coordination lag, digital divide, and legacy IT hurdles."
+      2: "Proposes administrative pipelines but leaves transitions from regional minimum incomes (rentas mínimas) and non-take-up of top-ups unaddressed."
+      3: "Clear operational flow between AEAT, INSS, and Municipalities (Padrón), with realistic monthly payment settlement via SEPA."
+      4: "Deep operational protocol: addresses banking exclusion, automated proactive enrollment, dispute resolution mechanisms, and legacy welfare phase-out."
+      5: "Comprehensive operational masterplan ready for State Audit (IGAE/Tribunal de Cuentas): zero-friction digital onboarding, cash fallback channels, automated reconciliation, and multi-tier governance protocols."
+
+  - id: legal_robustness_anti_abuse
+    name: Legal defensibility and anti-abuse / anti-fraud architecture
+    weight: 0.18
+    anchors:
+      0: "Ignores the Spanish Constitution, Foral regimes, EU treaties, and fraud vectors entirely."
+      1: "Mentions Constitutional articles but vulnerable to immediate annulment by the Constitutional Court or CJEU."
+      2: "Addresses basic title of competence but leaves residence fraud (empadronamiento fraudulento) and Foral tax arbitrage wide open to exploitation."
+      3: "Solid grounding in Arts. 149.1.1/14/17 CE and TC jurisprudence, with basic anti-fraud residency criteria and Foral coordination."
+      4: "Resilient anti-abuse framework: addresses sham domicile splitting, shadow economy collusions, CJEU free movement case law (Dano, Brey), and LOFCA/Concierto/Convenio mechanics."
+      5: "Airtight statutory design: proof against constitutional appeals, gaming-resistant multi-source residency triangulation (tax, social security, health card), and harmonized inter-territorial anti-fraud enforcement."
+
+  - id: macro_productivity_incentives
+    name: Macroeconomic productivity, labor supply, and growth resilience
+    weight: 0.18
+    anchors:
+      0: "Dismisses labor supply contraction and productivity concerns without analytical or empirical defense."
+      1: "Assumes everyone continues working regardless of marginal tax rates or transfer unconditionality."
+      2: "Cites basic UBI trials showing small average hours reductions, but overlooks Spain's high structural unemployment, sectoral low-wage elasticity, and Eurozone competitiveness."
+      3: "Distinguishes intensive vs. extensive labor supply responses using empirical elasticities; addresses human capital investment vs. leisure."
+      4: "Thorough general-equilibrium defense: models reservation wages in essential services, automation wage adjustments, entrepreneurial risk-taking, and Eurozone relative unit labor costs (ULCs)."
+      5: "Flawless structural macroeconomic synthesis: micro-founded HANK closure demonstrating how UBR prevents aggregate demand collapse without destroying labor supply, backed by empirical sensitivity bounds."
+
+  - id: housing_rent_resilience
+    name: Housing market rent absorption and spatial resilience
+    weight: 0.14
+    anchors:
+      0: "Completely ignores real estate markets, allowing unconditional transfers to be fully captured by landlords."
+      1: "Relies solely on wishful rent control without examining supply elasticities or black-market evasions."
+      2: "Discusses rent pressure in Madrid/Barcelona but lacks structural supply or fiscal mechanisms to prevent transfer capitalization."
+      3: "Integrates supply incentives and statutory tenancy benchmarks to curb windfall rent extraction."
+      4: "Comprehensive housing shock-absorber: combines the Objective Federal Fiscal Housing Benchmark, targeted supply expansion, and land value capture to defend purchasing power."
+      5: "State-of-the-art spatial general-equilibrium closure: proves transfer retention across tense and non-tense rental zones with empirical pass-through bounds."
+
+  - id: argumentative_rigor_honesty
+    name: Argumentative rigor, calibration of claims, and intellectual honesty
+    weight: 0.12
+    anchors:
+      0: "Pervaded by ideological wishful thinking, ungrounded assertions, and rhetorical evasion of trade-offs."
+      1: "Overstates benefits and minimises costs; fails to address known negative trial results or theoretical counter-arguments."
+      2: "Honest about some trade-offs, but dismisses prominent skeptic critiques with hand-waving or selective citations."
+      3: "Balanced scholarly treatment that systematically articulates opposing arguments and defines the conditions under which UBR succeeds or fails."
+      4: "Highly rigorous: explicitly quantifies uncertainties, bounds parameter sensitivities, and incorporates conservative counterfactuals."
+      5: "Definitive academic standard: models adversary objections in their strongest possible (steelmanned) form and demonstrates empirical and institutional superiority."

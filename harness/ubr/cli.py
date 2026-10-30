@@ -168,6 +168,17 @@ def _build_parser() -> argparse.ArgumentParser:
     pap_sub = pap.add_subparsers(dest="paper_cmd", required=True)
     pap_sub.add_parser("html", help="Build standalone HTML monograph and interactive dashboard")
 
+    crit = pap_sub.add_parser("critique", help="Adversarial paper critique harness and iterations")
+    crit_sub = crit.add_subparsers(dest="crit_cmd", required=True)
+    crit_start = crit_sub.add_parser("start", help="Start new paper critique iteration, snapshot chapters and bundle")
+    crit_start.add_argument("--reviewers", nargs="+", help="Override default adversarial reviewer panel")
+    crit_check = crit_sub.add_parser("check", help="Validate adversarial review and judge YAML outputs")
+    crit_check.add_argument("iteration", nargs="?", default="latest")
+    crit_check.add_argument("--judge", action="store_true", help="Also require judge.yaml")
+    crit_score = crit_sub.add_parser("score", help="Compute adversarial robustness scores and update scores.json")
+    crit_score.add_argument("iteration", nargs="?", default="latest")
+    crit_sub.add_parser("report", help="Generate or update paper_iterations/REPORT.md")
+
     return parser
 
 
@@ -650,6 +661,44 @@ def _dispatch(project, args) -> int:
             from scripts.build_html import main as build_html_main
             build_html_main()
             return 0
+
+        if args.paper_cmd == "critique":
+            from ubr.paper_critique import (
+                start_paper_iteration,
+                check_paper_reviews,
+                score_paper_iteration,
+                resolve_paper_iteration,
+                generate_paper_report,
+                PaperCritiqueError,
+            )
+            try:
+                if args.crit_cmd == "start":
+                    it = start_paper_iteration(project, reviewers=args.reviewers)
+                    print(f"Started paper critique iteration {it.id}")
+                    print(f"Snapshot written to: {it.snapshot_paper}")
+                    print(f"Paper bundle compiled: {it.bundle_path}")
+                    print(f"Reviewers assigned: {', '.join(it.reviewers)}")
+                    return 0
+                if args.crit_cmd == "check":
+                    it = resolve_paper_iteration(project, args.iteration)
+                    rep = check_paper_reviews(project, it, require_judge=args.judge)
+                    print(rep.render())
+                    return 0 if rep.ok else 1
+                if args.crit_cmd == "score":
+                    it = resolve_paper_iteration(project, args.iteration)
+                    scores = score_paper_iteration(project, it)
+                    print(f"Scored {it.id}: weighted adversarial robustness = {scores['weighted']:.2f}")
+                    for cid, val in scores["criteria"].items():
+                        print(f"  - {cid}: {val:.2f}")
+                    print(f"Scores written to: {it.path / 'scores.json'}")
+                    return 0
+                if args.crit_cmd == "report":
+                    rpath = generate_paper_report(project)
+                    print(f"Updated paper report: {rpath}")
+                    return 0
+            except PaperCritiqueError as exc:
+                print(f"Error: {exc}", file=sys.stderr)
+                return 1
 
     return 1
 
