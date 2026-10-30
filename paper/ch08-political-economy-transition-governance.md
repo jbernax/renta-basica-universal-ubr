@@ -28,12 +28,14 @@ flowchart TD
     end
 ```
 
-### The Organic Legislative Strategy
-Following Decision `D-010`, the statutory package incorporates **Disposición Adicional Primera** in the *Anteproyecto de Ley*, mandating the enactment of an Organic Law amending LOEPSF Art. 15.6:
-1. **Vote 1 (Congress Initial Enactment):** An absolute majority in Congress (179 votes: PSOE 121, Sumar 27, Podemos 4, ERC 7, Junts 7, Bildu 6, PNV 5, BNG 1, CC 1) passes the Organic Law amendment under Article 81 CE.
-2. **Vote 2 (Senate Veto):** The conservative majority in the Senate rejects the bill (114 Yes vs 152 No).
-3. **Vote 3 (Congress Definitive Override):** Invoking Article 90.2 CE and the foundational Constitutional Court doctrine established in **STC 179/1989** [@stc-179-1989], the Congress of the Deputies lifts the Senate's veto by absolute majority (**179 votes**).
-4. **Tsebelis Win-Set Expansion:** Neutralizing the Senate's absolute veto expands the spatial policy win-set volume from **0.08 to 0.462** [@tsebelis-2002-veto-players], permanently unblocking the legislative path for the Universal Basic Rent statute.
+### The Autonomous Organic Legislative Strategy
+To preclude constitutional appeals based on legislative rider irregularity (*vicio de heterogeneidad o falta de homogeneidad legislativa*, STC 119/2011 and STC 136/2011), the legislative pathway is decoupled into two sequential parliamentary bills:
+1. **The Autonomous Organic Reform Bill (*Proposición de Ley Orgánica de Modificación de la LOEPSF*):** A standalone, single-purpose Organic Bill is introduced to reform LOEPSF Art. 15.6, processed under full Article 81 CE parliamentary procedures:
+   - *Congress Initial Enactment:* An absolute majority in Congress (179 votes: PSOE 121, Sumar 27, Podemos 4, ERC 7, Junts 7, Bildu 6, PNV 5, BNG 1, CC 1) passes the bill.
+   - *Senate Veto:* The conservative majority in the Senate rejects the bill (114 Yes vs 152 No).
+   - *Congress Definitive Override:* Under Article 90.2 CE and foundational Constitutional Court doctrine established in **STC 179/1989** [@stc-179-1989], Congress definitively lifts the Senate's veto by absolute majority (**179 votes**), restoring the general constitutional override rule.
+2. **The Ordinary UBR Statutory Bill:** Once the LOEPSF amendment is gazetted, the substantive Universal Basic Rent statute is introduced and debated as an ordinary law with maximum procedural and constitutional purity.
+3. **Tsebelis Win-Set Expansion:** Neutralizing the Senate's absolute veto expands the spatial policy win-set volume from **0.08 to 0.462** [@tsebelis-2002-veto-players], permanently unblocking the legislative path for the Universal Basic Rent statute.
 
 ---
 
@@ -77,17 +79,22 @@ Under Article 7 of the Spanish Constitution, trade unions and employer confedera
 
 ## 4. Phased Transition Roadmap Governed by AIReF Triggers
 
-To prevent inflationary demand shocks and ensure macroeconomic stability, implementation follows a four-phase state-contingent roadmap [@kaplan-moll-violante-2018-hank]:
+To prevent inflationary demand shocks and guarantee administrative delivery stability under Spanish public procurement law (*Ley 9/2017*, LCSP), implementation follows an 18-month preparatory cycle followed by a state-contingent roadmap [@kaplan-moll-violante-2018-hank]:
 
 ```mermaid
 flowchart LR
-    P0["Phase 0 (M1 - M6)<br/>Cuenta Única AEAT-INSS<br/>Auto-Individualization IMV/CAPI"]
+    P0["Phase 0 (Months 1–18)<br/>Preparatory & Sandbox Cycle<br/>MTI Spine, Correos Rails, Shadow Clearing"]
     P1["Phase 1 (Year 1)<br/>Tier A (€600/mo) Floor UBR<br/>Crédito Cotizatorio Tecnológico"]
     P2["Phase 2 (Year 2+)<br/>Tier B (€900/mo) Poverty Line<br/>Triggered by I_AI >= 1.0"]
     P3["Phase 3 (Long-Term)<br/>Tier C (€1,200/mo) Full Dividend<br/>Triggered by I_AI >= 2.5"]
 
     P0 --> P1 --> P2 --> P3
 ```
+
+### The 18-Month Phase 0 Preparatory Cycle
+- **Phase 0A (Months 1–6):** Inter-agency governance accords between AEAT, INSS, Banco de España, and regional health services; enactment of the autonomous LOEPSF Organic Bill.
+- **Phase 0B (Months 7–12):** Technical deployment of the Master Taxpayer Index (MTI) and *Cuenta Única* under accelerated security certification by the *Centro Criptológico Nacional* (CCN-CERT); issuance protocols for the *Tarjeta Social Prepago UBR*.
+- **Phase 0C (Months 13–18):** Full-scale shadow data clearing between AEAT and INSS, IBAN pre-population, and sandbox stress-testing prior to the first official Tier A disbursement.
 
 ### The AIReF Composite Displacement Index ($I_{\text{AI},t}$)
 Under *Ley Orgánica 6/2013* [@boe-lo-6-2013-airef], the Independent Fiscal Authority (AIReF) audits and certifies the annual Composite Displacement Index:

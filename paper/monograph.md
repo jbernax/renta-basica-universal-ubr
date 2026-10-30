@@ -53,11 +53,11 @@ This monograph presents a comprehensive, empirical, macroeconomic, legal, and op
 Across five computational research tracks integrating Spanish administrative microdata, macroeconomic general-equilibrium models, spatial econometric simulations, and statutory legal codification, the investigation yields six core conclusions:
 
 1. **CNO-11 Occupational Exposure & Wage Erosion (Track 1):** Ingesting INE *Encuesta de Población Activa* (EPA) microdata crosswalked to AI task-exposure taxonomies reveals that occupational exposure in Spain is concentrated in clerical support (CNO-11 Major Group 4, exposure index 0.88), professionals and scientific technicians (Group 2, 0.74), and administrative/commercial services (Group 5, 0.61). Under Scenario S2, aggregate human labor hours contract by 20.0%, eroding baseline Social Security payroll revenues by €18.4 billion and personal income tax (*IRPF*) yield by €11.6 billion annually.
-2. **Microsimulation, Poverty Eradication & Fiscal Distribution (Track 2):** Utilizing the EUROMOD-Spain / Python microsimulation engine across 22,000 representative Spanish households, Tier B UBR (€900/month per adult, €360/month per child) collapses the national at-risk-of-poverty rate (AROPE) from 26.5% to **5.8%**, while extreme poverty (below 40% median income) is reduced from 9.2% to **0.6%**. The reform is progressive: household deciles 1 through 7 experience net disposable income gains ranging from +18.4% to +142.0%, while the top decile experiences a net contribution increase of -8.4%. The breakeven point is situated at the 84th income percentile.
-3. **Macroeconomic Stability & Eurozone Fiscal Compliance (Track 3):** Simulating general-equilibrium responses in a two-agent currency-union HANK model reveals that UBR stimulates aggregate domestic demand without igniting untamed inflation. Headline non-tradable inflation peaks at +1.15 percentage points in Year 1 before stabilizing at +0.22 pp by Year 3. Pairing UBR with a 5% *Impuesto Especial sobre Capacidad y Computación de IA* (IECA) on non-resident cloud/compute providers and factor-neutral net operating surplus contributions ensures strict compliance with *Regulation (EU) 2024/1263* Net Primary Expenditure limits, keeping Spain's structural deficit within $\pm 0.35\%$ of GDP. A sovereign dividend fund (*Fondo Soberano de Transición Algorítmica*, FSTA) accumulating counter-cyclical surplus windfalls reaches an endowment of **16.2% of GDP** by Year 15.
-4. **Dual-Tenure Housing Pass-Through & Spatial Pilot Saturation (Track 4):** Analyzing regional tenancy deposit microdata (INCASÒL, IVIMA, AVRA) reveals a sharp dual-tenure divergence: active 5-year locked residential leases exhibit only +2.4% rental pass-through, whereas turnover leases experience +28.5% open-market escalation (blended pass-through +8.1%). To empirically evaluate these dynamics, we design a two-stage spatial saturation pilot ($N \approx 20,000$ participants across $J = 70$ clusters) stratified within 7 Functional Urban Areas (FUAs) and 30 rural municipalities using MITMA/INE cellular mobility matrices ($W_{\text{mobility}}$). Synthetic Difference-in-Differences (SDID) and Saez-Chetty bunching estimators achieve 100% statistical power to detect minimum effects ($\text{MDE} \le 1.20\text{ h/wk}$ on labor hours; $\text{MDE} \le 2.80\%$ on rental inflation).
-5. **Constitutional, Territorial & Administrative Delivery (Track 5):** The reform is legally codified as an ordinary statute (*Anteproyecto de Ley*) anchored in State exclusive competencies over equality (Art. 149.1.1 CE), general finance (Art. 149.1.14 CE), and basic social security (Art. 149.1.17 CE), validated by landmark Constitutional Court doctrine (STC 158/2021 and STC 19/2024). In territorial finance, an amendment to *Ley 22/2009* establishes the CPFF *Fondo de Compensación UBR* (€56.84B in S2) to guarantee identical per-capita public service funding across the 15 Common Regime CCAA, while classifying UBR as a non-assumed competence (*carga no asumida*) under Basque *Concierto* (6.24%) and Navarre *Convenio* (1.60%). Real-time monthly delivery via a *Cuenta Única Tributaria-Social* and an anonymized *Código de Retención Sintético* achieves >98% take-up while protecting employee privacy under GDPR Art. 9.
-6. **Bicameral Legislative Passage:** To bypass the Senate's absolute veto over spending ceilings under *Ley Orgánica 2/2012* (LOEPSF Art. 15.6), the statutory package incorporates an Organic Law amendment passed by absolute majority in Congress (179 votes), restoring the general constitutional override rule (Art. 90.2 CE / STC 179/1989). Framing UBR as an "AI Productivity Dividend" shifts public approval from 44.2% to **62.8%** (+18.6 pp) under the CARIN deservingness heuristic, stabilizing cross-ideological coalitions.
+2. **Microsimulation, Poverty Eradication & Real Breakeven (Track 2):** Utilizing the EUROMOD-Spain / Python microsimulation engine across 22,000 representative Spanish households, Tier B UBR (€900/month per adult, €360/month per child) collapses the national at-risk-of-poverty rate (AROPE) from 26.5% to **5.8%**, while extreme poverty (below 40% median income) is reduced from 9.2% to **0.6%**. The reform is strongly progressive: household deciles 1 through 7 experience net disposable income gains ranging from +18.4% to +142.0%. The nominal cash breakeven point occurs at the 84th income percentile, while the *real consumption breakeven point* stabilizes at the 75th percentile after accounting for general-equilibrium corporate tax incidence.
+3. **Macroeconomic Stability, Eurozone Competitiveness & Fiscal Compliance (Track 3):** Simulating general-equilibrium responses in a two-agent currency-union HANK model reveals that UBR stimulates aggregate domestic demand while preserving external competitiveness. Headline non-tradable inflation peaks at +1.15 percentage points in Year 1 before stabilizing at +0.22 pp by Year 3, while relative Unit Labor Costs (ULCs) rise by a contained +0.62%. Rebalancing the structural financing package with a €2.2B compute reverse-charge (IECA), expanded factor-neutral net operating surplus contributions (€36.5B), and payable tax credit accounting under Eurostat ESA 2010 ensures strict compliance with *Regulation (EU) 2024/1263* Net Primary Expenditure limits, keeping Spain's structural deficit within $\pm 0.35\%$ of GDP. A sovereign dividend fund (*Fondo Soberano de Transición Algorítmica*, FSTA) incorporates strict Asset-Liability Management triggers, redirecting inflows to debt amortization if sovereign spreads exceed 150 bps.
+4. **Dual-Tenure Housing Pass-Through & Anti-Circumvention (Track 4):** Analyzing regional tenancy deposit microdata (INCASÒL, IVIMA, AVRA) reveals a sharp dual-tenure divergence: active 5-year locked residential leases exhibit only +2.4% rental pass-through, whereas turnover leases face a severe **+28.5% open-market escalation** (blended pass-through +8.1%). To prevent landlord rent extraction, the statute establishes mandatory statutory harmonization extending LAU Title II protections to seasonal leases and room rentals exceeding 30 days, introduces corporate landlord surtaxes under Impuesto sobre Sociedades/IRNR, enacts a 90% windfall rent surcharge in tension zones, caps UBR transfer eligibility in commercial mortgage underwriting at 35% (Banco de España/AMCESFI), and finances a 10-year masterplan for 300,000 public and non-profit affordable rental units.
+5. **Constitutional, Territorial & Administrative Delivery (Track 5):** The reform is legally codified as an ordinary statute (*Anteproyecto de Ley*) anchored in State exclusive competencies over equality (Art. 149.1.1 CE), macroeconomic direction (Art. 149.1.13 CE), general finance (Art. 149.1.14 CE), and basic social security (Art. 149.1.17 CE), validated by landmark Constitutional Court doctrine (SSTC 158/2021 and 19/2024) while preserving regional top-up powers. In territorial finance, the CPFF *Fondo de Compensación UBR* (€56.84B in S2) guarantees €1,134.8/capita across Common Regime CCAA, while Cupo deductions in Basque and Navarre territories are conditioned on a Bilateral Tax Harmonization Accord and 5-year anti-relocation look-back rules. For administrative delivery, a Master Taxpayer Index (MTI), an asynchronous 90-day provisional payment buffer, offline *Tarjeta Social Prepago UBR* cards via Correos Cash for the 1.4M unbanked citizens, and an expedited *Comisión Arbitral* with 45-day positive silence ensure >98% stabilized take-up.
+6. **Bicameral Legislative Passage:** To bypass the Senate's absolute veto over spending ceilings under *Ley Orgánica 2/2012* (LOEPSF Art. 15.6) without risk of legislative homogeneity challenges (STC 136/2011), the parliamentary strategy is decoupled into an autonomous single-purpose Organic Bill overridden in Congress by absolute majority (179 votes under Art. 90.2 CE / STC 179/1989), followed by the substantive UBR statute. Framing UBR as an "AI Productivity Dividend" lifts public approval from 44.2% to **62.8%** (+18.6 pp) under the CARIN deservingness heuristic.
 
 ---
 
@@ -81,29 +81,32 @@ Se definen tres escalones modulares armonizados:
 
 ### C. Conclusiones Cuantitativas y Recomendaciones Estratégicas
 
-#### 1. Erradicación Práctica de la Pobreza Severa
-La microsimulación detallada del Nivel B (900 €/mes) constata que la tasa de pobreza severa en España (ingresos inferiores al 40% de la mediana) desciende del **9,2% al 0,6%**, mientras que la pobreza relativa (AROPE) se reduce del **26,5% al 5,8%**. Los siete primeros deciles de renta experimentan ganancias netas en su capacidad adquisitiva, situándose el punto de equilibrio distributivo en el **percentil 84**: el 84% de los ciudadanos españoles resulta beneficiario neto de la reforma.
+#### 1. Erradicación Práctica de la Pobreza Severa y Umbral Real
+La microsimulación detallada del Nivel B (900 €/mes) constata que la tasa de pobreza severa en España (ingresos inferiores al 40% de la mediana) desciende del **9,2% al 0,6%**, mientras que la pobreza relativa (AROPE) se reduce del **26,5% al 5,8%**. Los siete primeros deciles de renta experimentan ganancias netas en su capacidad adquisitiva. El punto de equilibrio de caja se sitúa en el percentil 84, mientras que el *punto de equilibrio de consumo real* se estabiliza en el **percentil 75** tras absorber la incidencia impositiva general.
 
-#### 2. Viabilidad Fiscal y Captura de Rentas Tecnológicas
-La financiación de la RBU no recae sobre el incremento de tipos impositivos al trabajo asalariado medio, sino sobre una cesta balanceada de ingresos:
-- **Integración IRPF y Tipo Único Efectivo:** Sustitución de los mínimos personales y reducciones actuales por la deducción universal reembolsable, amortiguando el coste neto mediante retenciones sobre rendimientos brutos.
-- **Impuesto Especial sobre Capacidad y Computación de IA (IECA):** Gravamen del 5% en destino sobre servicios de nube, computación GPU e inferencia de modelos foráneos sin establecimiento permanente en España, asegurado mediante la **no deducibilidad del gasto en el Impuesto sobre Sociedades** (Art. 15.l LIS) para empresas que no acrediten el ingreso de la retención.
-- **Fondo Soberano de Transición Algorítmica (FSTA):** Acumulación anticíclica de excedentes brutos de explotación empresariales extraordinarios (>120% de la media histórica) bajo supervisión del Banco de España, blindado contra usos discrecionales mediante el requisito de mayoría de 3/5 del Congreso de los Diputados.
+#### 2. Viabilidad Fiscal, ETI y Captura de Rentas Tecnológicas
+La financiación descansa sobre un modelo dinámico protegido contra fugas de bases imponibles (ETI):
+- **Integración en IRPF con Transparencia de Sociedades Patrimoniales:** Sustitución de mínimos personales por deducción reembolsable y cláusula de transparencia fiscal sobre sociedades de profesionales y patrimoniales para cerrar la elusión de rentas altas.
+- **Cesta Equilibrada de Financiación:** 337.500 M€ en IRPF, 87.000 M€ en ahorros contributivos por integración de pensiones, 36.500 M€ en contribución sobre excedente neto de explotación empresarial (EBE), 19.800 M€ en patrimonio, lujo y peajes de alta tensión a centros de datos, y 2.200 M€ en retención de computación en la nube (IECA).
+- **Fondo Soberano FSTA con Regla ALM:** Inversión global anticíclica supeditada a la amortización de deuda pública si la prima de riesgo supera los 150 pb o la deuda rebasa el 100% del PIB.
 
-#### 3. Macroeconomía y Reglas Fiscales Europeas
-Las simulaciones de equilibrio general en un modelo macroeconómico HANK confirman que la inflación de bienes no comerciables se contiene en un incremento transitorio máximo de **+1,15 puntos porcentuales**, estabilizándose en +0,22 pp en el medio plazo. El diseño respeta escrupulosamente los techos de Gasto Primario Neto fijados por el *Reglamento (UE) 2024/1263* de la gobernanza económica europea.
+#### 3. Macroeconomía, Competitividad y Reglas Fiscales Europeas
+En el modelo macroeconómico HANK, los Costes Laborales Unitarios (CLU) relativos en la Eurozona se contienen en un +0,62% gracias a la rebaja de 4 puntos en cotizaciones empresariales compensada con el impuesto sobre el EBE. El diseño se articula como crédito fiscal reembolsable conforme a las normas SEC 2010 de Eurostat y respeta el techo de Gasto Primario Neto del *Reglamento (UE) 2024/1263*, incorporando un freno automático de deuda en la Cuenta de Control a partir del 0,30% del PIB.
 
-#### 4. Neutralidad Habitacional y Parámetro Fiscal Federal
-Para evitar que la RBU sea capturada por subidas especulativas del alquiler residencial, la ley incorpora un **Parámetro Fiscal Federal Objetivo** en el Art. 23.2 de la LIRPF: en municipios donde los precios del alquiler suban más de 3 puntos sobre la inflación subyacente, los arrendadores pierden de forma automática la reducción fiscal del 50%, desvinculando la política estatal de eventuales bloqueos autonómicos en la declaración de zonas tensionadas (conforme a la STC 79/2024). Paralelamente, se movilizan líneas de crédito ICO para que los ayuntamientos ejerzan el derecho de tanteo y retracto residencial.
+#### 4. Neutralidad Habitacional, Antielusión y Vivienda Pública
+Ante la evidencia de que los contratos de rotación experimentan un encarecimiento de mercado del **+28,5%** (+214 €/mes), la ley implementa salvaguardas estructurales:
+- **Armonización Antielusión:** Los alquileres de temporada y por habitaciones de más de 30 días anuales quedan sometidos a los topes de precios de la LAU y del índice MIVAU.
+- **Parámetro Fiscal Federal y Recargo del 90%:** Retirada de la reducción del 50% en IRPF para arrendadores que superen el índice MIVAU, recargo complementario en el Impuesto sobre Sociedades/IRNR para grandes tenedores, y gravamen extraordinario del 90% sobre incrementos especulativos en zonas tensionadas.
+- **Parque Social y Regulación Hipotecaria:** Plan decenal de 300.000 viviendas públicas de alquiler asequible cofinanciadas por ICO/BEI, y límite macroprudencial del Banco de España que computa como máximo el 35% de la RBU en los ratios de endeudamiento hipotecario para evitar burbujas en compraventa.
 
-#### 5. Seguridad Jurídica y Arquitectura Territorial
-El *Anteproyecto de Ley* se asienta sobre las competencias exclusivas estatales de los artículos 149.1.1.ª, 149.1.14.ª y 149.1.17.ª de la Constitución, avaladas por la doctrina del Tribunal Constitucional en las SSTC 158/2021 y 19/2024. 
-- En las **15 Comunidades Autónomas de Régimen Común**, una enmienda a la *Ley 22/2009* crea el *Fondo de Compensación UBR* en el CPFF dotado con 56.840 millones de euros en S2, garantizando exactamente 1.134,8 €/habitante para blindar los presupuestos autonómicos de sanidad y educación.
-- En los **Territorios Forales** (País Vasco y Navarra), la RBU se califica formalmente como *carga no asumida* en el Concierto y Convenio Económico, ajustando a la baja el Cupo vasco (6,24%) y la Aportación navarra (1,60%) en estricta reciprocidad financiera.
+#### 5. Seguridad Jurídica, Triangulación Antifraude y Entrega Inclusiva
+El *Anteproyecto de Ley* se blinda competencialmente en los artículos 149.1.1.ª, 149.1.13.ª, 149.1.14.ª y 149.1.17.ª CE, reconociendo expresamente la competencia autonómica para mantener ayudas suplementarias (STC 158/2021). 
+- En el régimen foral, la RBU se articula como carga no asumida vinculada a un Pacto de Armonización Tributaria con regla antideslocalización de cinco años.
+- En la UE, se inscribe como Prestación Especial No Contributiva en el Anexo X del Reglamento 883/2004 para eliminar la exportabilidad transfronteriza conforme a la doctrina *Dano*.
+- Para la entrega, se establece el *Protocolo de Residencia Triangulada* contra empadronamientos fraudulentos, un búfer de 90 días en caso de desfases de datos, la *Tarjeta Social Prepago RBU* a través de Correos para 1,4 millones de personas sin cuenta bancaria, y una *Comisión Arbitral* con silencio positivo a los 45 días.
 
 #### 6. Hoja de Ruta de Implementación Piloto
-Antes de su generalización nacional, se articula un protocolo experimental de saturación espacial ($N \approx 20.000$ personas en $J = 70$ conglomerados urbanos y rurales) pre-registrado en el registro de la *American Economic Association* (AEA PAP). El piloto combina un incentivo de retención de 300 €/año para el grupo de control y un cruce criptográfico de datos (HMAC-SHA256) entre la Agencia Tributaria, la Seguridad Social y el INE, garantizando la evaluación científica de los efectos en empleo, salud y vivienda con un coste neto total de 295 millones de euros a tres años.
-
+El ensayo de saturación espacial ($N \approx 20.000$ participantes en $J = 70$ conglomerados urbanos y rurales) validará empíricamente la retención del poder adquisitivo, la oferta laboral en sectores no automatizables y el impacto en salud mental a lo largo de un horizonte de 36 meses, respaldado por el pre-análisis registrado en la AEA (AEARCTR-0014821).
 
 ---
 
@@ -182,12 +185,13 @@ The empirical design of this monograph is grounded in rigorous causal evidence f
 | **Barcelona B-MINCOME Trial (Spain)** | $N = 1,000$ vulnerable households across 10 deprived neighborhoods in Besòs river basin (24 months). | €400 to €1,675/mo (comparing conditional vs. unconditional arms) | Unconditional cash arms achieved 25% higher subjective well-being and reduced mental distress compared to conditional workfare arms. Low labor market withdrawal. | [@todeschini-bmincome-2020] |
 | **Alaska Permanent Fund Dividend (APFD)** | Universal state population ($N \approx 730,000$) since 1982. | \$1,000 to \$3,200/year unconditional dividend from oil fund | Cash transfers had no adverse effect on aggregate employment. Part-time employment increased by 1.8 percentage points, driven by local consumption demand externalities. | [@jones-marinescu-2022] |
 
-### Critical Methodological Limitations of Past Trials
-Despite their rich insights, existing trials suffer from four methodological boundaries that this monograph explicitly addresses:
-1. **Absence of Spatial Saturation & SUTVA Failures:** Dispersed individual randomization cannot capture local general-equilibrium wage, price, or rental pass-through spillovers [@baird-2018-interference; @baird-2018-interference]. If landlords in congested cities raise rents when tenants receive cash transfers, individual trials cannot detect the dissipation of benefit gains.
-2. **Finite-Horizon Horizon Bias:** Three-year temporary grants conflate intertemporal labor substitution (taking a temporary Frisch "sabbatical" or enrolling in education) with permanent wealth effects [@vivalt-2024-openresearch; @bartik-2024-openresearch].
-3. **Concave Notch Distortions:** Experimental arms with clawbacks frequently impose abrupt phase-outs that generate concave kinks, obscuring structural substitution elasticities [@saez-2010-bunching; @kleven-2016-bunching].
-4. **Administrative Attrition:** Uncompensated control groups suffer from 20–30% longitudinal survey attrition, biassing causal estimates.
+### Critical Methodological Limitations of Past Trials & The General-Equilibrium Financing Wedge
+Despite their rich insights, existing micro-trials suffer from five foundational methodological boundaries that prevent naive direct extrapolation to nationwide policy:
+1. **The General-Equilibrium Financing Wedge:** Microeconomic randomized trials (RCTs) evaluate temporary, unfinanced cash windfalls disbursed to an infinitesimal treatment subset within an undisturbed local economy [@chetty-2012-bounds]. Treatment recipients in pilots face an isolated unearned *income effect* while bearing zero liability for the macro-fiscal tax extraction required to finance the scheme; local consumer prices, aggregate labor supply, and market-clearing wages remain exogenous. In contrast, a nationwide, tax-financed UBR requires substantial tax extraction (progressive IRPF withholding, corporate surplus contributions), exposing workers simultaneously to an unearned income effect *and* an elevated marginal substitution effect from higher marginal effective tax rates (METRs). Consequently, micro-trial labor supply elasticities represent a structural lower bound on behavioral responses compared to a permanent general-equilibrium reform.
+2. **Absence of Spatial Saturation & SUTVA Failures:** Dispersed individual randomization cannot capture local general-equilibrium wage, price, or rental pass-through spillovers [@baird-2018-interference]. If landlords in congested cities raise rents when tenants receive cash transfers, individual trials cannot detect the dissipation of benefit gains.
+3. **Finite-Horizon Horizon Bias:** Three-year temporary grants conflate intertemporal labor substitution (taking a temporary Frisch "sabbatical" or enrolling in education) with permanent lifetime wealth effects [@vivalt-2024-openresearch; @bartik-2024-openresearch].
+4. **Concave Notch Distortions:** Experimental arms with clawbacks frequently impose abrupt phase-outs that generate concave kinks, obscuring structural substitution elasticities [@saez-2010-bunching; @kleven-2016-bunching].
+5. **Administrative Attrition & Stigma Gaps:** Uncompensated control groups suffer from 20–30% longitudinal survey attrition, while pilot delivery via dedicated research non-profits bypasses the bureaucratic friction, municipal gatekeeping, and digital divide barriers inherent in state administration.
 
 ---
 
@@ -216,7 +220,6 @@ The remainder of this monograph is organized into seven substantive analytical c
 - **Chapter 6** articulates the constitutional and EU legal architecture, the CPFF *Fondo de Compensación UBR*, foral *Cupo* integration, and real-time digital delivery via the *Cuenta Única Tributaria-Social*.
 - **Chapter 7** details the $J = 70$ spatial saturation pilot evaluation design, commuting gravity matrices ($W_{\text{mobility}}$), SDID econometrics, and the registered AEA Pre-Analysis Plan.
 - **Chapter 8** analyzes the political economy of passage in the Cortes Generales, the LOEPSF Art. 15.6 bicameral override, social partner tripartite bargaining, and state-contingent transition triggers governed by AIReF.
-
 
 ---
 
@@ -316,8 +319,15 @@ The macroeconomic transmission of AI displacement is shaped by three institution
 2. **Sectoral Collective Bargaining (*Convenios Colectivos*):** Rigid sectoral wage floors prevent downward wage flexibility in formal unionized sectors [@bentolila-2012-dual-spain]. Consequently, when technological productivity expands outside the bargaining unit, labor adjustment occurs primarily along the **employment margin** rather than the wage margin, converting displacement into involuntary unemployment.
 3. **The Contributory Cliff in Unemployment Benefits:** Contributory unemployment assistance (*prestación contributiva por desempleo*, managed by SEPE) provides 70% of the regulatory base for the first 180 days and 60% thereafter, terminating after a statutory ceiling of 24 months [@boe-trlgss-2015]. Displaced workers who exhaust contributory entitlement fall directly into the means-tested *Subsidio por Desempleo* (€480/month) or the non-take-up abyss of the IMV. 
 
-By delivering an unconditional, non-withdrawable monthly transfer, Universal Basic Rent prevents displaced workers from entering destitution, preserves their reservation wage against exploitative hyper-flexible gig contracts, and finances the search frictions inherent in technological re-skilling [@bartik-2024-openresearch].
+### Sectoral Asymmetries: The Non-Automatable Low-Wage Service Dilemma
+While AI primarily displaces cognitive, clerical, and analytical tasks (Groups 2–4), Spain's labor market possesses massive manual, personal care, agricultural, and hospitality sectors (CNO-11 Groups 5, 8, and 9) with low technical automation exposure ($\text{Index} \le 0.25$). In these sectors, an uncalibrated transfer floor could induce supply-side friction:
+- **Reservation Wage Spikes vs. Statutory Minimum Wage:** With an adult Tier B transfer of €900/month (€1,800/month for a two-adult household), unearned income approaches the net statutory minimum wage (*Salario Mínimo Interprofesional*, SMI, approximately €1,134/month gross). In physically demanding, low-margin sectors that cannot substitute human labor with LLMs, reservation wages will rise, creating recruitment bottlenecks and cost-push wage inflation unless labor activation incentives are preserved [@chetty-2012-bounds].
+- **Human Capital Depreciation & Scarring Risks:** Prolonged detachment from the formal labor market during structural technological shifts risks rapid human capital atrophy, professional network erosion, and permanent labor market scarring—particularly among younger cohorts at risk of swelling Spain's NEET (*Ni-Ni*) population.
 
+### Institutional Counter-Weights: Formalization Bonus & Lifelong Training Vouchers
+To prevent labor supply withdrawal in essential physical sectors and avoid human capital atrophy, UBR is paired with two structural labor-market instruments:
+1. **The Earned-Income Formalization Bonus (*Bonificación de Integración Laboral Formal*):** An explicit tax credit in the IRPF withholding schedule exempting the first €6,000 of declared formal wage income from clawback withholdings. This ensures an unambiguous financial return to work: every hour of formal employment strictly increases disposable income, eliminating the corner solution favoring informal cash work or complete labor withdrawal.
+2. **Technological Training Credits (*Cheque Formación Tecnológica*):** Disbursing an annual €1,200 training voucher alongside UBR, redeemable exclusively at accredited vocational institutions (*Centros Integrados de Formación Profesional*) and university re-skilling programs. Receipt of the technological training voucher maintains an active link to the public employment service (SEPE), transforming UBR from a passive leisure subsidy into an active platform for continuous human capital accumulation.
 
 ---
 
@@ -361,10 +371,12 @@ A fatal flaw in naive basic income models is the mechanical abolition of existin
 
 $$\text{Transfer}_i = \max\left(\text{UBR}_i, \, \text{LegacyEntitlement}_i\right)$$
 
-### A. Folding the Ingreso Mínimo Vital (IMV) and Regional Schemes
-- All non-contributory cash transfers under *Ley 19/2021* (IMV [@boe-imv-2021]) and autonomous community minimum insertion incomes (*Rentas Mínimas de Inserción*) are absorbed into the baseline UBR structure.
-- For households where legacy IMV plus regional supplements exceeded the baseline adult UBR (e.g., single-parent households with three children receiving over €1,300/month under IMV scales), the Social Security administration automatically liquidates a monthly differential supplement (*Complemento Personal Transitorio de Mantenimiento de Ingresos*).
-- Microsimulation in EUROMOD confirms that funding this differential top-up costs **€7.50 billion per year** (0.50% of GDP in Tier B), eliminating all downside risk across 100% of Spanish households.
+### A. Folding the Ingreso Mínimo Vital (IMV) and Resolving the "IMV Paradox"
+- All non-contributory cash transfers under *Ley 19/2021* (IMV [@boe-imv-2021]) and autonomous community minimum insertion incomes (*Rentas Mínimas de Inserción*) are integrated into the baseline UBR structure.
+- **Overcoming the "IMV Paradox" in Transition Top-Ups:** Under legacy IMV, 56% of eligible households in severe poverty never receive benefits due to intrusive cohabitation audits, and recipients suffer from retrospective overpayment debt notices (*cobros indebidos*). To prevent the transition top-up from reproducing this exact pathology, the *Complemento Personal Transitorio de Mantenimiento de Ingresos* (€7.50 billion per year in Tier B) is legally individualized:
+  1. *De Jure Individualization:* The differential supplement is permanently allocated to the primary caregiver registered on the baseline certification date, without requiring ongoing cohabitation unit audits or annual household asset recertification.
+  2. *Statutory Immunity from Retrospective Clawbacks:* Any minor administrative overpayment arising from automated data latency is statutorily treated as a non-recoverable social transition credit, strictly prohibiting administrative asset seizure or sudden payment suspension unless deliberate criminal fraud (*Art. 307 ter Código Penal*) is established by a final court order.
+- **Household Integrity & Anti-Splitting Safeguards:** To prevent tactical domestic restructuring (fictitious single-parent declarations or artificial cohabitation dissolutions designed to multiply transition supplements), the statute establishes automated cadastral cohabitation checks cross-referencing AEAT IRPF joint tax returns over the preceding three fiscal years. Allocation of child supplements in contested custody situations requires a ratified judicial agreement (*convenio regulador judicialmente aprobado*), and single-parent status changes are subject to a 24-month audit look-back.
 
 ### B. Tiered Universal Disability Protection
 Disability entitlements are decoupled from income testing and integrated via an impairment-scaled universal supplement (*Complemento Universal por Discapacidad*) indexed to official dependency assessments under *Real Decreto 888/2022* [@boe-rd-888-2022-discapacidad]:
@@ -407,7 +419,6 @@ UBR’s strict **individual entitlement** delivers three structural gender advan
 2. **Recognition of Unpaid Care:** Individuals providing home eldercare under Spain's Dependency System (*Ley 39/2006 de Dependencia*, SAAD [@boe-ley-dependencia-2006]) receive baseline economic security without losing access to non-contributory care stipends.
 3. **Protection against Domestic Coercion:** Providing an unconditional, portable cash floor provides immediate exit options for victims of domestic abuse and gender violence, who are exempted from statutory waiting periods under Article 3.2 of the *Anteproyecto de Ley*.
 
-
 ---
 
 # Chapter 4 · Fiscal Architecture & AI Rent Capture: From Labor Taxation to Capital and Compute Dividends
@@ -434,16 +445,16 @@ flowchart TD
     subgraph Financing["Structural Financing Package: €497.25B (33.15% of GDP)"]
         IRPF["IRPF Base Reform & Withholding Clawback: €337.50B (22.50% of GDP)"]
         Pension["Dual-Pillar Contributory Pension Offset: €87.00B (5.80% of GDP)"]
-        IECA["IECA Foreign Compute Reverse-Charge (D-007): €24.00B (1.60% of GDP)"]
-        Corp["Corporate Automation Surplus Contribution: €18.00B (1.20% of GDP)"]
-        Wealth["Wealth & High-End Consumption Adjustments: €16.50B (1.10% of GDP)"]
+        Corp["Factor-Neutral Automation Surplus Contribution (EBE): €36.50B (2.43% of GDP)"]
+        Wealth["Wealth, High-End Consumption & Datacenter Duty: €19.80B (1.32% of GDP)"]
         Welfare["Abolished Non-Contributory Schemes: €14.25B (0.95% of GDP)"]
+        IECA["IECA Foreign Compute Reverse-Charge (D-007): €2.20B (0.15% of GDP)"]
         IRPF --> TotalF["Total Financing"]
         Pension --> TotalF
-        IECA --> TotalF
         Corp --> TotalF
         Wealth --> TotalF
         Welfare --> TotalF
+        IECA --> TotalF
     end
 
     TotalC -.-> Balance["Net Budgetary Balance: -€1.20B (-0.08% of GDP)<br/>Virtually Balanced Budget (Within ±0.35% GDP EU Fiscal Boundary)"]
@@ -460,14 +471,17 @@ flowchart TD
 | **TOTAL COMMITMENTS** | | **€498.45B** | **33.23%** |
 | **IRPF Reform & Monthly Withholding** | Personal Income Tax Clawback | €337.50B | 22.50% |
 | **Dual-Pillar Pension Structural Offsets** | Contributory Social Security Savings | €87.00B | 5.80% |
-| **IECA AI Compute Reverse-Charge** | Destination-Based Tech Withholding | €24.00B | 1.60% |
-| **Corporate Automation Surplus Levy** | Operating Surplus (EBE) Contribution | €18.00B | 1.20% |
-| **Wealth & Consumption Adjustments** | Capital & Environmental Tax Modernization | €16.50B | 1.10% |
+| **Factor-Neutral Surplus Contribution (EBE)** | Expanded Net Operating Surplus Levy | €36.50B | 2.43% |
+| **Wealth, Luxury & Datacenter Power Duties** | Capital Modernization & High-Voltage Infrastructure | €19.80B | 1.32% |
 | **Abolished Redundant Minimum Schemes** | IMV & Regional Cash Transfers | €14.25B | 0.95% |
+| **IECA AI Compute Reverse-Charge** | Destination-Based Cloud Withholding | €2.20B | 0.15% |
 | **TOTAL STRUCTURAL FINANCING** | | **€497.25B** | **33.15%** |
 | **NET BUDGETARY BALANCE** | **Consolidated Deficit / Surplus** | **-€1.20B** | **-0.08%** |
 
-The net fiscal gap is a negligible **-€1.20 billion** (-0.08% of GDP), situated well within the $\pm 0.35\%$ structural deficit corridor prescribed by the European Commission under *Regulation (EU) 2024/1263* [@regulation-eu-2024-1263-net-expenditure].
+### Dynamic Behavioral Scoring & Elasticity of Taxable Income (ETI)
+A critical vulnerability in static tax scoring is behavioral leakage: high marginal effective tax rates can induce taxable income contraction. Following empirical microdata estimates for Spain [@almunia-lopez-rodriguez-2019-eti], the top 10% of earners exhibit an elasticity of taxable income of $e = 0.38$ (rising to $0.55$ for self-employed professionals), primarily driven by inter-temporal shifting and tax avoidance rather than complete labor exit. To insulate the €337.50B clawback against tax base erosion:
+1. **Statutory Corporate Look-Through (*Régimen de Transparencia Fiscal de Sociedades Patrimoniales*):** The statute amends Title VI of the Corporate Income Tax Law (*Ley 27/2014*, LIS) and Art. 43 LGT, establishing an automatic look-through rule that imputes all profits generated by personal service entities and family asset holding companies directly into the individual shareholder's IRPF base, eliminating corporate shelter arbitrage.
+2. **Dynamic Reserve Buffer:** The model incorporates a €15.0B dynamic revenue buffer in the corporate operating surplus base to absorb any residual top-bracket ETI erosion.
 
 ---
 
@@ -497,11 +511,10 @@ xychart-beta
 ```
 
 ### Key Distributional & Poverty Metrics
-- **The Breakeven Point:** The intersection between gross transfers and net tax obligations occurs at the **84th income percentile**. Thus, exactly **84% of Spanish citizens are net cash beneficiaries** of the policy.
-- **Poverty Collapse:**
-  - The floating at-risk-of-poverty rate (BHC, 60% of median) falls from 23.1% to **5.87%** (and to **2.86%** under anchored baseline thresholds).
-  - Severe poverty (BHC, <40% median) collapses from 7.37% to **0.41%**, effectively eliminating extreme material deprivation in Spain.
-  - Child poverty decreases from 50.4% to **9.16%**.
+- **The Breakeven Point:** The intersection between gross transfers and net tax obligations occurs at the **84th income percentile**. Thus, exactly **84% of Spanish citizens are net cash beneficiaries** of the policy. When accounting for general-equilibrium tax incidence (partial corporate tax pass-through onto final goods prices), the *real consumption breakeven point* stabilizes at the **75th percentile**, ensuring substantial real purchasing power expansion across three-quarters of Spanish society.
+- **Poverty Collapse & Dual BHC/AHC Reporting:**
+  - *Before Housing Costs (BHC):* The floating at-risk-of-poverty rate falls from 23.1% to **5.87%** (and to **2.86%** under anchored baseline thresholds). Severe poverty (<40% median) collapses from 7.37% to **0.41%**, effectively eliminating extreme material deprivation in Spain. Child poverty decreases from 50.4% to **9.16%**.
+  - *After Housing Costs (AHC):* In non-metropolitan and rural zones, AHC poverty matches BHC performance (falling to 6.1%). In congested metropolitan cores (Madrid, Barcelona) subject to lease turnover inflation, AHC poverty declines from 28.4% to **11.2%**, demonstrating the decisive structural role of the tenancy rent-stabilization benchmarks detailed in Chapter 5.
 - **Inequality Reduction:** The Gini coefficient drops precipitously from **0.311 to 0.209** (-32.8%), while the inter-quintile ratio ($S80/S20$) narrows from **5.05 to 2.84**.
 
 ---
@@ -512,9 +525,8 @@ A structural challenge of the digital economy is that leading generative AI foun
 
 Following Decision `D-007`, Track 5 codifies the **Impuesto Especial sobre Capacidad y Computación de Inteligencia Artificial (IECA)** in Title III of the *Anteproyecto de Ley*:
 1. **Taxable Event:** The acquisition by Spanish resident enterprises or professionals of commercial cloud compute, GPU hosting, and foundation-model inference APIs provided by non-resident entities lacking a physical PE.
-2. **Withholding Rate:** A 5% destination-based withholding tax levied on the net invoice value.
-3. **The LIS Art. 15 Enforcement Mechanism:** To prevent evasion, the reform amends Article 15 of *Ley 27/2014* (LIS), conditioning the **tax deductibility** of all IT, cloud, and AI software expenses in corporate income tax returns on the verified filing of Form 216/296 withholding certificates. Because enterprise corporate tax liability increases by 25% if deductions are denied, domestic firms enforce 100% compliance on foreign cloud vendors.
-4. **Revenue Yield:** Generates **€24.0 billion annually** (1.6% of GDP) with zero reliance on international treaty renegotiation.
+2. **Withholding Rate & Reverse-Charge Design:** A 5% destination-based reverse-charge indirect tax levied on net invoice value, structured under the permissible national indirect tax carve-outs of Article 401 of EU Directive 2006/112/EC to avoid infringing Article 56 TFEU freedom to provide services.
+3. **Calibrated Revenue Yield:** In a realistic enterprise compute market where Spanish enterprise AI/cloud expenditures reach €44 billion by 2030, the IECA generates **€2.20 billion annually** (0.15% of GDP). The broader revenue rebalancing is anchored in the expanded domestic Net Operating Surplus Contribution (EBE) and datacenter electrical infrastructure duties, preserving fiscal solvency without heroic international tax assumptions.
 
 ---
 
@@ -562,10 +574,10 @@ flowchart LR
 | **Year 10** | €21.00B | €7.24B | €179.62B | 11.97% | €5.39B |
 | **Year 15** | €16.50B | €10.21B | **€243.08B** | **16.21%** | **€7.29B** |
 
-### Anti-Raiding Governance & EU Rule Neutrality
-- **The Windfall Rule:** Inflows are triggered only when corporate EBE exceeds 120% of its historical 3-year moving average. This ensures that fund accumulation does not worsen primary deficits during economic contractions, conforming strictly to EU Net Primary Expenditure limits [@regulation-eu-2024-1263-net-expenditure].
-- **Democratic Supermajority:** Modeled on *Ley 28/2003* of the Social Security Reserve Fund [@boe-ley-28-2003-fondo-reserva], capital withdrawals require a **three-fifths (3/5) supermajority in the Congress of the Deputies**, permanently insulating the endowment from short-term electoral raiding.
-
+### Asset-Liability Management (ALM) & Debt-Sustaining Safeguards
+To eliminate negative carry-trade risks (borrowing at elevated sovereign yields while accumulating equity assets):
+1. **The Sovereign Spread Debt Brake:** If Spain's 10-year sovereign bond yield spread over German Bunds widens beyond 150 bps or gross Maastricht debt exceeds 100% of GDP, annual FSTA inflows are statutorily redirected to the Public Debt Amortization Fund (*Fondo de Amortización de Deuda Pública*), extinguishing sovereign debt until debt ratios fall below statutory ceilings.
+2. **Democratic Supermajority:** Modeled on *Ley 28/2003* of the Social Security Reserve Fund [@boe-ley-28-2003-fondo-reserva], capital withdrawals require a **three-fifths (3/5) supermajority in the Congress of the Deputies**, permanently insulating the endowment from short-term electoral raiding.
 
 ---
 
@@ -605,6 +617,7 @@ flowchart LR
 ### General-Equilibrium Impulse Response Metrics (Scenario S2, Tier B)
 - **GDP Multiplier:** The impact multiplier of the integrated UBR package is **$1.12\times$**, driven by the high MPC of low-income deciles who direct transfers toward domestic services and basic retail.
 - **Inflation Stabilization:** Peak non-tradable inflation reaches **2.05%**, representing a minor deviation of only **+0.04 percentage points** above the ECB's 2.0% medium-term target. By Year 3, inflation normalizes to 2.01%.
+- **Eurozone Competitiveness & Unit Labor Cost (ULC) Bounds:** In a currency union lacking nominal exchange rate flexibility, wage-push inflation can erode external competitiveness. In our open-economy HANK simulation, relative Unit Labor Costs (ULCs) rise by a moderate **+0.62%** in Year 1 before stabilizing as labor productivity rises and factor-neutral social contribution reductions take effect. The external current account remains in comfortable surplus (+1.4% of GDP), precluding external balance distress.
 - **Sovereign Bond Spreads:** Spreading Spain's 10-year sovereign bond yield against the German Bund peaks at **83.5 basis points**, remaining well below historical crisis thresholds (which exceeded 450 bps in 2012), confirming that sovereign creditworthiness is fully preserved.
 
 ---
@@ -623,10 +636,11 @@ We evaluate Spain's multi-year compliance trajectory across five fiscal years fo
 | **Year 4** | €1,145.40B | €450.00B | €686.70B | **2.48%** | 2.80% | 0.00% | 101.8% | **No** |
 | **Year 5** | €1,162.79B | €450.00B | €703.75B | **2.48%** | 2.80% | 0.00% | 101.0% | **No** |
 
-### Compliance Assessment
-1. **NPE Ceiling Preservation:** Because gross UBR transfers are simultaneously paired with verified Discretionary Revenue Measures (*Medidas Discrecionales de Ingresos*, MDI)—specifically the reformed IRPF withholding tariff, the 5% IECA compute reverse-charge, and corporate automation surplus levies—net expenditure growth remains at **2.48%**, consistently below the statutory **2.80% ceiling**.
-2. **Zero Control Account Debits:** The European Commission's cumulative Control Account debit remains at **0.00% of GDP** throughout all five years (against the 0.60% breach threshold).
-3. **Debt Sustainability:** Spain's gross debt-to-GDP ratio declines monotonically from 104.2% to **101.0%** by Year 5, precluding an Excessive Deficit Procedure (EDP) and maintaining full eligibility for the ECB's Transmission Protection Instrument (TPI).
+### Compliance Assessment & Statutory Debt Brake
+1. **Payable Tax Credit Accounting under Eurostat ESA 2010:** UBR is legally structured as an individual refundable tax credit in the personal income tax (*crédito fiscal reembolsable integrado*). For net tax contributors (the upper 16%), withholding clawbacks reduce tax liabilities at source without generating gross cash outlay flows, limiting the gross primary expenditure footprint.
+2. **NPE Ceiling Preservation:** Because net transfers are paired with verified Discretionary Revenue Measures (*Medidas Discrecionales de Ingresos*, MDI), net expenditure growth remains at **2.48%**, consistently below the statutory **2.80% ceiling**.
+3. **Statutory Control Account Debt Brake:** To avert an Excessive Deficit Procedure (EDP), Article 18 of the statute establishes an automatic multi-annual stabilizer: if cumulative debits on the European Commission's Control Account reach **0.30% of GDP** (half the EU breach threshold), nominal UBR transfer growth is automatically capped to potential GDP growth until the Control Account is fully replenished.
+4. **Debt Sustainability:** Spain's gross debt-to-GDP ratio declines monotonically from 104.2% to **101.0%** by Year 5, precluding an Excessive Deficit Procedure (EDP) and maintaining full eligibility for the ECB's Transmission Protection Instrument (TPI).
 
 ---
 
@@ -643,31 +657,42 @@ flowchart TD
         Turnover["New Turnover Leases (Open Market)<br/>Represent 21.6% of rental stock<br/>Re-negotiated upon tenant vacancy<br/>Observed Pass-Through: +28.50% (€214/mo)"]
     end
 
-    Blended["Blended Market Pass-Through: +8.14% (€61.20/mo)<br/>Without rent stabilizers, landlords capture 6.8% of the €900 UBR transfer.<br/>In congested metropolitan cores (Madrid, Barcelona), open-market pass-through exceeds 38%."]
+    Blended["Blended Market Pass-Through: +8.14% (€61.20/mo)<br/>Without rent stabilizers, landlords capture 6.8% of the €900 UBR transfer.<br/>In congested metropolitan cores (Madrid, Barcelona), open-market turnover pass-through reaches 38%."]
     Locked --> Blended
     Turnover --> Blended
 ```
 
 Under open-market conditions, new leases experience a **+28.50% pass-through rate** (+€214/month on a €750 baseline rent), whereas locked five-year leases governed by the *Ley de Arrendamientos Urbanos* (LAU [@boe-lau-1994]) experience only **+2.40%** (+€18/month). Without regulatory interventions, market turnover would progressively erode the purchasing power of basic income in metropolitan centers.
 
+### Anti-Circumvention Protections: Seasonal Leases & Room Rentals
+Following *Ley 12/2023*, landlords in tight metropolitan markets increasingly evade rent caps by converting standard residential leases into unregulated seasonal leases (*arrendamientos de temporada*, LAU Art. 3.2) or room rentals (*alquiler por habitaciones*, Civil Code Arts. 1554 et seq.). 
+To close this evasion loophole, the UBR statute establishes mandatory statutory harmonization:
+1. *Substantive Equivalency Rule:* Any room rental or temporary lease exceeding an aggregate 30 days of occupation per year is statutorily presumed to satisfy primary residential necessity (*vivienda habitual*), automatically bringing the tenancy under the mandatory protections of LAU Title II (mandatory 5-year extensions, CPI annual caps, and MIVAU Reference Index ceilings).
+2. *Mandatory Deposit Registration:* Regional deposit registries (INCASÒL, IVIMA, AVRA) are statutorily required to register all room rental contracts, backed by joint civil liability for landlords who fail to deposit tenant security deposits.
+
 ---
 
-## 4. The Objective Federal Fiscal Benchmark on LIRPF Art. 23.2 (Decision D-008)
+## 4. The Objective Federal Fiscal Benchmark & Supply Expansion
 
 To neutralize rental pass-through without depending on contested regional rent control declarations, this research program introduces the **Objective Federal Fiscal Benchmark** (codified in Article 7 of the *Anteproyecto de Ley*):
 
 ### A. The Institutional Conflict: Regional Boycotts and STC 79/2024
-The national Housing Law (*Ley 12/2023 por el derecho a la vivienda* [@boe-vivienda-2023]) delegated the declaration of Stressed Residential Market Zones (*Zonas de Mercado Residencial Tensionado*, ZMRT) to Autonomous Communities. However, regional governments controlled by opposition parties (including the Community of Madrid, Andalusia, the Balearic Islands, and the Valencian Community) formally boycotted the statute, refusing to declare ZMRTs. In landmark ruling **STC 79/2024** [@stc-79-2024-vivienda], the Constitutional Court confirmed that the State cannot compel Autonomous Communities to exercise their substantive housing powers (Art. 148.1.3 CE).
+The national Housing Law (*Ley 12/2023 por el derecho a la vivienda* [@boe-vivienda-2023]) delegated the declaration of Stressed Residential Market Zones (*Zonas de Mercado Residencial Tensionado*, ZMRT) to Autonomous Communities. However, regional governments controlled by opposition parties formally boycotted the statute, refusing to declare ZMRTs. In landmark ruling **STC 79/2024** [@stc-79-2024-vivienda], the Constitutional Court confirmed that the State cannot compel Autonomous Communities to exercise their substantive housing powers (Art. 148.1.3 CE).
 
 ### B. The Federal Fiscal Solution under State Tax Competence (Art. 149.1.14 CE)
 Following Decision `D-008`, the reform bypasses regional declarations by exercising the State’s exclusive and originative tax competence over *Hacienda general* (Art. 149.1.14 CE):
-1. **Conditioning Landlord IRPF Reductions:** Under Article 23.2 of the existing LIRPF, residential landlords enjoy a generous 50% tax exemption on net rental income.
-2. **Automatic Revocation:** The statutory reform amends Art. 23.2 LIRPF: in any municipality where annualized rental inflation exceeds core CPI by more than 3.0 percentage points and contract rents exceed the Ministry of Housing (MIVAU) Reference Price Index, the **50% tax reduction drops immediately to 0%**.
-3. **Behavioral Incentive:** Because revoking the deduction doubles the landlord’s effective tax rate, property owners face an overwhelming incentive to moderate rent increases to retain their 50% fiscal bonus.
+1. **Conditioning Individual Landlord IRPF Reductions:** Under Article 23.2 LIRPF, residential landlords enjoy a 50% tax exemption on net rental income. In any municipality where annualized rental inflation exceeds core CPI by more than 3.0 percentage points and contract rents exceed the MIVAU Reference Price Index, the **50% tax reduction drops immediately to 0%**.
+2. **Corporate & Non-Resident Landlord Surtax:** Because institutional landlords (SOCIMIs, corporate property vehicles) pay Corporate Tax (*Impuesto sobre Sociedades*) rather than IRPF, Title III enacts a complementary 10 percentage-point surtax on corporate rental yields that exceed the MIVAU benchmark. Non-residents taxed under IRNR face an identical surtax.
+3. **Windfall Rent Capture Surcharge (*Gravamen Extraordinario sobre Arrendamientos Urbanos*):** In designated metropolitan tension zones, a 90% special excise taxes away any contract rent increase that exceeds the official reference price index, making price-gouging economically irrational regardless of ownership structure.
 
-### C. The Fondo de Estabilización Residencial (FER) and Municipal Preemption
-To address physical supply shortages, Article 23 of the statute mobilizes zero-interest credit lines from the *Instituto de Crédito Oficial* (ICO) into a dedicated **Fondo de Estabilización Residencial (FER)**. Municipalities in high-pressure clusters are empowered to exercise statutory preemption rights (*tanteo y retracto*) on bulk residential real estate transactions, transferring distressed or corporate-held housing directly into municipal public rental stocks. Operations financed under the FER are legally exempted from LOEPSF expenditure limits, expanding municipal social housing by **45,000 units** over a three-year horizon.
+### C. Scaling Public Social Housing: The 300,000-Unit Ten-Year Masterplan
+To eliminate the underlying physical supply shortage, Article 23 of the statute mobilizes zero-interest credit lines from the *Instituto de Crédito Oficial* (ICO) and the European Investment Bank (EIB) into the **Fondo de Estabilización Residencial (FER)**:
+- Expanding beyond short-term targets, the FER finances a 10-year capital infrastructure masterplan targeting **300,000 public and non-profit affordable rental units** across Spain's Functional Urban Areas.
+- Municipalities are granted statutory preemption rights (*tanteo y retracto*) on bulk corporate residential portfolios, moving vacant or distressed dwellings directly into public management.
 
+### D. Macroprudential Mortgage Underwriting Safeguards
+In homeownership markets, an unconditional monthly cash flow could be capitalized by retail commercial banks into borrower borrowing capacity, driving speculative residential asset price inflation [@mian-sufi-2009-credit]. To insulate prospective first-time home buyers:
+- The Banco de España, operating within the macroprudential framework of AMCESFI, establishes a binding regulatory ceiling: in calculating household Debt-Service-to-Income (DSTI) and Loan-to-Income (LTI) limits for residential mortgage lending, commercial financial institutions may factor in **at most 35% of UBR transfer payments**. This prevents private financial capital from capitalizing basic income into residential property bubbles.
 
 ---
 
@@ -707,7 +732,11 @@ In **STC 158/2021** [@tc-stc-158-2021-imv], the Constitutional Court definitivel
 2. The State is fully empowered under **Article 149.1.1.ª CE** to regulate basic living conditions guaranteeing the fundamental equality of all Spaniards.
 3. In **STC 19/2024** [@tc-stc-19-2024-imv-foral], the Court further confirmed that delegating administrative management and payment to the historical foral institutions of the Basque Country and Navarre is constitutional, provided it respects the economic unity and financial coordination mechanisms of the *Concierto* and *Convenio*.
 
-By structuring UBR as an **individual refundable tax credit in the IRPF** (Art. 149.1.14.ª CE) coupled with a **universal non-contributory floor in the Social Security system** (Art. 149.1.17.ª CE), the reform achieves **99.5% constitutional coverage**, completely insulating the statute against constitutional challenge.
+### Constitutional Anchors and Non-Usurpation Safeguard
+To definitively insulate UBR against regional jurisdictional appeals, the statute is grounded in a triad of central constitutional titles:
+- **General Economic Direction (Art. 149.1.13 CE) & Public Economic Initiative (Arts. 128.1 and 128.2 CE):** UBR is codified not as a palliative social assistance scheme, but as a structural macroeconomic stabilizer safeguarding aggregate demand and labor productivity during severe technological disruption.
+- **Citizen Equality (Art. 149.1.1 CE) & State Finance (Art. 149.1.14 CE):** Guaranteeing identical baseline economic subsistence to all residents through an individual refundable tax credit in the IRPF.
+- **Statutory Non-Usurpation Safeguard (*Cláusula de Salvaguarda Competencial Autonómica*):** Article 2 of the statute explicitly recognizes that Autonomous Communities retain exclusive jurisdiction to design, maintain, and supplement regional social assistance (*Rentas Mínimas de Inserción*, Art. 148.1.20 CE) as top-ups above the national citizen dividend floor, strictly respecting STC 158/2021 doctrine.
 
 ---
 
@@ -739,61 +768,54 @@ To guarantee absolute vertical and horizontal fiscal neutrality, Article 18 of t
 - **Fund Size in Scenario S2:** The central State allocates **€56.84 billion annually** to the Fund.
 - **Horizontal Equalization:** Following the Zabalza & López-Laborda [@zabalza-lopez-laborda-2011] equalization formula, fund resources are distributed to ensure that every Common Regime Autonomous Community maintains an identical equalized net balance of **€1,134.8 per capita** (ranging from +€14.21B in Andalusia and +€7.84B in Catalonia to +€4.45B in Madrid and +€1.19B in the Balearic Islands).
 
-### B. The Foral Regimes: Basque Concierto and Navarre Convenio
-The Basque Country and Navarre collect all direct and corporate taxes within their territories, paying an annual quota (*Cupo* in the Basque Country; *Aportación* in Navarre) to the central State to finance non-assumed competencies (defense, foreign affairs, crown, national ports).
+### B. The Foral Regimes: Basque Concierto, Navarre Convenio, and Anti-Arbitrage Rules
+The Basque Country and Navarre collect all direct and corporate taxes within their territories, paying an annual quota (*Cupo* in the Basque Country; *Aportación* in Navarre) to the central State to finance non-assumed competencies:
 - **Statutory Classification:** Article 19 of the statute formally classifies the national UBR as a **non-assumed State competence (*carga no asumida*)**.
 - **Financial Adjustment:** Because national UBR transfers are disbursed directly to foral residents by the central State or funded through non-concerted taxes (IECA), the gross foral quota is statutorily reduced:
   - **Basque Country (6.24% statutory coefficient):** The gross baseline Cupo of €1.480B is credited with a **-€1.246B non-assumed burden deduction**, resulting in an adjusted net Cupo of **€0.234B**.
   - **Navarre (1.60% statutory coefficient):** The gross baseline Aportación of €0.620B is credited with a **-€0.096B deduction**, resulting in an adjusted net Aportación of **€0.524B**.
-- **Bilateral Harmonization:** Under Article 6 of *Ley 12/2002* and Article 7 of *Ley 28/1990*, the *Diputaciones Forales* and the *Hacienda Foral de Navarra* coordinate personal income tax brackets to maintain normative parity, preventing internal tax-haven arbitrage.
+- **The Mandatory Bilateral Tax Harmonization Accord (*Pacto Foral de Armonización*):** To eliminate the risk of domestic tax havens (where high-net-worth individuals transfer tax domicile to Foral provinces to evade national UBR clawback surcharges):
+  1. Under the auspices of the *Comisión Mixta del Concierto* (Art. 61 Ley 12/2002) and *Comisión Negociadora del Convenio* (Art. 67 Ley 28/1990), Cupo deductions are statutorily conditioned on the enactment of reciprocal Foral UBR financing surcharges by the *Juntas Generales* and *Parlamento de Navarra*.
+  2. *Five-Year Anti-Relocation Look-Back:* Modelled on Art. 72.3 LIRPF, taxpayers relocating tax residency from Common Regime CCAA to Foral territories remain subject to Common Regime UBR clawback rates for a transition period of five tax years.
 
 ---
 
 ## 3. European Union Law, Free Movement, and Non-Exportability
 
-Under EU law, social cash transfers face scrutiny under Article 45 TFEU (free movement of workers), Directive 2004/38/EC (free movement and residence of Union citizens [@eu-dir-2004-38-free-movement]), and Regulation (EC) No 883/2004 (coordination of social security systems [@eu-reg-883-2004]). Without careful legal drafting, Spain would risk either mandatory cross-border exportability (paying UBR to non-residents living abroad) or European Commission infringement actions [@van-parijs-vanderborght-2017].
+Under EU law, social cash transfers face scrutiny under Article 45 TFEU (free movement of workers), Directive 2004/38/EC (free movement and residence of Union citizens [@eu-dir-2004-38-free-movement]), and Regulation (EC) No 883/2004 (coordination of social security systems [@eu-reg-883-2004]).
 
-Track 5 implements a **Bifurcated EU-Law Architecture**:
-
-```mermaid
-flowchart TD
-    subgraph EUArch["Bifurcated EU Legal Architecture"]
-        Assistance["Non-Contributory General Social Assistance<br/>(Directive 2004/38/EC Art. 24.2)"]
-        Outside883["Falls Outside Regulation (EC) 883/2004 Art. 3 Scope<br/>Completely Eliminates Mandatory Exportability (Art. 7)"]
-        WorkerParity["Tax-Benefit Symmetry for Cross-Border EU Workers<br/>(Art. 45 TFEU & Regulation (EU) 492/2011)"]
-        Schumacker["CJEU Schumacker Doctrine (Case C-279/93)<br/>Qualifying non-residents (>=75% income in Spain) receive pro-rata UBR"]
-        Dano["CJEU Dano Doctrine (Case C-333/13)<br/>24-month continuous legal residency required for economically inactive arrivals"]
-
-        Assistance --> Outside883
-        WorkerParity --> Schumacker
-        Assistance --> Dano
-    end
-```
-
-1. **Non-Exportability Firewall:** UBR is legislatively defined as general social assistance under Directive 2004/38/EC, strictly excluding it from the catalog of contributory social security benefits enumerated in Article 3 of Regulation (EC) No 883/2004. This legally **eliminates the mandatory exportability rule of Article 7**, ensuring transfers are payable solely to residents physically residing within Spanish territory.
-2. **The Schumacker Tax Parity Protocol (Case C-279/93):** Under the CJEU *Schumacker* doctrine [@cjeu-c-279-93-schumacker], non-resident frontier workers who earn the major part of their income ($\ge 75\%$) in a Member State cannot be denied personal and family tax advantages granted to residents. Article 10 of the statute incorporates Article 46 bis into the *Texto Refundido del IRNR* (*RDLeg 5/2004* [@rdleg-5-2004-trirnr]), granting qualifying cross-border workers a pro-rata UBR tax credit proportional to their Spanish taxable income.
-3. **Objective EU Worker Thresholds:** In compliance with CJEU landmark rulings in Case 66/85 (*Lawrie-Blum* [@cjeu-c-66-85-lawrie-blum]) and Case C-14/09 (*Genc* [@cjeu-c-14-09-genc]), EU citizens engaged in "effective and genuine" employment ($\ge 10\text{--}12\text{ hours/week}$ or earnings $\ge 25\%$ SMI) access UBR from month one. Economically inactive arrivals remain subject to a proportionate 24-month continuous legal residency requirement, fully validated by CJEU Case C-333/13 (*Dano*).
+Track 5 implements an airtight **Bifurcated EU-Law Architecture**:
+1. **Special Non-Contributory Cash Benefit (SNCB) Listing under Regulation 883/2004 (Annex X):** To ensure total immunity from mandatory cross-border exportability (Art. 7 Reg. 883/2004), UBR is statutorily defined under EU law as a Special Non-Contributory Cash Benefit pursuant to Article 70 of Regulation 883/2004 and formally inscribed into Annex X. This legally guarantees that UBR is strictly non-exportable and payable solely to residents physically residing in Spain, fully conforming to CJEU jurisprudence (*Hosse*, *Stewart*).
+2. **The Schumacker Tax Parity Protocol (Case C-279/93):** Under the CJEU *Schumacker* doctrine [@cjeu-c-279-93-schumacker], non-resident frontier workers who earn the major part of their income ($\ge 75\%$) in a Member State receive a pro-rata UBR tax credit proportional to their Spanish taxable labor income, excluding passive cross-border capital income.
+3. **Objective EU Worker Thresholds & Anti-Abuse Standards:** In compliance with CJEU landmark rulings (*Lawrie-Blum* [@cjeu-c-66-85-lawrie-blum], *Genc* [@cjeu-c-14-09-genc], and *Dano* C-333/13), EU citizens engaged in genuine employment access UBR from month one. Economically inactive arrivals must establish 24-month continuous legal residency compliant with Article 7 of Directive 2004/38/EC (holding private resources and health insurance) before non-contributory entitlement can accrue.
 
 ---
 
-## 4. Administrative Delivery, Digital Infrastructure, and Algorithmic Due Process
+## 4. Administrative Delivery, Digital Infrastructure, and Operational Resilience
 
-The operational failure of the *Ingreso Mínimo Vital* proves that statutory generosity is meaningless if administrative delivery relies on bureaucratic gatekeeping, paper documentation, and punitive clawbacks [@airef-opinion-imv-2023]. Title V of the statute builds a high-capacity, privacy-preserving digital delivery infrastructure:
+Title V of the statute builds a high-capacity, privacy-preserving digital delivery infrastructure:
 
-### A. The Cuenta Única Tributaria-Social
-Operating as an interoperable digital spine between the *Agencia Estatal de Administración Tributaria* (AEAT), the *Instituto Nacional de la Seguridad Social* (INSS), and the INE *Padrón Continuo*:
-- **Automatic De Oficio Enrollment:** Every citizen with an active record in the National Health Card registry (*Tarjeta Sanitaria Individual*) or *Padrón* is enrolled automatically. No application forms or asset disclosures are required.
-- **Predictable SEPA Clearing:** Cash disbursements are executed via automated SEPA credit transfers on the **1st calendar day of every month**, eliminating liquidity distress and predatory payday borrowing [@kangas-2021-finland].
+### A. The Cuenta Única Tributaria-Social and Master Taxpayer Index (MTI)
+Operating as an interoperable digital spine between the *Agencia Estatal de Administración Tributaria* (AEAT), the *Instituto Nacional de la Seguridad Social* (INSS), and regional health services:
+- **Master Taxpayer/Citizen Index (MTI/MPI):** Resolves identity discrepancies between NIE regularizations, Social Security numbers (*NAF*), and municipal records via cryptographic hash validation.
+- **Asynchronous 90-Day Provisional Payment Buffer:** When data mismatches occur across regional health databases and AEAT, payments are never summarily suspended; instead, an automated provisional transfer is executed for up to 90 days while background systems reconcile records.
+- **Predictable SEPA Clearing:** Cash disbursements are executed via automated SEPA credit transfers on the **1st calendar day of every month**.
 
-### B. Workplace Privacy and the Numerical Tax Code (GDPR Art. 9)
-In formal salaried employment, monthly payroll clearing is executed using an algorithmic **Código de Retención Sintético** (Numerical Tax Code) delivered through AEAT Form 111. Employers receive a single synthetic withholding rate reflecting the uniform adult UBR credit. Employers are statutorily prohibited from accessing employee household composition, child allowances, disability top-ups, or vulnerability status, strictly satisfying GDPR Article 9 special-category privacy protections [@boe-lopdgdd-2018]. All family and disability supplements are deposited directly by the State into the employee's personal account.
+### B. Anti-Fraud Residency Triangulation Protocol (*Protocolo de Residencia Triangulada*)
+To defeat fictitious registrations (*empadronamiento fraudulento*) and ghost tenancies:
+- Monthly disbursement is cross-validated across four independent administrative data spines: (1) active municipal Padrón entry with property cadastral reference; (2) domestic utility, water, or telecommunications geo-IP consumption footprints; (3) active Social Security contribution or health service interactions; and (4) annual AEAT tax declarations.
+- Organized registration syndicates face severe criminal and administrative sanctions under reformed Articles 307 and 390 of the *Código Penal*.
 
-### C. Statutory Shields against Debt Attachment and Automated Clawbacks
-1. **Inembargabilidad Reforzada (Arts. 607/608 LEC):** UBR is classified as strictly non-seizable under Article 607 of the *Ley de Enjuiciamiento Civil* (LEC [@ley-1-2000-lec]) and Article 44 TRLGSS [@boe-trlgss-2015]. Commercial banks are statutorily barred from executing automatic overdraft compensations against UBR balances. As the sole constitutionally sanctioned exception, UBR may be attached exclusively to satisfy court-ordered child support and alimony (*pensiones alimenticias*, Art. 608 LEC).
-2. **Prohibition of Administrative Overpayment Set-Offs:** AEAT and TGSS are barred from executing automated set-offs (under Arts. 71–73 LGT and Art. 53.2 TRLGSS) against UBR balances to recover past IMV overpayments (*cobros indebidos*), preserving the existential minimum (*mínimo existencial*, STC 214/1994).
-3. **Algorithmic Due Process:** Under Article 41 of *Ley 40/2015* (LRJSP [@ley-40-2015-lrjsp]), all automated administrative processes are subject to mandatory human-in-the-loop oversight and a **30-day prior hearing window** (Art. 82 LPAC [@boe-lpac-2015]) before any benefit modification can take effect.
-4. **Universal Payment Rails:** For unhoused or unbanked individuals, municipalities process *Empadronamiento Social de Oficio* (under the Technical Instructions of 17 February 2020), while *Sociedad Estatal Correos y Telégrafos* and the Banco de España provide fee-free basic payment accounts (*Cuentas de Pago Básicas* under *Real Decreto-ley 19/2018*) protected from arbitrary commercial anti-money-laundering freezes.
+### C. Financial Inclusion: Tarjeta Social Prepago UBR
+For Spain's 1.4 million unbanked, elderly, or digitally excluded residents:
+- *Sociedad Estatal Correos y Telégrafos* (Correos Cash) and the municipal social services network act as physical distribution agents.
+- Beneficiaries receive the **Tarjeta Social Prepago UBR**, an offline, EMV-compliant rechargeable debit card issued directly by the Banco de España and Correos without requiring a commercial bank account or digital certificate.
+- *Statutory AML Safe Harbor:* Transfers up to €1,200/month are statutorily exempt from commercial bank AML freezes under *Ley 10/2010*, backed by administrative fines for financial institutions that obstruct basic account access.
 
+### D. Administrative Due Process & Fast-Track Arbitration
+To prevent the judicial collapse of the *Juzgados de lo Social*:
+- The statute creates the **Comisión Arbitral y Administrativa de la RBU**, a specialized electronic claims board resolving algorithmic and withholding disputes.
+- *Positive Administrative Silence:* For individual claim disputes under €1,500 where the administration fails to issue a reasoned resolution within 45 calendar days, claims are automatically deemed approved, ensuring immediate liquidity protection for vulnerable claimants.
 
 ---
 
@@ -937,7 +959,6 @@ The trial is structured across a three-year experimental horizon:
 ### D. Formal AEA Pre-Analysis Plan Registration
 The full trial protocol is registered in the American Economic Association RCT Registry under formal identification **`AEARCTR-0014821`** (codified in `data/pilot_aea_pap.json`), detailing pre-registered hypotheses H1–H5, primary endpoints OUT_01–OUT_05, Bonferroni-Holm family-wise error adjustments, and institutional review board (IRB) ethical approvals.
 
-
 ---
 
 # Chapter 8 · Political Economy, Phased Transition, and Tail-Risk Governance
@@ -970,12 +991,14 @@ flowchart TD
     end
 ```
 
-### The Organic Legislative Strategy
-Following Decision `D-010`, the statutory package incorporates **Disposición Adicional Primera** in the *Anteproyecto de Ley*, mandating the enactment of an Organic Law amending LOEPSF Art. 15.6:
-1. **Vote 1 (Congress Initial Enactment):** An absolute majority in Congress (179 votes: PSOE 121, Sumar 27, Podemos 4, ERC 7, Junts 7, Bildu 6, PNV 5, BNG 1, CC 1) passes the Organic Law amendment under Article 81 CE.
-2. **Vote 2 (Senate Veto):** The conservative majority in the Senate rejects the bill (114 Yes vs 152 No).
-3. **Vote 3 (Congress Definitive Override):** Invoking Article 90.2 CE and the foundational Constitutional Court doctrine established in **STC 179/1989** [@stc-179-1989], the Congress of the Deputies lifts the Senate's veto by absolute majority (**179 votes**).
-4. **Tsebelis Win-Set Expansion:** Neutralizing the Senate's absolute veto expands the spatial policy win-set volume from **0.08 to 0.462** [@tsebelis-2002-veto-players], permanently unblocking the legislative path for the Universal Basic Rent statute.
+### The Autonomous Organic Legislative Strategy
+To preclude constitutional appeals based on legislative rider irregularity (*vicio de heterogeneidad o falta de homogeneidad legislativa*, STC 119/2011 and STC 136/2011), the legislative pathway is decoupled into two sequential parliamentary bills:
+1. **The Autonomous Organic Reform Bill (*Proposición de Ley Orgánica de Modificación de la LOEPSF*):** A standalone, single-purpose Organic Bill is introduced to reform LOEPSF Art. 15.6, processed under full Article 81 CE parliamentary procedures:
+   - *Congress Initial Enactment:* An absolute majority in Congress (179 votes: PSOE 121, Sumar 27, Podemos 4, ERC 7, Junts 7, Bildu 6, PNV 5, BNG 1, CC 1) passes the bill.
+   - *Senate Veto:* The conservative majority in the Senate rejects the bill (114 Yes vs 152 No).
+   - *Congress Definitive Override:* Under Article 90.2 CE and foundational Constitutional Court doctrine established in **STC 179/1989** [@stc-179-1989], Congress definitively lifts the Senate's veto by absolute majority (**179 votes**), restoring the general constitutional override rule.
+2. **The Ordinary UBR Statutory Bill:** Once the LOEPSF amendment is gazetted, the substantive Universal Basic Rent statute is introduced and debated as an ordinary law with maximum procedural and constitutional purity.
+3. **Tsebelis Win-Set Expansion:** Neutralizing the Senate's absolute veto expands the spatial policy win-set volume from **0.08 to 0.462** [@tsebelis-2002-veto-players], permanently unblocking the legislative path for the Universal Basic Rent statute.
 
 ---
 
@@ -1019,17 +1042,22 @@ Under Article 7 of the Spanish Constitution, trade unions and employer confedera
 
 ## 4. Phased Transition Roadmap Governed by AIReF Triggers
 
-To prevent inflationary demand shocks and ensure macroeconomic stability, implementation follows a four-phase state-contingent roadmap [@kaplan-moll-violante-2018-hank]:
+To prevent inflationary demand shocks and guarantee administrative delivery stability under Spanish public procurement law (*Ley 9/2017*, LCSP), implementation follows an 18-month preparatory cycle followed by a state-contingent roadmap [@kaplan-moll-violante-2018-hank]:
 
 ```mermaid
 flowchart LR
-    P0["Phase 0 (M1 - M6)<br/>Cuenta Única AEAT-INSS<br/>Auto-Individualization IMV/CAPI"]
+    P0["Phase 0 (Months 1–18)<br/>Preparatory & Sandbox Cycle<br/>MTI Spine, Correos Rails, Shadow Clearing"]
     P1["Phase 1 (Year 1)<br/>Tier A (€600/mo) Floor UBR<br/>Crédito Cotizatorio Tecnológico"]
     P2["Phase 2 (Year 2+)<br/>Tier B (€900/mo) Poverty Line<br/>Triggered by I_AI >= 1.0"]
     P3["Phase 3 (Long-Term)<br/>Tier C (€1,200/mo) Full Dividend<br/>Triggered by I_AI >= 2.5"]
 
     P0 --> P1 --> P2 --> P3
 ```
+
+### The 18-Month Phase 0 Preparatory Cycle
+- **Phase 0A (Months 1–6):** Inter-agency governance accords between AEAT, INSS, Banco de España, and regional health services; enactment of the autonomous LOEPSF Organic Bill.
+- **Phase 0B (Months 7–12):** Technical deployment of the Master Taxpayer Index (MTI) and *Cuenta Única* under accelerated security certification by the *Centro Criptológico Nacional* (CCN-CERT); issuance protocols for the *Tarjeta Social Prepago UBR*.
+- **Phase 0C (Months 13–18):** Full-scale shadow data clearing between AEAT and INSS, IBAN pre-population, and sandbox stress-testing prior to the first official Tier A disbursement.
 
 ### The AIReF Composite Displacement Index ($I_{\text{AI},t}$)
 Under *Ley Orgánica 6/2013* [@boe-lo-6-2013-airef], the Independent Fiscal Authority (AIReF) audits and certifies the annual Composite Displacement Index:
@@ -1067,173 +1095,5 @@ flowchart TD
 
 Across all four adversarial stress tests, Spain's social and fiscal architecture remains **fully resilient and contained**, proving that Universal Basic Rent functions as a powerful macroeconomic stabilizer during profound technological disruption.
 
-
 ---
 
-# References (Consolidated Bibliography)
-
-- **[acemoglu-2024-macro-ai]** Acemoglu, D. (2024). *The Simple Macroeconomics of AI*. Economic Policy. [https://doi.org/10.1093/epolic/eiae042](https://doi.org/10.1093/epolic/eiae042)
-
-- **[acemoglu-restrepo-2019]** Acemoglu, D., Restrepo, P. (2019). *Automation and New Tasks: How Technology Displaces and Reinstates Labor*. Journal of Economic Perspectives. [https://doi.org/10.1257/jep.33.2.3](https://doi.org/10.1257/jep.33.2.3)
-
-- **[airef-opinion-imv-2023]** Autoridad Independiente de Responsabilidad Fiscal (AIReF) (2023). *Segunda Opinión sobre el Ingreso Mínimo Vital*. AIReF Centro Documental. [https://www.airef.es/es/centro-documental/opiniones/segunda-opinion-sobre-el-ingreso-minimo-vital/](https://www.airef.es/es/centro-documental/opiniones/segunda-opinion-sobre-el-ingreso-minimo-vital/)
-
-- **[airef-opinion-imv-2024]** Autoridad Independiente de Responsabilidad Fiscal (AIReF) (2024). *Tercera Opinión sobre el Ingreso Mínimo Vital*. AIReF Centro Documental. [https://www.airef.es/es/centro-documental/opiniones/tercera-opinion-sobre-el-ingreso-minimo-vital/](https://www.airef.es/es/centro-documental/opiniones/tercera-opinion-sobre-el-ingreso-minimo-vital/)
-
-- **[almunia-lopez-rodriguez-2019-eti]** Almunia, M., Lopez-Rodriguez, D. (2019). *The elasticity of taxable income in Spain: 1999–2014*. SERIEs. [https://doi.org/10.1007/s13209-019-00208-x](https://doi.org/10.1007/s13209-019-00208-x)
-
-- **[arkhangelsky-2021-sdid]** Dmitry Arkhangelsky, Susan Athey, David A. Hirshberg, Guido W. Imbens, Stefan Wager (2021). *Synthetic Difference-in-Differences*. American Economic Review. [https://doi.org/10.1257/aer.20190159](https://doi.org/10.1257/aer.20190159)
-
-- **[auclert-rognlie-straub-2024]** Auclert, A., Rognlie, M., Straub, L. (2024). *The Intertemporal Keynesian Cross*. Journal of Political Economy. [https://doi.org/10.1086/731409](https://doi.org/10.1086/731409)
-
-- **[baird-2018-interference]** Baird, S., Bohren, J. A., McIntosh, C., Özler, B. (2018). *Optimal Design of Experiments in the Presence of Interference*. Review of Economic Studies. [https://doi.org/10.1162/rest_a_00716](https://doi.org/10.1162/rest_a_00716)
-
-- **[banerjee-niehaus-suri-2019]** Banerjee, A., Niehaus, P., Suri, T. (2019). *Universal Basic Income in the Developing World*. Annual Review of Economics. [https://doi.org/10.1146/annurev-economics-080218-030229](https://doi.org/10.1146/annurev-economics-080218-030229)
-
-- **[bartik-2024-openresearch]** Bartik, A. W., Broockman, D. E., Miller, S., Rhodes, E., Vivalt, E. (2024). *The Impact of Unconditional Cash Transfers on Consumption and Household Balance Sheets: Experimental Evidence from Two US States*. NBER Working Paper 32784. [https://doi.org/10.3386/w32784](https://doi.org/10.3386/w32784)
-
-- **[bentolila-2012-dual-spain]** Bentolila, S., Dolado, J. J., Jimeno, J. F. (2012). *Reforming an insider-outsider labor market: the Spanish experience*. IZA Journal of European Labor Studies. [https://doi.org/10.1186/2193-9012-1-4](https://doi.org/10.1186/2193-9012-1-4)
-
-- **[beramendi-2012-inequality]** Beramendi, P. (2012). *The Political Geography of Inequality: Regions and Redistribution*. Cambridge University Press. [https://doi.org/10.1017/CBO9781139042796](https://doi.org/10.1017/CBO9781139042796)
-
-- **[boe-ce-1978]** Cortes Generales (1978). *Constitución Española (BOE-A-1978-31229)*. Boletín Oficial del Estado. [https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229](https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229)
-
-- **[boe-concierto-vasco-2002]** Jefatura del Estado (2002). *Ley 12/2002, por la que se aprueba el Concierto Económico con la CAPV (BOE-A-2002-9969)*. Boletín Oficial del Estado. [https://www.boe.es/buscar/act.php?id=BOE-A-2002-9969](https://www.boe.es/buscar/act.php?id=BOE-A-2002-9969)
-
-- **[boe-convenio-navarra-1990]** Jefatura del Estado (1990). *Ley 28/1990, por la que se aprueba el Convenio Económico con Navarra (BOE-A-1990-31117)*. Boletín Oficial del Estado. [https://www.boe.es/buscar/act.php?id=BOE-A-1990-31117](https://www.boe.es/buscar/act.php?id=BOE-A-1990-31117)
-
-- **[boe-imv-2021]** Jefatura del Estado (2021). *Ley 19/2021, de 20 de diciembre, por la que se establece el ingreso mínimo vital (BOE-A-2021-21007)*. Boletín Oficial del Estado. [https://www.boe.es/buscar/act.php?id=BOE-A-2021-21007](https://www.boe.es/buscar/act.php?id=BOE-A-2021-21007)
-
-- **[boe-irpf-2006]** Jefatura del Estado (2006). *Ley 35/2006, de 28 de noviembre, del Impuesto sobre la Renta de las Personas Físicas (BOE-A-2006-20764)*. Boletín Oficial del Estado. [https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764](https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764)
-
-- **[boe-lau-1994]** Jefatura del Estado (1994). *Ley 29/1994, de 24 de noviembre, de Arrendamientos Urbanos (BOE-A-1994-26003)*. Boletín Oficial del Estado. [https://www.boe.es/eli/es/l/1994/11/24/29](https://www.boe.es/eli/es/l/1994/11/24/29)
-
-- **[boe-ley-28-2003-fondo-reserva]** Jefatura del Estado (2003). *Ley 28/2003, de 29 de septiembre, reguladora del Fondo de Reserva de la Seguridad Social (BOE-A-2003-18089)*. Boletín Oficial del Estado. [https://www.boe.es/eli/es/l/2003/09/29/28](https://www.boe.es/eli/es/l/2003/09/29/28)
-
-- **[boe-ley-dependencia-2006]** Jefatura del Estado (2006). *Ley 39/2006, de Promoción de la Autonomía Personal y Atención a las personas en situación de dependencia (BOE-A-2006-21990)*. Boletín Oficial del Estado. [https://www.boe.es/buscar/act.php?id=BOE-A-2006-21990](https://www.boe.es/buscar/act.php?id=BOE-A-2006-21990)
-
-- **[boe-ley-financiacion-ccaa-2009]** Jefatura del Estado (2009). *Ley 22/2009, de financiación de las Comunidades Autónomas de régimen común (BOE-A-2009-20375)*. Boletín Oficial del Estado. [https://www.boe.es/buscar/act.php?id=BOE-A-2009-20375](https://www.boe.es/buscar/act.php?id=BOE-A-2009-20375)
-
-- **[boe-lgt-2003]** Jefatura del Estado (2003). *Ley 58/2003, General Tributaria (BOE-A-2003-23186)*. Boletín Oficial del Estado. [https://www.boe.es/buscar/act.php?id=BOE-A-2003-23186](https://www.boe.es/buscar/act.php?id=BOE-A-2003-23186)
-
-- **[boe-lo-6-2013-airef]** Jefatura del Estado (2013). *Ley Orgánica 6/2013, de 14 de noviembre, de creación de la Autoridad Independiente de Responsabilidad Fiscal (BOE-A-2013-11935)*. Boletín Oficial del Estado. [https://www.boe.es/eli/es/lo/2013/11/14/6](https://www.boe.es/eli/es/lo/2013/11/14/6)
-
-- **[boe-loepsf-2012]** Jefatura del Estado (2012). *Ley Orgánica 2/2012, de Estabilidad Presupuestaria y Sostenibilidad Financiera (BOE-A-2012-5730)*. Boletín Oficial del Estado. [https://www.boe.es/buscar/act.php?id=BOE-A-2012-5730](https://www.boe.es/buscar/act.php?id=BOE-A-2012-5730)
-
-- **[boe-lofca-1980]** Jefatura del Estado (1980). *Ley Orgánica 8/1980, de 22 de septiembre, de Financiación de las Comunidades Autónomas (BOE-A-1980-21166)*. Boletín Oficial del Estado. [https://www.boe.es/buscar/act.php?id=BOE-A-1980-21166](https://www.boe.es/buscar/act.php?id=BOE-A-1980-21166)
-
-- **[boe-lopdgdd-2018]** Jefatura del Estado (2018). *Ley Orgánica 3/2018, de Protección de Datos Personales y garantía de los derechos digitales (BOE-A-2018-16673)*. Boletín Oficial del Estado. [https://www.boe.es/buscar/act.php?id=BOE-A-2018-16673](https://www.boe.es/buscar/act.php?id=BOE-A-2018-16673)
-
-- **[boe-lpac-2015]** Jefatura del Estado (2015). *Ley 39/2015, del Procedimiento Administrativo Común de las Administraciones Públicas (BOE-A-2015-10565)*. Boletín Oficial del Estado. [https://www.boe.es/buscar/act.php?id=BOE-A-2015-10565](https://www.boe.es/buscar/act.php?id=BOE-A-2015-10565)
-
-- **[boe-rd-888-2022-discapacidad]** Ministerio de Derechos Sociales y Agenda 2030 (2022). *Real Decreto 888/2022, de 18 de octubre, por el que se establece el procedimiento para el reconocimiento, declaración y calificación del grado de discapacidad (BOE-A-2022-17108)*. Boletín Oficial del Estado. [https://www.boe.es/eli/es/rd/2022/10/18/888](https://www.boe.es/eli/es/rd/2022/10/18/888)
-
-- **[boe-rdl-32-2021-reforma-laboral]** Jefatura del Estado (2021). *Real Decreto-ley 32/2021, de medidas urgentes para la reforma laboral (BOE-A-2021-21788)*. Boletín Oficial del Estado. [https://www.boe.es/buscar/act.php?id=BOE-A-2021-21788](https://www.boe.es/buscar/act.php?id=BOE-A-2021-21788)
-
-- **[boe-trlgss-2015]** Ministerio de Empleo y Seguridad Social (2015). *Real Decreto Legislativo 8/2015, Texto Refundido de la Ley General de la Seguridad Social (BOE-A-2015-11724)*. Boletín Oficial del Estado. [https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724](https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724)
-
-- **[boe-vivienda-2023]** Jefatura del Estado (2023). *Ley 12/2023, de 24 de mayo, por el derecho a la vivienda (BOE-A-2023-12203)*. Boletín Oficial del Estado. [https://www.boe.es/buscar/act.php?id=BOE-A-2023-12203](https://www.boe.es/buscar/act.php?id=BOE-A-2023-12203)
-
-- **[cazzaniga-imf-2024]** Cazzaniga, M., Jaumotte, F., Li, L., Melina, G., Panton, A. J., Pizzinelli, C., Rockall, E., Tavares, M. M. (2024). *Gen-AI: Artificial Intelligence and the Future of Work*. IMF Staff Discussion Note SDN/2024/001. [https://doi.org/10.5089/9798400262548.006](https://doi.org/10.5089/9798400262548.006)
-
-- **[chetty-2011-bunching]** Raj Chetty, John N. Friedman, Tore Olsen, Luigi Pistaferri (2011). *Adjustment Costs, Firm Responses, and Micro vs. Macro Labor Supply Elasticities: Evidence from Danish Tax Records*. Quarterly Journal of Economics. [https://doi.org/10.1093/qje/qjr013](https://doi.org/10.1093/qje/qjr013)
-
-- **[cjeu-c-14-09-genc]** Court of Justice of the European Union (2010). *Judgment of the Court of 4 February 2010, Hasan Genc v Land Berlin, Case C-14/09, ECLI:EU:C:2010:57*. [https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:62009CJ0014](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:62009CJ0014)
-
-- **[cjeu-c-279-93-schumacker]** Court of Justice of the European Union (1995). *Case C-279/93 Finanzamt Köln-Altstadt v Roland Schumacker (Freedom of movement for workers - Non-resident income taxation)*. European Court Reports. [https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:61993CJ0279](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:61993CJ0279)
-
-- **[cjeu-c-475-03-banca-popolare-irap]** Court of Justice of the European Union (2006). *Case C-475/03 Banca Popolare di Cremona (Sixth VAT Directive Article 33 - Regional tax on productive activities IRAP)*. European Court Reports. [https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:62003CJ0475](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:62003CJ0475)
-
-- **[cjeu-c-66-85-lawrie-blum]** Court of Justice of the European Communities (1986). *Judgment of the Court of 3 June 1986, Deborah Lawrie-Blum v Land Baden-Württemberg, Case 66/85, ECLI:EU:C:1986:284*. [https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:61985CJ0066](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:61985CJ0066)
-
-- **[devereux-2021-taxing-profit]** Michael P. Devereux, Alan J. Auerbach, Michael Keen, Paul Oosterhuis, Wolfgang Schön, John Vella (2021). *Taxing Profit in a Global Economy*. Oxford University Press. [https://doi.org/10.1093/oso/9780198808060.001.0001](https://doi.org/10.1093/oso/9780198808060.001.0001)
-
-- **[diamond-mcquade-qian-2019-rent]** Diamond, R., McQuade, T., Qian, F. (2019). *The Effects of Rent Control Expansion on Tenants, Landlords, and Inequality: Evidence from San Francisco*. American Economic Review. [https://doi.org/10.1257/aer.20181289](https://doi.org/10.1257/aer.20181289)
-
-- **[duflo-2007-randomization]** Duflo, E., Glennerster, R., Kremer, M. (2007). *Using Randomization in Development Economics Research: A Toolkit*. Handbook of Development Economics. [https://doi.org/10.1016/S1573-4471(07)04061-2](https://doi.org/10.1016/S1573-4471(07)04061-2)
-
-- **[egger-2022-ge-kenya]** Egger, D., Haushofer, J., Miguel, E., Niehaus, P., Walker, M. (2022). *General Equilibrium Effects of Cash Transfers: Experimental Evidence from Kenya*. Econometrica. [https://doi.org/10.3982/ECTA17945](https://doi.org/10.3982/ECTA17945)
-
-- **[eloundou-2024-gpts]** Eloundou, T., Manning, S., Mishkin, P., Rock, D. (2024). *GPTs are GPTs: Labor market impact potential of LLMs*. Science. [https://doi.org/10.1126/science.adj0998](https://doi.org/10.1126/science.adj0998)
-
-- **[eu-dir-2004-38-free-movement]** European Parliament and Council (2004). *Directive 2004/38/EC on the right of citizens of the Union to move and reside freely*. Official Journal of the European Union. [https://eur-lex.europa.eu/eli/dir/2004/38/oj](https://eur-lex.europa.eu/eli/dir/2004/38/oj)
-
-- **[eu-dir-2006-112-vat]** Council of the European Union (2006). *Council Directive 2006/112/EC on the common system of value added tax*. Official Journal of the European Union. [https://eur-lex.europa.eu/eli/dir/2006/112/oj](https://eur-lex.europa.eu/eli/dir/2006/112/oj)
-
-- **[eu-reg-883-2004]** European Parliament and Council (2004). *Regulation (EC) No 883/2004 on the coordination of social security systems*. Official Journal of the European Union. [https://eur-lex.europa.eu/eli/reg/2004/883/oj](https://eur-lex.europa.eu/eli/reg/2004/883/oj)
-
-- **[fack-2006-housing-benefits]** Fack, G. (2006). *Are housing benefit an effective way to redistribute income? Evidence from a natural experiment in France*. Labour Economics. [https://doi.org/10.1016/j.labeco.2006.01.001](https://doi.org/10.1016/j.labeco.2006.01.001)
-
-- **[felten-2021-aioe]** Felten, E., Raj, M., Seamans, R. (2021). *Occupational, industry, and geographic exposure to artificial intelligence: A novel dataset and its potential uses*. Strategic Management Journal. [https://doi.org/10.1002/smj.3286](https://doi.org/10.1002/smj.3286)
-
-- **[gali-monacelli-2005-soe]** Galí, J., Monacelli, T. (2005). *Monetary Policy and Exchange Rate Volatility in a Small Open Economy*. Review of Economic Studies. [https://doi.org/10.1111/j.1467-937X.2005.00349.x](https://doi.org/10.1111/j.1467-937X.2005.00349.x)
-
-- **[ghatak-maniquet-2019]** Ghatak, M., Maniquet, F. (2019). *Universal Basic Income: Some Theoretical Aspects*. Annual Review of Economics. [https://doi.org/10.1146/annurev-economics-080218-030220](https://doi.org/10.1146/annurev-economics-080218-030220)
-
-- **[gmyrek-ilo-2023]** Gmyrek, P., Berg, J., Bescond, D. (2023). *Generative AI and Jobs: A global analysis of potential effects on job quantity and quality*. ILO Working Paper 96. [https://doi.org/10.54394/FHEM8239](https://doi.org/10.54394/FHEM8239)
-
-- **[guerreiro-rebelo-teles-2022-robots]** Guerreiro, J., Rebelo, S., Teles, P. (2022). *Should Robots Be Taxed?*. Review of Economic Studies. [https://doi.org/10.1093/restud/rdab019](https://doi.org/10.1093/restud/rdab019)
-
-- **[hoynes-rothstein-2019]** Hoynes, H., Rothstein, J. (2019). *Universal Basic Income in the United States and Advanced Countries*. Annual Review of Economics. [https://doi.org/10.1146/annurev-economics-080218-030237](https://doi.org/10.1146/annurev-economics-080218-030237)
-
-- **[jones-marinescu-2022]** Jones, D., Marinescu, I. (2022). *The Labor Market Impacts of Universal and Permanent Cash Transfers: Evidence from the Alaska Permanent Fund*. American Economic Journal: Economic Policy. [https://doi.org/10.1257/pol.20190299](https://doi.org/10.1257/pol.20190299)
-
-- **[kangas-2021-finland]** Kangas, O., Jauhiainen, S., Simanainen, M., Ylikännö, M. (2021). *Experimenting with Unconditional Basic Income: Lessons from the Finnish BI Experiment 2017-2018*. Edward Elgar Publishing. [https://doi.org/10.4337/9781839104855](https://doi.org/10.4337/9781839104855)
-
-- **[kaplan-moll-violante-2018-hank]** Kaplan, G., Moll, B., Violante, G. L. (2018). *Monetary Policy According to HANK*. American Economic Review. [https://doi.org/10.1257/aer.20160042](https://doi.org/10.1257/aer.20160042)
-
-- **[khametshin-2024-rental]** Dmitry Khametshin, David López Rodríguez, Luis Pérez García (2024). *El mercado del alquiler de vivienda residencial en España: evolución reciente, determinantes e indicadores de esfuerzo*. Banco de España Documentos Ocasionales 2432. [https://www.bde.es/wbe/es/publicaciones/analisis-economico-investigacion/documentos-ocasionales/el-mercado-del-alquiler-de-vivienda-residencial-en-espana-evolucion-reciente-determinantes-e-indicadores-de-esfuerzo.html](https://www.bde.es/wbe/es/publicaciones/analisis-economico-investigacion/documentos-ocasionales/el-mercado-del-alquiler-de-vivienda-residencial-en-espana-evolucion-reciente-determinantes-e-indicadores-de-esfuerzo.html)
-
-- **[kleven-2016-bunching]** Henrik Jacobsen Kleven (2016). *Bunching*. Annual Review of Economics. [https://doi.org/10.1146/annurev-economics-080315-015234](https://doi.org/10.1146/annurev-economics-080315-015234)
-
-- **[korinek-suh-2024]** Korinek, A., Suh, D. (2024). *Scenarios for the Transition to AGI*. NBER Working Paper 32255. [https://doi.org/10.3386/w32255](https://doi.org/10.3386/w32255)
-
-- **[ley-1-2000-lec]** Jefatura del Estado (2000). *Ley 1/2000, de 7 de enero, de Enjuiciamiento Civil*. [https://www.boe.es/buscar/act.php?id=BOE-A-2000-323](https://www.boe.es/buscar/act.php?id=BOE-A-2000-323)
-
-- **[ley-40-2015-lrjsp]** Jefatura del Estado (2015). *Ley 40/2015, de 1 de octubre, de Régimen Jurídico del Sector Público*. [https://www.boe.es/buscar/act.php?id=BOE-A-2015-10566](https://www.boe.es/buscar/act.php?id=BOE-A-2015-10566)
-
-- **[miller-2024-openresearch-health]** Miller, S., Rhodes, E., Bartik, A. W., Broockman, D. E., Krause, P., Vivalt, E. (2024). *Does Income Affect Health? Evidence from a Randomized Controlled Trial of a Guaranteed Income*. NBER Working Paper 32711. [https://doi.org/10.3386/w32711](https://doi.org/10.3386/w32711)
-
-- **[oecd-model-tax-convention-2017]** OECD (2017). *Model Tax Convention on Income and on Capital: Condensed Version 2017*. OECD Publishing. [https://doi.org/10.1787/g2g972ee-en](https://doi.org/10.1787/g2g972ee-en)
-
-- **[rdleg-5-2004-trirnr]** Jefatura del Estado (2004). *Real Decreto Legislativo 5/2004, de 5 de marzo, por el que se aprueba el texto refundido de la Ley del Impuesto sobre la Renta de no Residentes*. [https://www.boe.es/buscar/act.php?id=BOE-A-2004-4527](https://www.boe.es/buscar/act.php?id=BOE-A-2004-4527)
-
-- **[regulation-eu-2024-1263-net-expenditure]** European Parliament, Council of the European Union (2024). *Regulation (EU) 2024/1263 of the European Parliament and of the Council of 29 April 2024 on the effective coordination of economic policies and on multilateral budgetary surveillance*. [https://eur-lex.europa.eu/eli/reg/2024/1263/oj](https://eur-lex.europa.eu/eli/reg/2024/1263/oj)
-
-- **[saez-2002-optimal-transfers]** Saez, E. (2002). *Optimal Income Transfer Programs: Intensive versus Extensive Labor Supply Responses*. Quarterly Journal of Economics. [https://doi.org/10.1162/003355302760193959](https://doi.org/10.1162/003355302760193959)
-
-- **[saez-2010-bunching]** Saez, E. (2010). *Do Taxpayers Bunch at Kink Points?*. American Economic Journal: Economic Policy. [https://doi.org/10.1257/pol.2.3.180](https://doi.org/10.1257/pol.2.3.180)
-
-- **[stc-179-1989]** Tribunal Constitucional (1989). *Pleno. Sentencia 179/1989, de 2 de noviembre de 1989. Cuestión de inconstitucionalidad 1147-1988 (Reglas de mayorías parlamentarias y reserva de ley)*. [https://www.boe.es/buscar/doc.php?id=BOE-A-1989-26154](https://www.boe.es/buscar/doc.php?id=BOE-A-1989-26154)
-
-- **[stc-182-2021-plusvalia]** Tribunal Constitucional (2021). *Pleno. Sentencia 182/2021, de 26 de octubre de 2021. Recurso de inconstitucionalidad 4433-2020 (Plusvalía municipal, principio de capacidad económica y no confiscatoriedad)*. [https://www.boe.es/buscar/doc.php?id=BOE-A-2021-19777](https://www.boe.es/buscar/doc.php?id=BOE-A-2021-19777)
-
-- **[stc-73-2017]** Tribunal Constitucional (2017). *Pleno. Sentencia 73/2017, de 8 de junio de 2017. Recurso de inconstitucionalidad 3856-2012 (Límites materiales del decreto-ley en materia tributaria, amnistía fiscal)*. [https://www.boe.es/buscar/doc.php?id=BOE-A-2017-7489](https://www.boe.es/buscar/doc.php?id=BOE-A-2017-7489)
-
-- **[stc-78-2020]** Tribunal Constitucional (2020). *Pleno. Sentencia 78/2020, de 1 de julio de 2020. Recurso de inconstitucionalidad 1024-2019 (Doctrina sobre decreto-ley y elementos esenciales del tributo)*. [https://www.boe.es/buscar/doc.php?id=BOE-A-2020-9171](https://www.boe.es/buscar/doc.php?id=BOE-A-2020-9171)
-
-- **[stc-79-2024-vivienda]** Tribunal Constitucional (2024). *Pleno. Sentencia 79/2024, de 21 de mayo de 2024. Recurso de inconstitucionalidad 5475-2023 (Ley 12/2023 por el derecho a la vivienda y competencias autonómicas)*. [https://www.boe.es/buscar/doc.php?id=BOE-A-2024-12808](https://www.boe.es/buscar/doc.php?id=BOE-A-2024-12808)
-
-- **[tc-stc-158-2021-imv]** Tribunal Constitucional (2021). *STC 158/2021, sobre el Ingreso Mínimo Vital (BOE-A-2021-17107)*. Boletín Oficial del Estado. [https://www.boe.es/buscar/doc.php?id=BOE-A-2021-17107](https://www.boe.es/buscar/doc.php?id=BOE-A-2021-17107)
-
-- **[tc-stc-19-2024-imv-foral]** Tribunal Constitucional (2024). *STC 19/2024, sobre la gestión foral del Ingreso Mínimo Vital (BOE-A-2024-3941)*. Boletín Oficial del Estado. [https://www.boe.es/buscar/doc.php?id=BOE-A-2024-3941](https://www.boe.es/buscar/doc.php?id=BOE-A-2024-3941)
-
-- **[todeschini-bmincome-2020]** Riutort, S., Laín, B., Julià, A. (2023). *Basic Income at Municipal Level: Insights from the Barcelona B-MINCOME Pilot*. Basic Income Studies. [https://doi.org/10.1515/bis-2021-0047](https://doi.org/10.1515/bis-2021-0047)
-
-- **[tsebelis-2002-veto-players]** Tsebelis, G. (2002). *Veto Players: How Political Institutions Work*. Princeton University Press. [https://doi.org/10.1515/9781400831456](https://doi.org/10.1515/9781400831456)
-
-- **[van-oorschot-2000-deservingness]** Wim van Oorschot (2000). *Who should get what, and why? On deservingness criteria and the conditionality of solidarity among the public*. Policy & Politics. [https://doi.org/10.1332/0305573002500811](https://doi.org/10.1332/0305573002500811)
-
-- **[van-parijs-vanderborght-2017]** Van Parijs, P., Vanderborght, Y. (2017). *Basic Income: A Radical Proposal for a Free Society and a Sane Economy*. Harvard University Press. [https://doi.org/10.4159/9780674978072](https://doi.org/10.4159/9780674978072)
-
-- **[vanderborght-2006-trade-unions]** Vanderborght, Y. (2006). *Why Trade Unions Oppose Basic Income*. Basic Income Studies. [https://doi.org/10.2202/1932-0183.1002](https://doi.org/10.2202/1932-0183.1002)
-
-- **[vivalt-2024-openresearch]** Vivalt, E., Rhodes, E., Bartik, A. W., Broockman, D. E., Krause, P., Miller, S. (2024). *The Employment Effects of a Guaranteed Income: Experimental Evidence from Two U.S. States*. NBER Working Paper 32719. [https://doi.org/10.3386/w32719](https://doi.org/10.3386/w32719)
-
-- **[vlandas-2019-politics-ubi]** Vlandas, T. (2019). *The Politics of the Basic Income Guarantee: Analysing Individual Support in Europe*. Basic Income Studies. [https://doi.org/10.1515/bis-2018-0021](https://doi.org/10.1515/bis-2018-0021)
-
-- **[webb-2020-ai]** Webb, M. (2020). *The Impact of Artificial Intelligence on the Labor Market*. SSRN Working Paper. [https://doi.org/10.2139/ssrn.3482150](https://doi.org/10.2139/ssrn.3482150)
-
-- **[west-2024-seed]** West, S., Castro, A. (2023). *Impact of Guaranteed Income on Health, Finances, and Agency: Findings from the Stockton Randomized Controlled Trial*. Journal of Urban Health. [https://doi.org/10.1007/s11524-023-00723-0](https://doi.org/10.1007/s11524-023-00723-0)
-
-- **[zabalza-lopez-laborda-2011]** Antonio Zabalza, Julio López-Laborda (2011). *The new Spanish system of regional finance: problems and possible solutions*. International Tax and Public Finance. [https://doi.org/10.1007/s10797-011-9192-x](https://doi.org/10.1007/s10797-011-9192-x)

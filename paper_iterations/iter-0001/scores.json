@@ -1,0 +1,17 @@
+{
+  "iteration": 1,
+  "scored_at": "2026-10-30T10:55:20+00:00",
+  "weighted": 4.332,
+  "criteria": {
+    "fiscal_realism_sustainability": 4.4,
+    "administrative_feasibility": 4.3,
+    "legal_robustness_anti_abuse": 4.4,
+    "macro_productivity_incentives": 4.2,
+    "housing_rent_resilience": 4.3,
+    "argumentative_rigor_honesty": 4.4
+  },
+  "min_criterion": 4.2,
+  "delta": null,
+  "criteria_delta": {},
+  "critical_vulnerabilities": 4
+}

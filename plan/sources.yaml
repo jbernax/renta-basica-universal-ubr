@@ -1,3 +1,6 @@
+# Source registry. Every [@id] citation in plan/**/*.md must resolve to an entry here.
+# verified / verified_by / check_status / checked_at are maintained by `python -m ubr sources verify`.
+# Set `verified: true` + `verified_by: human` to vouch for a source that blocks automated checks.
 sources:
 - id: acemoglu-restrepo-2019
   authors:
@@ -68,7 +71,8 @@ sources:
   - Seamans
   - R.
   year: 2021
-  title: 'Occupational, industry, and geographic exposure to artificial intelligence: A novel dataset and its potential uses'
+  title: 'Occupational, industry, and geographic exposure to artificial intelligence: A novel dataset
+    and its potential uses'
   venue: Strategic Management Journal
   type: article
   doi: 10.1002/smj.3286
@@ -204,7 +208,8 @@ sources:
   - Marinescu
   - I.
   year: 2022
-  title: 'The Labor Market Impacts of Universal and Permanent Cash Transfers: Evidence from the Alaska Permanent Fund'
+  title: 'The Labor Market Impacts of Universal and Permanent Cash Transfers: Evidence from the Alaska
+    Permanent Fund'
   venue: 'American Economic Journal: Economic Policy'
   type: article
   doi: 10.1257/pol.20190299
@@ -248,8 +253,8 @@ sources:
   - Vivalt
   - E.
   year: 2024
-  title: 'The Impact of Unconditional Cash Transfers on Consumption and Household Balance Sheets: Experimental Evidence from
-    Two US States'
+  title: 'The Impact of Unconditional Cash Transfers on Consumption and Household Balance Sheets: Experimental
+    Evidence from Two US States'
   venue: NBER Working Paper 32784
   type: working-paper
   doi: 10.3386/w32784
@@ -308,7 +313,8 @@ sources:
   - Castro
   - A.
   year: 2023
-  title: 'Impact of Guaranteed Income on Health, Finances, and Agency: Findings from the Stockton Randomized Controlled Trial'
+  title: 'Impact of Guaranteed Income on Health, Finances, and Agency: Findings from the Stockton Randomized
+    Controlled Trial'
   venue: Journal of Urban Health
   type: article
   doi: 10.1007/s11524-023-00723-0
@@ -450,7 +456,8 @@ sources:
   - Qian
   - F.
   year: 2019
-  title: 'The Effects of Rent Control Expansion on Tenants, Landlords, and Inequality: Evidence from San Francisco'
+  title: 'The Effects of Rent Control Expansion on Tenants, Landlords, and Inequality: Evidence from San
+    Francisco'
   venue: American Economic Review
   type: article
   doi: 10.1257/aer.20181289
@@ -462,7 +469,8 @@ sources:
   authors:
   - Fack, G.
   year: 2006
-  title: Are housing benefit an effective way to redistribute income? Evidence from a natural experiment in France
+  title: Are housing benefit an effective way to redistribute income? Evidence from a natural experiment
+    in France
   venue: Labour Economics
   type: article
   doi: 10.1016/j.labeco.2006.01.001
@@ -619,7 +627,8 @@ sources:
   authors:
   - Jefatura del Estado
   year: 2006
-  title: Ley 39/2006, de Promoción de la Autonomía Personal y Atención a las personas en situación de dependencia (BOE-A-2006-21990)
+  title: Ley 39/2006, de Promoción de la Autonomía Personal y Atención a las personas en situación de
+    dependencia (BOE-A-2006-21990)
   venue: Boletín Oficial del Estado
   type: law
   lang: es
@@ -645,7 +654,8 @@ sources:
   authors:
   - European Parliament and Council
   year: 2024
-  title: Regulation (EU) 2024/1263 on the effective coordination of economic policies and multilateral budgetary surveillance
+  title: Regulation (EU) 2024/1263 on the effective coordination of economic policies and multilateral
+    budgetary surveillance
   venue: Official Journal of the European Union
   type: law
   url: https://eur-lex.europa.eu/eli/reg/2024/1263/oj
@@ -956,7 +966,8 @@ sources:
   authors:
   - Chetty, R.
   year: 2012
-  title: 'Bounds on Elasticities with Optimization Frictions: A Synthesis of Micro and Macro Evidence on Labor Supply'
+  title: 'Bounds on Elasticities with Optimization Frictions: A Synthesis of Micro and Macro Evidence
+    on Labor Supply'
   venue: Econometrica
   type: article
   doi: 10.3982/ECTA9043
@@ -993,7 +1004,8 @@ sources:
   authors:
   - Ponthieux, S.
   year: 2013
-  title: 'Income pooling and equal sharing within the household: What can we learn from the 2010 EU-SILC module?'
+  title: 'Income pooling and equal sharing within the household: What can we learn from the 2010 EU-SILC
+    module?'
   venue: Eurostat Methodologies and Working Papers
   type: report
   doi: 10.2785/21993
@@ -1033,8 +1045,8 @@ sources:
   - Antolín, P.
   - Bover, O.
   year: 1997
-  title: 'Regional Migration in Spain: The Effect of Personal Characteristics and of Unemployment, Wage and House Price Differentials
-    Using Pooled Cross-Sections'
+  title: 'Regional Migration in Spain: The Effect of Personal Characteristics and of Unemployment, Wage
+    and House Price Differentials Using Pooled Cross-Sections'
   venue: Oxford Bulletin of Economics and Statistics
   type: article
   doi: 10.1111/1468-0084.00062
@@ -1107,7 +1119,8 @@ sources:
   authors:
   - Jefatura del Estado
   year: 2013
-  title: Ley Orgánica 6/2013, de 14 de noviembre, de creación de la Autoridad Independiente de Responsabilidad Fiscal (BOE-A-2013-11935)
+  title: Ley Orgánica 6/2013, de 14 de noviembre, de creación de la Autoridad Independiente de Responsabilidad
+    Fiscal (BOE-A-2013-11935)
   venue: Boletín Oficial del Estado
   type: law
   lang: es
@@ -1146,8 +1159,8 @@ sources:
   authors:
   - Court of Justice of the European Union
   year: 1995
-  title: Case C-279/93 Finanzamt Köln-Altstadt v Roland Schumacker (Freedom of movement for workers - Non-resident income
-    taxation)
+  title: Case C-279/93 Finanzamt Köln-Altstadt v Roland Schumacker (Freedom of movement for workers -
+    Non-resident income taxation)
   venue: European Court Reports
   type: report
   url: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:61993CJ0279
@@ -1159,7 +1172,8 @@ sources:
   authors:
   - Court of Justice of the European Union
   year: 2006
-  title: Case C-475/03 Banca Popolare di Cremona (Sixth VAT Directive Article 33 - Regional tax on productive activities IRAP)
+  title: Case C-475/03 Banca Popolare di Cremona (Sixth VAT Directive Article 33 - Regional tax on productive
+    activities IRAP)
   venue: European Court Reports
   type: report
   url: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:62003CJ0475
@@ -1171,8 +1185,8 @@ sources:
   authors:
   - Ministerio de Derechos Sociales y Agenda 2030
   year: 2022
-  title: Real Decreto 888/2022, de 18 de octubre, por el que se establece el procedimiento para el reconocimiento, declaración
-    y calificación del grado de discapacidad (BOE-A-2022-17108)
+  title: Real Decreto 888/2022, de 18 de octubre, por el que se establece el procedimiento para el reconocimiento,
+    declaración y calificación del grado de discapacidad (BOE-A-2022-17108)
   venue: Boletín Oficial del Estado
   type: law
   lang: es
@@ -1221,8 +1235,8 @@ sources:
   check_status: '200'
   checked_at: '2026-10-29T14:06:58+00:00'
 - id: rdleg-5-2004-trirnr
-  title: Real Decreto Legislativo 5/2004, de 5 de marzo, por el que se aprueba el texto refundido de la Ley del Impuesto sobre
-    la Renta de no Residentes
+  title: Real Decreto Legislativo 5/2004, de 5 de marzo, por el que se aprueba el texto refundido de la
+    Ley del Impuesto sobre la Renta de no Residentes
   authors:
   - Jefatura del Estado
   year: 2004
@@ -1232,8 +1246,8 @@ sources:
   verified: true
   verified_by: machine
 - id: stc-182-2021-plusvalia
-  title: Pleno. Sentencia 182/2021, de 26 de octubre de 2021. Recurso de inconstitucionalidad 4433-2020 (Plusvalía municipal,
-    principio de capacidad económica y no confiscatoriedad)
+  title: Pleno. Sentencia 182/2021, de 26 de octubre de 2021. Recurso de inconstitucionalidad 4433-2020
+    (Plusvalía municipal, principio de capacidad económica y no confiscatoriedad)
   authors:
   - Tribunal Constitucional
   year: 2021
@@ -1263,7 +1277,8 @@ sources:
   verified: true
   verified_by: machine
 - id: cjeu-c-66-85-lawrie-blum
-  title: Judgment of the Court of 3 June 1986, Deborah Lawrie-Blum v Land Baden-Württemberg, Case 66/85, ECLI:EU:C:1986:284
+  title: Judgment of the Court of 3 June 1986, Deborah Lawrie-Blum v Land Baden-Württemberg, Case 66/85,
+    ECLI:EU:C:1986:284
   authors:
   - Court of Justice of the European Communities
   year: 1986
@@ -1283,8 +1298,8 @@ sources:
   verified: true
   verified_by: machine
 - id: eu-regulation-492-2011
-  title: Regulation (EU) No 492/2011 of the European Parliament and of the Council of 5 April 2011 on freedom of movement
-    for workers within the Union
+  title: Regulation (EU) No 492/2011 of the European Parliament and of the Council of 5 April 2011 on
+    freedom of movement for workers within the Union
   authors:
   - European Parliament
   - Council of the European Union
@@ -1295,8 +1310,8 @@ sources:
   verified: true
   verified_by: machine
 - id: stc-214-1994-minimo-existencial
-  title: Pleno. Sentencia 214/1994, de 14 de julio de 1994. Recurso de inconstitucionalidad 1184-1989 (Principio de capacidad
-    económica y mínimo existencial)
+  title: Pleno. Sentencia 214/1994, de 14 de julio de 1994. Recurso de inconstitucionalidad 1184-1989
+    (Principio de capacidad económica y mínimo existencial)
   authors:
   - Tribunal Constitucional
   year: 1994
@@ -1306,8 +1321,8 @@ sources:
   verified: true
   verified_by: machine
 - id: stc-73-2017
-  title: Pleno. Sentencia 73/2017, de 8 de junio de 2017. Recurso de inconstitucionalidad 3856-2012 (Límites materiales del
-    decreto-ley en materia tributaria, amnistía fiscal)
+  title: Pleno. Sentencia 73/2017, de 8 de junio de 2017. Recurso de inconstitucionalidad 3856-2012 (Límites
+    materiales del decreto-ley en materia tributaria, amnistía fiscal)
   authors:
   - Tribunal Constitucional
   year: 2017
@@ -1317,8 +1332,8 @@ sources:
   verified: true
   verified_by: machine
 - id: stc-78-2020
-  title: Pleno. Sentencia 78/2020, de 1 de julio de 2020. Recurso de inconstitucionalidad 1024-2019 (Doctrina sobre decreto-ley
-    y elementos esenciales del tributo)
+  title: Pleno. Sentencia 78/2020, de 1 de julio de 2020. Recurso de inconstitucionalidad 1024-2019 (Doctrina
+    sobre decreto-ley y elementos esenciales del tributo)
   authors:
   - Tribunal Constitucional
   year: 2020
@@ -1328,8 +1343,8 @@ sources:
   verified: true
   verified_by: machine
 - id: stc-179-1989
-  title: Pleno. Sentencia 179/1989, de 2 de noviembre de 1989. Cuestión de inconstitucionalidad 1147-1988 (Reglas de mayorías
-    parlamentarias y reserva de ley)
+  title: Pleno. Sentencia 179/1989, de 2 de noviembre de 1989. Cuestión de inconstitucionalidad 1147-1988
+    (Reglas de mayorías parlamentarias y reserva de ley)
   authors:
   - Tribunal Constitucional
   year: 1989
@@ -1339,7 +1354,8 @@ sources:
   verified: true
   verified_by: machine
 - id: van-oorschot-2000-deservingness
-  title: Who should get what, and why? On deservingness criteria and the conditionality of solidarity among the public
+  title: Who should get what, and why? On deservingness criteria and the conditionality of solidarity
+    among the public
   authors:
   - Wim van Oorschot
   year: 2000
@@ -1350,8 +1366,8 @@ sources:
   verified: true
   verified_by: machine
 - id: rdl-2-2024-desempleo
-  title: Real Decreto-ley 2/2024, de 21 de mayo, por el que se adoptan medidas urgentes para la simplificación y mejora del
-    nivel asistencial de la protección por desempleo
+  title: Real Decreto-ley 2/2024, de 21 de mayo, por el que se adoptan medidas urgentes para la simplificación
+    y mejora del nivel asistencial de la protección por desempleo
   authors:
   - Jefatura del Estado
   year: 2024
@@ -1361,7 +1377,8 @@ sources:
   verified: true
   verified_by: machine
 - id: rd-145-2024-smi
-  title: Real Decreto 145/2024, de 6 de febrero, por el que se fija el salario mínimo interprofesional para 2024
+  title: Real Decreto 145/2024, de 6 de febrero, por el que se fija el salario mínimo interprofesional
+    para 2024
   authors:
   - Ministerio de Trabajo y Economía Social
   year: 2024
@@ -1426,8 +1443,8 @@ sources:
   verified: true
   verified_by: machine
 - id: inclusion-cemfi-jpal-2024
-  title: 'Laboratorio de Políticas de Inclusión: 34 Ensayos de Control Aleatorizado para la Evaluación del Ingreso Mínimo
-    Vital'
+  title: 'Laboratorio de Políticas de Inclusión: 34 Ensayos de Control Aleatorizado para la Evaluación
+    del Ingreso Mínimo Vital'
   authors:
   - Secretaría General de Inclusión
   - CEMFI
@@ -1468,8 +1485,8 @@ sources:
   verified: true
   verified_by: machine
 - id: council-directive-2022-2523-pillar2
-  title: Council Directive (EU) 2022/2523 of 14 December 2022 on ensuring a global minimum level of taxation for multinational
-    enterprise groups and large-scale domestic groups in the Union
+  title: Council Directive (EU) 2022/2523 of 14 December 2022 on ensuring a global minimum level of taxation
+    for multinational enterprise groups and large-scale domestic groups in the Union
   authors:
   - Council of the European Union
   year: 2022
@@ -1490,8 +1507,8 @@ sources:
   verified: true
   verified_by: machine
 - id: regulation-eu-2024-1263-net-expenditure
-  title: Regulation (EU) 2024/1263 of the European Parliament and of the Council of 29 April 2024 on the effective coordination
-    of economic policies and on multilateral budgetary surveillance
+  title: Regulation (EU) 2024/1263 of the European Parliament and of the Council of 29 April 2024 on the
+    effective coordination of economic policies and on multilateral budgetary surveillance
   authors:
   - European Parliament
   - Council of the European Union
@@ -1513,7 +1530,8 @@ sources:
   verified: true
   verified_by: machine
 - id: chetty-2011-bunching
-  title: 'Adjustment Costs, Firm Responses, and Micro vs. Macro Labor Supply Elasticities: Evidence from Danish Tax Records'
+  title: 'Adjustment Costs, Firm Responses, and Micro vs. Macro Labor Supply Elasticities: Evidence from
+    Danish Tax Records'
   authors:
   - Raj Chetty
   - John N. Friedman
@@ -1565,8 +1583,8 @@ sources:
   verified: true
   verified_by: machine
 - id: stc-79-2024-vivienda
-  title: Pleno. Sentencia 79/2024, de 21 de mayo de 2024. Recurso de inconstitucionalidad 5475-2023 (Ley 12/2023 por el derecho
-    a la vivienda y competencias autonómicas)
+  title: Pleno. Sentencia 79/2024, de 21 de mayo de 2024. Recurso de inconstitucionalidad 5475-2023 (Ley
+    12/2023 por el derecho a la vivienda y competencias autonómicas)
   authors:
   - Tribunal Constitucional
   year: 2024
@@ -1576,7 +1594,8 @@ sources:
   verified: true
   verified_by: machine
 - id: khametshin-2024-rental
-  title: 'El mercado del alquiler de vivienda residencial en España: evolución reciente, determinantes e indicadores de esfuerzo'
+  title: 'El mercado del alquiler de vivienda residencial en España: evolución reciente, determinantes
+    e indicadores de esfuerzo'
   authors:
   - Dmitry Khametshin
   - David López Rodríguez
@@ -1668,7 +1687,8 @@ sources:
   verified: true
   verified_by: machine
 - id: zaidi-burchardt-2005-disability
-  title: 'Comparing Incomes When Needs Differ: Equivalization for the Additional Costs of Disability in the UK'
+  title: 'Comparing Incomes When Needs Differ: Equivalization for the Additional Costs of Disability in
+    the UK'
   authors:
   - Asghar Zaidi
   - Tania Burchardt
@@ -1693,7 +1713,7 @@ sources:
   verified: true
   verified_by: machine
 - id: banks-1997-quaids
-  title: 'Quadratic Engel Curves and Consumer Demand'
+  title: Quadratic Engel Curves and Consumer Demand
   authors:
   - James Banks
   - Richard Blundell
@@ -1705,4 +1725,17 @@ sources:
   lang: en
   verified: true
   verified_by: machine
-
+- id: mian-sufi-2009-credit
+  title: 'The Consequences of Mortgage Credit Expansion: Evidence from the U.S. Mortgage Default Crisis'
+  authors:
+  - Atif Mian
+  - Amir Sufi
+  year: 2009
+  venue: Quarterly Journal of Economics
+  type: article
+  doi: 10.1162/qjec.2009.124.4.1449
+  lang: en
+  verified: true
+  check_status: '200'
+  checked_at: '2026-10-30T10:45:10+00:00'
+  verified_by: machine
