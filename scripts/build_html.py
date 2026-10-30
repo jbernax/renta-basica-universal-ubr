@@ -147,6 +147,94 @@ def load_json_data(filename: str) -> Dict[str, Any]:
     return {}
 
 
+def format_legal_text(raw_text: str) -> str:
+    """Formats legal statutory text preserving numbered sections and sub-items."""
+    if not raw_text:
+        return ""
+    escaped = html_lib.escape(raw_text)
+    text = re.sub(r"\*([^*]+)\*", r"<em>\1</em>", escaped)
+    lines = text.split("\n")
+    html_items = []
+    for line in lines:
+        stripped = line.strip()
+        if not stripped:
+            continue
+        if re.match(r"^([a-z]\)|\-)\s+", stripped):
+            html_items.append(f'<div class="legal-subitem">{stripped}</div>')
+        elif re.match(r"^\d+\.\s+", stripped):
+            html_items.append(f'<div class="legal-numbered-item">{stripped}</div>')
+        else:
+            html_items.append(f'<p class="legal-p">{stripped}</p>')
+    return "".join(html_items)
+
+
+def render_article_card(art: Dict[str, Any]) -> str:
+    """Renders a single article or statutory provision card."""
+    art_id = art.get("id", "").lower()
+    num = art.get("article_number") or art.get("number", "")
+    heading = art.get("heading") or art.get("title", "")
+    text = art.get("text") or art.get("content", "")
+    chapter = art.get("chapter", "")
+    const_bases = art.get("constitutional_bases") or art.get("competence_anchors", [])
+    reformed = art.get("reformed_statutes", [])
+    mechanisms = art.get("key_mechanisms", [])
+
+    const_badges = "".join(f'<span class="legal-badge" title="Base Constitucional">{html_lib.escape(b)}</span>' for b in const_bases)
+    reformed_badges = "".join(f'<span class="statute-badge" title="Norma Reformada">{html_lib.escape(r)}</span>' for r in reformed)
+    mech_tags = "".join(f'<span class="mechanism-tag">{html_lib.escape(m)}</span>' for m in mechanisms)
+
+    search_tokens = [
+        num,
+        heading,
+        chapter,
+        " ".join(const_bases),
+        " ".join(reformed),
+        " ".join(mechanisms),
+        text,
+    ]
+    search_text = html_lib.escape(" ".join(search_tokens).lower(), quote=True)
+    chapter_html = f'<span class="article-chapter">{html_lib.escape(chapter)}</span>' if chapter else ""
+    meta_html = f'<div class="article-meta"><span class="meta-label">Mecanismos clave:</span> {mech_tags}</div>' if mech_tags else ""
+
+    return f"""
+            <div class="article-card" id="{html_lib.escape(art_id, quote=True)}" data-search-text="{search_text}">
+                <div class="article-header">
+                    <div class="article-title-wrap">
+                        {chapter_html}
+                        <h4>{html_lib.escape(num)}: {html_lib.escape(heading)}</h4>
+                    </div>
+                    <div class="article-badges">
+                        {const_badges}
+                        {reformed_badges}
+                    </div>
+                </div>
+                <div class="article-body">
+                    {format_legal_text(text)}
+                </div>
+                {meta_html}
+            </div>
+    """
+
+
+def format_preamble(preamble: str) -> str:
+    """Formats the statutory preamble (Exposición de Motivos)."""
+    if not preamble:
+        return ""
+    paras = [p.strip() for p in preamble.split("\n\n") if p.strip()]
+    html_parts = []
+    for p in paras:
+        if p.startswith("EXPOSICIÓN DE MOTIVOS"):
+            continue
+        lines = p.split("\n")
+        first = lines[0].strip()
+        rest = " ".join(l.strip() for l in lines[1:]) if len(lines) > 1 else ""
+        if re.match(r"^[IVXLCDM]+\.\s+", first):
+            html_parts.append(f'<div class="preamble-section"><h5>{html_lib.escape(first)}</h5><p>{html_lib.escape(rest)}</p></div>')
+        else:
+            html_parts.append(f'<p>{html_lib.escape(p)}</p>')
+    return "\n".join(html_parts)
+
+
 def build_full_html() -> str:
     sources_by_id = load_sources()
     
@@ -233,7 +321,18 @@ def build_full_html() -> str:
     }
     dashboard_json = json.dumps(dashboard_payload)
     
-    # Format Anteproyecto titles for Tab 3
+    # Format Anteproyecto titles and provisions for Tab 3
+    preamble_raw = anteproyecto_data.get("preamble", "")
+    preamble_formatted = format_preamble(preamble_raw)
+    preamble_details_html = f"""
+        <details class="preamble-box">
+            <summary>⚖️ Exposición de Motivos (Haga clic para desplegar los antecedentes y fundamentos doctrinales)</summary>
+            <div class="preamble-content">
+                {preamble_formatted}
+            </div>
+        </details>
+    """ if preamble_formatted else ""
+
     anteproyecto_titles = anteproyecto_data.get("titles", [])
     anteproyecto_html_parts = []
     for t in anteproyecto_titles:
@@ -242,36 +341,80 @@ def build_full_html() -> str:
         t_desc = t.get("description", "")
         articles = t.get("articles", [])
         
-        art_cards = []
-        for art in articles:
-            num = art.get("article_number", "")
-            title = art.get("title", "")
-            content = art.get("content", "").replace("\n", "<br>")
-            anchors = ", ".join(art.get("competence_anchors", []))
-            
-            art_cards.append(f"""
-            <div class="article-card" data-search-text="{num.lower()} {title.lower()} {anchors.lower()}">
-                <div class="article-header">
-                    <h4>{num}: {title}</h4>
-                    {f'<span class="legal-badge">{anchors}</span>' if anchors else ''}
-                </div>
-                <div class="article-body">
-                    <p>{content}</p>
-                </div>
-            </div>
-            """)
+        art_cards = [render_article_card(art) for art in articles]
         
         anteproyecto_html_parts.append(f"""
         <div class="title-group">
             <div class="title-heading">
-                <h3>{t_num}: {t_heading}</h3>
-                <p class="title-desc">{t_desc}</p>
+                <h3>{html_lib.escape(t_num)}: {html_lib.escape(t_heading)}</h3>
+                <p class="title-desc">{html_lib.escape(t_desc)}</p>
             </div>
             <div class="articles-container">
                 {"".join(art_cards)}
             </div>
         </div>
         """)
+
+    # Additional Provisions
+    da_cards = [render_article_card(p) for p in anteproyecto_data.get("additional_provisions", [])]
+    if da_cards:
+        anteproyecto_html_parts.append(f"""
+        <div class="title-group">
+            <div class="title-heading">
+                <h3>Disposiciones Adicionales</h3>
+                <p class="title-desc">Mandatos de reforma orgánica (LOEPSF Art. 15.6) y salvaguarda integral de la infancia (Art. 39 CE).</p>
+            </div>
+            <div class="articles-container">
+                {"".join(da_cards)}
+            </div>
+        </div>
+        """)
+
+    # Transitory Provisions
+    dt_cards = [render_article_card(p) for p in anteproyecto_data.get("transitory_provisions", [])]
+    if dt_cards:
+        anteproyecto_html_parts.append(f"""
+        <div class="title-group">
+            <div class="title-heading">
+                <h3>Disposiciones Transitorias</h3>
+                <p class="title-desc">Calendario de despliegue por fases (Tiers A, B y C) y cómputo de períodos de carencia previos.</p>
+            </div>
+            <div class="articles-container">
+                {"".join(dt_cards)}
+            </div>
+        </div>
+        """)
+
+    # Repealing Provisions
+    dd_cards = [render_article_card(p) for p in anteproyecto_data.get("repealing_provisions", [])]
+    if dd_cards:
+        anteproyecto_html_parts.append(f"""
+        <div class="title-group">
+            <div class="title-heading">
+                <h3>Disposición Derogatoria</h3>
+                <p class="title-desc">Derogación expresa de reducciones incompatibles en el IRPF (Arts. 20, 56-61 y 84.2.4º LIRPF).</p>
+            </div>
+            <div class="articles-container">
+                {"".join(dd_cards)}
+            </div>
+        </div>
+        """)
+
+    # Final Provisions
+    df_cards = [render_article_card(p) for p in anteproyecto_data.get("final_provisions", [])]
+    if df_cards:
+        anteproyecto_html_parts.append(f"""
+        <div class="title-group">
+            <div class="title-heading">
+                <h3>Disposiciones Finales</h3>
+                <p class="title-desc">Títulos competenciales estatales exclusivos (Art. 149.1 CE), habilitación reglamentaria y entrada en vigor.</p>
+            </div>
+            <div class="articles-container">
+                {"".join(df_cards)}
+            </div>
+        </div>
+        """)
+
     anteproyecto_html = "\n".join(anteproyecto_html_parts)
     
     # Assembling the HTML template
@@ -775,34 +918,141 @@ def build_full_html() -> str:
             background: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: var(--radius-md);
-            padding: 1.25rem;
-            margin-bottom: 1rem;
+            padding: 1.35rem;
+            margin-bottom: 1.25rem;
             box-shadow: var(--shadow-sm);
+            scroll-margin-top: 5rem;
         }}
         .article-header {{
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            margin-bottom: 0.6rem;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+        }}
+        .article-title-wrap {{
+            flex: 1 1 60%;
+            min-width: 260px;
+        }}
+        .article-chapter {{
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            margin-bottom: 0.2rem;
         }}
         .article-header h4 {{
-            font-size: 1.05rem;
+            font-size: 1.08rem;
             font-weight: 700;
             color: var(--text-main);
+            margin: 0;
+            line-height: 1.35;
+        }}
+        .article-badges {{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.35rem;
+            align-items: center;
+            justify-content: flex-end;
         }}
         .legal-badge {{
-            font-size: 0.75rem;
+            display: inline-block;
+            font-size: 0.73rem;
             font-weight: 600;
             background: var(--accent-light);
             color: var(--accent);
             padding: 0.2rem 0.5rem;
             border-radius: 4px;
+            white-space: nowrap;
         }}
-        .article-body p {{
+        .statute-badge {{
+            display: inline-block;
+            font-size: 0.73rem;
+            font-weight: 600;
+            background: var(--primary-light);
+            color: var(--primary);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            white-space: nowrap;
+        }}
+        .article-body {{
+            font-family: var(--font-serif);
+            font-size: 0.96rem;
+            color: var(--text-main);
+            line-height: 1.65;
+        }}
+        .article-body p, .article-body .legal-p, .article-body .legal-numbered-item {{
+            margin-bottom: 0.65rem;
+            line-height: 1.65;
+        }}
+        .article-body .legal-subitem {{
+            margin-left: 1.5rem;
+            margin-bottom: 0.4rem;
+            line-height: 1.6;
+        }}
+        .article-meta {{
+            margin-top: 0.85rem;
+            padding-top: 0.65rem;
+            border-top: 1px dashed var(--border-color);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.35rem;
+            align-items: center;
+            font-size: 0.78rem;
+        }}
+        .meta-label {{
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-right: 0.25rem;
+        }}
+        .mechanism-tag {{
+            background: var(--bg-body);
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+            padding: 0.15rem 0.45rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+        }}
+        .preamble-box {{
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 1.25rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-sm);
+        }}
+        .preamble-box summary {{
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: var(--primary);
+            outline: none;
+            user-select: none;
+        }}
+        .preamble-box summary:hover {{
+            color: var(--primary-hover);
+        }}
+        .preamble-content {{
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-color);
             font-family: var(--font-serif);
             font-size: 0.95rem;
+            line-height: 1.7;
             color: var(--text-main);
-            line-height: 1.6;
+        }}
+        .preamble-section {{
+            margin-bottom: 1.25rem;
+        }}
+        .preamble-section h5 {{
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 0.35rem;
         }}
 
         /* Print Media Styles */
@@ -832,9 +1082,9 @@ def build_full_html() -> str:
         </div>
         
         <nav class="nav-tabs">
-            <button class="nav-tab-btn active" onclick="switchTab('monograph')">📄 Monografía Académica</button>
-            <button class="nav-tab-btn" onclick="switchTab('dashboard')">📊 Simulador de Políticas</button>
-            <button class="nav-tab-btn" onclick="switchTab('anteproyecto')">⚖️ Anteproyecto de Ley</button>
+            <button class="nav-tab-btn active" onclick="switchTab('monograph', this)">📄 Monografía Académica</button>
+            <button class="nav-tab-btn" onclick="switchTab('dashboard', this)">📊 Simulador de Políticas</button>
+            <button class="nav-tab-btn" onclick="switchTab('anteproyecto', this)">⚖️ Anteproyecto de Ley</button>
         </nav>
 
         <div class="header-actions">
@@ -1030,13 +1280,15 @@ def build_full_html() -> str:
         <div class="anteproyecto-container">
             <div class="dash-hero">
                 <h1>Anteproyecto de Ley de Renta Básica Universal</h1>
-                <p>Texto legal completo estructurado en 9 Títulos y 25 artículos. Incorpora el Fondo de Compensación CPFF, el anclaje constitucional (Arts. 149.1.1, 149.1.14 y 149.1.17 CE), el Impuesto IECA y el Parámetro Fiscal Federal de Vivienda.</p>
+                <p>Texto legal completo estructurado en 9 Títulos (25 artículos), Disposiciones Adicionales, Transitorias, Derogatoria y Finales. Incorpora la Exposición de Motivos, el Fondo de Compensación CPFF, el anclaje constitucional (Arts. 149.1.1, 149.1.14 y 149.1.17 CE), el Impuesto IECA y el Parámetro Fiscal Federal de Vivienda.</p>
             </div>
 
             <input type="text" id="legalSearch" class="search-bar" placeholder="🔍 Buscar por artículo, concepto o anclaje constitucional (ej: 'vivienda', '149.1.14', 'computación', 'IRPF')..." oninput="filterArticles()">
 
             <div id="anteproyectoList">
+                {preamble_details_html}
                 {anteproyecto_html}
+                <div id="noArticlesMessage" style="display: none; text-align: center; padding: 3rem 1rem; color: var(--text-muted); font-size: 1.05rem;">No se encontraron artículos ni disposiciones que coincidan con la búsqueda.</div>
             </div>
         </div>
     </div>
@@ -1045,12 +1297,23 @@ def build_full_html() -> str:
     <script>
         const DASHBOARD_DATA = {dashboard_json};
 
-        function switchTab(tabId) {{
+        function switchTab(tabId, btn) {{
             document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
             document.querySelectorAll('.nav-tab-btn').forEach(el => el.classList.remove('active'));
             
-            document.getElementById('tab-' + tabId).classList.add('active');
-            event.target.classList.add('active');
+            const target = document.getElementById('tab-' + tabId);
+            if (target) {{
+                target.classList.add('active');
+            }}
+            if (btn) {{
+                btn.classList.add('active');
+            }} else {{
+                const matchBtn = document.querySelector(`.nav-tab-btn[onclick*="'${{tabId}}'"]`);
+                if (matchBtn) matchBtn.classList.add('active');
+            }}
+            if (window.history && window.history.replaceState) {{
+                window.history.replaceState(null, null, '#' + tabId);
+            }}
             window.scrollTo({{ top: 0, behavior: 'smooth' }});
         }}
 
@@ -1093,20 +1356,70 @@ def build_full_html() -> str:
         }}
 
         function filterArticles() {{
-            const query = document.getElementById('legalSearch').value.toLowerCase();
+            const query = (document.getElementById('legalSearch').value || '').toLowerCase().trim();
+            const words = query.split(/\\s+/).filter(Boolean);
             const cards = document.querySelectorAll('.article-card');
+            let visibleCards = 0;
+            
             cards.forEach(card => {{
-                const text = card.getAttribute('data-search-text');
-                if (!query || text.includes(query)) {{
+                const text = card.getAttribute('data-search-text') || '';
+                const matches = words.length === 0 || words.every(w => text.includes(w));
+                if (matches) {{
                     card.style.display = 'block';
+                    visibleCards++;
                 }} else {{
                     card.style.display = 'none';
                 }}
             }});
+            
+            document.querySelectorAll('.title-group').forEach(group => {{
+                const groupCards = group.querySelectorAll('.article-card:not([style*="display: none"])');
+                group.style.display = (groupCards.length > 0) ? 'block' : 'none';
+            }});
+            
+            const preambleBox = document.querySelector('.preamble-box');
+            if (preambleBox) {{
+                preambleBox.style.display = (words.length > 0) ? 'none' : 'block';
+            }}
+            
+            const noMsg = document.getElementById('noArticlesMessage');
+            if (noMsg) {{
+                noMsg.style.display = (visibleCards === 0 && words.length > 0) ? 'block' : 'none';
+            }}
         }}
+
+        // Listen for internal anchor links to tabs or articles
+        document.addEventListener('click', (e) => {{
+            const link = e.target.closest('a[href^="#"]');
+            if (!link) return;
+            const targetId = link.getAttribute('href').replace('#', '');
+            if (targetId === 'anteproyecto' || targetId === 'tab-anteproyecto') {{
+                e.preventDefault();
+                switchTab('anteproyecto');
+            }} else if (targetId.startsWith('art_') || targetId.startsWith('art-') || targetId.startsWith('da_') || targetId.startsWith('dt_') || targetId.startsWith('dd_') || targetId.startsWith('df_')) {{
+                e.preventDefault();
+                switchTab('anteproyecto');
+                setTimeout(() => {{
+                    const el = document.getElementById(targetId);
+                    if (el) el.scrollIntoView({{ behavior: 'smooth' }});
+                }}, 100);
+            }}
+        }});
 
         // Initialize Decile Chart and CPFF table on page load
         window.addEventListener('DOMContentLoaded', () => {{
+            // Handle URL hash on initial load
+            const hash = (window.location.hash || '').replace('#', '');
+            if (['monograph', 'dashboard', 'anteproyecto'].includes(hash)) {{
+                switchTab(hash);
+            }} else if (hash.startsWith('art_') || hash.startsWith('art-') || hash.startsWith('da_') || hash.startsWith('dt_') || hash.startsWith('dd_') || hash.startsWith('df_')) {{
+                switchTab('anteproyecto');
+                setTimeout(() => {{
+                    const el = document.getElementById(hash);
+                    if (el) el.scrollIntoView({{ behavior: 'smooth' }});
+                }}, 150);
+            }}
+
             // CPFF table population
             const cpffTbody = document.getElementById('cpffTableBody');
             if (cpffTbody && DASHBOARD_DATA.cpff && DASHBOARD_DATA.cpff.ccaa_allocations) {{

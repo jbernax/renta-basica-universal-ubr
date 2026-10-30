@@ -498,34 +498,141 @@
             background: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: var(--radius-md);
-            padding: 1.25rem;
-            margin-bottom: 1rem;
+            padding: 1.35rem;
+            margin-bottom: 1.25rem;
             box-shadow: var(--shadow-sm);
+            scroll-margin-top: 5rem;
         }
         .article-header {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            margin-bottom: 0.6rem;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+        }
+        .article-title-wrap {
+            flex: 1 1 60%;
+            min-width: 260px;
+        }
+        .article-chapter {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            margin-bottom: 0.2rem;
         }
         .article-header h4 {
-            font-size: 1.05rem;
+            font-size: 1.08rem;
             font-weight: 700;
             color: var(--text-main);
+            margin: 0;
+            line-height: 1.35;
+        }
+        .article-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.35rem;
+            align-items: center;
+            justify-content: flex-end;
         }
         .legal-badge {
-            font-size: 0.75rem;
+            display: inline-block;
+            font-size: 0.73rem;
             font-weight: 600;
             background: var(--accent-light);
             color: var(--accent);
             padding: 0.2rem 0.5rem;
             border-radius: 4px;
+            white-space: nowrap;
         }
-        .article-body p {
+        .statute-badge {
+            display: inline-block;
+            font-size: 0.73rem;
+            font-weight: 600;
+            background: var(--primary-light);
+            color: var(--primary);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            white-space: nowrap;
+        }
+        .article-body {
+            font-family: var(--font-serif);
+            font-size: 0.96rem;
+            color: var(--text-main);
+            line-height: 1.65;
+        }
+        .article-body p, .article-body .legal-p, .article-body .legal-numbered-item {
+            margin-bottom: 0.65rem;
+            line-height: 1.65;
+        }
+        .article-body .legal-subitem {
+            margin-left: 1.5rem;
+            margin-bottom: 0.4rem;
+            line-height: 1.6;
+        }
+        .article-meta {
+            margin-top: 0.85rem;
+            padding-top: 0.65rem;
+            border-top: 1px dashed var(--border-color);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.35rem;
+            align-items: center;
+            font-size: 0.78rem;
+        }
+        .meta-label {
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-right: 0.25rem;
+        }
+        .mechanism-tag {
+            background: var(--bg-body);
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+            padding: 0.15rem 0.45rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+        }
+        .preamble-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 1.25rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-sm);
+        }
+        .preamble-box summary {
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: var(--primary);
+            outline: none;
+            user-select: none;
+        }
+        .preamble-box summary:hover {
+            color: var(--primary-hover);
+        }
+        .preamble-content {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-color);
             font-family: var(--font-serif);
             font-size: 0.95rem;
+            line-height: 1.7;
             color: var(--text-main);
-            line-height: 1.6;
+        }
+        .preamble-section {
+            margin-bottom: 1.25rem;
+        }
+        .preamble-section h5 {
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 0.35rem;
         }
 
         /* Print Media Styles */
@@ -555,9 +662,9 @@
         </div>
         
         <nav class="nav-tabs">
-            <button class="nav-tab-btn active" onclick="switchTab('monograph')">📄 Monografía Académica</button>
-            <button class="nav-tab-btn" onclick="switchTab('dashboard')">📊 Simulador de Políticas</button>
-            <button class="nav-tab-btn" onclick="switchTab('anteproyecto')">⚖️ Anteproyecto de Ley</button>
+            <button class="nav-tab-btn active" onclick="switchTab('monograph', this)">📄 Monografía Académica</button>
+            <button class="nav-tab-btn" onclick="switchTab('dashboard', this)">📊 Simulador de Políticas</button>
+            <button class="nav-tab-btn" onclick="switchTab('anteproyecto', this)">⚖️ Anteproyecto de Ley</button>
         </nav>
 
         <div class="header-actions">
@@ -2391,12 +2498,25 @@ This proves empirically that clawback arms with phase-outs above 40% induce arti
         <div class="anteproyecto-container">
             <div class="dash-hero">
                 <h1>Anteproyecto de Ley de Renta Básica Universal</h1>
-                <p>Texto legal completo estructurado en 9 Títulos y 25 artículos. Incorpora el Fondo de Compensación CPFF, el anclaje constitucional (Arts. 149.1.1, 149.1.14 y 149.1.17 CE), el Impuesto IECA y el Parámetro Fiscal Federal de Vivienda.</p>
+                <p>Texto legal completo estructurado en 9 Títulos (25 artículos), Disposiciones Adicionales, Transitorias, Derogatoria y Finales. Incorpora la Exposición de Motivos, el Fondo de Compensación CPFF, el anclaje constitucional (Arts. 149.1.1, 149.1.14 y 149.1.17 CE), el Impuesto IECA y el Parámetro Fiscal Federal de Vivienda.</p>
             </div>
 
             <input type="text" id="legalSearch" class="search-bar" placeholder="🔍 Buscar por artículo, concepto o anclaje constitucional (ej: 'vivienda', '149.1.14', 'computación', 'IRPF')..." oninput="filterArticles()">
 
             <div id="anteproyectoList">
+                
+        <details class="preamble-box">
+            <summary>⚖️ Exposición de Motivos (Haga clic para desplegar los antecedentes y fundamentos doctrinales)</summary>
+            <div class="preamble-content">
+                <div class="preamble-section"><h5>I. Marco de Transformación Tecnológica y Necesidad Normativa.</h5><p>La economía española y el conjunto de la Unión Europea afrontan una transformación estructural sin precedentes derivada de la rápida difusión de sistemas de inteligencia artificial generativa, modelos fundacionales de aprendizaje profundo y automatización avanzada. La evidencia empírica confirma que dicha disrupción incide de forma asimétrica sobre el mercado laboral, comprimiendo la participación del factor trabajo en la renta nacional y polarizando el empleo en ocupaciones tanto cognitivas como de servicios. Frente a este escenario, los mecanismos tradicionales de garantía de ingresos condicionados, caracterizados por la fragmentación administrativa, la comprobación retrospectiva de recursos y elevadas tasas de no cobertura involuntaria, resultan insuficientes para sostener la cohesión social.</p></div>
+<div class="preamble-section"><h5>II. Fundamento Constitucional y Naturaleza Jurídica.</h5><p>La presente Ley instaura la Renta Básica Universal (RBU) como un derecho subjetivo, individual, universal e incondicional de toda persona residente en territorio español. Su arquitectura descansa de modo primordial en las competencias exclusivas del Estado sobre regulación de las condiciones básicas que garanticen la igualdad de todos los españoles en el ejercicio de los derechos y en el cumplimiento de los deberes constitucionales (artículo 149.1.1.ª de la Constitución Española), Hacienda general y Deuda del Estado (artículo 149.1.14.ª CE), y legislación básica y régimen económico de la Seguridad Social (artículo 149.1.17.ª CE), en directa concordancia con el mandato de suficiencia protectora consagrado en el artículo 41 CE y la doctrina del Tribunal Constitucional expresada en las Sentencias 158/2021 y 19/2024.</p></div>
+<div class="preamble-section"><h5>III. Articulación Tributaria en el IRPF y Simetría Fiscal.</h5><p>El instrumento central de instrumentación es la Deducción Reembolsable Universal por Renta Básica integrada en la Ley 35/2006 del Impuesto sobre la Renta de las Personas Físicas. A través de este mecanismo, liquidado mensualmente de forma anticipada y automática, se garantiza que cada persona adulta perciba la cuantía legalmente fijada sin incurrir en trampas de pobreza ni desincentivos al empleo. Se preserva rigurosamente el mínimo de subsistencia (STC 214/1994) para aquellos contribuyentes en período transitorio de carencia, y se establece un Parámetro Fiscal Federal Objetivo en los arrendamientos de vivienda para neutralizar la captura de rentas sin interferir en competencias autonómicas.</p></div>
+<div class="preamble-section"><h5>IV. Captura de Rentas Algorítmicas y Sostenibilidad Financiera.</h5><p>Para responder al desplazamiento del factor trabajo, se articula el Impuesto Especial sobre Capacidad y Computación de Inteligencia Artificial (IECA) en el Texto Refundido de la Ley del Impuesto sobre la Renta de no Residentes, cerrando la vía de elusión mediante la condicionalidad de deducibilidad en el Impuesto sobre Sociedades (artículo 15 LIS). Asimismo, se crea el Fondo Soberano de Transición Algorítmica (FSTA) bajo el artículo 128.2 CE, dotado de un blindaje parlamentario reforzado y reglas de acumulación anticíclicas conformes con el Reglamento (UE) 2024/1263.</p></div>
+<div class="preamble-section"><h5>V. Eficiencia Administrativa, Privacidad y Cohesión Territorial.</h5><p>La gestión se confía a la Cuenta Única Tributaria-Social operada coordinadamente por la AEAT y el INSS, salvaguardando la privacidad laboral mediante un Código de Retención Sintético y estableciendo blindajes absolutos frente a embargos indebidos. En el ámbito territorial, se aprueba el Fondo de Compensación UBR en el marco del Consejo de Política Fiscal y Financiera para el régimen común y se salvaguarda la naturaleza foral del Concierto y Convenio mediante la calificación como carga no asumida.</p></div>
+<div class="preamble-section"><h5>VI. Gobernanza Dinámica y Diálogo Social.</h5><p>Finalmente, la Ley prevé circuitos de alarma gobernados por la certificación técnica independiente de la AIReF, salvaguardando el principio de legalidad tributaria (STC 73/2017) y blindando la negociación colectiva mediante cláusulas de no suplantación salarial acordadas con los interlocutores sociales.</p></div>
+            </div>
+        </details>
+    
                 
         <div class="title-group">
             <div class="title-heading">
@@ -2405,46 +2525,85 @@ This proves empirically that clawback arms with phase-outs above 40% induce arti
             </div>
             <div class="articles-container">
                 
-            <div class="article-card" data-search-text="artículo 1  ">
+            <div class="article-card" id="art_01" data-search-text="artículo 1 objeto y finalidad de la ley capítulo i art. 1.1 ce art. 9.2 ce art. 149.1.1 ce  derecho subjetivo universal incondicionalidad suficiencia material 1. la presente ley tiene por objeto regular el derecho a la renta básica universal (rbu) como prestación económica periódica e incondicional orientada a garantizar las condiciones materiales básicas de subsistencia y libertad de todas las personas residentes en españa ante las transformaciones socioeconómicas generadas por la automatización y la inteligencia artificial.
+2. constituye asimismo objeto de esta ley el establecimiento del marco tributario, financiero, administrativo y de cooperación interterritorial necesario para asegurar su sostenibilidad estructural a largo plazo y la justa redistribución de las rentas algorítmicas.">
                 <div class="article-header">
-                    <h4>Artículo 1: </h4>
-                    
+                    <div class="article-title-wrap">
+                        <span class="article-chapter">Capítulo I</span>
+                        <h4>Artículo 1: Objeto y finalidad de la Ley</h4>
+                    </div>
+                    <div class="article-badges">
+                        <span class="legal-badge" title="Base Constitucional">Art. 1.1 CE</span><span class="legal-badge" title="Base Constitucional">Art. 9.2 CE</span><span class="legal-badge" title="Base Constitucional">Art. 149.1.1 CE</span>
+                        
+                    </div>
                 </div>
                 <div class="article-body">
-                    <p></p>
+                    <div class="legal-numbered-item">1. La presente Ley tiene por objeto regular el derecho a la Renta Básica Universal (RBU) como prestación económica periódica e incondicional orientada a garantizar las condiciones materiales básicas de subsistencia y libertad de todas las personas residentes en España ante las transformaciones socioeconómicas generadas por la automatización y la inteligencia artificial.</div><div class="legal-numbered-item">2. Constituye asimismo objeto de esta Ley el establecimiento del marco tributario, financiero, administrativo y de cooperación interterritorial necesario para asegurar su sostenibilidad estructural a largo plazo y la justa redistribución de las rentas algorítmicas.</div>
                 </div>
+                <div class="article-meta"><span class="meta-label">Mecanismos clave:</span> <span class="mechanism-tag">Derecho subjetivo universal</span><span class="mechanism-tag">Incondicionalidad</span><span class="mechanism-tag">Suficiencia material</span></div>
             </div>
-            
-            <div class="article-card" data-search-text="artículo 2  ">
+    
+            <div class="article-card" id="art_02" data-search-text="artículo 2 naturaleza jurídica y caracteres del derecho capítulo i art. 14 ce art. 41 ce art. 149.1.1 ce  individualidad estricta incondicionalidad plena ausencia de comprobación de recursos 1. la renta básica universal se configura como un derecho subjetivo de titularidad individual, universal, incondicional, periódico e intransferible.
+2. su devengo y percepción no estarán supeditados a la acreditación de niveles máximos de renta o patrimonio familiar, a la situación de ocupación laboral, a la búsqueda activa de empleo, ni a la contraprestación de actividad alguna.
+3. el derecho se reconoce a la persona a título estrictamente individual, sin perjuicio de las garantías y complementos específicos legalmente previstos para menores y personas en situación de dependencia.">
                 <div class="article-header">
-                    <h4>Artículo 2: </h4>
-                    
+                    <div class="article-title-wrap">
+                        <span class="article-chapter">Capítulo I</span>
+                        <h4>Artículo 2: Naturaleza jurídica y caracteres del derecho</h4>
+                    </div>
+                    <div class="article-badges">
+                        <span class="legal-badge" title="Base Constitucional">Art. 14 CE</span><span class="legal-badge" title="Base Constitucional">Art. 41 CE</span><span class="legal-badge" title="Base Constitucional">Art. 149.1.1 CE</span>
+                        
+                    </div>
                 </div>
                 <div class="article-body">
-                    <p></p>
+                    <div class="legal-numbered-item">1. La Renta Básica Universal se configura como un derecho subjetivo de titularidad individual, universal, incondicional, periódico e intransferible.</div><div class="legal-numbered-item">2. Su devengo y percepción no estarán supeditados a la acreditación de niveles máximos de renta o patrimonio familiar, a la situación de ocupación laboral, a la búsqueda activa de empleo, ni a la contraprestación de actividad alguna.</div><div class="legal-numbered-item">3. El derecho se reconoce a la persona a título estrictamente individual, sin perjuicio de las garantías y complementos específicos legalmente previstos para menores y personas en situación de dependencia.</div>
                 </div>
+                <div class="article-meta"><span class="meta-label">Mecanismos clave:</span> <span class="mechanism-tag">Individualidad estricta</span><span class="mechanism-tag">Incondicionalidad plena</span><span class="mechanism-tag">Ausencia de comprobación de recursos</span></div>
             </div>
-            
-            <div class="article-card" data-search-text="artículo 3  ">
+    
+            <div class="article-card" id="art_03" data-search-text="artículo 3 titulares y requisitos de residencia capítulo ii art. 13 ce art. 39 ce art. 149.1.2 ce lo 4/2000 (extranjería) ley 19/2021 (imv) simetría fiscal umbral ue 10h/semana salvaguarda de menores art. 39 ce 1. serán titulares del derecho a la renta básica universal todas las personas físicas que ostenten la nacionalidad española o la residencia legal y continuada en territorio español, conforme a las siguientes reglas:
+   a) las personas de nacionalidad española y los ciudadanos de estados miembros de la unión europea o del espacio económico europeo que ejerzan una actividad económica efectiva y genuina (con al menos 10 horas semanales o cotización superior al 25% del smi) tendrán derecho desde el primer día de sujeción al irpf.
+   b) los ciudadanos de la unión europea económicamente inactivos y los nacionales de terceros países deberán acreditar un período de residencia legal y continuada en españa no inferior a veinticuatro meses, en plena consonancia con la directiva 2004/38/ce y la doctrina del tjue.
+2. quedan expresamente exceptuados del cómputo del plazo de carencia del apartado anterior los menores de edad, las víctimas de violencia de género y trata acreditadas, y las personas solicitantes de protección internacional desde la admisión a trámite de su solicitud.">
                 <div class="article-header">
-                    <h4>Artículo 3: </h4>
-                    
+                    <div class="article-title-wrap">
+                        <span class="article-chapter">Capítulo II</span>
+                        <h4>Artículo 3: Titulares y requisitos de residencia</h4>
+                    </div>
+                    <div class="article-badges">
+                        <span class="legal-badge" title="Base Constitucional">Art. 13 CE</span><span class="legal-badge" title="Base Constitucional">Art. 39 CE</span><span class="legal-badge" title="Base Constitucional">Art. 149.1.2 CE</span>
+                        <span class="statute-badge" title="Norma Reformada">LO 4/2000 (Extranjería)</span><span class="statute-badge" title="Norma Reformada">Ley 19/2021 (IMV)</span>
+                    </div>
                 </div>
                 <div class="article-body">
-                    <p></p>
+                    <div class="legal-numbered-item">1. Serán titulares del derecho a la Renta Básica Universal todas las personas físicas que ostenten la nacionalidad española o la residencia legal y continuada en territorio español, conforme a las siguientes reglas:</div><div class="legal-subitem">a) Las personas de nacionalidad española y los ciudadanos de Estados miembros de la Unión Europea o del Espacio Económico Europeo que ejerzan una actividad económica efectiva y genuina (con al menos 10 horas semanales o cotización superior al 25% del SMI) tendrán derecho desde el primer día de sujeción al IRPF.</div><div class="legal-subitem">b) Los ciudadanos de la Unión Europea económicamente inactivos y los nacionales de terceros países deberán acreditar un período de residencia legal y continuada en España no inferior a veinticuatro meses, en plena consonancia con la Directiva 2004/38/CE y la doctrina del TJUE.</div><div class="legal-numbered-item">2. Quedan expresamente exceptuados del cómputo del plazo de carencia del apartado anterior los menores de edad, las víctimas de violencia de género y trata acreditadas, y las personas solicitantes de protección internacional desde la admisión a trámite de su solicitud.</div>
                 </div>
+                <div class="article-meta"><span class="meta-label">Mecanismos clave:</span> <span class="mechanism-tag">Simetría fiscal</span><span class="mechanism-tag">Umbral UE 10h/semana</span><span class="mechanism-tag">Salvaguarda de menores Art. 39 CE</span></div>
             </div>
-            
-            <div class="article-card" data-search-text="artículo 4  ">
+    
+            <div class="article-card" id="art_04" data-search-text="artículo 4 cuantía básica y articulación modular capítulo ii art. 41 ce art. 149.1.14 ce  escalones modulares a/b/c complemento de infancia 35% indexación ipca 1. la cuantía económica de la renta básica universal para personas mayores de dieciocho años se fija de conformidad con los siguientes escalones modulares de implantación:
+   a) nivel base (tier a): 600 euros mensuales (7.200 euros anuales).
+   b) nivel umbral de pobreza (tier b): 900 euros mensuales (10.800 euros anuales), equivalente al umbral de riesgo de pobreza relativa nacional para un hogar unipersonal.
+   c) nivel dividendo algorítmico pleno (tier c): 1.200 euros mensuales (14.400 euros anuales), activable en escenarios de compresión estructural del empleo tecnológico.
+2. por cada menor de dieciocho años a cargo, se liquidará un complemento universal mensual equivalente al 35% de la cuantía individual del titular, transferido de oficio a la persona que ostente la guarda o custodia efectiva.
+3. las cuantías se actualizarán anualmente con efectos de 1 de enero en el mismo porcentaje que experimente el índice de precios al consumo armonizado.">
                 <div class="article-header">
-                    <h4>Artículo 4: </h4>
-                    
+                    <div class="article-title-wrap">
+                        <span class="article-chapter">Capítulo II</span>
+                        <h4>Artículo 4: Cuantía básica y articulación modular</h4>
+                    </div>
+                    <div class="article-badges">
+                        <span class="legal-badge" title="Base Constitucional">Art. 41 CE</span><span class="legal-badge" title="Base Constitucional">Art. 149.1.14 CE</span>
+                        
+                    </div>
                 </div>
                 <div class="article-body">
-                    <p></p>
+                    <div class="legal-numbered-item">1. La cuantía económica de la Renta Básica Universal para personas mayores de dieciocho años se fija de conformidad con los siguientes escalones modulares de implantación:</div><div class="legal-subitem">a) Nivel Base (Tier A): 600 euros mensuales (7.200 euros anuales).</div><div class="legal-subitem">b) Nivel Umbral de Pobreza (Tier B): 900 euros mensuales (10.800 euros anuales), equivalente al umbral de riesgo de pobreza relativa nacional para un hogar unipersonal.</div><div class="legal-subitem">c) Nivel Dividendo Algorítmico Pleno (Tier C): 1.200 euros mensuales (14.400 euros anuales), activable en escenarios de compresión estructural del empleo tecnológico.</div><div class="legal-numbered-item">2. Por cada menor de dieciocho años a cargo, se liquidará un complemento universal mensual equivalente al 35% de la cuantía individual del titular, transferido de oficio a la persona que ostente la guarda o custodia efectiva.</div><div class="legal-numbered-item">3. Las cuantías se actualizarán anualmente con efectos de 1 de enero en el mismo porcentaje que experimente el índice de precios al consumo armonizado.</div>
                 </div>
+                <div class="article-meta"><span class="meta-label">Mecanismos clave:</span> <span class="mechanism-tag">Escalones modulares A/B/C</span><span class="mechanism-tag">Complemento de infancia 35%</span><span class="mechanism-tag">Indexación IPCA</span></div>
             </div>
-            
+    
             </div>
         </div>
         
@@ -2456,36 +2615,66 @@ This proves empirically that clawback arms with phase-outs above 40% induce arti
             </div>
             <div class="articles-container">
                 
-            <div class="article-card" data-search-text="artículo 5  ">
+            <div class="article-card" id="art_05" data-search-text="artículo 5 creación de la deducción reembolsable universal por renta básica capítulo i art. 31.1 ce art. 149.1.14 ce ley 35/2006 (lirpf) deducción reembolsable liquidación mensual anticipada individualidad tributaria se introduce un nuevo artículo 61 bis en la ley 35/2006, de 28 de noviembre, del impuesto sobre la renta de las personas físicas, con la siguiente redacción:
+«artículo 61 bis. deducción reembolsable universal por renta básica.
+1. los contribuyentes que cumplan los requisitos de residencia del artículo 3 de la ley de renta básica universal tendrán derecho a una deducción reembolsable en la cuota diferencial del impuesto equivalente al importe anual fijado para la rbu en cada ejercicio fiscal.
+2. si el importe de la deducción excediera de la cuota líquida total del impuesto, o cuando esta resultara nula, la agencia estatal de administración tributaria abonará de oficio el exceso de forma mensual y anticipada.
+3. esta deducción se liquidará individualmente a cada cónyuge o miembro de la unidad familiar, con independencia de la opción elegida por tributación conjunta o separada.»">
                 <div class="article-header">
-                    <h4>Artículo 5: </h4>
-                    
+                    <div class="article-title-wrap">
+                        <span class="article-chapter">Capítulo I</span>
+                        <h4>Artículo 5: Creación de la Deducción Reembolsable Universal por Renta Básica</h4>
+                    </div>
+                    <div class="article-badges">
+                        <span class="legal-badge" title="Base Constitucional">Art. 31.1 CE</span><span class="legal-badge" title="Base Constitucional">Art. 149.1.14 CE</span>
+                        <span class="statute-badge" title="Norma Reformada">Ley 35/2006 (LIRPF)</span>
+                    </div>
                 </div>
                 <div class="article-body">
-                    <p></p>
+                    <p class="legal-p">Se introduce un nuevo artículo 61 bis en la Ley 35/2006, de 28 de noviembre, del Impuesto sobre la Renta de las Personas Físicas, con la siguiente redacción:</p><p class="legal-p">«Artículo 61 bis. Deducción Reembolsable Universal por Renta Básica.</p><div class="legal-numbered-item">1. Los contribuyentes que cumplan los requisitos de residencia del artículo 3 de la Ley de Renta Básica Universal tendrán derecho a una deducción reembolsable en la cuota diferencial del impuesto equivalente al importe anual fijado para la RBU en cada ejercicio fiscal.</div><div class="legal-numbered-item">2. Si el importe de la deducción excediera de la cuota líquida total del impuesto, o cuando esta resultara nula, la Agencia Estatal de Administración Tributaria abonará de oficio el exceso de forma mensual y anticipada.</div><div class="legal-numbered-item">3. Esta deducción se liquidará individualmente a cada cónyuge o miembro de la unidad familiar, con independencia de la opción elegida por tributación conjunta o separada.»</div>
                 </div>
+                <div class="article-meta"><span class="meta-label">Mecanismos clave:</span> <span class="mechanism-tag">Deducción reembolsable</span><span class="mechanism-tag">Liquidación mensual anticipada</span><span class="mechanism-tag">Individualidad tributaria</span></div>
             </div>
-            
-            <div class="article-card" data-search-text="artículo 6  ">
+    
+            <div class="article-card" id="art_06" data-search-text="artículo 6 régimen transitorio de salvaguarda del mínimo personal y familiar no reembolsable capítulo i art. 31.1 ce art. 149.1.14 ce doctrina stc 214/1994 ley 35/2006 (lirpf) mínimo personal no reembolsable de seguridad protección contra tributación desde el euro 1 se introduce un nuevo artículo 61 ter en la ley 35/2006 (lirpf):
+«artículo 61 ter. régimen transitorio de salvaguarda del mínimo de subsistencia.
+1. aquellos residentes fiscales que se encuentren cumpliendo los períodos de carencia legal previstos en la normativa de extranjería para el devengo de la cuantía reembolsable mantendrán el derecho a la aplicación de los importes del mínimo personal y familiar regulados en los artículos 56 a 61 de esta ley, con carácter no reembolsable.
+2. en ningún caso se liquidará carga tributaria alguna sobre los rendimientos del trabajo personal o de actividades económicas por debajo del importe legalmente calificado como mínimo existencial, de conformidad con la doctrina vinculante de la sentencia del tribunal constitucional 214/1994.»">
                 <div class="article-header">
-                    <h4>Artículo 6: </h4>
-                    
+                    <div class="article-title-wrap">
+                        <span class="article-chapter">Capítulo I</span>
+                        <h4>Artículo 6: Régimen transitorio de salvaguarda del Mínimo Personal y Familiar no reembolsable</h4>
+                    </div>
+                    <div class="article-badges">
+                        <span class="legal-badge" title="Base Constitucional">Art. 31.1 CE</span><span class="legal-badge" title="Base Constitucional">Art. 149.1.14 CE</span><span class="legal-badge" title="Base Constitucional">Doctrina STC 214/1994</span>
+                        <span class="statute-badge" title="Norma Reformada">Ley 35/2006 (LIRPF)</span>
+                    </div>
                 </div>
                 <div class="article-body">
-                    <p></p>
+                    <p class="legal-p">Se introduce un nuevo artículo 61 ter en la Ley 35/2006 (LIRPF):</p><p class="legal-p">«Artículo 61 ter. Régimen transitorio de salvaguarda del mínimo de subsistencia.</p><div class="legal-numbered-item">1. Aquellos residentes fiscales que se encuentren cumpliendo los períodos de carencia legal previstos en la normativa de extranjería para el devengo de la cuantía reembolsable mantendrán el derecho a la aplicación de los importes del mínimo personal y familiar regulados en los artículos 56 a 61 de esta Ley, con carácter no reembolsable.</div><div class="legal-numbered-item">2. En ningún caso se liquidará carga tributaria alguna sobre los rendimientos del trabajo personal o de actividades económicas por debajo del importe legalmente calificado como mínimo existencial, de conformidad con la doctrina vinculante de la Sentencia del Tribunal Constitucional 214/1994.»</div>
                 </div>
+                <div class="article-meta"><span class="meta-label">Mecanismos clave:</span> <span class="mechanism-tag">Mínimo personal no reembolsable de seguridad</span><span class="mechanism-tag">Protección contra tributación desde el euro 1</span></div>
             </div>
-            
-            <div class="article-card" data-search-text="artículo 7  ">
+    
+            <div class="article-card" id="art_07" data-search-text="artículo 7 parámetro fiscal federal objetivo en arrendamientos de vivienda capítulo ii art. 149.1.14 ce doctrina stc 79/2024 ley 35/2006 (lirpf) ley 12/2023 (vivienda) condicionalidad fiscal objetiva retirada de bonificación lirpf 23.2 desconexión de zmrt autonómica se modifica el apartado 2 del artículo 23 de la ley 35/2006 (lirpf), que queda redactado como sigue:
+«2. en los supuestos de arrendamiento de bienes inmuebles destinados a vivienda, el rendimiento neto positivo calculado con arreglo a los apartados anteriores se reducirá en un 50 por ciento.
+no obstante, dicha reducción quedará reducida al 0 por ciento cuando el inmueble se encuentre ubicado en un término municipal donde los incrementos interanuales del alquiler superen en más de 3 puntos porcentuales el ipc subyacente y la renta mensual pactada exceda del valor superior del índice estatal de referencia de precios del alquiler fijado por el ministerio de vivienda y agenda urbana, de conformidad con el ejercicio exclusivo de la competencia tributaria estatal del artículo 149.1.14.ª de la constitución.»">
                 <div class="article-header">
-                    <h4>Artículo 7: </h4>
-                    
+                    <div class="article-title-wrap">
+                        <span class="article-chapter">Capítulo II</span>
+                        <h4>Artículo 7: Parámetro Fiscal Federal Objetivo en Arrendamientos de Vivienda</h4>
+                    </div>
+                    <div class="article-badges">
+                        <span class="legal-badge" title="Base Constitucional">Art. 149.1.14 CE</span><span class="legal-badge" title="Base Constitucional">Doctrina STC 79/2024</span>
+                        <span class="statute-badge" title="Norma Reformada">Ley 35/2006 (LIRPF)</span><span class="statute-badge" title="Norma Reformada">Ley 12/2023 (Vivienda)</span>
+                    </div>
                 </div>
                 <div class="article-body">
-                    <p></p>
+                    <p class="legal-p">Se modifica el apartado 2 del artículo 23 de la Ley 35/2006 (LIRPF), que queda redactado como sigue:</p><p class="legal-p">«2. En los supuestos de arrendamiento de bienes inmuebles destinados a vivienda, el rendimiento neto positivo calculado con arreglo a los apartados anteriores se reducirá en un 50 por ciento.</p><p class="legal-p">No obstante, dicha reducción quedará reducida al 0 por ciento cuando el inmueble se encuentre ubicado en un término municipal donde los incrementos interanuales del alquiler superen en más de 3 puntos porcentuales el IPC subyacente y la renta mensual pactada exceda del valor superior del Índice Estatal de Referencia de Precios del Alquiler fijado por el Ministerio de Vivienda y Agenda Urbana, de conformidad con el ejercicio exclusivo de la competencia tributaria estatal del artículo 149.1.14.ª de la Constitución.»</p>
                 </div>
+                <div class="article-meta"><span class="meta-label">Mecanismos clave:</span> <span class="mechanism-tag">Condicionalidad fiscal objetiva</span><span class="mechanism-tag">Retirada de bonificación LIRPF 23.2</span><span class="mechanism-tag">Desconexión de ZMRT autonómica</span></div>
             </div>
-            
+    
             </div>
         </div>
         
@@ -2497,36 +2686,65 @@ This proves empirically that clawback arms with phase-outs above 40% induce arti
             </div>
             <div class="articles-container">
                 
-            <div class="article-card" data-search-text="artículo 8  ">
+            <div class="article-card" id="art_08" data-search-text="artículo 8 impuesto especial sobre capacidad y computación de inteligencia artificial (ieca) capítulo i art. 31.1 ce art. 149.1.14 ce rdleg 5/2004 (trirnr) ley 58/2003 (lgt) hecho imponible destino-computación inversión del sujeto pasivo tipo del 5% se introduce un nuevo título en el texto refundido de la ley del impuesto sobre la renta de no residentes, aprobado por real decreto legislativo 5/2004, de 5 de marzo:
+«título iv bis. impuesto especial sobre capacidad y computación de inteligencia artificial.
+1. constituye el hecho imponible del impuesto la adquisición de capacidad de computación en la nube, alojamiento de unidades de procesamiento gráfico (gpu/tpu) y consumo de inferencia mediante interfaces de programación de aplicaciones (api) de modelos de inteligencia artificial, cuando el destinatario del servicio sea una empresa o profesional residente fiscal en territorio español.
+2. la base imponible estará constituida por el importe total satisfecho o convenido por dichos servicios, excluido el impuesto sobre el valor añadido.
+3. el tipo de gravamen se fija en el 5 por ciento sobre el valor neto de los servicios devengados cuando el prestador no residente carezca de establecimiento permanente en españa.»">
                 <div class="article-header">
-                    <h4>Artículo 8: </h4>
-                    
+                    <div class="article-title-wrap">
+                        <span class="article-chapter">Capítulo I</span>
+                        <h4>Artículo 8: Impuesto Especial sobre Capacidad y Computación de Inteligencia Artificial (IECA)</h4>
+                    </div>
+                    <div class="article-badges">
+                        <span class="legal-badge" title="Base Constitucional">Art. 31.1 CE</span><span class="legal-badge" title="Base Constitucional">Art. 149.1.14 CE</span>
+                        <span class="statute-badge" title="Norma Reformada">RDLeg 5/2004 (TRIRNR)</span><span class="statute-badge" title="Norma Reformada">Ley 58/2003 (LGT)</span>
+                    </div>
                 </div>
                 <div class="article-body">
-                    <p></p>
+                    <p class="legal-p">Se introduce un nuevo Título en el Texto Refundido de la Ley del Impuesto sobre la Renta de no Residentes, aprobado por Real Decreto Legislativo 5/2004, de 5 de marzo:</p><p class="legal-p">«Título IV bis. Impuesto Especial sobre Capacidad y Computación de Inteligencia Artificial.</p><div class="legal-numbered-item">1. Constituye el hecho imponible del impuesto la adquisición de capacidad de computación en la nube, alojamiento de unidades de procesamiento gráfico (GPU/TPU) y consumo de inferencia mediante interfaces de programación de aplicaciones (API) de modelos de inteligencia artificial, cuando el destinatario del servicio sea una empresa o profesional residente fiscal en territorio español.</div><div class="legal-numbered-item">2. La base imponible estará constituida por el importe total satisfecho o convenido por dichos servicios, excluido el Impuesto sobre el Valor Añadido.</div><div class="legal-numbered-item">3. El tipo de gravamen se fija en el 5 por ciento sobre el valor neto de los servicios devengados cuando el prestador no residente carezca de establecimiento permanente en España.»</div>
                 </div>
+                <div class="article-meta"><span class="meta-label">Mecanismos clave:</span> <span class="mechanism-tag">Hecho imponible destino-computación</span><span class="mechanism-tag">Inversión del sujeto pasivo</span><span class="mechanism-tag">Tipo del 5%</span></div>
             </div>
-            
-            <div class="article-card" data-search-text="artículo 9  ">
+    
+            <div class="article-card" id="art_09" data-search-text="artículo 9 condicionalidad de deducibilidad en el impuesto sobre sociedades capítulo i art. 149.1.14 ce ley 27/2014 (lis) no deducibilidad del gasto no retenido certificado obligatorio modelos 216/296 decisión d-007 se modifica el artículo 15 de la ley 27/2014, de 27 de noviembre, del impuesto sobre sociedades, añadiendo una nueva letra l):
+«l) los gastos derivados de la contratación o uso de servicios de computación algorítmica, almacenamiento de datos e inferencia de modelos de inteligencia artificial prestados por entidades no residentes, salvo que se acredite fehacientemente la práctica e ingreso de la correspondiente retención a cuenta o el pago del impuesto especial sobre capacidad y computación de inteligencia artificial (ieca) mediante la presentación del modelo tributario oficial habilitado al efecto.»">
                 <div class="article-header">
-                    <h4>Artículo 9: </h4>
-                    
+                    <div class="article-title-wrap">
+                        <span class="article-chapter">Capítulo I</span>
+                        <h4>Artículo 9: Condicionalidad de deducibilidad en el Impuesto sobre Sociedades</h4>
+                    </div>
+                    <div class="article-badges">
+                        <span class="legal-badge" title="Base Constitucional">Art. 149.1.14 CE</span>
+                        <span class="statute-badge" title="Norma Reformada">Ley 27/2014 (LIS)</span>
+                    </div>
                 </div>
                 <div class="article-body">
-                    <p></p>
+                    <p class="legal-p">Se modifica el artículo 15 de la Ley 27/2014, de 27 de noviembre, del Impuesto sobre Sociedades, añadiendo una nueva letra l):</p><p class="legal-p">«l) Los gastos derivados de la contratación o uso de servicios de computación algorítmica, almacenamiento de datos e inferencia de modelos de inteligencia artificial prestados por entidades no residentes, salvo que se acredite fehacientemente la práctica e ingreso de la correspondiente retención a cuenta o el pago del Impuesto Especial sobre Capacidad y Computación de Inteligencia Artificial (IECA) mediante la presentación del modelo tributario oficial habilitado al efecto.»</p>
                 </div>
+                <div class="article-meta"><span class="meta-label">Mecanismos clave:</span> <span class="mechanism-tag">No deducibilidad del gasto no retenido</span><span class="mechanism-tag">Certificado obligatorio Modelos 216/296</span><span class="mechanism-tag">Decisión D-007</span></div>
             </div>
-            
-            <div class="article-card" data-search-text="artículo 10  ">
+    
+            <div class="article-card" id="art_10" data-search-text="artículo 10 simetría fiscal para trabajadores transfronterizos (doctrina schumacker) capítulo ii art. 45 tfue art. 149.1.14 ce doctrina tjue c-279/93 rdleg 5/2004 (trirnr) umbral 75% ingresos pro-rata temporis conformidad tfue se modifica el artículo 46 del texto refundido de la ley del impuesto sobre la renta de no residentes (trirnr):
+«artículo 46 bis. opción por régimen de simetría en renta básica universal para trabajadores transfronterizos.
+1. los contribuyentes del irnr que sean personas físicas residentes en un estado miembro de la unión europea o del espacio económico europeo podrán solicitar la liquidación proporcional de la deducción reembolsable universal por renta básica cuando acrediten que al menos el 75 por ciento de la totalidad de sus rendimientos del trabajo obtenidos en el ejercicio fiscal han sido devengados y gravados en territorio español.
+2. la cuantía a liquidar será estrictamente proporcional a la fracción del año en que se haya mantenido la actividad laboral y la tributación efectiva en españa, en estricto cumplimiento del principio de libre circulación y no discriminación del artículo 45 del tfue y la doctrina schumacker (tjue caso c-279/93).»">
                 <div class="article-header">
-                    <h4>Artículo 10: </h4>
-                    
+                    <div class="article-title-wrap">
+                        <span class="article-chapter">Capítulo II</span>
+                        <h4>Artículo 10: Simetría fiscal para trabajadores transfronterizos (Doctrina Schumacker)</h4>
+                    </div>
+                    <div class="article-badges">
+                        <span class="legal-badge" title="Base Constitucional">Art. 45 TFUE</span><span class="legal-badge" title="Base Constitucional">Art. 149.1.14 CE</span><span class="legal-badge" title="Base Constitucional">Doctrina TJUE C-279/93</span>
+                        <span class="statute-badge" title="Norma Reformada">RDLeg 5/2004 (TRIRNR)</span>
+                    </div>
                 </div>
                 <div class="article-body">
-                    <p></p>
+                    <p class="legal-p">Se modifica el artículo 46 del Texto Refundido de la Ley del Impuesto sobre la Renta de no Residentes (TRIRNR):</p><p class="legal-p">«Artículo 46 bis. Opción por régimen de simetría en Renta Básica Universal para trabajadores transfronterizos.</p><div class="legal-numbered-item">1. Los contribuyentes del IRNR que sean personas físicas residentes en un Estado miembro de la Unión Europea o del Espacio Económico Europeo podrán solicitar la liquidación proporcional de la Deducción Reembolsable Universal por Renta Básica cuando acrediten que al menos el 75 por ciento de la totalidad de sus rendimientos del trabajo obtenidos en el ejercicio fiscal han sido devengados y gravados en territorio español.</div><div class="legal-numbered-item">2. La cuantía a liquidar será estrictamente proporcional a la fracción del año en que se haya mantenido la actividad laboral y la tributación efectiva en España, en estricto cumplimiento del principio de libre circulación y no discriminación del artículo 45 del TFUE y la doctrina Schumacker (TJUE Caso C-279/93).»</div>
                 </div>
+                <div class="article-meta"><span class="meta-label">Mecanismos clave:</span> <span class="mechanism-tag">Umbral 75% ingresos</span><span class="mechanism-tag">Pro-rata temporis</span><span class="mechanism-tag">Conformidad TFUE</span></div>
             </div>
-            
+    
             </div>
         </div>
         
@@ -2538,36 +2756,64 @@ This proves empirically that clawback arms with phase-outs above 40% induce arti
             </div>
             <div class="articles-container">
                 
-            <div class="article-card" data-search-text="artículo 11  ">
+            <div class="article-card" id="art_11" data-search-text="artículo 11 articulación con el sistema de la seguridad social y protección de cotizaciones capítulo i art. 41 ce art. 149.1.17 ce rdleg 8/2015 (trlgss) suelo no contributivo mantenimiento cotización jubilación art. 273 trlgss decisión d-009 1. la renta básica universal constituirá el suelo básico no contributivo de subsistencia de la seguridad social al amparo del artículo 41 de la constitución.
+2. en aquellos supuestos en que la persona perceptora cause derecho a prestaciones contributivas de desempleo o incapacidad temporal, la percepción de la rbu operará como anticipo computable en la cuantía neta, garantizándose que la cuantía total percibida no sea inferior a la prestación contributiva devengada.
+3. de conformidad con la decisión vinculante d-009, el servicio público de empleo estatal (sepe) mantendrá inalterada la obligación de ingresar la cuota empresarial correspondiente a las contingencias de jubilación al amparo del artículo 273 del texto refundido de la ley general de la seguridad social (trlgss), sin que la absorción monetaria parcial afecte a los períodos cotizados computables.">
                 <div class="article-header">
-                    <h4>Artículo 11: </h4>
-                    
+                    <div class="article-title-wrap">
+                        <span class="article-chapter">Capítulo I</span>
+                        <h4>Artículo 11: Articulación con el Sistema de la Seguridad Social y Protección de Cotizaciones</h4>
+                    </div>
+                    <div class="article-badges">
+                        <span class="legal-badge" title="Base Constitucional">Art. 41 CE</span><span class="legal-badge" title="Base Constitucional">Art. 149.1.17 CE</span>
+                        <span class="statute-badge" title="Norma Reformada">RDLeg 8/2015 (TRLGSS)</span>
+                    </div>
                 </div>
                 <div class="article-body">
-                    <p></p>
+                    <div class="legal-numbered-item">1. La Renta Básica Universal constituirá el suelo básico no contributivo de subsistencia de la Seguridad Social al amparo del artículo 41 de la Constitución.</div><div class="legal-numbered-item">2. En aquellos supuestos en que la persona perceptora cause derecho a prestaciones contributivas de desempleo o incapacidad temporal, la percepción de la RBU operará como anticipo computable en la cuantía neta, garantizándose que la cuantía total percibida no sea inferior a la prestación contributiva devengada.</div><div class="legal-numbered-item">3. De conformidad con la Decisión vinculante D-009, el Servicio Público de Empleo Estatal (SEPE) mantendrá inalterada la obligación de ingresar la cuota empresarial correspondiente a las contingencias de jubilación al amparo del artículo 273 del Texto Refundido de la Ley General de la Seguridad Social (TRLGSS), sin que la absorción monetaria parcial afecte a los períodos cotizados computables.</div>
                 </div>
+                <div class="article-meta"><span class="meta-label">Mecanismos clave:</span> <span class="mechanism-tag">Suelo no contributivo</span><span class="mechanism-tag">Mantenimiento cotización jubilación Art. 273 TRLGSS</span><span class="mechanism-tag">Decisión D-009</span></div>
             </div>
-            
-            <div class="article-card" data-search-text="artículo 12  ">
+    
+            <div class="article-card" id="art_12" data-search-text="artículo 12 crédito cotizatorio básico por transición tecnológica capítulo i art. 41 ce art. 149.1.17 ce rdleg 8/2015 (trlgss) base cotización 100% smi asimilada al alta hasta 60 meses blindaje de pensiones se introduce un nuevo artículo 273 bis en el texto refundido de la ley general de la seguridad social (trlgss):
+«artículo 273 bis. crédito cotizatorio básico por transición tecnológica.
+1. toda persona trabajadora afectada por procesos de reconversión, despido colectivo o desplazamiento ocupacional provocado por la implantación de tecnologías de automatización o inteligencia artificial, tendrá derecho al reconocimiento de un crédito cotizatorio básico garantizado con cargo a los fondos de la presente ley.
+2. la tesorería general de la seguridad social computará como período cotizado asimilado al alta, a efectos de jubilación e incapacidad permanente, el tiempo de transición hasta un máximo de sesenta meses, calculado sobre una base reguladora equivalente al 100 por ciento de la base mínima del salario mínimo interprofesional.»">
                 <div class="article-header">
-                    <h4>Artículo 12: </h4>
-                    
+                    <div class="article-title-wrap">
+                        <span class="article-chapter">Capítulo I</span>
+                        <h4>Artículo 12: Crédito Cotizatorio Básico por Transición Tecnológica</h4>
+                    </div>
+                    <div class="article-badges">
+                        <span class="legal-badge" title="Base Constitucional">Art. 41 CE</span><span class="legal-badge" title="Base Constitucional">Art. 149.1.17 CE</span>
+                        <span class="statute-badge" title="Norma Reformada">RDLeg 8/2015 (TRLGSS)</span>
+                    </div>
                 </div>
                 <div class="article-body">
-                    <p></p>
+                    <p class="legal-p">Se introduce un nuevo artículo 273 bis en el Texto Refundido de la Ley General de la Seguridad Social (TRLGSS):</p><p class="legal-p">«Artículo 273 bis. Crédito Cotizatorio Básico por Transición Tecnológica.</p><div class="legal-numbered-item">1. Toda persona trabajadora afectada por procesos de reconversión, despido colectivo o desplazamiento ocupacional provocado por la implantación de tecnologías de automatización o inteligencia artificial, tendrá derecho al reconocimiento de un Crédito Cotizatorio Básico garantizado con cargo a los fondos de la presente Ley.</div><div class="legal-numbered-item">2. La Tesorería General de la Seguridad Social computará como período cotizado asimilado al alta, a efectos de jubilación e incapacidad permanente, el tiempo de transición hasta un máximo de sesenta meses, calculado sobre una base reguladora equivalente al 100 por ciento de la base mínima del Salario Mínimo Interprofesional.»</div>
                 </div>
+                <div class="article-meta"><span class="meta-label">Mecanismos clave:</span> <span class="mechanism-tag">Base cotización 100% SMI</span><span class="mechanism-tag">Asimilada al alta hasta 60 meses</span><span class="mechanism-tag">Blindaje de pensiones</span></div>
             </div>
-            
-            <div class="article-card" data-search-text="artículo 13  ">
+    
+            <div class="article-card" id="art_13" data-search-text="artículo 13 régimen reforzado de inembargabilidad capítulo ii art. 24 ce art. 39 ce art. 149.1.6 ce ley 1/2000 (lec) rdleg 8/2015 (trlgss) inembargabilidad absoluta art. 607 lec prohibición de compensación bancaria excepción exclusiva alimentos art. 608 lec 1. los importes percibidos en concepto de renta básica universal tendrán la consideración de inembargables en los términos absolutos prescritos por el artículo 607 de la ley 1/2000, de 7 de enero, de enjuiciamiento civil, y el artículo 44 del trlgss, al constituir el patrimonio existencial intangible de la persona.
+2. queda prohibida expresamente a las entidades financieras la ejecución de compensaciones o retenciones automáticas sobre descubiertos bancarios respecto a los saldos procedentes de la rbu.
+3. como única excepción admisible, la rbu podrá ser embargada para dar efectividad a la obligación judicial de prestar alimentos a favor de los hijos menores o cónyuge, en los términos estrictos del artículo 608 de la ley de enjuiciamiento civil.">
                 <div class="article-header">
-                    <h4>Artículo 13: </h4>
-                    
+                    <div class="article-title-wrap">
+                        <span class="article-chapter">Capítulo II</span>
+                        <h4>Artículo 13: Régimen reforzado de inembargabilidad</h4>
+                    </div>
+                    <div class="article-badges">
+                        <span class="legal-badge" title="Base Constitucional">Art. 24 CE</span><span class="legal-badge" title="Base Constitucional">Art. 39 CE</span><span class="legal-badge" title="Base Constitucional">Art. 149.1.6 CE</span>
+                        <span class="statute-badge" title="Norma Reformada">Ley 1/2000 (LEC)</span><span class="statute-badge" title="Norma Reformada">RDLeg 8/2015 (TRLGSS)</span>
+                    </div>
                 </div>
                 <div class="article-body">
-                    <p></p>
+                    <div class="legal-numbered-item">1. Los importes percibidos en concepto de Renta Básica Universal tendrán la consideración de inembargables en los términos absolutos prescritos por el artículo 607 de la Ley 1/2000, de 7 de enero, de Enjuiciamiento Civil, y el artículo 44 del TRLGSS, al constituir el patrimonio existencial intangible de la persona.</div><div class="legal-numbered-item">2. Queda prohibida expresamente a las entidades financieras la ejecución de compensaciones o retenciones automáticas sobre descubiertos bancarios respecto a los saldos procedentes de la RBU.</div><div class="legal-numbered-item">3. Como única excepción admisible, la RBU podrá ser embargada para dar efectividad a la obligación judicial de prestar alimentos a favor de los hijos menores o cónyuge, en los términos estrictos del artículo 608 de la Ley de Enjuiciamiento Civil.</div>
                 </div>
+                <div class="article-meta"><span class="meta-label">Mecanismos clave:</span> <span class="mechanism-tag">Inembargabilidad absoluta Art. 607 LEC</span><span class="mechanism-tag">Prohibición de compensación bancaria</span><span class="mechanism-tag">Excepción exclusiva alimentos Art. 608 LEC</span></div>
             </div>
-            
+    
             </div>
         </div>
         
@@ -2579,46 +2825,82 @@ This proves empirically that clawback arms with phase-outs above 40% induce arti
             </div>
             <div class="articles-container">
                 
-            <div class="article-card" data-search-text="artículo 14  ">
+            <div class="article-card" id="art_14" data-search-text="artículo 14 cuenta única tributaria-social y ventanilla única automatizada capítulo i art. 103.1 ce art. 149.1.14 ce art. 149.1.18 ce ley 40/2015 (lrjsp) cuenta única aeat-inss transferencia el día 1 de cada mes automatización de oficio 1. se crea la cuenta única tributaria-social como instrumento público interoperable gestionado de forma coordinada por la agencia estatal de administración tributaria (aeat) y el instituto nacional de la seguridad social (inss).
+2. la liquidación mensual de la renta básica universal se realizará mediante transferencia directa a la cuenta bancaria designada por la persona titular el día 1 de cada mes natural, o mediante compensación anticipada en nómina, de acuerdo con el protocolo técnico de gestión que reglamentariamente se determine.
+3. no se exigirá la presentación periódica de solicitudes, renovación documental ni trámites de comparecencia a los titulares legalmente acreditados en los registros del padrón continuo y la tarjeta social digital.">
                 <div class="article-header">
-                    <h4>Artículo 14: </h4>
-                    
+                    <div class="article-title-wrap">
+                        <span class="article-chapter">Capítulo I</span>
+                        <h4>Artículo 14: Cuenta Única Tributaria-Social y ventanilla única automatizada</h4>
+                    </div>
+                    <div class="article-badges">
+                        <span class="legal-badge" title="Base Constitucional">Art. 103.1 CE</span><span class="legal-badge" title="Base Constitucional">Art. 149.1.14 CE</span><span class="legal-badge" title="Base Constitucional">Art. 149.1.18 CE</span>
+                        <span class="statute-badge" title="Norma Reformada">Ley 40/2015 (LRJSP)</span>
+                    </div>
                 </div>
                 <div class="article-body">
-                    <p></p>
+                    <div class="legal-numbered-item">1. Se crea la Cuenta Única Tributaria-Social como instrumento público interoperable gestionado de forma coordinada por la Agencia Estatal de Administración Tributaria (AEAT) y el Instituto Nacional de la Seguridad Social (INSS).</div><div class="legal-numbered-item">2. La liquidación mensual de la Renta Básica Universal se realizará mediante transferencia directa a la cuenta bancaria designada por la persona titular el día 1 de cada mes natural, o mediante compensación anticipada en nómina, de acuerdo con el protocolo técnico de gestión que reglamentariamente se determine.</div><div class="legal-numbered-item">3. No se exigirá la presentación periódica de solicitudes, renovación documental ni trámites de comparecencia a los titulares legalmente acreditados en los registros del Padrón Continuo y la Tarjeta Social Digital.</div>
                 </div>
+                <div class="article-meta"><span class="meta-label">Mecanismos clave:</span> <span class="mechanism-tag">Cuenta Única AEAT-INSS</span><span class="mechanism-tag">Transferencia el día 1 de cada mes</span><span class="mechanism-tag">Automatización de oficio</span></div>
             </div>
-            
-            <div class="article-card" data-search-text="artículo 15  ">
+    
+            <div class="article-card" id="art_15" data-search-text="artículo 15 código de retención sintético y privacidad en la relación laboral capítulo i art. 18.4 ce art. 149.1.1 ce reglamento (ue) 2016/679 lo 3/2018 (lopdgdd) ley 35/2006 (lirpf) código sintético de nómina blindaje gdpr art. 9 separación de complementos familiares 1. en el ámbito de las relaciones de trabajo por cuenta ajena, la liquidación en nómina de la deducción reembolsable se efectuará mediante un código de retención sintético de carácter estrictamente numérico facilitado por la aeat a la empresa empleadora a través del sistema de retenciones del modelo 111.
+2. queda terminantemente prohibido a las empresas solicitar, y a la administración tributaria facilitar, información relativa a la composición convivencial, discapacidad, percepción de complementos de infancia o situaciones de vulnerabilidad social de la persona trabajadora, de estricta conformidad con el artículo 9 del reglamento (ue) 2016/679 (gdpr) y la ley orgánica 3/2018 (lopdgdd).
+3. los complementos por menores o situaciones especiales se canalizarán en todo caso de forma directa y separada por la aeat/inss a la cuenta personal de la persona titular.">
                 <div class="article-header">
-                    <h4>Artículo 15: </h4>
-                    
+                    <div class="article-title-wrap">
+                        <span class="article-chapter">Capítulo I</span>
+                        <h4>Artículo 15: Código de Retención Sintético y privacidad en la relación laboral</h4>
+                    </div>
+                    <div class="article-badges">
+                        <span class="legal-badge" title="Base Constitucional">Art. 18.4 CE</span><span class="legal-badge" title="Base Constitucional">Art. 149.1.1 CE</span><span class="legal-badge" title="Base Constitucional">Reglamento (UE) 2016/679</span>
+                        <span class="statute-badge" title="Norma Reformada">LO 3/2018 (LOPDGDD)</span><span class="statute-badge" title="Norma Reformada">Ley 35/2006 (LIRPF)</span>
+                    </div>
                 </div>
                 <div class="article-body">
-                    <p></p>
+                    <div class="legal-numbered-item">1. En el ámbito de las relaciones de trabajo por cuenta ajena, la liquidación en nómina de la deducción reembolsable se efectuará mediante un Código de Retención Sintético de carácter estrictamente numérico facilitado por la AEAT a la empresa empleadora a través del sistema de retenciones del Modelo 111.</div><div class="legal-numbered-item">2. Queda terminantemente prohibido a las empresas solicitar, y a la Administración tributaria facilitar, información relativa a la composición convivencial, discapacidad, percepción de complementos de infancia o situaciones de vulnerabilidad social de la persona trabajadora, de estricta conformidad con el artículo 9 del Reglamento (UE) 2016/679 (GDPR) y la Ley Orgánica 3/2018 (LOPDGDD).</div><div class="legal-numbered-item">3. Los complementos por menores o situaciones especiales se canalizarán en todo caso de forma directa y separada por la AEAT/INSS a la cuenta personal de la persona titular.</div>
                 </div>
+                <div class="article-meta"><span class="meta-label">Mecanismos clave:</span> <span class="mechanism-tag">Código Sintético de nómina</span><span class="mechanism-tag">Blindaje GDPR Art. 9</span><span class="mechanism-tag">Separación de complementos familiares</span></div>
             </div>
-            
-            <div class="article-card" data-search-text="artículo 16  ">
+    
+            <div class="article-card" id="art_16" data-search-text="artículo 16 garantías de debido proceso algorítmico y blindaje anti-compensación capítulo ii art. 24 ce art. 103 ce art. 149.1.18 ce ley 39/2015 (lpac) ley 40/2015 (lrjsp) ley 58/2003 (lgt) auditoría humana art. 41 lrjsp audiencia previa 30 días prohibición de compensación por deudas imv 1. cualquier actuación administrativa automatizada que implique modificación, suspensión o cese en la percepción de la rbu deberá cumplir las garantías del artículo 41 de la ley 40/2015 (lrjsp) y contar con supervisión técnica humana vinculante.
+2. se establece un trámite de audiencia previa con un plazo mínimo de 30 días hábiles conforme al artículo 82 de la ley 39/2015 (lpac) antes de ejecutar cualquier revocación de derechos.
+3. queda prohibida la aplicación de oficio de mecanismos de compensación tributaria o de seguridad social (artículos 71 a 73 de la lgt y artículo 53.2 del trlgss) sobre las transferencias de rbu para la recuperación de supuestos cobros indebidos de ingreso mínimo vital o prestaciones asistenciales anteriores, salvo sentencia penal firme por delito continuado contra la hacienda pública o la seguridad social.">
                 <div class="article-header">
-                    <h4>Artículo 16: </h4>
-                    
+                    <div class="article-title-wrap">
+                        <span class="article-chapter">Capítulo II</span>
+                        <h4>Artículo 16: Garantías de debido proceso algorítmico y blindaje anti-compensación</h4>
+                    </div>
+                    <div class="article-badges">
+                        <span class="legal-badge" title="Base Constitucional">Art. 24 CE</span><span class="legal-badge" title="Base Constitucional">Art. 103 CE</span><span class="legal-badge" title="Base Constitucional">Art. 149.1.18 CE</span>
+                        <span class="statute-badge" title="Norma Reformada">Ley 39/2015 (LPAC)</span><span class="statute-badge" title="Norma Reformada">Ley 40/2015 (LRJSP)</span><span class="statute-badge" title="Norma Reformada">Ley 58/2003 (LGT)</span>
+                    </div>
                 </div>
                 <div class="article-body">
-                    <p></p>
+                    <div class="legal-numbered-item">1. Cualquier actuación administrativa automatizada que implique modificación, suspensión o cese en la percepción de la RBU deberá cumplir las garantías del artículo 41 de la Ley 40/2015 (LRJSP) y contar con supervisión técnica humana vinculante.</div><div class="legal-numbered-item">2. Se establece un trámite de audiencia previa con un plazo mínimo de 30 días hábiles conforme al artículo 82 de la Ley 39/2015 (LPAC) antes de ejecutar cualquier revocación de derechos.</div><div class="legal-numbered-item">3. Queda prohibida la aplicación de oficio de mecanismos de compensación tributaria o de Seguridad Social (artículos 71 a 73 de la LGT y artículo 53.2 del TRLGSS) sobre las transferencias de RBU para la recuperación de supuestos cobros indebidos de Ingreso Mínimo Vital o prestaciones asistenciales anteriores, salvo sentencia penal firme por delito continuado contra la Hacienda Pública o la Seguridad Social.</div>
                 </div>
+                <div class="article-meta"><span class="meta-label">Mecanismos clave:</span> <span class="mechanism-tag">Auditoría humana Art. 41 LRJSP</span><span class="mechanism-tag">Audiencia previa 30 días</span><span class="mechanism-tag">Prohibición de compensación por deudas IMV</span></div>
             </div>
-            
-            <div class="article-card" data-search-text="artículo 17  ">
+    
+            <div class="article-card" id="art_17" data-search-text="artículo 17 empadronamiento social de oficio y rail público de pago capítulo ii art. 149.1.1 ce art. 149.1.11 ce art. 149.1.18 ce ley 7/1985 (lbrl) rdley 19/2018 (cuentas de pago) padrón social de oficio rail público correos/banco de españa blindaje anti-bloqueo bancario 1. los ayuntamientos tramitarán de oficio el empadronamiento social de aquellas personas que residan de forma efectiva en el municipio pero carezcan de domicilio fijo o se encuentren en situación de exclusión residencial, conforme a las instrucciones técnicas de 17 de febrero de 2020 de la presidencia del ine.
+2. la sociedad estatal correos y telégrafos y el banco de españa habilitarán un canal público de pago gratuito mediante la provisión de cuentas de pago básicas al amparo del real decreto-ley 19/2018.
+3. dichas cuentas públicas gozarán de presunción de suficiencia en la diligencia debida antiblanqueo bajo la ley 10/2010, prohibiéndose a las entidades de crédito su bloqueo o suspensión por mera inactividad o carencia de nómina mercantil ordinaria.">
                 <div class="article-header">
-                    <h4>Artículo 17: </h4>
-                    
+                    <div class="article-title-wrap">
+                        <span class="article-chapter">Capítulo II</span>
+                        <h4>Artículo 17: Empadronamiento social de oficio y rail público de pago</h4>
+                    </div>
+                    <div class="article-badges">
+                        <span class="legal-badge" title="Base Constitucional">Art. 149.1.1 CE</span><span class="legal-badge" title="Base Constitucional">Art. 149.1.11 CE</span><span class="legal-badge" title="Base Constitucional">Art. 149.1.18 CE</span>
+                        <span class="statute-badge" title="Norma Reformada">Ley 7/1985 (LBRL)</span><span class="statute-badge" title="Norma Reformada">RDLey 19/2018 (Cuentas de pago)</span>
+                    </div>
                 </div>
                 <div class="article-body">
-                    <p></p>
+                    <div class="legal-numbered-item">1. Los Ayuntamientos tramitarán de oficio el empadronamiento social de aquellas personas que residan de forma efectiva en el municipio pero carezcan de domicilio fijo o se encuentren en situación de exclusión residencial, conforme a las Instrucciones Técnicas de 17 de febrero de 2020 de la Presidencia del INE.</div><div class="legal-numbered-item">2. La Sociedad Estatal Correos y Telégrafos y el Banco de España habilitarán un canal público de pago gratuito mediante la provisión de Cuentas de Pago Básicas al amparo del Real Decreto-ley 19/2018.</div><div class="legal-numbered-item">3. Dichas cuentas públicas gozarán de presunción de suficiencia en la diligencia debida antiblanqueo bajo la Ley 10/2010, prohibiéndose a las entidades de crédito su bloqueo o suspensión por mera inactividad o carencia de nómina mercantil ordinaria.</div>
                 </div>
+                <div class="article-meta"><span class="meta-label">Mecanismos clave:</span> <span class="mechanism-tag">Padrón social de oficio</span><span class="mechanism-tag">Rail público Correos/Banco de España</span><span class="mechanism-tag">Blindaje anti-bloqueo bancario</span></div>
             </div>
-            
+    
             </div>
         </div>
         
@@ -2630,26 +2912,46 @@ This proves empirically that clawback arms with phase-outs above 40% induce arti
             </div>
             <div class="articles-container">
                 
-            <div class="article-card" data-search-text="artículo 18  ">
+            <div class="article-card" id="art_18" data-search-text="artículo 18 creación del fondo de compensación ubr en el sistema de financiación autonómica capítulo i art. 156 ce art. 157.3 ce art. 158.1 ce ley 22/2009 (financiación autonómica) lofca fondo cpff de compensación neutralidad tramo autonómico irpf garantía servicios fundamentales se introduce un nuevo artículo en la ley 22/2009, de 18 de diciembre, por la que se regula el sistema de financiación de las comunidades autónomas de régimen común y ciudades con estatuto de autonomía:
+«artículo 13 bis. fondo de compensación de la renta básica universal.
+1. se constituye en el seno del consejo de política fiscal y financiera (cpff) el fondo de compensación de la renta básica universal con el objeto de garantizar la neutralidad financiera vertical y horizontal entre la administración general del estado y las comunidades autónomas de régimen común tras la implantación de la deducción reembolsable universal.
+2. el estado aportará anualmente al fondo los recursos necesarios para compensar íntegramente la menor recaudación neta que pudiera experimentar el tramo autonómico cedido del irpf, asegurando que la financiación de los servicios públicos fundamentales de sanidad, educación y servicios sociales no sufra menoscabo alguno.
+3. la distribución de los recursos del fondo se calculará conforme a las reglas objetivas de población ajustada y capacidad tributaria relativa aprobadas por acuerdo unánime o mayoritario del cpff.»">
                 <div class="article-header">
-                    <h4>Artículo 18: </h4>
-                    
+                    <div class="article-title-wrap">
+                        <span class="article-chapter">Capítulo I</span>
+                        <h4>Artículo 18: Creación del Fondo de Compensación UBR en el Sistema de Financiación Autonómica</h4>
+                    </div>
+                    <div class="article-badges">
+                        <span class="legal-badge" title="Base Constitucional">Art. 156 CE</span><span class="legal-badge" title="Base Constitucional">Art. 157.3 CE</span><span class="legal-badge" title="Base Constitucional">Art. 158.1 CE</span>
+                        <span class="statute-badge" title="Norma Reformada">Ley 22/2009 (Financiación Autonómica)</span><span class="statute-badge" title="Norma Reformada">LOFCA</span>
+                    </div>
                 </div>
                 <div class="article-body">
-                    <p></p>
+                    <p class="legal-p">Se introduce un nuevo artículo en la Ley 22/2009, de 18 de diciembre, por la que se regula el sistema de financiación de las Comunidades Autónomas de régimen común y Ciudades con Estatuto de Autonomía:</p><p class="legal-p">«Artículo 13 bis. Fondo de Compensación de la Renta Básica Universal.</p><div class="legal-numbered-item">1. Se constituye en el seno del Consejo de Política Fiscal y Financiera (CPFF) el Fondo de Compensación de la Renta Básica Universal con el objeto de garantizar la neutralidad financiera vertical y horizontal entre la Administración General del Estado y las Comunidades Autónomas de régimen común tras la implantación de la Deducción Reembolsable Universal.</div><div class="legal-numbered-item">2. El Estado aportará anualmente al Fondo los recursos necesarios para compensar íntegramente la menor recaudación neta que pudiera experimentar el tramo autonómico cedido del IRPF, asegurando que la financiación de los servicios públicos fundamentales de sanidad, educación y servicios sociales no sufra menoscabo alguno.</div><div class="legal-numbered-item">3. La distribución de los recursos del Fondo se calculará conforme a las reglas objetivas de población ajustada y capacidad tributaria relativa aprobadas por acuerdo unánime o mayoritario del CPFF.»</div>
                 </div>
+                <div class="article-meta"><span class="meta-label">Mecanismos clave:</span> <span class="mechanism-tag">Fondo CPFF de Compensación</span><span class="mechanism-tag">Neutralidad tramo autonómico IRPF</span><span class="mechanism-tag">Garantía servicios fundamentales</span></div>
             </div>
-            
-            <div class="article-card" data-search-text="artículo 19  ">
+    
+            <div class="article-card" id="art_19" data-search-text="artículo 19 régimen foral del país vasco y comunidad foral de navarra capítulo ii disp. adic. 1ª ce ley 12/2002 (concierto vasco) ley 28/1990 (convenio navarra) ley 12/2002 ley 28/1990 carga no asumida en cupo imputación 6.24% y 1.60% comisiones mixtas bilaterales 1. en virtud de la disposición adicional primera de la constitución española y los regímenes forales vigentes, la implantación de la renta básica universal se articulará en el país vasco y en navarra a través del concierto económico (ley 12/2002) y el convenio económico (ley 28/1990), respectivamente.
+2. a efectos de la liquidación del cupo vasco y de la aportación navarra, la rbu se clasificará formalmente como «carga no asumida» por los territorios forales en tanto se trate de una prestación básica estatal satisfecha directamente por el estado o financiada con cargo a la recaudación de tributos no concertados.
+3. en caso de que las diputaciones forales o la hacienda foral de navarra asuman la gestión directa de la liquidación del tramo complementario o la armonización del tramo personal del irpf, las comisiones mixtas del concierto y del convenio acordarán las compensaciones financieras y los ajustes de imputación oportunos (6,24% para el país vasco y 1,60% para navarra) en un plazo no superior a seis meses desde la entrada en vigor de la presente ley.">
                 <div class="article-header">
-                    <h4>Artículo 19: </h4>
-                    
+                    <div class="article-title-wrap">
+                        <span class="article-chapter">Capítulo II</span>
+                        <h4>Artículo 19: Régimen Foral del País Vasco y Comunidad Foral de Navarra</h4>
+                    </div>
+                    <div class="article-badges">
+                        <span class="legal-badge" title="Base Constitucional">Disp. Adic. 1ª CE</span><span class="legal-badge" title="Base Constitucional">Ley 12/2002 (Concierto Vasco)</span><span class="legal-badge" title="Base Constitucional">Ley 28/1990 (Convenio Navarra)</span>
+                        <span class="statute-badge" title="Norma Reformada">Ley 12/2002</span><span class="statute-badge" title="Norma Reformada">Ley 28/1990</span>
+                    </div>
                 </div>
                 <div class="article-body">
-                    <p></p>
+                    <div class="legal-numbered-item">1. En virtud de la Disposición Adicional Primera de la Constitución Española y los regímenes forales vigentes, la implantación de la Renta Básica Universal se articulará en el País Vasco y en Navarra a través del Concierto Económico (Ley 12/2002) y el Convenio Económico (Ley 28/1990), respectivamente.</div><div class="legal-numbered-item">2. A efectos de la liquidación del Cupo vasco y de la Aportación navarra, la RBU se clasificará formalmente como «carga no asumida» por los territorios forales en tanto se trate de una prestación básica estatal satisfecha directamente por el Estado o financiada con cargo a la recaudación de tributos no concertados.</div><div class="legal-numbered-item">3. En caso de que las Diputaciones Forales o la Hacienda Foral de Navarra asuman la gestión directa de la liquidación del tramo complementario o la armonización del tramo personal del IRPF, las Comisiones Mixtas del Concierto y del Convenio acordarán las compensaciones financieras y los ajustes de imputación oportunos (6,24% para el País Vasco y 1,60% para Navarra) en un plazo no superior a seis meses desde la entrada en vigor de la presente Ley.</div>
                 </div>
+                <div class="article-meta"><span class="meta-label">Mecanismos clave:</span> <span class="mechanism-tag">Carga no asumida en Cupo</span><span class="mechanism-tag">Imputación 6.24% y 1.60%</span><span class="mechanism-tag">Comisiones Mixtas bilaterales</span></div>
             </div>
-            
+    
             </div>
         </div>
         
@@ -2661,26 +2963,44 @@ This proves empirically that clawback arms with phase-outs above 40% induce arti
             </div>
             <div class="articles-container">
                 
-            <div class="article-card" data-search-text="artículo 20  ">
+            <div class="article-card" id="art_20" data-search-text="artículo 20 creación y naturaleza del fondo soberano de transición algorítmica (fsta) capítulo i art. 128.2 ce art. 149.1.11 ce art. 149.1.14 ce ley 28/2003 (fondo de reserva) patrimonio público de afectación art. 128.2 ce supervisión banco de españa criterios asg 1. al amparo del artículo 128.2 de la constitución, se crea el fondo soberano de transición algorítmica (fsta) como patrimonio público de afectación específica y carácter intergeneracional, dotado de personalidad jurídica pública y adscrito orgánicamente al ministerio de hacienda, bajo la supervisión de una comisión de gobernanza presidida por el banco de españa.
+2. la finalidad primordial del fsta es acumular participaciones en infraestructuras de computación, activos digitales de alto rendimiento y rentas extraordinarias del capital empresarial para cofinanciar de forma sostenible el dividendo social universal y mitigar shocks macroeconómicos de automatización.
+3. la cartera del fondo se gestionará de conformidad con principios de prudencia, diversificación internacional y criterios medioambientales, sociales y de gobernanza (asg).">
                 <div class="article-header">
-                    <h4>Artículo 20: </h4>
-                    
+                    <div class="article-title-wrap">
+                        <span class="article-chapter">Capítulo I</span>
+                        <h4>Artículo 20: Creación y naturaleza del Fondo Soberano de Transición Algorítmica (FSTA)</h4>
+                    </div>
+                    <div class="article-badges">
+                        <span class="legal-badge" title="Base Constitucional">Art. 128.2 CE</span><span class="legal-badge" title="Base Constitucional">Art. 149.1.11 CE</span><span class="legal-badge" title="Base Constitucional">Art. 149.1.14 CE</span>
+                        <span class="statute-badge" title="Norma Reformada">Ley 28/2003 (Fondo de Reserva)</span>
+                    </div>
                 </div>
                 <div class="article-body">
-                    <p></p>
+                    <div class="legal-numbered-item">1. Al amparo del artículo 128.2 de la Constitución, se crea el Fondo Soberano de Transición Algorítmica (FSTA) como patrimonio público de afectación específica y carácter intergeneracional, dotado de personalidad jurídica pública y adscrito orgánicamente al Ministerio de Hacienda, bajo la supervisión de una Comisión de Gobernanza presidida por el Banco de España.</div><div class="legal-numbered-item">2. La finalidad primordial del FSTA es acumular participaciones en infraestructuras de computación, activos digitales de alto rendimiento y rentas extraordinarias del capital empresarial para cofinanciar de forma sostenible el dividendo social universal y mitigar shocks macroeconómicos de automatización.</div><div class="legal-numbered-item">3. La cartera del Fondo se gestionará de conformidad con principios de prudencia, diversificación internacional y criterios medioambientales, sociales y de gobernanza (ASG).</div>
                 </div>
+                <div class="article-meta"><span class="meta-label">Mecanismos clave:</span> <span class="mechanism-tag">Patrimonio público de afectación Art. 128.2 CE</span><span class="mechanism-tag">Supervisión Banco de España</span><span class="mechanism-tag">Criterios ASG</span></div>
             </div>
-            
-            <div class="article-card" data-search-text="artículo 21  ">
+    
+            <div class="article-card" id="art_21" data-search-text="artículo 21 regla de acumulación anticíclica de excedentes y blindaje parlamentario capítulo i art. 135 ce art. 149.1.14 ce reglamento (ue) 2024/1263 ley 28/2003 regla windfall ebe &gt; 120% conformidad con gasto primario neto ue blindaje parlamentario 3/5 congreso 1. las aportaciones ordinarias al fsta se nutrirán prioritariamente de la recaudación del ieca y de los recargos especiales sobre el excedente bruto de explotación (ebe) empresarial que supere el 120 por ciento de la media móvil de los tres ejercicios inmediatamente anteriores en los sectores hiperautomatizados.
+2. esta regla de acumulación anticíclica garantizará en todo momento el respeto a los techos de gasto primario neto fijados para españa en virtud del reglamento (ue) 2024/1263 del parlamento europeo y del consejo.
+3. los activos acumulados en el fondo no podrán ser dispuestos para financiar gastos generales de la administración. toda disposición extraordinaria del principal acumulado requerirá la aprobación expresa del congreso de los diputados por mayoría cualificada de tres quintos de sus miembros, conforme al modelo de protección establecido en la ley 28/2003 reguladora del fondo de reserva de la seguridad social.">
                 <div class="article-header">
-                    <h4>Artículo 21: </h4>
-                    
+                    <div class="article-title-wrap">
+                        <span class="article-chapter">Capítulo I</span>
+                        <h4>Artículo 21: Regla de acumulación anticíclica de excedentes y blindaje parlamentario</h4>
+                    </div>
+                    <div class="article-badges">
+                        <span class="legal-badge" title="Base Constitucional">Art. 135 CE</span><span class="legal-badge" title="Base Constitucional">Art. 149.1.14 CE</span><span class="legal-badge" title="Base Constitucional">Reglamento (UE) 2024/1263</span>
+                        <span class="statute-badge" title="Norma Reformada">Ley 28/2003</span>
+                    </div>
                 </div>
                 <div class="article-body">
-                    <p></p>
+                    <div class="legal-numbered-item">1. Las aportaciones ordinarias al FSTA se nutrirán prioritariamente de la recaudación del IECA y de los recargos especiales sobre el Excedente Bruto de Explotación (EBE) empresarial que supere el 120 por ciento de la media móvil de los tres ejercicios inmediatamente anteriores en los sectores hiperautomatizados.</div><div class="legal-numbered-item">2. Esta regla de acumulación anticíclica garantizará en todo momento el respeto a los techos de Gasto Primario Neto fijados para España en virtud del Reglamento (UE) 2024/1263 del Parlamento Europeo y del Consejo.</div><div class="legal-numbered-item">3. Los activos acumulados en el Fondo no podrán ser dispuestos para financiar gastos generales de la Administración. Toda disposición extraordinaria del principal acumulado requerirá la aprobación expresa del Congreso de los Diputados por mayoría cualificada de tres quintos de sus miembros, conforme al modelo de protección establecido en la Ley 28/2003 reguladora del Fondo de Reserva de la Seguridad Social.</div>
                 </div>
+                <div class="article-meta"><span class="meta-label">Mecanismos clave:</span> <span class="mechanism-tag">Regla windfall EBE &gt; 120%</span><span class="mechanism-tag">Conformidad con Gasto Primario Neto UE</span><span class="mechanism-tag">Blindaje parlamentario 3/5 Congreso</span></div>
             </div>
-            
+    
             </div>
         </div>
         
@@ -2692,26 +3012,45 @@ This proves empirically that clawback arms with phase-outs above 40% induce arti
             </div>
             <div class="articles-container">
                 
-            <div class="article-card" data-search-text="artículo 22  ">
+            <div class="article-card" id="art_22" data-search-text="artículo 22 gobernanza de la transición, certificación airef y principio de legalidad capítulo i art. 31.3 ce art. 134.7 ce lo 6/2013 (airef) stc 73/2017 stc 78/2020 lo 6/2013 índice i_ai airef urgencia parlamentaria art. 93 principio estricto de legalidad tributaria 1. la autoridad independiente de responsabilidad fiscal (airef) calculará y certificará anualmente, en el marco de sus competencias evaluadoras reguladas por la ley orgánica 6/2013, el índice compuesto de desplazamiento tecnológico (i_ai), ponderando la compresión de la participación laboral en el pib, el desempleo en ramas cognitivas y el crecimiento de los márgenes empresariales en computación.
+2. cuando el i_ai supere los umbrales legalmente previstos para el salto entre los tiers a, b y c del artículo 4, el gobierno remitirá a las cortes generales en un plazo improrrogable de 30 días un proyecto de ley para la adecuación de las cuantías y fuentes tributarias, tramitado por el procedimiento de urgencia parlamentaria regulado en el artículo 93 del reglamento del congreso de los diputados.
+3. en estricto acatamiento de los artículos 31.3 y 134.7 de la constitución y de las sentencias del tribunal constitucional 73/2017 y 78/2020, en ningún caso podrán fijarse ni modificarse tipos impositivos o recargos tributarios mediante real decreto-ley o actos administrativos delegados.">
                 <div class="article-header">
-                    <h4>Artículo 22: </h4>
-                    
+                    <div class="article-title-wrap">
+                        <span class="article-chapter">Capítulo I</span>
+                        <h4>Artículo 22: Gobernanza de la transición, certificación AIReF y principio de legalidad</h4>
+                    </div>
+                    <div class="article-badges">
+                        <span class="legal-badge" title="Base Constitucional">Art. 31.3 CE</span><span class="legal-badge" title="Base Constitucional">Art. 134.7 CE</span><span class="legal-badge" title="Base Constitucional">LO 6/2013 (AIReF)</span><span class="legal-badge" title="Base Constitucional">STC 73/2017</span><span class="legal-badge" title="Base Constitucional">STC 78/2020</span>
+                        <span class="statute-badge" title="Norma Reformada">LO 6/2013</span>
+                    </div>
                 </div>
                 <div class="article-body">
-                    <p></p>
+                    <div class="legal-numbered-item">1. La Autoridad Independiente de Responsabilidad Fiscal (AIReF) calculará y certificará anualmente, en el marco de sus competencias evaluadoras reguladas por la Ley Orgánica 6/2013, el Índice Compuesto de Desplazamiento Tecnológico (I_AI), ponderando la compresión de la participación laboral en el PIB, el desempleo en ramas cognitivas y el crecimiento de los márgenes empresariales en computación.</div><div class="legal-numbered-item">2. Cuando el I_AI supere los umbrales legalmente previstos para el salto entre los Tiers A, B y C del artículo 4, el Gobierno remitirá a las Cortes Generales en un plazo improrrogable de 30 días un Proyecto de Ley para la adecuación de las cuantías y fuentes tributarias, tramitado por el procedimiento de urgencia parlamentaria regulado en el artículo 93 del Reglamento del Congreso de los Diputados.</div><div class="legal-numbered-item">3. En estricto acatamiento de los artículos 31.3 y 134.7 de la Constitución y de las Sentencias del Tribunal Constitucional 73/2017 y 78/2020, en ningún caso podrán fijarse ni modificarse tipos impositivos o recargos tributarios mediante Real Decreto-ley o actos administrativos delegados.</div>
                 </div>
+                <div class="article-meta"><span class="meta-label">Mecanismos clave:</span> <span class="mechanism-tag">Índice I_AI AIReF</span><span class="mechanism-tag">Urgencia parlamentaria Art. 93</span><span class="mechanism-tag">Principio estricto de legalidad tributaria</span></div>
             </div>
-            
-            <div class="article-card" data-search-text="artículo 23  ">
+    
+            <div class="article-card" id="art_23" data-search-text="artículo 23 circuito de alarma contra la captura de rentas en el mercado del alquiler capítulo i art. 47 ce art. 149.1.14 ce art. 149.1.18 ce ley 35/2006 lo 2/2012 (loepsf) suspensión beneficio fiscal alquiler líneas ico fer para tanteo y retracto exención regla de gasto 1. cuando el sistema estatal de monitorización de precios de arrendamiento detecte incrementos interanuales superiores en más de 3 puntos porcentuales al ipc subyacente en zonas urbanas congestionadas donde el esfuerzo familiar de alquiler supere el 30 por ciento de los ingresos medianos, se activará de forma automática el circuito de alarma residencial.
+2. la activación conllevará:
+   a) la suspensión inmediata de la reducción del artículo 23.2 de la lirpf para los arrendadores que hayan incrementado la renta por encima del ipc general.
+   b) la apertura de líneas de crédito sin interés del instituto de crédito oficial (ico) a favor de las administraciones locales para nutrir el fondo de estabilización residencial (fer), facultándolas para ejercer el derecho de tanteo y retracto en transmisiones de inmuebles residenciales, quedando dichas operaciones expresamente exentas de los límites de regla de gasto de la loepsf.">
                 <div class="article-header">
-                    <h4>Artículo 23: </h4>
-                    
+                    <div class="article-title-wrap">
+                        <span class="article-chapter">Capítulo I</span>
+                        <h4>Artículo 23: Circuito de alarma contra la captura de rentas en el mercado del alquiler</h4>
+                    </div>
+                    <div class="article-badges">
+                        <span class="legal-badge" title="Base Constitucional">Art. 47 CE</span><span class="legal-badge" title="Base Constitucional">Art. 149.1.14 CE</span><span class="legal-badge" title="Base Constitucional">Art. 149.1.18 CE</span>
+                        <span class="statute-badge" title="Norma Reformada">Ley 35/2006</span><span class="statute-badge" title="Norma Reformada">LO 2/2012 (LOEPSF)</span>
+                    </div>
                 </div>
                 <div class="article-body">
-                    <p></p>
+                    <div class="legal-numbered-item">1. Cuando el sistema estatal de monitorización de precios de arrendamiento detecte incrementos interanuales superiores en más de 3 puntos porcentuales al IPC subyacente en zonas urbanas congestionadas donde el esfuerzo familiar de alquiler supere el 30 por ciento de los ingresos medianos, se activará de forma automática el Circuito de Alarma Residencial.</div><div class="legal-numbered-item">2. La activación conllevará:</div><div class="legal-subitem">a) La suspensión inmediata de la reducción del artículo 23.2 de la LIRPF para los arrendadores que hayan incrementado la renta por encima del IPC general.</div><div class="legal-subitem">b) La apertura de líneas de crédito sin interés del Instituto de Crédito Oficial (ICO) a favor de las administraciones locales para nutrir el Fondo de Estabilización Residencial (FER), facultándolas para ejercer el derecho de tanteo y retracto en transmisiones de inmuebles residenciales, quedando dichas operaciones expresamente exentas de los límites de regla de gasto de la LOEPSF.</div>
                 </div>
+                <div class="article-meta"><span class="meta-label">Mecanismos clave:</span> <span class="mechanism-tag">Suspensión beneficio fiscal alquiler</span><span class="mechanism-tag">Líneas ICO FER para tanteo y retracto</span><span class="mechanism-tag">Exención regla de gasto</span></div>
             </div>
-            
+    
             </div>
         </div>
         
@@ -2723,29 +3062,237 @@ This proves empirically that clawback arms with phase-outs above 40% induce arti
             </div>
             <div class="articles-container">
                 
-            <div class="article-card" data-search-text="artículo 24  ">
+            <div class="article-card" id="art_24" data-search-text="artículo 24 cláusula de no suplantación salarial y negociación colectiva capítulo i art. 7 ce art. 35 ce art. 37.1 ce art. 149.1.7 ce rdleg 2/2015 (estatuto trabajadores) rdleg 5/2000 (lisos) prohibición de absorción salarial nulidad de cláusulas de descuelgue rbu infracción muy grave lisos 1. los importes percibidos en concepto de renta básica universal tendrán carácter autónomo y complementario, quedando estrictamente prohibida su absorción o compensación con cargo a las retribuciones dinerarias o en especie pactadas en convenio colectivo de trabajo, contrato individual o laudo arbitral.
+2. ninguna empresa u organización empleadora podrá invocar la existencia de la rbu como justificación para reducir salarios, acordar inaplicaciones salariales (*descuelgues*) bajo el artículo 82.3 del estatuto de los trabajadores, o aminorar las cuantías fijadas para el salario mínimo interprofesional.
+3. las cláusulas contractuales o de convenio colectivo que contravengan lo dispuesto en este artículo serán nulas de pleno derecho, considerándose infracción muy grave en materia laboral sujeta a sanción conforme al texto refundido de la ley sobre infracciones y sanciones en el orden social (lisos).">
                 <div class="article-header">
-                    <h4>Artículo 24: </h4>
-                    
+                    <div class="article-title-wrap">
+                        <span class="article-chapter">Capítulo I</span>
+                        <h4>Artículo 24: Cláusula de no suplantación salarial y negociación colectiva</h4>
+                    </div>
+                    <div class="article-badges">
+                        <span class="legal-badge" title="Base Constitucional">Art. 7 CE</span><span class="legal-badge" title="Base Constitucional">Art. 35 CE</span><span class="legal-badge" title="Base Constitucional">Art. 37.1 CE</span><span class="legal-badge" title="Base Constitucional">Art. 149.1.7 CE</span>
+                        <span class="statute-badge" title="Norma Reformada">RDLeg 2/2015 (Estatuto Trabajadores)</span><span class="statute-badge" title="Norma Reformada">RDLeg 5/2000 (LISOS)</span>
+                    </div>
                 </div>
                 <div class="article-body">
-                    <p></p>
+                    <div class="legal-numbered-item">1. Los importes percibidos en concepto de Renta Básica Universal tendrán carácter autónomo y complementario, quedando estrictamente prohibida su absorción o compensación con cargo a las retribuciones dinerarias o en especie pactadas en convenio colectivo de trabajo, contrato individual o laudo arbitral.</div><div class="legal-numbered-item">2. Ninguna empresa u organización empleadora podrá invocar la existencia de la RBU como justificación para reducir salarios, acordar inaplicaciones salariales (<em>descuelgues</em>) bajo el artículo 82.3 del Estatuto de los Trabajadores, o aminorar las cuantías fijadas para el Salario Mínimo Interprofesional.</div><div class="legal-numbered-item">3. Las cláusulas contractuales o de convenio colectivo que contravengan lo dispuesto en este artículo serán nulas de pleno derecho, considerándose infracción muy grave en materia laboral sujeta a sanción conforme al Texto Refundido de la Ley sobre Infracciones y Sanciones en el Orden Social (LISOS).</div>
                 </div>
+                <div class="article-meta"><span class="meta-label">Mecanismos clave:</span> <span class="mechanism-tag">Prohibición de absorción salarial</span><span class="mechanism-tag">Nulidad de cláusulas de descuelgue RBU</span><span class="mechanism-tag">Infracción muy grave LISOS</span></div>
             </div>
-            
-            <div class="article-card" data-search-text="artículo 25  ">
+    
+            <div class="article-card" id="art_25" data-search-text="artículo 25 participación de los interlocutores sociales en la co-gobernanza del fsta capítulo i art. 7 ce ley 21/1991 (ces)  participación paritaria ccoo/ugt/ceoe/cepyme comisión tripartita de empleo 1. las organizaciones sindicales y empresariales más representativas a nivel estatal (ccoo, ugt, ceoe y cepyme) contarán con representación paritaria permanente en el consejo asesor del fondo soberano de transición algorítmica.
+2. la comisión tripartita de empleo y transición tecnológica evaluará semestralmente los impactos sectoriales de la ia en la productividad, proponiendo programas de recualificación y adaptación financiados con cargo a los rendimientos del fondo.">
                 <div class="article-header">
-                    <h4>Artículo 25: </h4>
-                    
+                    <div class="article-title-wrap">
+                        <span class="article-chapter">Capítulo I</span>
+                        <h4>Artículo 25: Participación de los interlocutores sociales en la co-gobernanza del FSTA</h4>
+                    </div>
+                    <div class="article-badges">
+                        <span class="legal-badge" title="Base Constitucional">Art. 7 CE</span><span class="legal-badge" title="Base Constitucional">Ley 21/1991 (CES)</span>
+                        
+                    </div>
                 </div>
                 <div class="article-body">
-                    <p></p>
+                    <div class="legal-numbered-item">1. Las organizaciones sindicales y empresariales más representativas a nivel estatal (CCOO, UGT, CEOE y CEPYME) contarán con representación paritaria permanente en el Consejo Asesor del Fondo Soberano de Transición Algorítmica.</div><div class="legal-numbered-item">2. La Comisión Tripartita de Empleo y Transición Tecnológica evaluará semestralmente los impactos sectoriales de la IA en la productividad, proponiendo programas de recualificación y adaptación financiados con cargo a los rendimientos del Fondo.</div>
                 </div>
+                <div class="article-meta"><span class="meta-label">Mecanismos clave:</span> <span class="mechanism-tag">Participación paritaria CCOO/UGT/CEOE/CEPYME</span><span class="mechanism-tag">Comisión Tripartita de Empleo</span></div>
             </div>
-            
+    
             </div>
         </div>
         
+
+        <div class="title-group">
+            <div class="title-heading">
+                <h3>Disposiciones Adicionales</h3>
+                <p class="title-desc">Mandatos de reforma orgánica (LOEPSF Art. 15.6) y salvaguarda integral de la infancia (Art. 39 CE).</p>
+            </div>
+            <div class="articles-container">
+                
+            <div class="article-card" id="da_01" data-search-text="disposición adicional primera proyecto de ley orgánica de modificación del artículo 15.6 de la ley orgánica 2/2012 (loepsf)  art. 81 ce art. 90.2 ce art. 135 ce stc 179/1989 lo 2/2012 (loepsf) supresión del veto irrevocable del senado mayoría absoluta del congreso decisión d-010 en el plazo de sesenta días desde la aprobación de la presente ley, el gobierno remitirá a las cortes generales un proyecto de ley orgánica de reforma del artículo 15.6 de la ley orgánica 2/2012, de 27 de abril, de estabilidad presupuestaria y sostenibilidad financiera, para restaurar la regla constitucional general de preeminencia del congreso de los diputados establecida en el artículo 90.2 de la constitución. con arreglo a dicha reforma, en caso de veto o pronunciamiento desfavorable del senado sobre los objetivos de estabilidad presupuestaria y el límite de gasto no financiero, el congreso de los diputados podrá levantar dicho veto por mayoría absoluta de sus miembros en votación definitiva, de conformidad con la doctrina consolidada en la stc 179/1989 y la decisión vinculante d-010.">
+                <div class="article-header">
+                    <div class="article-title-wrap">
+                        
+                        <h4>Disposición Adicional Primera: Proyecto de Ley Orgánica de modificación del artículo 15.6 de la Ley Orgánica 2/2012 (LOEPSF)</h4>
+                    </div>
+                    <div class="article-badges">
+                        <span class="legal-badge" title="Base Constitucional">Art. 81 CE</span><span class="legal-badge" title="Base Constitucional">Art. 90.2 CE</span><span class="legal-badge" title="Base Constitucional">Art. 135 CE</span><span class="legal-badge" title="Base Constitucional">STC 179/1989</span>
+                        <span class="statute-badge" title="Norma Reformada">LO 2/2012 (LOEPSF)</span>
+                    </div>
+                </div>
+                <div class="article-body">
+                    <p class="legal-p">En el plazo de sesenta días desde la aprobación de la presente Ley, el Gobierno remitirá a las Cortes Generales un Proyecto de Ley Orgánica de reforma del artículo 15.6 de la Ley Orgánica 2/2012, de 27 de abril, de Estabilidad Presupuestaria y Sostenibilidad Financiera, para restaurar la regla constitucional general de preeminencia del Congreso de los Diputados establecida en el artículo 90.2 de la Constitución. Con arreglo a dicha reforma, en caso de veto o pronunciamiento desfavorable del Senado sobre los objetivos de estabilidad presupuestaria y el límite de gasto no financiero, el Congreso de los Diputados podrá levantar dicho veto por mayoría absoluta de sus miembros en votación definitiva, de conformidad con la doctrina consolidada en la STC 179/1989 y la Decisión vinculante D-010.</p>
+                </div>
+                <div class="article-meta"><span class="meta-label">Mecanismos clave:</span> <span class="mechanism-tag">Supresión del veto irrevocable del Senado</span><span class="mechanism-tag">Mayoría absoluta del Congreso</span><span class="mechanism-tag">Decisión D-010</span></div>
+            </div>
+    
+            <div class="article-card" id="da_02" data-search-text="disposición adicional segunda cláusula de salvaguarda y protección integral de la infancia  art. 39 ce convención derechos del niño  incondicionalidad para menores desconexión de la situación de los progenitores al amparo del mandato de protección social de la familia y de la infancia consagrado en el artículo 39 de la constitución española y en la convención sobre los derechos del niño, el complemento universal de infancia del artículo 4.2 se liquidará a todo menor que se encuentre efectivamente residiendo en españa e inscrito en el padrón municipal, con independencia de la situación administrativa o del tiempo de residencia legal de sus progenitores.">
+                <div class="article-header">
+                    <div class="article-title-wrap">
+                        
+                        <h4>Disposición Adicional Segunda: Cláusula de Salvaguarda y Protección Integral de la Infancia</h4>
+                    </div>
+                    <div class="article-badges">
+                        <span class="legal-badge" title="Base Constitucional">Art. 39 CE</span><span class="legal-badge" title="Base Constitucional">Convención Derechos del Niño</span>
+                        
+                    </div>
+                </div>
+                <div class="article-body">
+                    <p class="legal-p">Al amparo del mandato de protección social de la familia y de la infancia consagrado en el artículo 39 de la Constitución Española y en la Convención sobre los Derechos del Niño, el complemento universal de infancia del artículo 4.2 se liquidará a todo menor que se encuentre efectivamente residiendo en España e inscrito en el Padrón Municipal, con independencia de la situación administrativa o del tiempo de residencia legal de sus progenitores.</p>
+                </div>
+                <div class="article-meta"><span class="meta-label">Mecanismos clave:</span> <span class="mechanism-tag">Incondicionalidad para menores</span><span class="mechanism-tag">Desconexión de la situación de los progenitores</span></div>
+            </div>
+    
+            </div>
+        </div>
+        
+
+        <div class="title-group">
+            <div class="title-heading">
+                <h3>Disposiciones Transitorias</h3>
+                <p class="title-desc">Calendario de despliegue por fases (Tiers A, B y C) y cómputo de períodos de carencia previos.</p>
+            </div>
+            <div class="articles-container">
+                
+            <div class="article-card" id="dt_01" data-search-text="disposición transitoria primera calendario de implantación progresiva por fases     la presente ley se implantará según el siguiente calendario escalonado:
+a) fase 0 (meses 1 a 6): puesta en marcha de la cuenta única tributaria-social e individualización automática de perceptores del ingreso mínimo vital y complementos capi.
+b) fase 1 (año 1): despliegue del nivel base (tier a - 600 €) y liquidación del crédito cotizatorio tecnológico.
+c) fase 2 (año 2 en adelante): activación del nivel umbral de pobreza (tier b - 900 €) supeditada a la certificación airef del índice i_ai y la aprobación parlamentaria correspondiente.">
+                <div class="article-header">
+                    <div class="article-title-wrap">
+                        
+                        <h4>Disposición Transitoria Primera: Calendario de implantación progresiva por fases</h4>
+                    </div>
+                    <div class="article-badges">
+                        
+                        
+                    </div>
+                </div>
+                <div class="article-body">
+                    <p class="legal-p">La presente Ley se implantará según el siguiente calendario escalonado:</p><div class="legal-subitem">a) Fase 0 (Meses 1 a 6): Puesta en marcha de la Cuenta Única Tributaria-Social e individualización automática de perceptores del Ingreso Mínimo Vital y complementos CAPI.</div><div class="legal-subitem">b) Fase 1 (Año 1): Despliegue del Nivel Base (Tier A - 600 €) y liquidación del Crédito Cotizatorio Tecnológico.</div><div class="legal-subitem">c) Fase 2 (Año 2 en adelante): Activación del Nivel Umbral de Pobreza (Tier B - 900 €) supeditada a la certificación AIReF del Índice I_AI y la aprobación parlamentaria correspondiente.</div>
+                </div>
+                
+            </div>
+    
+            <div class="article-card" id="dt_02" data-search-text="disposición transitoria segunda acreditación de períodos de carencia y cómputo de estancias previas     a efectos de acreditar el requisito de residencia continuada de veinticuatro meses exigido a ciudadanos inactivos de terceros países en el artículo 3.1.b), se computarán íntegramente los períodos previos de residencia legal ininterrumpida y empadronamiento fehaciente devengados con anterioridad a la entrada en vigor de esta ley.">
+                <div class="article-header">
+                    <div class="article-title-wrap">
+                        
+                        <h4>Disposición Transitoria Segunda: Acreditación de períodos de carencia y cómputo de estancias previas</h4>
+                    </div>
+                    <div class="article-badges">
+                        
+                        
+                    </div>
+                </div>
+                <div class="article-body">
+                    <p class="legal-p">A efectos de acreditar el requisito de residencia continuada de veinticuatro meses exigido a ciudadanos inactivos de terceros países en el artículo 3.1.b), se computarán íntegramente los períodos previos de residencia legal ininterrumpida y empadronamiento fehaciente devengados con anterioridad a la entrada en vigor de esta Ley.</p>
+                </div>
+                
+            </div>
+    
+            </div>
+        </div>
+        
+
+        <div class="title-group">
+            <div class="title-heading">
+                <h3>Disposición Derogatoria</h3>
+                <p class="title-desc">Derogación expresa de reducciones incompatibles en el IRPF (Arts. 20, 56-61 y 84.2.4º LIRPF).</p>
+            </div>
+            <div class="articles-container">
+                
+            <div class="article-card" id="dd_01" data-search-text="disposición derogatoria única derogación normativa     quedan derogadas cuantas disposiciones de igual o inferior rango se opongan a lo establecido en la presente ley, y de forma específica:
+a) el artículo 20 de la ley 35/2006 del irpf (reducción por obtención de rendimientos del trabajo).
+b) los artículos 56, 57, 58, 59, 60 y 61 de la ley 35/2006 en lo que se opongan al nuevo artículo 61 bis, salvo lo dispuesto en el régimen de salvaguarda del artículo 61 ter.
+c) el artículo 84.2.4º de la ley 35/2006 relativo a la reducción por tributación conjunta.">
+                <div class="article-header">
+                    <div class="article-title-wrap">
+                        
+                        <h4>Disposición Derogatoria Única: Derogación normativa</h4>
+                    </div>
+                    <div class="article-badges">
+                        
+                        
+                    </div>
+                </div>
+                <div class="article-body">
+                    <p class="legal-p">Quedan derogadas cuantas disposiciones de igual o inferior rango se opongan a lo establecido en la presente Ley, y de forma específica:</p><div class="legal-subitem">a) El artículo 20 de la Ley 35/2006 del IRPF (reducción por obtención de rendimientos del trabajo).</div><div class="legal-subitem">b) Los artículos 56, 57, 58, 59, 60 y 61 de la Ley 35/2006 en lo que se opongan al nuevo artículo 61 bis, salvo lo dispuesto en el régimen de salvaguarda del artículo 61 ter.</div><div class="legal-subitem">c) El artículo 84.2.4º de la Ley 35/2006 relativo a la reducción por tributación conjunta.</div>
+                </div>
+                
+            </div>
+    
+            </div>
+        </div>
+        
+
+        <div class="title-group">
+            <div class="title-heading">
+                <h3>Disposiciones Finales</h3>
+                <p class="title-desc">Títulos competenciales estatales exclusivos (Art. 149.1 CE), habilitación reglamentaria y entrada en vigor.</p>
+            </div>
+            <div class="articles-container">
+                
+            <div class="article-card" id="df_01" data-search-text="disposición final primera títulos competenciales     esta ley se dicta al amparo de las competencias exclusivas del estado reconocidas en el artículo 149.1 de la constitución española en las materias siguientes:
+- 1.ª: regulación de las condiciones básicas que garanticen la igualdad de todos los españoles en el ejercicio de los derechos y en el cumplimiento de los deberes constitucionales.
+- 14.ª: hacienda general y deuda del estado.
+- 17.ª: legislación básica y régimen económico de la seguridad social.
+- 18.ª: bases del régimen jurídico de las administraciones públicas y procedimiento administrativo común.">
+                <div class="article-header">
+                    <div class="article-title-wrap">
+                        
+                        <h4>Disposición Final Primera: Títulos competenciales</h4>
+                    </div>
+                    <div class="article-badges">
+                        
+                        
+                    </div>
+                </div>
+                <div class="article-body">
+                    <p class="legal-p">Esta Ley se dicta al amparo de las competencias exclusivas del Estado reconocidas en el artículo 149.1 de la Constitución Española en las materias siguientes:</p><div class="legal-subitem">- 1.ª: Regulación de las condiciones básicas que garanticen la igualdad de todos los españoles en el ejercicio de los derechos y en el cumplimiento de los deberes constitucionales.</div><div class="legal-subitem">- 14.ª: Hacienda general y Deuda del Estado.</div><div class="legal-subitem">- 17.ª: Legislación básica y régimen económico de la Seguridad Social.</div><div class="legal-subitem">- 18.ª: Bases del régimen jurídico de las Administraciones Públicas y procedimiento administrativo común.</div>
+                </div>
+                
+            </div>
+    
+            <div class="article-card" id="df_02" data-search-text="disposición final segunda habilitación para el desarrollo reglamentario     se faculta al gobierno para dictar, en el ámbito de sus competencias y previo informe de la comisión mixta de coordinación tributaria y del consejo económico y social, cuantas disposiciones reglamentarias sean necesarias para el desarrollo y aplicación de la presente ley.">
+                <div class="article-header">
+                    <div class="article-title-wrap">
+                        
+                        <h4>Disposición Final Segunda: Habilitación para el desarrollo reglamentario</h4>
+                    </div>
+                    <div class="article-badges">
+                        
+                        
+                    </div>
+                </div>
+                <div class="article-body">
+                    <p class="legal-p">Se faculta al Gobierno para dictar, en el ámbito de sus competencias y previo informe de la Comisión Mixta de Coordinación Tributaria y del Consejo Económico y Social, cuantas disposiciones reglamentarias sean necesarias para el desarrollo y aplicación de la presente Ley.</p>
+                </div>
+                
+            </div>
+    
+            <div class="article-card" id="df_03" data-search-text="disposición final tercera entrada en vigor     la presente ley entrará en vigor el día primero del mes siguiente al de su publicación en el boletín oficial del estado, sin perjuicio de las normas especiales de aplicación temporal previstas en las disposiciones transitorias.">
+                <div class="article-header">
+                    <div class="article-title-wrap">
+                        
+                        <h4>Disposición Final Tercera: Entrada en vigor</h4>
+                    </div>
+                    <div class="article-badges">
+                        
+                        
+                    </div>
+                </div>
+                <div class="article-body">
+                    <p class="legal-p">La presente Ley entrará en vigor el día primero del mes siguiente al de su publicación en el Boletín Oficial del Estado, sin perjuicio de las normas especiales de aplicación temporal previstas en las Disposiciones Transitorias.</p>
+                </div>
+                
+            </div>
+    
+            </div>
+        </div>
+        
+                <div id="noArticlesMessage" style="display: none; text-align: center; padding: 3rem 1rem; color: var(--text-muted); font-size: 1.05rem;">No se encontraron artículos ni disposiciones que coincidan con la búsqueda.</div>
             </div>
         </div>
     </div>
@@ -2754,12 +3301,23 @@ This proves empirically that clawback arms with phase-outs above 40% induce arti
     <script>
         const DASHBOARD_DATA = {"scenarios": {"S1": {"total_baseline_fte": 21510000, "total_displaced_fte": 1720800.0, "net_displaced_fte_share": 0.08, "labor_share_delta_pp": -2.5, "baseline_tax_loss_pct_gdp": 0.98, "baseline_tax_loss_billion_eur": 14.7, "pre_aggregate_wage_bill_eur": 518892000000.0, "post_aggregate_wage_bill_eur": 464548869942.95}, "S2": {"total_baseline_fte": 21510000, "total_displaced_fte": 4301999.7, "net_displaced_fte_share": 0.2, "labor_share_delta_pp": -7.0, "baseline_tax_loss_pct_gdp": 2.73, "baseline_tax_loss_billion_eur": 40.95, "pre_aggregate_wage_bill_eur": 518892000000.0, "post_aggregate_wage_bill_eur": 382973272081.57}, "S3": {"total_baseline_fte": 21510000, "total_displaced_fte": 7528500.1, "net_displaced_fte_share": 0.35, "labor_share_delta_pp": -15.0, "baseline_tax_loss_pct_gdp": 5.85, "baseline_tax_loss_billion_eur": 87.75, "pre_aggregate_wage_bill_eur": 518892000000.0, "post_aggregate_wage_bill_eur": 289707953740.42}}, "microsim_deciles": [{"decile": 1, "mean_baseline_gross_income_eur": 17916.300296108333, "mean_baseline_disposable_income_eur": 15579.391561833334, "mean_post_disposable_income_eur": 32214.155530555192, "delta_disposable_income_eur": 16634.763968721858, "delta_disposable_income_pct": 106.77415676151303, "net_winner_share_pct": 100.0, "net_loser_share_pct": 0.0}, {"decile": 2, "mean_baseline_gross_income_eur": 20939.604768183333, "mean_baseline_disposable_income_eur": 18208.351972333334, "mean_post_disposable_income_eur": 26271.323826666667, "delta_disposable_income_eur": 8062.971854333333, "delta_disposable_income_pct": 44.281722291971334, "net_winner_share_pct": 83.33333333333334, "net_loser_share_pct": 0.0}, {"decile": 3, "mean_baseline_gross_income_eur": 22312.243973916662, "mean_baseline_disposable_income_eur": 19401.951281666665, "mean_post_disposable_income_eur": 29697.731425255824, "delta_disposable_income_eur": 10295.78014358916, "delta_disposable_income_pct": 53.065694239310204, "net_winner_share_pct": 96.66666666666667, "net_loser_share_pct": 0.0}, {"decile": 4, "mean_baseline_gross_income_eur": 36282.4373687, "mean_baseline_disposable_income_eur": 31549.945538, "mean_post_disposable_income_eur": 44165.597470341825, "delta_disposable_income_eur": 12615.651932341825, "delta_disposable_income_pct": 39.98628751085176, "net_winner_share_pct": 100.0, "net_loser_share_pct": 0.0}, {"decile": 5, "mean_baseline_gross_income_eur": 34615.854978041665, "mean_baseline_disposable_income_eur": 30100.743459166668, "mean_post_disposable_income_eur": 36143.917795854555, "delta_disposable_income_eur": 6043.174336687887, "delta_disposable_income_pct": 20.0764952695796, "net_winner_share_pct": 100.0, "net_loser_share_pct": 0.0}, {"decile": 6, "mean_baseline_gross_income_eur": 46325.976094331796, "mean_baseline_disposable_income_eur": 40283.457473332, "mean_post_disposable_income_eur": 48006.403507333074, "delta_disposable_income_eur": 7722.946034001077, "delta_disposable_income_pct": 19.171507408751435, "net_winner_share_pct": 100.0, "net_loser_share_pct": 0.0}, {"decile": 7, "mean_baseline_gross_income_eur": 49214.59275289999, "mean_baseline_disposable_income_eur": 42795.298045999996, "mean_post_disposable_income_eur": 49344.60892152406, "delta_disposable_income_eur": 6549.310875524061, "delta_disposable_income_pct": 15.30380947104121, "net_winner_share_pct": 90.0, "net_loser_share_pct": 0.0}, {"decile": 8, "mean_baseline_gross_income_eur": 70886.01185458103, "mean_baseline_disposable_income_eur": 61640.01030833134, "mean_post_disposable_income_eur": 68873.91293628809, "delta_disposable_income_eur": 7233.902627956755, "delta_disposable_income_pct": 11.735725856909879, "net_winner_share_pct": 100.0, "net_loser_share_pct": 0.0}, {"decile": 9, "mean_baseline_gross_income_eur": 98153.48648101029, "mean_baseline_disposable_income_eur": 85350.85780957417, "mean_post_disposable_income_eur": 90059.88785096187, "delta_disposable_income_eur": 4709.030041387698, "delta_disposable_income_pct": 5.517261527580647, "net_winner_share_pct": 80.0, "net_loser_share_pct": 0.0}, {"decile": 10, "mean_baseline_gross_income_eur": 125398.7264258456, "mean_baseline_disposable_income_eur": 109042.37080508313, "mean_post_disposable_income_eur": 97311.69248947912, "delta_disposable_income_eur": -11730.678315604018, "delta_disposable_income_pct": -10.757908351582888, "net_winner_share_pct": 9.333333333333334, "net_loser_share_pct": 70.0}], "poverty": {"baseline": {"median_eq_bhc": 24271.839457142858, "median_eq_ahc": 22355.255100000002, "gini": 0.3105646806465079, "s80_s20": 5.049206741902438, "theil": 0.1882873579817573, "atkinson_e1": 0.1540791180134976, "bhc_floating_60_p0": 0.2305593451568895, "bhc_severe_40_p0": 0.07366984993178717, "bhc_child_poverty": 0.5038167938931297, "ahc_floating_60_p0": 0.22100954979536153, "ahc_severe_40_p0": 0.15416098226466576, "ahc_child_poverty": 0.4580152671755725, "individualized_poverty": 0.36971350613915416, "impairment_adjusted_poverty": 0.24420190995907232}, "post_reform": {"median_eq_bhc": 29196.65989051662, "median_eq_ahc": 27597.73501606793, "gini": 0.2088302814925217, "s80_s20": 2.8361317760359137, "theil": 0.08489636883205055, "atkinson_e1": 0.07108045717042044, "bhc_floating_60_p0": 0.058663028649386086, "bhc_anchored_60_p0": 0.0286493860845839, "bhc_severe_40_p0": 0.004092769440654843, "bhc_child_poverty": 0.0916030534351145, "ahc_floating_60_p0": 0.12278308321964529, "ahc_anchored_60_p0": 0.058663028649386086, "ahc_severe_40_p0": 0.021828103683492497, "ahc_child_poverty": 0.22900763358778625, "individualized_poverty": 0.39836289222373805, "impairment_adjusted_poverty": 0.06275579809004093}}, "cpff": {"scenario": "S2", "tier": "Tier B", "ubr_monthly_rate_eur": 900.0, "total_population_spain": 47815000, "common_regime_population": 44940000, "foral_population": 2875000, "total_cpff_fund_size_eur_b": 56.843, "common_regime_regions": [{"code": "AND", "name": "Andaluc\u00eda", "is_foral": false, "population": 8580000, "gross_irpf_base_eur_b": 12.75, "regional_irpf_share_eur_b": 6.375, "ubr_gross_transfers_eur_b": 77.519, "ubr_clawback_and_corporate_eur_b": 55.814, "pre_equalization_balance_eur_b": -4.478, "cpff_equalization_transfer_eur_b": 14.215, "post_equalization_balance_eur_b": 9.737, "equalized_balance_per_capita_eur": 1134.8}, {"code": "ARA", "name": "Arag\u00f3n", "is_foral": false, "population": 1340000, "gross_irpf_base_eur_b": 3.264, "regional_irpf_share_eur_b": 1.632, "ubr_gross_transfers_eur_b": 12.107, "ubr_clawback_and_corporate_eur_b": 8.717, "pre_equalization_balance_eur_b": -0.063, "cpff_equalization_transfer_eur_b": 1.584, "post_equalization_balance_eur_b": 1.521, "equalized_balance_per_capita_eur": 1134.8}, {"code": "AST", "name": "Principado de Asturias", "is_foral": false, "population": 1010000, "gross_irpf_base_eur_b": 2.448, "regional_irpf_share_eur_b": 1.224, "ubr_gross_transfers_eur_b": 9.125, "ubr_clawback_and_corporate_eur_b": 6.57, "pre_equalization_balance_eur_b": -0.054, "cpff_equalization_transfer_eur_b": 1.2, "post_equalization_balance_eur_b": 1.146, "equalized_balance_per_capita_eur": 1134.8}, {"code": "BAL", "name": "Illes Balears", "is_foral": false, "population": 1220000, "gross_irpf_base_eur_b": 3.468, "regional_irpf_share_eur_b": 1.734, "ubr_gross_transfers_eur_b": 11.022, "ubr_clawback_and_corporate_eur_b": 7.936, "pre_equalization_balance_eur_b": 0.191, "cpff_equalization_transfer_eur_b": 1.194, "post_equalization_balance_eur_b": 1.385, "equalized_balance_per_capita_eur": 1134.8}, {"code": "CAN", "name": "Canarias", "is_foral": false, "population": 2230000, "gross_irpf_base_eur_b": 3.876, "regional_irpf_share_eur_b": 1.938, "ubr_gross_transfers_eur_b": 20.148, "ubr_clawback_and_corporate_eur_b": 14.506, "pre_equalization_balance_eur_b": -0.883, "cpff_equalization_transfer_eur_b": 3.413, "post_equalization_balance_eur_b": 2.531, "equalized_balance_per_capita_eur": 1134.8}, {"code": "CAB", "name": "Cantabria", "is_foral": false, "population": 590000, "gross_irpf_base_eur_b": 1.428, "regional_irpf_share_eur_b": 0.714, "ubr_gross_transfers_eur_b": 5.331, "ubr_clawback_and_corporate_eur_b": 3.838, "pre_equalization_balance_eur_b": -0.032, "cpff_equalization_transfer_eur_b": 0.702, "post_equalization_balance_eur_b": 0.67, "equalized_balance_per_capita_eur": 1134.8}, {"code": "CLM", "name": "Castilla-La Mancha", "is_foral": false, "population": 2080000, "gross_irpf_base_eur_b": 3.672, "regional_irpf_share_eur_b": 1.836, "ubr_gross_transfers_eur_b": 18.792, "ubr_clawback_and_corporate_eur_b": 13.531, "pre_equalization_balance_eur_b": -0.795, "cpff_equalization_transfer_eur_b": 3.155, "post_equalization_balance_eur_b": 2.36, "equalized_balance_per_capita_eur": 1134.8}, {"code": "CYL", "name": "Castilla y Le\u00f3n", "is_foral": false, "population": 2380000, "gross_irpf_base_eur_b": 5.304, "regional_irpf_share_eur_b": 2.652, "ubr_gross_transfers_eur_b": 21.503, "ubr_clawback_and_corporate_eur_b": 15.482, "pre_equalization_balance_eur_b": -0.358, "cpff_equalization_transfer_eur_b": 3.059, "post_equalization_balance_eur_b": 2.701, "equalized_balance_per_capita_eur": 1134.8}, {"code": "CAT", "name": "Catalu\u00f1a", "is_foral": false, "population": 7900000, "gross_irpf_base_eur_b": 22.236, "regional_irpf_share_eur_b": 11.118, "ubr_gross_transfers_eur_b": 71.375, "ubr_clawback_and_corporate_eur_b": 51.39, "pre_equalization_balance_eur_b": 1.125, "cpff_equalization_transfer_eur_b": 7.84, "post_equalization_balance_eur_b": 8.965, "equalized_balance_per_capita_eur": 1134.8}, {"code": "EXT", "name": "Extremadura", "is_foral": false, "population": 1050000, "gross_irpf_base_eur_b": 1.632, "regional_irpf_share_eur_b": 0.816, "ubr_gross_transfers_eur_b": 9.487, "ubr_clawback_and_corporate_eur_b": 6.83, "pre_equalization_balance_eur_b": -0.512, "cpff_equalization_transfer_eur_b": 1.704, "post_equalization_balance_eur_b": 1.192, "equalized_balance_per_capita_eur": 1134.8}, {"code": "GAL", "name": "Galicia", "is_foral": false, "population": 2690000, "gross_irpf_base_eur_b": 5.712, "regional_irpf_share_eur_b": 2.856, "ubr_gross_transfers_eur_b": 24.304, "ubr_clawback_and_corporate_eur_b": 17.499, "pre_equalization_balance_eur_b": -0.547, "cpff_equalization_transfer_eur_b": 3.599, "post_equalization_balance_eur_b": 3.053, "equalized_balance_per_capita_eur": 1134.8}, {"code": "MAD", "name": "Comunidad de Madrid", "is_foral": false, "population": 6850000, "gross_irpf_base_eur_b": 23.97, "regional_irpf_share_eur_b": 11.985, "ubr_gross_transfers_eur_b": 61.889, "ubr_clawback_and_corporate_eur_b": 44.56, "pre_equalization_balance_eur_b": 3.321, "cpff_equalization_transfer_eur_b": 4.453, "post_equalization_balance_eur_b": 7.774, "equalized_balance_per_capita_eur": 1134.8}, {"code": "MUR", "name": "Regi\u00f3n de Murcia", "is_foral": false, "population": 1550000, "gross_irpf_base_eur_b": 2.754, "regional_irpf_share_eur_b": 1.377, "ubr_gross_transfers_eur_b": 14.004, "ubr_clawback_and_corporate_eur_b": 10.083, "pre_equalization_balance_eur_b": -0.584, "cpff_equalization_transfer_eur_b": 2.343, "post_equalization_balance_eur_b": 1.759, "equalized_balance_per_capita_eur": 1134.8}, {"code": "RIO", "name": "La Rioja", "is_foral": false, "population": 320000, "gross_irpf_base_eur_b": 0.816, "regional_irpf_share_eur_b": 0.408, "ubr_gross_transfers_eur_b": 2.891, "ubr_clawback_and_corporate_eur_b": 2.082, "pre_equalization_balance_eur_b": 0.003, "cpff_equalization_transfer_eur_b": 0.36, "post_equalization_balance_eur_b": 0.363, "equalized_balance_per_capita_eur": 1134.8}, {"code": "VAL", "name": "Comunitat Valenciana", "is_foral": false, "population": 5150000, "gross_irpf_base_eur_b": 8.67, "regional_irpf_share_eur_b": 4.335, "ubr_gross_transfers_eur_b": 46.529, "ubr_clawback_and_corporate_eur_b": 33.501, "pre_equalization_balance_eur_b": -2.179, "cpff_equalization_transfer_eur_b": 8.024, "post_equalization_balance_eur_b": 5.844, "equalized_balance_per_capita_eur": 1134.8}], "foral_records": [{"territory": "Pa\u00eds Vasco", "regime_statute": "Ley 12/2002 del Concierto Econ\u00f3mico", "statutory_index_pct": 6.24, "population": 2210000, "gross_cupo_baseline_eur_b": 1.48, "ubr_disbursements_in_territory_eur_b": 19.967, "non_assumed_burden_deduction_eur_b": 1.246, "net_adjusted_cupo_eur_b": 0.234, "per_capita_fiscal_impact_eur": 105.9}, {"territory": "Comunidad Foral de Navarra", "regime_statute": "Ley 28/1990 del Convenio Econ\u00f3mico", "statutory_index_pct": 1.6, "population": 665000, "gross_cupo_baseline_eur_b": 0.62, "ubr_disbursements_in_territory_eur_b": 6.008, "non_assumed_burden_deduction_eur_b": 0.096, "net_adjusted_cupo_eur_b": 0.524, "per_capita_fiscal_impact_eur": 787.8}]}, "bicameral": {"congress_seats_total": 350, "senate_seats_total": 266, "parties": [{"code": "PSOE", "name": "Partido Socialista Obrero Espa\u00f1ol", "congress_seats": 121, "senate_seats": 88, "ideology_axis": -0.35, "territorial_axis": 0.5, "support_loepsf_reform": true, "support_ubr_package": true, "carin_framing_elasticity": 14.0}, {"code": "PP", "name": "Partido Popular", "congress_seats": 137, "senate_seats": 144, "ideology_axis": 0.6, "territorial_axis": 0.2, "support_loepsf_reform": false, "support_ubr_package": false, "carin_framing_elasticity": 18.5}, {"code": "VOX", "name": "Vox", "congress_seats": 33, "senate_seats": 3, "ideology_axis": 0.9, "territorial_axis": 0.0, "support_loepsf_reform": false, "support_ubr_package": false, "carin_framing_elasticity": 4.0}, {"code": "SUMAR", "name": "Sumar", "congress_seats": 27, "senate_seats": 4, "ideology_axis": -0.75, "territorial_axis": 0.7, "support_loepsf_reform": true, "support_ubr_package": true, "carin_framing_elasticity": 12.0}, {"code": "PODEMOS", "name": "Podemos (Grupo Mixto)", "congress_seats": 4, "senate_seats": 0, "ideology_axis": -0.85, "territorial_axis": 0.7, "support_loepsf_reform": true, "support_ubr_package": true, "carin_framing_elasticity": 10.0}, {"code": "ERC", "name": "Esquerra Republicana de Catalunya", "congress_seats": 7, "senate_seats": 4, "ideology_axis": -0.65, "territorial_axis": 0.95, "support_loepsf_reform": true, "support_ubr_package": true, "carin_framing_elasticity": 15.0}, {"code": "JUNTS", "name": "Junts per Catalunya", "congress_seats": 7, "senate_seats": 6, "ideology_axis": 0.2, "territorial_axis": 0.95, "support_loepsf_reform": true, "support_ubr_package": true, "carin_framing_elasticity": 22.0}, {"code": "BILDU", "name": "EH Bildu", "congress_seats": 6, "senate_seats": 5, "ideology_axis": -0.7, "territorial_axis": 0.95, "support_loepsf_reform": true, "support_ubr_package": true, "carin_framing_elasticity": 14.0}, {"code": "PNV", "name": "Euzko Alderdi Jeltzalea - Partido Nacionalista Vasco", "congress_seats": 5, "senate_seats": 5, "ideology_axis": 0.15, "territorial_axis": 0.9, "support_loepsf_reform": true, "support_ubr_package": true, "carin_framing_elasticity": 21.0}, {"code": "BNG", "name": "Bloque Nacionalista Galego", "congress_seats": 1, "senate_seats": 1, "ideology_axis": -0.65, "territorial_axis": 0.85, "support_loepsf_reform": true, "support_ubr_package": true, "carin_framing_elasticity": 16.0}, {"code": "CC", "name": "Coalici\u00f3n Canaria", "congress_seats": 1, "senate_seats": 1, "ideology_axis": 0.1, "territorial_axis": 0.75, "support_loepsf_reform": true, "support_ubr_package": true, "carin_framing_elasticity": 19.0}, {"code": "UPN", "name": "Uni\u00f3n del Pueblo Navarro", "congress_seats": 1, "senate_seats": 1, "ideology_axis": 0.55, "territorial_axis": 0.4, "support_loepsf_reform": false, "support_ubr_package": false, "carin_framing_elasticity": 9.0}, {"code": "REG", "name": "Senadores Auton\u00f3micos Mixtos / Otros (Geroa Bai, AHI, etc.)", "congress_seats": 0, "senate_seats": 4, "ideology_axis": -0.2, "territorial_axis": 0.8, "support_loepsf_reform": true, "support_ubr_package": true, "carin_framing_elasticity": 15.0}], "loepsf_congress_vote": {"chamber": "Congreso de los Diputados (Aprobaci\u00f3n Org\u00e1nica Inicial)", "total_seats": 350, "majority_threshold": 176, "yes_votes": 179, "no_votes": 171, "abstentions": 0, "passed": true, "margin": 3, "voting_parties_yes": ["PSOE", "SUMAR", "PODEMOS", "ERC", "JUNTS", "BILDU", "PNV", "BNG", "CC", "REG"], "voting_parties_no": ["PP", "VOX", "UPN"]}, "loepsf_senate_vote": {"chamber": "Senado (Tramitaci\u00f3n y Veto de la Mayor\u00eda Conservadora)", "total_seats": 266, "majority_threshold": 134, "yes_votes": 118, "no_votes": 148, "abstentions": 0, "passed": false, "margin": -16, "voting_parties_yes": ["PSOE", "SUMAR", "PODEMOS", "ERC", "JUNTS", "BILDU", "PNV", "BNG", "CC", "REG"], "voting_parties_no": ["PP", "VOX", "UPN"]}, "loepsf_congress_override": {"chamber": "Congreso de los Diputados (Levantamiento Definitivo del Veto del Senado)", "total_seats": 350, "majority_threshold": 176, "yes_votes": 179, "no_votes": 171, "abstentions": 0, "passed": true, "margin": 3, "voting_parties_yes": ["PSOE", "SUMAR", "PODEMOS", "ERC", "JUNTS", "BILDU", "PNV", "BNG", "CC", "REG"], "voting_parties_no": ["PP", "VOX", "UPN"]}, "ubr_statute_congress_vote": {"chamber": "Congreso de los Diputados (Aprobaci\u00f3n Final de la Ley de RBU)", "total_seats": 350, "majority_threshold": 176, "yes_votes": 179, "no_votes": 171, "abstentions": 0, "passed": true, "margin": 3, "voting_parties_yes": ["PSOE", "SUMAR", "PODEMOS", "ERC", "JUNTS", "BILDU", "PNV", "BNG", "CC", "REG"], "voting_parties_no": ["PP", "VOX", "UPN"]}, "traditional_welfare_approval_pct": 44.2, "ai_productivity_approval_pct": 62.8, "framing_delta_pp": 18.6, "tsebelis_winset_volume": 0.462}, "pilot_summary": {"total_clusters": 70, "fua_count": 7, "rural_count": 30, "clusters": [{"cluster_id": "MAD_01", "name": "Carabanchel - Vista Alegre", "fua_name": "Madrid", "is_metropolitan": true, "autonomous_community": "Comunidad de Madrid", "province": "Madrid", "is_foral": false, "population": 48500, "private_rental_share": 0.385, "internal_commuting_ratio": 0.84, "centroid_lat": 40.384, "centroid_lon": -3.742, "buffer_radius_km": 0.0, "is_treated": false, "saturation_rate": 0.0, "treatment_arm_distribution": {"Arm_A": 0.0, "Arm_B": 0.0, "Arm_C": 0.0}, "baseline_median_income_eur": 23400.0, "baseline_unemployment_rate": 0.128, "cno11_ai_exposure_index": 0.52}, {"cluster_id": "MAD_02", "name": "Usera - Villaverde", "fua_name": "Madrid", "is_metropolitan": true, "autonomous_community": "Comunidad de Madrid", "province": "Madrid", "is_foral": false, "population": 51200, "private_rental_share": 0.392, "internal_commuting_ratio": 0.83, "centroid_lat": 40.371, "centroid_lon": -3.705, "buffer_radius_km": 0.0, "is_treated": true, "saturation_rate": 0.66, "treatment_arm_distribution": {"Arm_A_pure_ubr_0pct": 0.34, "Arm_B_mod_clawback_38pct": 0.33, "Arm_C_high_clawback_50pct": 0.33}, "baseline_median_income_eur": 21800.0, "baseline_unemployment_rate": 0.142, "cno11_ai_exposure_index": 0.5}, {"cluster_id": "MAD_03", "name": "Puente de Vallecas", "fua_name": "Madrid", "is_metropolitan": true, "autonomous_community": "Comunidad de Madrid", "province": "Madrid", "is_foral": false, "population": 54100, "private_rental_share": 0.41, "internal_commuting_ratio": 0.85, "centroid_lat": 40.398, "centroid_lon": -3.668, "buffer_radius_km": 0.0, "is_treated": false, "saturation_rate": 0.0, "treatment_arm_distribution": {"Arm_A": 0.0, "Arm_B": 0.0, "Arm_C": 0.0}, "baseline_median_income_eur": 22100.0, "baseline_unemployment_rate": 0.138, "cno11_ai_exposure_index": 0.51}, {"cluster_id": "MAD_04", "name": "Villa de Vallecas - Ensanche", "fua_name": "Madrid", "is_metropolitan": true, "autonomous_community": "Comunidad de Madrid", "province": "Madrid", "is_foral": false, "population": 42300, "private_rental_share": 0.372, "internal_commuting_ratio": 0.86, "centroid_lat": 40.373, "centroid_lon": -3.618, "buffer_radius_km": 0.0, "is_treated": false, "saturation_rate": 0.0, "treatment_arm_distribution": {"Arm_A": 0.0, "Arm_B": 0.0, "Arm_C": 0.0}, "baseline_median_income_eur": 26500.0, "baseline_unemployment_rate": 0.105, "cno11_ai_exposure_index": 0.56}, {"cluster_id": "MAD_05", "name": "Tetu\u00e1n - Cuatro Caminos", "fua_name": "Madrid", "is_metropolitan": true, "autonomous_community": "Comunidad de Madrid", "province": "Madrid", "is_foral": false, "population": 39800, "private_rental_share": 0.44, "internal_commuting_ratio": 0.88, "centroid_lat": 40.457, "centroid_lon": -3.704, "buffer_radius_km": 0.0, "is_treated": true, "saturation_rate": 1.0, "treatment_arm_distribution": {"Arm_A_pure_ubr_0pct": 0.34, "Arm_B_mod_clawback_38pct": 0.33, "Arm_C_high_clawback_50pct": 0.33}, "baseline_median_income_eur": 29800.0, "baseline_unemployment_rate": 0.098, "cno11_ai_exposure_index": 0.64}, {"cluster_id": "MAD_06", "name": "Getafe Norte - Sector III", "fua_name": "Madrid", "is_metropolitan": true, "autonomous_community": "Comunidad de Madrid", "province": "Madrid", "is_foral": false, "population": 36400, "private_rental_share": 0.362, "internal_commuting_ratio": 0.82, "centroid_lat": 40.308, "centroid_lon": -3.732, "buffer_radius_km": 0.0, "is_treated": true, "saturation_rate": 0.66, "treatment_arm_distribution": {"Arm_A_pure_ubr_0pct": 0.34, "Arm_B_mod_clawback_38pct": 0.33, "Arm_C_high_clawback_50pct": 0.33}, "baseline_median_income_eur": 27200.0, "baseline_unemployment_rate": 0.109, "cno11_ai_exposure_index": 0.54}, {"cluster_id": "MAD_07", "name": "Legan\u00e9s Zarzaquemada", "fua_name": "Madrid", "is_metropolitan": true, "autonomous_community": "Comunidad de Madrid", "province": "Madrid", "is_foral": false, "population": 38100, "private_rental_share": 0.355, "internal_commuting_ratio": 0.83, "centroid_lat": 40.332, "centroid_lon": -3.765, "buffer_radius_km": 0.0, "is_treated": true, "saturation_rate": 1.0, "treatment_arm_distribution": {"Arm_A_pure_ubr_0pct": 0.34, "Arm_B_mod_clawback_38pct": 0.33, "Arm_C_high_clawback_50pct": 0.33}, "baseline_median_income_eur": 25800.0, "baseline_unemployment_rate": 0.114, "cno11_ai_exposure_index": 0.53}, {"cluster_id": "MAD_08", "name": "Parla Centro", "fua_name": "Madrid", "is_metropolitan": true, "autonomous_community": "Comunidad de Madrid", "province": "Madrid", "is_foral": false, "population": 34200, "private_rental_share": 0.395, "internal_commuting_ratio": 0.81, "centroid_lat": 40.237, "centroid_lon": -3.774, "buffer_radius_km": 0.0, "is_treated": true, "saturation_rate": 1.0, "treatment_arm_distribution": {"Arm_A_pure_ubr_0pct": 0.34, "Arm_B_mod_clawback_38pct": 0.33, "Arm_C_high_clawback_50pct": 0.33}, "baseline_median_income_eur": 21400.0, "baseline_unemployment_rate": 0.155, "cno11_ai_exposure_index": 0.48}, {"cluster_id": "MAD_09", "name": "Alcobendas - La Moraleja Sur", "fua_name": "Madrid", "is_metropolitan": true, "autonomous_community": "Comunidad de Madrid", "province": "Madrid", "is_foral": false, "population": 32500, "private_rental_share": 0.378, "internal_commuting_ratio": 0.85, "centroid_lat": 40.541, "centroid_lon": -3.642, "buffer_radius_km": 0.0, "is_treated": true, "saturation_rate": 0.33, "treatment_arm_distribution": {"Arm_A_pure_ubr_0pct": 0.34, "Arm_B_mod_clawback_38pct": 0.33, "Arm_C_high_clawback_50pct": 0.33}, "baseline_median_income_eur": 33200.0, "baseline_unemployment_rate": 0.088, "cno11_ai_exposure_index": 0.68}, {"cluster_id": "MAD_10", "name": "Alcal\u00e1 de Henares Casco", "fua_name": "Madrid", "is_metropolitan": true, "autonomous_community": "Comunidad de Madrid", "province": "Madrid", "is_foral": false, "population": 35900, "private_rental_share": 0.368, "internal_commuting_ratio": 0.82, "centroid_lat": 40.482, "centroid_lon": -3.364, "buffer_radius_km": 0.0, "is_treated": false, "saturation_rate": 0.0, "treatment_arm_distribution": {"Arm_A": 0.0, "Arm_B": 0.0, "Arm_C": 0.0}, "baseline_median_income_eur": 25100.0, "baseline_unemployment_rate": 0.122, "cno11_ai_exposure_index": 0.52}, {"cluster_id": "BCN_01", "name": "Nou Barris - Roquetes", "fua_name": "Barcelona", "is_metropolitan": true, "autonomous_community": "Catalu\u00f1a", "province": "Barcelona", "is_foral": false, "population": 45200, "private_rental_share": 0.405, "internal_commuting_ratio": 0.86, "centroid_lat": 41.442, "centroid_lon": 2.176, "buffer_radius_km": 0.0, "is_treated": true, "saturation_rate": 0.66, "treatment_arm_distribution": {"Arm_A_pure_ubr_0pct": 0.34, "Arm_B_mod_clawback_38pct": 0.33, "Arm_C_high_clawback_50pct": 0.33}, "baseline_median_income_eur": 21900.0, "baseline_unemployment_rate": 0.135, "cno11_ai_exposure_index": 0.49}, {"cluster_id": "BCN_02", "name": "Sant Andreu - Bon Pastor", "fua_name": "Barcelona", "is_metropolitan": true, "autonomous_community": "Catalu\u00f1a", "province": "Barcelona", "is_foral": false, "population": 41800, "private_rental_share": 0.38, "internal_commuting_ratio": 0.87, "centroid_lat": 41.435, "centroid_lon": 2.204, "buffer_radius_km": 0.0, "is_treated": false, "saturation_rate": 0.0, "treatment_arm_distribution": {"Arm_A": 0.0, "Arm_B": 0.0, "Arm_C": 0.0}, "baseline_median_income_eur": 24600.0, "baseline_unemployment_rate": 0.118, "cno11_ai_exposure_index": 0.53}, {"cluster_id": "BCN_03", "name": "Ciutat Vella - Raval", "fua_name": "Barcelona", "is_metropolitan": true, "autonomous_community": "Catalu\u00f1a", "province": "Barcelona", "is_foral": false, "population": 38900, "private_rental_share": 0.52, "internal_commuting_ratio": 0.89, "centroid_lat": 41.38, "centroid_lon": 2.169, "buffer_radius_km": 0.0, "is_treated": true, "saturation_rate": 1.0, "treatment_arm_distribution": {"Arm_A_pure_ubr_0pct": 0.34, "Arm_B_mod_clawback_38pct": 0.33, "Arm_C_high_clawback_50pct": 0.33}, "baseline_median_income_eur": 20500.0, "baseline_unemployment_rate": 0.148, "cno11_ai_exposure_index": 0.55}, {"cluster_id": "BCN_04", "name": "Sants - Badal", "fua_name": "Barcelona", "is_metropolitan": true, "autonomous_community": "Catalu\u00f1a", "province": "Barcelona", "is_foral": false, "population": 43100, "private_rental_share": 0.425, "internal_commuting_ratio": 0.88, "centroid_lat": 41.374, "centroid_lon": 2.132, "buffer_radius_km": 0.0, "is_treated": false, "saturation_rate": 0.0, "treatment_arm_distribution": {"Arm_A": 0.0, "Arm_B": 0.0, "Arm_C": 0.0}, "baseline_median_income_eur": 28100.0, "baseline_unemployment_rate": 0.096, "cno11_ai_exposure_index": 0.61}, {"cluster_id": "BCN_05", "name": "Badalona Llefi\u00e0 - La Salut", "fua_name": "Barcelona", "is_metropolitan": true, "autonomous_community": "Catalu\u00f1a", "province": "Barcelona", "is_foral": false, "population": 46500, "private_rental_share": 0.39, "internal_commuting_ratio": 0.83, "centroid_lat": 41.441, "centroid_lon": 2.224, "buffer_radius_km": 0.0, "is_treated": false, "saturation_rate": 0.0, "treatment_arm_distribution": {"Arm_A": 0.0, "Arm_B": 0.0, "Arm_C": 0.0}, "baseline_median_income_eur": 22800.0, "baseline_unemployment_rate": 0.139, "cno11_ai_exposure_index": 0.48}]}};
 
-        function switchTab(tabId) {
+        function switchTab(tabId, btn) {
             document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
             document.querySelectorAll('.nav-tab-btn').forEach(el => el.classList.remove('active'));
             
-            document.getElementById('tab-' + tabId).classList.add('active');
-            event.target.classList.add('active');
+            const target = document.getElementById('tab-' + tabId);
+            if (target) {
+                target.classList.add('active');
+            }
+            if (btn) {
+                btn.classList.add('active');
+            } else {
+                const matchBtn = document.querySelector(`.nav-tab-btn[onclick*="'${tabId}'"]`);
+                if (matchBtn) matchBtn.classList.add('active');
+            }
+            if (window.history && window.history.replaceState) {
+                window.history.replaceState(null, null, '#' + tabId);
+            }
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
@@ -2802,20 +3360,70 @@ This proves empirically that clawback arms with phase-outs above 40% induce arti
         }
 
         function filterArticles() {
-            const query = document.getElementById('legalSearch').value.toLowerCase();
+            const query = (document.getElementById('legalSearch').value || '').toLowerCase().trim();
+            const words = query.split(/\s+/).filter(Boolean);
             const cards = document.querySelectorAll('.article-card');
+            let visibleCards = 0;
+            
             cards.forEach(card => {
-                const text = card.getAttribute('data-search-text');
-                if (!query || text.includes(query)) {
+                const text = card.getAttribute('data-search-text') || '';
+                const matches = words.length === 0 || words.every(w => text.includes(w));
+                if (matches) {
                     card.style.display = 'block';
+                    visibleCards++;
                 } else {
                     card.style.display = 'none';
                 }
             });
+            
+            document.querySelectorAll('.title-group').forEach(group => {
+                const groupCards = group.querySelectorAll('.article-card:not([style*="display: none"])');
+                group.style.display = (groupCards.length > 0) ? 'block' : 'none';
+            });
+            
+            const preambleBox = document.querySelector('.preamble-box');
+            if (preambleBox) {
+                preambleBox.style.display = (words.length > 0) ? 'none' : 'block';
+            }
+            
+            const noMsg = document.getElementById('noArticlesMessage');
+            if (noMsg) {
+                noMsg.style.display = (visibleCards === 0 && words.length > 0) ? 'block' : 'none';
+            }
         }
+
+        // Listen for internal anchor links to tabs or articles
+        document.addEventListener('click', (e) => {
+            const link = e.target.closest('a[href^="#"]');
+            if (!link) return;
+            const targetId = link.getAttribute('href').replace('#', '');
+            if (targetId === 'anteproyecto' || targetId === 'tab-anteproyecto') {
+                e.preventDefault();
+                switchTab('anteproyecto');
+            } else if (targetId.startsWith('art_') || targetId.startsWith('art-') || targetId.startsWith('da_') || targetId.startsWith('dt_') || targetId.startsWith('dd_') || targetId.startsWith('df_')) {
+                e.preventDefault();
+                switchTab('anteproyecto');
+                setTimeout(() => {
+                    const el = document.getElementById(targetId);
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                }, 100);
+            }
+        });
 
         // Initialize Decile Chart and CPFF table on page load
         window.addEventListener('DOMContentLoaded', () => {
+            // Handle URL hash on initial load
+            const hash = (window.location.hash || '').replace('#', '');
+            if (['monograph', 'dashboard', 'anteproyecto'].includes(hash)) {
+                switchTab(hash);
+            } else if (hash.startsWith('art_') || hash.startsWith('art-') || hash.startsWith('da_') || hash.startsWith('dt_') || hash.startsWith('dd_') || hash.startsWith('df_')) {
+                switchTab('anteproyecto');
+                setTimeout(() => {
+                    const el = document.getElementById(hash);
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                }, 150);
+            }
+
             // CPFF table population
             const cpffTbody = document.getElementById('cpffTableBody');
             if (cpffTbody && DASHBOARD_DATA.cpff && DASHBOARD_DATA.cpff.ccaa_allocations) {
