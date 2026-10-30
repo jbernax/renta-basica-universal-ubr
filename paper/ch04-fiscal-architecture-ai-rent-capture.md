@@ -104,6 +104,10 @@ Following Decision `D-007`, Track 5 codifies the **Impuesto Especial sobre Capac
 1. **Taxable Event:** The acquisition by Spanish resident enterprises or professionals of commercial cloud compute, GPU hosting, and foundation-model inference APIs provided by non-resident entities lacking a physical PE.
 2. **Withholding Rate & Reverse-Charge Design:** A 5% destination-based reverse-charge indirect tax levied on net invoice value, structured under the permissible national indirect tax carve-outs of Article 401 of EU Directive 2006/112/EC to avoid infringing Article 56 TFEU freedom to provide services.
 3. **Calibrated Revenue Yield:** In a realistic enterprise compute market where Spanish enterprise AI/cloud expenditures reach €44 billion by 2030, the IECA generates **€2.20 billion annually** (0.15% of GDP). The broader revenue rebalancing is anchored in the expanded domestic Net Operating Surplus Contribution (EBE) and datacenter electrical infrastructure duties, preserving fiscal solvency without heroic international tax assumptions.
+4. **Anti-Fragmentation & Multi-Cloud Cryptographic Auditing:** To prevent hyperscalers from deflating standalone compute lines through cross-border IP bundling in Ireland or Luxembourg:
+   - *Statutory Destination Look-Through Presumption:* Any bundled enterprise SaaS or API contract with embedded AI capability consumed by Spanish corporate domains defaults to a 25% compute imputation ratio unless disproved by audited telemetry.
+   - *Model 238/DAC7 Algorithmic Telemetry Reporting:* Qualified hyperscalers and cloud brokers are mandated to disclose aggregate FLOPS and GPU-hour allocations routed to Spanish enterprise NIFs.
+   - *Joint and Several Interconnect Liability:* Tier-1 telecommunications carriers and colocation data centers operating in Spain bear secondary withholding liability under Art. 15 LGT for un-invoiced transit volumes exceeding 100 PFLOPS-hours per month.
 
 ---
 
@@ -111,12 +115,18 @@ Following Decision `D-007`, Track 5 codifies the **Impuesto Especial sobre Capac
 
 Under rapid labor substitution, corporate profits and gross operating surpluses (*Excedente Bruto de Explotación*, EBE) expand dramatically at the expense of wages [@acemoglu-2024-macro-ai; @korinek-suh-2024]. Financing UBR requires tapping this expanding surplus.
 
-### A. The IRAP-Style Factor-Neutral Tax Base
-Modeled on the Italian regional production tax validated by the Court of Justice of the European Union in Case C-475/03 (*Banca Popolare di Cremona* [@cjeu-c-475-03-banca-popolare-irap]), Spain introduces a factor-neutral contribution on net corporate operating surplus:
+### A. The IRAP-Style Factor-Neutral Tax Base & OECD Pillar Two Harmonization
+Modeled on the Italian regional production tax validated by the Court of Justice of the European Union in Case C-475/03 (*Banca Popolare di Cremona* [@cjeu-c-475-03-banca-popolare-irap]), Spain introduces a factor-neutral contribution on net corporate operating surplus raising **€36.50 billion annually** (2.43% of GDP) at a 2.5–3.5% rate:
 
 $$B_{\text{surplus}} = \text{Value Added} - \text{Personnel Costs} - \text{Depreciation} = \text{EBE} - \delta K$$
 
-By levying a moderate 2.5–3.5% rate directly on net operating margins rather than turnover or transaction invoices, the tax does not constitute an indirect turnover excise and fully complies with Article 401 of the EU VAT Directive (Directive 2006/112/EC [@eu-dir-2006-112-vat]).
+By levying directly on net operating margins rather than turnover or transaction invoices, the tax does not constitute an indirect turnover excise and fully complies with Article 401 of the EU VAT Directive (Directive 2006/112/EC [@eu-dir-2006-112-vat]).
+
+**OECD Pillar Two Integration (Council Directive EU 2022/2523):**
+To ensure seamless coordination with the 15% Global Minimum Tax (GloBE Rules, transposed via *Ley 3/2024*):
+1. *Covered Tax Qualification:* The EBE contribution is statutorily codified as a Covered Tax under Article 20 of Directive 2022/2523, ensuring it is incorporated into the numerator of the Spanish constituent entity Effective Tax Rate (ETR). This prevents international double taxation and credits domestic contributions against global minimum top-up liabilities.
+2. *Substance-Based Income Exclusion (SBIE) Synergy:* As tangible asset and payroll carve-outs decline under Pillar Two transition schedules (reaching 5% by 2033), the EBE base captures highly automated corporate surplus that would otherwise escape ordinary corporate taxation, operating in perfect tandem with Qualified Domestic Minimum Top-up Taxes (QDMTT).
+3. *Undertaxed Profits Rule (UTPR) Anti-Base Erosion:* An intellectual property adjustment rule (*regla de ajuste de intangibles tecnológicos*) under CIT Art. 15 penalizes artificial outbound IP transfers, preventing multinational groups from shifting algorithmic assets out of the domestic tax base.
 
 ### B. Constitutional Non-Confiscatoriness Boundary (Art. 31.3 CE)
 In landmark judgment **STC 182/2021** [@stc-182-2021-plusvalia], the Spanish Constitutional Court ruled that taxation violates the principle of economic capacity and non-confiscatoriness when it absorbs the entirety of real income or exceeds manifested wealth. The UBR financing architecture establishes a statutory firewall: aggregate effective taxation across corporate income tax, IECA, and surplus contributions is legally capped at **60% of verified net operating profit**, guaranteeing that capital retains healthy investment margins and preventing capital flight.
@@ -133,7 +143,7 @@ flowchart LR
     BdE["Independent Governance<br/>(Supervised by Banco de España)"]
     Portfolio["ASG Diversified Global Portfolio<br/>(Public compute, green assets, index equities)"]
     Shield["Anti-Raiding Shield<br/>(3/5ths Congressional Supermajority)"]
-    Dividend["Annual Stabilizing Dividend<br/>(0.5% - 0.8% of GDP into UBR Fund)"]
+    Dividend["Annual Stabilizing Dividend<br/>(Constant-Endowment Smoothing Rule)"]
 
     Windfall --> BdE
     BdE --> Portfolio
@@ -151,7 +161,9 @@ flowchart LR
 | **Year 10** | €21.00B | €7.24B | €179.62B | 11.97% | €5.39B |
 | **Year 15** | €16.50B | €10.21B | **€243.08B** | **16.21%** | **€7.29B** |
 
-### Asset-Liability Management (ALM) & Debt-Sustaining Safeguards
-To eliminate negative carry-trade risks (borrowing at elevated sovereign yields while accumulating equity assets):
-1. **The Sovereign Spread Debt Brake:** If Spain's 10-year sovereign bond yield spread over German Bunds widens beyond 150 bps or gross Maastricht debt exceeds 100% of GDP, annual FSTA inflows are statutorily redirected to the Public Debt Amortization Fund (*Fondo de Amortización de Deuda Pública*), extinguishing sovereign debt until debt ratios fall below statutory ceilings.
-2. **Democratic Supermajority:** Modeled on *Ley 28/2003* of the Social Security Reserve Fund [@boe-ley-28-2003-fondo-reserva], capital withdrawals require a **three-fifths (3/5) supermajority in the Congress of the Deputies**, permanently insulating the endowment from short-term electoral raiding.
+### Dynamic Asset-Liability Management (ALM) & Solvency Safeguards
+To withstand multi-year global asset drawdowns (e.g., a stochastic -35% equity market crash) and avoid pro-cyclical austerity:
+1. **Constant-Endowment Smoothing Rule:** Annual dividend payouts into the national UBR fund are pegged to a 5-year moving average of real portfolio earnings, preventing decapitalization during global market troughs.
+2. **Segregated Tier-1 Liquidity Reserve:** The FSTA maintains a ring-fenced Tier-1 Liquidity Reserve invested in ultra-short euro sovereign debt (T-bills and 1-year paper) equivalent to **24 months of statutory dividend disbursements**, guaranteeing full cash-flow continuity even during prolonged equity bear markets.
+3. **The Counter-Cyclical Sovereign Spread Debt Brake:** If Spain's 10-year sovereign bond yield spread over German Bunds widens beyond 150 bps or gross Maastricht debt exceeds 100% of GDP, marginal windfall inflows are redirected to the Public Debt Amortization Fund (*Fondo de Amortización de Deuda Pública*). Crucially, the 24-month Tier-1 Liquidity Reserve remains protected, ensuring citizen cash transfers are never abruptly severed during sovereign debt stress.
+4. **Democratic Supermajority:** Modeled on *Ley 28/2003* of the Social Security Reserve Fund [@boe-ley-28-2003-fondo-reserva], capital withdrawals beyond the statutory payout formula require a **three-fifths (3/5) supermajority in the Congress of the Deputies**, permanently insulating the endowment from short-term electoral raiding.

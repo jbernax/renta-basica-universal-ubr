@@ -7,23 +7,23 @@
 | Iteration | Scored At | Weighted Score (0-5) | Min Criterion | Delta | Open Vulnerabilities |
 |---|---|---|---|---|---|
 | `iter-0001` | 2026-10-30 | **4.33** | 4.20 | — | 4 |
+| `iter-0002` | 2026-10-30 | **4.70** | 4.60 | +0.37 | 3 |
 
 ## 2. Latest Iteration Reviewer Breakdown
 
-### Iteration `iter-0001` Criterion Details
+### Iteration `iter-0002` Criterion Details
 
-- **`fiscal_realism_sustainability`**: 4.40
-- **`administrative_feasibility`**: 4.30
-- **`legal_robustness_anti_abuse`**: 4.40
-- **`macro_productivity_incentives`**: 4.20
-- **`housing_rent_resilience`**: 4.30
-- **`argumentative_rigor_honesty`**: 4.40
+- **`fiscal_realism_sustainability`**: 4.70 (+0.30)
+- **`administrative_feasibility`**: 4.80 (+0.50)
+- **`legal_robustness_anti_abuse`**: 4.70 (+0.30)
+- **`macro_productivity_incentives`**: 4.60 (+0.40)
+- **`housing_rent_resilience`**: 4.70 (+0.40)
+- **`argumentative_rigor_honesty`**: 4.70 (+0.30)
 
 ### Judge Verdict & Remaining Critical Vulnerabilities
 
-> The publication monograph presents an exceptionally robust, academically defensible, and legally fortified universal basic income and rent architecture for Spain. By systematically incorporating empirical ETI bounds, anti-arbitrage look-back rules, anti-circumvention housing caps, and non-contributory EU scheduling, it successfully neutralizes orthodox economic and legal objections.
+> The monograph demonstrates state-of-the-art scholarly and operational defensibility. Across fiscal, administrative, legal, macroeconomic, spatial housing, and political economy dimensions, the adversarial counter-arguments are steelmanned and effectively addressed with concrete statutory mechanisms, quantitative micro-macro closures, and empirical validations.
 
-- **[ADV-JD-01-01]** `ch04`: While the compute levy is prudently downscaled to €2.20B, the administrative mechanism for auditing distributed multi-cloud and edge GPU workloads across global hyperscalers requires further operational specification to prevent cross-border IP fragmentation.
-- **[ADV-JD-01-02]** `ch06`: The 45-day positive administrative silence in the Foral Bilateral Arbitral Commission creates a tactical incentive for regional authorities to stall disputes; a qualified arbitration impasse protocol should be detailed.
-- **[ADV-JD-01-03]** `ch05`: The interaction between the 35% mortgage DSTI macroprudential cap and banking sector profitability during an economic downswing should be briefly analyzed to confirm bank balance sheet resilience.
-- **[ADV-JD-01-04]** `ch08`: The political economy transition plan assumes a unified Organic Bill for LOEPSF Art. 15.6; parliamentary fragmentation risk requires a clear fallback contingency via ordinary statutory decrete-law.
+- **[ADV-JD-02-01]** `ch04`: While the EBE factor-neutral contribution (€36.50B) is codified as an IRAP-style regional/national production tax complying with CJEU Case C-475/03, the interaction between Pillar Two Qualified Domestic Minimum Top-up Taxes (QDMTT) and the domestic deduction of EBE contributions could induce marginal profit shifting incentives for multinational corporate groups with cross-border algorithmic IP in Ireland or the Netherlands if not backed by explicit multilateral advance pricing agreements (APAs).
+- **[ADV-JD-02-02]** `ch05`: The 90% AEAT-administered windfall rent surcharge paired with an 8% capital improvement depreciation deduction provides strong anti-decay incentives; however, administrative verification of actual contractor invoices for energy efficiency and structural repairs risks creating an auditing bottleneck within AEAT regional delegations without automated municipal building permit (licencia de obras) API interoperability.
+- **[ADV-JD-02-03]** `ch06`: Although the 60-day binding impasse arbitration under Art. 64 Ley 12/2002 prevents prolonged Foral deadlock, interim precautionary cash disbursement orders issued by the joint arbitration chamber could face jurisdictional friction before the Sala de lo Contencioso-Administrativo of the Tribunal Supremo if challenged by regional parliamentary groups on fiscal autonomy grounds.

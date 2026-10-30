@@ -77,19 +77,21 @@ The Basque Country and Navarre collect all direct and corporate taxes within the
   - **Basque Country (6.24% statutory coefficient):** The gross baseline Cupo of €1.480B is credited with a **-€1.246B non-assumed burden deduction**, resulting in an adjusted net Cupo of **€0.234B**.
   - **Navarre (1.60% statutory coefficient):** The gross baseline Aportación of €0.620B is credited with a **-€0.096B deduction**, resulting in an adjusted net Aportación of **€0.524B**.
 - **The Mandatory Bilateral Tax Harmonization Accord (*Pacto Foral de Armonización*):** To eliminate the risk of domestic tax havens (where high-net-worth individuals transfer tax domicile to Foral provinces to evade national UBR clawback surcharges):
-  1. Under the auspices of the *Comisión Mixta del Concierto* (Art. 61 Ley 12/2002) and *Comisión Negociadora del Convenio* (Art. 67 Ley 28/1990), Cupo deductions are statutorily conditioned on the enactment of reciprocal Foral UBR financing surcharges by the *Juntas Generales* and *Parlamento de Navarra*.
-  2. *Five-Year Anti-Relocation Look-Back:* Modelled on Art. 72.3 LIRPF, taxpayers relocating tax residency from Common Regime CCAA to Foral territories remain subject to Common Regime UBR clawback rates for a transition period of five tax years.
+   1. Under the auspices of the *Comisión Mixta del Concierto* (Art. 61 Ley 12/2002) and *Comisión Negociadora del Convenio* (Art. 67 Ley 28/1990), Cupo deductions are statutorily conditioned on the enactment of reciprocal Foral UBR financing surcharges by the *Juntas Generales* and *Parlamento de Navarra*.
+   2. *Five-Year Personal and Corporate Anti-Relocation Look-Back:* Modelled on Art. 72.3 LIRPF, taxpayers relocating tax residency from Common Regime CCAA to Foral territories remain subject to Common Regime UBR clawback rates for five tax years. This look-back rule explicitly extends to closely held holding companies (*sociedades patrimoniales*) where >50% of equity or voting rights are held by individuals who relocated within the prior five years.
+   3. *Binding Foral Impasse Resolution Protocol:* Under Article 64 of *Ley 12/2002*, if bilateral negotiations reach a deadlock exceeding 60 days, jurisdiction automatically defers to an expedited joint arbitration chamber composed of three state magistrates and three foral representatives, chaired by a Supreme Court nominee, whose precautionary injunctions maintain baseline citizen disbursements without disruption.
 
 ---
 
 ## 3. European Union Law, Free Movement, and Non-Exportability
 
-Under EU law, social cash transfers face scrutiny under Article 45 TFEU (free movement of workers), Directive 2004/38/EC (free movement and residence of Union citizens [@eu-dir-2004-38-free-movement]), and Regulation (EC) No 883/2004 (coordination of social security systems [@eu-reg-883-2004]).
+Under EU law, social cash transfers face scrutiny under Article 45 TFEU (free movement of workers), Directive 2004/38/EC (free movement and residence of Union citizens [@eu-dir-2004-38-free-movement]), Directive 2003/109/EC (long-term third-country residents), and Regulation (EC) No 883/2004 (coordination of social security systems [@eu-reg-883-2004]).
 
-Track 5 implements an airtight **Bifurcated EU-Law Architecture**:
-1. **Special Non-Contributory Cash Benefit (SNCB) Listing under Regulation 883/2004 (Annex X):** To ensure total immunity from mandatory cross-border exportability (Art. 7 Reg. 883/2004), UBR is statutorily defined under EU law as a Special Non-Contributory Cash Benefit pursuant to Article 70 of Regulation 883/2004 and formally inscribed into Annex X. This legally guarantees that UBR is strictly non-exportable and payable solely to residents physically residing in Spain, fully conforming to CJEU jurisprudence (*Hosse*, *Stewart*).
-2. **The Schumacker Tax Parity Protocol (Case C-279/93):** Under the CJEU *Schumacker* doctrine [@cjeu-c-279-93-schumacker], non-resident frontier workers who earn the major part of their income ($\ge 75\%$) in a Member State receive a pro-rata UBR tax credit proportional to their Spanish taxable labor income, excluding passive cross-border capital income.
-3. **Objective EU Worker Thresholds & Anti-Abuse Standards:** In compliance with CJEU landmark rulings (*Lawrie-Blum* [@cjeu-c-66-85-lawrie-blum], *Genc* [@cjeu-c-14-09-genc], and *Dano* C-333/13), EU citizens engaged in genuine employment access UBR from month one. Economically inactive arrivals must establish 24-month continuous legal residency compliant with Article 7 of Directive 2004/38/EC (holding private resources and health insurance) before non-contributory entitlement can accrue.
+Track 5 implements an airtight **Tripartite Legal Category Framework**:
+1. **Category I: Spanish Nationals & Long-Term Third-Country Residents:** Pursuant to Article 14 CE and Directive 2003/109/EC (*Ley Orgánica 4/2000* Art. 32), third-country nationals holding permanent residence (*Autorización de Residencia de Larga Duración*) enjoy absolute equality of treatment with Spanish citizens, obtaining immediate UBR access from day one.
+2. **Category II: EU Cross-Border & Retained Workers:** Pursuant to Article 45 TFEU and Directive 2004/38/EC Art. 7(1)(a), EU citizens engaged in genuine and effective employment (>10 hours/week or earnings $\ge 50\%$ SMI, per CJEU *Genc* [@cjeu-c-14-09-genc] and *Lawrie-Blum* [@cjeu-c-66-85-lawrie-blum]) access UBR from month one. Frontier workers are protected under the *Schumacker* pro-rata tax credit protocol.
+3. **Category III: Economically Inactive EU Citizens & Temporary Arrivals:** In full compliance with CJEU landmark rulings (*Dano* C-333/13, *Brey* C-140/12), economically inactive arrivals must establish 24-month continuous lawful residency under Directive 2004/38/EC before non-contributory cash entitlement accrues, backed by individualized proportionality assessments.
+4. **Special Non-Contributory Benefit (SNCB) Annex X Inscription:** UBR is formally inscribed into Annex X of Regulation (EC) No 883/2004 pursuant to Article 70, establishing statutory immunity from cross-border exportability and guaranteeing that payments are strictly confined to residents physically residing within Spanish territory.
 
 ---
 
@@ -98,23 +100,24 @@ Track 5 implements an airtight **Bifurcated EU-Law Architecture**:
 Title V of the statute builds a high-capacity, privacy-preserving digital delivery infrastructure:
 
 ### A. The Cuenta Única Tributaria-Social and Master Taxpayer Index (MTI)
-Operating as an interoperable digital spine between the *Agencia Estatal de Administración Tributaria* (AEAT), the *Instituto Nacional de la Seguridad Social* (INSS), and regional health services:
+Operating as an interoperable digital spine between the *Agencia Estatal de Administración Tributaria* (AEAT), the *Instituto Nacional de la Seguridad Social* (INSS), and regional administrations:
 - **Master Taxpayer/Citizen Index (MTI/MPI):** Resolves identity discrepancies between NIE regularizations, Social Security numbers (*NAF*), and municipal records via cryptographic hash validation.
-- **Asynchronous 90-Day Provisional Payment Buffer:** When data mismatches occur across regional health databases and AEAT, payments are never summarily suspended; instead, an automated provisional transfer is executed for up to 90 days while background systems reconcile records.
-- **Predictable SEPA Clearing:** Cash disbursements are executed via automated SEPA credit transfers on the **1st calendar day of every month**.
+- **Inter-Administrative Open-API Protocol (PID):** Mandated under the State Data Intermediation Platform (*Plataforma de Intermediación de Datos*, PID, Ley 40/2015 Art. 155), requiring all 17 Autonomous Communities and Foral Treasuries to deploy standardized Open-API endpoints. Monthly TGSS affiliation changes and AEAT filings emit real-time event-driven settlement tokens.
+- **Asynchronous 90-Day Provisional Payment Buffer:** When data mismatches occur across regional health databases and AEAT, payments are never summarily suspended; an automated provisional transfer is executed for up to 90 days under a designated *Administración Gestora de Referencia* while background systems reconcile records.
+- **Full Territorial Multilingual Parity (Art. 3 & 139 CE):** All digital portals, automated notifications, and physical service counters operate natively in Castilian, Catalan/Valencian, Galician, and Basque pursuant to Art. 15 of *Ley 39/2015*.
 
-### B. Anti-Fraud Residency Triangulation Protocol (*Protocolo de Residencia Triangulada*)
-To defeat fictitious registrations (*empadronamiento fraudulento*) and ghost tenancies:
-- Monthly disbursement is cross-validated across four independent administrative data spines: (1) active municipal Padrón entry with property cadastral reference; (2) domestic utility, water, or telecommunications geo-IP consumption footprints; (3) active Social Security contribution or health service interactions; and (4) annual AEAT tax declarations.
-- Organized registration syndicates face severe criminal and administrative sanctions under reformed Articles 307 and 390 of the *Código Penal*.
+### B. GDPR-Compliant Residency Cross-Validation Protocol
+To defeat fictitious registrations (*empadronamiento fraudulento*) without infringing privacy rights under GDPR (Regulation EU 2016/679) and *Ley Orgánica 3/2018* (LOPD-GDD):
+- *Tier-1 Automated Administrative Triangulation:* Regular monthly clearing queries only public administrative registers: active municipal Padrón Continuo (INE), active Tarjeta Sanitaria Individual (TSI) healthcare interactions, and TGSS employment affiliation. Continuous mass surveillance of domestic utility telemetry or telecommunications geo-IP tracking is strictly prohibited pursuant to STC 76/2019.
+- *Tier-2 Subpoenaed Anomaly Audits:* Utility consumption footprints (electricity/water kWh thresholds) may only be subpoenaed ex-post under judicial oversight during formalized administrative fraud inspections when algorithmic anomaly scores detect severe irregularity (e.g., >5 adult registrations at a single dwelling with zero health/tax interactions).
 
-### C. Financial Inclusion: Tarjeta Social Prepago UBR
+### C. Financial Inclusion: Tarjeta Social Prepago UBR & Rural Postal Liquidity
 For Spain's 1.4 million unbanked, elderly, or digitally excluded residents:
-- *Sociedad Estatal Correos y Telégrafos* (Correos Cash) and the municipal social services network act as physical distribution agents.
-- Beneficiaries receive the **Tarjeta Social Prepago UBR**, an offline, EMV-compliant rechargeable debit card issued directly by the Banco de España and Correos without requiring a commercial bank account or digital certificate.
-- *Statutory AML Safe Harbor:* Transfers up to €1,200/month are statutorily exempt from commercial bank AML freezes under *Ley 10/2010*, backed by administrative fines for financial institutions that obstruct basic account access.
+- *Correos Rural Mobile Network:* Delivered across 3,200 depopulated municipalities (*la España vaciada*) through the *carteros rurales* postal network equipped with mobile PDAs/POS terminals under the Universal Postal Service Obligation (*Ley 43/2010*), backed by state-subsidized security and liquidity transport.
+- *Simplified Due Diligence Tier (Diligencia Simplificada de Identificación):* Pursuant to Article 9 of *Real Decreto 304/2014* and EU AMLD5 Art. 12, the offline EMV-compliant **Tarjeta Social Prepago UBR** is issued upon presentation of a municipal registration certificate with social services report (*padrón con informe social*), backed by zero-commission cash withdrawals at post offices, ATMs, and contracted retail cashback points (supermarkets, gas stations).
 
-### D. Administrative Due Process & Fast-Track Arbitration
-To prevent the judicial collapse of the *Juzgados de lo Social*:
-- The statute creates the **Comisión Arbitral y Administrativa de la RBU**, a specialized electronic claims board resolving algorithmic and withholding disputes.
-- *Positive Administrative Silence:* For individual claim disputes under €1,500 where the administration fails to issue a reasoned resolution within 45 calendar days, claims are automatically deemed approved, ensuring immediate liquidity protection for vulnerable claimants.
+### D. Administrative Due Process & Safeguarded Dispute Resolution
+To prevent the judicial collapse of the *Juzgados de lo Social* and eliminate moral hazard:
+- The statute creates the **Comisión Arbitral y Administrativa de la RBU**, with decentralized territorial chambers coordinated with regional welfare ombudsmen (*Síndic de Greuges*, *Ararteko*, *Valedor do Pobo*).
+- *Automated Conciliation Window:* A 15-day initial automated window instantly clears clerical, bank routing, and documented identity mismatches.
+- *Safeguarded Provisional Advances (Anticipo Cautelar Condicionado):* For complex individual claims under €1,500 unresolved after 45 days, an immediate provisional advance is disbursed under automated surety to guarantee citizen liquidity. In compliance with Art. 24.1 of *Ley 39/2015* and General Budgetary Law (*Ley 47/2003*), formal administrative silence remains negative to prevent the irrevocable consolidation of fraudulent claims, with disbursements subject to automated ex-post audit.
