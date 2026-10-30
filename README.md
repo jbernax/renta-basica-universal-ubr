@@ -40,7 +40,7 @@ A partir de 5 motores computacionales que integran microdatos administrativos es
 
 ---
 
-## 🏛️ Estructura del Repositorio
+## Estructura del Repositorio
 
 ```text
 .
@@ -144,6 +144,6 @@ python -m ubr paper html
 
 ---
 
-## 📄 Licencia
+## Licencia
 
 Este proyecto está bajo la Licencia MIT.
